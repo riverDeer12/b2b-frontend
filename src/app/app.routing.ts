@@ -12,11 +12,12 @@ export const AppRoutes: Routes = [
     {
         path: 'admin',
         component: AdminLayoutComponent,
+        // canActivate: [AdminGuard],
         loadChildren: () => import('./layout/admin/admin-layout.module').then(m => m.AdminLayoutModule)
     },
     {
         path: 'auth',
-        loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
     },
     {
         path: 'landing',

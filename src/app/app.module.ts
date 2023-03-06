@@ -16,6 +16,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {MessagesModule} from 'primeng/messages';
+import {MessageService} from 'primeng/api';
+import {MessageModule} from 'primeng/message';
+import {ToastModule} from 'primeng/toast';
 
 /**
  * Translations loader.
@@ -37,18 +41,20 @@ export function createTranslateLoader(http: HttpClient) {
         HttpClientModule,
         BrowserAnimationsModule,
         TranslateModule.forRoot({
+            defaultLanguage: 'hr',
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
             },
-            isolate: true
+            extend: true
         }),
         RouterModule.forRoot(AppRoutes, {
             scrollPositionRestoration: 'enabled',
             anchorScrolling: 'enabled',
             onSameUrlNavigation: 'reload'
-        })
+        }),
+        ToastModule
     ],
     providers: [
         CountryService, CustomerService, EventService, IconService, NodeService,

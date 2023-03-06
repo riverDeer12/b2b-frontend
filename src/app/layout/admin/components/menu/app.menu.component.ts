@@ -1,6 +1,7 @@
 import {OnInit} from '@angular/core';
 import {Component} from '@angular/core';
 import {LayoutService} from '../../core/services/app.layout.service';
+import {MenuItem} from 'primeng/api';
 
 @Component({
     selector: 'app-menu',
@@ -8,7 +9,7 @@ import {LayoutService} from '../../core/services/app.layout.service';
 })
 export class AppMenuComponent implements OnInit {
 
-    model: any[] = [];
+    model: MenuItem[] = [];
 
     constructor(public layoutService: LayoutService) {
     }
@@ -17,14 +18,14 @@ export class AppMenuComponent implements OnInit {
         this.model = [
             {
                 items: [
-                    {label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/'], target: '_blank'},
-                    {label: 'Activities', icon: 'pi pi-fw pi-chart-line', routerLink: ['/admin/activities']},
-                    {label: 'News', icon: 'pi pi-fw pi-megaphone', routerLink: ['/admin/news']},
-                    {label: 'Categories', icon: 'pi pi-fw pi-bookmark', routerLink: ['/admin/categories']},
-                    {label: 'Companies', icon: 'pi pi-fw pi-building', routerLink: ['/admin/companies']},
-                    {label: 'Scientists', icon: 'pi pi-fw pi-sun', routerLink: ['/admin/scientists']},
-                    {label: 'Users', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users']},
-                    {label: 'Organizations', icon: 'pi pi-fw pi-building', routerLink: ['/admin/organizations']}
+                    {label: 'home', icon: 'pi pi-fw pi-home', routerLink: ['/'], target: '_blank'},
+                    {label: 'activities', icon: 'pi pi-fw pi-chart-line', routerLink: ['/admin/activities']},
+                    {label: 'news', icon: 'pi pi-fw pi-megaphone', routerLink: ['/admin/news']},
+                    {label: 'categories', icon: 'pi pi-fw pi-bookmark', routerLink: ['/admin/categories']},
+                    {label: 'companies', icon: 'pi pi-fw pi-building', routerLink: ['/admin/companies']},
+                    {label: 'scientists', icon: 'pi pi-fw pi-sun', routerLink: ['/admin/scientists']},
+                    {label: 'users', icon: 'pi pi-fw pi-users', routerLink: ['/admin/users']},
+                    {label: 'organizations', icon: 'pi pi-fw pi-building', routerLink: ['/admin/organizations']}
                 ]
             }
         ];

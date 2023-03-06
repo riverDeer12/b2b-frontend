@@ -10,6 +10,18 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {RippleModule} from 'primeng/ripple';
 import {RouterModule} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+
+/**
+ * Translations loader.
+ *
+ * @param http client for loading translations.
+ */
+export function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, './assets/i18n/layouts/admin/', '.json');
+}
 
 @NgModule({
     declarations: [
@@ -18,6 +30,14 @@ import {RouterModule} from '@angular/router';
     imports: [
         CommonModule,
         RouterModule,
+        TranslateModule.forChild({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            },
+            extend: true
+        }),
         AdminLayoutComponentsModule,
         FormsModule,
         InputTextModule,
