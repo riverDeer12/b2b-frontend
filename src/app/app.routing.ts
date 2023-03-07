@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {PublicLayoutComponent} from './layout/public/public-layout.component';
 import {AdminLayoutComponent} from './layout/admin/pages/admin-layout.component';
 import {NotfoundComponent} from './demo/components/notfound/notfound.component';
+import {AdminGuard} from './layout/admin/core/guards/admin.guard';
 
 export const AppRoutes: Routes = [
     {
@@ -12,7 +13,7 @@ export const AppRoutes: Routes = [
     {
         path: 'admin',
         component: AdminLayoutComponent,
-        // canActivate: [AdminGuard],
+        canActivate: [AdminGuard],
         loadChildren: () => import('./layout/admin/admin-layout.module').then(m => m.AdminLayoutModule)
     },
     {

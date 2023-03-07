@@ -4,6 +4,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
+import {AuthToken} from '../../core/models/auth-token';
 
 @Component({
     selector: 'app-login-admin',
@@ -52,7 +53,10 @@ export class LoginAdminComponent {
             return;
         }
 
-        this.authService.loginSuperAdmin(this.loginForm.value).subscribe((response: Object) => {
+        this.authService.loginSuperAdmin(this.loginForm.value).subscribe((response:any) => {
+
+            localStorage.setItem('token', response.token);
+
             this.router.navigateByUrl('/admin/activities').then();
         })
     }
