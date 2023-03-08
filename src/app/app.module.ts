@@ -12,14 +12,13 @@ import {PhotoService} from './demo/service/photo.service';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {MessagesModule} from 'primeng/messages';
 import {MessageService} from 'primeng/api';
-import {MessageModule} from 'primeng/message';
 import {ToastModule} from 'primeng/toast';
+import {DefaultInterceptor} from './shared/core/interceptors/default.interceptor';
 
 /**
  * Translations loader.
@@ -57,8 +56,19 @@ export function createTranslateLoader(http: HttpClient) {
         ToastModule
     ],
     providers: [
-        CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MessageService
+        CountryService,
+        CustomerService,
+        EventService,
+        IconService,
+        NodeService,
+        PhotoService,
+        ProductService,
+        MessageService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: DefaultInterceptor,
+            multi: true,
+        },
     ],
     bootstrap: [AppComponent]
 })
