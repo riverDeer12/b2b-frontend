@@ -58,7 +58,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     providers: [
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService
+        PhotoService, ProductService, MessageService
     ],
     bootstrap: [AppComponent]
 })

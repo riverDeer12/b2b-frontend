@@ -32,9 +32,6 @@ import {ToastModule} from 'primeng/toast';
         InputTextModule,
         ToastModule
     ],
-    providers: [
-        MessageService
-    ],
     exports: [
         LoginAdminComponent,
         LoginUserComponent

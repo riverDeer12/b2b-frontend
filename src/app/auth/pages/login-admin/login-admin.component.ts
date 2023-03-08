@@ -44,12 +44,15 @@ export class LoginAdminComponent {
     submit() {
 
         if (this.loginForm.invalid) {
+
             this.loginForm.markAllAsTouched();
+
             this.messageService.add({
                 severity: 'error',
                 summary: 'Validation error',
                 detail: 'Wrong data provided. Try again.'
             });
+
             return;
         }
 
@@ -58,6 +61,12 @@ export class LoginAdminComponent {
             localStorage.setItem('token', response.token);
 
             this.router.navigateByUrl('/admin/activities').then();
+
+            this.messageService.add({
+                severity: 'success',
+                summary: 'Successful Login',
+                detail: 'Welcome to the RIMAP dashboard.'
+            });
         })
     }
 }
