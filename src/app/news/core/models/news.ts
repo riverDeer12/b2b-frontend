@@ -3,6 +3,7 @@ export class News {
     title!: string;
     content!: string;
     createdAt!: Date;
+    updatedAt!: Date;
     numberOfViews!: number;
     featuredImage!: string;
 }

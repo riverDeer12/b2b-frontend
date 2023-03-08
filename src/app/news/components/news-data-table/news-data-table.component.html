@@ -1,35 +1,74 @@
 <div class="card">
-    <p-table #dt2 [value]="customers" dataKey="id"
-             [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
+    <p-table #dt [rowHover]="true"
+             styleClass="p-datatable-gridlines" [value]="data" dataKey="id"
+             [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
              [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-             [globalFilterFields]="['name','country.name','representative.name','status']" [tableStyle]="{'min-width':'75rem'}">
+             [globalFilterFields]="['title','content']"
+             [tableStyle]="{'min-width':'75rem'}"
+             responsiveLayout="scroll">
+        <ng-template pTemplate="caption">
+            <div class="flex justify-content-between flex-column sm:flex-row">
+                <button pButton label="Clear" class="p-button-outlined mb-2" icon="pi pi-filter-slash"
+                        (click)="clear(dt)"></button>
+                <span class="p-input-icon-left mb-2">
+							<i class="pi pi-search"></i>
+							<input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
+                                   placeholder="Search Keyword" class="w-full"/>
+						</span>
+            </div>
+        </ng-template>
         <ng-template pTemplate="header">
             <tr>
-                <th style="width:22%">{{ 'news-subject' | translate }}</th>
-                <th style="width:22%">{{ 'created-at' | translate }}</th>
-            </tr>
-            <tr>
-                <th>
-                    <p-columnFilter type="text" field="name"></p-columnFilter>
+                <th pSortableColumn="title" style="width:22%">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'title' | translate }}
+                        <p-sortIcon field="title"></p-sortIcon>
+                        <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
+                    </div>
                 </th>
-                <th>
-                    <p-columnFilter type="text" field="name"></p-columnFilter>
+                <th pSortableColumn="content" style="width:22%">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'content' | translate }}
+                        <p-sortIcon field="title"></p-sortIcon>
+                        <p-columnFilter type="text" field="content" display="menu" class="ml-auto"></p-columnFilter>
+                    </div>
+                </th>
+                <th pSortableColumn="numberOfViews" style="width:22%">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'number-of-views' | translate }}
+                        <p-sortIcon field="numberOfViews"></p-sortIcon>
+                        <p-columnFilter type="number" field="numberOfViews" display="menu"
+                                        class="ml-auto"></p-columnFilter>
+                    </div>
+                </th>
+                <th pSortableColumn="updatedAt" style="width:22%">
+                    <div class="flex justify-content-between align-items-center">
+                        {{ 'updated-at' | translate }}
+                        <p-sortIcon field="updatedAt"></p-sortIcon>
+                        <p-columnFilter type="date" field="updatedAt" display="menu" class="ml-auto"></p-columnFilter>
+                    </div>
                 </th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-customer>
+        <ng-template pTemplate="body" let-news>
             <tr>
                 <td>
-                    {{customer.name}}
+                    {{news.title}}
                 </td>
                 <td>
-                    {{customer.name}}
+                    {{news.content.substring(0, 100)}}...
+                </td>
+                <td>
+                    {{news.numberOfViews}}
+                </td>
+                <td>
+                    {{news.updatedAt}}
                 </td>
             </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
             <tr>
-                <td colspan="5">No customers found.</td>
+                <td colspan="5">No news found.</td>
             </tr>
         </ng-template>
     </p-table>

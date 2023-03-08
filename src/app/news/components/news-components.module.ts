@@ -6,6 +6,8 @@ import {TableModule} from 'primeng/table';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
 
 /**
  * Translation resources loader.
@@ -33,7 +35,9 @@ export function createTranslateLoader(http: HttpClient) {
                     deps: [HttpClient]
                 }
             }
-        )
+        ),
+        InputTextModule,
+        ButtonModule
     ],
     exports: [
         NewsFormComponent,

@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {News} from '../../core/models/news';
 import {Table} from 'primeng/table';
-import {CustomerService} from '../../../demo/service/customer.service';
-import {Customer, Representative} from '../../../demo/api/customer';
 
 @Component({
   selector: 'app-news-data-table',
@@ -9,50 +8,30 @@ import {Customer, Representative} from '../../../demo/api/customer';
   styleUrls: ['./news-data-table.component.scss']
 })
 export class NewsDataTableComponent {
-    customers!: Customer[];
 
-    representatives!: Representative[];
+    @Input() data!: News[];
 
-    statuses!: any[];
+    @ViewChild('filter') filter!: ElementRef;
 
-    loading: boolean = true;
-
-    activityValues: number[] = [0, 100];
-
-    constructor(private customerService: CustomerService) { }
+    constructor() { }
 
     ngOnInit() {
-        this.customerService.getCustomersLarge().then(customers => {
-            this.customers = customers;
-            this.loading = false;
 
-            this.customers.forEach(customer => customer.date = new Date().toUTCString());
-        });
+    }
 
-        this.representatives = [
-            {name: "Amy Elsner", image: 'amyelsner.png'},
-            {name: "Anna Fali", image: 'annafali.png'},
-            {name: "Asiya Javayant", image: 'asiyajavayant.png'},
-            {name: "Bernardo Dominic", image: 'bernardodominic.png'},
-            {name: "Elwin Sharvill", image: 'elwinsharvill.png'},
-            {name: "Ioni Bowcher", image: 'ionibowcher.png'},
-            {name: "Ivan Magalhaes",image: 'ivanmagalhaes.png'},
-            {name: "Onyama Limba", image: 'onyamalimba.png'},
-            {name: "Stephen Shaw", image: 'stephenshaw.png'},
-            {name: "Xuxue Feng", image: 'xuxuefeng.png'}
-        ];
-
-        this.statuses = [
-            {label: 'Unqualified', value: 'unqualified'},
-            {label: 'Qualified', value: 'qualified'},
-            {label: 'New', value: 'new'},
-            {label: 'Negotiation', value: 'negotiation'},
-            {label: 'Renewal', value: 'renewal'},
-            {label: 'Proposal', value: 'proposal'}
-        ]
+    /**
+     * External method for handling
+     * global filter across data.
+     *
+     * @param table
+     * @param event
+     */
+    onGlobalFilter(table: Table, event: Event) {
+        table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
     }
 
     clear(table: Table) {
         table.clear();
+        this.filter.nativeElement.value = '';
     }
 }
