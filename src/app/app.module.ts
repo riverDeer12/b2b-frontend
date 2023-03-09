@@ -46,7 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
             },
-            extend: true
+            isolate: true
         }),
         RouterModule.forRoot(AppRoutes, {
             scrollPositionRestoration: 'enabled',

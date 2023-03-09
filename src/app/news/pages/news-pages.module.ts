@@ -32,7 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
             },
-            extend: true
+            isolate: true
         })
     ],
     exports: [

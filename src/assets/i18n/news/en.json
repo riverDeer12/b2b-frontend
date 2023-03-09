@@ -1,5 +1,19 @@
 {
     "news": "News",
-    "news-subject": "News header",
-    "created-at": "Created At"
+    "news-item": "news",
+    "title": "Title",
+    "content": "Content",
+    "created-at": "Created date",
+    "updated-at": "Last Change",
+    "number-of-views": "Number of views",
+    "keyword": "Keyword",
+    "to": "to",
+    "from": "from",
+    "items": "news",
+    "pages": "pages",
+    "no-news-found": "There are no news data found.",
+    "confirm-delete-action": "Are you sure you want to perform delete action?",
+    "confirm-delete-message": "When you confirm deleting action, selected news will be deleted.",
+    "yes": "Yes",
+    "no": "No"
 }

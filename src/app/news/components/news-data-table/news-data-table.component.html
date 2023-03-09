@@ -1,23 +1,28 @@
 <p-table #dt [rowHover]="true"
          styleClass="p-datatable-gridlines" [value]="data" dataKey="id"
          [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
-         [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+         [paginator]="true"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'news-item' | translate }} {{'from' | translate }}
+         {totalRecords} {{'items' | translate }}"
          [globalFilterFields]="['title','content']"
          [tableStyle]="{'min-width':'75rem'}"
          responsiveLayout="scroll">
     <ng-template pTemplate="caption">
-        <div class="flex justify-content-between flex-column sm:flex-row">
-            <button pButton label="Clear" class="p-button-outlined mb-2" icon="pi pi-filter-slash"
-                    (click)="clear(dt)"></button>
-            <span class="p-input-icon-left mb-2">
+        <div class="flex-column sm:flex-row text-left">
+                        <span class="p-input-icon-left mr-2">
 							<i class="pi pi-search"></i>
 							<input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
-                                   placeholder="Search Keyword" class="w-full"/>
+                                   placeholder="{{'keyword' | translate }}" class="w-full"/>
 						</span>
+            <button (click)="clear(dt)" class="p-button" pButton pRipple type="button"
+                    icon="pi pi-filter-slash"></button>
+
         </div>
     </ng-template>
     <ng-template pTemplate="header">
         <tr>
+            <th></th>
             <th pSortableColumn="title" style="width:22%">
                 <div class="flex justify-content-between align-items-center">
                     {{ 'title' | translate }}
@@ -51,6 +56,11 @@
     </ng-template>
     <ng-template pTemplate="body" let-news>
         <tr>
+            <td class="d-flex text-center">
+                <button (click)="confirmDelete()" class="p-button-danger mr-3" pButton pRipple type="button"
+                        icon="pi pi-trash"></button>
+                <button (click)="goToEditPage(news.id)" pButton pRipple type="button" icon="pi pi-pencil"></button>
+            </td>
             <td>
                 {{news.title}}
             </td>
@@ -67,7 +77,15 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="5">No news found.</td>
+            <td colspan="5">{{'no-news-found' | translate }}</td>
         </tr>
     </ng-template>
 </p-table>
+
+<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
+                 key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
+                 message="{{'confirm-delete-message' | translate }}"
+                 acceptButtonStyleClass="p-button-text"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>

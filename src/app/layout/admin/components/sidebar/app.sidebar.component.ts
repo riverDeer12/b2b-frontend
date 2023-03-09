@@ -11,8 +11,7 @@ export class AppSidebarComponent {
 
     }
 
-    ngOnInit(){
-        this.translateService.use('hr');
+    ngOnInit() {
     }
 }
 

@@ -5,6 +5,7 @@ import {Subscription} from 'rxjs';
 import {filter} from 'rxjs/operators';
 import {MenuService} from '../../../core/services/app.menu.service';
 import {LayoutService} from '../../../core/services/app.layout.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: '[app-menuitem]',
@@ -70,7 +71,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     key: string = '';
 
     constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router,
-                private menuService: MenuService) {
+                private menuService: MenuService, private translateService: TranslateService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(value => {
             Promise.resolve(null).then(() => {
                 if (value.routeEvent) {
@@ -96,6 +97,8 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+
+        this.translateService.use('hr');
 
         this.key = this.parentKey ? this.parentKey + '-' + this.index : String(this.index);
 

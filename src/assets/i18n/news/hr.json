@@ -1,5 +1,18 @@
 {
     "news": "Objave",
-    "news-subject": "Naslov objave",
-    "created-at": "Datum kreiranja"
+    "news-item": "objave",
+    "title": "Naslov objave",
+    "content": "Sadržaj",
+    "created-at": "Datum kreiranja",
+    "updated-at": "Datum zadnje izmjene",
+    "number-of-views": "Broj pregleda",
+    "keyword": "Ključna riječ",
+    "to": "do",
+    "from": "od",
+    "items": "objava",
+    "pages": "stranica",
+    "confirm-delete-action": "Jeste li sigurni?",
+    "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabranu objavu.",
+    "yes": "Da",
+    "no": "Ne"
 }
