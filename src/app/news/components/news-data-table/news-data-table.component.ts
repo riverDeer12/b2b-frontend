@@ -52,9 +52,14 @@ export class NewsDataTableComponent {
      *
      * @param id id of selected news item.
      */
-    goToEditPage(id: string): void {
-        this.router.navigateByUrl('/admin/news/edit/' + id).then();
-    }
+    goToEditPage = (id: string) => this.router.navigateByUrl('/admin/news/edit/' + id).then();
+
+    /**
+     * Redirect user to news
+     * create page.
+     *
+     */
+    goToCreatePage = () => this.router.navigateByUrl('/admin/news/create').then();
 
     /**
      * Trigger popup to

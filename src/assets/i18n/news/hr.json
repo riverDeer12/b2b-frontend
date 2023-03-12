@@ -14,5 +14,6 @@
     "confirm-delete-action": "Jeste li sigurni?",
     "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabranu objavu.",
     "yes": "Da",
-    "no": "Ne"
+    "no": "Ne",
+    "create-news": "Kreiranje nove objave"
 }
