@@ -18,7 +18,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
-import {DefaultInterceptor} from './shared/core/interceptors/default.interceptor';
+import {DefaultInterceptor} from './shared/interceptors/default.interceptor';
 
 /**
  * Translations loader.

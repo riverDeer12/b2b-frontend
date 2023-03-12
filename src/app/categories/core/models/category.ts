@@ -1,5 +1,6 @@
 export class Category {
-  id!: string;
-  name!: string;
-  subcategories!: Category[];
+    id!: string;
+    name!: string;
+    description!: string;
+    subcategories!: Category[];
 }

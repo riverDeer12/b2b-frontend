@@ -1,5 +1,5 @@
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {AuthService} from '../../../auth/core/services/auth.service';
+import {AuthService} from '../../auth/core/services/auth.service';
 import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {Observable, tap} from 'rxjs';
