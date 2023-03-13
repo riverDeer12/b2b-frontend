@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { LayoutService } from "../../core/services/app.layout.service";
 
 @Component({
-    selector: 'app-footer',
+    selector: 'admin-footer',
     templateUrl: './app.footer.component.html'
 })
 export class AppFooterComponent {

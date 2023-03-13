@@ -2,22 +2,23 @@
     <div class="grid">
         <div class="col-12 md:col-6">
             <div class="card p-fluid">
-                <div class="field">
-                    <label for="name">Name</label>
-                    <input pInputText type="text" id="name"/>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="name" [formControlName]="'name'"/>
+                        <label for="name">{{ 'name' | translate }}</label>
+                    </span>
                 </div>
-                <div class="field">
-                    <label for="description">Description</label>
-                    <input pInputText type="text" id="description"/>
-                </div>
-                <div class="field">
-                    <label for="subcategories">Subcategories</label>
-                    <input pInputText type="text" id="subcategories"/>
-                </div>
-                <div class="field">
-                    <button pButton type="submit"></button>
+                <div class="field col-md-12 mt-5">
+                    <span class="p-float-label">
+                        <categories-selector
+                            [formName]="form"
+                            controlName="subcategories"
+                            label="subcategories">
+                        </categories-selector>
+                    </span>
                 </div>
             </div>
+            <button type="submit" pButton pRipple label="{{ 'save' | translate }}"></button>
         </div>
     </div>
 </form>

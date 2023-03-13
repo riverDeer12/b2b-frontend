@@ -4,7 +4,7 @@ import {ActivatedRoute, Route} from '@angular/router';
 import {News} from '../../core/models/news';
 
 @Component({
-    selector: 'app-news-home',
+    selector: 'news-home',
     templateUrl: './news-home.component.html',
     styleUrls: ['./news-home.component.css']
 })
@@ -16,7 +16,6 @@ export class NewsHomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.translateService.use('hr')
     }
 
     private listenToResolver() {
@@ -24,8 +23,6 @@ export class NewsHomeComponent implements OnInit {
             this.news = response['news'].map((x: News) =>
                 Object.assign(new News(), x)
             );
-
-            console.log(this.news.length);
         });
     }
 }

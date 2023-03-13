@@ -4,7 +4,7 @@ import {LayoutService} from '../../core/services/app.layout.service';
 import {AuthService} from '../../../../auth/core/services/auth.service';
 
 @Component({
-    selector: 'app-topbar',
+    selector: 'admin-topbar',
     templateUrl: './app.topbar.component.html'
 })
 export class AppTopBarComponent {

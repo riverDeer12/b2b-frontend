@@ -5,7 +5,7 @@ import {ConfirmationService, MessageService} from 'primeng/api';
 import {Router} from '@angular/router';
 
 @Component({
-    selector: 'app-news-data-table',
+    selector: 'news-data-table',
     templateUrl: './news-data-table.component.html',
     styleUrls: ['./news-data-table.component.scss']
 })

@@ -31,6 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
         CommonModule,
         RouterModule,
         TranslateModule.forChild({
+            defaultLanguage: 'hr',
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),

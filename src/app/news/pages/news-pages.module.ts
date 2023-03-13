@@ -27,6 +27,7 @@ export function createTranslateLoader(http: HttpClient) {
         CommonModule,
         NewsComponentsModule,
         TranslateModule.forChild({
+            defaultLanguage: 'hr',
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),

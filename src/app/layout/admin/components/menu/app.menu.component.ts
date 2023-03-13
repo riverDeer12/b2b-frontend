@@ -2,10 +2,9 @@ import {OnInit} from '@angular/core';
 import {Component} from '@angular/core';
 import {LayoutService} from '../../core/services/app.layout.service';
 import {MenuItem} from 'primeng/api';
-import {TranslateService} from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-menu',
+    selector: 'admin-menu',
     templateUrl: './app.menu.component.html'
 })
 export class AppMenuComponent implements OnInit {

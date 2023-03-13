@@ -10,7 +10,6 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
 import {ConfirmationService} from 'primeng/api';
-import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 /**
@@ -32,6 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
         CommonModule,
         TableModule,
         TranslateModule.forChild({
+                defaultLanguage: 'hr',
                 loader: {
                     provide: TranslateLoader,
                     useFactory: (createTranslateLoader),

@@ -1,13 +1,13 @@
 import {Component, Input} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Category} from "../../core/models/category";
-import {FormType} from "../../../shared/enums/form-type";
-import {CategoryService} from "../../core/services/category.service";
-import {Router} from "@angular/router";
-import {MessageService} from "primeng/api";
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Category} from '../../core/models/category';
+import {FormType} from '../../../shared/enums/form-type';
+import {CategoryService} from '../../core/services/category.service';
+import {Router} from '@angular/router';
+import {MessageService} from 'primeng/api';
 
 @Component({
-    selector: 'app-category-form',
+    selector: 'category-form',
     templateUrl: './category-form.component.html',
     styleUrls: ['./category-form.component.scss']
 })
@@ -23,6 +23,10 @@ export class CategoryFormComponent {
                 private categoryService: CategoryService) {
     }
 
+    ngOnInit(){
+        this.initFormGroup();
+    }
+
     initFormGroup = () => this.formType === FormType.Create ?
         this.initCreateForm() : this.initEditForm();
 
@@ -30,7 +34,6 @@ export class CategoryFormComponent {
     private initCreateForm() {
         this.form = this.fb.group({
             name: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
             subcategories: new FormControl('', Validators.required),
         })
     }
@@ -38,7 +41,6 @@ export class CategoryFormComponent {
     private initEditForm() {
         this.form = this.fb.group({
             name: new FormControl(this.category.name, Validators.required),
-            description: new FormControl(this.category.description, Validators.required),
             subcategories: new FormControl(this.category.subcategories, Validators.required),
         })
     }
@@ -58,6 +60,10 @@ export class CategoryFormComponent {
     }
 
     private createCategory() {
+
+        console.log(this.form.value);
+        return;
+
         this.categoryService.createCategory(this.form.value).subscribe((response: any) => {
             this.messageService.add({
                 severity: 'success',

@@ -15,7 +15,10 @@ export const CategoriesRoutes: Routes = [
     },
     {
         path: 'create',
-        component: CategoryCreateComponent
+        component: CategoryCreateComponent,
+        resolve: {
+            categories: CategoriesResolver
+        }
     },
     {
         path: 'edit/{id}',
