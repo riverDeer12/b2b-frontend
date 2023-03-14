@@ -1,7 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {News} from '../../core/models/news';
 import {Table} from 'primeng/table';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import {ConfirmationService} from 'primeng/api';
 import {Router} from '@angular/router';
 
 @Component({
@@ -16,7 +16,6 @@ export class NewsDataTableComponent {
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
-                private messageService: MessageService,
                 private router: Router) {
     }
 

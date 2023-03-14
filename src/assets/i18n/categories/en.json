@@ -8,5 +8,8 @@
     "create-category": "Create new category",
     "subcategories": "Subcategories",
     "choose-your-option": "Choose your option",
-    "save": "Save"
+    "save": "Save",
+    "correct-validation-errors": "Please, check values and try again.",
+    "category-successfully-created": "Category is successfully created.",
+    "category-successfully-updated": "Category is successfully updated."
 }

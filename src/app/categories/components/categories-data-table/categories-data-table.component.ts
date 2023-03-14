@@ -1,7 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {Category} from '../../core/models/category';
 import {Router} from '@angular/router';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';
 
 @Component({
@@ -15,7 +15,6 @@ export class CategoriesDataTableComponent {
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
-                private messageService: MessageService,
                 private router: Router) {
     }
 

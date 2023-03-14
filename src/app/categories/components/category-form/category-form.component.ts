@@ -4,7 +4,8 @@ import {Category} from '../../core/models/category';
 import {FormType} from '../../../shared/enums/form-type';
 import {CategoryService} from '../../core/services/category.service';
 import {Router} from '@angular/router';
-import {MessageService} from 'primeng/api';
+import {NotificationService} from '../../../shared/services/notification.service';
+import {NotificationType} from '../../../shared/enums/notification-type';
 
 @Component({
     selector: 'category-form',
@@ -19,39 +20,54 @@ export class CategoryFormComponent {
 
     constructor(private fb: FormBuilder,
                 private router: Router,
-                private messageService: MessageService,
+                private notificationService: NotificationService,
                 private categoryService: CategoryService) {
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.initFormGroup();
     }
 
+    /**
+     * Switch function depending on
+     * form action type from input decorator.
+     */
     initFormGroup = () => this.formType === FormType.Create ?
         this.initCreateForm() : this.initEditForm();
 
 
-    private initCreateForm() {
+    /**
+     * Initializes form if
+     * create form action is triggered.
+     */
+    private initCreateForm(): void {
         this.form = this.fb.group({
             name: new FormControl('', Validators.required),
             subcategories: new FormControl('', Validators.required),
         })
     }
 
-    private initEditForm() {
+    /**
+     * Initializes form if
+     * edit form action is triggered.
+     */
+    private initEditForm(): void {
         this.form = this.fb.group({
             name: new FormControl(this.category.name, Validators.required),
             subcategories: new FormControl(this.category.subcategories, Validators.required),
         })
     }
 
+    /**
+     * Method that is triggered
+     * by clicking submit button.
+     */
     submit(): void {
         if (this.form.invalid) {
-            this.messageService.add({
-                severity: 'error',
-                summary: 'Validation error',
-                detail: 'Check values and try again.'
-            });
+            this.notificationService
+                .showNotification(NotificationType.Error,
+                    'correct-validation-errors');
+            return;
         }
 
         this.formType === FormType.Create ?
@@ -59,27 +75,29 @@ export class CategoryFormComponent {
             this.editCategory();
     }
 
-    private createCategory() {
-
-        console.log(this.form.value);
-        return;
-
-        this.categoryService.createCategory(this.form.value).subscribe((response: any) => {
-            this.messageService.add({
-                severity: 'success',
-                summary: 'Success',
-                detail: 'Category is created successfully.'
-            });
+    /**
+     * Connecting to category
+     * service and sending form data to
+     * create new category.
+     */
+    private createCategory(): void {
+        this.categoryService.createCategory(this.form.value).subscribe(() => {
+            this.notificationService
+                .showNotification(NotificationType.Success,
+                    'category-successfully-created');
         })
     }
 
-    private editCategory() {
-        this.categoryService.createCategory(this.form.value).subscribe((response: any) => {
-            this.messageService.add({
-                severity: 'success',
-                summary: 'Success',
-                detail: 'Category is updated successfully.'
-            });
+    /**
+     * Connecting to category
+     * service and sending form data to
+     * updated selected category.
+     */
+    private editCategory(): void {
+        this.categoryService.createCategory(this.form.value).subscribe(() => {
+            this.notificationService
+                .showNotification(NotificationType.Success,
+                    'category-successfully-updated');
         })
     }
 }

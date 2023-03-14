@@ -1,5 +1,7 @@
 {
     "username": "Korisničko ime",
     "password": "Lozinka",
-    "login": "Prijava"
+    "login": "Prijava",
+    "correct-validation-errors": "Molimo da pregledate unesene podatke i pokušate ponovno.",
+    "welcome-to-dashboard": "Dobrodošli u RIMAP administraciju."
 }

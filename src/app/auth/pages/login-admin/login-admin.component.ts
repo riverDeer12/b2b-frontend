@@ -3,7 +3,8 @@ import {LayoutService} from 'src/app/layout/admin/core/services/app.layout.servi
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {Router} from '@angular/router';
-import {MessageService} from 'primeng/api';
+import {NotificationService} from '../../../shared/services/notification.service';
+import {NotificationType} from '../../../shared/enums/notification-type';
 
 @Component({
     selector: 'auth-login-admin',
@@ -28,7 +29,7 @@ export class LoginAdminComponent {
     constructor(public layoutService: LayoutService,
                 private fb: FormBuilder,
                 private authService: AuthService,
-                private messageService: MessageService,
+                private notificationService: NotificationService,
                 private router: Router) {
         this.setLoginForm();
     }
@@ -46,11 +47,9 @@ export class LoginAdminComponent {
 
             this.loginForm.markAllAsTouched();
 
-            this.messageService.add({
-                severity: 'error',
-                summary: 'Validation error',
-                detail: 'Wrong data provided. Try again.'
-            });
+            this.notificationService
+                .showNotification(NotificationType.Error,
+                    'correct-validation-errors');
 
             return;
         }
@@ -61,11 +60,9 @@ export class LoginAdminComponent {
 
             this.router.navigateByUrl('/admin/activities').then();
 
-            this.messageService.add({
-                severity: 'success',
-                summary: 'Successful Login',
-                detail: 'Welcome to the RIMAP dashboard.'
-            });
+            this.notificationService
+                .showNotification(NotificationType.Success,
+                    'welcome-to-dashboard');
         })
     }
 }

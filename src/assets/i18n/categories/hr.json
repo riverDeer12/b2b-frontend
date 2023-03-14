@@ -8,5 +8,8 @@
     "create-category": "Kreiranje nove kategorije",
     "subcategories": "Podkategorije",
     "choose-option": "Odaberite vrijednost",
-    "save": "Spremi"
+    "save": "Spremi",
+    "correct-validation-errors": "Molimo da pregledate unesene podatke i pokušate ponovno.",
+    "category-successfully-created": "Kategorija je uspješno kreirana.",
+    "category-successfully-updated": "Kategorija je uspješno ažurirana."
 }
