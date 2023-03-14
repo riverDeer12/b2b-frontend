@@ -19,7 +19,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {DefaultInterceptor} from './shared/interceptors/default.interceptor';
-import {ReactiveFormsModule} from '@angular/forms';
 
 /**
  * Translations loader.

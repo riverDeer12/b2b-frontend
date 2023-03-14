@@ -10,8 +10,19 @@ import {RippleModule} from 'primeng/ripple';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
-import {MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
+import {HttpClient} from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+
+/**
+ * Translation resources loader.
+ *
+ * @param http client for loading translations.
+ */
+export function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, './assets/i18n/auth/', '.json');
+}
 
 
 @NgModule({
@@ -23,6 +34,15 @@ import {ToastModule} from 'primeng/toast';
         CommonModule,
         AuthComponentsModule,
         RouterModule,
+        TranslateModule.forChild({
+            defaultLanguage: 'hr',
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            },
+            isolate: true
+        }),
         FormsModule,
         ReactiveFormsModule,
         PasswordModule,

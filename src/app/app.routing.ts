@@ -3,6 +3,7 @@ import {PublicLayoutComponent} from './layout/public/public-layout.component';
 import {AdminLayoutComponent} from './layout/admin/pages/admin-layout.component';
 import {NotfoundComponent} from './demo/components/notfound/notfound.component';
 import {AdminGuard} from './layout/admin/core/guards/admin.guard';
+import {DefaultGuard} from './shared/guards/default.guard';
 
 export const AppRoutes: Routes = [
     {
@@ -18,7 +19,8 @@ export const AppRoutes: Routes = [
     },
     {
         path: 'auth',
-        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+        canActivate: [DefaultGuard]
     },
     {
         path: 'landing',

@@ -4,10 +4,9 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
-import {AuthToken} from '../../core/models/auth-token';
 
 @Component({
-    selector: 'app-login-admin',
+    selector: 'auth-login-admin',
     templateUrl: './login-admin.component.html',
     styles: [`
         :host ::ng-deep .pi-eye,
