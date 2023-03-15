@@ -24,73 +24,47 @@ export class NotificationService {
      */
     showNotification(type: NotificationType, messageKey: string): void {
         this.translateService.get(messageKey).subscribe((message: string) => {
-            switch (type) {
-                case NotificationType.Success:
-                    this.success(message);
-                    break;
-                case NotificationType.Error:
-                    this.error(message);
-                    break;
-                case NotificationType.Warning:
-                    this.warning(message);
-                    break;
-                case NotificationType.Info:
-                    this.info(message);
-                    break;
-                default:
-                    this.success(message);
-            }
+            this.setNotificationContent(type, message);
         });
     }
 
     /**
      * Call success notification.
      *
+     * @param type notification type which corresponds to summary message key.
      * @param message success notification message.
      */
-    private success = (message: string) => {
-        this.messageService.add({
-            severity: 'info',
-            detail: message,
-            icon: 'pi-check'
+    private setNotificationContent = (type: NotificationType, message: string) => {
+        this.translateService.get(type).subscribe((summary: string) => {
+            this.messageService.add({
+                summary: summary,
+                severity: type,
+                detail: message,
+                icon: this.getIconKey(type)
+            });
         });
     };
 
     /**
-     * Call error notification.
+     * Helper method to set icon key
+     * based on notification type.
      *
-     * @param message error notification message.
+     * @param type enum value for notification type.
      */
-    private error = (message: string) => {
-        this.messageService.add({
-            severity: 'error',
-            detail: message
-        });
-    };
-
-    /**
-     * Call warning notification.
-     *
-     * @param message warning notification message.
-     */
-    private warning = (message: string) => {
-        this.messageService.add({
-            severity: 'warn',
-            detail: message
-        });
-    };
-
-    /**
-     * Call info notification.
-     *
-     * @param message info notification message.
-     */
-    private info = (message: string) => {
-        this.messageService.add({
-            severity: 'info',
-            detail: message
-        });
-    };
+    getIconKey(type: NotificationType): string {
+        switch (type) {
+            case NotificationType.Success:
+                return 'pi-check';
+            case NotificationType.Error:
+                return 'pi-times';
+            case NotificationType.Warning:
+                return 'pi-question';
+            case NotificationType.Info:
+                return 'pi-info';
+            default:
+                return 'pi-info';
+        }
+    }
 
     /**
      * Show notification message
@@ -101,7 +75,7 @@ export class NotificationService {
      */
     showApiErrorMessage(apiErrorMessages: ApiErrorMessage[]): void {
         if (!apiErrorMessages) {
-            this.error('Error occurred, but no details given!');
+            this.showNotification(NotificationType.Error, 'no-error-details');
         }
         // if apiErrorMessage is array then its the first
         // if the the response is plain object it can be in this form as well "Exception - 037"
@@ -121,7 +95,7 @@ export class NotificationService {
                 });
             }
         } else {
-            this.error(JSON.stringify(apiErrorMessages));
+            this.setNotificationContent(NotificationType.Error, JSON.stringify(apiErrorMessages));
         }
 
     }

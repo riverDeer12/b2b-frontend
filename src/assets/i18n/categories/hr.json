@@ -5,11 +5,17 @@
     "from": "od",
     "to": "do",
     "items": "kategorije",
+    "categories-list": "Pregled kategorija",
     "create-category": "Kreiranje nove kategorije",
     "subcategories": "Podkategorije",
     "choose-option": "Odaberite vrijednost",
     "save": "Spremi",
     "correct-validation-errors": "Molimo da pregledate unesene podatke i pokušate ponovno.",
     "category-successfully-created": "Kategorija je uspješno kreirana.",
-    "category-successfully-updated": "Kategorija je uspješno ažurirana."
+    "category-successfully-updated": "Kategorija je uspješno ažurirana.",
+    "success": "Uspjeh",
+    "error": "Greška",
+    "warn": "Upozorenje",
+    "info": "Obavijest",
+    "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!"
 }

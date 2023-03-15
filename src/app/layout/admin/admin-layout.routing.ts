@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router';
+import {CategoriesComponent} from '../../categories/categories.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -15,6 +16,7 @@ export const AdminLayoutRoutes: Routes = [
     },
     {
         path: 'categories',
+        component: CategoriesComponent,
         loadChildren: () => import('../../categories/categories.module').then(m => m.CategoriesModule)
     },
     {

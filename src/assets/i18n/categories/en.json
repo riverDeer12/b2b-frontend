@@ -5,11 +5,17 @@
     "from": "from",
     "to": "to",
     "items": "categories",
+    "categories-list": "Categories list",
     "create-category": "Create new category",
     "subcategories": "Subcategories",
     "choose-your-option": "Choose your option",
     "save": "Save",
     "correct-validation-errors": "Please, check values and try again.",
     "category-successfully-created": "Category is successfully created.",
-    "category-successfully-updated": "Category is successfully updated."
+    "category-successfully-updated": "Category is successfully updated.",
+    "success": "Success",
+    "error": "Error",
+    "warn": "Warning",
+    "info": "Info",
+    "no-error-details": "Error occurred, but no details given!"
 }
