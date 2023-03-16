@@ -1,1 +1,5 @@
-<p>category-edit works!</p>
+<h3>{{ 'edit-category' | translate }}</h3>
+<div class="mt-5">
+    <category-form [formType]="formType.Create" [returnUrl]="returnUrl" [category]="category"></category-form>
+</div>
+

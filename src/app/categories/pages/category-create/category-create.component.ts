@@ -7,6 +7,7 @@ import {FormType} from '../../../shared/enums/form-type';
     styleUrls: ['./category-create.component.scss']
 })
 export class CategoryCreateComponent {
+    returnUrl = "/admin/categories";
 
     public get formType(): typeof FormType {
         return FormType;

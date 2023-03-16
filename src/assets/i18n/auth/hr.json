@@ -3,5 +3,7 @@
     "password": "Lozinka",
     "login": "Prijava",
     "correct-validation-errors": "Molimo da pregledate unesene podatke i pokušate ponovno.",
+    "error": "Greška",
+    "success": "Uspjeh",
     "welcome-to-dashboard": "Dobrodošli u RIMAP administraciju."
 }

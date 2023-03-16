@@ -3,5 +3,7 @@
     "password": "Password",
     "login": "Login",
     "correct-validation-errors": "Please, check values and try again.",
+    "error": "Error",
+    "success": "Success",
     "welcome-to-dashboard": "Welcome to RIMAP dashboard."
 }

@@ -15,6 +15,7 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 export class CategoryFormComponent {
     @Input() formType!: FormType;
     @Input() category!: Category
+    @Input() returnUrl!: string;
 
     form!: FormGroup;
 
@@ -85,6 +86,8 @@ export class CategoryFormComponent {
             this.notificationService
                 .showNotification(NotificationType.Success,
                     'category-successfully-created');
+
+            this.router.navigateByUrl(this.returnUrl).then();
         })
     }
 
@@ -98,6 +101,8 @@ export class CategoryFormComponent {
             this.notificationService
                 .showNotification(NotificationType.Success,
                     'category-successfully-updated');
+
+            this.router.navigateByUrl(this.returnUrl).then();
         })
     }
 }
