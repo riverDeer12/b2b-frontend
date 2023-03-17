@@ -12,11 +12,9 @@ import {ActivatedRoute} from '@angular/router';
 export class CategoryEditComponent {
     returnUrl = "/admin/categories";
 
-    category!: Category;
+    formType!: FormType.Edit;
 
-    public get formType(): typeof FormType {
-        return FormType;
-    }
+    category!: Category;
 
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
@@ -27,7 +25,7 @@ export class CategoryEditComponent {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.category = Object.assign(new Category(), response);
+            this.category = Object.assign(new Category(), response["category"]);
         });
     }
 }

@@ -21,7 +21,7 @@ export const CategoriesRoutes: Routes = [
         }
     },
     {
-        path: 'edit/{id}',
+        path: 'edit/:id',
         component: CategoryEditComponent,
         resolve: {
             category: CategoryResolver

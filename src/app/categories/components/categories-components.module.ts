@@ -14,6 +14,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {CategoriesSelectorComponent} from './categories-selector/categories-selector.component';
+import {RouterModule} from '@angular/router';
 
 /**
  * Translation resources loader.
@@ -34,6 +35,7 @@ export function createTranslateLoader(http: HttpClient) {
         CommonModule,
         InputTextModule,
         ButtonModule,
+        RouterModule,
         ReactiveFormsModule,
         TranslateModule.forChild({
             defaultLanguage: 'hr',

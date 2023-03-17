@@ -41,7 +41,7 @@
             <td class="d-flex text-center">
                 <button (click)="confirmDelete()" class="p-button-danger mr-3" pButton pRipple type="button"
                         icon="pi pi-trash"></button>
-                <button (click)="goToEditPage(category.id)" pButton pRipple type="button" icon="pi pi-pencil"></button>
+                <button type="button" (click)="goToEditPage(category.id)" pButton pRipple  icon="pi pi-pencil"></button>
             </td>
             <td>
                 {{category.name}}
