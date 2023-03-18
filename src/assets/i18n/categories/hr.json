@@ -17,5 +17,11 @@
     "error": "Greška",
     "warn": "Upozorenje",
     "info": "Obavijest",
-    "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!"
+    "yes": "Da",
+    "no": "Ne",
+    "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
+    "edit-category": "Uređivanje kategorije",
+    "confirm-delete-action": "Jeste li sigurni da želite izbrisati kategoriju?",
+    "confirm-delete-message": "Nakon potvrde odabrana kategorija će biti izbrisana.",
+    "successfully-deleted": "Kategorija je uspješno izbrisana."
 }

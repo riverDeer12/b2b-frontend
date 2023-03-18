@@ -9,5 +9,5 @@ import {FormType} from '../../../shared/enums/form-type';
 export class CategoryCreateComponent {
     returnUrl = '/admin/categories';
 
-    formType!: FormType.Create;
+    formType = FormType.Create;
 }

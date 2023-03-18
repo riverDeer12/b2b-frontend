@@ -3,6 +3,8 @@ import {Category} from '../../core/models/category';
 import {Router} from '@angular/router';
 import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';
+import {NotificationService} from "../../../shared/services/notification.service";
+import {NotificationType} from "../../../shared/enums/notification-type";
 
 @Component({
     selector: 'categories-data-table',
@@ -15,6 +17,7 @@ export class CategoriesDataTableComponent {
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
+                private notificationService: NotificationService,
                 private router: Router) {
     }
 
@@ -66,7 +69,11 @@ export class CategoriesDataTableComponent {
      */
     confirmDelete(): void {
         this.confirmationService.confirm({
-            key: 'confirmDeleteDialog'
+            key: 'confirmDeleteDialog',
+            accept: () => {
+                this.notificationService
+                    .showNotification(NotificationType.Success, 'successfully-deleted');
+            },
         });
     }
 }

@@ -13,7 +13,7 @@ export const ActivitiesRoutes: Routes = [
         component: ActivityCreateComponent
     },
     {
-        path: 'edit/{id}',
+        path: 'edit/:id',
         component: ActivityEditComponent
     }
 ]

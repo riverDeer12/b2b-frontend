@@ -12,7 +12,7 @@ import {ActivatedRoute} from '@angular/router';
 export class CategoryEditComponent {
     returnUrl = "/admin/categories";
 
-    formType!: FormType.Edit;
+    formType = FormType.Edit;
 
     category!: Category;
 

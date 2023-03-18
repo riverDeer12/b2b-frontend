@@ -18,7 +18,7 @@ export const NewsRoutes: Routes = [
         component: NewsCreateComponent
     },
     {
-        path: 'edit/{id}',
+        path: 'edit/:id',
         component: NewsEditComponent,
         resolve: {
             news: NewsResolver
