@@ -11,6 +11,8 @@ import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
 import {ConfirmationService} from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {EditorModule} from "primeng/editor";
+import {ReactiveFormsModule} from "@angular/forms";
 
 /**
  * Translation resources loader.
@@ -43,7 +45,9 @@ export function createTranslateLoader(http: HttpClient) {
         InputTextModule,
         ButtonModule,
         RippleModule,
-        ConfirmDialogModule
+        ConfirmDialogModule,
+        EditorModule,
+        ReactiveFormsModule
     ],
     providers: [
         ConfirmationService

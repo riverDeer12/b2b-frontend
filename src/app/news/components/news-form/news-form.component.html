@@ -1,18 +1,21 @@
-<div class="grid">
-    <div class="col-12 md:col-6">
-        <div class="p-fluid">
-            <div class="field">
-                <label for="name1">Name</label>
-                <input pInputText id="name1" type="text"/>
-            </div>
-            <div class="field">
-                <label for="email1">Email</label>
-                <input pInputText id="email1" type="text"/>
-            </div>
-            <div class="field">
-                <label for="age1">Age</label>
-                <input pInputText id="age1" type="text"/>
+<form [formGroup]="form" (submit)="submit()">
+    <div class="grid">
+        <div class="col-12 md:col-6">
+            <div class="p-fluid">
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="title" formControlName="title"/>
+                        <label for="title">{{ 'title' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <p-editor id="content" formControlName="content" [style]="{'height':'320px'}"></p-editor>
+                        <label for="content">{{ 'title' | translate }}</label>
+                    </span>
+                </div>
+                <button class="mt-3" type="submit" pButton pRipple label="{{ 'save' | translate }}"></button>
             </div>
         </div>
     </div>
-</div>
+</form>
