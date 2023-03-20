@@ -3,8 +3,10 @@ import {Category} from '../../core/models/category';
 import {Router} from '@angular/router';
 import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';
-import {NotificationService} from "../../../shared/services/notification.service";
-import {NotificationType} from "../../../shared/enums/notification-type";
+import {NotificationService} from '../../../shared/services/notification.service';
+import {NotificationType} from '../../../shared/enums/notification-type';
+import {CategoryService} from '../../core/services/category.service';
+import {error} from '@angular/compiler-cli/src/transformers/util';
 
 @Component({
     selector: 'categories-data-table',
@@ -17,6 +19,7 @@ export class CategoriesDataTableComponent {
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
+                private categoryService: CategoryService,
                 private notificationService: NotificationService,
                 private router: Router) {
     }
@@ -67,12 +70,19 @@ export class CategoriesDataTableComponent {
      * confirm deleting selected
      * news item from data table.
      */
-    confirmDelete(): void {
+    confirmDelete(categoryId: string): void {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.notificationService
-                    .showNotification(NotificationType.Success, 'successfully-deleted');
+                this.categoryService.deleteCategory(categoryId).subscribe((response: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'successfully-deleted');
+                        this.data = this.data.filter((x => x.id !== categoryId));
+                    },
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'error-deleting');
+                    })
             },
         });
     }

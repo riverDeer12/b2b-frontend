@@ -23,5 +23,7 @@
     "edit-category": "Uređivanje kategorije",
     "confirm-delete-action": "Jeste li sigurni da želite izbrisati kategoriju?",
     "confirm-delete-message": "Nakon potvrde odabrana kategorija će biti izbrisana.",
-    "successfully-deleted": "Kategorija je uspješno izbrisana."
+    "successfully-deleted": "Kategorija je uspješno izbrisana.",
+    "no-categories-found": "Nema pronađenih kategorija",
+    "error-deleting": "Greška prilikom brisanja kategorije."
 }

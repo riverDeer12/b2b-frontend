@@ -13,6 +13,7 @@ import {RouterModule} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {AppConfigModule} from '../components/config/config.module';
 
 /**
  * Translations loader.
@@ -45,7 +46,8 @@ export function createTranslateLoader(http: HttpClient) {
         BadgeModule,
         RadioButtonModule,
         InputSwitchModule,
-        RippleModule
+        RippleModule,
+        AppConfigModule
     ],
     exports: [
         AdminLayoutComponent
