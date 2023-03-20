@@ -5,5 +5,10 @@
     "correct-validation-errors": "Please, check values and try again.",
     "error": "Error",
     "success": "Success",
-    "welcome-to-dashboard": "Welcome to RIMAP dashboard."
+    "welcome-to-dashboard": "Welcome to RIMAP dashboard.",
+    "access-denied": "Access Denied",
+    "you-dont-have-permissions": "You do not have the necessary permissions. Please contact administrator.",
+    "error-occurred": "Error Occurred",
+    "resource-not-available": "Requested resource is not available.",
+    "back-to-home-page": "Back to Home Page"
 }

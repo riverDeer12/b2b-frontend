@@ -5,11 +5,9 @@
             <img
                 src="assets/layout/images/{{layoutService.config.colorScheme ===
                 'light' ? 'rimap-logo-plavi' : 'rimap-logo-bijeli'}}.svg"
-                alt="Sakai logo" class="mb-5 w-20rem flex-shrink-0">
-            <div
-                style="border-radius:56px; padding:0.3rem;">
-                <div class="w-full surface-card py-7 px-5 sm:px-8" style="border-radius:53px">
-
+                alt="Sakai logo" class="mb-5 w-18rem flex-shrink-0">
+            <div>
+                <div class="w-full surface-card py-7 px-5 sm:px-8">
                     <div class="field col-md-12">
                         <span class="p-float-label">
                             <input class="w-full p-3 md:w-30rem" pInputText type="text" id="username"
@@ -18,12 +16,12 @@
                         </span>
                     </div>
                     <div class="field col-md-12 mt-5">
-                            <span class="p-float-label">
-                                <p-password inputStyleClass="w-full p-3 md:w-30rem" id="password"
-                                            [formControlName]="'password'" [feedback]="false"
-                                            [toggleMask]="true"></p-password>
-                                <label for="password">{{'password' | translate }}</label>
-                            </span>
+                        <span class="p-float-label">
+                            <p-password inputStyleClass="w-full p-3 md:w-30rem" id="password"
+                                        [formControlName]="'password'" [feedback]="false"
+                                        [toggleMask]="true"></p-password>
+                            <label for="password">{{'password' | translate }}</label>
+                        </span>
                     </div>
                     <button type="submit" pButton pRipple label="{{'login' | translate }}"
                             class="w-full p-3 text-xl mt-3"></button>

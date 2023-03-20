@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="grid">
-        <div class="col-12 md:col-6">
+        <div class="col-12 md:col-8">
             <div class="p-fluid">
                 <div class="field field col-md-12">
                     <span class="p-float-label">
@@ -9,9 +9,9 @@
                     </span>
                 </div>
                 <div class="field field col-md-12">
+                    <label for="content">{{ 'content' | translate }}</label>
                     <span class="p-float-label">
-                        <p-editor id="content" formControlName="content" [style]="{'height':'320px'}"></p-editor>
-                        <label for="content">{{ 'title' | translate }}</label>
+                        <p-editor id="content" formControlName="content"></p-editor>
                     </span>
                 </div>
                 <button class="mt-3" type="submit" pButton pRipple label="{{ 'save' | translate }}"></button>

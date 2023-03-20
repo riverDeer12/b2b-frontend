@@ -5,5 +5,10 @@
     "correct-validation-errors": "Molimo da pregledate unesene podatke i pokušate ponovno.",
     "error": "Greška",
     "success": "Uspjeh",
-    "welcome-to-dashboard": "Dobrodošli u RIMAP administraciju."
+    "welcome-to-dashboard": "Dobrodošli u RIMAP administraciju.",
+    "access-denied": "Zabranjen pristup",
+    "you-dont-have-permissions": "Nemate pravo na pristup sadržaju. Molimo kontaktirajte administratora.",
+    "error-occurred": "Dogodila se pogreška.",
+    "resource-not-available": "Traženi sadržaj nije dostupan.",
+    "back-to-home-page": "Povratak na naslovnu stranicu"
 }

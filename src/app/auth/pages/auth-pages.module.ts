@@ -14,6 +14,8 @@ import {ToastModule} from 'primeng/toast';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {ForbiddenComponent} from './forbidden/forbidden.component';
+import {ErrorComponent} from './error/error.component';
 
 /**
  * Translation resources loader.
@@ -24,11 +26,12 @@ export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/auth/', '.json');
 }
 
-
 @NgModule({
     declarations: [
         LoginAdminComponent,
-        LoginUserComponent
+        LoginUserComponent,
+        ForbiddenComponent,
+        ErrorComponent
     ],
     imports: [
         CommonModule,
@@ -54,7 +57,9 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     exports: [
         LoginAdminComponent,
-        LoginUserComponent
+        LoginUserComponent,
+        ForbiddenComponent,
+        ErrorComponent
     ]
 })
 export class AuthPagesModule {

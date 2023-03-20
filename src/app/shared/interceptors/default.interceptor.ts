@@ -6,7 +6,8 @@ import {Observable, tap} from 'rxjs';
 
 @Injectable()
 export class DefaultInterceptor implements HttpInterceptor {
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService, private router: Router) {
+    }
 
     intercept(
         request: HttpRequest<unknown>,
@@ -22,12 +23,17 @@ export class DefaultInterceptor implements HttpInterceptor {
 
             return next.handle(clonedRequest).pipe(
                 tap(
-                    (success) => {},
+                    (success) => {
+                    },
                     (error) => {
                         if (error.status === 401) {
                             const logoutUrl = this.authService.getLogoutUrl();
                             localStorage.removeItem('token');
                             this.router.navigateByUrl(logoutUrl).then();
+                        } else if (error.status === 403) {
+                            this.router.navigateByUrl('forbidden').then();
+                        } else {
+                            this.router.navigateByUrl('error').then();
                         }
                     }
                 )
