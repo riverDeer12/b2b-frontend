@@ -11,17 +11,28 @@
          [tableStyle]="{'min-width':'75rem'}"
          responsiveLayout="scroll">
     <ng-template pTemplate="caption">
-        <div class="flex-column sm:flex-row text-left">
-                        <span class="p-input-icon-left mr-2">
-							<i class="pi pi-search"></i>
-							<input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
-                                   placeholder="{{'keyword' | translate }}" class="w-full"/>
-						</span>
-            <button (click)="clear(dt)" class="p-button" pButton pRipple type="button"
-                    icon="pi pi-filter-slash"></button>
-            <button (click)="goToCreatePage()" class="p-button" pButton pRipple type="button"
-                    icon="pi pi-plus"></button>
-
+        <div class="flex justify-content-between flex-column sm:flex-row">
+            <div class="flex">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+                <button
+                    (click)="clear(dt)"
+                    label="{{'clear'| translate }}"
+                    icon="pi pi-times"
+                    iconPos="right"
+                    pButton pRipple
+                    type="button">
+                </button>
+            </div>
+            <button (click)="goToCreatePage()"
+                    icon="pi pi-plus"
+                    iconPos="right"
+                    label="{{'new-category'| translate }}"
+                    pButton pRipple
+                    type="button"></button>
         </div>
     </ng-template>
     <ng-template pTemplate="header">

@@ -25,5 +25,7 @@
     "confirm-delete-message": "When you confirm deleting action, selected category will be deleted.",
     "successfully-deleted": "Category is successfully deleted.",
     "no-categories-found": "No categories found.",
-    "error-deleting": "Error deleting category."
+    "error-deleting": "Error deleting category.",
+    "new-category": "New Category",
+    "clear": "Clear"
 }

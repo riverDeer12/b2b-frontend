@@ -25,5 +25,7 @@
     "confirm-delete-message": "Nakon potvrde odabrana kategorija će biti izbrisana.",
     "successfully-deleted": "Kategorija je uspješno izbrisana.",
     "no-categories-found": "Nema pronađenih kategorija",
-    "error-deleting": "Greška prilikom brisanja kategorije."
+    "error-deleting": "Greška prilikom brisanja kategorije.",
+    "new-category": "Nova kategorija",
+    "clear": "Obriši"
 }

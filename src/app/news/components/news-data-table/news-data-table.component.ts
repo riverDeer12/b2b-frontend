@@ -56,7 +56,6 @@ export class NewsDataTableComponent {
     /**
      * Redirect user to news
      * create page.
-     *
      */
     goToCreatePage = () => this.router.navigateByUrl('/admin/news/create').then();
 

@@ -16,5 +16,7 @@
     "confirm-delete-message": "When you confirm deleting action, selected news will be deleted.",
     "yes": "Yes",
     "no": "No",
-    "create-news": "Creating new news"
+    "create-news": "Creating new news",
+    "clear": "Clear",
+    "new-news": "New News"
 }
