@@ -1,5 +1,11 @@
 import {Routes} from '@angular/router';
 import {CategoriesComponent} from '../../categories/categories.component';
+import {CompaniesComponent} from '../../companies/companies.component';
+import {ScientistsComponent} from '../../scientists/scientists.component';
+import {ActivitiesComponent} from '../../activities/activities.component';
+import {NewsComponent} from '../../news/news.component';
+import {OrganizationsComponent} from '../../organizations/organizations.component';
+import {UsersComponent} from '../../users/users.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -8,10 +14,12 @@ export const AdminLayoutRoutes: Routes = [
     },
     {
         path: 'activities',
+        component: ActivitiesComponent,
         loadChildren: () => import('../../activities/activities.module').then(m => m.ActivitiesModule)
     },
     {
         path: 'news',
+        component: NewsComponent,
         loadChildren: () => import('../../news/news.module').then(m => m.NewsModule)
     },
     {
@@ -21,18 +29,22 @@ export const AdminLayoutRoutes: Routes = [
     },
     {
         path: 'companies',
+        component: CompaniesComponent,
         loadChildren: () => import('../../companies/companies.module').then(m => m.CompaniesModule)
     },
     {
         path: 'scientists',
+        component: ScientistsComponent,
         loadChildren: () => import('../../scientists/scientists.module').then(m => m.ScientistsModule)
     },
     {
         path: 'organizations',
+        component: OrganizationsComponent,
         loadChildren: () => import('../../organizations/organizations.module').then(m => m.OrganizationsModule)
     },
     {
         path: 'users',
+        component: UsersComponent,
         loadChildren: () => import('../../users/users.module').then(m => m.UsersModule)
     },
 ]

@@ -5,39 +5,43 @@ import {Observable} from 'rxjs';
 import {environment} from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class CompanyService {
 
-  companiesUrl = environment.apiUrl + '/companies';
+    companiesUrl = environment.apiUrl + '/companies/';
 
-  constructor(private http: HttpClient) {
-  }
+    constructor(private http: HttpClient) {
+    }
 
-  getCompanies(): Observable<Company[]> {
-    return this.http.get<Company[]>(this.companiesUrl + '/get');
-  }
+    getCompanies(): Observable<Company[]> {
+        return this.http.get<Company[]>(this.companiesUrl + 'get');
+    }
 
-  getCompany(companyId: string) {
-    return this.http.get<Company>(this.companiesUrl + '/get/' + companyId);
-  }
+    getCompany(companyId: string) {
+        return this.http.get<Company>(this.companiesUrl + 'get/' + companyId);
+    }
 
-  createCompany(company: Company) {
-    return this.http.post(this.companiesUrl + '/create', company);
-  }
+    createCompany(company: Company) {
+        return this.http.post(this.companiesUrl + 'create', company);
+    }
 
-  editCompany(companyId: string, company: Company) {
-    return this.http.post(this.companiesUrl + '/edit/' + companyId, company);
-  }
+    editCompany(companyId: string, company: Company) {
+        return this.http.post(this.companiesUrl + 'edit/' + companyId, company);
+    }
 
-  checkCompanyUsername(username: string) {
-    return this.http.post(this.companiesUrl + '/checkUsername', {
-      username
-    });
-  }
+    checkCompanyUsername(username: string) {
+        return this.http.post(this.companiesUrl + 'checkUsername', {
+            username
+        });
+    }
 
-  flipCompanyActive(companyId: string) {
-    return this.http.post(this.companiesUrl + '/flipActive/' + companyId, null);
-  }
+    deleteCompany(companyId: string) {
+        return this.http.post(this.companiesUrl + 'delete/' + companyId, null);
+    }
+
+    flipCompanyActive(companyId: string) {
+        return this.http.post(this.companiesUrl + 'flipActive/' + companyId, null);
+    }
 }
