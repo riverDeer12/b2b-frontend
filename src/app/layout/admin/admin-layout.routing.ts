@@ -5,7 +5,7 @@ import {ScientistsComponent} from '../../scientists/scientists.component';
 import {ActivitiesComponent} from '../../activities/activities.component';
 import {NewsComponent} from '../../news/news.component';
 import {OrganizationsComponent} from '../../organizations/organizations.component';
-import {UsersComponent} from '../../users/users.component';
+import {SubscribersComponent} from '../../subscribers/subscribers.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -43,8 +43,8 @@ export const AdminLayoutRoutes: Routes = [
         loadChildren: () => import('../../organizations/organizations.module').then(m => m.OrganizationsModule)
     },
     {
-        path: 'users',
-        component: UsersComponent,
-        loadChildren: () => import('../../users/users.module').then(m => m.UsersModule)
+        path: 'subscribers',
+        component: SubscribersComponent,
+        loadChildren: () => import('../../subscribers/subscribers.module').then(m => m.SubscribersModule)
     },
 ]
