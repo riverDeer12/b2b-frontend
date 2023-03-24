@@ -30,6 +30,10 @@ export class ScientistService {
         return this.http.post(this.scientistsUrl + '/edit/' + scientistId, scientist);
     }
 
+    deleteScientist(scientistId: string){
+        return this.http.post(this.scientistsUrl + '/delete/' + scientistId, null);
+    }
+
     flipScientistActive(scientistId: string) {
         return this.http.post(this.scientistsUrl + '/flipActive/' + scientistId, null);
     }

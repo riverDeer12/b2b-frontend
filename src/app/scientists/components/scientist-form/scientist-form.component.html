@@ -1,0 +1,69 @@
+<form [formGroup]="form" (submit)="submit()">
+    <div class="grid">
+        <div class="col-12 md:col-8">
+            <div class="p-fluid">
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="title" formControlName="title"/>
+                        <label for="title">{{ 'title' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="firstname" formControlName="firstname"/>
+                        <label for="firstname">{{ 'firstname' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="lastname" formControlName="lastname"/>
+                        <label for="lastname">{{ 'lastname' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="description" formControlName="description"/>
+                        <label for="description">{{ 'description' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="email" id="email" formControlName="email"/>
+                        <label for="email">{{ 'email' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="website" formControlName="website"/>
+                        <label for="website">{{ 'website' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="employmentCollege" formControlName="employmentCollege"/>
+                        <label for="employmentCollege">{{ 'employmentCollege' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="functions" formControlName="functions"/>
+                        <label for="functions">{{ 'functions' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="projects" formControlName="projects"/>
+                        <label for="projects">{{ 'projects' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="number" id="googleScholarLink" formControlName="googleScholarLink"/>
+                        <label for="googleScholarLink">{{ 'googleScholarLink' | translate }}</label>
+                    </span>
+                </div>
+                <button class="mt-3" type="submit" pButton pRipple label="{{ 'save' | translate }}"></button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -26,5 +26,8 @@
     "no-categories-found": "No companies found.",
     "error-deleting": "Error deleting company.",
     "new-company": "New Company",
-    "clear": "Clear"
+    "clear": "Clear",
+    "address": "Address",
+    "email": "Email",
+    "number-of-views": "Number of Views"
 }

@@ -4,21 +4,21 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {Router} from '@angular/router';
 import {Table} from 'primeng/table';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {CompanyService} from '../../core/services/company.service';
-import {Company} from '../../core/models/company';
+import {Scientist} from '../../core/models/scientist';
+import {ScientistService} from '../../core/services/scientist.service';
 
 @Component({
-    selector: 'companies-data-table',
-    templateUrl: './companies-data-table.component.html',
-    styleUrls: ['./companies-data-table.component.scss']
+  selector: 'scientists-data-table',
+  templateUrl: './scientists-data-table.component.html',
+  styleUrls: ['./scientists-data-table.component.scss']
 })
-export class CompaniesDataTableComponent {
-    @Input() data: Company[] = [];
+export class ScientistsDataTableComponent {
+    @Input() data: Scientist[] = [];
 
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
-                private companyService: CompanyService,
+                private scientistService: ScientistService,
                 private notificationService: NotificationService,
                 private router: Router) {
     }
@@ -49,33 +49,34 @@ export class CompaniesDataTableComponent {
     }
 
     /**
-     * Redirect user to companies
+     * Redirect user to scientists
      * edit page.
      *
-     * @param id id of selected news item.
+     * @param id id of selected scientist item.
      */
-    goToEditPage = (id: string) => this.router.navigateByUrl('/admin/companies/edit/' + id).then();
+    goToEditPage = (id: string) => this.router.navigateByUrl('/admin/scientists/edit/' + id).then();
 
     /**
-     * Redirect user to companies
+     * Redirect user to scientists
      * create page.
-     *
      */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/companies/create').then();
+    goToCreatePage = () => this.router.navigateByUrl('/admin/scientists/create').then();
 
     /**
      * Trigger popup to
      * confirm deleting selected
-     * companies item from data table.
+     * scientists item from data table.
+     *
+     * @param scientistId id of selected scientist
      */
-    confirmDelete(categoryId: string): void {
+    confirmDelete(scientistId: string): void {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.companyService.deleteCompany(categoryId).subscribe((response: Object) => {
+                this.scientistService.deleteScientist(scientistId).subscribe((response: Object) => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
-                        this.data = this.data.filter((x => x.id !== categoryId));
+                        this.data = this.data.filter((x => x.id !== scientistId));
                     },
                     (error: Object) => {
                         this.notificationService

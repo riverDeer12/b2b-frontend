@@ -1,0 +1,107 @@
+<p-table #dt
+         [rowHover]="true"
+         [showLoader]="true"
+         [value]="data" dataKey="id"
+         [rows]="10" [showCurrentPageReport]="true"
+         [rowsPerPageOptions]="[10,25,50]"
+         [paginator]="true"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'scientist-items' | translate }} {{'from' | translate }}
+         {totalRecords} {{'items' | translate }}"
+         [globalFilterFields]="['firstname','lastname', 'email']"
+         [tableStyle]="{'min-width':'75rem'}"
+         responsiveLayout="scroll">
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between flex-column sm:flex-row">
+            <div class="flex">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+                <button
+                    (click)="clear(dt)"
+                    label="{{'clear'| translate }}"
+                    icon="pi pi-times"
+                    iconPos="right"
+                    pButton pRipple
+                    type="button">
+                </button>
+            </div>
+            <button (click)="goToCreatePage()"
+                    icon="pi pi-plus"
+                    iconPos="right"
+                    label="{{'new-scientist'| translate }}"
+                    pButton pRipple
+                    type="button"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th></th>
+            <th pSortableColumn="title" style="width:22%">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'firstname' | translate }}
+                    <p-sortIcon field="firstname"></p-sortIcon>
+                    <p-columnFilter type="text" field="firstname" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="title" style="width:22%">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'lastname' | translate }}
+                    <p-sortIcon field="lastname"></p-sortIcon>
+                    <p-columnFilter type="text" field="lastname" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="title" style="width:22%">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'email' | translate }}
+                    <p-sortIcon field="email"></p-sortIcon>
+                    <p-columnFilter type="text" field="email" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="numberOfViews" style="width:22%">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'number-of-views' | translate }}
+                    <p-sortIcon field="numberOfViews"></p-sortIcon>
+                    <p-columnFilter type="number" field="numberOfViews" display="menu"
+                                    class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-scientist>
+        <tr>
+            <td class="d-flex text-center">
+                <button (click)="confirmDelete(scientist.id)" class="p-button-danger mr-3" pButton pRipple type="button"
+                        icon="pi pi-trash"></button>
+                <button (click)="goToEditPage(scientist.id)" pButton pRipple type="button" icon="pi pi-pencil"></button>
+            </td>
+            <td>
+                {{scientist.firstname}}
+            </td>
+            <td>
+                {{scientist.lastname}}
+            </td>
+            <td>
+                {{scientist.email}}
+            </td>
+            <td>
+                {{scientist.numberOfViews}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{'no-scientists-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
+                 key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
+                 message="{{'confirm-delete-message' | translate }}"
+                 acceptButtonStyleClass="p-button-text"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>

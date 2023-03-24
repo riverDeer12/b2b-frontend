@@ -26,5 +26,8 @@
     "no-categories-found": "Nema pronađenih tvrtki",
     "error-deleting": "Greška prilikom brisanja tvrtke.",
     "new-company": "Nova tvrtka",
-    "clear": "Obriši"
+    "clear": "Obriši",
+    "address": "Adresa",
+    "email": "Email",
+    "number-of-views": "Broj pregleda"
 }
