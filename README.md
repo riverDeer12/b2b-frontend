@@ -9,4 +9,4 @@ The platform encourages multidirectional interaction and proactive networking to
 The platform enables the mapping of the needs of the economy and the public sector in the field of development and implementation of advanced digital technologies with the potential to create products and services with more added value through a multidisciplinary approach combining resources, infrastructure, knowledge, competences, and the availability of human capital in the region.
 
 Idea of this project and repository is to refactor frontend of existing RIMAP platform ([rimap.uniri.hr](https://rimap.uniri.hr)).
-Mostly in part of user's administration and in manner to prepare better for future updates.
+Mostly in part of user's administration and in manner to prepare frontend for better future updates.
