@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormType} from '../../../shared/enums/form-type';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
-import {Company} from '../../core/models/company';
+import {Organization} from '../../core/models/organization';
 
 @Component({
-  selector: 'company-edit',
-  templateUrl: './company-edit.component.html',
-  styleUrls: ['./company-edit.component.scss']
+    selector: 'organization-edit',
+    templateUrl: './organization-edit.component.html',
+    styleUrls: ['./organization-edit.component.scss']
 })
-export class CompanyEditComponent {
-    returnUrl = '/admin/companies';
+export class OrganizationEditComponent {
+    returnUrl = '/admin/organizations';
 
     formType = FormType.Edit;
 
-    company!: Company;
+    organization!: Organization;
 
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
@@ -25,7 +25,7 @@ export class CompanyEditComponent {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.company = Object.assign(new Company(), response['company']);
+            this.organization = Object.assign(new Organization(), response['organization']);
         });
     }
 }

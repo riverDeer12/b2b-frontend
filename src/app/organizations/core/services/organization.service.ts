@@ -39,4 +39,8 @@ export class OrganizationService {
     flipOrganizationActive(organizationId: string) {
         return this.http.post(this.organizationsUrl + '/flipActive/' + organizationId, null);
     }
+
+    deleteOrganization(organizationId: string) {
+        return this.http.post(this.organizationsUrl + '/flipActive/' + organizationId, null);
+    }
 }
