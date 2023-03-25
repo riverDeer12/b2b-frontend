@@ -1,9 +1,9 @@
 import {Component, OnDestroy, Renderer2, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {filter, Subscription} from 'rxjs';
-import {LayoutService} from '../core/services/app.layout.service';
-import {AppSidebarComponent} from '../components/sidebar/app.sidebar.component';
-import {AppTopBarComponent} from '../components/topbar/app.topbar.component';
+import {LayoutService} from './core/services/app.layout.service';
+import {AppSidebarComponent} from './components/sidebar/app.sidebar.component';
+import {AppTopBarComponent} from './components/topbar/app.topbar.component';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({

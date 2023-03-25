@@ -1,4 +1,7 @@
 {
     "subscribers": "Subscribers",
-    "keyword": "Keyword"
+    "keyword": "Keyword",
+    "email": "Email",
+    "new-subscriber": "New Subscriber",
+    "clear": "Clear"
 }

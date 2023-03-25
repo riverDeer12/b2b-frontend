@@ -7,7 +7,7 @@ export const SubscribersRoutes: Routes = [
         path: '',
         component: SubscribersHomeComponent,
         resolve: {
-            users: SubscribersResolver
+            subscribers: SubscribersResolver
         }
     }
 ]

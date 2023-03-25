@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
 import {PublicLayoutComponent} from './layout/public/public-layout.component';
-import {AdminLayoutComponent} from './layout/admin/pages/admin-layout.component';
+import {AdminLayoutComponent} from './layout/admin/admin-layout.component';
 import {AdminGuard} from './layout/admin/core/guards/admin.guard';
 
 export const AppRoutes: Routes = [

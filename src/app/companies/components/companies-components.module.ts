@@ -11,7 +11,6 @@ import {RippleModule} from 'primeng/ripple';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {ReactiveFormsModule} from '@angular/forms';
-import {ConfirmationService} from 'primeng/api';
 
 /**
  * Translation resources loader.

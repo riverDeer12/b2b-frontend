@@ -17,6 +17,7 @@ import {SharedModule} from '../shared/shared.module';
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/subscribers/', '.json');
 }
+
 @NgModule({
     declarations: [
     SubscribersComponent

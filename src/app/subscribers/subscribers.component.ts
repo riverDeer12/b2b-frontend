@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-users',
+    selector: 'subscribers',
     templateUrl: './subscribers.component.html',
     styleUrls: ['./subscribers.component.css']
 })

@@ -1,4 +1,7 @@
 {
     "subscribers": "Pretplatnici",
-    "keyword": "Ključna riječ"
+    "keyword": "Ključna riječ",
+    "email": "Email",
+    "new-subscriber": "Novi pretplatnik",
+    "clear": "Obriši"
 }
