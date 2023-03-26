@@ -1,16 +1,16 @@
 import {Component, Input} from '@angular/core';
-import {FormType} from "../../../shared/enums/form-type";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {NotificationService} from "../../../shared/services/notification.service";
-import {NotificationType} from "../../../shared/enums/notification-type";
-import {News} from "../../core/models/news";
-import {NewsService} from "../../core/services/news.service";
+import {FormType} from '../../../shared/enums/form-type';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {NotificationService} from '../../../shared/services/notification.service';
+import {NotificationType} from '../../../shared/enums/notification-type';
+import {News} from '../../core/models/news';
+import {NewsService} from '../../core/services/news.service';
 
 @Component({
-  selector: 'news-form',
-  templateUrl: './news-form.component.html',
-  styleUrls: ['./news-form.component.scss']
+    selector: 'news-form',
+    templateUrl: './news-form.component.html',
+    styleUrls: ['./news-form.component.scss']
 })
 export class NewsFormComponent {
     @Input() formType!: FormType;
@@ -83,12 +83,17 @@ export class NewsFormComponent {
      */
     private createNews(): void {
         this.newsService.createNews(this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'category-successfully-created');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'category-successfully-created');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -98,12 +103,17 @@ export class NewsFormComponent {
      */
     private editNews(): void {
         this.newsService.editNews(this.news.id, this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'category-successfully-updated');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'category-successfully-updated');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
 }

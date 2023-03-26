@@ -95,12 +95,17 @@ export class CompanyFormComponent {
      */
     private createCompany(): void {
         this.companyService.createCompany(this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'company-successfully-created');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'company-successfully-created');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -110,11 +115,16 @@ export class CompanyFormComponent {
      */
     private editCompany(): void {
         this.companyService.editCompany(this.company.id, this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'company-successfully-updated');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'company-successfully-updated');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 }

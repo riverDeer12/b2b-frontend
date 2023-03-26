@@ -99,12 +99,17 @@ export class ScientistFormComponent {
      */
     private createScientist(): void {
         this.scientistService.createScientist(this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'scientist-successfully-created');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'scientist-successfully-created');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -114,11 +119,16 @@ export class ScientistFormComponent {
      */
     private editScientist(): void {
         this.scientistService.editScientist(this.scientist.id, this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'scientist-successfully-updated');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'scientist-successfully-updated');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 }

@@ -83,12 +83,17 @@ export class CategoryFormComponent {
      */
     private createCategory(): void {
         this.categoryService.createCategory(this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'category-successfully-created');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'category-successfully-created');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -98,11 +103,16 @@ export class CategoryFormComponent {
      */
     private editCategory(): void {
         this.categoryService.createCategory(this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'category-successfully-updated');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'category-successfully-updated');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 }
