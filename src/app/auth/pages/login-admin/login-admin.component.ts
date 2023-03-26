@@ -5,6 +5,7 @@ import {AuthService} from '../../core/services/auth.service';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'auth-login-admin',
@@ -20,8 +21,6 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 })
 export class LoginAdminComponent {
 
-    valCheck: string[] = ['remember'];
-
     password!: string;
 
     loginForm!: FormGroup;
@@ -30,6 +29,7 @@ export class LoginAdminComponent {
                 private fb: FormBuilder,
                 private authService: AuthService,
                 private notificationService: NotificationService,
+                private translateService: TranslateService,
                 private router: Router) {
         this.setLoginForm();
     }
@@ -63,6 +63,10 @@ export class LoginAdminComponent {
             this.notificationService
                 .showNotification(NotificationType.Success,
                     'welcome-to-dashboard');
+        }, error => {
+            this.notificationService
+                .showNotification(NotificationType.Error,
+                    'login-error');
         })
     }
 }

@@ -12,6 +12,9 @@ import {RippleModule} from 'primeng/ripple';
 import {InputTextModule} from 'primeng/inputtext';
 import {ConfirmationService} from 'primeng/api';
 import {ReactiveFormsModule} from '@angular/forms';
+import {CategoriesComponentsModule} from '../../categories/components/categories-components.module';
+import {ChipsModule} from 'primeng/chips';
+import {PasswordModule} from 'primeng/password';
 
 /**
  * Translation resources loader.
@@ -43,7 +46,10 @@ export function createTranslateLoader(http: HttpClient) {
         ConfirmDialogModule,
         RippleModule,
         InputTextModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CategoriesComponentsModule,
+        ChipsModule,
+        PasswordModule
     ],
     providers: [
         ConfirmationService

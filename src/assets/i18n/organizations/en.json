@@ -30,5 +30,13 @@
     "clear": "Clear",
     "address": "Address",
     "email": "Email",
-    "number-of-views": "Number of Views"
+    "number-of-views": "Number of Views",
+    "description": "Short description",
+    "website": "Official website URL",
+    "categories": "Categories",
+    "newsletter-categories": "Categories for newsletter subscription",
+    "tags": "Tags",
+    "username": "Username",
+    "password": "Password",
+    "confirm-password": "Confirm Password"
 }

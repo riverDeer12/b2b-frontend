@@ -36,15 +36,15 @@
     </ng-template>
     <ng-template pTemplate="header">
         <tr>
-            <th></th>
-            <th pSortableColumn="title" style="width:22%">
+            <th style="width:10%"></th>
+            <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
                     {{ 'title' | translate }}
                     <p-sortIcon field="title"></p-sortIcon>
                     <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
-            <th pSortableColumn="numberOfViews" style="width:22%">
+            <th pSortableColumn="numberOfViews" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
                     {{ 'number-of-views' | translate }}
                     <p-sortIcon field="numberOfViews"></p-sortIcon>
@@ -52,7 +52,7 @@
                                     class="ml-auto"></p-columnFilter>
                 </div>
             </th>
-            <th pSortableColumn="updatedAt" style="width:22%">
+            <th pSortableColumn="updatedAt" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
                     {{ 'updated-at' | translate }}
                     <p-sortIcon field="updatedAt"></p-sortIcon>

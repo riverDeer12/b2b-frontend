@@ -4,6 +4,28 @@
             <div class="p-fluid">
                 <div class="field field col-md-12">
                     <span class="p-float-label">
+                        <input pInputText type="text" id="username" formControlName="username"/>
+                        <label for="username">{{ 'username' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <p-password inputStyleClass="w-full p-3 md:w-50rem" id="password"
+                                    formControlName="password" [feedback]="true" text
+                                    [toggleMask]="true"></p-password>
+                        <label for="password">{{'password' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <p-password inputStyleClass="w-full p-3 md:w-50rem" id="confirmPassword"
+                                    formControlName="confirmPassword" [feedback]="true"
+                                    [toggleMask]="true"></p-password>
+                        <label for="confirmPassword">{{'confirm-password' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
                         <input pInputText type="text" id="name" formControlName="name"/>
                         <label for="name">{{ 'name' | translate }}</label>
                     </span>
@@ -30,6 +52,30 @@
                     <span class="p-float-label">
                         <input pInputText type="text" id="website" formControlName="website"/>
                         <label for="website">{{ 'website' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <categories-selector
+                            label="categories"
+                            controlName="categories"
+                            [formName]="form">
+                        </categories-selector>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <categories-selector
+                            label="newsletter-categories"
+                            controlName="newsletterCategories"
+                            [formName]="form">
+                        </categories-selector>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <p-chips id="tags" formControlName="categoryTags"></p-chips>
+                        <label for="tags">{{ 'tags' | translate }}</label>
                     </span>
                 </div>
                 <button class="mt-3" type="submit" pButton pRipple label="{{ 'save' | translate }}"></button>

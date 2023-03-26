@@ -30,5 +30,13 @@
     "clear": "Obriši",
     "address": "Adresa",
     "email": "Email",
-    "number-of-views": "Broj pregleda"
+    "number-of-views": "Broj pregleda",
+    "description": "Kratki opis javne organizacije",
+    "website": "URL web sjedišta",
+    "categories": "Pripadne kategorije",
+    "newsletter-categories": "Pretplatničke kategorije",
+    "tags": "Oznake",
+    "username": "Korisničko ime",
+    "password": "Lozinka",
+    "confirm-password": "Potvrda lozinke"
 }

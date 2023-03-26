@@ -10,5 +10,6 @@
     "you-dont-have-permissions": "Nemate pravo na pristup sadržaju. Molimo kontaktirajte administratora.",
     "error-occurred": "Dogodila se pogreška.",
     "resource-not-available": "Traženi sadržaj nije dostupan.",
-    "back-to-home-page": "Povratak na naslovnu stranicu"
+    "back-to-home-page": "Povratak na naslovnu stranicu",
+    "login-error": "Korisničko ime ili lozinka nisu ispravni. Pokušajte ponovno."
 }

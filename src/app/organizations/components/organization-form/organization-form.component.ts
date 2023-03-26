@@ -10,6 +10,14 @@ import {OrganizationService} from '../../core/services/organization.service';
 @Component({
     selector: 'organization-form',
     templateUrl: './organization-form.component.html',
+    styles: [`
+        :host ::ng-deep .pi-eye,
+        :host ::ng-deep .pi-eye-slash {
+            transform: scale(1.6);
+            margin-right: 1rem;
+            color: var(--primary-color) !important;
+        }
+    `],
     styleUrls: ['./organization-form.component.scss']
 })
 export class OrganizationFormComponent {
@@ -47,7 +55,10 @@ export class OrganizationFormComponent {
             description: new FormControl('', Validators.required),
             address: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
-            website: new FormControl('', Validators.required)
+            website: new FormControl('', Validators.required),
+            categories: new FormControl('', Validators.required),
+            newsletterCategories: new FormControl('', Validators.required),
+            categoryTags: new FormControl('', Validators.required)
         })
     }
 
@@ -61,7 +72,10 @@ export class OrganizationFormComponent {
             description: new FormControl(this.organization.description, Validators.required),
             address: new FormControl(this.organization.address, Validators.required),
             email: new FormControl(this.organization.email, Validators.required),
-            website: new FormControl(this.organization.website, Validators.required)
+            website: new FormControl(this.organization.website, Validators.required),
+            categories: new FormControl(this.organization.categories, Validators.required),
+            newsletterCategories: new FormControl(this.organization.newsletterCategories, Validators.required),
+            categoryTags: new FormControl(this.organization.categoryTags, Validators.required)
         })
     }
 

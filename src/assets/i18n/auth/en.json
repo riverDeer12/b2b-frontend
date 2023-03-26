@@ -10,5 +10,8 @@
     "you-dont-have-permissions": "You do not have the necessary permissions. Please contact administrator.",
     "error-occurred": "Error Occurred",
     "resource-not-available": "Requested resource is not available.",
-    "back-to-home-page": "Back to Home Page"
+    "back-to-home-page": "Back to Home Page",
+    "login-error": "Username or password is not correct. Try again.",
+    "warn": "Warning",
+    "info": "Info"
 }

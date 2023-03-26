@@ -8,14 +8,13 @@
                 alt="Sakai logo" class="mb-5 w-18rem flex-shrink-0">
             <div>
                 <div class="w-full surface-card py-7 px-5 sm:px-8">
-                    <div class="field col-md-12">
+                    <div class="field field col-md-12">
                         <span class="p-float-label">
-                            <input class="w-full p-3 md:w-30rem" pInputText type="text" id="username"
-                                   [formControlName]="'username'">
-                            <label for="username">{{'username' | translate }}</label>
+                            <input type="text" class="w-full p-3 md:w-30rem" pInputText id="username" formControlName="username"/>
+                            <label for="username">{{ 'username' | translate }}</label>
                         </span>
                     </div>
-                    <div class="field col-md-12 mt-5">
+                    <div class="field field col-md-12">
                         <span class="p-float-label">
                             <p-password inputStyleClass="w-full p-3 md:w-30rem" id="password"
                                         [formControlName]="'password'" [feedback]="false"
