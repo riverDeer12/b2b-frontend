@@ -32,8 +32,6 @@ export class DefaultInterceptor implements HttpInterceptor {
                             this.router.navigateByUrl(logoutUrl).then();
                         } else if (error.status === 403) {
                             this.router.navigateByUrl('forbidden').then();
-                        } else {
-                            this.router.navigateByUrl('error').then();
                         }
                     }
                 )

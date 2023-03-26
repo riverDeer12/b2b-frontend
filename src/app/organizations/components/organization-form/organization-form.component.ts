@@ -89,12 +89,17 @@ export class OrganizationFormComponent {
      */
     private createOrganization(): void {
         this.organizationService.createOrganization(this.form.value).subscribe(() => {
-            this.notificationService
-                .showNotification(NotificationType.Success,
-                    'organization-successfully-created');
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'organization-successfully-created');
 
-            this.router.navigateByUrl(this.returnUrl).then();
-        })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            error => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -109,6 +114,10 @@ export class OrganizationFormComponent {
                     'organization-successfully-updated');
 
             this.router.navigateByUrl(this.returnUrl).then();
+        }, error => {
+            this.notificationService
+                .showNotification(NotificationType.Error,
+                    'correct-validation-errors');
         })
     }
 }
