@@ -38,5 +38,7 @@
     "tags": "Tags",
     "username": "Username",
     "password": "Password",
-    "confirm-password": "Confirm Password"
+    "confirm-password": "Confirm Password",
+    "general": "General",
+    "username-password": "Username and Password"
 }

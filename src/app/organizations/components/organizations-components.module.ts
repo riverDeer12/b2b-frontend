@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CategoriesComponentsModule} from '../../categories/components/categories-components.module';
 import {ChipsModule} from 'primeng/chips';
 import {PasswordModule} from 'primeng/password';
+import {TabViewModule} from 'primeng/tabview';
 
 /**
  * Translation resources loader.
@@ -49,7 +50,8 @@ export function createTranslateLoader(http: HttpClient) {
         ReactiveFormsModule,
         CategoriesComponentsModule,
         ChipsModule,
-        PasswordModule
+        PasswordModule,
+        TabViewModule
     ],
     providers: [
         ConfirmationService
