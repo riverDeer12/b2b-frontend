@@ -6,6 +6,7 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {Organization} from '../../core/models/organization';
 import {OrganizationService} from '../../core/services/organization.service';
+import {EntityType} from '../../../auth/core/enums/entity-type';
 
 @Component({
     selector: 'organization-form',
@@ -27,6 +28,8 @@ export class OrganizationFormComponent {
 
     form!: FormGroup;
 
+    entityType = EntityType.PublicOrganization;
+
     constructor(private fb: FormBuilder,
                 private router: Router,
                 private notificationService: NotificationService,
@@ -43,7 +46,6 @@ export class OrganizationFormComponent {
      */
     initFormGroup = () => this.formType === FormType.Create ?
         this.initCreateForm() : this.initEditForm();
-
 
     /**
      * Initializes form if
@@ -75,7 +77,7 @@ export class OrganizationFormComponent {
             website: new FormControl(this.organization.website, Validators.required),
             categories: new FormControl(this.organization.categories, Validators.required),
             newsletterCategories: new FormControl(this.organization.newsletterCategories, Validators.required),
-            categoryTags: new FormControl(this.organization.categoryTags, Validators.required)
+            categoryTags: new FormControl(this.organization.categoryTags.split(";"), Validators.required)
         })
     }
 

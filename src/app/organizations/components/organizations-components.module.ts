@@ -16,6 +16,7 @@ import {CategoriesComponentsModule} from '../../categories/components/categories
 import {ChipsModule} from 'primeng/chips';
 import {PasswordModule} from 'primeng/password';
 import {TabViewModule} from 'primeng/tabview';
+import {AuthComponentsModule} from '../../auth/components/auth-components.module';
 
 /**
  * Translation resources loader.
@@ -51,7 +52,8 @@ export function createTranslateLoader(http: HttpClient) {
         CategoriesComponentsModule,
         ChipsModule,
         PasswordModule,
-        TabViewModule
+        TabViewModule,
+        AuthComponentsModule
     ],
     providers: [
         ConfirmationService

@@ -40,5 +40,6 @@
     "password": "Lozinka",
     "confirm-password": "Potvrda lozinke",
     "general": "Opći podaci",
-    "username-password": "Korisničko ime i lozinka"
+    "username-password": "Korisničko ime i lozinka",
+    "research-problems": "Razvojni prijedlozi organizacije"
 }

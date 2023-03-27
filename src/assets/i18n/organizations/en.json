@@ -40,5 +40,6 @@
     "password": "Password",
     "confirm-password": "Confirm Password",
     "general": "General",
-    "username-password": "Username and Password"
+    "username-password": "Username and Password",
+    "research-problems": "Organization's Research Problems"
 }
