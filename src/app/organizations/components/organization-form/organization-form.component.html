@@ -12,7 +12,10 @@
                         </div>
                         <div class="field field col-md-12">
                             <span class="p-float-label">
-                                <input pInputText type="text" id="description" formControlName="description"/>
+                                <textarea style="resize: none;"
+                                          pInputText type="text" id="description"
+                                          formControlName="description"
+                                          rows="10" cols="30"></textarea>
                                 <label for="description">{{ 'description' | translate }}</label>
                             </span>
                         </div>

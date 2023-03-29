@@ -11,5 +11,6 @@
     "error-occurred": "Dogodila se pogreška.",
     "resource-not-available": "Traženi sadržaj nije dostupan.",
     "back-to-home-page": "Povratak na naslovnu stranicu",
-    "login-error": "Korisničko ime ili lozinka nisu ispravni. Pokušajte ponovno."
+    "login-error": "Korisničko ime ili lozinka nisu ispravni. Pokušajte ponovno.",
+    "successfully-changed-password": "Lozinka je uspješno promijenjena."
 }

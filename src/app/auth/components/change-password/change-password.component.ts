@@ -56,7 +56,7 @@ export class ChangePasswordComponent {
         this.authService.resetPassword(this.username, this.changePasswordEndpoint).subscribe((response: Object) => {
             this.notificationService
                 .showNotification(NotificationType.Error,
-                    'correct-validation-errors');
+                    'password-changed-successfully');
         })
     }
 }

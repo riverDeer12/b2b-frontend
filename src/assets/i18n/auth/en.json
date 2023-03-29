@@ -13,5 +13,6 @@
     "back-to-home-page": "Back to Home Page",
     "login-error": "Username or password is not correct. Try again.",
     "warn": "Warning",
-    "info": "Info"
+    "info": "Info",
+    "successfully-changed-password": "Password has been changed successfully."
 }
