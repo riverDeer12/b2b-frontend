@@ -98,11 +98,8 @@ export class AuthService {
         return this.loginSubject.asObservable();
     }
 
-    resetPassword(username: string, entityType: EntityType) {
-        return this.http.post(this.getPasswordResetUrl(entityType), {
-            username,
-        });
-    }
+    resetPassword = (username: string, resetPasswordEndpoint: string) =>
+        this.http.post(resetPasswordEndpoint, {username});
 
     isSuperAdminLogged(): boolean {
         const tokenStorageValue = localStorage.getItem('token');
@@ -118,18 +115,5 @@ export class AuthService {
         }
         return decodedToken.role === 'SuperAdmin';
 
-    }
-
-    getPasswordResetUrl(entityType: EntityType): string {
-        switch (entityType) {
-            case EntityType.Company:
-                return this.authUrl + '/resetPassword/company';
-            case EntityType.PublicOrganization:
-                return this.authUrl + '/resetPassword/publicOrganization';
-            case EntityType.Scientist:
-                return this.authUrl + '/resetPassword/scientist';
-        }
-
-        return '';
     }
 }

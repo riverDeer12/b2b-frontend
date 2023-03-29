@@ -73,7 +73,8 @@
                                 <label for="username">{{ 'username' | translate }}</label>
                             </span>
                     </div>
-                    <auth-change-password [entityId]="this.organization.id" [entityType]="entityType"></auth-change-password>
+                    <auth-change-password [username]="this.organization.username"
+                                          [entityType]="entityType"></auth-change-password>
                 </div>
             </p-tabPanel>
             <p-tabPanel header="{{'research-problems' | translate }}" class="line-height-3 m-0">

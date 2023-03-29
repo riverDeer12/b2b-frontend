@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'forbidden',
+    selector: 'auth-forbidden',
     templateUrl: './forbidden.component.html',
 })
 export class ForbiddenComponent {
