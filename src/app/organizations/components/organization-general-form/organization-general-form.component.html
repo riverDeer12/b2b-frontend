@@ -1,0 +1,65 @@
+<form [formGroup]="form" (submit)="submit()">
+    <div class="p-fluid">
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <input pInputText type="text" id="name" formControlName="name"/>
+                <label for="name">{{ 'name' | translate }}</label>
+            </span>
+        </div>
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <textarea style="resize: none;"
+                          pInputText type="text" id="description"
+                          formControlName="description"
+                          rows="10" cols="30"></textarea>
+                <label for="description">{{ 'description' | translate }}</label>
+            </span>
+        </div>
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <input pInputText type="text" id="address" formControlName="address"/>
+                <label for="address">{{ 'address' | translate }}</label>
+            </span>
+        </div>
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <input pInputText type="email" id="email" formControlName="email"/>
+                <label for="email">{{ 'email' | translate }}</label>
+            </span>
+        </div>
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <input pInputText type="text" id="website" formControlName="website"/>
+                <label for="website">{{ 'website' | translate }}</label>
+            </span>
+        </div>
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <categories-selector
+                    label="categories"
+                    controlName="categories"
+                    [formName]="form">
+                </categories-selector>
+            </span>
+        </div>
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <categories-selector
+                    label="newsletter-categories"
+                    controlName="newsletterCategories"
+                    [formName]="form">
+                </categories-selector>
+            </span>
+        </div>
+        <div class="field field col-md-12">
+            <span class="p-float-label">
+                <p-chips id="tags" formControlName="categoryTags"></p-chips>
+                <label for="tags">{{ 'tags' | translate }}</label>
+            </span>
+        </div>
+        <div class="p-fluid">
+            <button class="mt-3" type="submit" pButton pRipple
+                    label="{{ 'save' | translate }}"></button>
+        </div>
+    </div>
+</form>
