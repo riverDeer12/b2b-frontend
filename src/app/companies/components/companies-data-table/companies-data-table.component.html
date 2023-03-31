@@ -73,11 +73,11 @@
     </ng-template>
     <ng-template pTemplate="body" let-company>
         <tr>
-            <td class="d-flex text-center">
-                <button (click)="confirmDelete(company.id)" class="p-button-danger mr-3" pButton pRipple type="button"
-                        icon="pi pi-trash"></button>
-                <button (click)="goToEditPage(company.id)" pButton pRipple type="button" icon="pi pi-pencil"></button>
-            </td>
+            <button type="button" class="p-button-danger m-1" pButton pRipple
+                    (click)="confirmDelete(company.id)"
+                    icon="pi pi-trash"></button>
+            <button type="button" class="p-button m-1" pButton pRipple (click)="goToEditPage(company.id)"
+                    icon="pi pi-pencil"></button>
             <td>
                 {{company.name}}
             </td>

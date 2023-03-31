@@ -6,7 +6,6 @@ import {Table} from 'primeng/table';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {CategoryService} from '../../core/services/category.service';
-import {error} from '@angular/compiler-cli/src/transformers/util';
 
 @Component({
     selector: 'categories-data-table',

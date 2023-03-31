@@ -18,6 +18,7 @@ import {PasswordModule} from 'primeng/password';
 import {TabViewModule} from 'primeng/tabview';
 import {AuthComponentsModule} from '../../auth/components/auth-components.module';
 import { OrganizationGeneralFormComponent } from './organization-general-form/organization-general-form.component';
+import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";
 
 /**
  * Translation resources loader.
@@ -55,7 +56,8 @@ export function createTranslateLoader(http: HttpClient) {
         ChipsModule,
         PasswordModule,
         TabViewModule,
-        AuthComponentsModule
+        AuthComponentsModule,
+        ResearchProblemsComponentsModule
     ],
     providers: [
         ConfirmationService

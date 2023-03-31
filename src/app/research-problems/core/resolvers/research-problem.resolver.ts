@@ -6,7 +6,7 @@ import {
 } from '@angular/router';
 import {Observable} from 'rxjs';
 import {ResearchProblem} from "../models/research-problem";
-import {ResearchProblemsService} from "../services/research-problems.service";
+import {ResearchProblemService} from "../services/research-problem.service";
 import {EntityType} from "../../../auth/core/enums/entity-type";
 
 @Injectable({
@@ -14,7 +14,7 @@ import {EntityType} from "../../../auth/core/enums/entity-type";
 })
 export class ResearchProblemResolver implements Resolve<ResearchProblem> {
 
-    constructor(private service: ResearchProblemsService, private router: Router) {
+    constructor(private service: ResearchProblemService, private router: Router) {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ResearchProblem> {

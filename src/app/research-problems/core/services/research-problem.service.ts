@@ -9,7 +9,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 @Injectable({
     providedIn: 'root'
 })
-export class ResearchProblemsService {
+export class ResearchProblemService {
 
     researchProblemsUrl!: string;
 

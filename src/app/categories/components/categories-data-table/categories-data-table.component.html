@@ -50,10 +50,12 @@
     </ng-template>
     <ng-template pTemplate="body" let-category>
         <tr>
-            <td class="d-flex text-center">
-                <button (click)="confirmDelete(category.id)" class="p-button-danger mr-3" pButton pRipple type="button"
+            <td class="d-flex">
+                <button type="button" class="p-button-danger m-1" pButton pRipple
+                        (click)="confirmDelete(category.id)"
                         icon="pi pi-trash"></button>
-                <button type="button" (click)="goToEditPage(category.id)" pButton pRipple  icon="pi pi-pencil"></button>
+                <button type="button" class="p-button m-1" pButton pRipple (click)="goToEditPage(category.id)"
+                        icon="pi pi-pencil"></button>
             </td>
             <td>
                 {{category.name}}
