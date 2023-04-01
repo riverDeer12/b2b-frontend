@@ -6,6 +6,7 @@ import {RouterModule} from "@angular/router";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {ResearchProblemsComponent} from "./research-problems.component";
 
 /**
  * Translation resources loader.
@@ -17,9 +18,10 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-    declarations: [],
+    declarations: [ResearchProblemsComponent],
     imports: [
         CommonModule,
+        ResearchProblemsPagesModule,
         RouterModule.forChild(ResearchProblemsRoutes),
         TranslateModule.forChild({
             defaultLanguage: 'hr',
@@ -29,8 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             },
             isolate: true
-        }),
-        ResearchProblemsPagesModule
+        })
     ]
 })
 export class ResearchProblemsModule {

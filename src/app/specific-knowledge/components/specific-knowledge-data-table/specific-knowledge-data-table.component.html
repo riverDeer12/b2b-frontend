@@ -1,0 +1,78 @@
+<p-table #dt [rowHover]="true"
+         [showLoader]="true"
+         [value]="data"
+         dataKey="id"
+         [rows]="5" [showCurrentPageReport]="true"
+         [rowsPerPageOptions]="[5, 10, 20]"
+         [paginator]="true"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'specific-knowledge-items' | translate }} {{'from' | translate }}
+         {totalRecords} {{'items' | translate }}"
+         [globalFilterFields]="['title']"
+         [tableStyle]="{'min-width':'75rem'}"
+         responsiveLayout="scroll">
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between flex-column sm:flex-row">
+            <div class="flex">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+                <button
+                    (click)="clear(dt)"
+                    label="{{'clear'| translate }}"
+                    icon="pi pi-times"
+                    iconPos="right"
+                    pButton pRipple
+                    type="button">
+                </button>
+            </div>
+            <button (click)="goToCreatePage()"
+                    icon="pi pi-plus"
+                    iconPos="right"
+                    label="{{'new-specific-knowledge'| translate }}"
+                    pButton pRipple
+                    type="button"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%"></th>
+            <th pSortableColumn="title">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'title' | translate }}
+                    <p-sortIcon field="title"></p-sortIcon>
+                    <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-specificKnowledge>
+        <tr>
+            <td class="d-flex">
+                <button type="button" class="p-button-danger m-1" pButton pRipple
+                        (click)="confirmDelete(specificKnowledge.scientistId, specificKnowledge.id)"
+                        icon="pi pi-trash"></button>
+                <button type="button" class="p-button m-1" pButton pRipple (click)="goToEditPage(specificKnowledge.scientistId, specificKnowledge.id)"
+                        icon="pi pi-pencil"></button>
+            </td>
+            <td>
+                {{specificKnowledge.title}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{'no-specific-knowledge-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
+                 key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
+                 message="{{'confirm-delete-message' | translate }}"
+                 acceptButtonStyleClass="p-button-text"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>

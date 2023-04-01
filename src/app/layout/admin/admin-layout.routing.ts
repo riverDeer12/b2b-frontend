@@ -47,4 +47,24 @@ export const AdminLayoutRoutes: Routes = [
         component: SubscribersComponent,
         loadChildren: () => import('../../subscribers/subscribers.module').then(m => m.SubscribersModule)
     },
+    {
+        path: 'research-problems',
+        component: SubscribersComponent,
+        loadChildren: () => import('../../research-problems/research-problems.module').then(m => m.ResearchProblemsModule)
+    },
+    {
+        path: 'specific-knowledge',
+        component: SubscribersComponent,
+        loadChildren: () => import('../../specific-knowledge/specific-knowledge.module').then(m => m.SpecificKnowledgeModule)
+    },
+    {
+        path: 'job-offers',
+        component: SubscribersComponent,
+        loadChildren: () => import('../../job-offers/job-offers.module').then(m => m.JobOffersModule)
+    },
+    {
+        path: 'equipment',
+        component: SubscribersComponent,
+        loadChildren: () => import('../../equipment/equipment.module').then(m => m.EquipmentModule)
+    }
 ]

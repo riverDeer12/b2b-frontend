@@ -1,0 +1,78 @@
+<p-table #dt [rowHover]="true"
+         [showLoader]="true"
+          [value]="data"
+         dataKey="id"
+         [rows]="5" [showCurrentPageReport]="true"
+         [rowsPerPageOptions]="[5, 10, 20]"
+         [paginator]="true"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'category-items' | translate }} {{'from' | translate }}
+         {totalRecords} {{'items' | translate }}"
+         [globalFilterFields]="['name']"
+         [tableStyle]="{'min-width':'75rem'}"
+         responsiveLayout="scroll">
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between flex-column sm:flex-row">
+            <div class="flex">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+                <button
+                    (click)="clear(dt)"
+                    label="{{'clear'| translate }}"
+                    icon="pi pi-times"
+                    iconPos="right"
+                    pButton pRipple
+                    type="button">
+                </button>
+            </div>
+            <button (click)="goToCreatePage()"
+                    icon="pi pi-plus"
+                    iconPos="right"
+                    label="{{'new-category'| translate }}"
+                    pButton pRipple
+                    type="button"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%"></th>
+            <th pSortableColumn="name">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'name' | translate }}
+                    <p-sortIcon field="name"></p-sortIcon>
+                    <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-category>
+        <tr>
+            <td class="d-flex">
+                <button type="button" class="p-button-danger m-1" pButton pRipple
+                        (click)="confirmDelete(category.id)"
+                        icon="pi pi-trash"></button>
+                <button type="button" class="p-button m-1" pButton pRipple (click)="goToEditPage(category.id)"
+                        icon="pi pi-pencil"></button>
+            </td>
+            <td>
+                {{category.name}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{'no-categories-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
+                 key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
+                 message="{{'confirm-delete-message' | translate }}"
+                 acceptButtonStyleClass="p-button-text"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>

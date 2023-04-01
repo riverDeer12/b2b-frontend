@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'research-problem-edit',
+  selector: 'research-problems-edit',
   templateUrl: './research-problem-edit.component.html',
-  styleUrls: ['./research-problems-edit.component.scss']
+  styleUrls: ['./research-problem-edit.component.scss']
 })
 export class ResearchProblemEditComponent {
 
