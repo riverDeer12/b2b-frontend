@@ -1,24 +1,24 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {Category} from '../../core/models/category';
 import {Router} from '@angular/router';
 import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {CategoryService} from '../../core/services/category.service';
+import {JobOffer} from "../../core/models/job-offer";
+import {JobOfferService} from "../../core/services/job-offer.service";
 
 @Component({
-    selector: 'specific-knowledge-data-table',
-    templateUrl: './categories-data-table.component.html',
-    styleUrls: ['./categories-data-table.component.scss']
+    selector: 'job-offers-data-table',
+    templateUrl: './job-offers-data-table.component.html',
+    styleUrls: ['./job-offers-data-table.component.scss']
 })
-export class CategoriesDataTableComponent {
-    @Input() data: Category[] = [];
+export class JobOffersDataTableComponent {
+    @Input() data: JobOffer[] = [];
 
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
-                private categoryService: CategoryService,
+                private jobOfferService: JobOfferService,
                 private notificationService: NotificationService,
                 private router: Router) {
     }
@@ -50,33 +50,38 @@ export class CategoriesDataTableComponent {
     }
 
     /**
-     * Redirect user to news
+     * Redirect user to job offer
      * edit page.
      *
-     * @param id id of selected news item.
+     * @param companyId id of parent of selected job offer.
+     * @param jobOfferId id of selected job offer.
      */
-    goToEditPage = (id: string) => this.router.navigateByUrl('/admin/categories/edit/' + id).then();
+    goToEditPage = (companyId: string, jobOfferId: string) =>
+        this.router.navigateByUrl('/admin/job-offers/edit/' + companyId + '/' + jobOfferId).then();
 
     /**
-     * Redirect user to news
+     * Redirect user to job offer
      * create page.
      *
      */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/categories/create').then();
+    goToCreatePage = () => this.router.navigateByUrl('/admin/job-offers/create').then();
 
     /**
      * Trigger popup to
      * confirm deleting selected
-     * news item from data table.
+     * job offer item from data table.
+     *
+     * @param companyId id of parent of selected job offer.
+     * @param jobOfferId id of selected job offer.
      */
-    confirmDelete(categoryId: string): void {
+    confirmDelete(companyId: string, jobOfferId: string): void {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.categoryService.deleteCategory(categoryId).subscribe((response: Object) => {
+                this.jobOfferService.deleteJobOffer(companyId, jobOfferId).subscribe((response: Object) => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
-                        this.data = this.data.filter((x => x.id !== categoryId));
+                        this.data = this.data.filter((x => x.id !== jobOfferId));
                     },
                     (error: Object) => {
                         this.notificationService

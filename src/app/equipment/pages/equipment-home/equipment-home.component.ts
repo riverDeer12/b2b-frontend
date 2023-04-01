@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
-import {Equipment} from "../../../scientists/core/models/equipment/equipment";
+import {Equipment} from "../../core/models/equipment";
 
 @Component({
     selector: 'equipment-home',

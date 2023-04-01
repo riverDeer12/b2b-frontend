@@ -1,4 +1,4 @@
-import {JobOffer} from './job-offers/job-offer';
+import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Category} from '../../../categories/core/models/category';
 import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
 

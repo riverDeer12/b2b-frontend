@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SpecificKnowledgeHomeComponent} from './specific-knowledge-home/specific-knowledge-home.component';
-import {CategoryCreateComponent} from './category-create/category-create.component';
-import {SpecificKnowledgeEditComponent} from './category-edit/specific-knowledge-edit.component';
+import {SpecificKnowledgeCreateComponent} from './specific-knowledge-create/specific-knowledge-create.component';
+import {SpecificKnowledgeEditComponent} from './specific-knowledge-edit/specific-knowledge-edit.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -20,7 +20,7 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
     declarations: [
         SpecificKnowledgeHomeComponent,
-        CategoryCreateComponent,
+        SpecificKnowledgeCreateComponent,
         SpecificKnowledgeEditComponent
     ],
     imports: [
@@ -38,7 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     exports: [
         SpecificKnowledgeHomeComponent,
-        CategoryCreateComponent,
+        SpecificKnowledgeCreateComponent,
         SpecificKnowledgeEditComponent
     ]
 })

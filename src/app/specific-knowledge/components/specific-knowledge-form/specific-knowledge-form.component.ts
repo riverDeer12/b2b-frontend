@@ -1,12 +1,11 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Category} from '../../core/models/category';
 import {FormType} from '../../../shared/enums/form-type';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {SpecificKnowledgeService} from "../../core/services/specific-knowledge.service";
-import {SpecificKnowledge} from "../../../scientists/core/models/specific-knowledge/specific-knowledge";
+import {SpecificKnowledge} from "../../core/models/specific-knowledge";
 
 @Component({
     selector: 'specific-knowledge-form',

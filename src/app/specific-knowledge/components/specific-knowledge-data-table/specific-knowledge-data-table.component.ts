@@ -5,7 +5,7 @@ import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {SpecificKnowledge} from "../../../scientists/core/models/specific-knowledge/specific-knowledge";
+import {SpecificKnowledge} from "../../core/models/specific-knowledge";
 import {SpecificKnowledgeService} from "../../core/services/specific-knowledge.service";
 
 @Component({

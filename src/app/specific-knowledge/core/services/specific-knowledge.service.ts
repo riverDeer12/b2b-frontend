@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Subject} from 'rxjs/internal/Subject';
 import {environment} from 'src/environments/environment';
-import {SpecificKnowledge} from '../../../scientists/core/models/specific-knowledge/specific-knowledge';
+import {SpecificKnowledge} from '../models/specific-knowledge';
 
 @Injectable({
     providedIn: 'root'

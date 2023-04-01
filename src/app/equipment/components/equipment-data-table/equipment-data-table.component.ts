@@ -5,7 +5,7 @@ import {Table} from 'primeng/table';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {EquipmentService} from '../../core/services/equipment.service';
-import {Equipment} from "../../../scientists/core/models/equipment/equipment";
+import {Equipment} from "../../core/models/equipment";
 import {EntityType} from "../../../auth/core/enums/entity-type";
 
 @Component({
@@ -62,8 +62,7 @@ export class EquipmentDataTableComponent {
             '/' + scientistId + '/' + equipmentId).then();
 
     /**
-     * Redirect user to research
-     * problems create page.
+     * Redirect user to equipment create page.
      */
     goToCreatePage = () => this.router.navigateByUrl('/admin/equipment/create').then();
 

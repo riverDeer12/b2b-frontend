@@ -5,7 +5,7 @@ import {EquipmentService} from '../../core/services/equipment.service';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {Equipment} from "../../../scientists/core/models/equipment/equipment";
+import {Equipment} from "../../core/models/equipment";
 
 @Component({
     selector: 'equipment-form',

@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormType} from '../../../shared/enums/form-type';
-import {Category} from '../../core/models/category';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
-import {SpecificKnowledge} from "../../../scientists/core/models/specific-knowledge/specific-knowledge";
+import {SpecificKnowledge} from "../../core/models/specific-knowledge";
 
 @Component({
-  selector: 'specific-knowledge-edit',
-  templateUrl: './specific-knowledge-edit.component.html',
-  styleUrls: ['./specific-knowledge-edit.component.scss']
+    selector: 'specific-knowledge-edit',
+    templateUrl: './specific-knowledge-edit.component.html',
+    styleUrls: ['./specific-knowledge-edit.component.scss']
 })
 export class SpecificKnowledgeEditComponent {
     returnUrl = "/admin/specific-knowledge";

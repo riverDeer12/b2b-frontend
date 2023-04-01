@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CategoriesDataTableComponent } from './categories-data-table.component';
+import { JobOffersDataTableComponent } from './job-offers-data-table.component';
 
 describe('CategoriesDataTableComponent', () => {
-  let component: CategoriesDataTableComponent;
-  let fixture: ComponentFixture<CategoriesDataTableComponent>;
+  let component: JobOffersDataTableComponent;
+  let fixture: ComponentFixture<JobOffersDataTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CategoriesDataTableComponent ]
+      declarations: [ JobOffersDataTableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CategoriesDataTableComponent);
+    fixture = TestBed.createComponent(JobOffersDataTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

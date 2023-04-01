@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
 import {News} from '../../../news/core/models/news';
-import {Category} from '../../core/models/category';
+import {SpecificKnowledge} from "../../core/models/specific-knowledge";
 
 @Component({
   selector: 'specific-knowledge-home',
@@ -10,7 +10,7 @@ import {Category} from '../../core/models/category';
   styleUrls: ['./specific-knowledge-home.component.css']
 })
 export class SpecificKnowledgeHomeComponent implements OnInit {
-    categories: Category[] = [];
+    specificKnowledge: SpecificKnowledge[] = [];
 
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
@@ -22,8 +22,8 @@ export class SpecificKnowledgeHomeComponent implements OnInit {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.categories = response['categories'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.specificKnowledge = response['specific-knowledge'].map((x: News) =>
+                Object.assign(new SpecificKnowledge(), x)
             );
         });
     }

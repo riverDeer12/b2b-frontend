@@ -1,4 +1,4 @@
-import {Category} from '../../../../categories/core/models/category';
+import {Category} from '../../../categories/core/models/category';
 
 export class Equipment {
   id!: string;

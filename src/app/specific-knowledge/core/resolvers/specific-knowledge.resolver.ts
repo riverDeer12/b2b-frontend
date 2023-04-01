@@ -5,7 +5,7 @@ import {
     ActivatedRouteSnapshot
 } from '@angular/router';
 import {Observable, of} from 'rxjs';
-import {SpecificKnowledge} from "../../../scientists/core/models/specific-knowledge/specific-knowledge";
+import {SpecificKnowledge} from "../models/specific-knowledge";
 import {SpecificKnowledgeService} from "../services/specific-knowledge.service";
 
 @Injectable({

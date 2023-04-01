@@ -1,5 +1,5 @@
-import {Equipment} from 'src/app/scientists/core/models/equipment/equipment';
-import {SpecificKnowledge} from './specific-knowledge/specific-knowledge';
+import {Equipment} from 'src/app/equipment/core/models/equipment';
+import {SpecificKnowledge} from '../../../specific-knowledge/core/models/specific-knowledge';
 import {Category} from '../../../categories/core/models/category';
 
 export class Scientist {

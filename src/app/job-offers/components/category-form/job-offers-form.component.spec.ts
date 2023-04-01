@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CategoryFormComponent } from './category-form.component';
+import { JobOffersFormComponent } from './job-offers-form.component';
 
 describe('CategoryFormComponent', () => {
-  let component: CategoryFormComponent;
-  let fixture: ComponentFixture<CategoryFormComponent>;
+  let component: JobOffersFormComponent;
+  let fixture: ComponentFixture<JobOffersFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CategoryFormComponent ]
+      declarations: [ JobOffersFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CategoryFormComponent);
+    fixture = TestBed.createComponent(JobOffersFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

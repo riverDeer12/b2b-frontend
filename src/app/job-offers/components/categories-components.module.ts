@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CategoryFormComponent} from './category-form/category-form.component';
+import {JobOffersFormComponent} from './category-form/job-offers-form.component';
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {CategoriesDataTableComponent} from './categories-data-table/categories-data-table.component';
+import {JobOffersDataTableComponent} from './job-offers-data-table/job-offers-data-table.component';
 import {TableModule} from 'primeng/table';
 import {RippleModule} from 'primeng/ripple';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
@@ -27,8 +27,8 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
     declarations: [
-        CategoryFormComponent,
-        CategoriesDataTableComponent,
+        JobOffersFormComponent,
+        JobOffersDataTableComponent,
         CategoriesSelectorComponent
     ],
     imports: [
@@ -56,8 +56,8 @@ export function createTranslateLoader(http: HttpClient) {
         ConfirmationService
     ],
     exports: [
-        CategoryFormComponent,
-        CategoriesDataTableComponent,
+        JobOffersFormComponent,
+        JobOffersDataTableComponent,
         CategoriesSelectorComponent
     ]
 })
