@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CategoriesHomeComponent} from './categories-home/categories-home.component';
-import {CategoryCreateComponent} from './category-create/category-create.component';
-import {CategoryEditComponent} from './category-edit/category-edit.component';
+import {JobOffersHomeComponent} from './job-offers-home/job-offers-home.component';
+import {JobOfferCreateComponent} from './job-offer-create/job-offer-create.component';
+import {JobOfferEditComponent} from './job-offer-edit/job-offer-edit.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {CategoriesComponentsModule} from '../components/categories-components.module';
+import {JobOffersComponentsModule} from '../components/job-offers-components.module';
 
 /**
  * Translation resources loader.
@@ -14,19 +14,19 @@ import {CategoriesComponentsModule} from '../components/categories-components.mo
  * @param http client for loading translations.
  */
 export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/categories/', '.json');
+    return new TranslateHttpLoader(http, './assets/i18n/job-offers/', '.json');
 }
 
 
 @NgModule({
     declarations: [
-        CategoriesHomeComponent,
-        CategoryCreateComponent,
-        CategoryEditComponent
+        JobOffersHomeComponent,
+        JobOfferCreateComponent,
+        JobOfferEditComponent
     ],
     imports: [
         CommonModule,
-        CategoriesComponentsModule,
+        JobOffersComponentsModule,
         TranslateModule.forChild({
             defaultLanguage: 'hr',
             loader: {
@@ -38,10 +38,10 @@ export function createTranslateLoader(http: HttpClient) {
         })
     ],
     exports: [
-        CategoriesHomeComponent,
-        CategoryCreateComponent,
-        CategoryEditComponent
+        JobOffersHomeComponent,
+        JobOfferCreateComponent,
+        JobOfferEditComponent
     ]
 })
-export class CategoriesPagesModule {
+export class JobOffersPagesModule {
 }

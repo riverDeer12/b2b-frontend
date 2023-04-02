@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {FormType} from '../../../shared/enums/form-type';
-import {Category} from '../../core/models/category';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
 import {Equipment} from "../../core/models/equipment";

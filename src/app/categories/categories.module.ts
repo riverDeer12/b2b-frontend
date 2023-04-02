@@ -25,7 +25,6 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         RouterModule.forChild(CategoriesRoutes),
-        CategoriesPagesModule,
         TranslateModule.forChild({
             defaultLanguage: 'hr',
             loader: {
@@ -35,7 +34,8 @@ export function createTranslateLoader(http: HttpClient) {
             },
             isolate: true
         }),
-        SharedModule
+        SharedModule,
+        CategoriesPagesModule
     ]
 })
 export class CategoriesModule {

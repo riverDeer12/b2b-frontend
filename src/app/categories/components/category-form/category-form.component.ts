@@ -8,7 +8,7 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 
 @Component({
-    selector: 'specific-knowledge-form',
+    selector: 'category-form',
     templateUrl: './category-form.component.html',
     styleUrls: ['./category-form.component.scss']
 })

@@ -8,7 +8,7 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {CategoryService} from '../../core/services/category.service';
 
 @Component({
-    selector: 'specific-knowledge-data-table',
+    selector: 'categories-data-table',
     templateUrl: './categories-data-table.component.html',
     styleUrls: ['./categories-data-table.component.scss']
 })

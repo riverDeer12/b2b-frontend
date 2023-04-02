@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {JobOffersFormComponent} from './category-form/job-offers-form.component';
+import {JobOffersFormComponent} from './job-offer-form/job-offers-form.component';
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {ReactiveFormsModule} from "@angular/forms";
@@ -13,8 +13,8 @@ import {RippleModule} from 'primeng/ripple';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import {MultiSelectModule} from 'primeng/multiselect';
-import {CategoriesSelectorComponent} from './categories-selector/categories-selector.component';
 import {RouterModule} from '@angular/router';
+import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 
 /**
  * Translation resources loader.
@@ -22,14 +22,13 @@ import {RouterModule} from '@angular/router';
  * @param http client for loading translations.
  */
 export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/categories/', '.json');
+    return new TranslateHttpLoader(http, './assets/i18n/job-offers/', '.json');
 }
 
 @NgModule({
     declarations: [
         JobOffersFormComponent,
         JobOffersDataTableComponent,
-        CategoriesSelectorComponent
     ],
     imports: [
         CommonModule,
@@ -50,16 +49,16 @@ export function createTranslateLoader(http: HttpClient) {
         RippleModule,
         ConfirmDialogModule,
         MultiSelectModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CategoriesComponentsModule
     ],
     providers: [
         ConfirmationService
     ],
     exports: [
         JobOffersFormComponent,
-        JobOffersDataTableComponent,
-        CategoriesSelectorComponent
+        JobOffersDataTableComponent
     ]
 })
-export class CategoriesComponentsModule {
+export class JobOffersComponentsModule {
 }

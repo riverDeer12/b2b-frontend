@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
 import {News} from '../../../news/core/models/news';
-import {Category} from '../../core/models/category';
+import {JobOffer} from "../../core/models/job-offer";
 
 @Component({
-  selector: 'equipment-home',
-  templateUrl: './categories-home.component.html',
-  styleUrls: ['./categories-home.component.css']
+  selector: 'job-offers-home',
+  templateUrl: './job-offers-home.component.html',
+  styleUrls: ['./job-offers-home.component.css']
 })
-export class CategoriesHomeComponent implements OnInit {
-    categories: Category[] = [];
+export class JobOffersHomeComponent implements OnInit {
+    jobOffers: JobOffer[] = [];
 
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
@@ -22,8 +22,8 @@ export class CategoriesHomeComponent implements OnInit {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.categories = response['categories'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.jobOffers = response['jobOffers'].map((x: News) =>
+                Object.assign(new JobOffer(), x)
             );
         });
     }

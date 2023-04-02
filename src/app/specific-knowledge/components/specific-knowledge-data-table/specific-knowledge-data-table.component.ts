@@ -1,5 +1,4 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {Category} from '../../core/models/category';
 import {Router} from '@angular/router';
 import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';

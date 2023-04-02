@@ -6,6 +6,10 @@ import {ActivitiesComponent} from '../../activities/activities.component';
 import {NewsComponent} from '../../news/news.component';
 import {OrganizationsComponent} from '../../organizations/organizations.component';
 import {SubscribersComponent} from '../../subscribers/subscribers.component';
+import {ResearchProblemsComponent} from "../../research-problems/research-problems.component";
+import {SpecificKnowledgeComponent} from "../../specific-knowledge/specific-knowledge.component";
+import {EquipmentComponent} from "../../equipment/equipment.component";
+import {JobOffersComponent} from "../../job-offers/job-offers.component";
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -49,22 +53,22 @@ export const AdminLayoutRoutes: Routes = [
     },
     {
         path: 'research-problems',
-        component: SubscribersComponent,
+        component: ResearchProblemsComponent,
         loadChildren: () => import('../../research-problems/research-problems.module').then(m => m.ResearchProblemsModule)
     },
     {
         path: 'specific-knowledge',
-        component: SubscribersComponent,
+        component: SpecificKnowledgeComponent,
         loadChildren: () => import('../../specific-knowledge/specific-knowledge.module').then(m => m.SpecificKnowledgeModule)
     },
     {
         path: 'job-offers',
-        component: SubscribersComponent,
+        component: JobOffersComponent,
         loadChildren: () => import('../../job-offers/job-offers.module').then(m => m.JobOffersModule)
     },
     {
         path: 'equipment',
-        component: SubscribersComponent,
+        component: EquipmentComponent,
         loadChildren: () => import('../../equipment/equipment.module').then(m => m.EquipmentModule)
     }
 ]

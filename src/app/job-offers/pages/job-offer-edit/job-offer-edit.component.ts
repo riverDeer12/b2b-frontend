@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import {FormType} from '../../../shared/enums/form-type';
-import {Category} from '../../core/models/category';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
+import {JobOffer} from "../../core/models/job-offer";
 
 @Component({
-  selector: 'equipment-edit',
-  templateUrl: './category-edit.component.html',
-  styleUrls: ['./category-edit.component.scss']
+  selector: 'job-offer-edit',
+  templateUrl: './job-offer-edit.component.html',
+  styleUrls: ['./job-offer-edit.component.scss']
 })
-export class CategoryEditComponent {
-    returnUrl = "/admin/categories";
+export class JobOfferEditComponent {
+    returnUrl = "/admin/job-offers";
 
     formType = FormType.Edit;
 
-    category!: Category;
+    jobOffer!: JobOffer;
 
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
@@ -25,7 +25,7 @@ export class CategoryEditComponent {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.category = Object.assign(new Category(), response["category"]);
+            this.jobOffer = Object.assign(new JobOffer(), response["jobOffer"]);
         });
     }
 }
