@@ -16,6 +16,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {RouterModule} from '@angular/router';
+import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 
 
 /**
@@ -51,7 +52,8 @@ export function createTranslateLoader(http: HttpClient) {
         RippleModule,
         ConfirmDialogModule,
         MultiSelectModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CategoriesComponentsModule
     ],
     providers: [
         ConfirmationService
