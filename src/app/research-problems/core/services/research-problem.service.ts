@@ -31,17 +31,17 @@ export class ResearchProblemService {
         return this.http.get<ResearchProblem[]>(this.researchProblemsUrl + entityId + '/getResearchProblems');
     }
 
-    getResearchProblem(researchProblemId: string, entityId: string, entityType: EntityType) {
+    getResearchProblem(researchProblemId: string, entityType: EntityType, entityId: string) {
         this.setResearchProblemsUrl(entityType);
         return this.http.get<ResearchProblem>(this.researchProblemsUrl + entityId + '/getResearchProblem/' + researchProblemId);
     }
 
-    createResearchProblem(researchProblem: ResearchProblem, entityType: EntityType, entityId: string) {
+    createResearchProblem(entityType: EntityType, entityId: string, researchProblem: ResearchProblem) {
         this.setResearchProblemsUrl(entityType);
         return this.http.post(this.researchProblemsUrl + entityId + '/createResearchProblem', researchProblem);
     }
 
-    editResearchProblem(researchProblemId: string, entityType: EntityType, researchProblem: ResearchProblem, entityId: string) {
+    editResearchProblem(researchProblemId: string, entityType: EntityType, entityId: string, researchProblem: ResearchProblem) {
         this.setResearchProblemsUrl(entityType);
         return this.http.post(this.researchProblemsUrl + entityId + '/editResearchProblem/' + researchProblemId, researchProblem);
     }

@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {
     ResearchProblemsDataTableComponent
 } from './research-problems-data-table/research-problems-data-table.component';
-import {ResearchProblemsFormComponent} from './research-problems-form/research-problems-form.component';
+import {ResearchProblemFormComponent} from './research-problems-form/research-problem-form.component';
 import {TableModule} from "primeng/table";
 import {InputTextModule} from "primeng/inputtext";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
@@ -25,7 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
     declarations: [
         ResearchProblemsDataTableComponent,
-        ResearchProblemsFormComponent
+        ResearchProblemFormComponent
     ],
     imports: [
         CommonModule,
@@ -45,7 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     exports: [
         ResearchProblemsDataTableComponent,
-        ResearchProblemsFormComponent
+        ResearchProblemFormComponent
     ]
 })
 export class ResearchProblemsComponentsModule {

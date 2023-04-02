@@ -36,7 +36,6 @@ export class ResearchProblemResolver implements Resolve<ResearchProblem> {
             this.router.navigateByUrl('admin/research-problems').then();
         }
 
-        return this.service.getResearchProblem(routeId as string, entityId as string,
-            entityType as unknown as EntityType);
+        return this.service.getResearchProblem(routeId as string, entityType as unknown as EntityType, entityId as string);
     }
 }

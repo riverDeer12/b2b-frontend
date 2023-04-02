@@ -102,7 +102,7 @@ export class CategoryFormComponent {
      * updated selected category.
      */
     private editCategory(): void {
-        this.categoryService.createCategory(this.form.value).subscribe(() => {
+        this.categoryService.editCategory(this.category.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'category-successfully-updated');
