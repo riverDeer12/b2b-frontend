@@ -22,7 +22,9 @@ export class ResearchProblemFormComponent {
 
     parentEntityType!: EntityType;
 
-    entityTypes: EntityType[] = [EntityType.PublicOrganization, EntityType.Company];
+    public get entityType(): typeof EntityType {
+        return EntityType;
+    }
 
     constructor(private fb: FormBuilder,
                 private router: Router,

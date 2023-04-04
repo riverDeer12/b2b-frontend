@@ -11,6 +11,9 @@ import {RippleModule} from "primeng/ripple";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RadioButtonModule} from "primeng/radiobutton";
 
 /**
  * Translation resources loader.
@@ -41,7 +44,11 @@ export function createTranslateLoader(http: HttpClient) {
         TableModule,
         InputTextModule,
         ConfirmDialogModule,
-        RippleModule
+        RippleModule,
+        CategoriesComponentsModule,
+        ReactiveFormsModule,
+        RadioButtonModule,
+        FormsModule
     ],
     exports: [
         ResearchProblemsDataTableComponent,
