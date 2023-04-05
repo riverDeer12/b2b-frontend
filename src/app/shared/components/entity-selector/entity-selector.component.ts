@@ -1,0 +1,58 @@
+import {Component, Input} from '@angular/core';
+import {FormGroup} from "@angular/forms";
+import {EntityType} from "../../../auth/core/enums/entity-type";
+import {CompanyService} from "../../../companies/core/services/company.service";
+import {OrganizationService} from "../../../organizations/core/services/organization.service";
+import {Company} from "../../../companies/core/models/company";
+import {Organization} from "../../../organizations/core/models/organization";
+
+@Component({
+    selector: 'entity-selector',
+    templateUrl: './entity-selector.component.html',
+    styleUrls: ['./entity-selector.component.scss']
+})
+export class EntitySelectorComponent {
+    @Input() entityType!: EntityType;
+    @Input() formName!: FormGroup;
+    @Input() controlName!: string;
+    @Input() label!: string;
+
+    data: any[] = [];
+
+    constructor(private companyService: CompanyService,
+                private organizationService: OrganizationService) {
+    }
+
+    ngOnInit(): void {
+        this.loadEntities();
+    }
+
+    loadEntities(): void {
+        switch (this.entityType) {
+            case EntityType.Company:
+                this.loadCompanies();
+                return;
+            case EntityType.PublicOrganization:
+                this.loadOrganizations();
+                return;
+            default:
+                return;
+        }
+    }
+
+    private loadCompanies(): void {
+        this.companyService.getCompanies().subscribe((response: Company[]) => {
+            this.data = response.map((x: Company) =>
+                Object.assign(new Company(), x)
+            );
+        })
+    }
+
+    private loadOrganizations(): void {
+        this.organizationService.getOrganizations().subscribe((response: Organization[]) => {
+            this.data = response.map((x: Organization) =>
+                Object.assign(new Organization(), x)
+            );
+        })
+    }
+}

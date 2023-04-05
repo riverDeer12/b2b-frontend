@@ -1,0 +1,13 @@
+<form [formGroup]="formName">
+    <span class="p-float-label">
+        <p-autoComplete
+            [lazy]="true"
+            (completeMethod)="loadEntities()"
+            [formControlName]="controlName"
+            [suggestions]="data"
+            [minLength]="3"
+            field="name">
+        </p-autoComplete>
+        <label>{{label | translate}}</label>
+    </span>
+</form>
