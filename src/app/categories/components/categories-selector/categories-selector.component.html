@@ -2,12 +2,13 @@
     <span class="p-float-label">
         <p-multiSelect
             [lazy]="true"
+            emptyFilterMessage="{{ 'no-results-found' | translate }}"
             (onLazyLoad)="loadCategories()"
             [formControlName]="controlName"
             [options]="data"
             optionValue="id"
             optionLabel="name"
-            [filter]="false"></p-multiSelect>
+            [filter]="true"></p-multiSelect>
         <label>{{label | translate}}</label>
     </span>
 </form>

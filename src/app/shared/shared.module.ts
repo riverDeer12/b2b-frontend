@@ -1,15 +1,26 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NotificationService} from './services/notification.service';
-import {TranslateModule} from '@ngx-translate/core';
+import {EntitySelectorComponent} from './components/entity-selector/entity-selector.component';
+import {AutoCompleteModule} from "primeng/autocomplete";
+import {ReactiveFormsModule} from "@angular/forms";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-    declarations: [],
+    declarations: [
+        EntitySelectorComponent
+    ],
     imports: [
-        CommonModule
+        CommonModule,
+        AutoCompleteModule,
+        ReactiveFormsModule,
+        TranslateModule
     ],
     providers: [
         NotificationService
+    ],
+    exports: [
+        EntitySelectorComponent
     ]
 })
 export class SharedModule {

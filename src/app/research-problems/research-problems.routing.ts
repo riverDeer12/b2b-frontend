@@ -9,9 +9,9 @@ export const ResearchProblemsRoutes: Routes = [
     {
         path: '',
         component: ResearchProblemsHomeComponent,
-        resolve: {
-            researchProblems: ResearchProblemsResolver
-        }
+        // resolve: {
+        //     researchProblems: ResearchProblemsResolver
+        // }
     },
     {
         path: 'create',

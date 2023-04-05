@@ -14,6 +14,7 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RadioButtonModule} from "primeng/radiobutton";
+import {SharedModule} from "../../shared/shared.module";
 
 /**
  * Translation resources loader.
@@ -48,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
         CategoriesComponentsModule,
         ReactiveFormsModule,
         RadioButtonModule,
-        FormsModule
+        FormsModule,
+        SharedModule
     ],
     exports: [
         ResearchProblemsDataTableComponent,

@@ -22,6 +22,8 @@ export class ResearchProblemFormComponent {
 
     parentEntityType!: EntityType;
 
+    parentEntityControlName!: string;
+
     public get entityType(): typeof EntityType {
         return EntityType;
     }
@@ -40,23 +42,15 @@ export class ResearchProblemFormComponent {
      * Switch function depending on
      * form action type from input decorator.
      */
-    initFormGroup = () => this.formType === FormType.Create ?
+    private initFormGroup = () => this.formType === FormType.Create ?
         this.initCreateForm() : this.initEditForm();
 
     /**
-     * Get entity id of research
-     * problem's  parent entity.
+     * Get id value of
+     * selected parent entity.
      */
-    private getParentEntityId(): string {
-        switch (this.parentEntityType) {
-            case EntityType.PublicOrganization:
-                return this.form.controls["publicOrganizationId"].value;
-            case EntityType.Company:
-                return this.form.controls["companyId"].value;
-            default:
-                return '';
-        }
-    }
+    private getParentEntityId = () =>
+        this.form.controls["parentEntityId"].value;
 
 
     /**
@@ -69,8 +63,8 @@ export class ResearchProblemFormComponent {
             description: new FormControl('', Validators.required),
             academicCommunityContributionPossibility: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
-            publicOrganizationId: new FormControl('', Validators.required),
-            companyId: new FormControl('', Validators.required)
+            parentEntityType: new FormControl('', Validators.required),
+            parentEntityId: new FormControl('', Validators.required)
         })
     }
 
@@ -84,8 +78,8 @@ export class ResearchProblemFormComponent {
             description: new FormControl(this.researchProblem.description, Validators.required),
             academicCommunityContributionPossibility: new FormControl(this.researchProblem.academicCommunityContributionPossibility, Validators.required),
             categories: new FormControl(this.researchProblem.categories, Validators.required),
-            publicOrganizationId: new FormControl(this.researchProblem.publicOrganizationId, Validators.required),
-            companyId: new FormControl(this.researchProblem.companyId, Validators.required)
+            parentEntityType: new FormControl(this.researchProblem.parentEntityType, Validators.required),
+            parentEntityId: new FormControl(this.researchProblem.parentEntityId, Validators.required),
         })
     }
 
@@ -112,18 +106,19 @@ export class ResearchProblemFormComponent {
      * create new research problem.
      */
     private createResearchProblem(): void {
-        this.researchProblemService.createResearchProblem(this.parentEntityType, this.getParentEntityId(), this.form.value).subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'research-problem-successfully-created');
 
-                this.router.navigateByUrl(this.returnUrl).then();
-            },
-            (error) => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-            })
+            this.researchProblemService.createResearchProblem(this.parentEntityType, this.getParentEntityId(), this.form.value).subscribe(() => {
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'research-problem-successfully-created');
+
+                    this.router.navigateByUrl(this.returnUrl).then();
+                },
+                (error) => {
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'correct-validation-errors');
+                })
     }
 
     /**
