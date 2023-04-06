@@ -1,13 +1,15 @@
 <form [formGroup]="formName">
     <span class="p-float-label">
-        <p-autoComplete
+        <p-dropdown
+            optionValue="id"
+            optionLabel="name"
+            emptyFilterMessage="{{ 'no-results-found' | translate }}"
+            (onLazyLoad)="loadEntities()"
+            [options]="data"
             [lazy]="true"
-            (completeMethod)="loadEntities()"
-            [formControlName]="controlName"
-            [suggestions]="data"
-            [minLength]="3"
-            field="name">
-        </p-autoComplete>
+            [filter]="true"
+            [formControlName]="controlName">
+        </p-dropdown>
         <label>{{label | translate}}</label>
     </span>
 </form>

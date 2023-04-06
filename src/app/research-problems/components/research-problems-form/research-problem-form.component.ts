@@ -7,6 +7,7 @@ import {NotificationType} from "../../../shared/enums/notification-type";
 import {ResearchProblem} from "../../core/models/research-problem";
 import {ResearchProblemService} from "../../core/services/research-problem.service";
 import {EntityType} from "../../../auth/core/enums/entity-type";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'research-problem-form',
@@ -20,8 +21,6 @@ export class ResearchProblemFormComponent {
 
     form!: FormGroup;
 
-    parentEntityType!: EntityType;
-
     parentEntityControlName!: string;
 
     public get entityType(): typeof EntityType {
@@ -30,6 +29,7 @@ export class ResearchProblemFormComponent {
 
     constructor(private fb: FormBuilder,
                 private router: Router,
+                private sharedService: SharedService,
                 private notificationService: NotificationService,
                 private researchProblemService: ResearchProblemService) {
     }
@@ -54,6 +54,13 @@ export class ResearchProblemFormComponent {
 
 
     /**
+     * Get value of selected parent
+     * entity type.
+     */
+    private getParentEntityType = () =>
+        this.form.controls["parentEntityType"].value;
+
+    /**
      * Initializes form if
      * create form action is triggered.
      */
@@ -63,9 +70,11 @@ export class ResearchProblemFormComponent {
             description: new FormControl('', Validators.required),
             academicCommunityContributionPossibility: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
-            parentEntityType: new FormControl('', Validators.required),
+            parentEntityType: new FormControl(EntityType.Company, Validators.required),
             parentEntityId: new FormControl('', Validators.required)
-        })
+        });
+
+        this.sharedService.setParenEntityType(this.getParentEntityType());
     }
 
     /**
@@ -80,7 +89,9 @@ export class ResearchProblemFormComponent {
             categories: new FormControl(this.researchProblem.categories, Validators.required),
             parentEntityType: new FormControl(this.researchProblem.parentEntityType, Validators.required),
             parentEntityId: new FormControl(this.researchProblem.parentEntityId, Validators.required),
-        })
+        });
+
+        this.sharedService.setParenEntityType(this.getParentEntityType());
     }
 
     /**
@@ -88,6 +99,9 @@ export class ResearchProblemFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        console.log(this.form.value);
+
         if (this.form.invalid) {
             this.notificationService
                 .showNotification(NotificationType.Error,
@@ -95,9 +109,9 @@ export class ResearchProblemFormComponent {
             return;
         }
 
-        this.formType === FormType.Create ?
+/*        this.formType === FormType.Create ?
             this.createResearchProblem() :
-            this.editResearchProblem();
+            this.editResearchProblem();*/
     }
 
     /**
@@ -106,8 +120,7 @@ export class ResearchProblemFormComponent {
      * create new research problem.
      */
     private createResearchProblem(): void {
-
-            this.researchProblemService.createResearchProblem(this.parentEntityType, this.getParentEntityId(), this.form.value).subscribe(() => {
+            this.researchProblemService.createResearchProblem(this.getParentEntityType(), this.getParentEntityId(), this.form.value).subscribe(() => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
                             'research-problem-successfully-created');
@@ -128,7 +141,7 @@ export class ResearchProblemFormComponent {
      */
     private editResearchProblem(): void {
         this.researchProblemService
-            .editResearchProblem(this.researchProblem.id, this.parentEntityType, this.getParentEntityId(), this.form.value)
+            .editResearchProblem(this.researchProblem.id, this.getParentEntityType(), this.getParentEntityId(), this.form.value)
             .subscribe(() => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
@@ -142,4 +155,14 @@ export class ResearchProblemFormComponent {
                             'correct-validation-errors');
                 })
     }
+
+    /**
+     * Method for triggering
+     * change on parent entity
+     * radio buttons.
+     */
+    changeParentEntityType () : void {
+        this.sharedService.setParenEntityType(this.getParentEntityType());
+    }
+
 }

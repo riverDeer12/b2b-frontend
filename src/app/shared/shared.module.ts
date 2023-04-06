@@ -5,6 +5,7 @@ import {EntitySelectorComponent} from './components/entity-selector/entity-selec
 import {AutoCompleteModule} from "primeng/autocomplete";
 import {ReactiveFormsModule} from "@angular/forms";
 import {TranslateModule} from "@ngx-translate/core";
+import {DropdownModule} from "primeng/dropdown";
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import {TranslateModule} from "@ngx-translate/core";
         CommonModule,
         AutoCompleteModule,
         ReactiveFormsModule,
-        TranslateModule
+        TranslateModule,
+        DropdownModule
     ],
     providers: [
         NotificationService

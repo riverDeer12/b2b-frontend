@@ -35,16 +35,20 @@
                 </div>
                 <div class="field col-md-12 mt-5">
                     <div class="field-radiobutton">
-                        <p-radioButton name="parentEntityType" [value]="entityType.Company"
+                        <p-radioButton (click)="changeParentEntityType()"
+                                       name="parentEntityType"
+                                       [value]="entityType.Company"
                                        formControlName="parentEntityType"
                                        id="company"></p-radioButton>
                         <label for="company">Company</label>
                     </div>
                     <div class="field-radiobutton">
-                        <p-radioButton name="parentEntityType" [value]="entityType.PublicOrganization"
+                        <p-radioButton (click)="changeParentEntityType()"
+                                       name="parentEntityType"
+                                       [value]="entityType.PublicOrganization"
                                        formControlName="parentEntityType"
                                        id="publicOrganization"></p-radioButton>
-                        <label for="company">Public organization</label>
+                        <label for="publicOrganization">Public organization</label>
                     </div>
                 </div>
                 <div class="field col-md-12 mt-5">
