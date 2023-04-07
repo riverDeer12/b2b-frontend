@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormType} from '../../../shared/enums/form-type';
-import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
 import {Company} from '../../core/models/company';
+import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
 
 @Component({
-  selector: 'company-edit',
-  templateUrl: './company-edit.component.html',
-  styleUrls: ['./company-edit.component.scss']
+    selector: 'company-edit',
+    templateUrl: './company-edit.component.html',
+    styleUrls: ['./company-edit.component.scss']
 })
 export class CompanyEditComponent {
     returnUrl = '/admin/companies';
@@ -16,7 +16,9 @@ export class CompanyEditComponent {
 
     company!: Company;
 
-    constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
+    researchProblems!: ResearchProblem[];
+
+    constructor(private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
     }
 
@@ -26,6 +28,9 @@ export class CompanyEditComponent {
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
             this.company = Object.assign(new Company(), response['company']);
+            this.researchProblems = response["researchProblems"].map((x: ResearchProblem) =>
+                Object.assign(new ResearchProblem(), x)
+            );
         });
     }
 }

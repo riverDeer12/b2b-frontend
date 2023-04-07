@@ -35,5 +35,14 @@
     "tax-code": "OIB",
     "website": "Web sjedište",
     "projects": "Projekti",
-    "number-of-employees": "Broj zaposlenih"
+    "number-of-employees": "Broj zaposlenih",
+    "general": "Općenito",
+    "username-password": "Korisničko ime i lozinka",
+    "research-problems": "Razvojni prijedlozi tvrtke",
+    "username": "Korisničko ime",
+    "password": "Lozinka",
+    "confirm-password": "Potvrda lozinke",
+    "no-research-problems-found": "Nema pronađenih razvojnih prijedloga.",
+    "new-research-problem": "Novi razvojni prijedlog",
+    "research-problem-items": "razvojnih prijedloga"
 }

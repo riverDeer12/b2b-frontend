@@ -1,1 +1,9 @@
-<p>company-edit works!</p>
+<h3>{{ 'edit-company' | translate }}</h3>
+<div class="mt-5">
+    <company-form
+        [formType]="formType"
+        [company]="company"
+        [returnUrl]="returnUrl"
+        [researchProblems]="researchProblems"
+    ></company-form>
+</div>

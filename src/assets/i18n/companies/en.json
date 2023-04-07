@@ -35,5 +35,12 @@
     "tax-code": "Tax Code",
     "website": "Website",
     "projects": "Projects",
-    "number-of-employees": "Number of Employees"
+    "number-of-employees": "Number of Employees",
+    "general": "General",
+    "username-password": "Username and Password",
+    "research-problems": "Research Problems",
+    "username": "Username",
+    "password": "Password",
+    "confirm-password": "Confirm Password",
+    "no-research-problems-found": "No research problems found."
 }

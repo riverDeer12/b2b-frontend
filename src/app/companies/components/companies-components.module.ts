@@ -11,6 +11,10 @@ import {RippleModule} from 'primeng/ripple';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {ReactiveFormsModule} from '@angular/forms';
+import {CompanyGeneralFormComponent} from "../company-general-form/company-general-form.component";
+import {TabViewModule} from "primeng/tabview";
+import {AuthComponentsModule} from "../../auth/components/auth-components.module";
+import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";
 
 /**
  * Translation resources loader.
@@ -24,7 +28,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
     declarations: [
         CompaniesDataTableComponent,
-        CompanyFormComponent
+        CompanyFormComponent,
+        CompanyGeneralFormComponent
     ],
     imports: [
         CommonModule,
@@ -42,11 +47,15 @@ export function createTranslateLoader(http: HttpClient) {
         RippleModule,
         ConfirmDialogModule,
         InputTextModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TabViewModule,
+        AuthComponentsModule,
+        ResearchProblemsComponentsModule
     ],
     exports: [
         CompaniesDataTableComponent,
-        CompanyFormComponent
+        CompanyFormComponent,
+        CompanyGeneralFormComponent
     ]
 })
 export class CompaniesComponentsModule {

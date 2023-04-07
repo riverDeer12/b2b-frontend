@@ -10,6 +10,7 @@ import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import {ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from "primeng/inputtext";
+import {RippleModule} from "primeng/ripple";
 
 /**
  * Translation resources loader.
@@ -40,7 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
         PasswordModule,
         ButtonModule,
         ReactiveFormsModule,
-        InputTextModule
+        InputTextModule,
+        RippleModule
     ],
     exports: [
         LoginFormComponent,
