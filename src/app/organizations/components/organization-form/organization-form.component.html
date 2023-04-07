@@ -1,18 +1,12 @@
 <div class="grid">
-    <div class="col-12 md:col-8">
+    <div class="col-12 md:col-12">
         <p-tabView>
             <p-tabPanel header="{{ 'general' | translate }}" class="line-height-3 m-0">
                 <organization-general-form [formType]="formType" [returnUrl]="returnUrl" ></organization-general-form>
             </p-tabPanel>
             <p-tabPanel header="{{ 'username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
-                    <div class="field field col-md-12">
-                            <span class="p-float-label">
-                                <input pInputText type="text" id="username" formControlName="username"/>
-                                <label for="username">{{ 'username' | translate }}</label>
-                            </span>
-                    </div>
-                    <auth-change-password [username]="this.organization.username"
+                    <auth-change-password [username]="this.organization?.username"
                                           [entityType]="entityType"></auth-change-password>
                 </div>
             </p-tabPanel>

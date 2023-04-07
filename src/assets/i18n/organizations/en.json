@@ -41,5 +41,7 @@
     "confirm-password": "Confirm Password",
     "general": "General",
     "username-password": "Username and Password",
-    "research-problems": "Organization's Research Problems"
+    "research-problems": "Organization's Research Problems",
+    "no-research-problems-found": "No reserach problems found.",
+    "new-research-problem": "New Research Problem"
 }

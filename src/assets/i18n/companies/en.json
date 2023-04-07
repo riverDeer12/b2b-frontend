@@ -30,5 +30,10 @@
     "clear": "Clear",
     "address": "Address",
     "email": "Email",
-    "number-of-views": "Number of Views"
+    "number-of-views": "Number of Views",
+    "description": "Description",
+    "tax-code": "Tax Code",
+    "website": "Website",
+    "projects": "Projects",
+    "number-of-employees": "Number of Employees"
 }

@@ -9,6 +9,7 @@ import { ChangeUsernameComponent } from './change-username/change-username.compo
 import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import {ReactiveFormsModule} from '@angular/forms';
+import {InputTextModule} from "primeng/inputtext";
 
 /**
  * Translation resources loader.
@@ -38,7 +39,8 @@ export function createTranslateLoader(http: HttpClient) {
         }),
         PasswordModule,
         ButtonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        InputTextModule
     ],
     exports: [
         LoginFormComponent,

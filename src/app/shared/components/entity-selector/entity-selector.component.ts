@@ -72,8 +72,6 @@ export class EntitySelectorComponent {
             this.data = response.map((x: Company) =>
                 Object.assign(new Company(), x)
             );
-
-            console.log('Companies:', this.data);
         })
     }
 
@@ -86,16 +84,6 @@ export class EntitySelectorComponent {
             this.data = response.map((x: Organization) =>
                 Object.assign(new Organization(), x)
             );
-
-            console.log('Organizations:', this.data);
         })
     }
-
-    filterEntities(filterValue: string): void {
-        this.filteredData = this.data.filter(x => x.name.includes(filterValue));
-
-        console.log(this.filteredData);
-    }
-
-
 }

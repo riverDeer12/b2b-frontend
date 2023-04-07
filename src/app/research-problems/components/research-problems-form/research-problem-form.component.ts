@@ -95,6 +95,14 @@ export class ResearchProblemFormComponent {
     }
 
     /**
+     * Method for triggering
+     * change on parent entity
+     * radio buttons.
+     */
+    changeParentEntityType = () =>
+        this.sharedService.setParenEntityType(this.getParentEntityType());
+
+    /**
      * Method that is triggered
      * by clicking submit button.
      */
@@ -109,9 +117,9 @@ export class ResearchProblemFormComponent {
             return;
         }
 
-/*        this.formType === FormType.Create ?
+        this.formType === FormType.Create ?
             this.createResearchProblem() :
-            this.editResearchProblem();*/
+            this.editResearchProblem();
     }
 
     /**
@@ -120,18 +128,20 @@ export class ResearchProblemFormComponent {
      * create new research problem.
      */
     private createResearchProblem(): void {
-            this.researchProblemService.createResearchProblem(this.getParentEntityType(), this.getParentEntityId(), this.form.value).subscribe(() => {
-                    this.notificationService
-                        .showNotification(NotificationType.Success,
-                            'research-problem-successfully-created');
+        this.researchProblemService
+            .createResearchProblem(this.getParentEntityType(), this.getParentEntityId(), this.form.value)
+            .subscribe(() => {
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'research-problem-successfully-created');
 
-                    this.router.navigateByUrl(this.returnUrl).then();
-                },
-                (error) => {
-                    this.notificationService
-                        .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
-                })
+                this.router.navigateByUrl(this.returnUrl).then();
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -155,14 +165,4 @@ export class ResearchProblemFormComponent {
                             'correct-validation-errors');
                 })
     }
-
-    /**
-     * Method for triggering
-     * change on parent entity
-     * radio buttons.
-     */
-    changeParentEntityType () : void {
-        this.sharedService.setParenEntityType(this.getParentEntityType());
-    }
-
 }

@@ -41,5 +41,7 @@
     "confirm-password": "Potvrda lozinke",
     "general": "Opći podaci",
     "username-password": "Korisničko ime i lozinka",
-    "research-problems": "Razvojni prijedlozi organizacije"
+    "research-problems": "Razvojni prijedlozi organizacije",
+    "no-research-problems-found": "Nema pronađenih razvojnih prijedloga.",
+    "new-research-problem": "Novi razvojni prijedlog"
 }

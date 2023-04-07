@@ -1,10 +1,10 @@
 export enum EntityType {
-    Company,
-    PublicOrganization,
-    Scientist,
-    News,
-    Equipment,
-    ResearchProblem,
-    JobOffer,
-    SpecificKnowledge
+    Company = "companies",
+    PublicOrganization = "publicOrganizations",
+    Scientist = "scientists",
+    News = "news",
+    Equipment = "equipment",
+    ResearchProblem = "researchProblems",
+    JobOffer = "jobOffers",
+    SpecificKnowledge = "specificKnowledge"
 }

@@ -27,5 +27,12 @@
     "no-research-problems-found": "Nema pronađenih razvojnih prijedloga",
     "error-deleting": "Greška prilikom brisanja razvojnog prijedloga.",
     "new-research-problem": "Novi razvojni prijedlog",
-    "clear": "Obriši"
+    "clear": "Obriši",
+    "parent-entity": "Nadređeni entitet",
+    "categories": "Pripadne kategorije",
+    "academicCommunityContributionPossibility": "Doprinos akademskoj zajednici",
+    "description": "Opis",
+    "title": "Naslov",
+    "company": "Tvrtka",
+    "organization": "Javna organizacija"
 }

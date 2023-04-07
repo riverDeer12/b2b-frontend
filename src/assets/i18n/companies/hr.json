@@ -30,5 +30,10 @@
     "clear": "Obriši",
     "address": "Adresa",
     "email": "Email",
-    "number-of-views": "Broj pregleda"
+    "number-of-views": "Broj pregleda",
+    "description": "Opis tvrtke",
+    "tax-code": "OIB",
+    "website": "Web sjedište",
+    "projects": "Projekti",
+    "number-of-employees": "Broj zaposlenih"
 }

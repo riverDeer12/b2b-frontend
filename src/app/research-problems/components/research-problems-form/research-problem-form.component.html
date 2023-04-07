@@ -10,7 +10,8 @@
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <textarea pInputText type="text" id="description" formControlName="description">
+                        <textarea
+                                    rows="10" pInputText type="text" id="description" formControlName="description">
                         </textarea>
                         <label for="description">{{ 'description' | translate }}</label>
                     </span>
@@ -40,7 +41,7 @@
                                        [value]="entityType.Company"
                                        formControlName="parentEntityType"
                                        id="company"></p-radioButton>
-                        <label for="company">Company</label>
+                        <label for="company">{{ 'company' | translate }}</label>
                     </div>
                     <div class="field-radiobutton">
                         <p-radioButton (click)="changeParentEntityType()"
@@ -48,7 +49,7 @@
                                        [value]="entityType.PublicOrganization"
                                        formControlName="parentEntityType"
                                        id="publicOrganization"></p-radioButton>
-                        <label for="publicOrganization">Public organization</label>
+                        <label for="publicOrganization">{{ 'organization' | translate }}</label>
                     </div>
                 </div>
                 <div class="field col-md-12 mt-5">

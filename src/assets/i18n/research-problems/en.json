@@ -27,5 +27,12 @@
     "no-research-problems-found": "No research problems found.",
     "error-deleting": "Error deleting research problem.",
     "new-research-problem": "New Research Problem",
-    "clear": "Clear"
+    "clear": "Clear",
+    "parent-entity": "Parent Entity",
+    "categories": "Categories",
+    "academicCommunityContributionPossibility": "Academic Community Contribution Possibility",
+    "description": "Description",
+    "title": "Title",
+    "company": "Company",
+    "organization": "Public Organization"
 }

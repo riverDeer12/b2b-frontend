@@ -12,7 +12,7 @@ import {AuthService} from '../../core/services/auth.service';
     styleUrls: ['./change-password.component.scss']
 })
 export class ChangePasswordComponent {
-    @Input() username!: string;
+    @Input() username!: string | undefined;
     @Input() entityType!: EntityType;
 
     form!: FormGroup;
@@ -31,6 +31,7 @@ export class ChangePasswordComponent {
 
     private setFormGroup(): void {
         this.form = this.fb.group({
+            username: new FormControl(this.username, Validators.required),
             password: new FormControl('', Validators.required),
             confirmPassword: new FormControl('', Validators.required)
         })
@@ -53,7 +54,7 @@ export class ChangePasswordComponent {
             return;
         }
 
-        this.authService.resetPassword(this.username, this.changePasswordEndpoint).subscribe((response: Object) => {
+        this.authService.resetPassword(this.username as string, this.changePasswordEndpoint).subscribe((response: Object) => {
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'password-changed-successfully');
