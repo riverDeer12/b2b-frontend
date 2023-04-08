@@ -14,10 +14,6 @@ export const SpecificKnowledgeRoutes: Routes = [
         }
     },
     {
-        path: 'create',
-        component: SpecificKnowledgeCreateComponent
-    },
-    {
         path: 'edit/:scientist-id/:id',
         component: SpecificKnowledgeEditComponent,
         resolve: {

@@ -14,10 +14,6 @@ export const OrganizationsRoutes: Routes = [
         }
     },
     {
-        path: 'create',
-        component: OrganizationCreateComponent
-    },
-    {
         path: 'edit/:id',
         component: OrganizationEditComponent,
         resolve: {

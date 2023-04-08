@@ -62,11 +62,6 @@ export class EquipmentDataTableComponent {
             '/' + scientistId + '/' + equipmentId).then();
 
     /**
-     * Redirect user to equipment create page.
-     */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/equipment/create').then();
-
-    /**
      * Trigger popup to
      * confirm deleting selected
      * equipment item from data table.

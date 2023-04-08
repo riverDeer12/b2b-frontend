@@ -14,10 +14,6 @@ export const ScientistsRoutes: Routes = [
         }
     },
     {
-        path: 'create',
-        component: ScientistCreateComponent
-    },
-    {
         path: 'edit/:id',
         component: ScientistEditComponent,
         resolve: {

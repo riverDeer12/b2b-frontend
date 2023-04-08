@@ -57,12 +57,6 @@ export class SubscribersDataTableComponent {
     goToEditPage = (id: string) => this.router.navigateByUrl('/admin/subscribers/edit/' + id).then();
 
     /**
-     * Redirect user to subscribers
-     * create page.
-     */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/subscribers/create').then();
-
-    /**
      * Trigger popup to
      * confirm deleting selected
      * subscriber item from data table.

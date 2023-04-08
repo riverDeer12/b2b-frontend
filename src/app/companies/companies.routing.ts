@@ -15,10 +15,6 @@ export const CompaniesRoutes: Routes = [
         }
     },
     {
-        path: 'create',
-        component: CompanyCreateComponent
-    },
-    {
         path: 'edit/:id',
         component: CompanyEditComponent,
         resolve: {

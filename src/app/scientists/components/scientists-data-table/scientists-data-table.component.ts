@@ -57,12 +57,6 @@ export class ScientistsDataTableComponent {
     goToEditPage = (id: string) => this.router.navigateByUrl('/admin/scientists/edit/' + id).then();
 
     /**
-     * Redirect user to scientists
-     * create page.
-     */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/scientists/create').then();
-
-    /**
      * Trigger popup to
      * confirm deleting selected
      * scientists item from data table.

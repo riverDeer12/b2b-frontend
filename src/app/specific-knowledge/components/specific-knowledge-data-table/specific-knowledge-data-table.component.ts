@@ -59,12 +59,6 @@ export class SpecificKnowledgeDataTableComponent {
         this.router.navigateByUrl('/admin/specific-knowledge/edit/' + scientistId + '/' + specificKnowledgeId).then();
 
     /**
-     * Redirect user to specific
-     * knowledge create page.
-     */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/specific-knowledge/create').then();
-
-    /**
      * Trigger popup to
      * confirm deleting selected
      * specific knowledge item from data table.

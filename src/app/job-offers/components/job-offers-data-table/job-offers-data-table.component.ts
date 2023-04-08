@@ -60,13 +60,6 @@ export class JobOffersDataTableComponent {
         this.router.navigateByUrl('/admin/job-offers/edit/' + companyId + '/' + jobOfferId).then();
 
     /**
-     * Redirect user to job offer
-     * create page.
-     *
-     */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/job-offers/create').then();
-
-    /**
      * Trigger popup to
      * confirm deleting selected
      * job offer item from data table.

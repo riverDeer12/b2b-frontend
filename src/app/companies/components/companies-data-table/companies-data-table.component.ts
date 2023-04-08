@@ -57,13 +57,6 @@ export class CompaniesDataTableComponent {
     goToEditPage = (id: string) => this.router.navigateByUrl('/admin/companies/edit/' + id).then();
 
     /**
-     * Redirect user to companies
-     * create page.
-     *
-     */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/companies/create').then();
-
-    /**
      * Trigger popup to
      * confirm deleting selected
      * companies item from data table.

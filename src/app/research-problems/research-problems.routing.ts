@@ -14,10 +14,6 @@ export const ResearchProblemsRoutes: Routes = [
         // }
     },
     {
-        path: 'create',
-        component: ResearchProblemCreateComponent,
-    },
-    {
         path: 'edit/:entity-type/:entity-id/:id',
         component: ResearchProblemEditComponent,
         resolve: {

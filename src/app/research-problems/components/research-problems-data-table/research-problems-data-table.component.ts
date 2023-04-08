@@ -63,12 +63,6 @@ export class ResearchProblemsDataTableComponent {
             '/' + this.parentEntityId + '/' + id).then();
 
     /**
-     * Redirect user to research
-     * problems create page.
-     */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/research-problems/create').then();
-
-    /**
      * Trigger popup to
      * confirm deleting selected
      * research problem item from data table.

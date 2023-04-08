@@ -14,10 +14,6 @@ export const EquipmentRoutes: Routes = [
         }
     },
     {
-        path: 'create',
-        component: EquipmentCreateComponent
-    },
-    {
         path: 'edit/:scientist-id/:id',
         component: EquipmentEditComponent,
         resolve: {
