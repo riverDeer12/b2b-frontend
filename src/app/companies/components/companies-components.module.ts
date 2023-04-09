@@ -11,7 +11,7 @@ import {RippleModule} from 'primeng/ripple';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {ReactiveFormsModule} from '@angular/forms';
-import {CompanyGeneralFormComponent} from "../company-general-form/company-general-form.component";
+import {CompanyGeneralFormComponent} from "./company-general-form/company-general-form.component";
 import {TabViewModule} from "primeng/tabview";
 import {AuthComponentsModule} from "../../auth/components/auth-components.module";
 import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";

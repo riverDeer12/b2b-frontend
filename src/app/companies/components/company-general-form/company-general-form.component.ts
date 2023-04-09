@@ -1,11 +1,11 @@
 import {Component, Input} from '@angular/core';
-import {FormType} from "../../shared/enums/form-type";
-import {Company} from "../core/models/company";
+import {FormType} from "../../../shared/enums/form-type";
+import {Company} from "../../core/models/company";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {NotificationService} from "../../shared/services/notification.service";
-import {CompanyService} from "../core/services/company.service";
-import {NotificationType} from "../../shared/enums/notification-type";
+import {NotificationService} from "../../../shared/services/notification.service";
+import {CompanyService} from "../../core/services/company.service";
+import {NotificationType} from "../../../shared/enums/notification-type";
 
 @Component({
   selector: 'company-general-form',

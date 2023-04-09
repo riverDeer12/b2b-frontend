@@ -22,24 +22,21 @@ export class ChangePasswordComponent {
     constructor(private fb: FormBuilder,
                 private notificationService: NotificationService,
                 private authService: AuthService) {
-        this.setFormGroup();
     }
 
     ngOnInit(): void {
-        this.setChangePasswordEndpoint();
+        this.setFormGroup();
     }
 
     private setFormGroup(): void {
         this.form = this.fb.group({
-            username: new FormControl(this.username, Validators.required),
+            username: new FormControl({value: this.username, disabled: true}, Validators.required),
             password: new FormControl('', Validators.required),
             confirmPassword: new FormControl('', Validators.required)
         })
-    }
 
-    private setChangePasswordEndpoint(): void {
-        this.changePasswordEndpoint =
-            environment.apiUrl + '/auth/' + this.entityType.toString() + '/resetPassword';
+        this.changePasswordEndpoint = environment.apiUrl + '/auth/' + this.entityType.toString()
+            + '/resetPassword';
     }
 
     submit(): void {

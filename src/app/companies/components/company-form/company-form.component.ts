@@ -15,7 +15,7 @@ export class CompanyFormComponent {
     @Input() researchProblems!: ResearchProblem[];
     @Input() returnUrl!: string;
 
-    entityType!: EntityType.Company;
+    entityType = EntityType.Company;
 
     ngOnInit(){
 
