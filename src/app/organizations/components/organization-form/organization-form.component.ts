@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Organization} from '../../core/models/organization';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {FormType} from "../../../shared/enums/form-type";
+import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
 
 @Component({
     selector: 'organization-form',
@@ -18,6 +19,7 @@ import {FormType} from "../../../shared/enums/form-type";
 })
 export class OrganizationFormComponent {
     @Input() organization!: Organization;
+    @Input() researchProblems!: ResearchProblem[];
     @Input() returnUrl!: string;
     @Input() formType!: FormType;
 

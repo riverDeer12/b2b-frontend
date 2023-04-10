@@ -3,6 +3,7 @@ import {FormType} from '../../../shared/enums/form-type';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
 import {Organization} from '../../core/models/organization';
+import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
 
 @Component({
     selector: 'organization-edit',
@@ -16,6 +17,8 @@ export class OrganizationEditComponent {
 
     organization!: Organization;
 
+    researchProblems!: ResearchProblem[];
+
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
     }
@@ -26,6 +29,9 @@ export class OrganizationEditComponent {
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
             this.organization = Object.assign(new Organization(), response['organization']);
+            this.researchProblems = response["researchProblems"].map((x: ResearchProblem) =>
+                Object.assign(new ResearchProblem(), x)
+            );
         });
     }
 }
