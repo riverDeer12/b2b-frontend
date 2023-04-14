@@ -1,3 +1,20 @@
 {
-    "clear": "Clear"
+    "clear": "Obriši",
+    "save": "Spremi",
+    "success": "Uspjeh",
+    "error": "Greška",
+    "warn": "Upozorenje",
+    "info": "Obavijest",
+    "yes": "Da",
+    "no": "Ne",
+    "from": "od",
+    "to": "do",
+    "keyword": "Ključna riječ",
+    "general": "Opći podaci",
+    "choose-option": "Odaberite vrijednost",
+    "username": "Korisničko ime",
+    "password": "Lozinka",
+    "confirm-password": "Potvrda lozinke",
+    "username-password": "Korisničko ime i lozinka",
+    "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!"
 }

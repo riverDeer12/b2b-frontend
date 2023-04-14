@@ -1,18 +1,12 @@
 {
-    "username": "Username",
-    "password": "Password",
     "login": "Login",
     "correct-validation-errors": "Please, check values and try again.",
-    "error": "Error",
-    "success": "Success",
     "welcome-to-dashboard": "Welcome to RIMAP dashboard.",
-    "access-denied": "Access Denied",
+    "access-denied": "Access denied",
     "you-dont-have-permissions": "You do not have the necessary permissions. Please contact administrator.",
-    "error-occurred": "Error Occurred",
+    "error-occurred": "Error occurred while trying to login",
     "resource-not-available": "Requested resource is not available.",
     "back-to-home-page": "Back to Home Page",
     "login-error": "Username or password is not correct. Try again.",
-    "warn": "Warning",
-    "info": "Info",
     "successfully-changed-password": "Password has been changed successfully."
 }

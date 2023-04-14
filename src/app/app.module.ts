@@ -36,9 +36,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         CommonModule,
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
+        RouterModule.forRoot(AppRoutes),
         TranslateModule.forRoot({
             defaultLanguage: 'hr',
             loader: {
@@ -48,7 +46,9 @@ export function createTranslateLoader(http: HttpClient) {
             },
             isolate: false
         }),
-        RouterModule.forRoot(AppRoutes),
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
         ToastModule
     ],
     providers: [

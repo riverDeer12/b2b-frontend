@@ -4,19 +4,22 @@ import {CompaniesPagesModule} from './pages/companies-pages.module';
 import {RouterModule} from '@angular/router';
 import {CompaniesRoutes} from './companies.routing';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpBackend} from '@angular/common/http';
 import {SharedModule} from '../shared/shared.module';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CompaniesComponent} from './companies.component';
 import {ConfirmationService} from 'primeng/api';
+import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 
 /**
  * Translation resources loader.
  *
  * @param http client for loading translations.
  */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/companies/', '.json');
+export function createTranslateLoader(http: HttpBackend) {
+    return new MultiTranslateHttpLoader(http, [
+        './assets/i18n/companies/',
+        './assets/i18n/shared/'
+    ]);
 }
 
 @NgModule({
@@ -30,7 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [HttpClient]
+                deps: [HttpBackend]
             },
             isolate: true
         }),

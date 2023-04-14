@@ -4,13 +4,13 @@ import {LoginFormComponent} from './login-form/login-form.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ChangeUsernameComponent } from './change-username/change-username.component';
+import {ChangePasswordComponent} from './change-password/change-password.component';
+import {ChangeUsernameComponent} from './change-username/change-username.component';
 import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import {ReactiveFormsModule} from '@angular/forms';
-import {InputTextModule} from "primeng/inputtext";
-import {RippleModule} from "primeng/ripple";
+import {InputTextModule} from 'primeng/inputtext';
+import {RippleModule} from 'primeng/ripple';
 
 /**
  * Translation resources loader.
