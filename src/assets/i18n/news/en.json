@@ -6,17 +6,11 @@
     "created-at": "Created date",
     "updated-at": "Last Change",
     "number-of-views": "Number of views",
-    "keyword": "Keyword",
-    "to": "to",
-    "from": "from",
     "items": "news",
     "pages": "pages",
     "no-news-found": "There are no news data found.",
     "confirm-delete-action": "Are you sure you want to perform delete action?",
     "confirm-delete-message": "When you confirm deleting action, selected news will be deleted.",
-    "yes": "Yes",
-    "no": "No",
     "create-news": "Creating new news",
-    "clear": "Clear",
     "new-news": "New News"
 }

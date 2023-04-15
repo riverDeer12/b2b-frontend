@@ -2,19 +2,22 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {AdminLayoutRoutes} from './admin-layout.routing';
 import {CommonModule} from '@angular/common';
-import {HttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpBackend} from '@angular/common/http';
 import {AdminLayoutComponent} from './admin-layout.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {AdminLayoutComponentsModule} from './components/admin-layout-components.module';
+import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 
 /**
  * Translations loader.
  *
  * @param http client for loading translations.
  */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/layouts/admin/', '.json');
+export function createTranslateLoader(http: HttpBackend) {
+    return new MultiTranslateHttpLoader(http, [
+        './assets/i18n/layouts/admin/',
+        './assets/i18n/shared/'
+    ]);
 }
 
 @NgModule({
@@ -27,7 +30,7 @@ export function createTranslateLoader(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [HttpClient]
+                deps: [HttpBackend]
             },
             isolate: true
         }),

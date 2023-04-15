@@ -4,17 +4,20 @@ import {SpecificKnowledgePagesModule} from "./pages/specific-knowledge-pages.mod
 import {RouterModule} from "@angular/router";
 import {SpecificKnowledgeRoutes} from "./specific-knowledge.routing";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {HttpClient} from "@angular/common/http";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {HttpBackend} from '@angular/common/http';
 import {SpecificKnowledgeComponent} from "./specific-knowledge.component";
+import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 
 /**
  * Translation resources loader.
  *
  * @param http client for loading translations.
  */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/specific-knowledge/', '.json');
+export function createTranslateLoader(http: HttpBackend) {
+    return new MultiTranslateHttpLoader(http, [
+        './assets/i18n/specific-knowledge/',
+        './assets/i18n/shared/'
+    ]);
 }
 
 @NgModule({
@@ -28,7 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [HttpClient]
+                deps: [HttpBackend]
             },
             isolate: true
         })

@@ -3,19 +3,22 @@ import {CommonModule} from '@angular/common';
 import {ScientistsPagesModule} from './pages/scientists-pages.module';
 import {ScientistsComponent} from './scientists.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpBackend} from '@angular/common/http';
 import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
 import {ScientistsRoutes} from './scientists.routing';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 
 /**
  * Translation resources loader.
  *
  * @param http client for loading translations.
  */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/scientists/', '.json');
+export function createTranslateLoader(http: HttpBackend) {
+    return new MultiTranslateHttpLoader(http, [
+        './assets/i18n/scientists/',
+        './assets/i18n/shared/'
+    ]);
 }
 
 @NgModule({
@@ -31,7 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [HttpClient]
+                deps: [HttpBackend]
             },
             isolate: true
         }),

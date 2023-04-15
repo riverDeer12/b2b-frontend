@@ -6,16 +6,11 @@
     "created-at": "Datum kreiranja",
     "updated-at": "Datum zadnje izmjene",
     "number-of-views": "Broj pregleda",
-    "keyword": "Ključna riječ",
-    "to": "do",
-    "from": "od",
     "items": "objava",
     "pages": "stranica",
+    "no-news-found": "Nema pronađenih objava.",
     "confirm-delete-action": "Jeste li sigurni?",
     "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabranu objavu.",
-    "yes": "Da",
-    "no": "Ne",
     "create-news": "Kreiranje nove objave",
-    "clear": "Obriši",
     "new-news": "Nova objava"
 }

@@ -4,16 +4,19 @@ import {AuthPagesModule} from './pages/auth-pages.module';
 import {AuthRoutes} from './auth.routing';
 import {RouterModule} from '@angular/router';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpBackend} from '@angular/common/http';
+import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 
 /**
  * Translation resources loader.
  *
  * @param http client for loading translations.
  */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/auth/', '.json');
+export function createTranslateLoader(http: HttpBackend) {
+    return new MultiTranslateHttpLoader(http, [
+        './assets/i18n/auth/',
+        './assets/i18n/shared/'
+    ]);
 }
 
 @NgModule({
@@ -26,10 +29,10 @@ export function createTranslateLoader(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [HttpClient]
+                deps: [HttpBackend]
             },
             isolate: true
-        }),
+        })
     ]
 })
 export class AuthModule {

@@ -7,14 +7,14 @@
     "create-job-offer": "Create new job offer",
     "subcategories": "Subcategories",
     "job-offer-validation-errors": "Please, check values and try again.",
-    "job-offer-successfully-created": "Category is successfully created.",
-    "job-offer-successfully-updated": "Category is successfully updated.",
+    "job-offer-successfully-created": "Job offer is successfully created.",
+    "job-offer-successfully-updated": "Job offer is successfully updated.",
     "no-error-details": "Error occurred, but no details given!",
-    "edit-job-offer": "Editing category",
-    "confirm-delete-action": "Are you sure you want to delete category?",
-    "confirm-delete-message": "When you confirm deleting action, selected category will be deleted.",
-    "successfully-deleted": "Category is successfully deleted.",
-    "no-job-offers-found": "No categories found.",
-    "error-deleting": "Error deleting category.",
-    "new-job-offer": "New Category"
+    "edit-job-offer": "Editing job offer",
+    "confirm-delete-action": "Are you sure you want to delete job offer?",
+    "confirm-delete-message": "When you confirm deleting action, selected job offer will be deleted.",
+    "successfully-deleted": "Job offer is successfully deleted.",
+    "no-job-offers-found": "No job offers found.",
+    "error-deleting": "Error deleting job offer.",
+    "new-job-offer": "New Job Offer"
 }

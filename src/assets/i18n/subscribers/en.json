@@ -1,7 +1,5 @@
 {
     "subscribers": "Subscribers",
-    "keyword": "Keyword",
     "email": "Email",
-    "new-subscriber": "New Subscriber",
-    "clear": "Clear"
+    "new-subscriber": "New Subscriber"
 }
