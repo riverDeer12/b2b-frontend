@@ -18,8 +18,8 @@ import {RedirectType} from '../../../shared/enums/redirect-type';
  * decorators.
  *
  * @param formType type of form action.
- * @param parentEntityType type of form action.
- * @param redirectType type of form action.
+ * @param parentEntityType type of parent entity.
+ * @param redirectType type of redirect action.
  * @param parentEntityId id of parent entity.
  * @param researchProblem data for managing.
  * @param returnUrl url to redirect user after form submit.
