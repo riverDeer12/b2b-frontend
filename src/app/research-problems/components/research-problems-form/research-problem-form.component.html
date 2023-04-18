@@ -11,7 +11,7 @@
                 <div class="field field col-md-12">
                     <span class="p-float-label">
                         <textarea
-                                    rows="10" pInputText type="text" id="description" formControlName="description">
+                                    rows="10" pInputText id="description" formControlName="description">
                         </textarea>
                         <label for="description">{{ 'description' | translate }}</label>
                     </span>
@@ -32,33 +32,6 @@
                             controlName="categories"
                             label="categories">
                         </categories-selector>
-                    </span>
-                </div>
-                <div class="field col-md-12 mt-5">
-                    <div class="field-radiobutton">
-                        <p-radioButton (click)="changeParentEntityType()"
-                                       name="parentEntityType"
-                                       [value]="entityType.Company"
-                                       formControlName="parentEntityType"
-                                       id="company"></p-radioButton>
-                        <label for="company">{{ 'company' | translate }}</label>
-                    </div>
-                    <div class="field-radiobutton">
-                        <p-radioButton (click)="changeParentEntityType()"
-                                       name="parentEntityType"
-                                       [value]="entityType.PublicOrganization"
-                                       formControlName="parentEntityType"
-                                       id="publicOrganization"></p-radioButton>
-                        <label for="publicOrganization">{{ 'organization' | translate }}</label>
-                    </div>
-                </div>
-                <div class="field col-md-12 mt-5">
-                    <span class="p-float-label">
-                        <entity-selector
-                            [formName]="form"
-                            controlName="parentEntityId"
-                            label="parent-entity">
-                        </entity-selector>
                     </span>
                 </div>
                 <div class="col-6 ml-0 pl-0">

@@ -8,7 +8,7 @@
          currentPageReportTemplate="{first} {{'to' | translate }} {last}
          {{'research-problem-items' | translate }} {{'from' | translate }}
          {totalRecords} {{'items' | translate }}"
-         [globalFilterFields]="['name']"
+         [globalFilterFields]="['title']"
          [tableStyle]="{'min-width':'75rem'}"
          responsiveLayout="scroll">
     <ng-template pTemplate="caption">
@@ -45,9 +45,9 @@
     <ng-template pTemplate="body" let-researchProblem>
         <tr>
             <td>
-                <button (click)="confirmDelete(researchProblem.id)" class="p-button-danger mr-3" pButton pRipple type="button"
+                <button (click)="confirmDelete(researchProblem.id)" class="p-button-danger m-1" pButton pRipple type="button"
                         icon="pi pi-trash"></button>
-                <button type="button" (click)="goToEditPage(researchProblem.id)" pButton pRipple  icon="pi pi-pencil"></button>
+                <button type="button" class="m-1" (click)="goToEditPage(researchProblem.id)" pButton pRipple  icon="pi pi-pencil"></button>
             </td>
             <td>
                 {{researchProblem.title}}

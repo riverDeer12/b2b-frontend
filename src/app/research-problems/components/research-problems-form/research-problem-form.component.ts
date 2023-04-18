@@ -1,14 +1,31 @@
 import {Component, Input} from '@angular/core';
-import {FormType} from "../../../shared/enums/form-type";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {NotificationService} from "../../../shared/services/notification.service";
-import {NotificationType} from "../../../shared/enums/notification-type";
-import {ResearchProblem} from "../../core/models/research-problem";
-import {ResearchProblemService} from "../../core/services/research-problem.service";
-import {EntityType} from "../../../auth/core/enums/entity-type";
-import {SharedService} from "../../../shared/services/shared.service";
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormType} from '../../../shared/enums/form-type';
+import {Router} from '@angular/router';
+import {NotificationService} from '../../../shared/services/notification.service';
+import {NotificationType} from '../../../shared/enums/notification-type';
+import {ResearchProblem} from '../../core/models/research-problem';
+import {ResearchProblemService} from '../../core/services/research-problem.service';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {SharedService} from '../../../shared/services/shared.service';
+import {RedirectType} from '../../../shared/enums/redirect-type';
 
+
+/**
+ * Component responsible for
+ * managing research problem data. It
+ * can be defined with different input
+ * decorators.
+ *
+ * @param formType type of form action.
+ * @param parentEntityType type of form action.
+ * @param redirectType type of form action.
+ * @param parentEntityId id of parent entity.
+ * @param researchProblem data for managing.
+ * @param returnUrl url to redirect user after form submit.
+ * @param dialogId parent dialog form identifier.
+ *
+ */
 @Component({
     selector: 'research-problem-form',
     templateUrl: './research-problem-form.component.html',
@@ -16,12 +33,14 @@ import {SharedService} from "../../../shared/services/shared.service";
 })
 export class ResearchProblemFormComponent {
     @Input() formType!: FormType;
-    @Input() researchProblem!: ResearchProblem
+    @Input() parentEntityType!: EntityType;
+    @Input() redirectType!: RedirectType;
+    @Input() parentEntityId!: string;
+    @Input() researchProblem!: ResearchProblem;
     @Input() returnUrl!: string;
+    @Input() dialogId!: string;
 
     form!: FormGroup;
-
-    parentEntityControlName!: string;
 
     public get entityType(): typeof EntityType {
         return EntityType;
@@ -45,20 +64,6 @@ export class ResearchProblemFormComponent {
     private initFormGroup = () => this.formType === FormType.Create ?
         this.initCreateForm() : this.initEditForm();
 
-    /**
-     * Get id value of
-     * selected parent entity.
-     */
-    private getParentEntityId = () =>
-        this.form.controls["parentEntityId"].value;
-
-
-    /**
-     * Get value of selected parent
-     * entity type.
-     */
-    private getParentEntityType = () =>
-        this.form.controls["parentEntityType"].value;
 
     /**
      * Initializes form if
@@ -69,12 +74,8 @@ export class ResearchProblemFormComponent {
             title: new FormControl('', Validators.required),
             description: new FormControl('', Validators.required),
             academicCommunityContributionPossibility: new FormControl('', Validators.required),
-            categories: new FormControl('', Validators.required),
-            parentEntityType: new FormControl(EntityType.Company, Validators.required),
-            parentEntityId: new FormControl('', Validators.required)
+            categories: new FormControl('', Validators.required)
         });
-
-        this.sharedService.setParenEntityType(this.getParentEntityType());
     }
 
     /**
@@ -86,29 +87,15 @@ export class ResearchProblemFormComponent {
             title: new FormControl(this.researchProblem.title, Validators.required),
             description: new FormControl(this.researchProblem.description, Validators.required),
             academicCommunityContributionPossibility: new FormControl(this.researchProblem.academicCommunityContributionPossibility, Validators.required),
-            categories: new FormControl(this.researchProblem.categories, Validators.required),
-            parentEntityType: new FormControl(this.researchProblem.parentEntityType, Validators.required),
-            parentEntityId: new FormControl(this.researchProblem.parentEntityId, Validators.required),
+            categories: new FormControl(this.researchProblem.categories, Validators.required)
         });
-
-        this.sharedService.setParenEntityType(this.getParentEntityType());
     }
-
-    /**
-     * Method for triggering
-     * change on parent entity
-     * radio buttons.
-     */
-    changeParentEntityType = () =>
-        this.sharedService.setParenEntityType(this.getParentEntityType());
 
     /**
      * Method that is triggered
      * by clicking submit button.
      */
     submit(): void {
-
-        console.log(this.form.value);
 
         if (this.form.invalid) {
             this.notificationService
@@ -125,23 +112,10 @@ export class ResearchProblemFormComponent {
     /**
      * Connecting to research problem
      * service and sending form data to
-     * create new research problem.
+     * create research problem.
      */
-    private createResearchProblem(): void {
-        this.researchProblemService
-            .createResearchProblem(this.getParentEntityType(), this.getParentEntityId(), this.form.value)
-            .subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'research-problem-successfully-created');
-
-                this.router.navigateByUrl(this.returnUrl).then();
-            },
-            (error) => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-            })
+    private createResearchProblem() {
+        //TODO: need to implement in future
     }
 
     /**
@@ -151,13 +125,13 @@ export class ResearchProblemFormComponent {
      */
     private editResearchProblem(): void {
         this.researchProblemService
-            .editResearchProblem(this.researchProblem.id, this.getParentEntityType(), this.getParentEntityId(), this.form.value)
+            .editResearchProblem(this.researchProblem.id, this.parentEntityType, this.parentEntityId, this.form.value)
             .subscribe(() => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
                             'research-problem-successfully-updated');
 
-                    this.router.navigateByUrl(this.returnUrl).then();
+                    this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
                 },
                 (error) => {
                     this.notificationService

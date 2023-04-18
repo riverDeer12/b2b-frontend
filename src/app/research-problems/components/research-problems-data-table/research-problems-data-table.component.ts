@@ -1,12 +1,14 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {ResearchProblemService} from "../../core/services/research-problem.service";
-import {Router} from "@angular/router";
-import {ConfirmationService} from "primeng/api";
-import {NotificationService} from "../../../shared/services/notification.service";
-import {Table} from "primeng/table";
-import {NotificationType} from "../../../shared/enums/notification-type";
-import {ResearchProblem} from "../../core/models/research-problem";
-import {EntityType} from "../../../auth/core/enums/entity-type";
+import {ResearchProblemService} from '../../core/services/research-problem.service';
+import {Router} from '@angular/router';
+import {ConfirmationService} from 'primeng/api';
+import {NotificationService} from '../../../shared/services/notification.service';
+import {Table} from 'primeng/table';
+import {NotificationType} from '../../../shared/enums/notification-type';
+import {ResearchProblem} from '../../core/models/research-problem';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {DialogService} from 'primeng/dynamicdialog';
+import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
 
 @Component({
     selector: 'research-problems-data-table',
@@ -18,10 +20,12 @@ export class ResearchProblemsDataTableComponent {
     @Input() parentEntityType!: EntityType;
     @Input() parentEntityId!: string;
     @Input() returnUrl!: string;
+    @Input() modalEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
+                private dialogService: DialogService,
                 private researchProblemService: ResearchProblemService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -53,6 +57,16 @@ export class ResearchProblemsDataTableComponent {
     }
 
     /**
+     * Prepare edit form
+     * for selected research problem.
+     *
+     * @param id id of selected research problem.
+     */
+    prepareEditControl(id: string): void {
+        this.modalEdit ? this.openEditDialog(id) : this.goToEditPage(id);
+    }
+
+    /**
      * Redirect user to research
      * problems edit page.
      *
@@ -61,6 +75,18 @@ export class ResearchProblemsDataTableComponent {
     goToEditPage = (id: string) =>
         this.router.navigateByUrl('/admin/research-problems/edit/' + this.parentEntityType +
             '/' + this.parentEntityId + '/' + id).then();
+
+    /**
+     * Open research problem
+     * edit form in dialog.
+     *
+     * @param id id of selected research problem.
+     */
+    openEditDialog(id: string) {
+        const editDialog = this.dialogService.open(DialogFormComponent, {
+
+        })
+    }
 
     /**
      * Trigger popup to

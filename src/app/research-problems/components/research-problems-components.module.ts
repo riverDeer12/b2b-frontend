@@ -49,8 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
         CategoriesComponentsModule,
         ReactiveFormsModule,
         RadioButtonModule,
-        FormsModule,
-        SharedModule
+        FormsModule
     ],
     exports: [
         ResearchProblemsDataTableComponent,
