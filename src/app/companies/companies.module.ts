@@ -9,6 +9,7 @@ import {SharedModule} from '../shared/shared.module';
 import {CompaniesComponent} from './companies.component';
 import {ConfirmationService} from 'primeng/api';
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
+import {DialogService} from 'primeng/dynamicdialog';
 
 /**
  * Translation resources loader.
@@ -40,7 +41,8 @@ export function createTranslateLoader(http: HttpBackend) {
         SharedModule
     ],
     providers: [
-        ConfirmationService
+        ConfirmationService,
+        DialogService
     ]
 })
 export class CompaniesModule {

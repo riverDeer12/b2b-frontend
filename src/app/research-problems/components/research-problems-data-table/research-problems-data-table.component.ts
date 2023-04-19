@@ -9,6 +9,8 @@ import {ResearchProblem} from '../../core/models/research-problem';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {DialogService} from 'primeng/dynamicdialog';
 import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
+import {FormType} from '../../../shared/enums/form-type';
+import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
 
 @Component({
     selector: 'research-problems-data-table',
@@ -60,31 +62,38 @@ export class ResearchProblemsDataTableComponent {
      * Prepare edit form
      * for selected research problem.
      *
-     * @param id id of selected research problem.
+     * @param researchProblem selected research problem.
      */
-    prepareEditControl(id: string): void {
-        this.modalEdit ? this.openEditDialog(id) : this.goToEditPage(id);
+    prepareEditControl(researchProblem: ResearchProblem): void {
+        this.modalEdit ? this.openEditDialog(researchProblem) : this.goToEditPage(researchProblem);
     }
 
     /**
      * Redirect user to research
      * problems edit page.
      *
-     * @param id id of selected research problem item.
+     * @param researchProblem selected research problem item.
      */
-    goToEditPage = (id: string) =>
+    goToEditPage = (researchProblem: ResearchProblem) =>
         this.router.navigateByUrl('/admin/research-problems/edit/' + this.parentEntityType +
-            '/' + this.parentEntityId + '/' + id).then();
+            '/' + this.parentEntityId + '/' + researchProblem.id).then();
 
     /**
      * Open research problem
      * edit form in dialog.
      *
-     * @param id id of selected research problem.
+     * @param researchProblem selected research problem.
      */
-    openEditDialog(id: string) {
-        const editDialog = this.dialogService.open(DialogFormComponent, {
-
+    openEditDialog(researchProblem: ResearchProblem): void {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'research-problem-edit',
+                formType: FormType.Edit,
+                contentType: DialogContentTypes.ResearchProblem,
+                data: researchProblem,
+                dataParentEntityType: this.parentEntityType,
+                dataParentEntityId: this.parentEntityId
+            }
         })
     }
 

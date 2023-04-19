@@ -6,7 +6,22 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {JobOffer} from "../../core/models/job-offer";
 import {JobOfferService} from "../../core/services/job-offer.service";
+import {RedirectType} from '../../../shared/enums/redirect-type';
 
+/**
+ * Component responsible for
+ * managing job offer data. It
+ * can be defined with different input
+ * decorators.
+ *
+ * @param formType type of form action.
+ * @param redirectType type of redirect action.
+ * @param companyId id of parent entity.
+ * @param jobOffer data for managing.
+ * @param returnUrl url to redirect user after form submit.
+ * @param dialogId parent dialog form identifier.
+ *
+ */
 @Component({
     selector: 'job-offer-form',
     templateUrl: './job-offers-form.component.html',
@@ -14,8 +29,11 @@ import {JobOfferService} from "../../core/services/job-offer.service";
 })
 export class JobOffersFormComponent {
     @Input() formType!: FormType;
-    @Input() jobOffer!: JobOffer
+    @Input() redirectType!: RedirectType;
+    @Input() companyId!: string;
+    @Input() jobOffer!: JobOffer;
     @Input() returnUrl!: string;
+    @Input() dialogId!: string;
 
     form!: FormGroup;
 
@@ -102,21 +120,7 @@ export class JobOffersFormComponent {
      * create new job offer.
      */
     private createJobOffer(): void {
-
-        const companyId = this.form.controls["companyId"].value;
-
-        this.jobOfferService.createJobOffer(companyId, this.form.value).subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'job-offer-successfully-created');
-
-                this.router.navigateByUrl(this.returnUrl).then();
-            },
-            (error) => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-            })
+        //TODO: need to implement in future
     }
 
     /**
@@ -125,10 +129,7 @@ export class JobOffersFormComponent {
      * updated selected job offer.
      */
     private editJobOffer(): void {
-
-        const companyId = this.form.controls["companyId"].value;
-
-        this.jobOfferService.editJobOffer(companyId, this.jobOffer.id, this.form.value).subscribe(() => {
+        this.jobOfferService.editJobOffer(this.companyId, this.jobOffer.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'job-offer-successfully-updated');

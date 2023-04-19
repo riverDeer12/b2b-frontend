@@ -10,7 +10,6 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 
-
 /**
  * Component responsible for
  * managing research problem data. It

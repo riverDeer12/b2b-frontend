@@ -6,6 +6,7 @@ import {FormType} from '../../enums/form-type';
 import {SharedService} from '../../services/shared.service';
 import {DialogFormConfig} from '../../constants/dialog-form-config';
 import {DialogFormContent} from '../../models/dialog-form-content';
+import {EntityType} from '../../../auth/core/enums/entity-type';
 
 @Component({
   selector: 'dialog-form',
@@ -18,6 +19,8 @@ export class DialogFormComponent {
     data: any;
     dataArray!: any[];
     formType!: FormType;
+    parentEntityId!: string;
+    parentEntityType!: EntityType;
 
     constructor(private dialogRef: DynamicDialogRef,
                 private sharedService: SharedService,

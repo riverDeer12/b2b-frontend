@@ -5,8 +5,23 @@ import {EquipmentService} from '../../core/services/equipment.service';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {Equipment} from "../../core/models/equipment";
+import {Equipment} from '../../core/models/equipment';
+import {RedirectType} from '../../../shared/enums/redirect-type';
 
+/**
+ * Component responsible for
+ * managing equipment data. It
+ * can be defined with different input
+ * decorators.
+ *
+ * @param formType type of form action.
+ * @param redirectType type of redirect action.
+ * @param companyId id of parent entity.
+ * @param equipment data for managing.
+ * @param returnUrl url to redirect user after form submit.
+ * @param dialogId parent dialog form identifier.
+ *
+ */
 @Component({
     selector: 'equipment-form',
     templateUrl: './equipment-form.component.html',
@@ -14,8 +29,11 @@ import {Equipment} from "../../core/models/equipment";
 })
 export class EquipmentFormComponent {
     @Input() formType!: FormType;
-    @Input() equipment!: Equipment
+    @Input() redirectType!: RedirectType;
+    @Input() scientistId!: string;
+    @Input() equipment!: Equipment;
     @Input() returnUrl!: string;
+    @Input() dialogId!: string;
 
     form!: FormGroup;
 
@@ -81,26 +99,12 @@ export class EquipmentFormComponent {
     }
 
     /**
-     * Connecting to category
+     * Connecting to equipment
      * service and sending form data to
      * create new equipment.
      */
     private createEquipment(): void {
-
-        const scientistId = this.form.controls["scientistId"].value;
-
-        this.equipmentService.createEquipment(scientistId, this.form.value).subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'equipment-successfully-created');
-
-                this.router.navigateByUrl(this.returnUrl).then();
-            },
-            () => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'equipment-validation-errors');
-            })
+        //TODO: need to implement in future
     }
 
     /**
@@ -109,10 +113,7 @@ export class EquipmentFormComponent {
      * updated selected equipment.
      */
     private editEquipment(): void {
-
-        const scientistId = this.form.controls["scientistId"].value;
-
-        this.equipmentService.editEquipment(scientistId, this.equipment.id, this.form.value).subscribe(() => {
+        this.equipmentService.editEquipment(this.scientistId, this.equipment.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'equipment-successfully-updated');

@@ -14,7 +14,6 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RadioButtonModule} from "primeng/radiobutton";
-import {SharedModule} from "../../shared/shared.module";
 
 /**
  * Translation resources loader.
@@ -24,7 +23,6 @@ import {SharedModule} from "../../shared/shared.module";
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/research-problems/', '.json');
 }
-
 
 @NgModule({
     declarations: [

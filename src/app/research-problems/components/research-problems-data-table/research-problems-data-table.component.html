@@ -47,7 +47,8 @@
             <td>
                 <button (click)="confirmDelete(researchProblem.id)" class="p-button-danger m-1" pButton pRipple type="button"
                         icon="pi pi-trash"></button>
-                <button type="button" class="m-1" (click)="goToEditPage(researchProblem.id)" pButton pRipple  icon="pi pi-pencil"></button>
+                <button type="button" class="m-1" (click)="prepareEditControl(researchProblem)"
+                        pButton pRipple  icon="pi pi-pencil"></button>
             </td>
             <td>
                 {{researchProblem.title}}

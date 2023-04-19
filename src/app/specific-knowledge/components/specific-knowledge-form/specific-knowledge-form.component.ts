@@ -4,8 +4,24 @@ import {FormType} from '../../../shared/enums/form-type';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {SpecificKnowledgeService} from "../../core/services/specific-knowledge.service";
-import {SpecificKnowledge} from "../../core/models/specific-knowledge";
+import {SpecificKnowledgeService} from '../../core/services/specific-knowledge.service';
+import {SpecificKnowledge} from '../../core/models/specific-knowledge';
+import {RedirectType} from '../../../shared/enums/redirect-type';
+
+/**
+ * Component responsible for
+ * managing specific knowledge data. It
+ * can be defined with different input
+ * decorators.
+ *
+ * @param formType type of form action.
+ * @param redirectType type of redirect action.
+ * @param parentEntityId id of parent entity.
+ * @param specificKnowledge data for managing.
+ * @param returnUrl url to redirect user after form submit.
+ * @param dialogId parent dialog form identifier.
+ *
+ */
 
 @Component({
     selector: 'specific-knowledge-form',
@@ -14,8 +30,11 @@ import {SpecificKnowledge} from "../../core/models/specific-knowledge";
 })
 export class SpecificKnowledgeFormComponent {
     @Input() formType!: FormType;
-    @Input() specificKnowledge!: SpecificKnowledge
+    @Input() redirectType!: RedirectType;
+    @Input() scientistId!: string;
+    @Input() specificKnowledge!: SpecificKnowledge;
     @Input() returnUrl!: string;
+    @Input() dialogId!: string;
 
     form!: FormGroup;
 
@@ -81,39 +100,22 @@ export class SpecificKnowledgeFormComponent {
     }
 
     /**
-     * Connecting to category
+     * Connecting to specific knowledge
      * service and sending form data to
      * create new specific knowledge.
      */
     private createSpecificKnowledge(): void {
-
-        const scientistId = this.form.controls['scientistId'].value;
-
-        this.specificKnowledgeService.createSpecificKnowledge(scientistId, this.form.value).subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'specific-knowledge-successfully-created');
-
-                this.router.navigateByUrl(this.returnUrl).then();
-            },
-            (error) => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-            })
+        //TODO: need to implement in future
     }
 
     /**
-     * Connecting to category
+     * Connecting to specific knowledge
      * service and sending form data to
      * updated selected specific knowledge.
      *
      */
     private editSpecificKnowledge(): void {
-
-        const scientistId = this.form.controls['scientistId'].value;
-
-        this.specificKnowledgeService.editSpecificKnowledge(scientistId, this.specificKnowledge.id, this.form.value)
+        this.specificKnowledgeService.editSpecificKnowledge(this.scientistId, this.specificKnowledge.id, this.form.value)
             .subscribe(() => {
                     this.notificationService
                         .showNotification(NotificationType.Success,

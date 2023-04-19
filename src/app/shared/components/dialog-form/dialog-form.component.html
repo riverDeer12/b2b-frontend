@@ -1,29 +1,28 @@
 <research-problem-form
     *ngIf="contentType.type === dialogFormContentType.ResearchProblem"
     [formType]="formType"
+    [parentEntityId]="parentEntityId"
+    [parentEntityType]="parentEntityType"
     [researchProblem]="data">
 </research-problem-form>
 
 <job-offer-form
     *ngIf="contentType.type === dialogFormContentType.JobOffer"
     [formType]="formType"
+    [companyId]="parentEntityId"
     [jobOffer]="data">
 </job-offer-form>
 
 <equipment-form
     *ngIf="contentType.type === dialogFormContentType.Equipment"
     [formType]="formType"
+    [scientistId]="parentEntityId"
     [equipment]="data">
 </equipment-form>
 
 <specific-knowledge-form
     *ngIf="contentType.type === dialogFormContentType.SpecificKnowledge"
     [formType]="formType"
+    [scientistId]="parentEntityId"
     [specificKnowledge]="data">
 </specific-knowledge-form>
-
-<p-footer class="p-3 float-right">
-    <button [attr.form]="contentType.formIdentifier" type="submit" pButton>
-        <span class="iconify" data-icon="akar-icons:check"></span>
-        {{ 'save' | translate }}</button>
-</p-footer>
