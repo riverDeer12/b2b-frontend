@@ -13,6 +13,11 @@ import {HttpClient} from '@angular/common/http';
 import {SharedModule} from '../../shared/shared.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ConfirmationService} from 'primeng/api';
+import {TabViewModule} from "primeng/tabview";
+import {ScientistGeneralFormComponent} from "./scientist-general-form/scientist-general-form.component";
+import {AuthComponentsModule} from "../../auth/components/auth-components.module";
+import {EquipmentComponentsModule} from "../../equipment/components/equipment-components.module";
+import {SpecificKnowledgeComponentsModule} from "../../specific-knowledge/components/specific-knowledge-components.module";
 
 /**
  * Translation resources loader.
@@ -26,7 +31,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
     declarations: [
         ScientistsDataTableComponent,
-        ScientistFormComponent
+        ScientistFormComponent,
+        ScientistGeneralFormComponent
     ],
     imports: [
         CommonModule,
@@ -45,14 +51,19 @@ export function createTranslateLoader(http: HttpClient) {
         RippleModule,
         ReactiveFormsModule,
         InputTextModule,
-        ConfirmDialogModule
+        ConfirmDialogModule,
+        TabViewModule,
+        AuthComponentsModule,
+        EquipmentComponentsModule,
+        SpecificKnowledgeComponentsModule
     ],
     providers:[
         ConfirmationService
     ],
     exports: [
         ScientistsDataTableComponent,
-        ScientistFormComponent
+        ScientistFormComponent,
+        ScientistGeneralFormComponent
     ]
 })
 export class ScientistsComponentsModule {

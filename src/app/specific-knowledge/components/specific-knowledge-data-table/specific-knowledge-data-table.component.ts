@@ -19,6 +19,7 @@ import {DialogService} from "primeng/dynamicdialog";
 })
 export class SpecificKnowledgeDataTableComponent {
     @Input() data: SpecificKnowledge[] = [];
+    @Input() scientistId!: string;
     @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
@@ -88,7 +89,7 @@ export class SpecificKnowledgeDataTableComponent {
                 contentType: DialogContentTypes.SpecificKnowledge,
                 data: specificKnowledge,
                 parentEntityType: EntityType.Scientist,
-                parentEntityId: specificKnowledge.scientistId
+                parentEntityId: this.scientistId
             }
         })
     }

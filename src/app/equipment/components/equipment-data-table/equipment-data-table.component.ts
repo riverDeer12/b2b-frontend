@@ -7,7 +7,6 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {EquipmentService} from '../../core/services/equipment.service';
 import {Equipment} from "../../core/models/equipment";
 import {EntityType} from "../../../auth/core/enums/entity-type";
-import {JobOffer} from "../../../job-offers/core/models/job-offer";
 import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog-form.component";
 import {FormType} from "../../../shared/enums/form-type";
 import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
@@ -20,6 +19,7 @@ import {DialogService} from "primeng/dynamicdialog";
 })
 export class EquipmentDataTableComponent {
     @Input() data: Equipment[] = [];
+    @Input() scientistId!: string;
     @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
@@ -91,7 +91,7 @@ export class EquipmentDataTableComponent {
                 contentType: DialogContentTypes.Equipment,
                 data: equipment,
                 parentEntityType: EntityType.Scientist,
-                parentEntityId: equipment.scientistId
+                parentEntityId: this.scientistId
             }
         })
     }
