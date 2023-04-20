@@ -7,6 +7,11 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {EquipmentService} from '../../core/services/equipment.service';
 import {Equipment} from "../../core/models/equipment";
 import {EntityType} from "../../../auth/core/enums/entity-type";
+import {JobOffer} from "../../../job-offers/core/models/job-offer";
+import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog-form.component";
+import {FormType} from "../../../shared/enums/form-type";
+import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
+import {DialogService} from "primeng/dynamicdialog";
 
 @Component({
     selector: 'equipment-data-table',
@@ -15,10 +20,12 @@ import {EntityType} from "../../../auth/core/enums/entity-type";
 })
 export class EquipmentDataTableComponent {
     @Input() data: Equipment[] = [];
+    @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
+                private dialogService: DialogService,
                 private equipmentService: EquipmentService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -51,15 +58,43 @@ export class EquipmentDataTableComponent {
     }
 
     /**
-     * Redirect user to equipment
-     * edit page.
+     * Redirect user to
+     * equipment edit page.
      *
-     * @param scientistId id of selected equipment's scientist.
-     * @param equipmentId id of selected equipment item.
+     * @param equipment selected equipment.
      */
-    goToEditPage = (scientistId: string, equipmentId: string) =>
+    goToEditPage = (equipment: Equipment) =>
         this.router.navigateByUrl('/admin/equipment/edit/' + EntityType.Scientist +
-            '/' + scientistId + '/' + equipmentId).then();
+            '/' + equipment.scientistId + '/' + equipment.id).then();
+
+    /**
+     * Prepare edit form
+     * for selected equipment.
+     *
+     * @param equipment selected research problem.
+     */
+    prepareEditControl(equipment: Equipment): void {
+        this.dialogEdit ? this.openEditDialog(equipment) : this.goToEditPage(equipment);
+    }
+
+    /**
+     * Open equipment
+     * edit form in dialog.
+     *
+     * @param equipment selected equipment.
+     */
+    openEditDialog(equipment: Equipment) {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'scientist-edit',
+                formType: FormType.Edit,
+                contentType: DialogContentTypes.Equipment,
+                data: equipment,
+                parentEntityType: EntityType.Scientist,
+                parentEntityId: equipment.scientistId
+            }
+        })
+    }
 
     /**
      * Trigger popup to

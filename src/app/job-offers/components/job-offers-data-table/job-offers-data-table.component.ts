@@ -6,6 +6,11 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {JobOffer} from "../../core/models/job-offer";
 import {JobOfferService} from "../../core/services/job-offer.service";
+import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog-form.component";
+import {FormType} from "../../../shared/enums/form-type";
+import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
+import {DialogService} from "primeng/dynamicdialog";
+import {EntityType} from "../../../auth/core/enums/entity-type";
 
 @Component({
     selector: 'job-offers-data-table',
@@ -14,10 +19,12 @@ import {JobOfferService} from "../../core/services/job-offer.service";
 })
 export class JobOffersDataTableComponent {
     @Input() data: JobOffer[] = [];
+    @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
+                private dialogService: DialogService,
                 private jobOfferService: JobOfferService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -53,11 +60,39 @@ export class JobOffersDataTableComponent {
      * Redirect user to job offer
      * edit page.
      *
-     * @param companyId id of parent of selected job offer.
-     * @param jobOfferId id of selected job offer.
+     * @param jobOffer of selected job offer.
      */
-    goToEditPage = (companyId: string, jobOfferId: string) =>
-        this.router.navigateByUrl('/admin/job-offers/edit/' + companyId + '/' + jobOfferId).then();
+    goToEditPage = (jobOffer: JobOffer) =>
+        this.router.navigateByUrl('/admin/job-offers/edit/' + jobOffer.companyId + '/' + jobOffer.id).then();
+
+    /**
+     * Prepare edit form
+     * for selected job offer
+     *
+     * @param jobOffer selected research problem.
+     */
+    prepareEditControl(jobOffer: JobOffer): void {
+        this.dialogEdit ? this.openEditDialog(jobOffer) : this.goToEditPage(jobOffer);
+    }
+
+    /**
+     * Open job offer
+     * edit form in dialog.
+     *
+     * @param jobOffer selected job offer.
+     */
+    openEditDialog(jobOffer: JobOffer) {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'job-offer-edit',
+                formType: FormType.Edit,
+                contentType: DialogContentTypes.JobOffer,
+                data: jobOffer,
+                parentEntityType: EntityType.Company,
+                parentEntityId: jobOffer.companyId
+            }
+        })
+    }
 
     /**
      * Trigger popup to

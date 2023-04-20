@@ -22,7 +22,7 @@ export class ResearchProblemsDataTableComponent {
     @Input() parentEntityType!: EntityType;
     @Input() parentEntityId!: string;
     @Input() returnUrl!: string;
-    @Input() modalEdit!: boolean;
+    @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
 
@@ -65,7 +65,7 @@ export class ResearchProblemsDataTableComponent {
      * @param researchProblem selected research problem.
      */
     prepareEditControl(researchProblem: ResearchProblem): void {
-        this.modalEdit ? this.openEditDialog(researchProblem) : this.goToEditPage(researchProblem);
+        this.dialogEdit ? this.openEditDialog(researchProblem) : this.goToEditPage(researchProblem);
     }
 
     /**

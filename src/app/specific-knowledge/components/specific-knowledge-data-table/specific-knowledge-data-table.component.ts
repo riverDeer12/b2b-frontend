@@ -6,6 +6,11 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {SpecificKnowledge} from "../../core/models/specific-knowledge";
 import {SpecificKnowledgeService} from "../../core/services/specific-knowledge.service";
+import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog-form.component";
+import {FormType} from "../../../shared/enums/form-type";
+import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
+import {EntityType} from "../../../auth/core/enums/entity-type";
+import {DialogService} from "primeng/dynamicdialog";
 
 @Component({
     selector: 'specific-knowledge-data-table',
@@ -14,10 +19,12 @@ import {SpecificKnowledgeService} from "../../core/services/specific-knowledge.s
 })
 export class SpecificKnowledgeDataTableComponent {
     @Input() data: SpecificKnowledge[] = [];
+    @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
+                private dialogService: DialogService,
                 private specificKnowledgeService: SpecificKnowledgeService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -52,11 +59,39 @@ export class SpecificKnowledgeDataTableComponent {
      * Redirect user to specific
      * knowledge edit page.
      *
-     * @param scientistId parent id of selected specific knowledge.
-     * @param specificKnowledgeId id of selected specific knowledge.
+     * @param specificKnowledge selected specific knowledge.
      */
-    goToEditPage = (scientistId: string, specificKnowledgeId: string) =>
-        this.router.navigateByUrl('/admin/specific-knowledge/edit/' + scientistId + '/' + specificKnowledgeId).then();
+    goToEditPage = (specificKnowledge: SpecificKnowledge) =>
+        this.router.navigateByUrl('/admin/specific-knowledge/edit/' + specificKnowledge.scientistId + '/' + specificKnowledge.id).then();
+
+    /**
+     * Prepare edit form
+     * for selected specific knowledge.
+     *
+     * @param specificKnowledge selected research problem.
+     */
+    prepareEditControl(specificKnowledge: SpecificKnowledge): void {
+        this.dialogEdit ? this.openEditDialog(specificKnowledge) : this.goToEditPage(specificKnowledge);
+    }
+
+    /**
+     * Open specific knowledge
+     * edit form in dialog.
+     *
+     * @param specificKnowledge selected specific knowledge.
+     */
+    openEditDialog(specificKnowledge: SpecificKnowledge) {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'specific-knowledge-edit',
+                formType: FormType.Edit,
+                contentType: DialogContentTypes.SpecificKnowledge,
+                data: specificKnowledge,
+                parentEntityType: EntityType.Scientist,
+                parentEntityId: specificKnowledge.scientistId
+            }
+        })
+    }
 
     /**
      * Trigger popup to
