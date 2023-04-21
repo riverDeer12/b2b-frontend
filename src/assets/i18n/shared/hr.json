@@ -9,6 +9,8 @@
     "no": "Ne",
     "from": "od",
     "to": "do",
+    "description": "Opis",
+    "title": "Naslov",
     "keyword": "Ključna riječ",
     "general": "Opći podaci",
     "choose-option": "Odaberite vrijednost",
@@ -16,5 +18,16 @@
     "password": "Lozinka",
     "confirm-password": "Potvrda lozinke",
     "username-password": "Korisničko ime i lozinka",
-    "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!"
+    "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
+    "categories": {
+        "default": "Kategorije"
+    },
+    "research-problems": {
+        "default": "Razvojni prijedlozi",
+        "edit-research-problem": "Uređivanje razvojnog prijedloga",
+        "academic-community-contribution-possibility": "Mogućnosti akademskog doprinosa"
+    },
+    "equipment": {
+        "edit-equipment": "Uređivanje istraživačke opreme"
+    }
 }

@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {FormType} from '../../../shared/enums/form-type';
+import {Category} from '../../../categories/core/models/category';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'company-create',
@@ -12,6 +14,22 @@ export class CompanyCreateComponent {
 
     returnUrl = '/admin/companies';
 
-    constructor() {
+    categories!: Category[];
+
+    constructor(private activatedRoute: ActivatedRoute) {
+        this.listenToResolver();
     }
+
+    ngOnInit(): void {
+    }
+
+    private listenToResolver() {
+        this.activatedRoute.data.subscribe((response) => {
+            this.categories = response['categories'].map((x: Category) =>
+                Object.assign(new Category(), x)
+            );
+        });
+    }
+
+
 }

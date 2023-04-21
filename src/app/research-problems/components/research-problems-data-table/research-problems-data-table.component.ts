@@ -11,6 +11,7 @@ import {DialogService} from 'primeng/dynamicdialog';
 import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
 import {FormType} from '../../../shared/enums/form-type';
 import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
+import {Category} from '../../../categories/core/models/category';
 
 @Component({
     selector: 'research-problems-data-table',
@@ -23,6 +24,7 @@ export class ResearchProblemsDataTableComponent {
     @Input() parentEntityId!: string;
     @Input() returnUrl!: string;
     @Input() dialogEdit!: boolean;
+    @Input() categories!: Category[];
 
     @ViewChild('filter') filter!: ElementRef;
 
@@ -87,12 +89,13 @@ export class ResearchProblemsDataTableComponent {
     openEditDialog(researchProblem: ResearchProblem): void {
         this.dialogService.open(DialogFormComponent, {
             data: {
-                header: 'research-problem-edit',
+                header: 'research-problems.edit-research-problem',
                 formType: FormType.Edit,
                 contentType: DialogContentTypes.ResearchProblem,
                 data: researchProblem,
-                dataParentEntityType: this.parentEntityType,
-                dataParentEntityId: this.parentEntityId
+                parentEntityType: this.parentEntityType,
+                parentEntityId: this.parentEntityId,
+                categories: this.categories
             }
         })
     }

@@ -4,6 +4,7 @@ import {CompaniesResolver} from './core/resolvers/companies.resolver';
 import {CompaniesHomeComponent} from './pages/companies-home/companies-home.component';
 import {CompanyEditComponent} from './pages/company-edit/company-edit.component';
 import {CompanyResearchProblemsResolver} from "../research-problems/core/resolvers/company-research-problems.resolver";
+import {CategoriesResolver} from '../categories/core/resolvers/categories.resolver';
 
 export const CompaniesRoutes: Routes = [
     {
@@ -18,6 +19,7 @@ export const CompaniesRoutes: Routes = [
         component: CompanyEditComponent,
         resolve: {
             company: CompanyResolver,
+            categories: CategoriesResolver,
             researchProblems: CompanyResearchProblemsResolver
         }
     }

@@ -9,6 +9,7 @@ import {ResearchProblemService} from '../../core/services/research-problem.servi
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {RedirectType} from '../../../shared/enums/redirect-type';
+import {Category} from '../../../categories/core/models/category';
 
 /**
  * Component responsible for
@@ -38,6 +39,7 @@ export class ResearchProblemFormComponent {
     @Input() researchProblem!: ResearchProblem;
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
+    @Input() categories!: Category[];
 
     form!: FormGroup;
 
@@ -85,8 +87,9 @@ export class ResearchProblemFormComponent {
         this.form = this.fb.group({
             title: new FormControl(this.researchProblem.title, Validators.required),
             description: new FormControl(this.researchProblem.description, Validators.required),
-            academicCommunityContributionPossibility: new FormControl(this.researchProblem.academicCommunityContributionPossibility, Validators.required),
-            categories: new FormControl(this.researchProblem.categories, Validators.required)
+            academicCommunityContributionPossibility:
+                new FormControl(this.researchProblem.academicCommunityContributionPossibility, Validators.required),
+            categories: new FormControl(this.researchProblem.categories.map(x => x.id), Validators.required)
         });
     }
 
@@ -103,9 +106,11 @@ export class ResearchProblemFormComponent {
             return;
         }
 
-        this.formType === FormType.Create ?
-            this.createResearchProblem() :
-            this.editResearchProblem();
+        /*        this.formType === FormType.Create ?
+                    this.createResearchProblem() :
+                    this.editResearchProblem();*/
+
+        console.log(this.form.value);
     }
 
     /**

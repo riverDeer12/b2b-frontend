@@ -12,9 +12,10 @@
                                           [entityType]="entityType"></auth-change-password>
                 </div>
             </p-tabPanel>
-            <p-tabPanel header="{{'research-problems' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel header="{{'research-problems.default' | translate }}" class="line-height-3 m-0">
                 <research-problems-data-table
                     [data]="researchProblems"
+                    [categories]="categories"
                     [parentEntityType]="entityType"
                     [parentEntityId]="company.id"
                     [dialogEdit]="true"

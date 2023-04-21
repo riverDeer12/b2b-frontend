@@ -16,5 +16,11 @@
     "password": "Password",
     "confirm-password": "Confirm Password",
     "username-password": "Username and Password",
-    "no-error-details": "Error occurred, but no details given!"
+    "no-error-details": "Error occurred, but no details given!",
+    "research-problems": {
+        "edit-research-problem": "Edit research problem"
+    },
+    "equipment": {
+        "edit-equipment": "Edit equipment"
+    }
 }

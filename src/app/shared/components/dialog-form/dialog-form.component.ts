@@ -7,6 +7,7 @@ import {SharedService} from '../../services/shared.service';
 import {DialogFormConfig} from '../../constants/dialog-form-config';
 import {DialogFormContent} from '../../models/dialog-form-content';
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {Category} from '../../../categories/core/models/category';
 
 @Component({
   selector: 'dialog-form',
@@ -21,6 +22,7 @@ export class DialogFormComponent {
     formType!: FormType;
     parentEntityId!: string;
     parentEntityType!: EntityType;
+    categories!: Category[];
 
     constructor(private dialogRef: DynamicDialogRef,
                 private sharedService: SharedService,
@@ -68,7 +70,10 @@ export class DialogFormComponent {
         this.contentType = this.dialogConfig.data.contentType;
         this.formType = this.dialogConfig.data.formType;
         this.data = this.dialogConfig.data.data;
-        this.dataArray = this.dialogConfig.data.dataArray;
+        this.dataArray = this.dialogConfig.data.dataArray
+        this.parentEntityId = this.dialogConfig.data.parentEntityId;
+        this.parentEntityType = this.dialogConfig.data.parentEntityType;
+        this.categories = this.dialogConfig.data.categories;
     }
 
     /**
