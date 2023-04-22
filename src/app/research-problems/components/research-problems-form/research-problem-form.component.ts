@@ -106,11 +106,9 @@ export class ResearchProblemFormComponent {
             return;
         }
 
-        /*        this.formType === FormType.Create ?
-                    this.createResearchProblem() :
-                    this.editResearchProblem();*/
-
-        console.log(this.form.value);
+        this.formType === FormType.Create ?
+            this.createResearchProblem() :
+            this.editResearchProblem();
     }
 
     /**
