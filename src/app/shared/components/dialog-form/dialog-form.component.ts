@@ -8,6 +8,7 @@ import {DialogFormConfig} from '../../constants/dialog-form-config';
 import {DialogFormContent} from '../../models/dialog-form-content';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
+import {RedirectType} from "../../enums/redirect-type";
 
 @Component({
   selector: 'dialog-form',
@@ -23,6 +24,8 @@ export class DialogFormComponent {
     parentEntityId!: string;
     parentEntityType!: EntityType;
     categories!: Category[];
+
+    modalRedirectType = RedirectType.CloseDialog;
 
     constructor(private dialogRef: DynamicDialogRef,
                 private sharedService: SharedService,
@@ -74,6 +77,7 @@ export class DialogFormComponent {
         this.parentEntityId = this.dialogConfig.data.parentEntityId;
         this.parentEntityType = this.dialogConfig.data.parentEntityType;
         this.categories = this.dialogConfig.data.categories;
+        this.dialogId = this.dialogConfig.data.dialogId;
     }
 
     /**
@@ -82,7 +86,7 @@ export class DialogFormComponent {
      */
     setCloseModalListener(): void {
         this.sharedService.getModalCloseStatus().subscribe((response: string) => {
-            if (this.contentType.dialogId === response as string) {
+            if (this.dialogId === response as string) {
                 this.dialogRef.close(response);
             }
         })

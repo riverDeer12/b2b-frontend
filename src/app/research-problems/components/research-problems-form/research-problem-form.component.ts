@@ -131,7 +131,7 @@ export class ResearchProblemFormComponent {
             .subscribe(() => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
-                            'research-problem-successfully-updated');
+                            'research-problems.successfully-updated');
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
                 },

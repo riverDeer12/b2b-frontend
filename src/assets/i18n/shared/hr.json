@@ -24,8 +24,9 @@
     },
     "research-problems": {
         "default": "Razvojni prijedlozi",
-        "edit-research-problem": "Uređivanje razvojnog prijedloga",
-        "academic-community-contribution-possibility": "Mogućnosti akademskog doprinosa"
+        "edit": "Uređivanje razvojnog prijedloga",
+        "academic-community-contribution-possibility": "Mogućnosti akademskog doprinosa",
+        "successfully-updated": "Razvojni prijedlog je uspješno ažuriran."
     },
     "equipment": {
         "edit-equipment": "Uređivanje istraživačke opreme"

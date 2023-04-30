@@ -66,6 +66,8 @@ export class SharedService {
             return;
         }
 
+        console.log()
+
         this.closeModalOnSuccess(dialogId as string);
     }
 }
