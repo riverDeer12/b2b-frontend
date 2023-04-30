@@ -89,7 +89,7 @@ export class ResearchProblemsDataTableComponent {
     openEditDialog(researchProblem: ResearchProblem): void {
         this.dialogService.open(DialogFormComponent, {
             data: {
-                header: 'research-problems.edit-research-problem',
+                header: 'research-problems.edit',
                 formType: FormType.Edit,
                 contentType: DialogContentTypes.ResearchProblem,
                 data: researchProblem,
@@ -104,6 +104,8 @@ export class ResearchProblemsDataTableComponent {
      * Trigger popup to
      * confirm deleting selected
      * research problem item from data table.
+     *
+     * @param researchProblemId id of selected research problem
      */
     confirmDelete(researchProblemId: string): void {
         this.confirmationService.confirm({
