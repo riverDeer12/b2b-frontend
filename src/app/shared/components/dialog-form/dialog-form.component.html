@@ -5,7 +5,7 @@
     [parentEntityType]="parentEntityType"
     [categories]="categories"
     [dialogId]="dialogId"
-    [redirectType]="modalRedirectType"
+    [redirectType]="dialogRedirectType"
     [researchProblem]="data">
 </research-problem-form>
 
@@ -13,7 +13,7 @@
     *ngIf="contentType.type === dialogFormContentType.JobOffer"
     [formType]="formType"
     [dialogId]="dialogId"
-    [redirectType]="modalRedirectType"
+    [redirectType]="dialogRedirectType"
     [companyId]="parentEntityId"
     [jobOffer]="data">
 </job-offer-form>
@@ -22,6 +22,7 @@
     *ngIf="contentType.type === dialogFormContentType.Equipment"
     [formType]="formType"
     [dialogId]="dialogId"
+    [redirectType]="dialogRedirectType"
     [scientistId]="parentEntityId"
     [equipment]="data">
 </equipment-form>
@@ -30,6 +31,7 @@
     *ngIf="contentType.type === dialogFormContentType.SpecificKnowledge"
     [formType]="formType"
     [dialogId]="dialogId"
+    [redirectType]="dialogRedirectType"
     [scientistId]="parentEntityId"
     [specificKnowledge]="data">
 </specific-knowledge-form>

@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class SharedService {
 
     parentEntityType = new Subject<EntityType>();
-    modalCloseStatus = new Subject<string>();
+    dialogCloseStatus = new Subject<string>();
 
     constructor(private router: Router) {
     }
@@ -34,22 +34,22 @@ export class SharedService {
 
     /**
      * Method that triggers
-     * modal if action is successfully
+     * dialog if action is successfully
      * finished.
      *
      * @param dialogId id of dialog
      * that needs to be closed.
      */
-    closeModalOnSuccess(dialogId: string): void {
-        this.modalCloseStatus.next(dialogId);
+    closeDialogOnSuccess(dialogId: string): void {
+        this.dialogCloseStatus.next(dialogId);
     }
 
     /**
      * Method that listens on
-     * modal close status changes.
+     * dialog close status changes.
      */
-    getModalCloseStatus(): Subject<string> {
-        return this.modalCloseStatus;
+    getDialogCloseStatus(): Subject<string> {
+        return this.dialogCloseStatus;
     }
 
     /**
@@ -66,8 +66,6 @@ export class SharedService {
             return;
         }
 
-        console.log()
-
-        this.closeModalOnSuccess(dialogId as string);
+        this.closeDialogOnSuccess(dialogId as string);
     }
 }

@@ -25,14 +25,14 @@ export class DialogFormComponent {
     parentEntityType!: EntityType;
     categories!: Category[];
 
-    modalRedirectType = RedirectType.CloseDialog;
+    dialogRedirectType = RedirectType.CloseDialog;
 
     constructor(private dialogRef: DynamicDialogRef,
                 private sharedService: SharedService,
                 private dialogConfig: DynamicDialogConfig,
                 private translateService: TranslateService) {
         this.initSettings();
-        this.setCloseModalListener();
+        this.setDialogCloseListener();
     }
 
 
@@ -67,7 +67,7 @@ export class DialogFormComponent {
     }
 
     /**
-     * Set popup content type.
+     * Set dialog content type.
      */
     initContentType(): void {
         this.contentType = this.dialogConfig.data.contentType;
@@ -82,10 +82,10 @@ export class DialogFormComponent {
 
     /**
      * Set listener for
-     * close modal trigger changes.
+     * close dialog trigger changes.
      */
-    setCloseModalListener(): void {
-        this.sharedService.getModalCloseStatus().subscribe((response: string) => {
+    setDialogCloseListener(): void {
+        this.sharedService.getDialogCloseStatus().subscribe((response: string) => {
             if (this.dialogId === response as string) {
                 this.dialogRef.close(response);
             }
