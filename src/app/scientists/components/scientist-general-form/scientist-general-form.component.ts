@@ -54,7 +54,8 @@ export class ScientistGeneralFormComponent {
             employmentCollege: new FormControl('', Validators.required),
             functions: new FormControl('', Validators.required),
             projects: new FormControl('', Validators.required),
-            googleScholarLink: new FormControl('', Validators.required)
+            googleScholarLink: new FormControl('', Validators.required),
+            categories: new FormControl('', Validators.required)
         })
     }
 
@@ -73,7 +74,8 @@ export class ScientistGeneralFormComponent {
             employmentCollege: new FormControl(this.scientist.employmentCollege, Validators.required),
             functions: new FormControl(this.scientist.functions, Validators.required),
             projects: new FormControl(this.scientist.projects, Validators.required),
-            googleScholarLink: new FormControl(this.scientist.googleScholarLink, Validators.required)
+            googleScholarLink: new FormControl(this.scientist.googleScholarLink, Validators.required),
+            categories: new FormControl(this.scientist.categories.map(x => x.id), Validators.required),
         })
     }
 

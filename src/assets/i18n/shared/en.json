@@ -14,13 +14,20 @@
     "choose-option": "Choose an option",
     "username": "Username",
     "password": "Password",
+    "email": "Email",
+    "website": "Website",
     "confirm-password": "Confirm Password",
     "username-password": "Username and Password",
     "no-error-details": "Error occurred, but no details given!",
     "research-problems": {
-        "edit-research-problem": "Edit research problem"
+        "edit": "Edit research problem"
+    },
+    "specific-knowledge": {
+        "default": "Specific Knowledge",
+        "edit": "Edit specific knowledge"
     },
     "equipment": {
-        "edit-equipment": "Edit equipment"
+        "default": "Equipment",
+        "edit": "Edit equipment"
     }
 }

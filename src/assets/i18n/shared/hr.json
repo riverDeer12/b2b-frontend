@@ -16,6 +16,8 @@
     "choose-option": "Odaberite vrijednost",
     "username": "Korisničko ime",
     "password": "Lozinka",
+    "email": "Email adresa",
+    "website": "Web stranica",
     "confirm-password": "Potvrda lozinke",
     "username-password": "Korisničko ime i lozinka",
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
@@ -25,10 +27,14 @@
     "research-problems": {
         "default": "Razvojni prijedlozi",
         "edit": "Uređivanje razvojnog prijedloga",
-        "academic-community-contribution-possibility": "Mogućnosti akademskog doprinosa",
         "successfully-updated": "Razvojni prijedlog je uspješno ažuriran."
     },
+    "specific-knowledge": {
+        "default": "Usluge i kompetencije",
+        "edit": "Uređivanje usluga i kompetencija"
+    },
     "equipment": {
-        "edit-equipment": "Uređivanje istraživačke opreme"
+        "default": "Istraživačka oprema",
+        "edit": "Uređivanje istraživačke opreme"
     }
 }

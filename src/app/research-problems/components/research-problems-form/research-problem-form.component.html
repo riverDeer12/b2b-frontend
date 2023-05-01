@@ -20,16 +20,16 @@
                                formControlName="academicCommunityContributionPossibility"/>
                         <label
                             for="academicCommunityContributionPossibility">
-                            {{ 'research-problems.academic-community-contribution-possibility' | translate }}</label>
+                            {{ 'academic-community-contribution-possibility' | translate }}</label>
                     </span>
                 </div>
                 <div class="field col-md-12 mt-5">
                     <span class="p-float-label">
                         <categories-selector
-                            [form]="form"
-                            [data]="categories"
                             controlName="categories"
-                            label="categories.default">
+                            label="categories.default"
+                            [form]="form"
+                            [data]="categories">
                         </categories-selector>
                     </span>
                 </div>
