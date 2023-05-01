@@ -8,6 +8,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {SharedModule} from '../../shared/shared.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {DialogService} from "primeng/dynamicdialog";
 
 /**
  * Translation resources loader.
@@ -37,6 +38,9 @@ export function createTranslateLoader(http: HttpClient) {
             isolate: true
         }),
         SharedModule
+    ],
+    providers: [
+        DialogService
     ],
     exports: [
         ScientistsHomeComponent,

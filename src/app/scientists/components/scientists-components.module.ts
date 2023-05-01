@@ -18,6 +18,7 @@ import {ScientistGeneralFormComponent} from "./scientist-general-form/scientist-
 import {AuthComponentsModule} from "../../auth/components/auth-components.module";
 import {EquipmentComponentsModule} from "../../equipment/components/equipment-components.module";
 import {SpecificKnowledgeComponentsModule} from "../../specific-knowledge/components/specific-knowledge-components.module";
+import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 
 /**
  * Translation resources loader.
@@ -55,7 +56,8 @@ export function createTranslateLoader(http: HttpClient) {
         TabViewModule,
         AuthComponentsModule,
         EquipmentComponentsModule,
-        SpecificKnowledgeComponentsModule
+        SpecificKnowledgeComponentsModule,
+        CategoriesComponentsModule
     ],
     providers:[
         ConfirmationService

@@ -11,6 +11,7 @@ import {ResearchProblem} from "../../../research-problems/core/models/research-p
 import {EntityType} from "../../../auth/core/enums/entity-type";
 import {SpecificKnowledge} from "../../../specific-knowledge/core/models/specific-knowledge";
 import {Equipment} from "../../../equipment/core/models/equipment";
+import {Category} from "../../../categories/core/models/category";
 
 @Component({
     selector: 'scientist-form',
@@ -22,6 +23,7 @@ export class ScientistFormComponent {
     @Input() scientist!: Scientist;
     @Input() specificKnowledge!: SpecificKnowledge[];
     @Input() equipment!: Equipment[];
+    @Input() categories!: Category[];
     @Input() returnUrl!: string;
 
     entityType = EntityType.Scientist;

@@ -6,6 +6,7 @@ import {NotificationService} from "../../../shared/services/notification.service
 import {NotificationType} from "../../../shared/enums/notification-type";
 import {Scientist} from "../../core/models/scientist";
 import {ScientistService} from "../../core/services/scientist.service";
+import {Category} from "../../../categories/core/models/category";
 
 @Component({
   selector: 'scientist-general-form',
@@ -15,6 +16,7 @@ import {ScientistService} from "../../core/services/scientist.service";
 export class ScientistGeneralFormComponent {
     @Input() formType!: FormType;
     @Input() scientist!: Scientist;
+    @Input() categories!: Category[];
     @Input() returnUrl!: string;
 
     form!: FormGroup;

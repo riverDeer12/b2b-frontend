@@ -1,4 +1,9 @@
-<h3>{{ 'create-scientist' | translate }}</h3>
+<h3>{{ 'edit-scientist' | translate }}</h3>
 <div class="mt-5">
-    <scientist-form [formType]="formType" [returnUrl]="returnUrl" [scientist]="scientist"></scientist-form>
+    <scientist-form [formType]="formType"
+                    [returnUrl]="returnUrl"
+                    [scientist]="scientist"
+                    [specificKnowledge]="specificKnowledge"
+                    [equipment]="equipment"
+                    [categories]="categories"></scientist-form>
 </div>
