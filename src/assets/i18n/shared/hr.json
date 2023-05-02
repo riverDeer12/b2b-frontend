@@ -19,6 +19,7 @@
     "confirm-password": "Potvrda lozinke",
     "username-password": "Korisničko ime i lozinka",
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
+    "results": "rezultata",
     "categories": {
         "default": "Kategorije"
     },

@@ -8,6 +8,7 @@ import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
 import {ScientistsRoutes} from './scientists.routing';
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
+import {DialogService} from 'primeng/dynamicdialog';
 
 /**
  * Translation resources loader.
@@ -40,6 +41,10 @@ export function createTranslateLoader(http: HttpBackend) {
         }),
         SharedModule
     ],
+    providers:[
+        DialogService
+    ]
+
 })
 export class ScientistsModule {
 }

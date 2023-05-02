@@ -6,8 +6,8 @@
          [rowsPerPageOptions]="[5, 10, 20]"
          [paginator]="true"
          currentPageReportTemplate="{first} {{'to' | translate }} {last}
-         {{'research-problem-items' | translate }} {{'from' | translate }}
-         {totalRecords} {{'items' | translate }}"
+         {{'results' | translate }} {{'from' | translate }}
+         {totalRecords} {{'results' | translate }}"
          [globalFilterFields]="['title']"
          [tableStyle]="{'min-width':'75rem'}"
          responsiveLayout="scroll">
@@ -33,7 +33,7 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:10%"></th>
-            <th pSortableColumn="name">
+            <th pSortableColumn="title">
                 <div class="flex justify-content-between align-items-center">
                     {{ 'title' | translate }}
                     <p-sortIcon field="title"></p-sortIcon>
