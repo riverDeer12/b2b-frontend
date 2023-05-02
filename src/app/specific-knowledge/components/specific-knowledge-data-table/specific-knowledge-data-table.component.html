@@ -1,7 +1,8 @@
-<p-table #dt [rowHover]="true"
+<p-table #dt
+         dataKey="id"
+         [rowHover]="true"
          [showLoader]="true"
          [value]="data"
-         dataKey="id"
          [rows]="5" [showCurrentPageReport]="true"
          [rowsPerPageOptions]="[5, 10, 20]"
          [paginator]="true"

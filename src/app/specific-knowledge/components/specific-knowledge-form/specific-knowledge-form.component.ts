@@ -69,7 +69,6 @@ export class SpecificKnowledgeFormComponent {
             title: new FormControl('', Validators.required),
             description: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
-            scientistId: new FormControl('', Validators.required)
         })
     }
 
@@ -116,6 +115,8 @@ export class SpecificKnowledgeFormComponent {
                             'specific-knowledge-successfully-updated');
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+
+                    this.specificKnowledgeService.pingSpecificKnowledge(this.form.value as SpecificKnowledge);
                 },
                 (error) => {
                     this.notificationService

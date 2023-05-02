@@ -74,27 +74,4 @@ export class SharedService {
 
         this.closeDialogOnSuccess(dialogId as string);
     }
-
-    /**
-     * Subscribe data table on changes
-     * caused by external components.
-     *
-     * @param entityType type of entity so it
-     * is easier to find corresponding service.
-     */
-    subscribeForDataChanges(entityType: EntityType): any {
-        switch (entityType) {
-            case EntityType.SpecificKnowledge:
-                this.specificKnowledgeService.listenSpecificKnowledge();
-                break;
-            case EntityType.Equipment:
-                this.equipmentService.listenEquipment();
-                break;
-            case EntityType.ResearchProblem:
-                this.researchProblemService.listenResearchProblems();
-                break;
-            default:
-                break;
-        }
-    }
 }

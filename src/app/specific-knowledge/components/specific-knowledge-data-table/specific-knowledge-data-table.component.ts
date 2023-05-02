@@ -27,6 +27,8 @@ export class SpecificKnowledgeDataTableComponent {
 
     @ViewChild('filter') filter!: ElementRef;
 
+    @ViewChild('dt') table!: Table;
+
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
                 private activatedRoute: ActivatedRoute,
@@ -34,7 +36,7 @@ export class SpecificKnowledgeDataTableComponent {
                 private specificKnowledgeService: SpecificKnowledgeService,
                 private notificationService: NotificationService,
                 private router: Router) {
-        this.sharedService.subscribeForDataChanges(EntityType.SpecificKnowledge);
+        this.listenForDataChanges();
     }
 
     ngOnInit() {
@@ -142,6 +144,18 @@ export class SpecificKnowledgeDataTableComponent {
                 categories: this.categories
             }
         })
+    }
+
+    /**
+     * Data change listener
+     * subscribe method.
+     */
+    private listenForDataChanges(): void {
+        this.specificKnowledgeService.listenSpecificKnowledge()
+            .subscribe((response: SpecificKnowledge) => {
+                this.data.push(Object.assign(response, new SpecificKnowledge()));
+                this.table.reset();
+            })
     }
 }
 
