@@ -117,7 +117,20 @@ export class ResearchProblemFormComponent {
      * create research problem.
      */
     private createResearchProblem() {
-        //TODO: need to implement in future
+        this.researchProblemService
+            .createResearchProblem(this.parentEntityType, this.researchProblem.id, this.form.value)
+            .subscribe(() => {
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'research-problems.successfully-created');
+
+                    this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+                },
+                (error) => {
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'correct-validation-errors');
+                })
     }
 
     /**

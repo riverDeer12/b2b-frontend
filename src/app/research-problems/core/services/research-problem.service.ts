@@ -60,7 +60,7 @@ export class ResearchProblemService {
         this.newResearchProblem.next({success: true});
     }
 
-    listenNewResearchProblems(): Observable<any> {
+    listenResearchProblems(): Observable<any> {
         return this.newResearchProblem.asObservable();
     }
 

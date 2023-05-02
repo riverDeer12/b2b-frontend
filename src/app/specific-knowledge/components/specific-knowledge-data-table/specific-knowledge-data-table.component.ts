@@ -1,16 +1,18 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {SpecificKnowledge} from "../../core/models/specific-knowledge";
-import {SpecificKnowledgeService} from "../../core/services/specific-knowledge.service";
-import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog-form.component";
-import {FormType} from "../../../shared/enums/form-type";
-import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
-import {EntityType} from "../../../auth/core/enums/entity-type";
-import {DialogService} from "primeng/dynamicdialog";
+import {SpecificKnowledge} from '../../core/models/specific-knowledge';
+import {SpecificKnowledgeService} from '../../core/services/specific-knowledge.service';
+import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
+import {FormType} from '../../../shared/enums/form-type';
+import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {DialogService} from 'primeng/dynamicdialog';
+import {Category} from '../../../categories/core/models/category';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
     selector: 'specific-knowledge-data-table',
@@ -18,7 +20,8 @@ import {DialogService} from "primeng/dynamicdialog";
     styleUrls: ['./specific-knowledge-data-table.component.scss']
 })
 export class SpecificKnowledgeDataTableComponent {
-    @Input() data: SpecificKnowledge[] = [];
+    @Input() data!: SpecificKnowledge[];
+    @Input() categories!: Category[];
     @Input() scientistId!: string;
     @Input() dialogEdit!: boolean;
 
@@ -26,9 +29,12 @@ export class SpecificKnowledgeDataTableComponent {
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
+                private activatedRoute: ActivatedRoute,
+                private sharedService: SharedService,
                 private specificKnowledgeService: SpecificKnowledgeService,
                 private notificationService: NotificationService,
                 private router: Router) {
+        this.sharedService.subscribeForDataChanges(EntityType.SpecificKnowledge);
     }
 
     ngOnInit() {
@@ -84,7 +90,7 @@ export class SpecificKnowledgeDataTableComponent {
     openEditDialog(specificKnowledge: SpecificKnowledge) {
         this.dialogService.open(DialogFormComponent, {
             data: {
-                header: 'specific-knowledge-edit',
+                header: 'specific-knowledge.edit',
                 formType: FormType.Edit,
                 contentType: DialogContentTypes.SpecificKnowledge,
                 data: specificKnowledge,
@@ -95,7 +101,7 @@ export class SpecificKnowledgeDataTableComponent {
     }
 
     /**
-     * Trigger popup to
+     * Trigger dialog to
      * confirm deleting selected
      * specific knowledge item from data table.
      *
@@ -118,6 +124,24 @@ export class SpecificKnowledgeDataTableComponent {
                         })
             },
         });
+    }
+
+    /**
+     * Trigger dialog form
+     * for creating new specific knowledge item
+     * for scientist.
+     */
+    openCreateDialog(): void {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'specific-knowledge.create',
+                formType: FormType.Create,
+                contentType: DialogContentTypes.SpecificKnowledge,
+                parentEntityType: EntityType.Scientist,
+                parentEntityId: this.scientistId,
+                categories: this.categories
+            }
+        })
     }
 }
 

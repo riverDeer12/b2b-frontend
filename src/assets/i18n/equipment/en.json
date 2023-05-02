@@ -10,7 +10,7 @@
     "equipment-successfully-created": "Equipment is successfully created.",
     "equipment-successfully-updated": "Equipment is successfully updated.",
     "no-error-details": "Error occurred, but no details given!",
-    "edit-equipment": "Editing equipment",
+    "edit": "Editing equipment",
     "confirm-delete-action": "Are you sure you want to delete equipment?",
     "confirm-delete-message": "When you confirm deleting action, selected equipment will be deleted.",
     "successfully-deleted": "Equipment is successfully deleted.",

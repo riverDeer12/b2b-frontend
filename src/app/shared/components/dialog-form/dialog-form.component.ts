@@ -17,13 +17,13 @@ import {RedirectType} from "../../enums/redirect-type";
 })
 export class DialogFormComponent {
     contentType!: DialogFormContent;
+    formType!: FormType;
+    parentEntityType!: EntityType;
+    categories!: Category[];
     dialogId!: string;
     data: any;
     dataArray!: any[];
-    formType!: FormType;
     parentEntityId!: string;
-    parentEntityType!: EntityType;
-    categories!: Category[];
 
     dialogRedirectType = RedirectType.CloseDialog;
 

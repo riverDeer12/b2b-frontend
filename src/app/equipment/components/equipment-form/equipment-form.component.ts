@@ -7,6 +7,7 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {Equipment} from '../../core/models/equipment';
 import {RedirectType} from '../../../shared/enums/redirect-type';
+import {SharedService} from '../../../shared/services/shared.service';
 
 /**
  * Component responsible for
@@ -39,6 +40,7 @@ export class EquipmentFormComponent {
 
     constructor(private fb: FormBuilder,
                 private router: Router,
+                private sharedService: SharedService,
                 private notificationService: NotificationService,
                 private equipmentService: EquipmentService) {
     }
@@ -104,7 +106,18 @@ export class EquipmentFormComponent {
      * create new equipment.
      */
     private createEquipment(): void {
-        //TODO: need to implement in future
+        this.equipmentService.createEquipment(this.scientistId, this.form.value).subscribe(() => {
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'equipment-successfully-updated');
+
+                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+            },
+            () => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -118,7 +131,7 @@ export class EquipmentFormComponent {
                     .showNotification(NotificationType.Success,
                         'equipment-successfully-updated');
 
-                this.router.navigateByUrl(this.returnUrl).then();
+                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
             },
             (error) => {
                 this.notificationService

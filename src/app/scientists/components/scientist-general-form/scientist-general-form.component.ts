@@ -17,7 +17,6 @@ export class ScientistGeneralFormComponent {
     @Input() formType!: FormType;
     @Input() scientist!: Scientist;
     @Input() categories!: Category[];
-    @Input() returnUrl!: string;
 
     form!: FormGroup;
 
@@ -106,8 +105,6 @@ export class ScientistGeneralFormComponent {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'scientist-successfully-created');
-
-                this.router.navigateByUrl(this.returnUrl).then();
             },
             (error) => {
                 this.notificationService
@@ -126,8 +123,6 @@ export class ScientistGeneralFormComponent {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'scientist-successfully-updated');
-
-                this.router.navigateByUrl(this.returnUrl).then();
             },
             (error) => {
                 this.notificationService

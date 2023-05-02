@@ -9,6 +9,7 @@
     "no": "No",
     "from": "from",
     "to": "to",
+    "add": "Add",
     "keyword": "Keyword",
     "general": "General",
     "choose-option": "Choose an option",
@@ -25,10 +26,12 @@
     },
     "specific-knowledge": {
         "default": "Specific Knowledge",
-        "edit": "Edit specific knowledge"
+        "edit": "Edit specific knowledge",
+        "no-specific-knowledge-found": "No specific knowledge found."
     },
     "equipment": {
         "default": "Equipment",
-        "edit": "Edit equipment"
+        "edit": "Edit equipment",
+        "no-equipment-found": "No equipment found."
     }
 }

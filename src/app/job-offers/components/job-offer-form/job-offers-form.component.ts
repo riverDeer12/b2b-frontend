@@ -7,6 +7,7 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {JobOffer} from "../../core/models/job-offer";
 import {JobOfferService} from "../../core/services/job-offer.service";
 import {RedirectType} from '../../../shared/enums/redirect-type';
+import {SharedService} from '../../../shared/services/shared.service';
 
 /**
  * Component responsible for
@@ -39,6 +40,7 @@ export class JobOffersFormComponent {
 
     constructor(private fb: FormBuilder,
                 private router: Router,
+                private sharedService: SharedService,
                 private notificationService: NotificationService,
                 private jobOfferService: JobOfferService) {
     }
@@ -134,7 +136,7 @@ export class JobOffersFormComponent {
                     .showNotification(NotificationType.Success,
                         'job-offer-successfully-updated');
 
-                this.router.navigateByUrl(this.returnUrl).then();
+                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
             },
             (error) => {
                 this.notificationService

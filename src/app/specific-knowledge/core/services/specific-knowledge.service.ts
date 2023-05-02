@@ -12,7 +12,7 @@ export class SpecificKnowledgeService {
 
     specificKnowledgeUrl = environment.apiUrl + '/scientists/';
 
-    newSpecificKnowledge = new Subject<any>();
+    newSpecificKnowledge = new Subject<SpecificKnowledge>();
 
     constructor(private http: HttpClient) {
     }
@@ -45,11 +45,23 @@ export class SpecificKnowledgeService {
         return this.http.post(this.specificKnowledgeUrl + scientistId + '/deleteSpecificKnowledge/' + specificKnowledgeId, null);
     }
 
-    pingSpecificKnowledge(): void {
-        this.newSpecificKnowledge.next({success: true});
+    /**
+     * Push new specific knowledge
+     * object to current array of specific
+     * knowledge items on UI.
+     *
+     * @param specificKnowledge new specific knowledge item
+     */
+    pingSpecificKnowledge(specificKnowledge: SpecificKnowledge): void {
+        this.newSpecificKnowledge.next(specificKnowledge);
     }
 
-    listenSpecificKnowledge(): Observable<any> {
+    /**
+     * Listen to changes
+     * on current list of specific
+     * knowledge items on UI.
+     */
+    listenSpecificKnowledge(): Observable<SpecificKnowledge> {
         return this.newSpecificKnowledge.asObservable();
     }
 }

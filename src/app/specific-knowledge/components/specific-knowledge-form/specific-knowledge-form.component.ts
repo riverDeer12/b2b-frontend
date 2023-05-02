@@ -7,6 +7,8 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {SpecificKnowledgeService} from '../../core/services/specific-knowledge.service';
 import {SpecificKnowledge} from '../../core/models/specific-knowledge';
 import {RedirectType} from '../../../shared/enums/redirect-type';
+import {SharedService} from '../../../shared/services/shared.service';
+import {Category} from '../../../categories/core/models/category';
 
 /**
  * Component responsible for
@@ -33,6 +35,7 @@ export class SpecificKnowledgeFormComponent {
     @Input() redirectType!: RedirectType;
     @Input() scientistId!: string;
     @Input() specificKnowledge!: SpecificKnowledge;
+    @Input() categories!: Category[];
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
 
@@ -40,6 +43,7 @@ export class SpecificKnowledgeFormComponent {
 
     constructor(private fb: FormBuilder,
                 private router: Router,
+                private sharedService: SharedService,
                 private notificationService: NotificationService,
                 private specificKnowledgeService: SpecificKnowledgeService) {
     }
@@ -105,7 +109,19 @@ export class SpecificKnowledgeFormComponent {
      * create new specific knowledge.
      */
     private createSpecificKnowledge(): void {
-        //TODO: need to implement in future
+        this.specificKnowledgeService.createSpecificKnowledge(this.scientistId, this.form.value)
+            .subscribe(() => {
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'specific-knowledge-successfully-updated');
+
+                    this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+                },
+                (error) => {
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'correct-validation-errors');
+                })
     }
 
     /**
@@ -121,7 +137,7 @@ export class SpecificKnowledgeFormComponent {
                         .showNotification(NotificationType.Success,
                             'specific-knowledge-successfully-updated');
 
-                    this.router.navigateByUrl(this.returnUrl).then();
+                    this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
                 },
                 (error) => {
                     this.notificationService

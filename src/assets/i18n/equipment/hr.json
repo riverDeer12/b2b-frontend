@@ -10,11 +10,10 @@
     "equipment-successfully-created": "Oprema je uspješno kreirana.",
     "equipment-successfully-updated": "Oprema je uspješno ažurirana.",
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
-    "edit-equipment": "Uređivanje opreme",
+    "edit": "Uređivanje opreme",
     "confirm-delete-action": "Jeste li sigurni da želite izbrisati opremu?",
     "confirm-delete-message": "Nakon potvrde odabrana oprema će biti izbrisana.",
     "successfully-deleted": "Oprema je uspješno izbrisana.",
-    "no-equipment-found": "Nema pronađene opreme",
     "error-deleting": "Greška prilikom brisanja opreme.",
     "new-equipment": "Nova oprema"
 }

@@ -4,8 +4,7 @@
             <p-tabPanel header="{{ 'general' | translate }}" class="line-height-3 m-0">
                 <scientist-general-form [formType]="formType"
                                         [scientist]="scientist"
-                                        [categories]="categories"
-                                        [returnUrl]="returnUrl"></scientist-general-form>
+                                        [categories]="categories"></scientist-general-form>
             </p-tabPanel>
             <p-tabPanel header="{{ 'username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
@@ -25,6 +24,7 @@
                     [data]="specificKnowledge"
                     [scientistId]="scientist.id"
                     [dialogEdit]="true"
+                    [categories]="categories"
                 ></specific-knowledge-data-table>
             </p-tabPanel>
         </p-tabView>

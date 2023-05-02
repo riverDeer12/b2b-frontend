@@ -9,6 +9,7 @@
     "no": "Ne",
     "from": "od",
     "to": "do",
+    "add": "Dodaj",
     "description": "Opis",
     "title": "Naslov",
     "keyword": "Ključna riječ",
@@ -28,14 +29,19 @@
     "research-problems": {
         "default": "Razvojni prijedlozi",
         "edit": "Uređivanje razvojnog prijedloga",
+        "create": "Kreiranje razvojnog prijedloga",
         "successfully-updated": "Razvojni prijedlog je uspješno ažuriran."
     },
     "specific-knowledge": {
-        "default": "Usluge i kompetencije",
-        "edit": "Uređivanje usluga i kompetencija"
+        "default": "Usluge i kompetencije istraživača",
+        "edit": "Uređivanje usluga i kompetencija istraživača",
+        "create": "Kreiranje usluge i kompetencije istraživača",
+        "no-specific-knowledge-found": "Nema pronađenih usluga i kompetencija istraživača."
     },
     "equipment": {
         "default": "Istraživačka oprema",
-        "edit": "Uređivanje istraživačke opreme"
+        "edit": "Uređivanje istraživačke opreme",
+        "create": "Kreiranje istraživačke opreme",
+        "no-equipment-found": "Nema pronađene istraživačke opreme."
     }
 }

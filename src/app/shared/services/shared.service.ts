@@ -1,8 +1,11 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {EntityType} from '../../auth/core/enums/entity-type';
 import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
+import {SpecificKnowledgeService} from '../../specific-knowledge/core/services/specific-knowledge.service';
+import {EquipmentService} from '../../equipment/core/services/equipment.service';
+import {ResearchProblemService} from '../../research-problems/core/services/research-problem.service';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +15,10 @@ export class SharedService {
     parentEntityType = new Subject<EntityType>();
     dialogCloseStatus = new Subject<string>();
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+                private specificKnowledgeService: SpecificKnowledgeService,
+                private equipmentService: EquipmentService,
+                private researchProblemService: ResearchProblemService) {
     }
 
     /**
@@ -67,5 +73,28 @@ export class SharedService {
         }
 
         this.closeDialogOnSuccess(dialogId as string);
+    }
+
+    /**
+     * Subscribe data table on changes
+     * caused by external components.
+     *
+     * @param entityType type of entity so it
+     * is easier to find corresponding service.
+     */
+    subscribeForDataChanges(entityType: EntityType): any {
+        switch (entityType) {
+            case EntityType.SpecificKnowledge:
+                this.specificKnowledgeService.listenSpecificKnowledge();
+                break;
+            case EntityType.Equipment:
+                this.equipmentService.listenEquipment();
+                break;
+            case EntityType.ResearchProblem:
+                this.researchProblemService.listenResearchProblems();
+                break;
+            default:
+                break;
+        }
     }
 }
