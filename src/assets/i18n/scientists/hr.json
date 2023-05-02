@@ -20,5 +20,10 @@
     "firstname": "Ime",
     "lastname": "Prezime",
     "number-of-views": "Broj pregleda",
-    "email": "Email"
+    "email": "Email",
+    "projects": "Projekti",
+    "functions": "Funkcije",
+    "google-scholar-Link": "Poveznica na Google Scholar",
+    "employment-college": "Zaposlenje",
+    "education-title": "Titula"
 }

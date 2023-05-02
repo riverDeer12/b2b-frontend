@@ -3,8 +3,9 @@
         <p-tabView>
             <p-tabPanel header="{{ 'general' | translate }}" class="line-height-3 m-0">
                 <scientist-general-form [formType]="formType"
-                                      [scientist]="scientist"
-                                      [returnUrl]="returnUrl"></scientist-general-form>
+                                        [scientist]="scientist"
+                                        [categories]="categories"
+                                        [returnUrl]="returnUrl"></scientist-general-form>
             </p-tabPanel>
             <p-tabPanel header="{{ 'username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
@@ -12,14 +13,14 @@
                                           [entityType]="entityType"></auth-change-password>
                 </div>
             </p-tabPanel>
-            <p-tabPanel header="{{'equipment' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel header="{{'equipment.default' | translate }}" class="line-height-3 m-0">
                 <equipment-data-table
                     [data]="equipment"
                     [scientistId]="scientist.id"
                     [dialogEdit]="true"
                 ></equipment-data-table>
             </p-tabPanel>
-            <p-tabPanel header="{{'specific-knowledge' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel header="{{'specific-knowledge.default' | translate }}" class="line-height-3 m-0">
                 <specific-knowledge-data-table
                     [data]="specificKnowledge"
                     [scientistId]="scientist.id"

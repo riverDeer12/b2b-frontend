@@ -20,5 +20,10 @@
     "firstname": "Firstname",
     "lastname": "Lastname",
     "number-of-views": "Number of Views",
-    "email": "Email"
+    "email": "Email",
+    "projects": "Projects",
+    "functions": "Functions",
+    "google-scholar-Link": "Google Scholar link",
+    "employment-college": "Employment College",
+    "education-title": "Title"
 }

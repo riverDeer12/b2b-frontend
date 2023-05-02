@@ -5,7 +5,7 @@
                 <div class="field field col-md-12">
                     <span class="p-float-label">
                         <input pInputText type="text" id="title" formControlName="title"/>
-                        <label for="title">{{ 'title' | translate }}</label>
+                        <label for="title">{{ 'education-title' | translate }}</label>
                     </span>
                 </div>
                 <div class="field field col-md-12">
@@ -41,7 +41,7 @@
                 <div class="field field col-md-12">
                     <span class="p-float-label">
                         <input pInputText type="text" id="employmentCollege" formControlName="employmentCollege"/>
-                        <label for="employmentCollege">{{ 'employmentCollege' | translate }}</label>
+                        <label for="employmentCollege">{{ 'employment-college' | translate }}</label>
                     </span>
                 </div>
                 <div class="field field col-md-12">
@@ -59,7 +59,17 @@
                 <div class="field field col-md-12">
                     <span class="p-float-label">
                         <input pInputText type="number" id="googleScholarLink" formControlName="googleScholarLink"/>
-                        <label for="googleScholarLink">{{ 'googleScholarLink' | translate }}</label>
+                        <label for="googleScholarLink">{{ 'google-scholar-Link' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <categories-selector
+                            [form]="form"
+                            [data]="categories"
+                            controlName="categories"
+                            label="categories.default">
+                        </categories-selector>
                     </span>
                 </div>
                 <div class="col-6 ml-0 pl-0">

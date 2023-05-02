@@ -1,9 +1,11 @@
 import {Routes} from '@angular/router';
 import {ScientistsHomeComponent} from './pages/scientists-home/scientists-home.component';
-import {ScientistCreateComponent} from './pages/scientist-create/scientist-create.component';
 import {ScientistEditComponent} from './pages/scientist-edit/scientist-edit.component';
 import {ScientistResolver} from './core/resolvers/scientist.resolver';
 import {ScientistsResolver} from './core/resolvers/scientists.resolver';
+import {ScientistSpecificKnowledgeResolver} from "../specific-knowledge/core/resolvers/scientist-specific-knowledge.resolver";
+import {ScientistEquipmentResolver} from "../equipment/core/resolvers/scientist-equipment.resolver";
+import {CategoriesResolver} from "../categories/core/resolvers/categories.resolver";
 
 export const ScientistsRoutes: Routes = [
     {
@@ -17,7 +19,10 @@ export const ScientistsRoutes: Routes = [
         path: 'edit/:id',
         component: ScientistEditComponent,
         resolve: {
-            scientist: ScientistResolver
+            scientist: ScientistResolver,
+            specificKnowledge: ScientistSpecificKnowledgeResolver,
+            equipment: ScientistEquipmentResolver,
+            categories: CategoriesResolver
         }
     }
 ]
