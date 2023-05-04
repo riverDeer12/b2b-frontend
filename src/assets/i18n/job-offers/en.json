@@ -1,6 +1,6 @@
 {
     "job-offers": "Job Offers",
-    "name": "Job offer name",
+    "job-offer-name": "Job offer name",
     "job-offer-items": "job offers",
     "items": "job offers",
     "job-offers-list": "Job offers list",
@@ -16,5 +16,6 @@
     "successfully-deleted": "Job offer is successfully deleted.",
     "no-job-offers-found": "No job offers found.",
     "error-deleting": "Error deleting job offer.",
-    "new-job-offer": "New Job Offer"
+    "new-job-offer": "New Job Offer",
+
 }

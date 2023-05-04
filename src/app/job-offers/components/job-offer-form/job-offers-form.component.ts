@@ -95,7 +95,7 @@ export class JobOffersFormComponent {
             duration: new FormControl(this.jobOffer.duration, Validators.required),
             applyMethod: new FormControl(this.jobOffer.applyMethod, Validators.required),
             additional: new FormControl(this.jobOffer.additional, Validators.required),
-            categories: new FormControl(this.jobOffer.categories, Validators.required)
+            categories: new FormControl(this.jobOffer.categories.map(x => x.id), Validators.required)
         })
     }
 

@@ -17,6 +17,8 @@
     "password": "Password",
     "email": "Email",
     "website": "Website",
+    "name": "Name",
+    "title": "Title",
     "confirm-password": "Confirm Password",
     "username-password": "Username and Password",
     "no-error-details": "Error occurred, but no details given!",
@@ -28,7 +30,15 @@
     },
     "job-offers": {
         "default": "Job Offers",
-        "no-job-offers-found": "No job offers found."
+        "no-job-offers-found": "No job offers found.",
+        "location": "Location",
+        "deadline": "Deadline",
+        "experience": "Experience",
+        "education": "Education",
+        "special-conditions": "Special Conditions",
+        "duration": "Duration",
+        "apply-method": "Apply method",
+        "additional": "Additional"
     },
     "research-problems": {
         "default": "Research problems",

@@ -5,7 +5,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpBackend, HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {JobOffersDataTableComponent} from './job-offers-data-table/job-offers-data-table.component';
 import {TableModule} from 'primeng/table';
@@ -15,15 +15,20 @@ import {ConfirmationService} from 'primeng/api';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {RouterModule} from '@angular/router';
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
+import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 
 /**
  * Translation resources loader.
  *
  * @param http client for loading translations.
  */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/job-offers/', '.json');
+export function createTranslateLoader(http: HttpBackend) {
+    return new MultiTranslateHttpLoader(http, [
+        './assets/i18n/job-offers/',
+        './assets/i18n/shared/'
+    ]);
 }
+
 
 @NgModule({
     declarations: [
@@ -41,7 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [HttpClient]
+                deps: [HttpBackend]
             },
             isolate: true
         }),

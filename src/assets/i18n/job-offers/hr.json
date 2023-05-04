@@ -1,6 +1,6 @@
 {
     "job-offers": "Potrebe za ljudskim resursima",
-    "name": "Naziv potrebe za ljudskim resursima",
+    "job-offer-name": "Naziv potrebe za ljudskim resursima",
     "category-items": "potrebe za ljudskim resursima",
     "items": "potrebe za ljudskim resursima",
     "job-offers-list": "Pregled potreba za ljudskim resursima",
@@ -16,5 +16,5 @@
     "successfully-deleted": "Potreba za ljudskim resursima je uspješno izbrisana.",
     "no-job-offers-found": "Nema pronađenih potreba za ljudskim resursima",
     "error-deleting": "Greška prilikom brisanja potrebe za ljudskim resursima.",
-    "new-job-offer": "Nova potreba za ljudskim resursima"
+    "new-job-offer": "Nova potreba za ljudskim resursima",
 }

@@ -12,6 +12,7 @@
     "add": "Dodaj",
     "description": "Opis",
     "title": "Naslov",
+    "name": "Naziv",
     "keyword": "Ključna riječ",
     "general": "Opći podaci",
     "choose-option": "Odaberite vrijednost",
@@ -23,7 +24,7 @@
     "username-password": "Korisničko ime i lozinka",
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
     "results": "rezultata",
-    "correct-validation-errors": "Molimo ispraviti pogreške i pokušajte ponovno.",
+    "correct-validation-errors": "Molimo ispravite pogreške i pokušajte ponovno.",
     "auth": {
         "welcome-to-dashboard": "Uspješna prijava u RIMAP administraciju.",
         "login-error": "Krivo korisničko ime ili lozinka."
@@ -32,8 +33,17 @@
         "default": "Kategorije"
     },
     "job-offers": {
-        "default": "Poslovne ponude",
-        "no-job-offers-found": "Nema pronađenih poslovnih ponuda."
+        "default": "Potrebe za ljudskim resursima",
+        "create": "Kreiranje potrebe za ljudskim resursima",
+        "no-job-offers-found": "Nema pronađenih potreba za ljudskim resursima.",
+        "location": "Lokacija",
+        "deadline": "Rok prijave",
+        "experience": "Iskustvo",
+        "education": "Razina obrazovanja",
+        "special-conditions": "Posebni uvjeti",
+        "duration": "Trajanje",
+        "apply-method": "Način prijave",
+        "additional": "Dodatno"
     },
     "research-problems": {
         "default": "Razvojni prijedlozi",

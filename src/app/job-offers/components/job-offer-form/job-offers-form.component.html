@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="grid">
-        <div class="col-12">
+        <div class="col-12 mt-2">
             <div class="p-fluid">
                 <div class="field field col-md-12">
                     <span class="p-float-label">
@@ -8,11 +8,65 @@
                         <label for="name">{{ 'name' | translate }}</label>
                     </span>
                 </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <textarea pInputText id="description" formControlName="description"></textarea>
+                        <label for="description">{{ 'description' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="location" formControlName="location"/>
+                        <label for="location">{{ 'job-offers.location' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="deadline" formControlName="deadline"/>
+                        <label for="deadline">{{ 'job-offers.deadline' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="experience" formControlName="experience"/>
+                        <label for="experience">{{ 'job-offers.experience' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="education" formControlName="education"/>
+                        <label for="education">{{ 'job-offers.education' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="specialConditions" formControlName="specialConditions"/>
+                        <label for="specialConditions">{{ 'job-offers.special-conditions' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="duration" formControlName="duration"/>
+                        <label for="duration">{{ 'job-offers.duration' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="applyMethod" formControlName="applyMethod"/>
+                        <label for="applyMethod">{{ 'job-offers.apply-method' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="additional" formControlName="additional"/>
+                        <label for="additional">{{ 'job-offers.additional' | translate }}</label>
+                    </span>
+                </div>
                 <div class="field col-md-12 mt-5">
                     <span class="p-float-label">
                         <categories-selector
-                            controlName="subcategories"
-                            label="subcategories"
+                            controlName="categories"
+                            label="categories.default"
                             [data]="categories"
                             [form]="form">
                         </categories-selector>
