@@ -8,6 +8,7 @@ import {JobOffer} from "../../core/models/job-offer";
 import {JobOfferService} from "../../core/services/job-offer.service";
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {SharedService} from '../../../shared/services/shared.service';
+import {Category} from '../../../categories/core/models/category';
 
 /**
  * Component responsible for
@@ -32,6 +33,7 @@ export class JobOffersFormComponent {
     @Input() formType!: FormType;
     @Input() redirectType!: RedirectType;
     @Input() companyId!: string;
+    @Input() categories!: Category[];
     @Input() jobOffer!: JobOffer;
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
@@ -73,8 +75,7 @@ export class JobOffersFormComponent {
             duration: new FormControl('', Validators.required),
             applyMethod: new FormControl('', Validators.required),
             additional: new FormControl('', Validators.required),
-            categories: new FormControl('', Validators.required),
-            companyId: new FormControl('', Validators.required),
+            categories: new FormControl('', Validators.required)
         })
     }
 
@@ -94,8 +95,7 @@ export class JobOffersFormComponent {
             duration: new FormControl(this.jobOffer.duration, Validators.required),
             applyMethod: new FormControl(this.jobOffer.applyMethod, Validators.required),
             additional: new FormControl(this.jobOffer.additional, Validators.required),
-            categories: new FormControl(this.jobOffer.categories, Validators.required),
-            companyId: new FormControl(this.jobOffer.categories, Validators.required)
+            categories: new FormControl(this.jobOffer.categories, Validators.required)
         })
     }
 

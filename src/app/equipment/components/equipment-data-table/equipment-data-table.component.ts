@@ -86,7 +86,7 @@ export class EquipmentDataTableComponent {
     openEditDialog(equipment: Equipment) {
         this.dialogService.open(DialogFormComponent, {
             data: {
-                header: 'edit',
+                header: 'equipment.edit',
                 formType: FormType.Edit,
                 contentType: DialogContentTypes.Equipment,
                 data: equipment,

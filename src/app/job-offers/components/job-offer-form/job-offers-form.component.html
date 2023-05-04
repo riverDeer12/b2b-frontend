@@ -11,9 +11,10 @@
                 <div class="field col-md-12 mt-5">
                     <span class="p-float-label">
                         <categories-selector
-                                [form]="form"
                             controlName="subcategories"
-                            label="subcategories">
+                            label="subcategories"
+                            [data]="categories"
+                            [form]="form">
                         </categories-selector>
                     </span>
                 </div>

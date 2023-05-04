@@ -8,6 +8,7 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {Equipment} from '../../core/models/equipment';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {SharedService} from '../../../shared/services/shared.service';
+import {Category} from '../../../categories/core/models/category';
 
 /**
  * Component responsible for
@@ -32,6 +33,7 @@ export class EquipmentFormComponent {
     @Input() formType!: FormType;
     @Input() redirectType!: RedirectType;
     @Input() scientistId!: string;
+    @Input() categories!: Category[];
     @Input() equipment!: Equipment;
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
@@ -65,8 +67,7 @@ export class EquipmentFormComponent {
         this.form = this.fb.group({
             title: new FormControl('', Validators.required),
             description: new FormControl('', Validators.required),
-            categories: new FormControl('', Validators.required),
-            scientistId: new FormControl('', Validators.required)
+            categories: new FormControl('', Validators.required)
         })
     }
 
@@ -78,8 +79,7 @@ export class EquipmentFormComponent {
         this.form = this.fb.group({
             title: new FormControl(this.equipment.title, Validators.required),
             description: new FormControl(this.equipment.description, Validators.required),
-            categories: new FormControl(this.equipment.categories, Validators.required),
-            scientistId: new FormControl(this.equipment.scientistId, Validators.required)
+            categories: new FormControl(this.equipment.categories, Validators.required)
         })
     }
 
