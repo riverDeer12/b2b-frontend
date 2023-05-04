@@ -84,9 +84,9 @@ export class AuthService {
         const tokenStorageValue = localStorage.getItem('token');
         const decodedToken = jwtDecode(tokenStorageValue as string) as AuthToken;
         if (decodedToken.role === 'SuperAdmin') {
-            return '/auth/admin-login';
+            return 'auth/admin-login';
         } else {
-            return '/auth/user-login';
+            return 'auth/user-login';
         }
     }
 

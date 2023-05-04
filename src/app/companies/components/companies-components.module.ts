@@ -15,6 +15,7 @@ import {CompanyGeneralFormComponent} from "./company-general-form/company-genera
 import {TabViewModule} from "primeng/tabview";
 import {AuthComponentsModule} from "../../auth/components/auth-components.module";
 import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";
+import {JobOffersComponentsModule} from '../../job-offers/components/job-offers-components.module';
 
 /**
  * Translation resources loader.
@@ -50,7 +51,8 @@ export function createTranslateLoader(http: HttpClient) {
         ReactiveFormsModule,
         TabViewModule,
         AuthComponentsModule,
-        ResearchProblemsComponentsModule
+        ResearchProblemsComponentsModule,
+        JobOffersComponentsModule
     ],
     exports: [
         CompaniesDataTableComponent,

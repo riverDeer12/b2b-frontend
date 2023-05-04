@@ -1,7 +1,6 @@
 {
     "login": "Prijava",
     "correct-validation-errors": "Molimo da pregledate unesene podatke i pokušate ponovno.",
-    "welcome-to-dashboard": "Dobrodošli u RIMAP administraciju.",
     "access-denied": "Zabranjen pristup",
     "you-dont-have-permissions": "Nemate pravo na pristup sadržaju. Molimo kontaktirajte administratora.",
     "error-occurred": "Dogodila se pogreška prilikom prijave.",

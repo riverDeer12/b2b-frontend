@@ -23,7 +23,7 @@ export class DefaultInterceptor implements HttpInterceptor {
 
             return next.handle(clonedRequest).pipe(
                 tap(
-                    (success) => {
+                    () => {
                     },
                     (error) => {
                         if (error.status === 401) {
@@ -31,7 +31,7 @@ export class DefaultInterceptor implements HttpInterceptor {
                             localStorage.removeItem('token');
                             this.router.navigateByUrl(logoutUrl).then();
                         } else if (error.status === 403) {
-                            this.router.navigateByUrl('forbidden').then();
+                            this.router.navigateByUrl('auth/forbidden').then();
                         }
                     }
                 )

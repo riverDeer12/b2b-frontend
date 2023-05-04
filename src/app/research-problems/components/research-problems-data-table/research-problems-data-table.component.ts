@@ -28,11 +28,14 @@ export class ResearchProblemsDataTableComponent {
 
     @ViewChild('filter') filter!: ElementRef;
 
+    @ViewChild('dt') table!: Table;
+
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
                 private researchProblemService: ResearchProblemService,
                 private notificationService: NotificationService,
                 private router: Router) {
+        this.listenForDataChanges();
     }
 
     ngOnInit() {
@@ -112,16 +115,46 @@ export class ResearchProblemsDataTableComponent {
             key: 'confirmDeleteDialog',
             accept: () => {
                 this.researchProblemService.deleteResearchProblem(researchProblemId,
-                    this.parentEntityType, this.parentEntityId).subscribe((response: Object) => {
+                    this.parentEntityType, this.parentEntityId).subscribe(() => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
                         this.data = this.data.filter((x => x.id !== researchProblemId));
                     },
-                    (error: Object) => {
+                    () => {
                         this.notificationService
                             .showNotification(NotificationType.Error, 'error-deleting');
                     })
             },
         });
+    }
+
+    /**
+     * Trigger dialog form
+     * for creating new research problem item
+     * for parent entity.
+     */
+    openCreateDialog(): void {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'research-problems.create',
+                formType: FormType.Create,
+                contentType: DialogContentTypes.ResearchProblem,
+                parentEntityType: this.parentEntityType,
+                parentEntityId: this.parentEntityId,
+                categories: this.categories
+            }
+        })
+    }
+
+    /**
+     * Data change listener
+     * subscribe method.
+     */
+    private listenForDataChanges(): void {
+        this.researchProblemService.listenResearchProblems()
+            .subscribe((response: ResearchProblem) => {
+                this.data.push(Object.assign(response, new ResearchProblem()));
+                this.table.reset();
+            })
     }
 }

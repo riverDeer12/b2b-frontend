@@ -11,6 +11,7 @@ import {FormType} from "../../../shared/enums/form-type";
 import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
 import {DialogService} from "primeng/dynamicdialog";
 import {EntityType} from "../../../auth/core/enums/entity-type";
+import {Category} from '../../../categories/core/models/category';
 
 @Component({
     selector: 'job-offers-data-table',
@@ -20,14 +21,19 @@ import {EntityType} from "../../../auth/core/enums/entity-type";
 export class JobOffersDataTableComponent {
     @Input() data: JobOffer[] = [];
     @Input() dialogEdit!: boolean;
+    @Input() companyId!: string;
+    @Input() categories!: Category[];
 
     @ViewChild('filter') filter!: ElementRef;
+
+    @ViewChild('dt') table!: Table;
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
                 private jobOfferService: JobOfferService,
                 private notificationService: NotificationService,
                 private router: Router) {
+        this.listenForDataChanges();
     }
 
     ngOnInit() {
@@ -84,7 +90,7 @@ export class JobOffersDataTableComponent {
     openEditDialog(jobOffer: JobOffer) {
         this.dialogService.open(DialogFormComponent, {
             data: {
-                header: 'job-offer-edit',
+                header: 'job-offers.edit',
                 formType: FormType.Edit,
                 contentType: DialogContentTypes.JobOffer,
                 data: jobOffer,
@@ -92,6 +98,36 @@ export class JobOffersDataTableComponent {
                 parentEntityId: jobOffer.companyId
             }
         })
+    }
+
+    /**
+     * Trigger dialog form
+     * for creating new specific knowledge item
+     * for scientist.
+     */
+    openCreateDialog(): void {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'job-offers.create',
+                formType: FormType.Create,
+                contentType: DialogContentTypes.JobOffer,
+                parentEntityType: EntityType.Company,
+                parentEntityId: this.companyId,
+                categories: this.categories
+            }
+        })
+    }
+
+    /**
+     * Data change listener
+     * subscribe method.
+     */
+    private listenForDataChanges(): void {
+        this.jobOfferService.listenJobOffers()
+            .subscribe((response: JobOffer) => {
+                this.data.push(Object.assign(response, new JobOffer()));
+                this.table.reset();
+            })
     }
 
     /**
@@ -106,12 +142,12 @@ export class JobOffersDataTableComponent {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.jobOfferService.deleteJobOffer(companyId, jobOfferId).subscribe((response: Object) => {
+                this.jobOfferService.deleteJobOffer(companyId, jobOfferId).subscribe(() => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
                         this.data = this.data.filter((x => x.id !== jobOfferId));
                     },
-                    (error: Object) => {
+                    () => {
                         this.notificationService
                             .showNotification(NotificationType.Error, 'error-deleting');
                     })

@@ -1,7 +1,6 @@
 {
     "login": "Login",
     "correct-validation-errors": "Please, check values and try again.",
-    "welcome-to-dashboard": "Welcome to RIMAP dashboard.",
     "access-denied": "Access denied",
     "you-dont-have-permissions": "You do not have the necessary permissions. Please contact administrator.",
     "error-occurred": "Error occurred while trying to login",

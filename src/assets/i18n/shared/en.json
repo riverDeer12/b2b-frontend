@@ -21,8 +21,21 @@
     "username-password": "Username and Password",
     "no-error-details": "Error occurred, but no details given!",
     "results": "results",
+    "correct-validation-errors": "Please correct errors and try again.",
+    "auth": {
+        "welcome-to-dashboard": "Welcome to RIMAP dashboard.",
+        "login-error": "Wrong username or password."
+    },
+    "job-offers": {
+        "default": "Job Offers",
+        "no-job-offers-found": "No job offers found."
+    },
     "research-problems": {
-        "edit": "Edit research problem"
+        "default": "Research problems",
+        "edit": "Edit research problem",
+        "create": "Create research problem",
+        "academic-community-contribution-possibility": "Academic community contribution possibility",
+        "successfully-updated": "Research problem is successfully updated."
     },
     "specific-knowledge": {
         "default": "Specific Knowledge",

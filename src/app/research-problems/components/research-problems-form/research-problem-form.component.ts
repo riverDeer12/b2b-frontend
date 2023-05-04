@@ -118,7 +118,7 @@ export class ResearchProblemFormComponent {
      */
     private createResearchProblem() {
         this.researchProblemService
-            .createResearchProblem(this.parentEntityType, this.researchProblem.id, this.form.value)
+            .createResearchProblem(this.parentEntityType, this.parentEntityId, this.form.value)
             .subscribe(() => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
@@ -126,7 +126,7 @@ export class ResearchProblemFormComponent {
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
                 },
-                (error) => {
+                () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
@@ -148,7 +148,7 @@ export class ResearchProblemFormComponent {
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
                 },
-                (error) => {
+                () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');

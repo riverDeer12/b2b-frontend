@@ -21,6 +21,14 @@
                     [dialogEdit]="true"
                 ></research-problems-data-table>
             </p-tabPanel>
+            <p-tabPanel header="{{'job-offers.default' | translate }}" class="line-height-3 m-0">
+                <job-offers-data-table
+                    [data]="jobOffers"
+                    [categories]="categories"
+                    [companyId]="company.id"
+                    [dialogEdit]="true"
+                ></job-offers-data-table>
+            </p-tabPanel>
         </p-tabView>
     </div>
 </div>

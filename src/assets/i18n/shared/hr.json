@@ -23,13 +23,23 @@
     "username-password": "Korisničko ime i lozinka",
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
     "results": "rezultata",
+    "correct-validation-errors": "Molimo ispraviti pogreške i pokušajte ponovno.",
+    "auth": {
+        "welcome-to-dashboard": "Uspješna prijava u RIMAP administraciju.",
+        "login-error": "Krivo korisničko ime ili lozinka."
+    },
     "categories": {
         "default": "Kategorije"
+    },
+    "job-offers": {
+        "default": "Poslovne ponude",
+        "no-job-offers-found": "Nema pronađenih poslovnih ponuda."
     },
     "research-problems": {
         "default": "Razvojni prijedlozi",
         "edit": "Uređivanje razvojnog prijedloga",
         "create": "Kreiranje razvojnog prijedloga",
+        "academic-community-contribution-possibility": "Mogućnost akademskog doprinosa",
         "successfully-updated": "Razvojni prijedlog je uspješno ažuriran."
     },
     "specific-knowledge": {

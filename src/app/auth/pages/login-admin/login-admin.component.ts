@@ -62,11 +62,11 @@ export class LoginAdminComponent {
 
             this.notificationService
                 .showNotification(NotificationType.Success,
-                    'welcome-to-dashboard');
-        }, error => {
+                    'auth.welcome-to-dashboard');
+        }, () => {
             this.notificationService
                 .showNotification(NotificationType.Error,
-                    'login-error');
+                    'auth.login-error');
         })
     }
 }

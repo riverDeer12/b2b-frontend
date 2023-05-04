@@ -122,7 +122,20 @@ export class JobOffersFormComponent {
      * create new job offer.
      */
     private createJobOffer(): void {
-        //TODO: need to implement in future
+        this.jobOfferService.createJobOffer(this.companyId, this.form.value).subscribe(() => {
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'job-offer-successfully-created');
+
+                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+
+                this.jobOfferService.pingJobOffers(this.form.value as JobOffer);
+            },
+            () => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+            })
     }
 
     /**
@@ -137,8 +150,9 @@ export class JobOffersFormComponent {
                         'job-offer-successfully-updated');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+
             },
-            (error) => {
+            () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');

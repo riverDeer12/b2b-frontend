@@ -11,6 +11,7 @@ import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog
 import {FormType} from "../../../shared/enums/form-type";
 import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
 import {DialogService} from "primeng/dynamicdialog";
+import {Category} from '../../../categories/core/models/category';
 
 @Component({
     selector: 'equipment-data-table',
@@ -20,6 +21,7 @@ import {DialogService} from "primeng/dynamicdialog";
 export class EquipmentDataTableComponent {
     @Input() data: Equipment[] = [];
     @Input() scientistId!: string;
+    @Input() categories!: Category[];
     @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
@@ -97,6 +99,24 @@ export class EquipmentDataTableComponent {
     }
 
     /**
+     * Trigger dialog form
+     * for creating new equipment item
+     * for scientist.
+     */
+    openCreateDialog(): void {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'equipment.create',
+                formType: FormType.Create,
+                contentType: DialogContentTypes.Equipment,
+                parentEntityType: EntityType.Scientist,
+                parentEntityId: this.scientistId,
+                categories: this.categories
+            }
+        })
+    }
+
+    /**
      * Trigger popup to
      * confirm deleting selected
      * equipment item from data table.
@@ -108,12 +128,12 @@ export class EquipmentDataTableComponent {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.equipmentService.deleteEquipment(scientistId, equipmentId).subscribe((response: Object) => {
+                this.equipmentService.deleteEquipment(scientistId, equipmentId).subscribe(() => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
                         this.data = this.data.filter((x => x.id !== equipmentId));
                     },
-                    (error: Object) => {
+                    () => {
                         this.notificationService
                             .showNotification(NotificationType.Error, 'error-deleting');
                     })

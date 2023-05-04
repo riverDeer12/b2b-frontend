@@ -11,7 +11,7 @@ export class JobOfferService {
 
     jobOfferUrl = environment.apiUrl + '/companies/';
 
-    newJobOffer = new Subject<any>();
+    newJobOffer = new Subject<JobOffer>();
 
     constructor(private http: HttpClient) {
     }
@@ -44,11 +44,23 @@ export class JobOfferService {
         return this.http.post(this.jobOfferUrl + companyId + '/deleteJobOffer/' + jobOfferId, null);
     }
 
-    pingJobOffers(): void {
-        this.newJobOffer.next({success: true});
+    /**
+     * Push new job offer
+     * object to current array of job offer
+     * items on UI.
+     *
+     * @param jobOffer new job offer item
+     */
+    pingJobOffers(jobOffer: JobOffer): void {
+        this.newJobOffer.next(jobOffer);
     }
 
-    listenJobOffers(): Observable<any> {
+    /**
+     * Listen to changes
+     * on current list of job offer
+     * items on UI.
+     */
+    listenJobOffers(): Observable<JobOffer> {
         return this.newJobOffer.asObservable();
     }
 }
