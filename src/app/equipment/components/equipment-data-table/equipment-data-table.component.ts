@@ -25,12 +25,14 @@ export class EquipmentDataTableComponent {
     @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
+    @ViewChild('dt') table!: Table;
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
                 private equipmentService: EquipmentService,
                 private notificationService: NotificationService,
                 private router: Router) {
+        this.listenForDataChanges();
     }
 
     ngOnInit() {
@@ -93,7 +95,8 @@ export class EquipmentDataTableComponent {
                 contentType: DialogContentTypes.Equipment,
                 data: equipment,
                 parentEntityType: EntityType.Scientist,
-                parentEntityId: this.scientistId
+                parentEntityId: this.scientistId,
+                categories: this.categories
             }
         })
     }
@@ -139,6 +142,18 @@ export class EquipmentDataTableComponent {
                     })
             },
         });
+    }
+
+    /**
+     * Data change listener
+     * subscribe method.
+     */
+    private listenForDataChanges(): void {
+        this.equipmentService.listenEquipment()
+            .subscribe((response: Equipment) => {
+                this.data.push(Object.assign(response, new Equipment()));
+                this.table.reset();
+            })
     }
 }
 

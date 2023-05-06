@@ -79,7 +79,7 @@ export class EquipmentFormComponent {
         this.form = this.fb.group({
             title: new FormControl(this.equipment.title, Validators.required),
             description: new FormControl(this.equipment.description, Validators.required),
-            categories: new FormControl(this.equipment.categories, Validators.required)
+            categories: new FormControl(this.equipment.categories.map(x => x.id), Validators.required)
         })
     }
 
@@ -109,9 +109,11 @@ export class EquipmentFormComponent {
         this.equipmentService.createEquipment(this.scientistId, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'equipment-successfully-updated');
+                        'equipment.successfully-updated');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+
+                this.equipmentService.pingNewEquipment(this.form.value as Equipment);
             },
             () => {
                 this.notificationService
@@ -129,7 +131,7 @@ export class EquipmentFormComponent {
         this.equipmentService.editEquipment(this.scientistId, this.equipment.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'equipment-successfully-updated');
+                        'equipment.successfully-updated');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
             },

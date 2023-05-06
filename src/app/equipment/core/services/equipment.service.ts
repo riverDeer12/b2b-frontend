@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {Observable, Subject} from 'rxjs';
 import {Equipment} from "../models/equipment";
+import {SpecificKnowledge} from "../../../specific-knowledge/core/models/specific-knowledge";
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,7 @@ export class EquipmentService {
 
     equipmentUrl = environment.apiUrl + '/scientists/';
 
-    newEquipment = new Subject<any>();
+    newEquipment = new Subject<Equipment>();
 
     constructor(private http: HttpClient) {
     }
@@ -44,11 +45,23 @@ export class EquipmentService {
         return this.http.post(this.equipmentUrl + scientistId + '/deleteEquipment/' + equipmentId, null);
     }
 
-    pingNewEquipment(): void {
-        this.newEquipment.next({success: true});
+    /**
+     * Push new equipment
+     * object to current array of equipment
+     * items on UI.
+     *
+     * @param equipment new equipment item
+     */
+    pingNewEquipment(equipment: Equipment): void {
+        this.newEquipment.next(equipment);
     }
 
-    listenEquipment(): Observable<any> {
+    /**
+     * Listen to changes
+     * on current list of equipment
+     * items on UI.
+     */
+    listenEquipment(): Observable<Equipment> {
         return this.newEquipment.asObservable();
     }
 }

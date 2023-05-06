@@ -62,6 +62,8 @@
         "default": "Istraživačka oprema",
         "edit": "Uređivanje istraživačke opreme",
         "create": "Kreiranje istraživačke opreme",
+        "successfully-created": "Uspješno kreirana istraživačka oprema",
+        "successfully-updated": "Uspješno ažurirana istraživačka oprema",
         "no-equipment-found": "Nema pronađene istraživačke opreme."
     }
 }

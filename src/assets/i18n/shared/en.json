@@ -55,6 +55,8 @@
     "equipment": {
         "default": "Equipment",
         "edit": "Edit equipment",
+        "successfully-created": "Equipment successfully created.",
+        "successfully-updated": "Equipment successfully updated.",
         "no-equipment-found": "No equipment found."
     }
 }
