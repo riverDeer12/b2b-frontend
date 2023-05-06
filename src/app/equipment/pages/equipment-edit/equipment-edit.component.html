@@ -1,4 +1,9 @@
 <h3>{{ 'edit-category' | translate }}</h3>
 <div class="mt-5">
-    <equipment-form [formType]="formType" [returnUrl]="returnUrl" [equipment]="equipment"></equipment-form>
+    <equipment-form
+        [formType]="formType"
+        [returnUrl]="returnUrl"
+        [equipment]="equipment"
+        [categories]="categories">
+    </equipment-form>
 </div>
