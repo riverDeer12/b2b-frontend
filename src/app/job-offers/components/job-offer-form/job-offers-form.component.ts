@@ -60,7 +60,7 @@ export class JobOffersFormComponent {
 
 
     /**
-     * Initializes form if
+     * Initializes job offer form if
      * create form action is triggered.
      */
     private initCreateForm(): void {
@@ -80,7 +80,7 @@ export class JobOffersFormComponent {
     }
 
     /**
-     * Initializes form if
+     * Initializes job offer form if
      * edit form action is triggered.
      */
     private initEditForm(): void {
@@ -88,7 +88,7 @@ export class JobOffersFormComponent {
             name: new FormControl(this.jobOffer.name, Validators.required),
             description: new FormControl(this.jobOffer.description, Validators.required),
             location: new FormControl(this.jobOffer.location, Validators.required),
-            deadline: new FormControl(this.jobOffer.deadline, Validators.required),
+            deadline: new FormControl(new Date(this.jobOffer.deadline), Validators.required),
             experience: new FormControl(this.jobOffer.experience, Validators.required),
             education: new FormControl(this.jobOffer.education, Validators.required),
             specialConditions: new FormControl(this.jobOffer.specialConditions, Validators.required),

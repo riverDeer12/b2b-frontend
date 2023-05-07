@@ -95,7 +95,8 @@ export class AuthService {
 
         const decodedToken = jwtDecode(tokenStorageValue) as AuthToken;
 
-        const now = Date.now().valueOf() / 1000;
+        const now = Date.now().valueOf() / 1000
+
         if (decodedToken.exp < now) {
             return false;
         }
@@ -157,6 +158,7 @@ export class AuthService {
         if (decodedToken.exp < now) {
             return false;
         }
+
 
         return decodedToken.role === 'SuperAdmin';
     }

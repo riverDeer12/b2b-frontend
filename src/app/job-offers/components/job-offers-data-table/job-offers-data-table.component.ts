@@ -24,9 +24,8 @@ export class JobOffersDataTableComponent {
     @Input() companyId!: string;
     @Input() categories!: Category[];
 
-    @ViewChild('filter') filter!: ElementRef;
-
-    @ViewChild('dt') table!: Table;
+    @ViewChild('globalFilter') filter!: ElementRef;
+    @ViewChild('jobOffersDataTable') table!: Table;
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
@@ -95,7 +94,8 @@ export class JobOffersDataTableComponent {
                 contentType: DialogContentTypes.JobOffer,
                 data: jobOffer,
                 parentEntityType: EntityType.Company,
-                parentEntityId: jobOffer.companyId
+                parentEntityId: jobOffer.companyId,
+                categories: this.categories
             }
         })
     }
@@ -135,7 +135,7 @@ export class JobOffersDataTableComponent {
      * confirm deleting selected
      * job offer item from data table.
      *
-     * @param companyId id of parent of selected job offer.
+     * @param companyId id of company of selected job offer.
      * @param jobOfferId id of selected job offer.
      */
     confirmDelete(companyId: string, jobOfferId: string): void {

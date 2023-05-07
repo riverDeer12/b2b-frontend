@@ -15,6 +15,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {RouterModule} from '@angular/router';
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
+import {CalendarModule} from 'primeng/calendar';
 
 /**
  * Translation resources loader.
@@ -54,7 +55,8 @@ export function createTranslateLoader(http: HttpBackend) {
         ConfirmDialogModule,
         MultiSelectModule,
         ReactiveFormsModule,
-        CategoriesComponentsModule
+        CategoriesComponentsModule,
+        CalendarModule
     ],
     providers: [
         ConfirmationService

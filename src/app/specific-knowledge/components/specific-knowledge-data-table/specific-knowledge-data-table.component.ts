@@ -27,7 +27,7 @@ export class SpecificKnowledgeDataTableComponent {
 
     @ViewChild('filter') filter!: ElementRef;
 
-    @ViewChild('dt') table!: Table;
+    @ViewChild('specificKnowledgeDataTable') table!: Table;
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
