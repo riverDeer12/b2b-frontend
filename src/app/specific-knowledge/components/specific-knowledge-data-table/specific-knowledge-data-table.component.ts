@@ -97,7 +97,8 @@ export class SpecificKnowledgeDataTableComponent {
                 contentType: DialogContentTypes.SpecificKnowledge,
                 data: specificKnowledge,
                 parentEntityType: EntityType.Scientist,
-                parentEntityId: this.scientistId
+                parentEntityId: this.scientistId,
+                categories: this.categories
             }
         })
     }

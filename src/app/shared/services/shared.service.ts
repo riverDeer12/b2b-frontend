@@ -1,11 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 import {EntityType} from '../../auth/core/enums/entity-type';
 import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
-import {SpecificKnowledgeService} from '../../specific-knowledge/core/services/specific-knowledge.service';
-import {EquipmentService} from '../../equipment/core/services/equipment.service';
-import {ResearchProblemService} from '../../research-problems/core/services/research-problem.service';
 
 @Injectable({
     providedIn: 'root'
@@ -15,10 +12,7 @@ export class SharedService {
     parentEntityType = new Subject<EntityType>();
     dialogCloseStatus = new Subject<string>();
 
-    constructor(private router: Router,
-                private specificKnowledgeService: SpecificKnowledgeService,
-                private equipmentService: EquipmentService,
-                private researchProblemService: ResearchProblemService) {
+    constructor(private router: Router) {
     }
 
     /**
