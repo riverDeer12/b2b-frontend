@@ -80,7 +80,7 @@ export class SpecificKnowledgeFormComponent {
         this.form = this.fb.group({
             title: new FormControl(this.specificKnowledge.title, Validators.required),
             description: new FormControl(this.specificKnowledge.description, Validators.required),
-            categories: new FormControl(this.specificKnowledge.categories, Validators.required),
+            categories: new FormControl(this.specificKnowledge.categories.map(x => x.id), Validators.required),
             scientistId: new FormControl(this.specificKnowledge.scientistId, Validators.required)
         })
     }
@@ -118,7 +118,7 @@ export class SpecificKnowledgeFormComponent {
 
                     this.specificKnowledgeService.pingSpecificKnowledge(this.form.value as SpecificKnowledge);
                 },
-                (error) => {
+                () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
@@ -140,7 +140,7 @@ export class SpecificKnowledgeFormComponent {
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
                 },
-                (error) => {
+                () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
