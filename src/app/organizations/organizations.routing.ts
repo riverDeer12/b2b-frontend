@@ -6,6 +6,7 @@ import {OrganizationEditComponent} from './pages/organization-edit/organization-
 import {
     OrganizationResearchProblemsResolver
 } from "../research-problems/core/resolvers/organization-research-problems.resolver";
+import {CategoriesResolver} from '../categories/core/resolvers/categories.resolver';
 
 export const OrganizationsRoutes: Routes = [
     {
@@ -20,6 +21,7 @@ export const OrganizationsRoutes: Routes = [
         component: OrganizationEditComponent,
         resolve: {
             organization: OrganizationResolver,
+            categories: CategoriesResolver,
             researchProblems: OrganizationResearchProblemsResolver
         }
     }

@@ -14,6 +14,7 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RadioButtonModule} from "primeng/radiobutton";
+import {DialogService} from 'primeng/dynamicdialog';
 
 /**
  * Translation resources loader.
@@ -48,6 +49,9 @@ export function createTranslateLoader(http: HttpClient) {
         ReactiveFormsModule,
         RadioButtonModule,
         FormsModule
+    ],
+    providers: [
+        DialogService
     ],
     exports: [
         ResearchProblemsDataTableComponent,

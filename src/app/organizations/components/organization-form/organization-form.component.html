@@ -2,8 +2,9 @@
     <div class="col-12 md:col-12">
         <p-tabView>
             <p-tabPanel header="{{ 'general' | translate }}" class="line-height-3 m-0">
-                <organization-general-form [formType]="formType" [
+                <organization-general-form [formType]="formType"
                                            [organization]="organization"
+                                           [categories]="categories"
                                            [returnUrl]="returnUrl"></organization-general-form>
             </p-tabPanel>
             <p-tabPanel header="{{ 'username-password' | translate }}" class="line-height-3 m-0">
@@ -12,9 +13,11 @@
                                           [entityType]="entityType"></auth-change-password>
                 </div>
             </p-tabPanel>
-            <p-tabPanel header="{{'research-problems' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel header="{{'research-problems.default' | translate }}" class="line-height-3 m-0">
                 <research-problems-data-table
                     [data]="researchProblems"
+                    [dialogEdit]="true"
+                    [categories]="categories"
                     [parentEntityType]="entityType"
                     [parentEntityId]="organization.id">
                 </research-problems-data-table>

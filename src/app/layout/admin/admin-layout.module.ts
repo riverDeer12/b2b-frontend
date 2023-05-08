@@ -15,8 +15,7 @@ import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
  */
 export function createTranslateLoader(http: HttpBackend) {
     return new MultiTranslateHttpLoader(http, [
-        './assets/i18n/layouts/admin/',
-        './assets/i18n/shared/'
+        './assets/i18n/layouts/admin/'
     ]);
 }
 

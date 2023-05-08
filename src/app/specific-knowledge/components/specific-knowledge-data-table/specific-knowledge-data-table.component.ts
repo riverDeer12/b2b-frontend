@@ -71,7 +71,8 @@ export class SpecificKnowledgeDataTableComponent {
      * @param specificKnowledge selected specific knowledge.
      */
     goToEditPage = (specificKnowledge: SpecificKnowledge) =>
-        this.router.navigateByUrl('/admin/specific-knowledge/edit/' + specificKnowledge.scientistId + '/' + specificKnowledge.id).then();
+        this.router.navigateByUrl('/admin/specific-knowledge/edit/' +
+            specificKnowledge.scientistId + '/' + specificKnowledge.id).then();
 
     /**
      * Prepare edit form

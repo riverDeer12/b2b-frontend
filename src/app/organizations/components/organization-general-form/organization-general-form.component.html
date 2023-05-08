@@ -8,7 +8,8 @@
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <textarea pInputText type="text" id="description"
+                <textarea pInputText
+                          id="description"
                           formControlName="description"
                           rows="10" cols="30"></textarea>
                 <label for="description">{{ 'description' | translate }}</label>
@@ -46,6 +47,7 @@
                 <categories-selector
                     label="newsletter-categories"
                     controlName="newsletterCategories"
+                    [data]="categories"
                     [form]="form">
                 </categories-selector>
             </span>

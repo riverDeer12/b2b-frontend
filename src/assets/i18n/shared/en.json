@@ -30,6 +30,8 @@
     },
     "job-offers": {
         "default": "Job Offers",
+        "create": "Create Job Offer",
+        "edit": "Edit Job Offer",
         "no-job-offers-found": "No job offers found.",
         "location": "Location",
         "deadline": "Deadline",

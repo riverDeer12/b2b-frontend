@@ -129,7 +129,6 @@ export class SpecificKnowledgeFormComponent {
      * Connecting to specific knowledge
      * service and sending form data to
      * updated selected specific knowledge.
-     *
      */
     private editSpecificKnowledge(): void {
         this.specificKnowledgeService.editSpecificKnowledge(this.scientistId, this.specificKnowledge.id, this.form.value)

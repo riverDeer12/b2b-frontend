@@ -152,8 +152,14 @@ export class ResearchProblemsDataTableComponent {
      */
     private listenForDataChanges(): void {
         this.researchProblemService.listenResearchProblems()
-            .subscribe((response: ResearchProblem) => {
-                this.data.push(Object.assign(response, new ResearchProblem()));
+            .subscribe((newResearchProblem: ResearchProblem) => {
+
+                console.log(newResearchProblem);
+
+                this.data = this.data.filter(x => x.id !== newResearchProblem.id);
+
+                this.data.push(Object.assign(newResearchProblem, new ResearchProblem()));
+
                 this.table.reset();
             })
     }

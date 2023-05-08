@@ -6,6 +6,7 @@ import {Organization} from "../../core/models/organization";
 import {NotificationService} from "../../../shared/services/notification.service";
 import {OrganizationService} from "../../core/services/organization.service";
 import {Router} from "@angular/router";
+import {Category} from '../../../categories/core/models/category';
 
 @Component({
     selector: 'organization-general-form',
@@ -15,6 +16,7 @@ import {Router} from "@angular/router";
 export class OrganizationGeneralFormComponent {
     @Input() formType!: FormType;
     @Input() organization!: Organization;
+    @Input() categories!: Category[];
     @Input() returnUrl!: string;
 
     form!: FormGroup;
@@ -64,8 +66,8 @@ export class OrganizationGeneralFormComponent {
             address: new FormControl(this.organization.address, Validators.required),
             email: new FormControl(this.organization.email, Validators.required),
             website: new FormControl(this.organization.website, Validators.required),
-            categories: new FormControl(this.organization.categories, Validators.required),
-            newsletterCategories: new FormControl(this.organization.newsletterCategories, Validators.required),
+            categories: new FormControl(this.organization.categories.map(x => x.id), Validators.required),
+            newsletterCategories: new FormControl(this.organization.newsletterCategories.map(x => x.id), Validators.required),
             categoryTags: new FormControl(this.organization.categoryTags.split(";"), Validators.required)
         })
     }
@@ -119,7 +121,8 @@ export class OrganizationGeneralFormComponent {
                     'organization-successfully-updated');
 
             this.router.navigateByUrl(this.returnUrl).then();
-        }, error => {
+
+        }, () => {
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');

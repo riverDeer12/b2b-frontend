@@ -35,6 +35,7 @@
     "job-offers": {
         "default": "Potrebe za ljudskim resursima",
         "create": "Kreiranje potrebe za ljudskim resursima",
+        "edit": "Uređivanje potrebe za ljudskim resursima",
         "no-job-offers-found": "Nema pronađenih potreba za ljudskim resursima.",
         "location": "Lokacija",
         "deadline": "Rok prijave",

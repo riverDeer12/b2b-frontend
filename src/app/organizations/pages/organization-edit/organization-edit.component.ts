@@ -4,6 +4,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
 import {Organization} from '../../core/models/organization';
 import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
+import {Category} from '../../../categories/core/models/category';
 
 @Component({
     selector: 'organization-edit',
@@ -19,6 +20,8 @@ export class OrganizationEditComponent {
 
     researchProblems!: ResearchProblem[];
 
+    categories!: Category[];
+
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
     }
@@ -29,6 +32,9 @@ export class OrganizationEditComponent {
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
             this.organization = Object.assign(new Organization(), response['organization']);
+            this.categories = response["categories"].map((x: Category) =>
+                Object.assign(new Category(), x)
+            );
             this.researchProblems = response["researchProblems"].map((x: ResearchProblem) =>
                 Object.assign(new ResearchProblem(), x)
             );
