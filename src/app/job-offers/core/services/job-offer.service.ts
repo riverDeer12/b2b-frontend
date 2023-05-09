@@ -11,7 +11,7 @@ export class JobOfferService {
 
     jobOfferUrl = environment.apiUrl + '/companies/';
 
-    newJobOffer = new Subject<JobOffer>();
+    jobOffer = new Subject<JobOffer>();
 
     constructor(private http: HttpClient) {
     }
@@ -28,12 +28,12 @@ export class JobOfferService {
         return this.http.get<JobOffer>(this.jobOfferUrl + companyId + '/getJobOffer/' + jobOfferId);
     }
 
-    createJobOffer(companyId: string, jobOffer: JobOffer) {
-        return this.http.post(this.jobOfferUrl + companyId + '/createJobOffer', jobOffer);
+    createJobOffer(companyId: string, jobOffer: JobOffer): Observable<JobOffer> {
+        return this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/createJobOffer', jobOffer);
     }
 
-    editJobOffer(companyId: string, jobOfferId: string, jobOffer: JobOffer) {
-        return this.http.post(this.jobOfferUrl + companyId + '/editJobOffer/' + jobOfferId, jobOffer);
+    editJobOffer(companyId: string, jobOfferId: string, jobOffer: JobOffer): Observable<JobOffer> {
+        return this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/editJobOffer/' + jobOfferId, jobOffer);
     }
 
     flipJobOfferActive(companyId: string, jobOfferId: string) {
@@ -52,7 +52,7 @@ export class JobOfferService {
      * @param jobOffer new job offer item
      */
     pingJobOffers(jobOffer: JobOffer): void {
-        this.newJobOffer.next(jobOffer);
+        this.jobOffer.next(jobOffer);
     }
 
     /**
@@ -61,6 +61,6 @@ export class JobOfferService {
      * items on UI.
      */
     listenJobOffers(): Observable<JobOffer> {
-        return this.newJobOffer.asObservable();
+        return this.jobOffer.asObservable();
     }
 }

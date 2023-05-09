@@ -4,8 +4,8 @@ import {FormType} from '../../../shared/enums/form-type';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {JobOffer} from "../../core/models/job-offer";
-import {JobOfferService} from "../../core/services/job-offer.service";
+import {JobOffer} from '../../core/models/job-offer';
+import {JobOfferService} from '../../core/services/job-offer.service';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
@@ -122,14 +122,14 @@ export class JobOffersFormComponent {
      * create new job offer.
      */
     private createJobOffer(): void {
-        this.jobOfferService.createJobOffer(this.companyId, this.form.value).subscribe(() => {
+        this.jobOfferService.createJobOffer(this.companyId, this.form.value).subscribe((response: JobOffer) => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'job-offer-successfully-created');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
-                this.jobOfferService.pingJobOffers(this.form.value as JobOffer);
+                this.jobOfferService.pingJobOffers(response);
             },
             () => {
                 this.notificationService
@@ -144,13 +144,15 @@ export class JobOffersFormComponent {
      * updated selected job offer.
      */
     private editJobOffer(): void {
-        this.jobOfferService.editJobOffer(this.companyId, this.jobOffer.id, this.form.value).subscribe(() => {
+        this.jobOfferService.editJobOffer(this.companyId, this.jobOffer.id, this.form.value)
+            .subscribe((response: JobOffer) => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'job-offer-successfully-updated');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
+                this.jobOfferService.pingJobOffers(response);
             },
             () => {
                 this.notificationService

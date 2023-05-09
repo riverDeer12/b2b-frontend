@@ -2,8 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {Observable, Subject} from 'rxjs';
-import {Equipment} from "../models/equipment";
-import {SpecificKnowledge} from "../../../specific-knowledge/core/models/specific-knowledge";
+import {Equipment} from '../models/equipment';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +11,7 @@ export class EquipmentService {
 
     equipmentUrl = environment.apiUrl + '/scientists/';
 
-    newEquipment = new Subject<Equipment>();
+    equipment = new Subject<Equipment>();
 
     constructor(private http: HttpClient) {
     }
@@ -29,12 +28,12 @@ export class EquipmentService {
         return this.http.get<Equipment>(this.equipmentUrl + scientistId + '/getEquipment/' + equipmentId);
     }
 
-    createEquipment(scientistId: string, equipment: Equipment): any {
-        return this.http.post(this.equipmentUrl + scientistId + '/createEquipment', equipment);
+    createEquipment(scientistId: string, equipment: Equipment): Observable<Equipment> {
+        return this.http.post<Equipment>(this.equipmentUrl + scientistId + '/createEquipment', equipment);
     }
 
-    editEquipment(scientistId: string, equipmentId: string, equipment: Equipment) {
-        return this.http.post(this.equipmentUrl + scientistId + '/editEquipment/' + equipmentId, equipment);
+    editEquipment(scientistId: string, equipmentId: string, equipment: Equipment): Observable<Equipment> {
+        return this.http.post<Equipment>(this.equipmentUrl + scientistId + '/editEquipment/' + equipmentId, equipment);
     }
 
     flipEquipmentActive(scientistId: string, equipmentId: string): any {
@@ -52,8 +51,8 @@ export class EquipmentService {
      *
      * @param equipment new equipment item
      */
-    pingNewEquipment(equipment: Equipment): void {
-        this.newEquipment.next(equipment);
+    pingEquipment(equipment: Equipment): void {
+        this.equipment.next(equipment);
     }
 
     /**
@@ -62,6 +61,6 @@ export class EquipmentService {
      * items on UI.
      */
     listenEquipment(): Observable<Equipment> {
-        return this.newEquipment.asObservable();
+        return this.equipment.asObservable();
     }
 }

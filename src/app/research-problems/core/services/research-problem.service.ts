@@ -5,7 +5,6 @@ import {environment} from 'src/environments/environment';
 import {Subject} from 'rxjs/internal/Subject';
 import {ResearchProblem} from '../models/research-problem';
 import {EntityType} from '../../../auth/core/enums/entity-type';
-import {Equipment} from '../../../equipment/core/models/equipment';
 
 @Injectable({
     providedIn: 'root'
@@ -18,7 +17,7 @@ export class ResearchProblemService {
 
     entityUrl!: string;
 
-    newResearchProblem = new Subject<any>();
+    researchProblem = new Subject<ResearchProblem>();
 
     constructor(private http: HttpClient) {
     }
@@ -32,7 +31,7 @@ export class ResearchProblemService {
         return this.http.get<ResearchProblem[]>(this.researchProblemsUrl + entityId + '/getResearchProblems');
     }
 
-    getResearchProblem(researchProblemId: string, entityType: EntityType, entityId: string) {
+    getResearchProblem(researchProblemId: string, entityType: EntityType, entityId: string): Observable<ResearchProblem> {
         this.setResearchProblemsUrl(entityType);
         return this.http.get<ResearchProblem>(this.researchProblemsUrl + entityId + '/getResearchProblem/' + researchProblemId);
     }
@@ -64,8 +63,8 @@ export class ResearchProblemService {
      *
      * @param researchProblem new research problem item.
      */
-    pingNewResearchProblem(researchProblem: ResearchProblem): void {
-        this.newResearchProblem.next(researchProblem);
+    pingResearchProblems(researchProblem: ResearchProblem): void {
+        this.researchProblem.next(researchProblem);
     }
 
     /**
@@ -74,9 +73,16 @@ export class ResearchProblemService {
      * items on UI.
      */
     listenResearchProblems(): Observable<ResearchProblem> {
-        return this.newResearchProblem.asObservable();
+        return this.researchProblem.asObservable();
     }
 
+    /**
+     * Set research problem url prefix
+     * based on entity type.
+     *
+     * @param entityType type of
+     * research problem parent entity.
+     */
     setResearchProblemsUrl(entityType: EntityType): void {
         switch (entityType) {
             case EntityType.PublicOrganization:

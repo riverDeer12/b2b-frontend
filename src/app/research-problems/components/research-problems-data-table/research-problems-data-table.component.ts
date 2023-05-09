@@ -153,13 +153,8 @@ export class ResearchProblemsDataTableComponent {
     private listenForDataChanges(): void {
         this.researchProblemService.listenResearchProblems()
             .subscribe((newResearchProblem: ResearchProblem) => {
-
-                console.log(newResearchProblem);
-
                 this.data = this.data.filter(x => x.id !== newResearchProblem.id);
-
                 this.data.push(Object.assign(newResearchProblem, new ResearchProblem()));
-
                 this.table.reset();
             })
     }

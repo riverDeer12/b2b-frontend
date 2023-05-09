@@ -117,12 +117,12 @@ export class SpecificKnowledgeDataTableComponent {
             key: 'confirmDeleteDialog',
             accept: () => {
                 this.specificKnowledgeService.deleteSpecificKnowledge(scientistId, specificKnowledgeId)
-                    .subscribe((response: Object) => {
+                    .subscribe(() => {
                             this.notificationService
                                 .showNotification(NotificationType.Success, 'successfully-deleted');
                             this.data = this.data.filter((x => x.id !== specificKnowledgeId));
                         },
-                        (error: Object) => {
+                        () => {
                             this.notificationService
                                 .showNotification(NotificationType.Error, 'error-deleting');
                         })
@@ -155,6 +155,7 @@ export class SpecificKnowledgeDataTableComponent {
     private listenForDataChanges(): void {
         this.specificKnowledgeService.listenSpecificKnowledge()
             .subscribe((response: SpecificKnowledge) => {
+                this.data = this.data.filter(x => x.id !== response.id);
                 this.data.push(Object.assign(response, new SpecificKnowledge()));
                 this.table.reset();
             })

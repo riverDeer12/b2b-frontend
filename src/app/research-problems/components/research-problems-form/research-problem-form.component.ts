@@ -126,7 +126,7 @@ export class ResearchProblemFormComponent {
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
-                    this.researchProblemService.pingNewResearchProblem(response);
+                    this.researchProblemService.pingResearchProblems(response);
                 },
                 () => {
                     this.notificationService
@@ -143,14 +143,14 @@ export class ResearchProblemFormComponent {
     private editResearchProblem(): void {
         this.researchProblemService
             .editResearchProblem(this.researchProblem.id, this.parentEntityType, this.parentEntityId, this.form.value)
-            .subscribe((response) => {
+            .subscribe((response: ResearchProblem) => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
                             'research-problems.successfully-updated');
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
-                    this.researchProblemService.pingNewResearchProblem(response);
+                    this.researchProblemService.pingResearchProblems(response);
                 },
                 () => {
                     this.notificationService

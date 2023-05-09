@@ -113,7 +113,7 @@ export class EquipmentFormComponent {
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
-                this.equipmentService.pingNewEquipment(this.form.value as Equipment);
+                this.equipmentService.pingEquipment(this.form.value as Equipment);
             },
             () => {
                 this.notificationService
@@ -135,7 +135,7 @@ export class EquipmentFormComponent {
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
             },
-            (error) => {
+            () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');

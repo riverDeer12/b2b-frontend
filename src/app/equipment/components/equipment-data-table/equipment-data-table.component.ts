@@ -151,6 +151,7 @@ export class EquipmentDataTableComponent {
     private listenForDataChanges(): void {
         this.equipmentService.listenEquipment()
             .subscribe((response: Equipment) => {
+                this.data.filter(x => x.id !== response.id);
                 this.data.push(Object.assign(response, new Equipment()));
                 this.table.reset();
             })
