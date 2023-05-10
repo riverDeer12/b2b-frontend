@@ -28,7 +28,7 @@ export class ResearchProblemsDataTableComponent {
 
     @ViewChild('filter') filter!: ElementRef;
 
-    @ViewChild('dt') table!: Table;
+    @ViewChild('researchProblemsDataTable') table!: Table;
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,

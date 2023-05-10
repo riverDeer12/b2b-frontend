@@ -1,4 +1,4 @@
-<p-table #dt
+<p-table #scientistsDataTable
          [rowHover]="true"
          [showLoader]="true"
          [value]="data" dataKey="id"
@@ -16,11 +16,11 @@
             <div class="flex">
                 <span class="p-input-icon-left mr-2">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" #filter (input)="onGlobalFilter(dt, $event)"
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(scientistsDataTable, $event)"
                            placeholder="{{'keyword' | translate }}" class="w-full"/>
                 </span>
                 <button
-                    (click)="clear(dt)"
+                    (click)="clear(scientistsDataTable)"
                     label="{{'clear'| translate }}"
                     icon="pi pi-times"
                     iconPos="right"

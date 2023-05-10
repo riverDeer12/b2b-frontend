@@ -25,7 +25,7 @@ export class EquipmentDataTableComponent {
     @Input() dialogEdit!: boolean;
 
     @ViewChild('filter') filter!: ElementRef;
-    @ViewChild('dt') table!: Table;
+    @ViewChild('equipmentDataTable') table!: Table;
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
