@@ -24,6 +24,6 @@ export const AppRoutes: Routes = [
         loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule)
     },
     {
-        path: '**', redirectTo: '/auth/notfound'
+        path: '**', redirectTo: '/auth/not-found'
     }
 ]

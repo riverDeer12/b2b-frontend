@@ -1,4 +1,12 @@
 {
-    "name": "Ivan",
-    "clear": "Obriši"
+    "home": "Početna",
+    "activities": "Aktivnosti",
+    "news": "Objave",
+    "categories": "Kategorije",
+    "companies": "Tvrtke",
+    "scientists": "Istraživači",
+    "users": "Korisnici",
+    "organizations": "Javne organizacije",
+    "subscribers": "Pretplatnici",
+    "logout": "Odjava"
 }

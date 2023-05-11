@@ -1,17 +1,19 @@
 <p-table #specificKnowledgeDataTable
          dataKey="id"
+         sortField="updatedAt"
+         responsiveLayout="scroll"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'results' | translate }} {{'from' | translate }}
+         {totalRecords} {{'results' | translate }}"
+         [sortOrder]="1"
          [rowHover]="true"
          [showLoader]="true"
          [value]="data"
          [rows]="5" [showCurrentPageReport]="true"
          [rowsPerPageOptions]="[5, 10, 20]"
          [paginator]="true"
-         currentPageReportTemplate="{first} {{'to' | translate }} {last}
-         {{'results' | translate }} {{'from' | translate }}
-         {totalRecords} {{'results' | translate }}"
          [globalFilterFields]="['title']"
-         [tableStyle]="{'min-width':'75rem'}"
-         responsiveLayout="scroll">
+         [tableStyle]="{'min-width':'75rem'}">
     <ng-template pTemplate="caption">
         <div class="flex justify-content-between flex-column sm:flex-row">
             <div class="flex">
@@ -49,6 +51,13 @@
                     <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
+            <th pSortableColumn="updatedAt">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'updatedAt' | translate }}
+                    <p-sortIcon field="updatedAt"></p-sortIcon>
+                    <p-columnFilter type="date" field="updatedAt" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-specificKnowledge>
@@ -57,11 +66,15 @@
                 <button type="button" class="p-button-danger m-1" pButton pRipple
                         (click)="confirmDelete(specificKnowledge.scientistId, specificKnowledge.id)"
                         icon="pi pi-trash"></button>
-                <button type="button" class="p-button m-1" pButton pRipple (click)="prepareEditControl(specificKnowledge)"
+                <button type="button" class="p-button m-1" pButton pRipple
+                        (click)="prepareEditControl(specificKnowledge)"
                         icon="pi pi-pencil"></button>
             </td>
             <td>
                 {{specificKnowledge.title}}
+            </td>
+            <td>
+                {{specificKnowledge.updatedAt}}
             </td>
         </tr>
     </ng-template>

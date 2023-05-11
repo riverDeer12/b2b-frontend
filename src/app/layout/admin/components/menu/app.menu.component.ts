@@ -2,7 +2,6 @@ import {OnInit} from '@angular/core';
 import {Component} from '@angular/core';
 import {LayoutService} from '../../core/services/app.layout.service';
 import {MenuItem} from 'primeng/api';
-import {SideMenuItems} from '../../core/constants/side-menu-items';
 
 @Component({
     selector: 'admin-menu',
@@ -12,16 +11,55 @@ export class AppMenuComponent implements OnInit {
 
     model!: MenuItem[];
 
-    isMenuLoading!: boolean;
-
     constructor(public layoutService: LayoutService) {
-        this.isMenuLoading = true;
     }
 
     ngOnInit() {
         this.model = [
             {
-                items: SideMenuItems
+                items: [
+                    {
+                        label: 'home',
+                        icon: 'pi pi-fw pi-home',
+                        routerLink: ['/'],
+                        target: '_blank'
+                    },
+                    {
+                        label: 'activities',
+                        icon: 'pi pi-fw pi-chart-line',
+                        routerLink: ['/admin/activities']
+                    },
+                    {
+                        label: 'news',
+                        icon: 'pi pi-fw pi-megaphone',
+                        routerLink: ['/admin/news']
+                    },
+                    {
+                        label: 'categories',
+                        icon: 'pi pi-fw pi-bookmark',
+                        routerLink: ['/admin/categories']
+                    },
+                    {
+                        label: 'companies',
+                        icon: 'pi pi-fw pi-building',
+                        routerLink: ['/admin/companies']
+                    },
+                    {
+                        label: 'scientists',
+                        icon: 'pi pi-fw pi-sun',
+                        routerLink: ['/admin/scientists']
+                    },
+                    {
+                        label: 'organizations',
+                        icon: 'pi pi-fw pi-building',
+                        routerLink: ['/admin/organizations']
+                    },
+                    {
+                        label: 'subscribers',
+                        icon: 'pi pi-fw pi-users',
+                        routerLink: ['/admin/subscribers']
+                    }
+                ]
             }
         ];
     }

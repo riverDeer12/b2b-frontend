@@ -1,4 +1,12 @@
 {
-    "name": "John",
-    "clear": "Clear"
+    "home": "Home",
+    "activities": "Activities",
+    "news": "News",
+    "categories": "Categories",
+    "companies": "Companies",
+    "scientists": "Scientists",
+    "users": "Users",
+    "organizations": "Organizations",
+    "subscribers": "Subscribers",
+    "logout": "Logout"
 }
