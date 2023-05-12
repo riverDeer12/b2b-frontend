@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {EntityType} from '../../auth/core/enums/entity-type';
 import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +13,7 @@ export class SharedService {
     parentEntityType = new Subject<EntityType>();
     dialogCloseStatus = new Subject<string>();
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private http: HttpClient) {
     }
 
     /**
@@ -67,5 +68,16 @@ export class SharedService {
         }
 
         this.closeDialogOnSuccess(dialogId as string);
+    }
+
+    /**
+     * Send request for changing
+     * entity's activity.
+     *
+     * @param entityUrl url of entity's activity endpoint.
+     * @param entityId id of selected entity.
+     */
+    changeEntityActivity(entityUrl: string, entityId: string): Observable<any> {
+        return this.http.post(entityUrl + '/flipActive', entityId);
     }
 }

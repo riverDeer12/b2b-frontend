@@ -11,10 +11,12 @@ import {ButtonModule} from 'primeng/button';
 import {JobOffersComponentsModule} from '../job-offers/components/job-offers-components.module';
 import {EquipmentComponentsModule} from '../equipment/components/equipment-components.module';
 import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
+import { ActivityComponent } from './components/activity/activity.component';
 
 @NgModule({
     declarations: [
-        DialogFormComponent
+        DialogFormComponent,
+        ActivityComponent
     ],
     imports: [
         CommonModule,
