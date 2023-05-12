@@ -12,6 +12,7 @@ import {JobOffersComponentsModule} from '../job-offers/components/job-offers-com
 import {EquipmentComponentsModule} from '../equipment/components/equipment-components.module';
 import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
 import { ActivityComponent } from './components/activity/activity.component';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { ActivityComponent } from './components/activity/activity.component';
         ButtonModule,
         JobOffersComponentsModule,
         EquipmentComponentsModule,
-        SpecificKnowledgeComponentsModule
+        SpecificKnowledgeComponentsModule,
+        CheckboxModule
     ],
     providers: [
         NotificationService

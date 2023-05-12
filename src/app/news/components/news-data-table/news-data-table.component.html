@@ -59,6 +59,13 @@
                     <p-columnFilter type="date" field="updatedAt" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
+            <th pSortableColumn="isActive">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'activity' | translate }}
+                    <p-columnFilter type="boolean" field="isActive"></p-columnFilter>
+                    <p-sortIcon field="isActive"></p-sortIcon>
+                </div>
+            </th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-news>
@@ -76,6 +83,9 @@
             </td>
             <td>
                 {{news.updatedAt}}
+            </td>
+            <td>
+                {{news.isActive ? 'active' : 'not-active' | translate }}
             </td>
         </tr>
     </ng-template>
