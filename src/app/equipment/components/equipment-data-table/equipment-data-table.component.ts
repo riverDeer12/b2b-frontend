@@ -152,7 +152,7 @@ export class EquipmentDataTableComponent {
         this.equipmentService.listenEquipment()
             .subscribe((response: Equipment) => {
                 this.data = this.data.filter(x => x.id !== response.id);
-                this.data.push(Object.assign(response, new Equipment()));
+                this.data.unshift(Object.assign(response, new Equipment()));
                 this.table.reset();
             })
     }

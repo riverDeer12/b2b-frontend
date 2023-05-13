@@ -156,7 +156,7 @@ export class SpecificKnowledgeDataTableComponent {
         this.specificKnowledgeService.listenSpecificKnowledge()
             .subscribe((response: SpecificKnowledge) => {
                 this.data = this.data.filter(x => x.id !== response.id);
-                this.data.push(Object.assign(response, new SpecificKnowledge()));
+                this.data.unshift(Object.assign(response, new SpecificKnowledge()));
                 this.table.reset();
             })
     }

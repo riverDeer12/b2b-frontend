@@ -154,7 +154,7 @@ export class ResearchProblemsDataTableComponent {
         this.researchProblemService.listenResearchProblems()
             .subscribe((newResearchProblem: ResearchProblem) => {
                 this.data = this.data.filter(x => x.id !== newResearchProblem.id);
-                this.data.push(Object.assign(newResearchProblem, new ResearchProblem()));
+                this.data.unshift(Object.assign(newResearchProblem, new ResearchProblem()));
                 this.table.reset();
             })
     }

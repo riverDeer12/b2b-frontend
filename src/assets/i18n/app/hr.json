@@ -8,5 +8,13 @@
     "users": "Korisnici",
     "organizations": "Javne organizacije",
     "subscribers": "Pretplatnici",
-    "logout": "Odjava"
+    "logout": "Odjava",
+    "success": "Uspjeh",
+    "error": "Greška",
+    "correct-validation-errors": "Molimo ispravite pogreške i pokušajte ponovno.",
+    "auth":{
+        "welcome-to-dashboard": "Dobro došli u Rimap administraciju.",
+        "login-error": "Neispravno korisničko ime ili lozinka."
+    }
+
 }

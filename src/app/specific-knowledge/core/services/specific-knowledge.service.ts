@@ -5,45 +5,83 @@ import {Subject} from 'rxjs/internal/Subject';
 import {environment} from 'src/environments/environment';
 import {SpecificKnowledge} from '../models/specific-knowledge';
 
+/**
+ * Service that provides communication between
+ * specific knowledge module and endpoints on api
+ * and state management helper functions.
+ */
 @Injectable({
     providedIn: 'root'
 })
 export class SpecificKnowledgeService {
 
-    specificKnowledgeUrl = environment.apiUrl + '/scientists/';
+    endpointUrl = environment.apiUrl + '/scientists/';
 
     specificKnowledge = new Subject<SpecificKnowledge>();
 
     constructor(private http: HttpClient) {
     }
 
-    getAllSpecificKnowledge() {
-        return this.http.get<SpecificKnowledge[]>(this.specificKnowledgeUrl + '/getSpecificKnowledge');
-    }
+    /**
+     * Get all specific knowledge
+     * data stored on platform.
+     */
+    getAllSpecificKnowledge = () =>
+        this.http.get<SpecificKnowledge[]>(this.endpointUrl + '/getSpecificKnowledge');
 
-    getSpecificKnowledgeList(scientistId: string): Observable<SpecificKnowledge[]> {
-        return this.http.get<SpecificKnowledge[]>(this.specificKnowledgeUrl + scientistId + '/getSpecificKnowledge');
-    }
+    /**
+     * Get specific knowledge
+     * data for selected scientist.
+     *
+     * @param scientistId id of selected scientist.
+     */
+    getSpecificKnowledgeList = (scientistId: string) =>
+        this.http.get<SpecificKnowledge[]>(this.endpointUrl + scientistId + '/getSpecificKnowledge');
 
-    getSpecificKnowledge(scientistId: string, specificKnowledgeId: string): Observable<SpecificKnowledge> {
-        return this.http.get<SpecificKnowledge>(this.specificKnowledgeUrl + scientistId + '/getSpecificKnowledge/' + specificKnowledgeId);
-    }
+    /**
+     * Get data for selected
+     * scientist's specific knowledge.
+     *
+     * @param scientistId id of selected scientist.
+     * @param specificKnowledgeId id of selected specific knowledge.
+     */
+    getSpecificKnowledge = (scientistId: string, specificKnowledgeId: string) =>
+        this.http.get<SpecificKnowledge>(this.endpointUrl + scientistId + '/getSpecificKnowledge/'
+            + specificKnowledgeId);
 
-    createSpecificKnowledge(scientistId: string, specificKnowledge: SpecificKnowledge) {
-        return this.http.post(this.specificKnowledgeUrl + scientistId + '/createSpecificKnowledge', specificKnowledge);
-    }
+    /**
+     * Create new specific knowledge
+     * data for scientist.
+     *
+     * @param scientistId id of selected scientist.
+     * @param data data for creating specific knowledge.
+     */
+    createSpecificKnowledge = (scientistId: string, data: SpecificKnowledge) =>
+        this.http.post<SpecificKnowledge>(this.endpointUrl + scientistId
+            + '/createSpecificKnowledge', data);
 
-    editSpecificKnowledge(scientistId: string, specificKnowledgeId: string, specificKnowledge: SpecificKnowledge) {
-        return this.http.post(this.specificKnowledgeUrl + scientistId + '/editSpecificKnowledge/' + specificKnowledgeId, specificKnowledge);
-    }
+    /**
+     * Update existing scientist's specific
+     * knowledge data with new data.
+     *
+     * @param scientistId id of selected scientist.
+     * @param specificKnowledgeId id of selected specific knowledge.
+     * @param data data for creating specific knowledge.
+     */
+    editSpecificKnowledge = (scientistId: string, specificKnowledgeId: string, data: SpecificKnowledge) =>
+        this.http.post<SpecificKnowledge>(this.endpointUrl + scientistId + '/editSpecificKnowledge/'
+            + specificKnowledgeId, data);
 
-    flipSpecificKnowledgeActive(scientistId: string, specificKnowledgeId: string) {
-        return this.http.post(this.specificKnowledgeUrl + scientistId + '/flipSpecificKnowledgeActive/' + specificKnowledgeId, null);
-    }
-
-    deleteSpecificKnowledge(scientistId: string, specificKnowledgeId: string) {
-        return this.http.post(this.specificKnowledgeUrl + scientistId + '/deleteSpecificKnowledge/' + specificKnowledgeId, null);
-    }
+    /**
+     * Delete existing scientist's specific
+     * knowledge data.
+     *
+     * @param scientistId id of selected scientist.
+     * @param specificKnowledgeId id of selected specific knowledge.
+     */
+    deleteSpecificKnowledge = (scientistId: string, specificKnowledgeId: string) =>
+         this.http.post(this.endpointUrl + scientistId + '/deleteSpecificKnowledge/'
+            + specificKnowledgeId, null);
 
     /**
      * Push new specific knowledge

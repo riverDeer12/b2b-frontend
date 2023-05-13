@@ -126,7 +126,7 @@ export class JobOffersDataTableComponent {
         this.jobOfferService.listenJobOffers()
             .subscribe((response: JobOffer) => {
                 this.data = this.data.filter(x => x.id !== response.id);
-                this.data.push(Object.assign(response, new JobOffer()));
+                this.data.unshift(Object.assign(response, new JobOffer()));
                 this.table.reset();
             })
     }

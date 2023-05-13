@@ -132,12 +132,14 @@ export class SpecificKnowledgeFormComponent {
      */
     private editSpecificKnowledge(): void {
         this.specificKnowledgeService.editSpecificKnowledge(this.scientistId, this.specificKnowledge.id, this.form.value)
-            .subscribe(() => {
+            .subscribe((response: SpecificKnowledge) => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
                             'specific-knowledge-successfully-updated');
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+
+                    this.specificKnowledgeService.pingSpecificKnowledge(response as SpecificKnowledge);
                 },
                 () => {
                     this.notificationService

@@ -8,5 +8,13 @@
     "users": "Users",
     "organizations": "Organizations",
     "subscribers": "Subscribers",
-    "logout": "Logout"
+    "logout": "Logout",
+    "success": "Success",
+    "error": "Error",
+    "correct-validation-errors": "Please, check values and try again.",
+    "auth":{
+        "welcome-to-dashboard": "Welcome to Rimap administration.",
+        "login-error": "Wrong username or password."
+    }
+
 }
