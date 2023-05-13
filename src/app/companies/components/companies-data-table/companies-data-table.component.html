@@ -63,6 +63,7 @@
                                     class="ml-auto"></p-columnFilter>
                 </div>
             </th>
+            <th>{{'activity' | translate }}</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-company>
@@ -83,6 +84,10 @@
             </td>
             <td>
                 {{company.numberOfViews}}
+            </td>
+            <td>
+                <p-button icon="{{company.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                          styleClass="p-button-rounded p-button-text"></p-button>
             </td>
         </tr>
     </ng-template>
