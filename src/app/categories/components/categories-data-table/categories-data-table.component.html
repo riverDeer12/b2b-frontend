@@ -1,6 +1,6 @@
 <p-table #categoriesDataTable [rowHover]="true"
          [showLoader]="true"
-          [value]="data"
+         [value]="data"
          dataKey="id"
          [rows]="5" [showCurrentPageReport]="true"
          [rowsPerPageOptions]="[5, 10, 20]"
@@ -46,13 +46,7 @@
                     <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
-            <th pSortableColumn="isActive">
-                <div class="flex justify-content-between align-items-center">
-                    {{ 'activity' | translate }}
-                    <p-columnFilter type="boolean" field="isActive"></p-columnFilter>
-                    <p-sortIcon field="isActive"></p-sortIcon>
-                </div>
-            </th>
+            <th>{{'activity' | translate}}</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-category>
@@ -68,7 +62,8 @@
                 {{category.name}}
             </td>
             <td>
-                {{category.isActive ? 'active' : 'not-active' | translate }}
+                <p-button icon="{{category.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                          styleClass="p-button-rounded p-button-text"></p-button>
             </td>
         </tr>
     </ng-template>
