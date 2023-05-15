@@ -8,7 +8,7 @@ import {SpecificKnowledge} from '../models/specific-knowledge';
 /**
  * Service that provides communication between
  * specific knowledge module and endpoints on api
- * and state management helper functions.
+ * which correspond to specific knowledge module.
  */
 @Injectable({
     providedIn: 'root'
@@ -80,7 +80,7 @@ export class SpecificKnowledgeService {
      * @param specificKnowledgeId id of selected specific knowledge.
      */
     deleteSpecificKnowledge = (scientistId: string, specificKnowledgeId: string) =>
-         this.http.post(this.endpointUrl + scientistId + '/deleteSpecificKnowledge/'
+        this.http.post(this.endpointUrl + scientistId + '/deleteSpecificKnowledge/'
             + specificKnowledgeId, null);
 
     /**

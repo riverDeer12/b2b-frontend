@@ -8,6 +8,11 @@ import jwtDecode from 'jwt-decode';
 import {AuthUnit} from '../models/auth-unit';
 import {AuthToken} from '../models/auth-token';
 
+/**
+ * Service that provides communication between
+ * authentication module and endpoints on api
+ * which correspond to authentication module.
+ */
 @Injectable({
     providedIn: 'root',
 })
