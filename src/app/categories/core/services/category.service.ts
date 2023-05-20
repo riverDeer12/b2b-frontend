@@ -7,7 +7,7 @@ import {Observable, Subject} from 'rxjs';
 /**
  * Service that provides communication between
  * categories module and endpoints on api
- * which correspond to categories module.
+ * which correspond to category entity.
  */
 @Injectable({
   providedIn: 'root'

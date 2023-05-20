@@ -8,7 +8,7 @@ import {SpecificKnowledge} from '../models/specific-knowledge';
 /**
  * Service that provides communication between
  * specific knowledge module and endpoints on api
- * which correspond to specific knowledge module.
+ * which correspond to specific knowledge entity.
  */
 @Injectable({
     providedIn: 'root'

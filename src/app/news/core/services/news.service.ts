@@ -1,9 +1,13 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {News} from '../models/news';
 
+/**
+ * Service that provides communication between
+ * news module and endpoints on api
+ * which correspond to news entity.
+ */
 @Injectable({
     providedIn: 'root'
 })
@@ -14,32 +18,47 @@ export class NewsService {
     constructor(private http: HttpClient) {
     }
 
-    getNewsList(): Observable<News[]> {
-        return this.http.get<News[]>(this.newsUrl + '/get');
-    }
+    /**
+     * Get news created on platform.
+     */
+    getNewsList = () => this.http.get<News[]>(this.newsUrl + '/get');
 
-    getLatestNews(numberOfPosts: number): Observable<News[]> {
-        return this.http.get<News[]>(this.newsUrl + '/getLatest/' + numberOfPosts);
-    }
+    /**
+     * Get latest news report.
+     *
+     * @param numberOfPosts number of wanted posts for
+     * latest news report.
+     */
+    getLatestNews = (numberOfPosts: number) => this.http.get<News[]>(this.newsUrl + '/getLatest/' + numberOfPosts);
 
-    getNews(id: string) {
-        return this.http.get<News>(this.newsUrl + '/get/' + id);
-    }
+    /**
+     * Get news entity by identifier.
+     *
+     * @param id news entity identifier.
+     */
+    getNews = (id: string) => this.http.get<News>(this.newsUrl + '/get/' + id);
 
-    createNews(news: News) {
-        return this.http.post(this.newsUrl + '/create', news);
-    }
+    /**
+     * Sending form data to create
+     * news entity.
+     *
+     * @param postData data for creating new news entity.
+     */
+    createNews = (postData: News) => this.http.post(this.newsUrl + '/create', postData);
 
-    editNews(id: string, news: News) {
-        return this.http.post(this.newsUrl + '/edit/' + id, news);
-    }
+    /**
+     * Sending form data to update
+     * existing news entity.
+     *
+     * @param id news entity identifier.
+     * @param updateData for updating existing news entity.
+     */
+    editNews = (id: string, updateData: News) => this.http.post(this.newsUrl + '/edit/' + id, updateData);
 
-    flipNewsActive(id: string) {
-        return this.http.post(this.newsUrl + '/flipActive/' + id, null);
-    }
-
-    deleteNews(id: string) {
-        return this.http.post(this.newsUrl + '/delete/' + id, null);
-    }
-
+    /**
+     * Delete news entity by identifier.
+     *
+     * @param id news entity identifier.
+     */
+    deleteNews = (id: string) => this.http.post(this.newsUrl + '/delete/' + id, null);
 }

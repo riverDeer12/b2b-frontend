@@ -11,7 +11,7 @@ import {AuthToken} from '../models/auth-token';
 /**
  * Service that provides communication between
  * authentication module and endpoints on api
- * which correspond to authentication module.
+ * which correspond to authentication.
  */
 @Injectable({
     providedIn: 'root',

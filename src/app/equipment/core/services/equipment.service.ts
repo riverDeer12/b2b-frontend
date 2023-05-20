@@ -4,6 +4,11 @@ import {environment} from 'src/environments/environment';
 import {Observable, Subject} from 'rxjs';
 import {Equipment} from '../models/equipment';
 
+/**
+ * Service that provides communication between
+ * equipment module and endpoints on api
+ * which correspond to equipment entity.
+ */
 @Injectable({
     providedIn: 'root'
 })
@@ -16,33 +21,59 @@ export class EquipmentService {
     constructor(private http: HttpClient) {
     }
 
-    getAllEquipment() {
-        return this.http.get<Equipment[]>(this.equipmentUrl + '/getEquipment');
-    }
+    /**
+     * Get equipment entities
+     * created on platform.
+     */
+    getAllEquipment = () => this.http.get<Equipment[]>(this.equipmentUrl + '/getEquipment');
 
-    getEquipment(scientistId: string): Observable<Equipment[]> {
-        return this.http.get<Equipment[]>(this.equipmentUrl + scientistId + '/getEquipment');
-    }
+    /**
+     * Get equipment for selected
+     * scientists.
+     *
+     * @param scientistId id of related scientist entity.
+     */
+    getEquipment = (scientistId: string) =>
+        this.http.get<Equipment[]>(this.equipmentUrl + scientistId + '/getEquipment');
 
-    getSingleEquipment(scientistId: string, equipmentId: string): Observable<Equipment> {
-        return this.http.get<Equipment>(this.equipmentUrl + scientistId + '/getEquipment/' + equipmentId);
-    }
+    /**
+     * Find equipment entity by identifier.
+     *
+     * @param scientistId id of related scientist entity.
+     * @param id equipment entity identifier.
+     */
+    getSingleEquipment = (scientistId: string, id: string) =>
+        this.http.get<Equipment>(this.equipmentUrl + scientistId + '/getEquipment/' + id);
 
-    createEquipment(scientistId: string, equipment: Equipment): Observable<Equipment> {
-        return this.http.post<Equipment>(this.equipmentUrl + scientistId + '/createEquipment', equipment);
-    }
+    /**
+     * Create equipment entity with
+     * data from form.
+     *
+     * @param scientistId id of related scientist entity.
+     * @param postData form data for creating equipment.
+     */
+    createEquipment = (scientistId: string, postData: Equipment) =>
+        this.http.post<Equipment>(this.equipmentUrl + scientistId + '/createEquipment', postData);
 
-    editEquipment(scientistId: string, equipmentId: string, equipment: Equipment): Observable<Equipment> {
-        return this.http.post<Equipment>(this.equipmentUrl + scientistId + '/editEquipment/' + equipmentId, equipment);
-    }
+    /**
+     * Update existing equipment data
+     * with update data from form.
+     *
+     * @param scientistId id of related scientist entity.
+     * @param id equipment entity identifier.
+     * @param updateData form data for updating existing equipment.
+     */
+    editEquipment = (scientistId: string, id: string, updateData: Equipment) =>
+        this.http.post<Equipment>(this.equipmentUrl + scientistId + '/editEquipment/' + id, updateData);
 
-    flipEquipmentActive(scientistId: string, equipmentId: string): any {
-        return this.http.post(this.equipmentUrl + scientistId + '/flipEquipmentActive/' + equipmentId, null);
-    }
-
-    deleteEquipment(scientistId: string, equipmentId: string): any {
-        return this.http.post(this.equipmentUrl + scientistId + '/deleteEquipment/' + equipmentId, null);
-    }
+    /**
+     * Delete equipment entity.
+     *
+     * @param scientistId id of related scientist entity.
+     * @param id equipment entity identifier.
+     */
+    deleteEquipment = (scientistId: string, id: string) =>
+        this.http.post(this.equipmentUrl + scientistId + '/deleteEquipment/' + id, null);
 
     /**
      * Push new equipment

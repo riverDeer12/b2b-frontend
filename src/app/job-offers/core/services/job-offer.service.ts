@@ -4,6 +4,11 @@ import {Observable, Subject} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {JobOffer} from '../models/job-offer';
 
+/**
+ * Service that provides communication between
+ * job offers module and endpoints on api
+ * which correspond to job offer entity.
+ */
 @Injectable({
     providedIn: 'root'
 })
@@ -16,33 +21,56 @@ export class JobOfferService {
     constructor(private http: HttpClient) {
     }
 
-    getAllJobOffers(): Observable<JobOffer[]> {
-        return this.http.get<JobOffer[]>(this.jobOfferUrl + '/getJobOffers');
-    }
+    /**
+     * Get all created job offers.
+     */
+    getAllJobOffers = () => this.http.get<JobOffer[]>(this.jobOfferUrl + '/getJobOffers');
 
-    getJobOffers(companyId: string): Observable<JobOffer[]> {
-        return this.http.get<JobOffer[]>(this.jobOfferUrl + companyId + '/getJobOffers');
-    }
+    /**
+     * Get job offers for selected company.
+     *
+     * @param companyId id of related company.
+     */
+    getJobOffers = (companyId: string) =>
+        this.http.get<JobOffer[]>(this.jobOfferUrl + companyId + '/getJobOffers');
 
-    getJobOffer(companyId: string, jobOfferId: string) {
-        return this.http.get<JobOffer>(this.jobOfferUrl + companyId + '/getJobOffer/' + jobOfferId);
-    }
+    /**
+     * Get job offer entity by
+     * identifier.
+     *
+     * @param companyId id of related company.
+     * @param id job offer entity identifier.
+     */
+    getJobOffer = (companyId: string, id: string) =>
+        this.http.get<JobOffer>(this.jobOfferUrl + companyId + '/getJobOffer/' + id);
 
-    createJobOffer(companyId: string, jobOffer: JobOffer): Observable<JobOffer> {
-        return this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/createJobOffer', jobOffer);
-    }
+    /**
+     * Create job offer with form data.
+     *
+     * @param companyId id of related company.
+     * @param postData form data for creating job offer.
+     */
+    createJobOffer = (companyId: string, postData: JobOffer) =>
+        this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/createJobOffer', postData);
 
-    editJobOffer(companyId: string, jobOfferId: string, jobOffer: JobOffer): Observable<JobOffer> {
-        return this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/editJobOffer/' + jobOfferId, jobOffer);
-    }
+    /**
+     *
+     * @param companyId id of related company.
+     * @param id job offer entity identifier.
+     * @param updateData form data for updating existing job offer.
+     */
+    editJobOffer = (companyId: string, id: string, updateData: JobOffer) =>
+        this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/editJobOffer/' + id, updateData);
 
-    flipJobOfferActive(companyId: string, jobOfferId: string) {
-        return this.http.post(this.jobOfferUrl + companyId + '/flipJobOfferActive/' + jobOfferId, null);
-    }
+    /**
+     * Delete job offer by identifier.
+     *
+     * @param companyId id of related company.
+     * @param id job offer entity identifier.
+     */
+    deleteJobOffer = (companyId: string, id: string) =>
+        this.http.post(this.jobOfferUrl + companyId + '/deleteJobOffer/' + id, null);
 
-    deleteJobOffer(companyId: string, jobOfferId: string) {
-        return this.http.post(this.jobOfferUrl + companyId + '/deleteJobOffer/' + jobOfferId, null);
-    }
 
     /**
      * Push new job offer
