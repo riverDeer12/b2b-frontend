@@ -6,6 +6,7 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {News} from '../../core/models/news';
 import {NewsService} from '../../core/services/news.service';
+import {ValidationService} from '../../../shared/services/validation.service';
 
 @Component({
     selector: 'news-form',
@@ -19,7 +20,8 @@ export class NewsFormComponent {
 
     form!: FormGroup;
 
-    constructor(private fb: FormBuilder,
+    constructor(public validationService: ValidationService,
+                private fb: FormBuilder,
                 private router: Router,
                 private notificationService: NotificationService,
                 private newsService: NewsService) {
@@ -65,6 +67,7 @@ export class NewsFormComponent {
      */
     submit(): void {
         if (this.form.invalid) {
+            this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
@@ -89,7 +92,7 @@ export class NewsFormComponent {
 
                 this.router.navigateByUrl(this.returnUrl).then();
             },
-            (error) => {
+            () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
@@ -109,7 +112,7 @@ export class NewsFormComponent {
 
                 this.router.navigateByUrl(this.returnUrl).then();
             },
-            (error) => {
+            () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');

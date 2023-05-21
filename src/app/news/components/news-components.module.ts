@@ -13,6 +13,7 @@ import {ConfirmationService} from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {EditorModule} from "primeng/editor";
 import {ReactiveFormsModule} from "@angular/forms";
+import {ValidationService} from '../../shared/services/validation.service';
 
 /**
  * Translation resources loader.
@@ -50,7 +51,8 @@ export function createTranslateLoader(http: HttpClient) {
         ReactiveFormsModule
     ],
     providers: [
-        ConfirmationService
+        ConfirmationService,
+        ValidationService
     ],
     exports: [
         NewsFormComponent,

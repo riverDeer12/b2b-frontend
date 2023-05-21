@@ -4,7 +4,8 @@
             <div class="p-fluid">
                 <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <input pInputText type="text" id="title" formControlName="title"/>
+                        <input class="{{validationService.hasErrors(form, 'title', 'required')}}"
+                               pInputText type="text" id="title" formControlName="title"/>
                         <label for="title">{{ 'title' | translate }}</label>
                     </span>
                 </div>

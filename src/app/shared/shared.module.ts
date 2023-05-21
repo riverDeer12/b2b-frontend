@@ -13,6 +13,7 @@ import {EquipmentComponentsModule} from '../equipment/components/equipment-compo
 import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
 import { ActivityComponent } from './components/activity/activity.component';
 import {CheckboxModule} from 'primeng/checkbox';
+import {ValidationService} from './services/validation.service';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import {CheckboxModule} from 'primeng/checkbox';
         CheckboxModule
     ],
     providers: [
-        NotificationService
+        NotificationService,
+        ValidationService
     ]
 })
 export class SharedModule {
