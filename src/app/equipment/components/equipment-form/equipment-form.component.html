@@ -4,17 +4,25 @@
             <div class="p-fluid">
                 <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <input pInputText type="text" id="title" formControlName="title"/>
-                        <label for="title">{{ 'title' | translate }}</label>
+                        <input class="{{validationService.getInputClass(form, 'title', 'required')}}"
+                               aria-describedby="title-input"
+                               pInputText type="text" id="title" formControlName="title"/>
+                        <label for="title">{{ 'title.default' | translate }}</label>
                     </span>
+                    <small class="p-error"
+                           *ngIf="validationService.hasErrors(form, 'title', 'required')"
+                           id="title-input">{{ 'title.required' | translate }}</small>
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <textarea pInputText
-                                  id="description"
-                                  formControlName="description"></textarea>
-                        <label for="description">{{ 'description' | translate }}</label>
+                        <textarea class="{{validationService.getInputClass(form, 'description', 'required')}}"
+                                  aria-describedby="description-input"
+                                  pInputText id="description" formControlName="description"></textarea>
+                        <label for="description">{{ 'description.default' | translate }}</label>
                     </span>
+                    <small class="p-error"
+                           *ngIf="validationService.hasErrors(form, 'description', 'required')"
+                           id="description-input">{{ 'description.required' | translate }}</small>
                 </div>
                 <div class="field col-md-12 mt-5">
                     <span class="p-float-label">
