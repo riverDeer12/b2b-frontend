@@ -7,11 +7,12 @@ import {NotificationType} from "../../../shared/enums/notification-type";
 import {Scientist} from "../../core/models/scientist";
 import {ScientistService} from "../../core/services/scientist.service";
 import {Category} from "../../../categories/core/models/category";
+import {ValidationService} from "../../../shared/services/validation.service";
 
 @Component({
-  selector: 'scientist-general-form',
-  templateUrl: './scientist-general-form.component.html',
-  styleUrls: ['./scientist-general-form.component.scss']
+    selector: 'scientist-general-form',
+    templateUrl: './scientist-general-form.component.html',
+    styleUrls: ['./scientist-general-form.component.scss']
 })
 export class ScientistGeneralFormComponent {
     @Input() formType!: FormType;
@@ -20,10 +21,12 @@ export class ScientistGeneralFormComponent {
 
     form!: FormGroup;
 
-    constructor(private fb: FormBuilder,
-                private router: Router,
-                private notificationService: NotificationService,
-                private scientistService: ScientistService) {
+    constructor(
+        public validationService: ValidationService,
+        private fb: FormBuilder,
+        private router: Router,
+        private notificationService: NotificationService,
+        private scientistService: ScientistService) {
     }
 
     ngOnInit() {
