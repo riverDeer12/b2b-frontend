@@ -6,6 +6,10 @@ import {FormGroup} from '@angular/forms';
 })
 export class ValidationService {
 
+    /**
+     * Class for showing red aligned
+     * input if validation is invalid.
+     */
     invalidClass = 'ng-invalid ng-dirty';
 
     constructor() {
@@ -20,18 +24,37 @@ export class ValidationService {
      * @param errorName name of validation check (required, minLength etc.)
      * @param formGroupName optional form group if you are working with inherited forms.
      */
-    hasErrors(parentForm: FormGroup, fieldName: string, errorName: string, formGroupName?: string): string {
+    hasErrors(parentForm: FormGroup, fieldName: string, errorName: string, formGroupName?: string): boolean {
         if (parentForm && formGroupName === undefined) {
 
-            const hasErrors = parentForm.get(fieldName)!.touched && parentForm.get(fieldName)!.hasError(errorName);
-
-            return hasErrors ? this.invalidClass : '';
+            return parentForm.get(fieldName)!.touched && parentForm.get(fieldName)!.hasError(errorName);
         }
 
         const form = parentForm.get(formGroupName as string) as FormGroup;
 
-        const hasErrors =  form.get(fieldName)!.touched && form.get(fieldName)!.hasError(errorName);
+        return form.get(fieldName)!.touched && form.get(fieldName)!.hasError(errorName);
+    }
 
-        return hasErrors ? this.invalidClass : '';
+    /**
+     * Method for getting form input
+     * validation error styling class.
+     *
+     * @param parentForm name of form group that contains validations.
+     * @param fieldName name of form control that needs to be validated.
+     * @param errorName name of validation check (required, minLength etc.)
+     * @param formGroupName optional form group if you are working with inherited forms.
+     */
+    getInputClass(parentForm: FormGroup, fieldName: string, errorName: string,
+                  formGroupName?: string): string {
+
+        if (parentForm && formGroupName === undefined) {
+            const inputHasValidationErrors = this.hasErrors(parentForm, fieldName, errorName);
+
+            return inputHasValidationErrors ? this.invalidClass : '';
+        }
+
+        const inputHasValidationErrors = this.hasErrors(parentForm, fieldName, errorName, formGroupName);
+
+        return inputHasValidationErrors ? this.invalidClass : '';
     }
 }

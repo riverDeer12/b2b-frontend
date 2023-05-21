@@ -6,6 +6,7 @@ import {CategoryService} from '../../core/services/category.service';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
+import {ValidationService} from '../../../shared/services/validation.service';
 
 @Component({
     selector: 'category-form',
@@ -19,10 +20,12 @@ export class CategoryFormComponent {
 
     form!: FormGroup;
 
-    constructor(private fb: FormBuilder,
-                private router: Router,
-                private notificationService: NotificationService,
-                private categoryService: CategoryService) {
+    constructor(
+        public validationService: ValidationService,
+        private fb: FormBuilder,
+        private router: Router,
+        private notificationService: NotificationService,
+        private categoryService: CategoryService) {
     }
 
     ngOnInit() {

@@ -1,8 +1,14 @@
 {
     "news": "News",
     "news-item": "news",
-    "title": "Title",
-    "content": "Content",
+    "title": {
+        "default": "Title",
+        "required": "Title is required."
+    },
+    "content": {
+        "default": "Content",
+        "required": "Content is required."
+    },
     "created-at": "Created date",
     "updated-at": "Last Change",
     "number-of-views": "Number of views",

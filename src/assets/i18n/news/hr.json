@@ -1,8 +1,14 @@
 {
     "news": "Objave",
     "news-item": "objave",
-    "title": "Naslov objave",
-    "content": "Sadržaj",
+    "title": {
+        "default": "Naslov",
+        "required": "Naslov je obavezan podatak."
+    },
+    "content": {
+        "default": "Sadržaj",
+        "required": "Sadržaj je obavezan podatak."
+    },
     "created-at": "Datum kreiranja",
     "updated-at": "Datum zadnje izmjene",
     "number-of-views": "Broj pregleda",

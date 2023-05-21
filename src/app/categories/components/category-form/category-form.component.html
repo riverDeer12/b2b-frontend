@@ -4,9 +4,15 @@
             <div class="p-fluid">
                 <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <input pInputText type="text" id="name" formControlName="name"/>
+                        <input class="{{validationService.getInputClass(form, 'name', 'required')}}"
+                               pInputText type="text" id="name"
+                               aria-describedby="name-input"
+                               formControlName="name"/>
                         <label for="name">{{ 'name' | translate }}</label>
                     </span>
+                    <small class="p-error"
+                           *ngIf="validationService.hasErrors(form, 'name', 'required')"
+                           id="name-input">{{ 'name.required' | translate }}</small>
                 </div>
                 <div class="field col-md-12 mt-5">
                     <span class="p-float-label">

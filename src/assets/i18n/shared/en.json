@@ -24,7 +24,6 @@
     "email": "Email",
     "website": "Website",
     "name": "Name",
-    "title": "Title",
     "confirm-password": "Confirm Password",
     "username-password": "Username and Password",
     "no-error-details": "Error occurred, but no details given!",

@@ -118,5 +118,4 @@ export class NewsFormComponent {
                         'correct-validation-errors');
             })
     }
-
 }
