@@ -1,9 +1,13 @@
 import {Scientist} from '../models/scientist';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
 import {environment} from 'src/environments/environment';
 
+/**
+ * Service that provides communication between
+ * scientists module and endpoints on api
+ * which correspond to scientist entity.
+ */
 @Injectable({
     providedIn: 'root'
 })
@@ -14,33 +18,53 @@ export class ScientistService {
     constructor(private http: HttpClient) {
     }
 
-    getScientists(): Observable<Scientist[]> {
-        return this.http.get<Scientist[]>(this.scientistsUrl + '/get');
-    }
+    /**
+     * Get all scientists created on platform.
+     */
+    getScientists = () => this.http.get<Scientist[]>(this.scientistsUrl + '/get');
 
-    getScientist(scientistId: string) {
-        return this.http.get<Scientist>(this.scientistsUrl + '/get/' + scientistId);
-    }
+    /**
+     * Get selected scientist
+     * by identifier.
+     *
+     * @param id scientist entity identifier.
+     */
+    getScientist = (id: string) => this.http.get<Scientist>(this.scientistsUrl + '/get/' + id);
 
-    createScientist(scientist: Scientist) {
-        return this.http.post(this.scientistsUrl + '/create', scientist);
-    }
+    /**
+     * Create scientist with form data.
+     *
+     * @param postData form data for creating scientist.
+     */
+    createScientist = (postData: Scientist) => this.http.post(this.scientistsUrl + '/create', postData);
 
-    editScientist(scientistId: string, scientist: Scientist) {
-        return this.http.post(this.scientistsUrl + '/edit/' + scientistId, scientist);
-    }
+    /**
+     * Update existing scientist
+     * with form data.
+     *
+     * @param id scientist entity identifier.
+     * @param updateData form data for updating existing scientist.
+     */
+    editScientist = (id: string, updateData: Scientist) =>
+        this.http.post(this.scientistsUrl + '/edit/' + id, updateData);
 
-    deleteScientist(scientistId: string){
-        return this.http.post(this.scientistsUrl + '/delete/' + scientistId, null);
-    }
+    /**
+     * Delete selected scientist
+     * by identifier.
+     *
+     * @param id scientist entity identifier.
+     */
+    deleteScientist = (id: string) => this.http.post(this.scientistsUrl + '/delete/' + id, null);
 
-    flipScientistActive(scientistId: string) {
-        return this.http.post(this.scientistsUrl + '/flipActive/' + scientistId, null);
-    }
-
-    checkScientistUsername(username: string) {
-        return this.http.post(this.scientistsUrl + '/checkUsername', {
+    /**
+     * Check if there is already scientist
+     * with same username.
+     *
+     * @param username value for check.
+     */
+    checkScientistUsername = (username: string) =>
+        this.http.post(this.scientistsUrl + '/checkUsername', {
             username
         });
-    }
+
 }

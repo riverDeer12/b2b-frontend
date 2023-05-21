@@ -4,6 +4,10 @@ import {MessageService} from 'primeng/api';
 import {NotificationType} from '../enums/notification-type';
 import {ApiErrorMessage} from '../models/api-error-message';
 
+/**
+ * Helper service for handling translations, and
+ * general customization of PrimeNG toast messages.
+ */
 @Injectable({
     providedIn: 'root'
 })
@@ -77,9 +81,7 @@ export class NotificationService {
         if (!apiErrorMessages) {
             this.showNotification(NotificationType.Error, 'no-error-details');
         }
-        // if apiErrorMessage is array then its the first
-        // if the the response is plain object it can be in this form as well "Exception - 037"
-        // everything else, stringify and show
+
         if (Array.isArray(apiErrorMessages)) {
             apiErrorMessages.forEach((errorMessage: ApiErrorMessage) => {
                 this.translateService.get(errorMessage.errorCode).subscribe((resourceKey: string) => {
@@ -97,8 +99,5 @@ export class NotificationService {
         } else {
             this.setNotificationContent(NotificationType.Error, JSON.stringify(apiErrorMessages));
         }
-
     }
-
-
 }

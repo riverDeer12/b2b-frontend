@@ -2,7 +2,6 @@ import {Category} from '../models/category';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
-import {Observable, Subject} from 'rxjs';
 
 /**
  * Service that provides communication between
@@ -10,34 +9,49 @@ import {Observable, Subject} from 'rxjs';
  * which correspond to category entity.
  */
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CategoryService {
 
-  endpointUrl = environment.apiUrl + '/categories';
+    endpointUrl = environment.apiUrl + '/categories';
 
-  selectedCategorySubject = new Subject<any>();
+    constructor(private http: HttpClient) {
+    }
 
-  constructor(private http: HttpClient) {
-  }
+    /**
+     * Get all created categories.
+     */
+    getCategories = () => this.http.get<Category[]>(this.endpointUrl + '/get');
 
-  getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.endpointUrl + '/get');
-  }
+    /**
+     * Get selected category by identifier.
+     *
+     * @param id category entity identifier.
+     */
+    getCategory = (id: string) => this.http.get<Category>(this.endpointUrl + '/get/' + id);
 
-  getCategory(categoryId: string) {
-    return this.http.get<Category>(this.endpointUrl + '/get/' + categoryId);
-  }
+    /**
+     * Create category with name
+     * in parameter.
+     *
+     * @param categoryName name value.
+     */
+    createCategory = (categoryName: string) => this.http.post(this.endpointUrl + '/create', categoryName);
 
-  createCategory(categoryName: string) {
-    return this.http.post(this.endpointUrl + '/create', categoryName);
-  }
+    /**
+     * Update category with name
+     * in parameter.
+     *
+     * @param id category entity identifier.
+     * @param categoryName name value.
+     */
+    editCategory = (id: string, categoryName: string) =>
+        this.http.post(this.endpointUrl + '/edit/' + id, categoryName);
 
-  editCategory(categoryId: string, categoryName: string) {
-    return this.http.post(this.endpointUrl + '/edit/' + categoryId, categoryName);
-  }
-
-  deleteCategory(categoryId: string) {
-    return this.http.post(this.endpointUrl + '/delete/' + categoryId, null);
-  }
+    /**
+     * Delete selected category by identifier.
+     *
+     * @param id category entity identifier.
+     */
+    deleteCategory = (id: string) => this.http.post(this.endpointUrl + '/delete/' + id, null);
 }

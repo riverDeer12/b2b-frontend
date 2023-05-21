@@ -1,10 +1,14 @@
 import {Injectable} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 import {EntityType} from '../../auth/core/enums/entity-type';
 import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
+/**
+ * Helper service for most common actions
+ * on platform.
+ */
 @Injectable({
     providedIn: 'root'
 })
@@ -20,18 +24,15 @@ export class SharedService {
      * Method that listens on
      * parent entity type changes.
      */
-    getParentEntityType(): Subject<EntityType> {
-        return this.parentEntityType;
-    }
+    getParentEntityType = () => this.parentEntityType;
 
     /**
      * Method that sets
      * and triggers selected
      * parent entity type.
      */
-    setParenEntityType(parentEntityType: EntityType): void {
+    setParentEntityType = (parentEntityType: EntityType) =>
         this.parentEntityType.next(parentEntityType);
-    }
 
     /**
      * Method that triggers
@@ -41,17 +42,13 @@ export class SharedService {
      * @param dialogId id of dialog
      * that needs to be closed.
      */
-    closeDialogOnSuccess(dialogId: string): void {
-        this.dialogCloseStatus.next(dialogId);
-    }
+    closeDialogOnSuccess = (dialogId: string) => this.dialogCloseStatus.next(dialogId);
 
     /**
      * Method that listens on
      * dialog close status changes.
      */
-    getDialogCloseStatus(): Subject<string> {
-        return this.dialogCloseStatus;
-    }
+    getDialogCloseStatus = () => this.dialogCloseStatus;
 
     /**
      * Redirect user after form
@@ -77,7 +74,6 @@ export class SharedService {
      * @param entityUrl url of entity's activity endpoint.
      * @param entityId id of selected entity.
      */
-    changeEntityActivity(entityUrl: string, entityId: string): Observable<any> {
-        return this.http.post(entityUrl + '/flipActive', entityId);
-    }
+    changeEntityActivity = (entityUrl: string, entityId: string) =>
+        this.http.post(entityUrl + '/flipActive', entityId);
 }

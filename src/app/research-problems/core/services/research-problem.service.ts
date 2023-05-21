@@ -6,55 +6,86 @@ import {Subject} from 'rxjs/internal/Subject';
 import {ResearchProblem} from '../models/research-problem';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 
+/**
+ * Service that provides communication between
+ * research problems module and endpoints on api
+ * which correspond to research problem entity.
+ */
 @Injectable({
     providedIn: 'root'
 })
 export class ResearchProblemService {
-
-    researchProblemsUrl!: string;
-
-    entityType!: EntityType;
-
-    entityUrl!: string;
 
     researchProblem = new Subject<ResearchProblem>();
 
     constructor(private http: HttpClient) {
     }
 
+    /**
+     * Get all research problems
+     * created on platform.
+     */
     getAllResearchProblems = () => this.http.get<ResearchProblem[]>(environment.apiUrl + '/research-problems');
 
-    getResearchProblems(entityType: EntityType, entityId: string): Observable<ResearchProblem[]> {
+    /**
+     * Get research problems
+     * for selected parent entity.
+     *
+     * @param parentType type of parent entity.
+     * @param parentId parent entity identifier.
+     */
+    getResearchProblems = (parentType: EntityType, parentId: string) =>
+        this.http.get<ResearchProblem[]>(environment.apiUrl + '/' + parentType + '/' + parentId +
+            '/getResearchProblems');
 
-        this.setResearchProblemsUrl(entityType);
+    /**
+     * Get research problem for
+     * selected parent entity.
+     *
+     * @param parentType type of parent entity.
+     * @param parentId parent entity identifier.
+     * @param id research problem entity identifier.
+     */
+    getResearchProblem = (parentType: EntityType, parentId: string, id: string) =>
+        this.http.get<ResearchProblem>(environment.apiUrl + '/' + parentType + '/' + parentId +
+            '/getResearchProblem/' + id);
 
-        return this.http.get<ResearchProblem[]>(this.researchProblemsUrl + entityId + '/getResearchProblems');
-    }
+    /**
+     * Create research problem
+     * with form data.
+     *
+     * @param parentType type of parent entity.
+     * @param parentId parent entity identifier.
+     * @param postData form data for creating research problem.
+     */
+    createResearchProblem = (parentType: EntityType, parentId: string, postData: ResearchProblem) =>
+        this.http.post<ResearchProblem>(environment.apiUrl + '/' + parentType + '/' + parentId +
+            '/createResearchProblem', postData);
 
-    getResearchProblem(researchProblemId: string, entityType: EntityType, entityId: string): Observable<ResearchProblem> {
-        this.setResearchProblemsUrl(entityType);
-        return this.http.get<ResearchProblem>(this.researchProblemsUrl + entityId + '/getResearchProblem/' + researchProblemId);
-    }
+    /**
+     * Update existing research problem
+     * with form data.
+     *
+     * @param parentType type of parent entity.
+     * @param parentId parent entity identifier.
+     * @param id research problem entity identifier.
+     * @param updateData form data for updating existing research problem.
+     */
+    editResearchProblem = (parentType: EntityType, parentId: string, id: string, updateData: ResearchProblem) =>
+        this.http.post<ResearchProblem>(environment.apiUrl + '/' + parentType + '/' + parentId +
+            '/editResearchProblem/' + id, updateData);
 
-    createResearchProblem(entityType: EntityType, entityId: string, researchProblem: ResearchProblem): Observable<ResearchProblem> {
-        this.setResearchProblemsUrl(entityType);
-        return this.http.post<ResearchProblem>(this.researchProblemsUrl + entityId + '/createResearchProblem', researchProblem);
-    }
-
-    editResearchProblem(researchProblemId: string, entityType: EntityType, entityId: string, researchProblem: ResearchProblem): Observable<ResearchProblem> {
-        this.setResearchProblemsUrl(entityType);
-        return this.http.post<ResearchProblem>(this.researchProblemsUrl + entityId + '/editResearchProblem/' + researchProblemId, researchProblem);
-    }
-
-    flipResearchProblemActive(researchProblemId: string, entityType: EntityType, entityId: string) {
-        this.setResearchProblemsUrl(entityType);
-        return this.http.post(this.researchProblemsUrl + entityId + '/flipResearchProblemActive/' + researchProblemId, null);
-    }
-
-    deleteResearchProblem(researchProblemId: string, entityType: EntityType, entityId: string): any {
-        this.setResearchProblemsUrl(entityType);
-        return this.http.post(this.researchProblemsUrl + entityId + '/deleteResearchProblem/' + researchProblemId, null);
-    }
+    /**
+     * Delete research problem for
+     * selected parent entity.
+     *
+     * @param parentType type of parent entity.
+     * @param parentId parent entity identifier.
+     * @param id research problem entity identifier.
+     */
+    deleteResearchProblem = (parentType: EntityType, parentId: string, id: string) =>
+        this.http.post(environment.apiUrl + '/' + parentType + '/' + parentId +
+            '/deleteResearchProblem/' + id, null);
 
     /**
      * Push new research problem
@@ -74,23 +105,5 @@ export class ResearchProblemService {
      */
     listenResearchProblems(): Observable<ResearchProblem> {
         return this.researchProblem.asObservable();
-    }
-
-    /**
-     * Set research problem url prefix
-     * based on entity type.
-     *
-     * @param entityType type of
-     * research problem parent entity.
-     */
-    setResearchProblemsUrl(entityType: EntityType): void {
-        switch (entityType) {
-            case EntityType.PublicOrganization:
-                this.researchProblemsUrl = environment.apiUrl + '/publicOrganizations/';
-                break;
-            case EntityType.Company:
-                this.researchProblemsUrl = environment.apiUrl + '/companies/';
-                break;
-        }
     }
 }

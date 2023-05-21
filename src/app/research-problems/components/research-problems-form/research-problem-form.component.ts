@@ -142,7 +142,7 @@ export class ResearchProblemFormComponent {
      */
     private editResearchProblem(): void {
         this.researchProblemService
-            .editResearchProblem(this.researchProblem.id, this.parentEntityType, this.parentEntityId, this.form.value)
+            .editResearchProblem(this.parentEntityType, this.parentEntityId, this.researchProblem.id, this.form.value)
             .subscribe((response: ResearchProblem) => {
                     this.notificationService
                         .showNotification(NotificationType.Success,

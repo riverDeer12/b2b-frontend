@@ -114,8 +114,8 @@ export class ResearchProblemsDataTableComponent {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.researchProblemService.deleteResearchProblem(researchProblemId,
-                    this.parentEntityType, this.parentEntityId).subscribe(() => {
+                this.researchProblemService.deleteResearchProblem(this.parentEntityType,
+                    this.parentEntityId,researchProblemId).subscribe(() => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
                         this.data = this.data.filter((x => x.id !== researchProblemId));

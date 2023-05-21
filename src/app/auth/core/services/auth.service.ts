@@ -50,9 +50,8 @@ export class AuthService {
      *
      * @param authUnit auth data.
      */
-    loginCompany(authUnit: AuthUnit) {
-        return this.http.post(this.authUrl + '/login/company', authUnit);
-    }
+    loginCompany = (authUnit: AuthUnit) => this.http.post(this.authUrl + '/login/company', authUnit);
+
 
     /**
      * Send request with auth data to
@@ -60,9 +59,8 @@ export class AuthService {
      *
      * @param authUnit auth data.
      */
-    loginScientist(authUnit: AuthUnit) {
-        return this.http.post(this.authUrl + '/login/scientist', authUnit);
-    }
+    loginScientist = (authUnit: AuthUnit) => this.http.post(this.authUrl + '/login/scientist', authUnit);
+
 
     /**
      * Send request with auth data to
@@ -70,12 +68,10 @@ export class AuthService {
      *
      * @param authUnit auth data.
      */
-    loginPublicOrganization(authUnit: AuthUnit) {
-        return this.http.post(
-            this.authUrl + '/login/publicOrganization',
-            authUnit
-        );
-    }
+    loginPublicOrganization = (authUnit: AuthUnit) => this.http.post(
+        this.authUrl + '/login/publicOrganization',
+        authUnit
+    );
 
     /**
      * Send request for getting auth
@@ -83,9 +79,8 @@ export class AuthService {
      *
      * @param authSuperAdmin auth data for super admin login.
      */
-    loginSuperAdmin(authSuperAdmin: AuthUnit) {
-        return this.http.post(this.authUrl + '/login/superadmin', authSuperAdmin);
-    }
+    loginSuperAdmin = (authSuperAdmin: AuthUnit) =>
+        this.http.post(this.authUrl + '/login/superadmin', authSuperAdmin);
 
     /**
      * Check if user is still
@@ -128,6 +123,7 @@ export class AuthService {
     getLogoutUrl(): string {
         const tokenStorageValue = localStorage.getItem('token');
         const decodedToken = jwtDecode(tokenStorageValue as string) as AuthToken;
+
         if (decodedToken.role === 'SuperAdmin') {
             return 'auth/admin-login';
         } else {
@@ -163,7 +159,6 @@ export class AuthService {
         if (decodedToken.exp < now) {
             return false;
         }
-
 
         return decodedToken.role === 'SuperAdmin';
     }
