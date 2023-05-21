@@ -7,6 +7,7 @@ import {NotificationService} from "../../../shared/services/notification.service
 import {OrganizationService} from "../../core/services/organization.service";
 import {Router} from "@angular/router";
 import {Category} from '../../../categories/core/models/category';
+import {ValidationService} from "../../../shared/services/validation.service";
 
 @Component({
     selector: 'organization-general-form',
@@ -21,10 +22,12 @@ export class OrganizationGeneralFormComponent {
 
     form!: FormGroup;
 
-    constructor(private fb: FormBuilder,
-                private router: Router,
-                private organizationService: OrganizationService,
-                private notificationService: NotificationService) {
+    constructor(
+        public validationService: ValidationService,
+        private fb: FormBuilder,
+        private router: Router,
+        private organizationService: OrganizationService,
+        private notificationService: NotificationService) {
     }
 
     ngOnInit() {
