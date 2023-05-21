@@ -2,56 +2,97 @@
     <div class="p-fluid">
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <input pInputText type="text" id="name" formControlName="name"/>
-                <label for="name">{{ 'name' | translate }}</label>
+                <input class="{{validationService.getInputClass(form, 'name', 'required')}}"
+                       aria-describedby="name-input"
+                       pInputText type="text" id="name" formControlName="name"/>
+                <label for="name">{{ 'name.default' | translate }}</label>
             </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'name', 'required')"
+                   id="name-input">{{ 'name.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <textarea pInputText
-                          id="description"
-                          formControlName="description"
-                          rows="10">
+                <textarea
+                    class="{{validationService.getInputClass(form, 'description', 'required')}}"
+                    pInputText
+                    aria-describedby="description-input"
+                    id="description"
+                    formControlName="description"
+                    rows="10">
                 </textarea>
-                <label for="description">{{ 'description' | translate }}</label>
+                <label for="description">{{ 'description.default' | translate }}</label>
             </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'description', 'required')"
+                   id="description-input">{{ 'description.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <input pInputText type="text" id="address" formControlName="address"/>
-                <label for="address">{{ 'address' | translate }}</label>
+                <input class="{{validationService.getInputClass(form, 'address', 'required')}}"
+                       aria-describedby="address-input"
+                       pInputText type="text" id="address" formControlName="address"/>
+                <label for="address">{{ 'address.default' | translate }}</label>
             </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'address', 'required')"
+                   id="address-input">{{ 'address.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <input pInputText type="email" id="email" formControlName="email"/>
-                        <label for="email">{{ 'email' | translate }}</label>
+                        <input class="{{validationService.getInputClass(form, 'email', 'required')}}"
+                               aria-describedby="email-input"
+                               pInputText type="email" id="email" formControlName="email"/>
+                        <label for="email">{{ 'email.default' | translate }}</label>
                     </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'email', 'required')"
+                   id="email-input">{{ 'email.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <input pInputText type="text" id="taxCode" formControlName="taxCode"/>
-                        <label for="taxCode">{{ 'tax-code' | translate }}</label>
+                        <input class="{{validationService.getInputClass(form, 'taxCode', 'required')}}"
+                               aria-describedby="taxCode-input"
+                               pInputText type="text" id="taxCode" formControlName="taxCode"/>
+                        <label for="taxCode">{{ 'tax-code.default' | translate }}</label>
                     </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'taxCode', 'required')"
+                   id="taxCode-input">{{ 'tax-code.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <input pInputText type="email" id="website" formControlName="website"/>
-                <label for="website">{{ 'website' | translate }}</label>
+                <input class="{{validationService.getInputClass(form, 'website', 'required')}}"
+                       aria-describedby="website-input"
+                       pInputText type="text" id="website" formControlName="website"/>
+                <label for="website">{{ 'website.default' | translate }}</label>
             </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'website', 'required')"
+                   id="website-input">{{ 'website.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <input pInputText type="text" id="projects" formControlName="projects"/>
-                <label for="projects">{{ 'projects' | translate }}</label>
+                <input class="{{validationService.getInputClass(form, 'projects', 'required')}}"
+                       aria-describedby="projects-input"
+                       pInputText type="text" id="projects" formControlName="projects"/>
+                <label for="projects">{{ 'projects.default' | translate }}</label>
             </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'projects', 'required')"
+                   id="projects-input">{{ 'projects.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <input min="1" pInputText type="number" id="numberOfEmployees"
+                <input class="{{validationService.getInputClass(form, 'numberOfEmployees', 'required')}}"
+                       min="1" pInputText type="number" id="numberOfEmployees"
+                       aria-describedby="numberOfEmployees-input"
                        formControlName="numberOfEmployees"/>
-                <label for="numberOfEmployees">{{ 'number-of-employees' | translate }}</label>
+                <label for="numberOfEmployees">{{ 'number-of-employees.default' | translate }}</label>
             </span>
+            <small class="p-error"
+                   *ngIf="validationService.hasErrors(form, 'numberOfEmployees', 'required')"
+                   id="numberOfEmployees-input">{{ 'number-of-employees.required' | translate }}</small>
         </div>
         <div class="col-6 ml-0 pl-0">
             <button iconPos="right" class="mt-3" type="submit" pButton pRipple

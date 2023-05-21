@@ -6,11 +6,12 @@ import {Router} from "@angular/router";
 import {NotificationService} from "../../../shared/services/notification.service";
 import {CompanyService} from "../../core/services/company.service";
 import {NotificationType} from "../../../shared/enums/notification-type";
+import {ValidationService} from "../../../shared/services/validation.service";
 
 @Component({
-  selector: 'company-general-form',
-  templateUrl: './company-general-form.component.html',
-  styleUrls: ['./company-general-form.component.scss']
+    selector: 'company-general-form',
+    templateUrl: './company-general-form.component.html',
+    styleUrls: ['./company-general-form.component.scss']
 })
 export class CompanyGeneralFormComponent {
     @Input() formType!: FormType;
@@ -19,10 +20,12 @@ export class CompanyGeneralFormComponent {
 
     form!: FormGroup;
 
-    constructor(private fb: FormBuilder,
-                private router: Router,
-                private notificationService: NotificationService,
-                private companyService: CompanyService) {
+    constructor(
+        public validationService: ValidationService,
+        private fb: FormBuilder,
+        private router: Router,
+        private notificationService: NotificationService,
+        private companyService: CompanyService) {
     }
 
     ngOnInit() {
