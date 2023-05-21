@@ -9,6 +9,7 @@ import {SpecificKnowledge} from '../../core/models/specific-knowledge';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
+import {ValidationService} from "../../../shared/services/validation.service";
 
 /**
  * Component responsible for
@@ -41,11 +42,13 @@ export class SpecificKnowledgeFormComponent {
 
     form!: FormGroup;
 
-    constructor(private fb: FormBuilder,
-                private router: Router,
-                private sharedService: SharedService,
-                private notificationService: NotificationService,
-                private specificKnowledgeService: SpecificKnowledgeService) {
+    constructor(
+        public validationService: ValidationService,
+        private fb: FormBuilder,
+        private router: Router,
+        private sharedService: SharedService,
+        private notificationService: NotificationService,
+        private specificKnowledgeService: SpecificKnowledgeService) {
     }
 
     ngOnInit() {

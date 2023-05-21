@@ -10,6 +10,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {Category} from '../../../categories/core/models/category';
+import {ValidationService} from "../../../shared/services/validation.service";
 
 /**
  * Component responsible for
@@ -47,11 +48,13 @@ export class ResearchProblemFormComponent {
         return EntityType;
     }
 
-    constructor(private fb: FormBuilder,
-                private router: Router,
-                private sharedService: SharedService,
-                private notificationService: NotificationService,
-                private researchProblemService: ResearchProblemService) {
+    constructor(
+        public validationService: ValidationService,
+        private fb: FormBuilder,
+        private router: Router,
+        private sharedService: SharedService,
+        private notificationService: NotificationService,
+        private researchProblemService: ResearchProblemService) {
     }
 
     ngOnInit() {
