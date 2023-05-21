@@ -9,6 +9,7 @@ import {JobOfferService} from '../../core/services/job-offer.service';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
+import {ValidationService} from "../../../shared/services/validation.service";
 
 /**
  * Component responsible for
@@ -40,11 +41,13 @@ export class JobOffersFormComponent {
 
     form!: FormGroup;
 
-    constructor(private fb: FormBuilder,
-                private router: Router,
-                private sharedService: SharedService,
-                private notificationService: NotificationService,
-                private jobOfferService: JobOfferService) {
+    constructor(
+        public validationService: ValidationService,
+        private fb: FormBuilder,
+        private router: Router,
+        private sharedService: SharedService,
+        private notificationService: NotificationService,
+        private jobOfferService: JobOfferService) {
     }
 
     ngOnInit() {
@@ -105,6 +108,7 @@ export class JobOffersFormComponent {
      */
     submit(): void {
         if (this.form.invalid) {
+            this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
@@ -146,18 +150,18 @@ export class JobOffersFormComponent {
     private editJobOffer(): void {
         this.jobOfferService.editJobOffer(this.companyId, this.jobOffer.id, this.form.value)
             .subscribe((response: JobOffer) => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'job-offer-successfully-updated');
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'job-offer-successfully-updated');
 
-                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+                    this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
-                this.jobOfferService.pingJobOffers(response);
-            },
-            () => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-            })
+                    this.jobOfferService.pingJobOffers(response);
+                },
+                () => {
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'correct-validation-errors');
+                })
     }
 }

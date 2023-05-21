@@ -81,6 +81,7 @@ export class OrganizationGeneralFormComponent {
      */
     submit(): void {
         if (this.form.invalid) {
+            this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
