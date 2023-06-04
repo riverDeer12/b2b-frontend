@@ -25,6 +25,8 @@ export class LoginAdminComponent {
 
     loginForm!: FormGroup;
 
+    isLoading!: boolean;
+
     constructor(public layoutService: LayoutService,
                 private fb: FormBuilder,
                 private authService: AuthService,
@@ -32,6 +34,7 @@ export class LoginAdminComponent {
                 private translateService: TranslateService,
                 private router: Router) {
         this.setLoginForm();
+        this.isLoading = false;
     }
 
     private setLoginForm() {
@@ -43,6 +46,8 @@ export class LoginAdminComponent {
 
     submit() {
 
+        this.isLoading = true;
+
         if (this.loginForm.invalid) {
 
             this.loginForm.markAllAsTouched();
@@ -50,6 +55,8 @@ export class LoginAdminComponent {
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+
+            this.isLoading = false;
 
             return;
         }
@@ -64,6 +71,7 @@ export class LoginAdminComponent {
                 .showNotification(NotificationType.Success,
                     'auth.welcome-to-dashboard');
         }, () => {
+            this.isLoading = false;
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'auth.login-error');

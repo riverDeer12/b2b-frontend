@@ -10,7 +10,8 @@
                 <div class="w-full surface-card py-7 px-5 sm:px-8">
                     <div class="field field col-md-12">
                         <span class="p-float-label">
-                            <input type="text" class="w-full p-3 md:w-30rem" pInputText id="username" formControlName="username"/>
+                            <input type="text" class="w-full p-3 md:w-30rem" pInputText id="username"
+                                   formControlName="username"/>
                             <label for="username">{{ 'username' | translate }}</label>
                         </span>
                     </div>
@@ -22,8 +23,8 @@
                             <label for="password">{{'password' | translate }}</label>
                         </span>
                     </div>
-                    <button type="submit" pButton pRipple label="{{'login' | translate }}"
-                            class="w-full p-3 text-xl mt-3"></button>
+                    <p-button styleClass="w-full" icon="pi pi-sign-in" type="submit" label="{{'login' | translate }}"
+                              [loading]="isLoading"></p-button>
                 </div>
             </div>
         </div>
