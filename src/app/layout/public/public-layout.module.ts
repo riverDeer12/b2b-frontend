@@ -6,6 +6,12 @@ import {PublicLayoutRoutes} from './public-layout.routing';
 import {HttpBackend} from '@angular/common/http';
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {RippleModule} from 'primeng/ripple';
+import {ButtonModule} from 'primeng/button';
+import {LandingComponent} from './pages/landing/landing.component';
+import {StyleClassModule} from 'primeng/styleclass';
+import {DividerModule} from 'primeng/divider';
 
 
 /**
@@ -22,7 +28,12 @@ export function createTranslateLoader(http: HttpBackend) {
 
 @NgModule({
     declarations: [
-        PublicLayoutComponent
+        PublicLayoutComponent,
+        LandingComponent,
+        NavbarComponent
+    ],
+    exports: [
+        NavbarComponent
     ],
     imports: [
         CommonModule,
@@ -35,6 +46,10 @@ export function createTranslateLoader(http: HttpBackend) {
             },
             isolate: true
         }),
+        RippleModule,
+        ButtonModule,
+        StyleClassModule,
+        DividerModule
     ]
 })
 export class PublicLayoutModule {
