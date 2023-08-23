@@ -70,5 +70,8 @@
         "successfully-created": "Uspješno kreirana istraživačka oprema",
         "successfully-updated": "Uspješno ažurirana istraživačka oprema",
         "no-equipment-found": "Nema pronađene istraživačke opreme."
+    },
+    "subscribers": {
+        "default": "Pretplatnici"
     }
 }

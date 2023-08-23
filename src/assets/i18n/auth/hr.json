@@ -2,6 +2,8 @@
     "login": "Prijava",
     "correct-validation-errors": "Molimo da pregledate unesene podatke i pokušate ponovno.",
     "access-denied": "Zabranjen pristup",
+    "resource-not-found": "Sadržaj nije pronađen",
+    "try-another-page": "Molimo probajte pronaći sadržaj putem druge poveznice.",
     "you-dont-have-permissions": "Nemate pravo na pristup sadržaju. Molimo kontaktirajte administratora.",
     "error-occurred": "Dogodila se pogreška prilikom prijave.",
     "resource-not-available": "Traženi sadržaj nije dostupan.",

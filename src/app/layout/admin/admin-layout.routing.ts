@@ -10,11 +10,12 @@ import {ResearchProblemsComponent} from "../../research-problems/research-proble
 import {SpecificKnowledgeComponent} from "../../specific-knowledge/specific-knowledge.component";
 import {EquipmentComponent} from "../../equipment/equipment.component";
 import {JobOffersComponent} from "../../job-offers/job-offers.component";
+import {HomeComponent} from '../../home/home.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
         path: '',
-        loadChildren: () => import('../../demo/components/dashboard/dashboard.module').then(m => m.DashboardModule)
+        component: HomeComponent
     },
     {
         path: 'activities',

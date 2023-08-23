@@ -65,5 +65,8 @@
         "successfully-created": "Equipment successfully created.",
         "successfully-updated": "Equipment successfully updated.",
         "no-equipment-found": "No equipment found."
+    },
+    "subscribers": {
+        "default": "Subscribers"
     }
 }

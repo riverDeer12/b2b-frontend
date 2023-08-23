@@ -1,10 +1,10 @@
 import {Routes} from '@angular/router';
 import {LoginAdminComponent} from './pages/login-admin/login-admin.component';
 import {LoginUserComponent} from './pages/login-user/login-user.component';
-import {NotfoundComponent} from '../demo/components/notfound/notfound.component';
 import {ForbiddenComponent} from './pages/forbidden/forbidden.component';
 import {ErrorComponent} from './pages/error/error.component';
 import {DefaultGuard} from '../shared/guards/default.guard';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 export const AuthRoutes: Routes = [
     {
@@ -19,7 +19,7 @@ export const AuthRoutes: Routes = [
     },
     {
         path: 'not-found',
-        component: NotfoundComponent
+        component: NotFoundComponent
     },
     {
         path: 'forbidden',

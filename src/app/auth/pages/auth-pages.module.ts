@@ -16,6 +16,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {ErrorComponent} from './error/error.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 /**
  * Translation resources loader.
@@ -31,7 +32,8 @@ export function createTranslateLoader(http: HttpClient) {
         LoginAdminComponent,
         LoginUserComponent,
         ForbiddenComponent,
-        ErrorComponent
+        ErrorComponent,
+        NotFoundComponent
     ],
     imports: [
         CommonModule,
@@ -59,7 +61,8 @@ export function createTranslateLoader(http: HttpClient) {
         LoginAdminComponent,
         LoginUserComponent,
         ForbiddenComponent,
-        ErrorComponent
+        ErrorComponent,
+        NotFoundComponent
     ]
 })
 export class AuthPagesModule {
