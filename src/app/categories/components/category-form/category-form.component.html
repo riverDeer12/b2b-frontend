@@ -2,17 +2,23 @@
     <div class="grid">
         <div class="col-12">
             <div class="p-fluid">
-                <div class="field field col-md-12">
-                    <span class="p-float-label">
-                        <input class="{{validationService.getInputClass(form, 'name', 'required')}}"
+                <div class="field field col-md-12" formGroupName="name">
+                    <span class="p-float-label" formGroupName="translations">
+                        <input
                                pInputText type="text" id="name"
                                aria-describedby="name-input"
-                               formControlName="name"/>
+                               formControlName="hr"/>
                         <label for="name">{{ 'name' | translate }}</label>
                     </span>
-                    <small class="p-error"
-                           *ngIf="validationService.hasErrors(form, 'name', 'required')"
-                           id="name-input">{{ 'name.required' | translate }}</small>
+                </div>
+                <div class="field field col-md-12" formGroupName="name">
+                    <span class="p-float-label" formGroupName="translations">
+                        <input
+                            pInputText type="text" id="name"
+                            aria-describedby="name-input"
+                            formControlName="en"/>
+                        <label for="name">{{ 'name' | translate }}</label>
+                    </span>
                 </div>
                 <div class="field col-md-12 mt-5">
                     <span class="p-float-label">
