@@ -1,6 +1,7 @@
+import {LocalizedProperty} from "../../../shared/models/localized-property";
+
 export class Category {
     id!: string;
-    name!: string;
-    description!: string;
-    subcategories!: Category[];
+    name!: LocalizedProperty;
+    description!: LocalizedProperty;
 }

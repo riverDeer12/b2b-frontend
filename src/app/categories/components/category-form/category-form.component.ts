@@ -51,8 +51,7 @@ export class CategoryFormComponent {
                     en: new FormControl('', Validators.required),
                     hr: new FormControl('', Validators.required)
                 })
-            }),
-            subcategories: new FormControl('', Validators.required),
+            })
         })
     }
 
@@ -62,8 +61,12 @@ export class CategoryFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
-            name: new FormControl(this.category.name, Validators.required),
-            subcategories: new FormControl(this.category.subcategories, Validators.required),
+            name: this.fb.group({
+                translations: this.fb.group({
+                    en: new FormControl(this.category.name.translations.en, Validators.required),
+                    hr: new FormControl(this.category.name.translations.hr, Validators.required)
+                })
+            })
         })
     }
 
@@ -73,8 +76,6 @@ export class CategoryFormComponent {
      */
     submit(): void {
         if (this.form.invalid) {
-
-            console.log(this.form.value);
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
