@@ -7,22 +7,34 @@
                         <div class="field field col-md-12" formGroupName="name">
                             <span class="p-float-label" formGroupName="translations">
                                 <input
+                                    class="{{validationService.getInputClass(form, 'hr', 'required',
+                                    'name.translations')}}"
                                     pInputText type="text" id="name-hr"
                                     aria-describedby="name-input"
                                     formControlName="hr"/>
-                                <label for="name-hr">{{ 'name' | translate }}</label>
+                                <label for="name-hr">{{ 'name.default' | translate }}</label>
                             </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   'name.translations')"
+                                   id="name-input-hr">{{ 'name.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                     <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
                         <div class="field field col-md-12" formGroupName="name">
                             <span class="p-float-label" formGroupName="translations">
                                 <input
+                                    class="{{validationService.getInputClass(form, 'en', 'required',
+                                    'name.translations')}}"
                                     pInputText type="text" id="name-en"
                                     aria-describedby="name-input"
                                     formControlName="en"/>
-                                <label for="name-en">{{ 'name' | translate }}</label>
+                                <label for="name-en">{{ 'name.default' | translate }}</label>
                             </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'en', 'required',
+                                   'name.translations')"
+                                   id="name-input-en">{{ 'name.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                 </p-tabView>

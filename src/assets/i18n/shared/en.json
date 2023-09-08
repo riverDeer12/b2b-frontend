@@ -25,7 +25,10 @@
     "password": "Password",
     "email": "Email",
     "website": "Website",
-    "name": "Name",
+    "name": {
+        "default": "Name",
+        "required": "Category name is required."
+    },
     "confirm-password": "Confirm Password",
     "username-password": "Username and Password",
     "no-error-details": "Error occurred, but no details given!",

@@ -83,9 +83,9 @@ export class CategoryFormComponent {
             return;
         }
 
-        /*        this.formType === FormType.Create ?
-                    this.createCategory() :
-                    this.editCategory();*/
+/*        this.formType === FormType.Create ?
+            this.createCategory() :
+            this.editCategory();*/
     }
 
     /**
@@ -97,7 +97,7 @@ export class CategoryFormComponent {
         this.categoryService.createCategory(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'category-successfully-created');
+                        'categories.successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
             },
@@ -117,7 +117,7 @@ export class CategoryFormComponent {
         this.categoryService.editCategory(this.category.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'category-successfully-updated');
+                        'categories.successfully-updated');
 
                 this.router.navigateByUrl(this.returnUrl).then();
             },

@@ -18,7 +18,10 @@
     "description": "Opis",
     "createdAt": "Vrijeme kreiranja",
     "updatedAt": "Zadnje ažuriranje",
-    "name": "Naziv",
+    "name": {
+        "default": "Naziv",
+        "required": "Naziv kategorije je obavezan podatak."
+    },
     "keyword": "Ključna riječ",
     "general": "Opći podaci",
     "choose-option": "Odaberite vrijednost",
