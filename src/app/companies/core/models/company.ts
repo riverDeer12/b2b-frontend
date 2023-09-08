@@ -1,6 +1,7 @@
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Category} from '../../../categories/core/models/category';
 import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
+import {LocalizedProperty} from "../../../shared/models/localized-property";
 
 export class Company {
   id!: string;
@@ -9,12 +10,12 @@ export class Company {
   username!: string;
   password!: string;
   name!: string;
-  description!: string;
+  description!: LocalizedProperty;
   address!: string;
   email!: string;
   taxCode!: string;
   website!: string;
-  projects!: string;
+  projects!: LocalizedProperty;
   categoryTags!: string;
   numberOfEmployees!: number;
   numberOfViews!: number;

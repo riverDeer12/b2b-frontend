@@ -47,12 +47,22 @@ export class CompanyGeneralFormComponent {
     private initCreateForm(): void {
         this.form = this.fb.group({
             name: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            projects: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             address: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
             taxCode: new FormControl('', Validators.required),
             website: new FormControl('', Validators.required),
-            projects: new FormControl('', Validators.required),
             numberOfEmployees: new FormControl('', Validators.required)
         })
     }
@@ -64,12 +74,22 @@ export class CompanyGeneralFormComponent {
     private initEditForm(): void {
         this.form = this.fb.group({
             name: new FormControl(this.company.name, Validators.required),
-            description: new FormControl(this.company.description, Validators.required),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.company.description.translations.hr, Validators.required),
+                    en: new FormControl(this.company.description.translations.en, Validators.required)
+                })
+            }),
+            projects: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.company.projects.translations.hr, Validators.required),
+                    en: new FormControl(this.company.projects.translations.en, Validators.required)
+                })
+            }),
             address: new FormControl(this.company.address, Validators.required),
             email: new FormControl(this.company.email, Validators.required),
             taxCode: new FormControl(this.company.taxCode, Validators.required),
             website: new FormControl(this.company.website, Validators.required),
-            projects: new FormControl(this.company.projects, Validators.required),
             numberOfEmployees: new FormControl(this.company.numberOfEmployees, Validators.required)
         })
     }

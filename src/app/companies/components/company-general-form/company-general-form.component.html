@@ -2,7 +2,8 @@
     <div class="p-fluid">
         <div class="field field col-md-12">
             <span class="p-float-label">
-                <input
+                <input class="{{validationService.getInputClass(form, 'name', 'required')}}"
+                       aria-describedby="name-input"
                        pInputText type="text" id="name" formControlName="name"/>
                 <label for="name">{{ 'name.default' | translate }}</label>
             </span>
@@ -10,22 +11,70 @@
                    *ngIf="validationService.hasErrors(form, 'name', 'required')"
                    id="name-input">{{ 'name.required' | translate }}</small>
         </div>
-        <div class="field field col-md-12">
-            <span class="p-float-label">
+        <p-tabView>
+            <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
+                <div class="field field col-md-12" formGroupName="description">
+                <span class="p-float-label" formGroupName="translations">
+                    <textarea
+                        class="{{validationService.getInputClass(form, 'hr', 'required',
+                        'description.translations')}}"
+                        pInputText
+                        aria-describedby="description-input"
+                        id="description-hr"
+                        formControlName="hr"
+                        rows="10">
+                    </textarea>
+                <label for="description-hr">{{ 'description.default' | translate }}</label>
+                </span>
+                    <small class="p-error"
+                           *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                           'description.translations')"
+                           id="description-input-hr">{{ 'description.required' | translate }}</small>
+                </div>
+                <div class="field field col-md-12" formGroupName="projects">
+                    <span class="p-float-label" formGroupName="translations">
+                        <input
+                            pInputText type="text" id="projects-hr" formControlName="hr"/>
+                        <label for="projects-hr">{{ 'projects.default' | translate }}</label>
+                    </span>
+                    <small class="p-error"
+                           *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                   'projects.translations')"
+                           id="projects-input-hr">{{ 'projects.required' | translate }}</small>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
+                <div class="field field col-md-12" formGroupName="description">
+            <span class="p-float-label" formGroupName="translations">
                 <textarea
-                    class="{{validationService.getInputClass(form, 'description', 'required')}}"
+                    class="{{validationService.getInputClass(form, 'en', 'required',
+                    'description.translations')}}"
                     pInputText
-                    aria-describedby="description-input"
-                    id="description"
-                    formControlName="description"
+                    aria-describedby="description-input-en"
+                    id="description-en"
+                    formControlName="en"
                     rows="10">
                 </textarea>
-                <label for="description">{{ 'description.default' | translate }}</label>
+                <label for="description-en">{{ 'description.default' | translate }}</label>
             </span>
-            <small class="p-error"
-                   *ngIf="validationService.hasErrors(form, 'description', 'required')"
-                   id="description-input">{{ 'description.required' | translate }}</small>
-        </div>
+                    <small class="p-error"
+                           *ngIf="validationService.hasErrors(form, 'en', 'required',
+                           'description.translations')"
+                           id="description-input-en">{{ 'description.required' | translate }}</small>
+                </div>
+                <div class="field field col-md-12" formGroupName="projects">
+                    <span class="p-float-label" formGroupName="translations">
+                        <input
+                            pInputText type="text" id="projects-en" formControlName="en"/>
+                        <label for="projects-en">{{ 'projects.default' | translate }}</label>
+                    </span>
+                    <small class="p-error"
+                           *ngIf="validationService.hasErrors(form, 'en', 'required',
+                   'projects.translations')"
+                           id="projects-input-en">{{ 'projects.required' | translate }}</small>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
         <div class="field field col-md-12">
             <span class="p-float-label">
                 <input class="{{validationService.getInputClass(form, 'address', 'required')}}"
@@ -69,17 +118,6 @@
             <small class="p-error"
                    *ngIf="validationService.hasErrors(form, 'website', 'required')"
                    id="website-input">{{ 'website.required' | translate }}</small>
-        </div>
-        <div class="field field col-md-12">
-            <span class="p-float-label">
-                <input class="{{validationService.getInputClass(form, 'projects', 'required')}}"
-                       aria-describedby="projects-input"
-                       pInputText type="text" id="projects" formControlName="projects"/>
-                <label for="projects">{{ 'projects.default' | translate }}</label>
-            </span>
-            <small class="p-error"
-                   *ngIf="validationService.hasErrors(form, 'projects', 'required')"
-                   id="projects-input">{{ 'projects.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">

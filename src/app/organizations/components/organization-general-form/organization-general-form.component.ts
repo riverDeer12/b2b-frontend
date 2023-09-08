@@ -48,7 +48,12 @@ export class OrganizationGeneralFormComponent {
     private initCreateForm(): void {
         this.form = this.fb.group({
             name: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             address: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
             website: new FormControl('', Validators.required),
@@ -65,7 +70,12 @@ export class OrganizationGeneralFormComponent {
     private initEditForm(): void {
         this.form = this.fb.group({
             name: new FormControl(this.organization.name, Validators.required),
-            description: new FormControl(this.organization.description, Validators.required),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.organization.description.translations.hr, Validators.required),
+                    en: new FormControl(this.organization.description.translations.en, Validators.required)
+                })
+            }),
             address: new FormControl(this.organization.address, Validators.required),
             email: new FormControl(this.organization.email, Validators.required),
             website: new FormControl(this.organization.website, Validators.required),

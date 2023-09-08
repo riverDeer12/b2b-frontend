@@ -1,5 +1,6 @@
 import {Category} from '../../../categories/core/models/category';
 import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
+import {LocalizedProperty} from "../../../shared/models/localized-property";
 
 export class Organization {
   id!: string;
@@ -8,7 +9,7 @@ export class Organization {
   username!: string;
   password!: string;
   name!: string;
-  description!: string;
+  description!: LocalizedProperty;
   address!: string;
   website!: string;
   email!: string;

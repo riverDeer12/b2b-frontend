@@ -48,8 +48,8 @@ export class CategoryFormComponent {
         this.form = this.fb.group({
             name: this.fb.group({
                 translations: this.fb.group({
-                    en: new FormControl('', Validators.required),
-                    hr: new FormControl('', Validators.required)
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
                 })
             })
         })
@@ -63,8 +63,8 @@ export class CategoryFormComponent {
         this.form = this.fb.group({
             name: this.fb.group({
                 translations: this.fb.group({
-                    en: new FormControl(this.category.name.translations.en, Validators.required),
-                    hr: new FormControl(this.category.name.translations.hr, Validators.required)
+                    hr: new FormControl(this.category.name.translations.hr, Validators.required),
+                    en: new FormControl(this.category.name.translations.en, Validators.required)
                 })
             })
         })

@@ -45,8 +45,18 @@ export class NewsFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
-            title: new FormControl('', Validators.required),
-            content: new FormControl('', Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            content: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            })
         })
     }
 
@@ -56,8 +66,18 @@ export class NewsFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
-            title: new FormControl(this.news.title, Validators.required),
-            content: new FormControl(this.news.content, Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.news.title.translations.hr, Validators.required),
+                    en: new FormControl(this.news.title.translations.en, Validators.required)
+                })
+            }),
+            content: this.fb.group({
+                translations: this.fb.group({
+                    en: new FormControl(this.news.content.translations.hr, Validators.required),
+                    hr: new FormControl(this.news.content.translations.en, Validators.required)
+                })
+            })
         })
     }
 
@@ -66,6 +86,9 @@ export class NewsFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        console.log(this.form.value);
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService

@@ -14,6 +14,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {EditorModule} from "primeng/editor";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ValidationService} from '../../shared/services/validation.service';
+import {TabViewModule} from "primeng/tabview";
 
 /**
  * Translation resources loader.
@@ -48,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
         RippleModule,
         ConfirmDialogModule,
         EditorModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TabViewModule
     ],
     providers: [
         ConfirmationService,

@@ -47,15 +47,40 @@ export class ScientistGeneralFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
-            title: new FormControl('', Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            employmentCollege: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            functions: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            projects: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             firstname: new FormControl('', Validators.required),
             lastname: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
             website: new FormControl('', Validators.required),
-            employmentCollege: new FormControl('', Validators.required),
-            functions: new FormControl('', Validators.required),
-            projects: new FormControl('', Validators.required),
             googleScholarLink: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required)
         })
@@ -67,15 +92,40 @@ export class ScientistGeneralFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
-            title: new FormControl(this.scientist.title, Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.scientist.title.translations.hr, Validators.required),
+                    en: new FormControl(this.scientist.title.translations.en, Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.scientist.description.translations.hr, Validators.required),
+                    en: new FormControl(this.scientist.description.translations.en, Validators.required)
+                })
+            }),
+            employmentCollege: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.scientist.employmentCollege.translations.hr, Validators.required),
+                    en: new FormControl(this.scientist.employmentCollege.translations.en, Validators.required)
+                })
+            }),
+            functions: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.scientist.functions.translations.hr, Validators.required),
+                    en: new FormControl(this.scientist.functions.translations.en, Validators.required)
+                })
+            }),
+            projects: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.scientist.projects.translations.hr, Validators.required),
+                    en: new FormControl(this.scientist.projects.translations.en, Validators.required)
+                })
+            }),
             firstname: new FormControl(this.scientist.firstname, Validators.required),
             lastname: new FormControl(this.scientist.lastname, Validators.required),
-            description: new FormControl(this.scientist.description, Validators.required),
             email: new FormControl(this.scientist.email, Validators.required),
             website: new FormControl(this.scientist.website, Validators.required),
-            employmentCollege: new FormControl(this.scientist.employmentCollege, Validators.required),
-            functions: new FormControl(this.scientist.functions, Validators.required),
-            projects: new FormControl(this.scientist.projects, Validators.required),
             googleScholarLink: new FormControl(this.scientist.googleScholarLink, Validators.required),
             categories: new FormControl(this.scientist.categories.map(x => x.id), Validators.required),
         })

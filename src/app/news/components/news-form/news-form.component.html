@@ -2,30 +2,69 @@
     <div class="grid">
         <div class="col-12">
             <div class="p-fluid">
-                <div class="field field col-md-12">
-                    <span class="p-float-label">
-                        <input class="{{validationService.getInputClass(form, 'title', 'required')}}"
-                               pInputText type="text" id="title" aria-describedby="title-input"
-                               formControlName="title"/>
-                        <label for="title">{{ 'title.default' | translate }}</label>
+                <p-tabView>
+                    <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
+                        <div class="field field col-md-12" formGroupName="title">
+                    <span class="p-float-label" formGroupName="translations">
+                        <input class="{{validationService.getInputClass(form, 'hr', 'required',
+                        'title.translations')}}"
+                               pInputText type="text" id="title-hr" aria-describedby="title-input"
+                               formControlName="hr"/>
+                        <label for="title-hr">{{ 'title.default' | translate }}</label>
                     </span>
-                    <small class="p-error"
-                           *ngIf="validationService.hasErrors(form, 'title', 'required')"
-                           id="title-input">{{ 'title.required' | translate }}</small>
-                </div>
-                <div class="field field col-md-12">
-                    <p-editor placeholder="{{ 'content.default' | translate }}"
-                              class="{{validationService.getInputClass(form, 'content', 'required')}}"
-                              id="content" aria-describedby="content-input" formControlName="content">
-                    </p-editor>
-                    <small class="p-error"
-                           *ngIf="validationService.hasErrors(form, 'content', 'required')"
-                           id="content-input">{{ 'content.required' | translate }}</small>
-                </div>
-                <div class="col-6 ml-0 pl-0">
-                    <button iconPos="right" class="mt-3" type="submit" pButton pRipple
-                            label="{{ 'save' | translate }}" icon="pi pi-save"></button>
-                </div>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                           'title.translations')"
+                                   id="title-input-hr">{{ 'title.required' | translate }}</small>
+                        </div>
+                        <div class="field field col-md-12" formGroupName="content">
+                            <span formGroupName="translations">
+                                <p-editor placeholder="{{ 'content.default' | translate }}"
+                                          class="{{validationService.getInputClass(form, 'hr', 'required',
+                        'content.translations')}}"
+                                          id="content-hr" aria-describedby="content-input" formControlName="hr">
+                                </p-editor>
+                            </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                           'content.translations')"
+                                   id="content-input-hr">{{ 'content.required' | translate }}</small>
+                        </div>
+                    </p-tabPanel>
+                    <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
+                        <div class="field field col-md-12" formGroupName="title">
+                    <span class="p-float-label" formGroupName="translations">
+                        <input class="{{validationService.getInputClass(form, 'en', 'required',
+                        'title.translations')}}"
+                               pInputText type="text" id="title-en" aria-describedby="title-input"
+                               formControlName="en"/>
+                        <label for="title-en">{{ 'title.default' | translate }}</label>
+                    </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'en', 'required',
+                           'title.translations')"
+                                   id="title-input-en">{{ 'title.required' | translate }}</small>
+                        </div>
+                        <div class="field field col-md-12" formGroupName="content">
+                            <span formGroupName="translations">
+                                    <p-editor placeholder="{{ 'content.default' | translate }}"
+                                              class="{{validationService.getInputClass(form, 'en', 'required',
+                                'content.translations')}}"
+                                              id="content-en" aria-describedby="content-input"
+                                              formControlName="en">
+                                    </p-editor>
+                            </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'en', 'required',
+                           'content.translations')"
+                                   id="content-input-en">{{ 'content.required' | translate }}</small>
+                        </div>
+                    </p-tabPanel>
+                    <div class="col-6 ml-0 pl-0">
+                        <button iconPos="right" class="mt-3" type="submit" pButton pRipple
+                                label="{{ 'save' | translate }}" icon="pi pi-save"></button>
+                    </div>
+                </p-tabView>
             </div>
         </div>
     </div>

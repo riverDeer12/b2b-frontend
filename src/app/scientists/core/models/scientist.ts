@@ -1,6 +1,7 @@
 import {Equipment} from 'src/app/equipment/core/models/equipment';
 import {SpecificKnowledge} from '../../../specific-knowledge/core/models/specific-knowledge';
 import {Category} from '../../../categories/core/models/category';
+import {LocalizedProperty} from "../../../shared/models/localized-property";
 
 export class Scientist {
   id!: string;
@@ -8,15 +9,15 @@ export class Scientist {
   profilePicture!: string;
   username!: string;
   password!: string;
-  title!: string;
+  title!: LocalizedProperty;
   firstname!: string;
   lastname!: string;
-  description!: string;
+  description!: LocalizedProperty;
   email!: string;
   website!: string;
-  employmentCollege!: string;
-  functions!: string;
-  projects!: string;
+  employmentCollege!: LocalizedProperty;
+  functions!: LocalizedProperty;
+  projects!: LocalizedProperty;
   googleScholarLink!: string;
   categoryTags!: string;
   numberOfViews!: number;
