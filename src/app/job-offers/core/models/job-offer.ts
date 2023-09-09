@@ -1,20 +1,21 @@
 import {Category} from '../../../categories/core/models/category';
+import {LocalizedProperty} from "../../../shared/models/localized-property";
 
 export class JobOffer {
     id!: string;
     image!: string;
     createdAt!: Date;
     updatedAt!: Date;
-    name!: string;
-    description!: string;
+    name!: LocalizedProperty;
+    description!: LocalizedProperty;
     location!: string;
     deadline!: Date;
-    experience!: string;
-    education!: string;
-    specialConditions!: string;
+    experience!: LocalizedProperty;
+    education!: LocalizedProperty;
+    specialConditions!: LocalizedProperty;
     duration!: string;
-    applyMethod!: string;
-    additional!: string;
+    applyMethod!: LocalizedProperty;
+    additional!: LocalizedProperty;
     categories!: Category[];
     companyId!: string;
     numberOfViews!: number;

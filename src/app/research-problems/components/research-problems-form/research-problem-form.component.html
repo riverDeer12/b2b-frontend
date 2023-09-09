@@ -2,6 +2,110 @@
     <div class="grid">
         <div class="col-12 mt-2">
             <div class="p-fluid">
+                <p-tabView>
+                    <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
+                        <div class="field field col-md-12" formGroupName="description">
+                                <span class="p-float-label" formGroupName="translations">
+                                    <textarea
+                                        class="{{validationService.getInputClass(form, 'hr', 'required',
+                                        'description.translations')}}"
+                                        pInputText
+                                        aria-describedby="description-input"
+                                        id="description-hr"
+                                        formControlName="hr"
+                                        rows="10">
+                                    </textarea>
+                                    <label for="description-hr">{{ 'description.default' | translate }}</label>
+                                </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                           'description.translations')"
+                                   id="description-input-hr">{{ 'description.required' | translate }}</small>
+                        </div>
+                        <div class="field field col-md-12" formGroupName="title">
+                            <span class="p-float-label" formGroupName="translations">
+                                <input class="{{validationService.getInputClass(form, 'hr', 'required',
+                                'title.translations')}}"
+                                       aria-describedby="title-input-hr"
+                                       pInputText type="text" id="title-hr" formControlName="hr"/>
+                                <label for="title-hr">{{ 'title.default' | translate }}</label>
+                            </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   'title.translations')"
+                                   id="title-input-hr">{{ 'title.required' | translate }}</small>
+                        </div>
+                        <div class="field field col-md-12" formGroupName="academicCommunityContributionPossibility">
+                            <span class="p-float-label" formGroupName="translations">
+                        <input class="{{validationService.getInputClass(form, 'hr', 'required',
+                        'academicCommunityContributionPossibility.translations')}}"
+                               aria-describedby="academicCommunityContributionPossibility-input-hr"
+                               pInputText type="text" id="academicCommunityContributionPossibility-input-hr"
+                               formControlName="hr"/>
+                            <label
+                                for="academicCommunityContributionPossibility-input-hr">
+                                {{ 'research-problems.academic-community-contribution-possibility.default' | translate }}</label>
+                            </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form,
+                           'hr', 'required',
+                           'academicCommunityContributionPossibility.translations')"
+                                   id="academicCommunityContributionPossibility-input-hr">
+                                {{ 'academicCommunityContributionPossibility.required' | translate }}</small>
+                        </div>
+                    </p-tabPanel>
+                    <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
+                        <div class="field field col-md-12" formGroupName="description">
+                                <span class="p-float-label" formGroupName="translations">
+                                    <textarea
+                                        class="{{validationService.getInputClass(form, 'en', 'required',
+                                        'description.translations')}}"
+                                        pInputText
+                                        aria-describedby="description-input"
+                                        id="description-en"
+                                        formControlName="en"
+                                        rows="10">
+                                    </textarea>
+                                    <label for="description-en">{{ 'description.default' | translate }}</label>
+                                </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'en', 'required',
+                                           'description.translations')"
+                                   id="description-input-en">{{ 'description.required' | translate }}</small>
+                        </div>
+                        <div class="field field col-md-12" formGroupName="title">
+                            <span class="p-float-label" formGroupName="translations">
+                                <input class="{{validationService.getInputClass(form, 'en', 'required',
+                                'title.translations')}}"
+                                       aria-describedby="title-input-en"
+                                       pInputText type="text" id="title-en" formControlName="en"/>
+                                <label for="title-hr">{{ 'title.default' | translate }}</label>
+                            </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form, 'en', 'required',
+                                   'title.translations')"
+                                   id="title-input-en">{{ 'title.required' | translate }}</small>
+                        </div>
+                        <div class="field field col-md-12" formGroupName="academicCommunityContributionPossibility">
+                            <span class="p-float-label" formGroupName="translations">
+                        <input class="{{validationService.getInputClass(form, 'en', 'required',
+                        'academicCommunityContributionPossibility.translations')}}"
+                               aria-describedby="academicCommunityContributionPossibility-input-en"
+                               pInputText type="text" id="academicCommunityContributionPossibility-input-en"
+                               formControlName="en"/>
+                            <label
+                                for="academicCommunityContributionPossibility-input-en">
+                                {{ 'research-problems.academic-community-contribution-possibility.default' | translate }}</label>
+                            </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(form,
+                           'en', 'required',
+                           'academicCommunityContributionPossibility.translations')"
+                                   id="academicCommunityContributionPossibility-en">
+                                {{ 'academicCommunityContributionPossibility.required' | translate }}</small>
+                        </div>
+                    </p-tabPanel>
+                </p-tabView>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
                         <input class="{{validationService.getInputClass(form, 'title', 'required')}}"
@@ -23,23 +127,6 @@
                     <small class="p-error"
                            *ngIf="validationService.hasErrors(form, 'description', 'required')"
                            id="description-input">{{ 'description.required' | translate }}</small>
-                </div>
-                <div class="field field col-md-12">
-                    <span class="p-float-label">
-                        <input class="{{validationService.getInputClass(form,
-                        'academicCommunityContributionPossibility', 'required')}}"
-                               aria-describedby="academicCommunityContributionPossibility-input"
-                               pInputText type="text" id="academicCommunityContributionPossibility"
-                               formControlName="academicCommunityContributionPossibility"/>
-                        <label
-                            for="academicCommunityContributionPossibility">
-                            {{ 'research-problems.academic-community-contribution-possibility.default' | translate }}</label>
-                    </span>
-                    <small class="p-error"
-                           *ngIf="validationService.hasErrors(form,
-                           'academicCommunityContributionPossibility', 'required')"
-                           id="academicCommunityContributionPossibility-input">
-                        {{ 'academicCommunityContributionPossibility.required' | translate }}</small>
                 </div>
                 <div class="field col-md-12 mt-5">
                     <span class="p-float-label">

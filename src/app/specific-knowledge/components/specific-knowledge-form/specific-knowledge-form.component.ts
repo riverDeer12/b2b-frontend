@@ -69,8 +69,18 @@ export class SpecificKnowledgeFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
-            title: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             categories: new FormControl('', Validators.required),
         })
     }
@@ -81,8 +91,18 @@ export class SpecificKnowledgeFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
-            title: new FormControl(this.specificKnowledge.title, Validators.required),
-            description: new FormControl(this.specificKnowledge.description, Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.specificKnowledge.title.translations.hr, Validators.required),
+                    en: new FormControl(this.specificKnowledge.title.translations.en, Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.specificKnowledge.description.translations.hr, Validators.required),
+                    en: new FormControl(this.specificKnowledge.description.translations.hr, Validators.required)
+                })
+            }),
             categories: new FormControl(this.specificKnowledge.categories.map(x => x.id), Validators.required),
             scientistId: new FormControl(this.specificKnowledge.scientistId, Validators.required)
         })

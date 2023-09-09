@@ -15,6 +15,7 @@ import {CategoriesComponentsModule} from "../../categories/components/categories
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RadioButtonModule} from "primeng/radiobutton";
 import {DialogService} from 'primeng/dynamicdialog';
+import {TabViewModule} from "primeng/tabview";
 
 /**
  * Translation resources loader.
@@ -48,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
         CategoriesComponentsModule,
         ReactiveFormsModule,
         RadioButtonModule,
-        FormsModule
+        FormsModule,
+        TabViewModule
     ],
     providers: [
         DialogService

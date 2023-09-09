@@ -1,15 +1,16 @@
 import {Category} from '../../../categories/core/models/category';
 import {EntityType} from "../../../auth/core/enums/entity-type";
+import {LocalizedProperty} from "../../../shared/models/localized-property";
 
 export class ResearchProblem {
     id!: string;
     image!: string;
     createdAt!: Date;
     updatedAt!: Date;
-    title!: string;
-    description!: string;
+    title!: LocalizedProperty;
+    description!: LocalizedProperty;
     numberOfViews!: number;
-    academicCommunityContributionPossibility!: string;
+    academicCommunityContributionPossibility!: LocalizedProperty;
     publicOrganizationId!: string;
     companyId!: string;
     categories!: Category[];

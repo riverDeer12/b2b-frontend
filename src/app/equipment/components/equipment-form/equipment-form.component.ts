@@ -68,8 +68,18 @@ export class EquipmentFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
-            title: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             categories: new FormControl('', Validators.required)
         })
     }
@@ -80,8 +90,18 @@ export class EquipmentFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
-            title: new FormControl(this.equipment.title, Validators.required),
-            description: new FormControl(this.equipment.description, Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.equipment.title.translations.hr, Validators.required),
+                    en: new FormControl(this.equipment.title.translations.en, Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.equipment.description.translations.hr, Validators.required),
+                    en: new FormControl(this.equipment.description.translations.hr, Validators.required)
+                })
+            }),
             categories: new FormControl(this.equipment.categories.map(x => x.id), Validators.required)
         })
     }

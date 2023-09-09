@@ -68,8 +68,18 @@ export class JobOffersFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
-            name: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
+            name: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             location: new FormControl('', Validators.required),
             deadline: new FormControl('', Validators.required),
             experience: new FormControl('', Validators.required),
@@ -88,8 +98,18 @@ export class JobOffersFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
-            name: new FormControl(this.jobOffer.name, Validators.required),
-            description: new FormControl(this.jobOffer.description, Validators.required),
+            name: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.jobOffer.name.translations.hr, Validators.required),
+                    en: new FormControl(this.jobOffer.name.translations.en, Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.jobOffer.name.translations.hr, Validators.required),
+                    en: new FormControl(this.jobOffer.name.translations.en, Validators.required)
+                })
+            }),
             location: new FormControl(this.jobOffer.location, Validators.required),
             deadline: new FormControl(new Date(this.jobOffer.deadline), Validators.required),
             experience: new FormControl(this.jobOffer.experience, Validators.required),

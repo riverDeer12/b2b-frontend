@@ -16,6 +16,7 @@ import {RouterModule} from '@angular/router';
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 import {CalendarModule} from 'primeng/calendar';
+import {TabViewModule} from "primeng/tabview";
 
 /**
  * Translation resources loader.
@@ -56,7 +57,8 @@ export function createTranslateLoader(http: HttpBackend) {
         MultiSelectModule,
         ReactiveFormsModule,
         CategoriesComponentsModule,
-        CalendarModule
+        CalendarModule,
+        TabViewModule
     ],
     providers: [
         ConfirmationService

@@ -15,6 +15,7 @@ import {ConfirmationService} from 'primeng/api';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {RouterModule} from '@angular/router';
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
+import {TabViewModule} from "primeng/tabview";
 
 /**
  * Translation resources loader.
@@ -50,7 +51,8 @@ export function createTranslateLoader(http: HttpClient) {
         RippleModule,
         ConfirmDialogModule,
         MultiSelectModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TabViewModule
     ],
     providers: [
         ConfirmationService

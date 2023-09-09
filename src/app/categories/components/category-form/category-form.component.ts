@@ -83,9 +83,9 @@ export class CategoryFormComponent {
             return;
         }
 
-/*        this.formType === FormType.Create ?
+        this.formType === FormType.Create ?
             this.createCategory() :
-            this.editCategory();*/
+            this.editCategory();
     }
 
     /**

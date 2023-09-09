@@ -75,9 +75,24 @@ export class ResearchProblemFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
-            title: new FormControl('', Validators.required),
-            description: new FormControl('', Validators.required),
-            academicCommunityContributionPossibility: new FormControl('', Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            academicCommunityContributionPossibility: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             categories: new FormControl('', Validators.required)
         });
     }
@@ -88,10 +103,26 @@ export class ResearchProblemFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
-            title: new FormControl(this.researchProblem.title, Validators.required),
-            description: new FormControl(this.researchProblem.description, Validators.required),
-            academicCommunityContributionPossibility:
-                new FormControl(this.researchProblem.academicCommunityContributionPossibility, Validators.required),
+            title: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.researchProblem.title.translations.hr, Validators.required),
+                    en: new FormControl(this.researchProblem.title.translations.en, Validators.required)
+                })
+            }),
+            description: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.researchProblem.description.translations.hr, Validators.required),
+                    en: new FormControl(this.researchProblem.description.translations.en, Validators.required)
+                })
+            }),
+            academicCommunityContributionPossibility: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.hr,
+                        Validators.required),
+                    en: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.en,
+                        Validators.required)
+                })
+            }),
             categories: new FormControl(this.researchProblem.categories.map(x => x.id), Validators.required)
         });
     }
