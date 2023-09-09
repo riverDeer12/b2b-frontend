@@ -80,14 +80,39 @@ export class JobOffersFormComponent {
                     en: new FormControl('', Validators.required)
                 })
             }),
+            experience: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            education: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            specialConditions: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            applyMethod: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
+            additional: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl('', Validators.required),
+                    en: new FormControl('', Validators.required)
+                })
+            }),
             location: new FormControl('', Validators.required),
             deadline: new FormControl('', Validators.required),
-            experience: new FormControl('', Validators.required),
-            education: new FormControl('', Validators.required),
-            specialConditions: new FormControl('', Validators.required),
             duration: new FormControl('', Validators.required),
-            applyMethod: new FormControl('', Validators.required),
-            additional: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required)
         })
     }
@@ -110,14 +135,39 @@ export class JobOffersFormComponent {
                     en: new FormControl(this.jobOffer.name.translations.en, Validators.required)
                 })
             }),
+            experience: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.jobOffer.experience.translations.hr, Validators.required),
+                    en: new FormControl(this.jobOffer.experience.translations.en, Validators.required)
+                })
+            }),
+            education: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.jobOffer.education.translations.hr, Validators.required),
+                    en: new FormControl(this.jobOffer.education.translations.en, Validators.required)
+                })
+            }),
+            specialConditions: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.jobOffer.specialConditions.translations.hr, Validators.required),
+                    en: new FormControl(this.jobOffer.specialConditions.translations.en, Validators.required)
+                })
+            }),
+            applyMethod: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.jobOffer.applyMethod.translations.hr, Validators.required),
+                    en: new FormControl(this.jobOffer.applyMethod.translations.en, Validators.required)
+                })
+            }),
+            additional: this.fb.group({
+                translations: this.fb.group({
+                    hr: new FormControl(this.jobOffer.additional.translations.hr, Validators.required),
+                    en: new FormControl(this.jobOffer.additional.translations.en, Validators.required)
+                })
+            }),
             location: new FormControl(this.jobOffer.location, Validators.required),
             deadline: new FormControl(new Date(this.jobOffer.deadline), Validators.required),
-            experience: new FormControl(this.jobOffer.experience, Validators.required),
-            education: new FormControl(this.jobOffer.education, Validators.required),
-            specialConditions: new FormControl(this.jobOffer.specialConditions, Validators.required),
             duration: new FormControl(this.jobOffer.duration, Validators.required),
-            applyMethod: new FormControl(this.jobOffer.applyMethod, Validators.required),
-            additional: new FormControl(this.jobOffer.additional, Validators.required),
             categories: new FormControl(this.jobOffer.categories.map(x => x.id), Validators.required)
         })
     }
