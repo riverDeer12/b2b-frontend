@@ -26,6 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         CommonModule,
+        SubscribersComponentsModule,
         TranslateModule.forChild({
             defaultLanguage: 'hr',
             loader: {
@@ -35,8 +36,7 @@ export function createTranslateLoader(http: HttpClient) {
             },
             isolate: true
         }),
-        SharedModule,
-        SubscribersComponentsModule
+        SharedModule
     ],
     exports: [
         SubscribersHomeComponent,

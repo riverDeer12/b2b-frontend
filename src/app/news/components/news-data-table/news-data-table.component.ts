@@ -3,6 +3,9 @@ import {News} from '../../core/models/news';
 import {Table} from 'primeng/table';
 import {ConfirmationService} from 'primeng/api';
 import {Router} from '@angular/router';
+import {NotificationType} from "../../../shared/enums/notification-type";
+import {NewsService} from "../../core/services/news.service";
+import {NotificationService} from "../../../shared/services/notification.service";
 
 @Component({
     selector: 'news-data-table',
@@ -16,6 +19,8 @@ export class NewsDataTableComponent {
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
+                private notificationService: NotificationService,
+                private newsService: NewsService,
                 private router: Router) {
     }
 
@@ -63,10 +68,23 @@ export class NewsDataTableComponent {
      * Trigger popup to
      * confirm deleting selected
      * news item from data table.
+     *
+     * @param newsId - news identifier
      */
-    confirmDelete(): void {
+    confirmDelete(newsId: string): void {
         this.confirmationService.confirm({
-            key: 'confirmDeleteDialog'
+            key: 'confirmDeleteDialog',
+            accept: () => {
+                this.newsService.deleteNews(newsId).subscribe((response: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'successfully-deleted');
+                        this.data = this.data.filter((x => x.id !== newsId));
+                    },
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'error-deleting');
+                    })
+            },
         });
     }
 }
