@@ -25,6 +25,8 @@
     "password": "Password",
     "email": "Email",
     "website": "Website",
+    "search": "Search",
+    "read-more": "Read More",
     "name": {
         "default": "Name",
         "required": "Category name is required."

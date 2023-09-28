@@ -1,3 +1,8 @@
 {
-    "name": "John"
+    "name": "John",
+    "rimap": "Regional innovation matchmaking platform",
+    "rimap-description": "Regional digital innovation platform for the transfer of knowledge between the academic community and the economy with the aim of developing the innovation ecosystem in the region. We invite you to register, enter your development proposals/needs for human resources/competencies/research equipment and search the profiles of other users and contact them about possible cooperation by clicking on \"Contact\".",
+    "join-us": "Join Us",
+    "search-registered-subjects": "Search through registered subjects",
+    "news-useful-info": "News and Useful Information"
 }

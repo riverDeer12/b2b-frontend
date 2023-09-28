@@ -1,3 +1,8 @@
 {
-    "name": "Ivan"
+    "name": "Ivan",
+    "rimap": "Regional innovation matchmaking platform",
+    "rimap-description": "Regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva s ciljem razvoja inovacijskog ekosustava u regiji. Pozivamo Vas da se registrirate, unesete Vaše razvojne prijedloge/potrebe za ljudskim resursima/kompetencije/istraživačku opremu te pretražite profile ostalih korisnika i kontaktirate ih o mogućoj suradnji klikom na \"Kontaktiraj\".",
+    "join-us": "Pridruži se",
+    "search-registered-subjects": "Pretražite registrirane subjekte",
+    "news-useful-info": "Novosti i korisne informacije"
 }

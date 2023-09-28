@@ -18,6 +18,8 @@
     "description": "Opis",
     "createdAt": "Vrijeme kreiranja",
     "updatedAt": "Zadnje ažuriranje",
+    "search": "Pretraga",
+    "read-more": "Pročitaj više",
     "name": {
         "default": "Naziv",
         "required": "Naziv kategorije je obavezan podatak."
