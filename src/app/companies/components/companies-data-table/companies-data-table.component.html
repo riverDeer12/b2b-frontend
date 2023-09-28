@@ -36,16 +36,9 @@
             <th style="width:10%"></th>
             <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'name' | translate }}
+                    {{ 'name.default' | translate }}
                     <p-sortIcon field="name"></p-sortIcon>
                     <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
-                </div>
-            </th>
-            <th pSortableColumn="title" style="width:20%">
-                <div class="flex justify-content-between align-items-center">
-                    {{ 'address' | translate }}
-                    <p-sortIcon field="address"></p-sortIcon>
-                    <p-columnFilter type="text" field="address" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="title" style="width:20%">
@@ -53,6 +46,13 @@
                     {{ 'email' | translate }}
                     <p-sortIcon field="email"></p-sortIcon>
                     <p-columnFilter type="text" field="email" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="title" style="width:20%">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'address' | translate }}
+                    <p-sortIcon field="address"></p-sortIcon>
+                    <p-columnFilter type="text" field="address" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="numberOfViews" style="width:20%">
@@ -77,10 +77,10 @@
                 {{company.name}}
             </td>
             <td>
-                {{company.address}}
+                {{company.email}}
             </td>
             <td>
-                {{company.email}}
+                {{company.address}}
             </td>
             <td>
                 {{company.numberOfViews}}
