@@ -16,4 +16,8 @@ export class ResearchProblem {
     categories!: Category[];
     parentEntityType!: EntityType;
     parentEntityId!: string;
+
+    getTitle(): string {
+        return this.title.translations.HR;
+    }
 }

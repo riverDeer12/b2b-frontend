@@ -4,25 +4,25 @@ import {ResearchProblem} from '../../../research-problems/core/models/research-p
 import {LocalizedProperty} from "../../../shared/models/localized-property";
 
 export class Company {
-  id!: string;
-  isActive!: boolean;
-  logo!: string;
-  username!: string;
-  password!: string;
-  name!: string;
-  description!: LocalizedProperty;
-  address!: string;
-  email!: string;
-  taxCode!: string;
-  website!: string;
-  projects!: LocalizedProperty;
-  categoryTags!: string;
-  numberOfEmployees!: number;
-  numberOfViews!: number;
-  createdAt!: Date;
-  updatedAt!: Date;
-  categories!: Category[];
-  newsletterCategories!: Category[];
-  researchProblems!: ResearchProblem[];
-  jobOffers!: JobOffer[];
+    id!: string;
+    isActive!: boolean;
+    logo!: string;
+    username!: string;
+    password!: string;
+    name!: string;
+    description!: LocalizedProperty;
+    address!: string;
+    email!: string;
+    taxCode!: string;
+    website!: string;
+    projects!: LocalizedProperty;
+    categoryTags!: string;
+    numberOfEmployees!: number;
+    numberOfViews!: number;
+    createdAt!: Date;
+    updatedAt!: Date;
+    categories!: Category[];
+    newsletterCategories!: Category[];
+    researchProblems!: ResearchProblem[];
+    jobOffers!: JobOffer[];
 }

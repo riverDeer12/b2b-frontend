@@ -4,6 +4,6 @@ export class LocalizedProperty {
 }
 
 class TranslationsObject {
-    hr!: string;
+    HR!: string;
     en!: string;
 }

@@ -92,14 +92,14 @@ export class EquipmentFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.equipment.title.translations.hr, Validators.required),
+                    hr: new FormControl(this.equipment.title.translations.HR, Validators.required),
                     en: new FormControl(this.equipment.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.equipment.description.translations.hr, Validators.required),
-                    en: new FormControl(this.equipment.description.translations.hr, Validators.required)
+                    hr: new FormControl(this.equipment.description.translations.HR, Validators.required),
+                    en: new FormControl(this.equipment.description.translations.HR, Validators.required)
                 })
             }),
             categories: new FormControl(this.equipment.categories.map(x => x.id), Validators.required)

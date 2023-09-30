@@ -105,19 +105,19 @@ export class ResearchProblemFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.researchProblem.title.translations.hr, Validators.required),
+                    hr: new FormControl(this.researchProblem.title.translations.HR, Validators.required),
                     en: new FormControl(this.researchProblem.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.researchProblem.description.translations.hr, Validators.required),
+                    hr: new FormControl(this.researchProblem.description.translations.HR, Validators.required),
                     en: new FormControl(this.researchProblem.description.translations.en, Validators.required)
                 })
             }),
             academicCommunityContributionPossibility: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.hr,
+                    hr: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.HR,
                         Validators.required),
                     en: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.en,
                         Validators.required)

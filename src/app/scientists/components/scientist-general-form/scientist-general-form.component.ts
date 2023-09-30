@@ -94,31 +94,31 @@ export class ScientistGeneralFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.title.translations.hr, Validators.required),
+                    hr: new FormControl(this.scientist.title.translations.HR, Validators.required),
                     en: new FormControl(this.scientist.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.description.translations.hr, Validators.required),
+                    hr: new FormControl(this.scientist.description.translations.HR, Validators.required),
                     en: new FormControl(this.scientist.description.translations.en, Validators.required)
                 })
             }),
             employmentCollege: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.employmentCollege.translations.hr, Validators.required),
+                    hr: new FormControl(this.scientist.employmentCollege.translations.HR, Validators.required),
                     en: new FormControl(this.scientist.employmentCollege.translations.en, Validators.required)
                 })
             }),
             functions: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.functions.translations.hr, Validators.required),
+                    hr: new FormControl(this.scientist.functions.translations.HR, Validators.required),
                     en: new FormControl(this.scientist.functions.translations.en, Validators.required)
                 })
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.projects.translations.hr, Validators.required),
+                    hr: new FormControl(this.scientist.projects.translations.HR, Validators.required),
                     en: new FormControl(this.scientist.projects.translations.en, Validators.required)
                 })
             }),

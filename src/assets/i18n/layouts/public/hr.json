@@ -4,5 +4,20 @@
     "rimap-description": "Regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva s ciljem razvoja inovacijskog ekosustava u regiji. Pozivamo Vas da se registrirate, unesete Vaše razvojne prijedloge/potrebe za ljudskim resursima/kompetencije/istraživačku opremu te pretražite profile ostalih korisnika i kontaktirate ih o mogućoj suradnji klikom na \"Kontaktiraj\".",
     "join-us": "Pridruži se",
     "search-registered-subjects": "Pretražite registrirane subjekte",
-    "news-useful-info": "Novosti i korisne informacije"
+    "news-useful-info": "Novosti i korisne informacije",
+    "view-all-news": "Pogledaj sve novosti",
+    "latest-company-research-problems": "Novi razvojni prijedlozi tvrtki",
+    "view-all-company-research-problems": "Pogledaj sve razvojne prijedloge tvrtki",
+    "latest-organization-research-problems": "Novi razvoni prijedlozi javnog sektora",
+    "view-all-organization-research-problems": "Pogledaj sve razvojne prijedloge javnog sektora",
+    "new-companies": "Nove registrirane tvrtke",
+    "view-all-companies": "Pogledaj sve tvrtke",
+    "new-scientists": "Novi registrirani istraživači",
+    "view-all-scientists": "Pogledaj sve istraživače",
+    "new-organizations": "Nove registrirane javne organizacije",
+    "view-all-organizations": "Pogledaj sve organizacije",
+    "new-equipment": "Nova istraživačka oprema",
+    "view-all-equipment": "Pogledaj svu istraživačju opremu",
+    "new-job-offers": "Nove potrebe za ljudskim resursima",
+    "view-all-job-offers": "Pogledaj sve potrebe za ljudskim resursima"
 }

@@ -22,26 +22,26 @@ export class LatestService {
     }
 
     getLatestNews = () =>
-        this.http.get<News[]>(this.publicUrl + 'news/getLatest/' + this.entityCardsNumber);
+        this.http.get<News[]>(this.publicUrl + 'news/latest/' + this.entityCardsNumber);
 
     getScientists = () =>
-        this.http.get<Scientist[]>(this.publicUrl + 'scientists/getLatest/' + this.entityCardsNumber);
+        this.http.get<Scientist[]>(this.publicUrl + 'scientists/latest/' + this.entityCardsNumber);
 
     getEquipment = () =>
-        this.http.get<Equipment[]>(this.publicUrl + 'scientists/getLatestEquipment/' + this.entityCardsNumber);
+        this.http.get<Equipment[]>(this.publicUrl + 'scientists/equipment/latest/' + this.entityCardsNumber);
 
     getCompanies = () =>
-        this.http.get<Company[]>(this.publicUrl + 'companies/getLatest/' + this.entityCardsNumber);
+        this.http.get<Company[]>(this.publicUrl + 'companies/latest/' + this.entityCardsNumber);
 
     getJobOffers = () =>
-        this.http.get<JobOffer[]>(this.publicUrl + 'companies/getLatestJobOffers/' + this.entityCardsNumber);
+        this.http.get<JobOffer[]>(this.publicUrl + 'companies/job-offers/' + this.entityCardsNumber);
 
     getCompanyResearchProblems = () =>
-        this.http.get<ResearchProblem[]>(this.publicUrl + 'companies/getLatestResearchProblems/' + this.entityCardsNumber);
+        this.http.get<ResearchProblem[]>(this.publicUrl + 'companies/research-problems/latest/' + this.entityCardsNumber);
 
     getOrganizations = () =>
-        this.http.get<Organization[]>(this.publicUrl + 'publicOrganizations/getLatest/' + this.entityCardsNumber);
+        this.http.get<Organization[]>(this.publicUrl + 'public-organizations/latest/' + this.entityCardsNumber);
 
     getOrganizationResearchProblems = () =>
-        this.http.get<ResearchProblem[]>(this.publicUrl + 'publicOrganizations/getLatestResearchProblems/' + this.entityCardsNumber);
+        this.http.get<ResearchProblem[]>(this.publicUrl + 'public-organizations/research-problems/latest/' + this.entityCardsNumber);
 }

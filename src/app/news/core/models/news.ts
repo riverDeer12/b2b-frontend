@@ -7,4 +7,9 @@ export class News {
     createdAt!: Date;
     updatedAt!: Date;
     numberOfViews!: number;
+    featuredImage!: string;
+
+    getTitle(): string {
+        return this.title.translations.HR;
+    }
 }

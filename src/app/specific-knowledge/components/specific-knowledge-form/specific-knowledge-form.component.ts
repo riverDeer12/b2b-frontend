@@ -93,14 +93,14 @@ export class SpecificKnowledgeFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.specificKnowledge.title.translations.hr, Validators.required),
+                    hr: new FormControl(this.specificKnowledge.title.translations.HR, Validators.required),
                     en: new FormControl(this.specificKnowledge.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.specificKnowledge.description.translations.hr, Validators.required),
-                    en: new FormControl(this.specificKnowledge.description.translations.hr, Validators.required)
+                    hr: new FormControl(this.specificKnowledge.description.translations.HR, Validators.required),
+                    en: new FormControl(this.specificKnowledge.description.translations.HR, Validators.required)
                 })
             }),
             categories: new FormControl(this.specificKnowledge.categories.map(x => x.id), Validators.required),

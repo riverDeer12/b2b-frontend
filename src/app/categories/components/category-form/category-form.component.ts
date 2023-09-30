@@ -63,7 +63,7 @@ export class CategoryFormComponent {
         this.form = this.fb.group({
             name: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.category.name.translations.hr, Validators.required),
+                    hr: new FormControl(this.category.name.translations.HR, Validators.required),
                     en: new FormControl(this.category.name.translations.en, Validators.required)
                 })
             })

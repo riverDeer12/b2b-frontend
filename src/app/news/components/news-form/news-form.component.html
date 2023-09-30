@@ -6,27 +6,27 @@
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
                         <div class="field field col-md-12" formGroupName="title">
                     <span class="p-float-label" formGroupName="translations">
-                        <input class="{{validationService.getInputClass(form, 'hr', 'required',
+                        <input class="{{validationService.getInputClass(form, 'HR', 'required',
                         'title.translations')}}"
                                pInputText type="text" id="title-hr" aria-describedby="title-input"
                                formControlName="hr"/>
                         <label for="title-hr">{{ 'title.default' | translate }}</label>
                     </span>
                             <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
                            'title.translations')"
                                    id="title-input-hr">{{ 'title.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
                                 <p-editor placeholder="{{ 'content.default' | translate }}"
-                                          class="{{validationService.getInputClass(form, 'hr', 'required',
+                                          class="{{validationService.getInputClass(form, 'HR', 'required',
                         'content.translations')}}"
                                           id="content-hr" aria-describedby="content-input" formControlName="hr">
                                 </p-editor>
                             </span>
                             <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
                            'content.translations')"
                                    id="content-input-hr">{{ 'content.required' | translate }}</small>
                         </div>

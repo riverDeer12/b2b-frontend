@@ -7,21 +7,21 @@
 
                         <div class="field field col-md-12" formGroupName="title">
                             <span class="p-float-label" formGroupName="translations">
-                                <input class="{{validationService.getInputClass(form, 'hr', 'required',
+                                <input class="{{validationService.getInputClass(form, 'HR', 'required',
                                 'title.translations')}}"
                                        aria-describedby="title-input-hr"
                                        pInputText type="text" id="title-hr" formControlName="hr"/>
                                 <label for="title-hr">{{ 'education-title.default' | translate }}</label>
                             </span>
                             <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'title.translations')"
                                    id="title-input-hr">{{ 'education-title.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="description">
                             <span class="p-float-label" formGroupName="translations">
                                 <textarea
-                                    class="{{validationService.getInputClass(form, 'hr', 'required',
+                                    class="{{validationService.getInputClass(form, 'HR', 'required',
                                     'description.translations')}}"
                                     aria-describedby="description-input-hr"
                                     pInputText
@@ -30,45 +30,45 @@
                                 <label for="description-hr">{{ 'description.default' | translate }}</label>
                             </span>
                             <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'description.translations')"
                                    id="description-input-hr">{{ 'description.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="employmentCollege">
                             <span class="p-float-label" formGroupName="translations">
-                                <input class="{{validationService.getInputClass(form, 'hr',
+                                <input class="{{validationService.getInputClass(form, 'HR',
                                  'required', 'employmentCollege.translations')}}"
                                        aria-describedby="employmentCollege-input-hr"
                                        pInputText type="text" id="employmentCollege-hr" formControlName="hr"/>
                                 <label for="employmentCollege-hr">{{ 'employment-college.default' | translate }}</label>
                             </span>
                             <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'employmentCollege.translations')"
                                    id="employmentCollege-input-hr">{{ 'employment-college.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="functions">
                             <span class="p-float-label" formGroupName="translations">
-                                <input class="{{validationService.getInputClass(form, 'hr', 'required',
+                                <input class="{{validationService.getInputClass(form, 'HR', 'required',
                                 'functions.translations')}}"
                                aria-describedby="functions-input-hr"
                                pInputText type="text" id="functions-hr" formControlName="hr"/>
                                 <label for="functions-hr">{{ 'functions.default' | translate }}</label>
                             </span>
                         <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'functions.translations')"
                                    id="functions-input-hr">{{ 'functions.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="projects">
                             <span class="p-float-label" formGroupName="translations">
-                                <input class="{{validationService.getInputClass(form, 'hr', 'required', 'projects.translations')}}"
+                                <input class="{{validationService.getInputClass(form, 'HR', 'required', 'projects.translations')}}"
                                        aria-describedby="projects-input-hr"
                                        pInputText type="text" id="projects-hr" formControlName="hr"/>
                                 <label for="projects-hr">{{ 'projects.default' | translate }}</label>
                             </span>
                             <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required', 'projects.translations')"
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required', 'projects.translations')"
                                    id="projects-input-hr">{{ 'projects.required' | translate }}</small>
                         </div>
                     </p-tabPanel>

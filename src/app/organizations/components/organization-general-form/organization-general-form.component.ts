@@ -72,7 +72,7 @@ export class OrganizationGeneralFormComponent {
             name: new FormControl(this.organization.name, Validators.required),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.organization.description.translations.hr, Validators.required),
+                    hr: new FormControl(this.organization.description.translations.HR, Validators.required),
                     en: new FormControl(this.organization.description.translations.en, Validators.required)
                 })
             }),

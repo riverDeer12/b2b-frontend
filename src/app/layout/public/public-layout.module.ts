@@ -13,6 +13,7 @@ import {LandingComponent} from './pages/landing/landing.component';
 import {StyleClassModule} from 'primeng/styleclass';
 import {DividerModule} from 'primeng/divider';
 import {SimpleEntityCardComponent} from './components/simple-entity-card/simple-entity-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 /**
@@ -32,11 +33,13 @@ export function createTranslateLoader(http: HttpBackend) {
         PublicLayoutComponent,
         LandingComponent,
         NavbarComponent,
-        SimpleEntityCardComponent
+        SimpleEntityCardComponent,
+        FooterComponent
     ],
     exports: [
         NavbarComponent,
-        SimpleEntityCardComponent
+        SimpleEntityCardComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,

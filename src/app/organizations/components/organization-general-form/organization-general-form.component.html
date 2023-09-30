@@ -16,7 +16,7 @@
                 <div class="field field col-md-12" formGroupName="description">
                 <span class="p-float-label" formGroupName="translations">
                     <textarea
-                        class="{{validationService.getInputClass(form, 'hr', 'required',
+                        class="{{validationService.getInputClass(form, 'HR', 'required',
                         'description.translations')}}"
                         pInputText
                         aria-describedby="description-input"
@@ -27,7 +27,7 @@
                 <label for="description-hr">{{ 'description.default' | translate }}</label>
                 </span>
                     <small class="p-error"
-                           *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                           *ngIf="validationService.hasErrors(form, 'HR', 'required',
                            'description.translations')"
                            id="description-input-hr">{{ 'description.required' | translate }}</small>
                 </div>

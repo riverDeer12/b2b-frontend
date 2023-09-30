@@ -7,7 +7,7 @@
                         <div class="field field col-md-12" formGroupName="name">
                             <span class="p-float-label" formGroupName="translations">
                                 <input
-                                    class="{{validationService.getInputClass(form, 'hr', 'required',
+                                    class="{{validationService.getInputClass(form, 'HR', 'required',
                                     'name.translations')}}"
                                     pInputText type="text" id="name-hr"
                                     aria-describedby="name-input"
@@ -15,7 +15,7 @@
                                 <label for="name-hr">{{ 'name.default' | translate }}</label>
                             </span>
                             <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'hr', 'required',
+                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'name.translations')"
                                    id="name-input-hr">{{ 'name.required' | translate }}</small>
                         </div>

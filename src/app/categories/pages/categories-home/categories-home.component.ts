@@ -5,7 +5,7 @@ import {News} from '../../../news/core/models/news';
 import {Category} from '../../core/models/category';
 
 @Component({
-  selector: 'equipment-home',
+  selector: 'categories-home',
   templateUrl: './categories-home.component.html',
   styleUrls: ['./categories-home.component.css']
 })
