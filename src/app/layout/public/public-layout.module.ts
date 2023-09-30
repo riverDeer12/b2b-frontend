@@ -13,7 +13,8 @@ import {LandingComponent} from './pages/landing/landing.component';
 import {StyleClassModule} from 'primeng/styleclass';
 import {DividerModule} from 'primeng/divider';
 import {SimpleEntityCardComponent} from './components/simple-entity-card/simple-entity-card.component';
-import { FooterComponent } from './components/footer/footer.component';
+import {PublicFooterComponent} from './components/public-footer/public-footer.component';
+import {LatestComponent} from './components/latest/latest.component';
 
 
 /**
@@ -34,12 +35,14 @@ export function createTranslateLoader(http: HttpBackend) {
         LandingComponent,
         NavbarComponent,
         SimpleEntityCardComponent,
-        FooterComponent
+        PublicFooterComponent,
+        LatestComponent
     ],
     exports: [
         NavbarComponent,
         SimpleEntityCardComponent,
-        FooterComponent
+        PublicFooterComponent,
+        LatestComponent
     ],
     imports: [
         CommonModule,

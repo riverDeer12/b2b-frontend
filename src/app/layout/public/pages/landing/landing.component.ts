@@ -11,7 +11,8 @@ import {Equipment} from "../../../../equipment/core/models/equipment";
 
 @Component({
     selector: 'app-landing',
-    templateUrl: './landing.component.html'
+    templateUrl: './landing.component.html',
+    styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit{
     latestNews!: News[];

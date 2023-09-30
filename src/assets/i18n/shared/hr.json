@@ -20,6 +20,7 @@
     "updatedAt": "Zadnje ažuriranje",
     "search": "Pretraga",
     "read-more": "Pročitaj više",
+    "contact": "Kontakt",
     "name": {
         "default": "Naziv",
         "required": "Naziv kategorije je obavezan podatak."

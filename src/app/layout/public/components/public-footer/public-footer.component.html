@@ -1,0 +1,62 @@
+<div class="py-4 px-4 mx-0 mt-8 lg:mx-8" style="background-color: #0c386c">
+    <div class="grid justify-content-between">
+        <div class="col-12 md:col-5">
+            <a (click)="router.navigate(['/pages/landing'], {fragment: 'home'})"
+               class="flex align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
+                <img
+                    src="assets/layout/images/rimap-logo-bijeli.svg"
+                    alt="Sakai Logo" height="50" class="mr-4 lg:mr-4">
+                <img
+                    src="assets/layout/images/uniri-logo.svg"
+                    alt="Sakai Logo" height="30" class="mr-0 lg:mr-2">
+            </a>
+            <p class="mt-3 text-white text-center md:text-left">
+                {{'powered-by' | translate}}
+                <a href="https://uniri.hr/" target="_blank" class="uniri-link">UNIRI</a>.
+            </p>
+            <p class="text-white text-center md:text-left"><b>{{'contact' | translate}}: </b>
+                <a href="mailto:rimap@uniri.hr">{{'rimap-email' | translate}}</a>
+            </p>
+            <p class="text-bluegray-600 text-center md:text-left">© {{currentYear}}
+                , {{'all-rights-reserved' | translate}}</p>
+        </div>
+
+        <div class="col-12 md:col-7 lg:col-7">
+            <div class="grid text-center md:text-left">
+                <div class="col-12 md:col-6">
+                    <h4 class="font-medium text-2xl line-height-3 mb-3">{{ 'useful-links' | translate }}</h4>
+                    <a [routerLink]="['']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'home' | translate}}</a>
+                    <a [routerLink]="['about-us']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'about-us' | translate}}</a>
+                    <a [routerLink]="['/news']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'news' | translate}}</a>
+                    <a [routerLink]="['/login']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'login' | translate}}</a>
+                    <a [routerLink]="['/registration']"
+                       class="line-height-3 text-xl block cursor-pointer">{{'registration' | translate}}</a>
+                </div>
+
+                <div class="col-12 md:col-6 mt-4 md:mt-0">
+                    <h4 class="font-medium text-2xl line-height-3 mb-3">{{ 'entities-view' | translate }}</h4>
+                    <a [routerLink]="['companies']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'companies' | translate}}</a>
+                    <a [routerLink]="['scientists']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'scientists' | translate}}</a>
+                    <a [routerLink]="['organizations']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'organizations' | translate}}</a>
+                    <a [routerLink]="['companies/research-problems']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'company-research-problems' | translate}}</a>
+                    <a [routerLink]="['organizations/research-problems']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'organization-research-problems' | translate}}</a>
+                    <a [routerLink]="['companies/job-offers']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'company-job-offers' | translate}}</a>
+                    <a [routerLink]="['scientists/equipment']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'scientist-equipment' | translate}}</a>
+                    <a [routerLink]="['scientists/specific-knowledge']"
+                       class="line-height-3 text-xl block cursor-pointer mb-2">{{'scientist-specific-knowledge' | translate}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

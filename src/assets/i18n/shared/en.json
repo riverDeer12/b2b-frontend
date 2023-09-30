@@ -27,6 +27,7 @@
     "website": "Website",
     "search": "Search",
     "read-more": "Read More",
+    "contact": "Contact",
     "name": {
         "default": "Name",
         "required": "Category name is required."

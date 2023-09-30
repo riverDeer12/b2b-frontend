@@ -1,11 +1,12 @@
 <div
-    class="flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-primary
+    class="flex flex-column border-200 pricing-card cursor-pointer border-1 hover:border-primary
     transition-duration-300 transition-all"
-    style="border-radius:10px; height: 100%">
+    style="height: 100%; border-radius: 10px; background-color: #ffffff;">
     <img class="h-10" style="border-top-left-radius: 10px; border-top-right-radius: 10px" [src]="imageLink" alt="free">
-    <h4 class="text-900 text-left my-5 p-3">{{ title }}</h4>
+    <h4 class="text-600 text-left p-3">{{ title }}</h4>
     <button pButton pRipple label="{{'read-more' | translate}}"
-            class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 text-white">
+            class="block border-none font-light line-height-2 bg-blue-500 text-white">
         <a [href]="detailsLink"></a>
     </button>
 </div>
+
