@@ -15,6 +15,10 @@ import {DividerModule} from 'primeng/divider';
 import {SimpleEntityCardComponent} from './components/simple-entity-card/simple-entity-card.component';
 import {PublicFooterComponent} from './components/public-footer/public-footer.component';
 import {LatestComponent} from './components/latest/latest.component';
+import { PublicCompaniesComponent } from './pages/public-companies/public-companies.component';
+import { EntityCardComponent } from './components/entity-card/entity-card.component';
+import {DataViewModule} from "primeng/dataview";
+import {InputTextModule} from "primeng/inputtext";
 
 
 /**
@@ -36,13 +40,16 @@ export function createTranslateLoader(http: HttpBackend) {
         NavbarComponent,
         SimpleEntityCardComponent,
         PublicFooterComponent,
-        LatestComponent
+        LatestComponent,
+        PublicCompaniesComponent,
+        EntityCardComponent
     ],
     exports: [
         NavbarComponent,
         SimpleEntityCardComponent,
         PublicFooterComponent,
-        LatestComponent
+        LatestComponent,
+        PublicCompaniesComponent
     ],
     imports: [
         CommonModule,
@@ -58,7 +65,9 @@ export function createTranslateLoader(http: HttpBackend) {
         RippleModule,
         ButtonModule,
         StyleClassModule,
-        DividerModule
+        DividerModule,
+        DataViewModule,
+        InputTextModule
     ]
 })
 export class PublicLayoutModule {

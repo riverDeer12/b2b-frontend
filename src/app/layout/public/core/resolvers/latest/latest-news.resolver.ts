@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
-import {LatestService} from '../services/latest.service';
-import {News} from '../../../../news/core/models/news';
+import {LatestService} from '../../services/latest.service';
+import {News} from '../../../../../news/core/models/news';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,6 @@ export class LatestNewsResolver implements Resolve<News[]> {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<News[]> {
-        return this.latestService.getLatestNews();
+        return this.latestService.getNews();
     }
 }

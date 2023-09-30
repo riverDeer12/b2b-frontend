@@ -21,7 +21,7 @@ export class LatestService {
     constructor(private http: HttpClient) {
     }
 
-    getLatestNews = () =>
+    getNews = () =>
         this.http.get<News[]>(this.publicUrl + 'news/latest/' + this.entityCardsNumber);
 
     getScientists = () =>

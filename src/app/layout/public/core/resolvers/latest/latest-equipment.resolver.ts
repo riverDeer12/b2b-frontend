@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
-import {LatestService} from '../services/latest.service';
-import {Equipment} from '../../../../equipment/core/models/equipment';
+import {LatestService} from '../../services/latest.service';
+import {Equipment} from '../../../../../equipment/core/models/equipment';
 
 @Injectable({
     providedIn: 'root'
