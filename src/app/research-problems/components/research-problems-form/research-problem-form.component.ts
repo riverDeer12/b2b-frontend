@@ -77,20 +77,20 @@ export class ResearchProblemFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             academicCommunityContributionPossibility: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             categories: new FormControl('', Validators.required)
@@ -105,21 +105,21 @@ export class ResearchProblemFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.researchProblem.title.translations.HR, Validators.required),
-                    en: new FormControl(this.researchProblem.title.translations.en, Validators.required)
+                    HR: new FormControl(this.researchProblem.title.translations.HR, Validators.required),
+                    EN: new FormControl(this.researchProblem.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.researchProblem.description.translations.HR, Validators.required),
-                    en: new FormControl(this.researchProblem.description.translations.en, Validators.required)
+                    HR: new FormControl(this.researchProblem.description.translations.HR, Validators.required),
+                    EN: new FormControl(this.researchProblem.description.translations.en, Validators.required)
                 })
             }),
             academicCommunityContributionPossibility: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.HR,
+                    HR: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.HR,
                         Validators.required),
-                    en: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.en,
+                    EN: new FormControl(this.researchProblem.academicCommunityContributionPossibility.translations.en,
                         Validators.required)
                 })
             }),

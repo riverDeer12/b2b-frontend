@@ -49,32 +49,32 @@ export class ScientistGeneralFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             employmentCollege: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             functions: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             firstname: new FormControl('', Validators.required),
@@ -94,32 +94,32 @@ export class ScientistGeneralFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.title.translations.HR, Validators.required),
-                    en: new FormControl(this.scientist.title.translations.en, Validators.required)
+                    HR: new FormControl(this.scientist.title.translations.HR, Validators.required),
+                    EN: new FormControl(this.scientist.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.description.translations.HR, Validators.required),
-                    en: new FormControl(this.scientist.description.translations.en, Validators.required)
+                    HR: new FormControl(this.scientist.description.translations.HR, Validators.required),
+                    EN: new FormControl(this.scientist.description.translations.en, Validators.required)
                 })
             }),
             employmentCollege: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.employmentCollege.translations.HR, Validators.required),
-                    en: new FormControl(this.scientist.employmentCollege.translations.en, Validators.required)
+                    HR: new FormControl(this.scientist.employmentCollege.translations.HR, Validators.required),
+                    EN: new FormControl(this.scientist.employmentCollege.translations.en, Validators.required)
                 })
             }),
             functions: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.functions.translations.HR, Validators.required),
-                    en: new FormControl(this.scientist.functions.translations.en, Validators.required)
+                    HR: new FormControl(this.scientist.functions.translations.HR, Validators.required),
+                    EN: new FormControl(this.scientist.functions.translations.en, Validators.required)
                 })
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.scientist.projects.translations.HR, Validators.required),
-                    en: new FormControl(this.scientist.projects.translations.en, Validators.required)
+                    HR: new FormControl(this.scientist.projects.translations.HR, Validators.required),
+                    EN: new FormControl(this.scientist.projects.translations.en, Validators.required)
                 })
             }),
             firstname: new FormControl(this.scientist.firstname, Validators.required),

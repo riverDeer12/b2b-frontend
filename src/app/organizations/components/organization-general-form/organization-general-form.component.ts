@@ -50,8 +50,8 @@ export class OrganizationGeneralFormComponent {
             name: new FormControl('', Validators.required),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             address: new FormControl('', Validators.required),
@@ -72,8 +72,8 @@ export class OrganizationGeneralFormComponent {
             name: new FormControl(this.organization.name, Validators.required),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.organization.description.translations.HR, Validators.required),
-                    en: new FormControl(this.organization.description.translations.en, Validators.required)
+                    HR: new FormControl(this.organization.description.translations.HR, Validators.required),
+                    EN: new FormControl(this.organization.description.translations.en, Validators.required)
                 })
             }),
             address: new FormControl(this.organization.address, Validators.required),

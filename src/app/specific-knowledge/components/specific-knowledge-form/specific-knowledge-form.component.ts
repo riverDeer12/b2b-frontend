@@ -71,14 +71,14 @@ export class SpecificKnowledgeFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             categories: new FormControl('', Validators.required),
@@ -93,14 +93,14 @@ export class SpecificKnowledgeFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.specificKnowledge.title.translations.HR, Validators.required),
-                    en: new FormControl(this.specificKnowledge.title.translations.en, Validators.required)
+                    HR: new FormControl(this.specificKnowledge.title.translations.HR, Validators.required),
+                    EN: new FormControl(this.specificKnowledge.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.specificKnowledge.description.translations.HR, Validators.required),
-                    en: new FormControl(this.specificKnowledge.description.translations.HR, Validators.required)
+                    HR: new FormControl(this.specificKnowledge.description.translations.HR, Validators.required),
+                    EN: new FormControl(this.specificKnowledge.description.translations.HR, Validators.required)
                 })
             }),
             categories: new FormControl(this.specificKnowledge.categories.map(x => x.id), Validators.required),

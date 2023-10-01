@@ -70,14 +70,14 @@ export class EquipmentFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl('', Validators.required),
-                    en: new FormControl('', Validators.required)
+                    HR: new FormControl('', Validators.required),
+                    EN: new FormControl('', Validators.required)
                 })
             }),
             categories: new FormControl('', Validators.required)
@@ -92,14 +92,14 @@ export class EquipmentFormComponent {
         this.form = this.fb.group({
             title: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.equipment.title.translations.HR, Validators.required),
-                    en: new FormControl(this.equipment.title.translations.en, Validators.required)
+                    HR: new FormControl(this.equipment.title.translations.HR, Validators.required),
+                    EN: new FormControl(this.equipment.title.translations.en, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
-                    hr: new FormControl(this.equipment.description.translations.HR, Validators.required),
-                    en: new FormControl(this.equipment.description.translations.HR, Validators.required)
+                    HR: new FormControl(this.equipment.description.translations.HR, Validators.required),
+                    EN: new FormControl(this.equipment.description.translations.HR, Validators.required)
                 })
             }),
             categories: new FormControl(this.equipment.categories.map(x => x.id), Validators.required)
