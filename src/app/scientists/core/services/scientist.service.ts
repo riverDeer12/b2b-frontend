@@ -13,7 +13,7 @@ import {environment} from 'src/environments/environment';
 })
 export class ScientistService {
 
-    scientistsUrl = environment.apiUrl + '/scientists';
+    scientistsUrl = environment.apiUrl + '/scientists/';
 
     constructor(private http: HttpClient) {
     }
@@ -21,7 +21,7 @@ export class ScientistService {
     /**
      * Get all scientists created on platform.
      */
-    getScientists = () => this.http.get<Scientist[]>(this.scientistsUrl + '/get');
+    getScientists = () => this.http.get<Scientist[]>(this.scientistsUrl);
 
     /**
      * Get selected scientist
@@ -29,14 +29,14 @@ export class ScientistService {
      *
      * @param id scientist entity identifier.
      */
-    getScientist = (id: string) => this.http.get<Scientist>(this.scientistsUrl + '/get/' + id);
+    getScientist = (id: string) => this.http.get<Scientist>(this.scientistsUrl + id);
 
     /**
      * Create scientist with form data.
      *
      * @param postData form data for creating scientist.
      */
-    createScientist = (postData: Scientist) => this.http.post(this.scientistsUrl + '/create', postData);
+    createScientist = (postData: Scientist) => this.http.post(this.scientistsUrl, postData);
 
     /**
      * Update existing scientist
@@ -46,7 +46,7 @@ export class ScientistService {
      * @param updateData form data for updating existing scientist.
      */
     editScientist = (id: string, updateData: Scientist) =>
-        this.http.post(this.scientistsUrl + '/edit/' + id, updateData);
+        this.http.put(this.scientistsUrl + id, updateData);
 
     /**
      * Delete selected scientist
@@ -54,7 +54,7 @@ export class ScientistService {
      *
      * @param id scientist entity identifier.
      */
-    deleteScientist = (id: string) => this.http.post(this.scientistsUrl + '/delete/' + id, null);
+    deleteScientist = (id: string) => this.http.delete(this.scientistsUrl + id);
 
     /**
      * Check if there is already scientist
@@ -63,7 +63,7 @@ export class ScientistService {
      * @param username value for check.
      */
     checkScientistUsername = (username: string) =>
-        this.http.post(this.scientistsUrl + '/checkUsername', {
+        this.http.post(this.scientistsUrl + 'check-username', {
             username
         });
 

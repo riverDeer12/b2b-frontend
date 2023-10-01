@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
     styleUrls: ['./public-layout.component.css']
 })
 export class PublicLayoutComponent implements OnInit {
+    title!: string;
 
     constructor(public layoutService: LayoutService,
                 public router: Router) {

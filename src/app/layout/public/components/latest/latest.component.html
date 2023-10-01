@@ -3,8 +3,8 @@
         <h2 class="text-900 font-normal mb-2">{{'news-useful-info' | translate}}</h2>
     </div>
 
-    <div class="grid justify-content-between mt-8 md:mt-0">
-        <div class="col-12 lg:col-4 p-0 md:p-3" *ngFor="let news of latestNews">
+    <div class="grid justify-content-center mt-8 md:mt-0">
+        <div class="col-12 lg:col-3 p-0 md:p-3" *ngFor="let news of latestNews">
             <simple-entity-card [title]="news.getTitle()" detailsLink=""
                                 [imageLink]="news.featuredImage"></simple-entity-card>
         </div>
@@ -23,8 +23,8 @@
         <h2 class="text-900 font-normal mb-2">{{'latest-company-research-problems' | translate}}</h2>
     </div>
 
-    <div class="grid justify-content-between mt-8 md:mt-0">
-        <div class="col-12 lg:col-4 p-0 md:p-3" *ngFor="let researchProblem of latestCompanyResearchProblems">
+    <div class="grid mt-8 justify-content-center md:mt-0">
+        <div class="col-12 lg:col-3 p-0 md:p-3" *ngFor="let researchProblem of latestCompanyResearchProblems">
             <simple-entity-card [title]="researchProblem.getTitle()" detailsLink=""
                                 [imageLink]="researchProblem.image"></simple-entity-card>
         </div>
@@ -43,8 +43,8 @@
         <h2 class="text-900 font-normal mb-2">{{'latest-company-research-problems' | translate}}</h2>
     </div>
 
-    <div class="grid justify-content-between mt-8 md:mt-0">
-        <div class="col-12 lg:col-4 p-0 md:p-3" *ngFor="let researchProblem of latestOrganizationResearchProblems">
+    <div class="grid mt-8 justify-content-center md:mt-0">
+        <div class="col-12 lg:col-3 p-0 md:p-3" *ngFor="let researchProblem of latestOrganizationResearchProblems">
             <simple-entity-card [title]="researchProblem.getTitle()" detailsLink=""
                                 [imageLink]="researchProblem.image"></simple-entity-card>
         </div>

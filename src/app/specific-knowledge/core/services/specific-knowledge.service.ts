@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Subject} from 'rxjs/internal/Subject';
 import {environment} from 'src/environments/environment';
 import {SpecificKnowledge} from '../models/specific-knowledge';
+import {EntityType} from "../../../auth/core/enums/entity-type";
 
 /**
  * Service that provides communication between
@@ -15,7 +16,7 @@ import {SpecificKnowledge} from '../models/specific-knowledge';
 })
 export class SpecificKnowledgeService {
 
-    endpointUrl = environment.apiUrl + '/scientists/';
+    scientistSpecificKnowledgeEndpoint = environment.apiUrl + '/scientists/';
 
     specificKnowledge = new Subject<SpecificKnowledge>();
 
@@ -27,7 +28,7 @@ export class SpecificKnowledgeService {
      * data stored on platform.
      */
     getAllSpecificKnowledge = () =>
-        this.http.get<SpecificKnowledge[]>(this.endpointUrl + '/getSpecificKnowledge');
+        this.http.get<SpecificKnowledge[]>(environment.apiUrl + EntityType.SpecificKnowledge);
 
     /**
      * Get specific knowledge
@@ -36,7 +37,8 @@ export class SpecificKnowledgeService {
      * @param scientistId id of selected scientist.
      */
     getSpecificKnowledgeList = (scientistId: string) =>
-        this.http.get<SpecificKnowledge[]>(this.endpointUrl + scientistId + '/getSpecificKnowledge');
+        this.http.get<SpecificKnowledge[]>(this.scientistSpecificKnowledgeEndpoint + scientistId + '/'
+            + EntityType.SpecificKnowledge);
 
     /**
      * Get data for selected
@@ -46,8 +48,8 @@ export class SpecificKnowledgeService {
      * @param specificKnowledgeId id of selected specific knowledge.
      */
     getSpecificKnowledge = (scientistId: string, specificKnowledgeId: string) =>
-        this.http.get<SpecificKnowledge>(this.endpointUrl + scientistId + '/getSpecificKnowledge/'
-            + specificKnowledgeId);
+        this.http.get<SpecificKnowledge>(this.scientistSpecificKnowledgeEndpoint + scientistId + '/' +
+            +EntityType.SpecificKnowledge + '/' + specificKnowledgeId);
 
     /**
      * Create new specific knowledge
@@ -57,8 +59,8 @@ export class SpecificKnowledgeService {
      * @param data data for creating specific knowledge.
      */
     createSpecificKnowledge = (scientistId: string, data: SpecificKnowledge) =>
-        this.http.post<SpecificKnowledge>(this.endpointUrl + scientistId
-            + '/createSpecificKnowledge', data);
+        this.http.post<SpecificKnowledge>(this.scientistSpecificKnowledgeEndpoint + scientistId
+            + '/' + EntityType.SpecificKnowledge, data);
 
     /**
      * Update existing scientist's specific
@@ -69,8 +71,8 @@ export class SpecificKnowledgeService {
      * @param data data for creating specific knowledge.
      */
     editSpecificKnowledge = (scientistId: string, specificKnowledgeId: string, data: SpecificKnowledge) =>
-        this.http.post<SpecificKnowledge>(this.endpointUrl + scientistId + '/editSpecificKnowledge/'
-            + specificKnowledgeId, data);
+        this.http.put<SpecificKnowledge>(this.scientistSpecificKnowledgeEndpoint + scientistId + '/'
+            + EntityType.SpecificKnowledge + '/' + specificKnowledgeId, data);
 
     /**
      * Delete existing scientist's specific
@@ -80,8 +82,8 @@ export class SpecificKnowledgeService {
      * @param specificKnowledgeId id of selected specific knowledge.
      */
     deleteSpecificKnowledge = (scientistId: string, specificKnowledgeId: string) =>
-        this.http.post(this.endpointUrl + scientistId + '/deleteSpecificKnowledge/'
-            + specificKnowledgeId, null);
+        this.http.delete(this.scientistSpecificKnowledgeEndpoint + scientistId + '/'
+            + EntityType.SpecificKnowledge + '/' + specificKnowledgeId);
 
     /**
      * Push new specific knowledge

@@ -13,7 +13,7 @@ import {environment} from 'src/environments/environment';
 })
 export class OrganizationService {
 
-    organizationsUrl = environment.apiUrl + '/publicOrganizations';
+    organizationsUrl = environment.apiUrl + '/public-organizations/';
 
     constructor(private http: HttpClient) {
     }
@@ -21,7 +21,7 @@ export class OrganizationService {
     /**
      * Get all created organizations.
      */
-    getOrganizations = () => this.http.get<Organization[]>(this.organizationsUrl + '/get');
+    getOrganizations = () => this.http.get<Organization[]>(this.organizationsUrl);
 
     /**
      * Get selected organization entity.
@@ -29,7 +29,7 @@ export class OrganizationService {
      * @param id organization entity identifier.
      */
     getOrganization = (id: string) =>
-        this.http.get<Organization>(this.organizationsUrl + '/get/' + id);
+        this.http.get<Organization>(this.organizationsUrl + id);
 
     /**
      * Create organization with
@@ -38,7 +38,7 @@ export class OrganizationService {
      * @param postData form data for creating organization.
      */
     createOrganization = (postData: Organization) =>
-        this.http.post(this.organizationsUrl + '/create', postData);
+        this.http.post(this.organizationsUrl, postData);
 
     /**
      * Update organization data with
@@ -48,7 +48,7 @@ export class OrganizationService {
      * @param updateData form data for updating existing organization.
      */
     editOrganization = (id: string, updateData: Organization) =>
-        this.http.post(this.organizationsUrl + '/edit/' + id, updateData);
+        this.http.put(this.organizationsUrl + id, updateData);
 
     /**
      * Check if there is organization
@@ -57,7 +57,7 @@ export class OrganizationService {
      * @param username value for check.
      */
     checkOrganizationUsername = (username: string) =>
-        this.http.post(this.organizationsUrl + '/checkUsername', {
+        this.http.post(this.organizationsUrl + 'check-username', {
         username
     });
 
@@ -68,6 +68,6 @@ export class OrganizationService {
      * @param id organization entity identifier.
      */
     deleteOrganization = (id: string) =>
-        this.http.post(this.organizationsUrl + '/deleteCompany/' + id, null);
+        this.http.delete(this.organizationsUrl + id);
 
 }

@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {Observable, Subject} from 'rxjs';
 import {Equipment} from '../models/equipment';
+import {EntityType} from "../../../auth/core/enums/entity-type";
 
 /**
  * Service that provides communication between
@@ -14,7 +15,7 @@ import {Equipment} from '../models/equipment';
 })
 export class EquipmentService {
 
-    equipmentUrl = environment.apiUrl + '/scientists/';
+    scientistsEquipmentUrl = environment.apiUrl + '/scientists/';
 
     equipment = new Subject<Equipment>();
 
@@ -25,7 +26,7 @@ export class EquipmentService {
      * Get equipment entities
      * created on platform.
      */
-    getAllEquipment = () => this.http.get<Equipment[]>(this.equipmentUrl + '/getEquipment');
+    getAllEquipment = () => this.http.get<Equipment[]>(environment.apiUrl + '/' + EntityType.Equipment);
 
     /**
      * Get equipment for selected
@@ -34,7 +35,7 @@ export class EquipmentService {
      * @param scientistId id of related scientist entity.
      */
     getEquipment = (scientistId: string) =>
-        this.http.get<Equipment[]>(this.equipmentUrl + scientistId + '/getEquipment');
+        this.http.get<Equipment[]>(this.scientistsEquipmentUrl + scientistId + '/' + EntityType.Equipment);
 
     /**
      * Find equipment entity by identifier.
@@ -43,7 +44,8 @@ export class EquipmentService {
      * @param id equipment entity identifier.
      */
     getSingleEquipment = (scientistId: string, id: string) =>
-        this.http.get<Equipment>(this.equipmentUrl + scientistId + '/getEquipment/' + id);
+        this.http.get<Equipment>(this.scientistsEquipmentUrl + scientistId + '/'
+            + EntityType.Equipment + '/' + id);
 
     /**
      * Create equipment entity with
@@ -53,7 +55,8 @@ export class EquipmentService {
      * @param postData form data for creating equipment.
      */
     createEquipment = (scientistId: string, postData: Equipment) =>
-        this.http.post<Equipment>(this.equipmentUrl + scientistId + '/createEquipment', postData);
+        this.http.post<Equipment>(this.scientistsEquipmentUrl + scientistId + '/'
+            + EntityType.Equipment, postData);
 
     /**
      * Update existing equipment data
@@ -64,7 +67,8 @@ export class EquipmentService {
      * @param updateData form data for updating existing equipment.
      */
     editEquipment = (scientistId: string, id: string, updateData: Equipment) =>
-        this.http.post<Equipment>(this.equipmentUrl + scientistId + '/editEquipment/' + id, updateData);
+        this.http.put<Equipment>(this.scientistsEquipmentUrl + scientistId + '/'
+            + EntityType.Equipment + '/' + id, updateData);
 
     /**
      * Delete equipment entity.
@@ -73,7 +77,7 @@ export class EquipmentService {
      * @param id equipment entity identifier.
      */
     deleteEquipment = (scientistId: string, id: string) =>
-        this.http.post(this.equipmentUrl + scientistId + '/deleteEquipment/' + id, null);
+        this.http.delete(this.scientistsEquipmentUrl + scientistId + '/' + EntityType.Equipment + '/' + id);
 
     /**
      * Push new equipment

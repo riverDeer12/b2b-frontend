@@ -13,7 +13,7 @@ import {environment} from 'src/environments/environment';
 })
 export class CategoryService {
 
-    endpointUrl = environment.apiUrl + '/categories';
+    endpointUrl = environment.apiUrl + '/categories/';
 
     constructor(private http: HttpClient) {
     }
@@ -21,14 +21,14 @@ export class CategoryService {
     /**
      * Get all created categories.
      */
-    getCategories = () => this.http.get<Category[]>(this.endpointUrl + '/get');
+    getCategories = () => this.http.get<Category[]>(this.endpointUrl);
 
     /**
      * Get selected category by identifier.
      *
      * @param id category entity identifier.
      */
-    getCategory = (id: string) => this.http.get<Category>(this.endpointUrl + '/get/' + id);
+    getCategory = (id: string) => this.http.get<Category>(this.endpointUrl + id);
 
     /**
      * Create category with name
@@ -36,7 +36,7 @@ export class CategoryService {
      *
      * @param categoryName name value.
      */
-    createCategory = (categoryName: string) => this.http.post(this.endpointUrl + '/create', categoryName);
+    createCategory = (categoryName: string) => this.http.post(this.endpointUrl, categoryName);
 
     /**
      * Update category with name
@@ -46,12 +46,12 @@ export class CategoryService {
      * @param categoryName name value.
      */
     editCategory = (id: string, categoryName: string) =>
-        this.http.post(this.endpointUrl + '/edit/' + id, categoryName);
+        this.http.put(this.endpointUrl + id, categoryName);
 
     /**
      * Delete selected category by identifier.
      *
      * @param id category entity identifier.
      */
-    deleteCategory = (id: string) => this.http.post(this.endpointUrl + '/delete/' + id, null);
+    deleteCategory = (id: string) => this.http.delete(this.endpointUrl +  id);
 }

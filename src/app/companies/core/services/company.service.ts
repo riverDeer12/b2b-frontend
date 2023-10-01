@@ -23,21 +23,21 @@ export class CompanyService {
      * Get list of all companies registered
      * on platform.
      */
-    getCompanies = () => this.http.get<Company[]>(this.companiesUrl + 'get');
+    getCompanies = () => this.http.get<Company[]>(this.companiesUrl);
 
     /**
      * Get company by id.
      *
      * @param id company identifier.
      */
-    getCompany = (id: string) => this.http.get<Company>(this.companiesUrl + 'get/' + id);
+    getCompany = (id: string) => this.http.get<Company>(this.companiesUrl + id);
 
     /**
      * Create new company with form data.
      *
      * @param postData data for creating new company.
      */
-    createCompany = (postData: Company) => this.http.post(this.companiesUrl + 'create', postData);
+    createCompany = (postData: Company) => this.http.post(this.companiesUrl, postData);
 
     /**
      * Update existing company
@@ -46,7 +46,7 @@ export class CompanyService {
      * @param id identifier of existing company.
      * @param updateData data for updating company.
      */
-    editCompany = (id: string, updateData: Company) => this.http.post(this.companiesUrl + 'edit/' + id, updateData);
+    editCompany = (id: string, updateData: Company) => this.http.put(this.companiesUrl + id, updateData);
 
     /**
      * Check if there is
@@ -54,7 +54,7 @@ export class CompanyService {
      *
      * @param username value for check.
      */
-    checkCompanyUsername = (username: string) => this.http.post(this.companiesUrl + 'checkUsername', {
+    checkCompanyUsername = (username: string) => this.http.post(this.companiesUrl + 'check-username', {
         username
     });
 
@@ -63,5 +63,5 @@ export class CompanyService {
      *
      * @param id company identifier.
      */
-    deleteCompany = (id: string) =>this.http.post(this.companiesUrl + 'delete/' + id, null);
+    deleteCompany = (id: string) =>this.http.delete(this.companiesUrl + id);
 }

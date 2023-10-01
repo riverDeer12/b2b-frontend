@@ -13,7 +13,7 @@ import {News} from '../models/news';
 })
 export class NewsService {
 
-    newsUrl = environment.apiUrl + '/news';
+    newsUrl = environment.apiUrl + '/news/';
 
     constructor(private http: HttpClient) {
     }
@@ -21,22 +21,14 @@ export class NewsService {
     /**
      * Get news created on platform.
      */
-    getNewsList = () => this.http.get<News[]>(this.newsUrl + '/get');
-
-    /**
-     * Get latest news report.
-     *
-     * @param numberOfPosts number of wanted posts for
-     * latest news report.
-     */
-    getLatestNews = (numberOfPosts: number) => this.http.get<News[]>(this.newsUrl + '/getLatest/' + numberOfPosts);
+    getNewsList = () => this.http.get<News[]>(this.newsUrl);
 
     /**
      * Get news entity by identifier.
      *
      * @param id news entity identifier.
      */
-    getNews = (id: string) => this.http.get<News>(this.newsUrl + '/get/' + id);
+    getNews = (id: string) => this.http.get<News>(this.newsUrl + id);
 
     /**
      * Sending form data to create
@@ -44,7 +36,7 @@ export class NewsService {
      *
      * @param postData data for creating new news entity.
      */
-    createNews = (postData: News) => this.http.post(this.newsUrl + '/create', postData);
+    createNews = (postData: News) => this.http.post(this.newsUrl, postData);
 
     /**
      * Sending form data to update
@@ -53,12 +45,12 @@ export class NewsService {
      * @param id news entity identifier.
      * @param updateData for updating existing news entity.
      */
-    editNews = (id: string, updateData: News) => this.http.post(this.newsUrl + '/edit/' + id, updateData);
+    editNews = (id: string, updateData: News) => this.http.put(this.newsUrl  + id, updateData);
 
     /**
      * Delete news entity by identifier.
      *
      * @param id news entity identifier.
      */
-    deleteNews = (id: string) => this.http.post(this.newsUrl + '/delete/' + id, null);
+    deleteNews = (id: string) => this.http.delete(this.newsUrl + id);
 }

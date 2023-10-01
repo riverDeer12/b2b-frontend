@@ -29,7 +29,7 @@ export class AuthService {
      * entity type for user login.
      *
      * @param authUnit credentials (auth data).
-     * @param entityType type of entity that wants to login.
+     * @param entityType type of entity that wants to log in.
      */
     loginUser(authUnit: AuthUnit, entityType: EntityType): Observable<object> {
         switch (entityType) {
@@ -50,7 +50,7 @@ export class AuthService {
      *
      * @param authUnit auth data.
      */
-    loginCompany = (authUnit: AuthUnit) => this.http.post(this.authUrl + '/login/company', authUnit);
+    loginCompany = (authUnit: AuthUnit) => this.http.post(this.authUrl + '/companies/login', authUnit);
 
 
     /**
@@ -59,7 +59,7 @@ export class AuthService {
      *
      * @param authUnit auth data.
      */
-    loginScientist = (authUnit: AuthUnit) => this.http.post(this.authUrl + '/login/scientist', authUnit);
+    loginScientist = (authUnit: AuthUnit) => this.http.post(this.authUrl + '/scientists/login', authUnit);
 
 
     /**
@@ -69,18 +69,18 @@ export class AuthService {
      * @param authUnit auth data.
      */
     loginPublicOrganization = (authUnit: AuthUnit) => this.http.post(
-        this.authUrl + '/login/publicOrganization',
+        this.authUrl + '/public-organizations/login',
         authUnit
     );
 
     /**
      * Send request for getting auth
-     * credentials (JWT token) for superadmin.)
+     * credentials (JWT token) for superadmin.
      *
      * @param authSuperAdmin auth data for super admin login.
      */
     loginSuperAdmin = (authSuperAdmin: AuthUnit) =>
-        this.http.post(this.authUrl + '/login/superadmin', authSuperAdmin);
+        this.http.post(this.authUrl + '/super-admins/login', authSuperAdmin);
 
     /**
      * Check if user is still

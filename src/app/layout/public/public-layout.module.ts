@@ -15,10 +15,18 @@ import {DividerModule} from 'primeng/divider';
 import {SimpleEntityCardComponent} from './components/simple-entity-card/simple-entity-card.component';
 import {PublicFooterComponent} from './components/public-footer/public-footer.component';
 import {LatestComponent} from './components/latest/latest.component';
-import { PublicCompaniesComponent } from './pages/public-companies/public-companies.component';
-import { EntityCardComponent } from './components/entity-card/entity-card.component';
+import {PublicCompaniesComponent} from './pages/public-companies/public-companies.component';
+import {EntityCardComponent} from './components/entity-card/entity-card.component';
 import {DataViewModule} from "primeng/dataview";
 import {InputTextModule} from "primeng/inputtext";
+import {PublicOrganizationsComponent} from './pages/public-organizations/public-organizations.component';
+import {PublicNewsComponent} from './pages/public-news/public-news.component';
+import {PublicScientistsComponent} from './pages/public-scientists/public-scientists.component';
+import {MainSearchComponent} from './pages/main-search/main-search.component';
+import {AboutUsComponent} from './pages/about-us/about-us.component';
+import {RegistrationComponent} from './components/registration/registration.component';
+import { PublicHeaderComponent } from './components/public-header/public-header.component';
+import {CardModule} from "primeng/card";
 
 
 /**
@@ -42,14 +50,29 @@ export function createTranslateLoader(http: HttpBackend) {
         PublicFooterComponent,
         LatestComponent,
         PublicCompaniesComponent,
-        EntityCardComponent
+        EntityCardComponent,
+        PublicOrganizationsComponent,
+        PublicNewsComponent,
+        PublicScientistsComponent,
+        MainSearchComponent,
+        AboutUsComponent,
+        RegistrationComponent,
+        PublicHeaderComponent
     ],
     exports: [
         NavbarComponent,
         SimpleEntityCardComponent,
         PublicFooterComponent,
         LatestComponent,
-        PublicCompaniesComponent
+        PublicCompaniesComponent,
+        EntityCardComponent,
+        PublicOrganizationsComponent,
+        PublicNewsComponent,
+        PublicScientistsComponent,
+        MainSearchComponent,
+        AboutUsComponent,
+        RegistrationComponent,
+        PublicHeaderComponent
     ],
     imports: [
         CommonModule,
@@ -67,7 +90,8 @@ export function createTranslateLoader(http: HttpBackend) {
         StyleClassModule,
         DividerModule,
         DataViewModule,
-        InputTextModule
+        InputTextModule,
+        CardModule
     ]
 })
 export class PublicLayoutModule {

@@ -1,4 +1,4 @@
-<div
+<!--<div
     class="flex flex-column border-200 pricing-card cursor-pointer border-1 hover:border-primary
     transition-duration-300 transition-all"
     style="height: 100%; border-radius: 10px; background-color: #ffffff;">
@@ -8,5 +8,15 @@
             class="block border-none font-light line-height-2 bg-blue-500 text-white">
         <a [href]="detailsLink"></a>
     </button>
-</div>
+</div>-->
+
+<p-card [header]="title">
+    <ng-template pTemplate="header">
+        <img alt="Card" [src]="imageLink"/>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
+        text-white simple-entity-card-button" label="{{'read-more' | translate}}"></button>
+    </ng-template>
+</p-card>
 

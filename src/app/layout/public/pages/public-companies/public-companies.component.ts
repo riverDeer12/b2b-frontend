@@ -50,7 +50,7 @@ export class PublicCompaniesComponent {
 
         console.log(filteredValue);
 
-        this.filteredCompanies = this.companies.filter(x => x.name.includes(filteredValue));
+        this.filteredCompanies = this.companies.filter(x => x.name.toLocaleLowerCase().includes(filteredValue));
 
         console.log(this.filteredCompanies);
     }

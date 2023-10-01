@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {JobOffer} from '../models/job-offer';
+import {EntityType} from "../../../auth/core/enums/entity-type";
 
 /**
  * Service that provides communication between
@@ -14,7 +15,7 @@ import {JobOffer} from '../models/job-offer';
 })
 export class JobOfferService {
 
-    jobOfferUrl = environment.apiUrl + '/companies/';
+    companyJobOffersEndpoint = environment.apiUrl + '/companies/';
 
     jobOffer = new Subject<JobOffer>();
 
@@ -24,7 +25,7 @@ export class JobOfferService {
     /**
      * Get all created job offers.
      */
-    getAllJobOffers = () => this.http.get<JobOffer[]>(this.jobOfferUrl + '/getJobOffers');
+    getAllJobOffers = () => this.http.get<JobOffer[]>(environment.apiUrl + '/' + EntityType.JobOffer);
 
     /**
      * Get job offers for selected company.
@@ -32,7 +33,7 @@ export class JobOfferService {
      * @param companyId id of related company.
      */
     getJobOffers = (companyId: string) =>
-        this.http.get<JobOffer[]>(this.jobOfferUrl + companyId + '/getJobOffers');
+        this.http.get<JobOffer[]>(this.companyJobOffersEndpoint + companyId + '/' + EntityType.JobOffer);
 
     /**
      * Get job offer entity by
@@ -42,7 +43,7 @@ export class JobOfferService {
      * @param id job offer entity identifier.
      */
     getJobOffer = (companyId: string, id: string) =>
-        this.http.get<JobOffer>(this.jobOfferUrl + companyId + '/getJobOffer/' + id);
+        this.http.get<JobOffer>(this.companyJobOffersEndpoint + companyId + '/' + EntityType.JobOffer + '/' + id);
 
     /**
      * Create job offer with form data.
@@ -51,7 +52,7 @@ export class JobOfferService {
      * @param postData form data for creating job offer.
      */
     createJobOffer = (companyId: string, postData: JobOffer) =>
-        this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/createJobOffer', postData);
+        this.http.post<JobOffer>(this.companyJobOffersEndpoint + companyId + '/' + EntityType.JobOffer, postData);
 
     /**
      *
@@ -60,7 +61,8 @@ export class JobOfferService {
      * @param updateData form data for updating existing job offer.
      */
     editJobOffer = (companyId: string, id: string, updateData: JobOffer) =>
-        this.http.post<JobOffer>(this.jobOfferUrl + companyId + '/editJobOffer/' + id, updateData);
+        this.http.put<JobOffer>(this.companyJobOffersEndpoint + companyId + '/'
+            + EntityType.JobOffer + '/' + id, updateData);
 
     /**
      * Delete job offer by identifier.
@@ -69,7 +71,7 @@ export class JobOfferService {
      * @param id job offer entity identifier.
      */
     deleteJobOffer = (companyId: string, id: string) =>
-        this.http.post(this.jobOfferUrl + companyId + '/deleteJobOffer/' + id, null);
+        this.http.delete(this.companyJobOffersEndpoint + companyId + '/' + EntityType.JobOffer + '/' + id);
 
 
     /**

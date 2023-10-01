@@ -36,7 +36,7 @@ export class ResearchProblemService {
      */
     getResearchProblems = (parentType: EntityType, parentId: string) =>
         this.http.get<ResearchProblem[]>(environment.apiUrl + '/' + parentType + '/' + parentId +
-            '/getResearchProblems');
+            '/' + EntityType.ResearchProblem);
 
     /**
      * Get research problem for
@@ -48,7 +48,7 @@ export class ResearchProblemService {
      */
     getResearchProblem = (parentType: EntityType, parentId: string, id: string) =>
         this.http.get<ResearchProblem>(environment.apiUrl + '/' + parentType + '/' + parentId +
-            '/getResearchProblem/' + id);
+            '/' + EntityType.ResearchProblem + "/" + id);
 
     /**
      * Create research problem
@@ -60,7 +60,7 @@ export class ResearchProblemService {
      */
     createResearchProblem = (parentType: EntityType, parentId: string, postData: ResearchProblem) =>
         this.http.post<ResearchProblem>(environment.apiUrl + '/' + parentType + '/' + parentId +
-            '/createResearchProblem', postData);
+            '/' + EntityType.ResearchProblem, postData);
 
     /**
      * Update existing research problem
@@ -72,8 +72,8 @@ export class ResearchProblemService {
      * @param updateData form data for updating existing research problem.
      */
     editResearchProblem = (parentType: EntityType, parentId: string, id: string, updateData: ResearchProblem) =>
-        this.http.post<ResearchProblem>(environment.apiUrl + '/' + parentType + '/' + parentId +
-            '/editResearchProblem/' + id, updateData);
+        this.http.put<ResearchProblem>(environment.apiUrl + '/' + parentType + '/' + parentId +
+            '/' + EntityType.ResearchProblem + "/" + id, updateData);
 
     /**
      * Delete research problem for
@@ -84,8 +84,8 @@ export class ResearchProblemService {
      * @param id research problem entity identifier.
      */
     deleteResearchProblem = (parentType: EntityType, parentId: string, id: string) =>
-        this.http.post(environment.apiUrl + '/' + parentType + '/' + parentId +
-            '/deleteResearchProblem/' + id, null);
+        this.http.delete(environment.apiUrl + '/' + parentType + '/' + parentId +
+            '/' + EntityType.ResearchProblem + "/" + id);
 
     /**
      * Push new research problem

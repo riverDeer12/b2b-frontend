@@ -40,7 +40,7 @@ a:hover {
 
 
 #hero {
-    background: #0c386c url('assets/layout/images/header-01.jpg') 50% 50% no-repeat;
+    background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
 }
 
 button:hover {
@@ -50,4 +50,19 @@ button:hover {
 
 button {
     color: var(--primary-color) !important;
+}
+
+.p-card .p-card-title{
+    padding: 1rem !important;
+}
+
+.p-card .p-card-body{
+    padding: 0 !important;
+}
+
+.simple-entity-card-button{
+    width: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-weight: 900 !important;
 }
