@@ -21,6 +21,7 @@ import {MainSearchComponent} from "./pages/main-search/main-search.component";
 import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import {LoginUserComponent} from "../../auth/pages/login-user/login-user.component";
 import {RegistrationComponent} from "./components/registration/registration.component";
+import {EntityDetailsComponent} from "./pages/entity-details/entity-details.component";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -83,4 +84,8 @@ export const PublicLayoutRoutes: Routes = [
             news: PublicNewsResolver,
         }
     },
+    {
+        path: 'details',
+        component: EntityDetailsComponent
+    }
 ]
