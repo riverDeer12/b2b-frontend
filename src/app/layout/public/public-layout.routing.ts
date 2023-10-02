@@ -86,6 +86,7 @@ export const PublicLayoutRoutes: Routes = [
     },
     {
         path: 'details',
-        component: EntityDetailsComponent
+        component: EntityDetailsComponent,
+
     }
 ]
