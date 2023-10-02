@@ -74,7 +74,8 @@ export function createTranslateLoader(http: HttpBackend) {
         MainSearchComponent,
         AboutUsComponent,
         RegistrationComponent,
-        PublicHeaderComponent
+        PublicHeaderComponent,
+        EntityDetailsComponent
     ],
     imports: [
         CommonModule,
