@@ -27,6 +27,7 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {RegistrationComponent} from './components/registration/registration.component';
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
 import {CardModule} from "primeng/card";
+import { EntityDetailsComponent } from './pages/entity-details/entity-details.component';
 
 
 /**
@@ -57,7 +58,8 @@ export function createTranslateLoader(http: HttpBackend) {
         MainSearchComponent,
         AboutUsComponent,
         RegistrationComponent,
-        PublicHeaderComponent
+        PublicHeaderComponent,
+        EntityDetailsComponent
     ],
     exports: [
         NavbarComponent,
