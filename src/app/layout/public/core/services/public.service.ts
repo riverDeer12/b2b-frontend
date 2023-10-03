@@ -19,17 +19,26 @@ export class PublicService {
     constructor(private http: HttpClient) {
     }
 
-    getNews = () =>
+    getNewsList = () =>
         this.http.get<News[]>(this.publicUrl + 'news');
+
+    getNews = (id: string) =>
+        this.http.get<News>(this.publicUrl + 'news/' + id);
 
     getScientists = () =>
         this.http.get<Scientist[]>(this.publicUrl + 'scientists');
+
+    getScientist = (id: string) =>
+        this.http.get<Scientist>(this.publicUrl + 'scientists/' +  id);
 
     getEquipment = () =>
         this.http.get<Equipment[]>(this.publicUrl + 'scientists/equipment');
 
     getCompanies = () =>
         this.http.get<Company[]>(this.publicUrl + 'companies');
+
+    getCompany = (id: string) =>
+        this.http.get<Company>(this.publicUrl + 'companies/' +  id);
 
     getJobOffers = () =>
         this.http.get<JobOffer[]>(this.publicUrl + 'companies/job-offers');
@@ -39,6 +48,9 @@ export class PublicService {
 
     getOrganizations = () =>
         this.http.get<Organization[]>(this.publicUrl + 'public-organizations');
+
+    getOrganization = (id: string) =>
+        this.http.get<Organization>(this.publicUrl + 'public-organizations/' +  id);
 
     getOrganizationResearchProblems = () =>
         this.http.get<ResearchProblem[]>(this.publicUrl + 'public-organizations/research-problems');

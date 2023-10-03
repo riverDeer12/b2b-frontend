@@ -27,7 +27,11 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {RegistrationComponent} from './components/registration/registration.component';
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
 import {CardModule} from "primeng/card";
-import { EntityDetailsComponent } from './pages/entity-details/entity-details.component';
+import { OrganizationDetailsComponent } from './components/details/organization-details/organization-details.component';
+import { ScientistDetailsComponent } from './components/details/scientist-details/scientist-details.component';
+import { CompanyDetailsComponent } from './components/details/company-details/company-details.component';
+import { NewsDetailsComponent } from './components/details/news-details/news-details.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 
 /**
@@ -59,7 +63,11 @@ export function createTranslateLoader(http: HttpBackend) {
         AboutUsComponent,
         RegistrationComponent,
         PublicHeaderComponent,
-        EntityDetailsComponent
+        OrganizationDetailsComponent,
+        ScientistDetailsComponent,
+        CompanyDetailsComponent,
+        NewsDetailsComponent,
+        MyProfileComponent
     ],
     exports: [
         NavbarComponent,
@@ -75,7 +83,11 @@ export function createTranslateLoader(http: HttpBackend) {
         AboutUsComponent,
         RegistrationComponent,
         PublicHeaderComponent,
-        EntityDetailsComponent
+        OrganizationDetailsComponent,
+        ScientistDetailsComponent,
+        CompanyDetailsComponent,
+        NewsDetailsComponent,
+        MyProfileComponent
     ],
     imports: [
         CommonModule,

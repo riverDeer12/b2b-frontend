@@ -1,26 +1,25 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@angular/router';
-import {Company} from '../../../../../companies/core/models/company';
 import {Observable} from 'rxjs';
 import {PublicService} from "../../services/public.service";
-import {News} from "../../../../../news/core/models/news";
+import {Organization} from "../../../../../organizations/core/models/organization";
 
 @Injectable({
     providedIn: 'root'
 })
-export class PublicNewsResolver implements Resolve<News> {
+export class PublicOrganizationResolver implements Resolve<Organization> {
 
     constructor(private publicService: PublicService, private router: Router) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<News> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Organization> {
         const routeId = route.paramMap.get('id');
 
         if (!routeId) {
-            this.router.navigateByUrl('/news').then();
-            return new Observable<News>();
+            this.router.navigateByUrl('/organizations').then();
+            return new Observable<Organization>();
         }
 
-        return this.publicService.getNews(routeId);
+        return this.publicService.getOrganization(routeId);
     }
 }

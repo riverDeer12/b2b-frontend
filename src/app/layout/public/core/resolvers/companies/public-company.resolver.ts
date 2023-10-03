@@ -3,24 +3,23 @@ import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@ang
 import {Company} from '../../../../../companies/core/models/company';
 import {Observable} from 'rxjs';
 import {PublicService} from "../../services/public.service";
-import {News} from "../../../../../news/core/models/news";
 
 @Injectable({
     providedIn: 'root'
 })
-export class PublicNewsResolver implements Resolve<News> {
+export class PublicCompanyResolver implements Resolve<Company> {
 
     constructor(private publicService: PublicService, private router: Router) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<News> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Company> {
         const routeId = route.paramMap.get('id');
 
         if (!routeId) {
-            this.router.navigateByUrl('/news').then();
-            return new Observable<News>();
+            this.router.navigateByUrl('/companies').then();
+            return new Observable<Company>();
         }
 
-        return this.publicService.getNews(routeId);
+        return this.publicService.getCompany(routeId);
     }
 }
