@@ -6,6 +6,8 @@ import {FormType} from "../../../../shared/enums/form-type";
 import {JobOffer} from "../../../../job-offers/core/models/job-offer";
 import {Equipment} from "../../../../equipment/core/models/equipment";
 import {SpecificKnowledge} from "../../../../specific-knowledge/core/models/specific-knowledge";
+import {Scientist} from '../../../../scientists/core/models/scientist';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'my-profile',
@@ -31,8 +33,17 @@ export class MyProfileComponent {
         return EntityType;
     }
 
-    constructor() {
+    constructor(private activatedRoute: ActivatedRoute) {
+        this.listenToResolver();
     }
 
+    private listenToResolver(): void {
+        this.activatedRoute.data.subscribe((response) => {
+
+            this.entity = response['entity'].map((x: Scientist) =>
+                Object.assign(new Scientist(), x)
+            );
+        });
+    }
 
 }
