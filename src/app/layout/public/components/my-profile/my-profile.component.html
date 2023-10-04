@@ -1,1 +1,25 @@
-<p>my-profile works!</p>
+<company-form *ngIf="profileEntityType == entityType.Company"
+              [company]="entity"
+              [formType]="formType.Edit"
+              [categories]="categories"
+              [jobOffers]="jobOffers"
+              [returnUrl]="returnUrl"
+              [researchProblems]="researchProblems"
+></company-form>
+
+<organization-form *ngIf="profileEntityType == entityType.Organization"
+                   [organization]="entity"
+                   [formType]="formType.Edit"
+                   [categories]="categories"
+                   [returnUrl]="returnUrl"
+                   [researchProblems]="researchProblems">
+</organization-form>
+
+<scientist-form *ngIf="profileEntityType == entityType.Scientist"
+                [scientist]="entity"
+                [formType]="formType.Edit"
+                [categories]="categories"
+                [returnUrl]="returnUrl"
+                [specificKnowledge]="specificKnowledge"
+                [equipment]="equipment"
+></scientist-form>

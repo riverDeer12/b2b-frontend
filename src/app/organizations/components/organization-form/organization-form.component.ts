@@ -17,7 +17,7 @@ export class OrganizationFormComponent {
     @Input() returnUrl!: string;
     @Input() formType!: FormType;
 
-    entityType = EntityType.PublicOrganization;
+    entityType = EntityType.Organization;
 
     constructor() {}
 }

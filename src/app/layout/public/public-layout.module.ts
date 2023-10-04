@@ -32,6 +32,9 @@ import { ScientistDetailsComponent } from './components/details/scientist-detail
 import { CompanyDetailsComponent } from './components/details/company-details/company-details.component';
 import { NewsDetailsComponent } from './components/details/news-details/news-details.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import {CompaniesComponentsModule} from "../../companies/components/companies-components.module";
+import {OrganizationsComponentsModule} from "../../organizations/components/organizations-components.module";
+import {ScientistsComponentsModule} from "../../scientists/components/scientists-components.module";
 
 
 /**
@@ -106,7 +109,10 @@ export function createTranslateLoader(http: HttpBackend) {
         DividerModule,
         DataViewModule,
         InputTextModule,
-        CardModule
+        CardModule,
+        CompaniesComponentsModule,
+        OrganizationsComponentsModule,
+        ScientistsComponentsModule
     ]
 })
 export class PublicLayoutModule {
