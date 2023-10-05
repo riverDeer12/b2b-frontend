@@ -8,6 +8,7 @@ import {Scientist} from "../../core/models/scientist";
 import {ScientistService} from "../../core/services/scientist.service";
 import {Category} from "../../../categories/core/models/category";
 import {ValidationService} from "../../../shared/services/validation.service";
+import {EntityType} from '../../../auth/core/enums/entity-type';
 
 @Component({
     selector: 'scientist-general-form',
@@ -21,6 +22,12 @@ export class ScientistGeneralFormComponent {
     @Input() returnUrl!: string;
 
     form!: FormGroup;
+
+    entityType = EntityType.Scientist;
+
+    public get type(): typeof FormType {
+        return FormType;
+    }
 
     constructor(
         public validationService: ValidationService,

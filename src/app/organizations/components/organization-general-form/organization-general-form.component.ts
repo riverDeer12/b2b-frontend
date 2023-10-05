@@ -8,6 +8,7 @@ import {OrganizationService} from "../../core/services/organization.service";
 import {Router} from "@angular/router";
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from "../../../shared/services/validation.service";
+import {EntityType} from '../../../auth/core/enums/entity-type';
 
 @Component({
     selector: 'organization-general-form',
@@ -21,6 +22,12 @@ export class OrganizationGeneralFormComponent {
     @Input() returnUrl!: string;
 
     form!: FormGroup;
+
+    entityType = EntityType.Organization;
+
+    public get type(): typeof FormType {
+        return FormType;
+    }
 
     constructor(
         public validationService: ValidationService,

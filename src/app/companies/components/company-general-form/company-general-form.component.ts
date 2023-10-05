@@ -20,9 +20,9 @@ export class CompanyGeneralFormComponent {
     @Input() company!: Company;
     @Input() returnUrl!: string;
 
-    entityType = EntityType.Company;
-
     form!: FormGroup;
+
+    entityType = EntityType.Company;
 
     public get type(): typeof FormType {
         return FormType;

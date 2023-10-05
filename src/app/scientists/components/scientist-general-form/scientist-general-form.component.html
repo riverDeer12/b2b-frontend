@@ -2,6 +2,9 @@
     <div class="grid">
         <div class="col-12">
             <div class="p-fluid">
+
+                <credentials-form *ngIf="formType === type.Create" [entityType]="entityType" [form]="form"></credentials-form>
+
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
 

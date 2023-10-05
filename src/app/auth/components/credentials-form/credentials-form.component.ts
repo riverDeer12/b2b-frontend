@@ -68,11 +68,13 @@ export class CredentialsFormComponent implements OnInit{
     checkScientistUsername(username: string): void {
         this.scientistService.checkScientistUsername(username).subscribe(
             (response: any) => {
-                this.form.get('username')?.setErrors({unique: false});
+                this.form.get('username')?.setErrors({unique: null});
+                this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             },
             (error) => {
                 this.form.get('username')?.setErrors({unique: true});
+                this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             }
         );
@@ -81,11 +83,13 @@ export class CredentialsFormComponent implements OnInit{
     checkOrganizationUsername(username: string): void {
         this.organizationService.checkOrganizationUsername(username).subscribe(
             (response: any) => {
-                this.form.get('username')?.setErrors({unique: false});
+                this.form.get('username')?.setErrors(null);
+                this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             },
             (error) => {
                 this.form.get('username')?.setErrors({unique: true});
+                this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             }
         );
@@ -94,11 +98,13 @@ export class CredentialsFormComponent implements OnInit{
     checkCompanyUsername(username: string): void {
         this.companyService.checkCompanyUsername(username).subscribe(
             (response: any) => {
-                this.form.get('username')?.setErrors({unique: false});
+                this.form.get('username')?.setErrors(null);
+                this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             },
             (error) => {
                 this.form.get('username')?.setErrors({unique: true});
+                this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             }
         );
