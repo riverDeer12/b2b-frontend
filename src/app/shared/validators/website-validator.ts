@@ -1,9 +1,9 @@
 import {
-    FormControl,
+    AbstractControl,
     ValidatorFn
-  } from '@angular/forms';
+} from '@angular/forms';
 
-export const websiteValidator: ValidatorFn = (control: FormControl) => {
+export const websiteValidator: ValidatorFn = (control: AbstractControl) => {
     let  url: URL;
 
     if (control.value === ''){
@@ -25,5 +25,4 @@ export const websiteValidator: ValidatorFn = (control: FormControl) => {
             website: true
         };
     }
-
   };

@@ -1,22 +1,20 @@
-import {FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {AbstractControl, ValidationErrors} from '@angular/forms';
 
-export const confirmedPasswordValidator: ValidatorFn = (formGroup: FormGroup, confirmedPassword: FormControl) => {
-    if (Validators.required(confirmedPassword) !== null) {
+export const confirmedPasswordValidator = (passwordControl: AbstractControl, confirmPasswordControl: AbstractControl):
+    ValidationErrors | null => {
+
+    if(!confirmPasswordControl.value){
         return {
-            required: true,
-        };
+            required: true
+        }
     }
 
-    const passwordValue = formGroup.get('password')?.value;
-
-    const confirmedPasswordValue = formGroup.get('confirmedPassword')?.value;
-
-    if (passwordValue !== confirmedPasswordValue) {
+    if (passwordControl.value !== confirmPasswordControl.value) {
         return {
             mismatch: true
-        };
+        }
     }
 
-    return null;
-};
+    return null
+}
 

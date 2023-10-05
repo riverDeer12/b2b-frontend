@@ -1,7 +1,7 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="p-fluid">
 
-        <credentials-form *ngIf="type.Create" [entityType]="entityType" [form]="form"></credentials-form>
+        <credentials-form *ngIf="formType === type.Create" [entityType]="entityType" [form]="form"></credentials-form>
 
         <div class="field field col-md-12">
             <span class="p-float-label">

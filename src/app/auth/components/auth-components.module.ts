@@ -8,7 +8,7 @@ import {ChangePasswordComponent} from './change-password/change-password.compone
 import {ChangeUsernameComponent} from './change-username/change-username.component';
 import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
 import { CredentialsFormComponent } from './credentials-form/credentials-form.component';
@@ -44,7 +44,8 @@ export function createTranslateLoader(http: HttpClient) {
         ButtonModule,
         ReactiveFormsModule,
         InputTextModule,
-        RippleModule
+        RippleModule,
+        FormsModule
     ],
     exports: [
         LoginFormComponent,

@@ -1,19 +1,21 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {EntityType} from '../../core/enums/entity-type';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CompanyService} from '../../../companies/core/services/company.service';
 import {OrganizationService} from '../../../organizations/core/services/organization.service';
 import {ScientistService} from '../../../scientists/core/services/scientist.service';
-import {confirmedPasswordValidator} from '../../../shared/validators/confirmed-password-validator';
 import {passwordValidator} from '../../../shared/validators/password-validator';
+import {
+    confirmedPasswordValidator,
+} from '../../../shared/validators/confirmed-password-validator';
 
 @Component({
     selector: 'credentials-form',
     templateUrl: './credentials-form.component.html',
     styleUrls: ['./credentials-form.component.scss']
 })
-export class CredentialsFormComponent {
+export class CredentialsFormComponent implements OnInit{
     @Input() entityType!: EntityType;
     @Input() form!: FormGroup;
 
@@ -23,13 +25,17 @@ export class CredentialsFormComponent {
                 private companyService: CompanyService,
                 private organizationService: OrganizationService,
                 private scientistService: ScientistService) {
+    }
+
+    ngOnInit(): void {
         this.initForm();
     }
 
     initForm() {
         this.form.addControl('username', new FormControl('', [Validators.required, Validators.email]));
         this.form.addControl('password', new FormControl('', passwordValidator));
-        this.form.addControl('confirmPassword', new FormControl('', confirmedPasswordValidator));
+        this.form.addControl('confirmPassword', new FormControl('',
+            confirmedPasswordValidator(this.form.controls['password'], this.form.controls['confirmPassword'])));
     }
 
 
@@ -62,15 +68,11 @@ export class CredentialsFormComponent {
     checkScientistUsername(username: string): void {
         this.scientistService.checkScientistUsername(username).subscribe(
             (response: any) => {
-                this.uniqueUsername = true;
+                this.form.get('username')?.setErrors({unique: false});
                 this.usernameCheckLoading = false;
             },
             (error) => {
-                this.uniqueUsername = false;
                 this.form.get('username')?.setErrors({unique: true});
-                this.notificationService.errorMessage(
-                    NotificationMessages.USERNAME_NOT_AVAILABLE
-                );
                 this.usernameCheckLoading = false;
             }
         );
@@ -79,14 +81,12 @@ export class CredentialsFormComponent {
     checkOrganizationUsername(username: string): void {
         this.organizationService.checkOrganizationUsername(username).subscribe(
             (response: any) => {
-                this.uniqueUsername = true;
+                this.form.get('username')?.setErrors({unique: false});
+                this.usernameCheckLoading = false;
             },
             (error) => {
-                this.uniqueUsername = false;
                 this.form.get('username')?.setErrors({unique: true});
-                this.notificationService.errorMessage(
-                    NotificationMessages.USERNAME_NOT_AVAILABLE
-                );
+                this.usernameCheckLoading = false;
             }
         );
     }
@@ -94,14 +94,12 @@ export class CredentialsFormComponent {
     checkCompanyUsername(username: string): void {
         this.companyService.checkCompanyUsername(username).subscribe(
             (response: any) => {
-                this.uniqueUsername = true;
+                this.form.get('username')?.setErrors({unique: false});
+                this.usernameCheckLoading = false;
             },
             (error) => {
-                this.uniqueUsername = false;
                 this.form.get('username')?.setErrors({unique: true});
-                this.notificationService.errorMessage(
-                    NotificationMessages.USERNAME_NOT_AVAILABLE
-                );
+                this.usernameCheckLoading = false;
             }
         );
     }

@@ -1,10 +1,10 @@
 import {
-  FormControl,
-  ValidatorFn,
-  Validators,
+    AbstractControl,
+    ValidatorFn,
+    Validators,
 } from '@angular/forms';
 
-export const taxCodeValidator: ValidatorFn = (control: FormControl) => {
+export const taxCodeValidator: ValidatorFn = (control: AbstractControl) => {
 
   if (Validators.required(control) !== null){
     return {
