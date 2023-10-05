@@ -11,6 +11,7 @@ import {ButtonModule} from 'primeng/button';
 import {ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
+import { CredentialsFormComponent } from './credentials-form/credentials-form.component';
 
 /**
  * Translation resources loader.
@@ -25,7 +26,8 @@ export function createTranslateLoader(http: HttpClient) {
     declarations: [
         LoginFormComponent,
         ChangePasswordComponent,
-        ChangeUsernameComponent
+        ChangeUsernameComponent,
+        CredentialsFormComponent
     ],
     imports: [
         CommonModule,
@@ -47,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
     exports: [
         LoginFormComponent,
         ChangePasswordComponent,
-        ChangeUsernameComponent
+        ChangeUsernameComponent,
+        CredentialsFormComponent
     ]
 })
 export class AuthComponentsModule {

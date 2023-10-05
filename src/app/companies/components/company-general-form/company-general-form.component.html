@@ -1,5 +1,8 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="p-fluid">
+
+        <credentials-form *ngIf="type.Create" [entityType]="entityType" [form]="form"></credentials-form>
+
         <div class="field field col-md-12">
             <span class="p-float-label">
                 <input class="{{validationService.getInputClass(form, 'name', 'required')}}"
@@ -11,6 +14,7 @@
                    *ngIf="validationService.hasErrors(form, 'name', 'required')"
                    id="name-input">{{ 'name.required' | translate }}</small>
         </div>
+
         <p-tabView>
             <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
                 <div class="field field col-md-12" formGroupName="description">

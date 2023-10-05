@@ -16,6 +16,7 @@ import {TabViewModule} from "primeng/tabview";
 import {AuthComponentsModule} from "../../auth/components/auth-components.module";
 import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";
 import {JobOffersComponentsModule} from '../../job-offers/components/job-offers-components.module';
+import {PasswordModule} from 'primeng/password';
 
 /**
  * Translation resources loader.
@@ -52,7 +53,8 @@ export function createTranslateLoader(http: HttpClient) {
         TabViewModule,
         AuthComponentsModule,
         ResearchProblemsComponentsModule,
-        JobOffersComponentsModule
+        JobOffersComponentsModule,
+        PasswordModule
     ],
     exports: [
         CompaniesDataTableComponent,

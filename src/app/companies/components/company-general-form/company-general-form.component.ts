@@ -1,12 +1,14 @@
 import {Component, Input} from '@angular/core';
-import {FormType} from "../../../shared/enums/form-type";
-import {Company} from "../../core/models/company";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {NotificationService} from "../../../shared/services/notification.service";
-import {CompanyService} from "../../core/services/company.service";
-import {NotificationType} from "../../../shared/enums/notification-type";
-import {ValidationService} from "../../../shared/services/validation.service";
+import {FormType} from '../../../shared/enums/form-type';
+import {Company} from '../../core/models/company';
+import {FormBuilder, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {NotificationService} from '../../../shared/services/notification.service';
+import {CompanyService} from '../../core/services/company.service';
+import {NotificationType} from '../../../shared/enums/notification-type';
+import {ValidationService} from '../../../shared/services/validation.service';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {passwordValidator} from '../../../shared/validators/password-validator';
 
 @Component({
     selector: 'company-general-form',
@@ -18,7 +20,13 @@ export class CompanyGeneralFormComponent {
     @Input() company!: Company;
     @Input() returnUrl!: string;
 
+    entityType = EntityType.Company;
+
     form!: FormGroup;
+
+    public get type(): typeof FormType {
+        return FormType;
+    }
 
     constructor(
         public validationService: ValidationService,
@@ -46,6 +54,9 @@ export class CompanyGeneralFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
+            username: new FormControl('', [Validators.required, Validators.email]),
+            password: new FormControl('', passwordValidator),
+            confirmPassword: new FormControl('', Validators.required),
             name: new FormControl('', Validators.required),
             description: this.fb.group({
                 translations: this.fb.group({
