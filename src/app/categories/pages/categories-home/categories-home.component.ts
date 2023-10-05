@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
-import {News} from '../../../news/core/models/news';
 import {Category} from '../../core/models/category';
 
 @Component({
@@ -22,8 +21,8 @@ export class CategoriesHomeComponent implements OnInit {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.categories = response['categories'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.categories = response['categories'].map((x: Category) =>
+                Object.assign(new Category(), x)
             );
         });
     }

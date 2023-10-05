@@ -126,43 +126,43 @@ export class JobOffersFormComponent {
             name: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.jobOffer.name.translations.HR, Validators.required),
-                    EN: new FormControl(this.jobOffer.name.translations.en, Validators.required)
+                    EN: new FormControl(this.jobOffer.name.translations.EN, Validators.required)
                 })
             }),
             description: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.jobOffer.name.translations.HR, Validators.required),
-                    EN: new FormControl(this.jobOffer.name.translations.en, Validators.required)
+                    EN: new FormControl(this.jobOffer.name.translations.EN, Validators.required)
                 })
             }),
             experience: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.jobOffer.experience.translations.HR, Validators.required),
-                    EN: new FormControl(this.jobOffer.experience.translations.en, Validators.required)
+                    EN: new FormControl(this.jobOffer.experience.translations.EN, Validators.required)
                 })
             }),
             education: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.jobOffer.education.translations.HR, Validators.required),
-                    EN: new FormControl(this.jobOffer.education.translations.en, Validators.required)
+                    EN: new FormControl(this.jobOffer.education.translations.EN, Validators.required)
                 })
             }),
             specialConditions: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.jobOffer.specialConditions.translations.HR, Validators.required),
-                    EN: new FormControl(this.jobOffer.specialConditions.translations.en, Validators.required)
+                    EN: new FormControl(this.jobOffer.specialConditions.translations.EN, Validators.required)
                 })
             }),
             applyMethod: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.jobOffer.applyMethod.translations.HR, Validators.required),
-                    EN: new FormControl(this.jobOffer.applyMethod.translations.en, Validators.required)
+                    EN: new FormControl(this.jobOffer.applyMethod.translations.EN, Validators.required)
                 })
             }),
             additional: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.jobOffer.additional.translations.HR, Validators.required),
-                    EN: new FormControl(this.jobOffer.additional.translations.en, Validators.required)
+                    EN: new FormControl(this.jobOffer.additional.translations.EN, Validators.required)
                 })
             }),
             location: new FormControl(this.jobOffer.location, Validators.required),

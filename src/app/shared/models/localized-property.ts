@@ -5,5 +5,5 @@ export class LocalizedProperty {
 
 class TranslationsObject {
     HR!: string;
-    en!: string;
+    EN!: string;
 }

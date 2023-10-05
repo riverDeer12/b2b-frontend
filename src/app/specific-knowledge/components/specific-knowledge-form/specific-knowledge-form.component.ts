@@ -94,7 +94,7 @@ export class SpecificKnowledgeFormComponent {
             title: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.specificKnowledge.title.translations.HR, Validators.required),
-                    EN: new FormControl(this.specificKnowledge.title.translations.en, Validators.required)
+                    EN: new FormControl(this.specificKnowledge.title.translations.EN, Validators.required)
                 })
             }),
             description: this.fb.group({

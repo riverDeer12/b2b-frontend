@@ -93,7 +93,7 @@ export class EquipmentFormComponent {
             title: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.equipment.title.translations.HR, Validators.required),
-                    EN: new FormControl(this.equipment.title.translations.en, Validators.required)
+                    EN: new FormControl(this.equipment.title.translations.EN, Validators.required)
                 })
             }),
             description: this.fb.group({

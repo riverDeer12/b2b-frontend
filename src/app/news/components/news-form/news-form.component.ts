@@ -69,13 +69,13 @@ export class NewsFormComponent {
             title: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.news.title.translations.HR, Validators.required),
-                    EN: new FormControl(this.news.title.translations.en, Validators.required)
+                    EN: new FormControl(this.news.title.translations.EN, Validators.required)
                 })
             }),
             content: this.fb.group({
                 translations: this.fb.group({
                     EN: new FormControl(this.news.content.translations.HR, Validators.required),
-                    HR: new FormControl(this.news.content.translations.en, Validators.required)
+                    HR: new FormControl(this.news.content.translations.EN, Validators.required)
                 })
             })
         })

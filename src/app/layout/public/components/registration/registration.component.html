@@ -1,1 +1,27 @@
-<p>registration works!</p>
+<div class="flex align-items-center">
+    <p-radioButton name="entityType" [value]="entityType.Company" [(ngModel)]="selectedEntityType"
+                   id="company"></p-radioButton>
+    <label for="company" class="ml-2">{{'company' | translate}}</label>
+</div>
+
+<div class="flex align-items-center">
+    <p-radioButton name="entityType" [value]="entityType.Scientist" [(ngModel)]="selectedEntityType"
+                   id="scientist"></p-radioButton>
+    <label for="scientist" class="ml-2">{{'scientist' | translate}}</label>
+</div>
+
+<div class="flex align-items-center">
+    <p-radioButton name="entityType" [value]="entityType.Organization" [(ngModel)]="selectedEntityType"
+                   id="organization"></p-radioButton>
+    <label for="organization" class="ml-2">{{'organization' | translate}}</label>
+</div>
+
+<company-general-form *ngIf="selectedEntityType == entityType.Company" [formType]="formType.Create"
+                      returnUrl=""></company-general-form>
+<scientist-general-form *ngIf="selectedEntityType == entityType.Scientist" [formType]="formType.Create"
+                        returnUrl=""></scientist-general-form>
+<organization-general-form *ngIf="selectedEntityType == entityType.Organization" [formType]="formType.Create"
+                           returnUrl=""></organization-general-form>
+
+
+

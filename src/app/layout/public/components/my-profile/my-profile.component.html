@@ -2,9 +2,9 @@
               [company]="entity"
               [formType]="formType.Edit"
               [categories]="categories"
-              [jobOffers]="jobOffers"
+              [jobOffers]="entity.jobOffers"
               [returnUrl]="returnUrl"
-              [researchProblems]="researchProblems"
+              [researchProblems]="entity.researchProblems"
 ></company-form>
 
 <organization-form *ngIf="profileEntityType == entityType.Organization"
@@ -12,7 +12,7 @@
                    [formType]="formType.Edit"
                    [categories]="categories"
                    [returnUrl]="returnUrl"
-                   [researchProblems]="researchProblems">
+                   [researchProblems]="entity.researchProblems">
 </organization-form>
 
 <scientist-form *ngIf="profileEntityType == entityType.Scientist"
@@ -20,6 +20,6 @@
                 [formType]="formType.Edit"
                 [categories]="categories"
                 [returnUrl]="returnUrl"
-                [specificKnowledge]="specificKnowledge"
-                [equipment]="equipment"
+                [specificKnowledge]="entity.specificKnowledge"
+                [equipment]="entity.equipment"
 ></scientist-form>

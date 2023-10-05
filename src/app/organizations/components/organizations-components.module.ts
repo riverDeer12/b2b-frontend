@@ -64,7 +64,8 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     exports: [
         OrganizationsDataTableComponent,
-        OrganizationFormComponent
+        OrganizationFormComponent,
+        OrganizationGeneralFormComponent
     ]
 })
 export class OrganizationsComponentsModule {

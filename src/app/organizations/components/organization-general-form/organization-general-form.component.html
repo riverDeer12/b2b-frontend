@@ -21,7 +21,7 @@
                         pInputText
                         aria-describedby="description-input"
                         id="description-hr"
-                        formControlName="hr"
+                        formControlName="HR"
                         rows="10">
                     </textarea>
                 <label for="description-hr">{{ 'description.default' | translate }}</label>
@@ -36,12 +36,12 @@
                 <div class="field field col-md-12" formGroupName="description">
             <span class="p-float-label" formGroupName="translations">
                 <textarea
-                    class="{{validationService.getInputClass(form, 'en', 'required',
+                    class="{{validationService.getInputClass(form, 'EN', 'required',
                     'description.translations')}}"
                     pInputText
                     aria-describedby="description-input-en"
                     id="description-en"
-                    formControlName="en"
+                    formControlName="EN"
                     rows="10">
                 </textarea>
                 <label for="description-en">{{ 'description.default' | translate }}</label>

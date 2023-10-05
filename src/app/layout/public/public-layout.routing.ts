@@ -30,6 +30,8 @@ import {CompanyDetailsComponent} from "./components/details/company-details/comp
 import {NewsDetailsComponent} from "./components/details/news-details/news-details.component";
 import {MyProfileComponent} from "./components/my-profile/my-profile.component";
 import {MyProfileResolver} from "./core/resolvers/common/my-profile.resolver";
+import {CategoriesResolver} from '../../categories/core/resolvers/categories.resolver';
+import {EntityTypeResolver} from './core/resolvers/common/entity-type.resolver';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -51,7 +53,10 @@ export const PublicLayoutRoutes: Routes = [
     },
     {
         path: 'registration',
-        component: RegistrationComponent
+        component: RegistrationComponent,
+        resolve: {
+            categories: CategoriesResolver,
+        }
     },
     {
         path: 'about-us',
@@ -130,12 +135,13 @@ export const PublicLayoutRoutes: Routes = [
             }
         ]
     },
-
     {
         path: 'my-profile',
         component: MyProfileComponent,
         resolve: {
-            profile: MyProfileResolver
+            profile: MyProfileResolver,
+            categories: CategoriesResolver,
+            profileType: EntityTypeResolver
         }
     }
 ]

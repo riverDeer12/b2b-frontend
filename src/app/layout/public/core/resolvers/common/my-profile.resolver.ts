@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@angular/router';
 import {AuthToken} from '../../../../../auth/core/models/auth-token';
-import {EntityType} from '../../../../../auth/core/enums/entity-type';
 import jwtDecode from 'jwt-decode';
+import {Observable} from 'rxjs';
+import {PublicService} from '../../services/public.service';
 
 @Injectable({
     providedIn: 'root'
@@ -11,39 +12,39 @@ export class MyProfileResolver implements Resolve<any> {
 
     private entityId!: string;
 
-    private profileType!: EntityType;
-
-    constructor() {
+    constructor(private publicService: PublicService, private router: Router) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
         const tokenStorageValue = localStorage.getItem('token') as string;
+
+        if(!tokenStorageValue){
+            this.router.navigateByUrl('').then();
+        }
 
         const decodedToken = jwtDecode(tokenStorageValue) as AuthToken;
 
         this.entityId = decodedToken.nameid;
 
-        this.setProfileType(decodedToken.role);
+        return this.getEntity(decodedToken.role);
     }
 
     /**
-     * Set profile type depending on role.
+     * Get profile type depending on role in
+     * JWT token.
      *
      * @param role token role.
      */
-    private setProfileType(role: string) {
+    private getEntity(role: string): Observable<any> {
         switch (role) {
             case 'PublicOrganization':
-                this.profileType = EntityType.Organization;
-                break;
+                return this.publicService.getOrganization(this.entityId);
             case 'Company':
-                this.profileType = EntityType.Company;
-                break;
+                return this.publicService.getCompany(this.entityId);
             case 'Scientist':
-                this.profileType = EntityType.Scientist;
-                break;
+                return this.publicService.getScientist(this.entityId);
             default:
-                break;
+                return new Observable<any>();
         }
     }
 }

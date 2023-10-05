@@ -35,6 +35,11 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
 import {CompaniesComponentsModule} from "../../companies/components/companies-components.module";
 import {OrganizationsComponentsModule} from "../../organizations/components/organizations-components.module";
 import {ScientistsComponentsModule} from "../../scientists/components/scientists-components.module";
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {FormsModule} from '@angular/forms';
+import { CompanyRegistrationFormComponent } from './components/registration/registration-forms/company-registration-form/company-registration-form.component';
+import { OrganizationRegistrationFormComponent } from './components/registration/registration-forms/organization-registration-form/organization-registration-form.component';
+import { ScientistRegistrationFormComponent } from './components/registration/registration-forms/scientist-registration-form/scientist-registration-form.component';
 
 
 /**
@@ -70,7 +75,10 @@ export function createTranslateLoader(http: HttpBackend) {
         ScientistDetailsComponent,
         CompanyDetailsComponent,
         NewsDetailsComponent,
-        MyProfileComponent
+        MyProfileComponent,
+        CompanyRegistrationFormComponent,
+        OrganizationRegistrationFormComponent,
+        ScientistRegistrationFormComponent
     ],
     exports: [
         NavbarComponent,
@@ -112,7 +120,9 @@ export function createTranslateLoader(http: HttpBackend) {
         CardModule,
         CompaniesComponentsModule,
         OrganizationsComponentsModule,
-        ScientistsComponentsModule
+        ScientistsComponentsModule,
+        RadioButtonModule,
+        FormsModule
     ]
 })
 export class PublicLayoutModule {

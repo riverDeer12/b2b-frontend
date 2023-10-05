@@ -77,13 +77,13 @@ export class CompanyGeneralFormComponent {
             description: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.company.description.translations.HR, Validators.required),
-                    EN: new FormControl(this.company.description.translations.en, Validators.required)
+                    EN: new FormControl(this.company.description.translations.EN, Validators.required)
                 })
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.company.projects.translations.HR, Validators.required),
-                    EN: new FormControl(this.company.projects.translations.en, Validators.required)
+                    EN: new FormControl(this.company.projects.translations.EN, Validators.required)
                 })
             }),
             address: new FormControl(this.company.address, Validators.required),
