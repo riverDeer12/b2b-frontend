@@ -19,6 +19,7 @@ import {AuthComponentsModule} from "../../auth/components/auth-components.module
 import {EquipmentComponentsModule} from "../../equipment/components/equipment-components.module";
 import {SpecificKnowledgeComponentsModule} from "../../specific-knowledge/components/specific-knowledge-components.module";
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
+import {ChipsModule} from 'primeng/chips';
 
 /**
  * Translation resources loader.
@@ -57,7 +58,8 @@ export function createTranslateLoader(http: HttpClient) {
         AuthComponentsModule,
         EquipmentComponentsModule,
         SpecificKnowledgeComponentsModule,
-        CategoriesComponentsModule
+        CategoriesComponentsModule,
+        ChipsModule
     ],
     providers:[
         ConfirmationService

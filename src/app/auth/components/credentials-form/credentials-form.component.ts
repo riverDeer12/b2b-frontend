@@ -6,9 +6,6 @@ import {CompanyService} from '../../../companies/core/services/company.service';
 import {OrganizationService} from '../../../organizations/core/services/organization.service';
 import {ScientistService} from '../../../scientists/core/services/scientist.service';
 import {passwordValidator} from '../../../shared/validators/password-validator';
-import {
-    confirmedPasswordValidator,
-} from '../../../shared/validators/confirmed-password-validator';
 
 @Component({
     selector: 'credentials-form',
@@ -31,11 +28,10 @@ export class CredentialsFormComponent implements OnInit{
         this.initForm();
     }
 
-    initForm() {
+    initForm(): void {
         this.form.addControl('username', new FormControl('', [Validators.required, Validators.email]));
         this.form.addControl('password', new FormControl('', passwordValidator));
-        this.form.addControl('confirmPassword', new FormControl('',
-            confirmedPasswordValidator(this.form.controls['password'], this.form.controls['confirmPassword'])));
+        this.form.addControl('confirmPassword', new FormControl('', [Validators.required]));
     }
 
 

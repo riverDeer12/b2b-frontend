@@ -17,6 +17,8 @@ import {AuthComponentsModule} from "../../auth/components/auth-components.module
 import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";
 import {JobOffersComponentsModule} from '../../job-offers/components/job-offers-components.module';
 import {PasswordModule} from 'primeng/password';
+import {CategoriesComponentsModule} from '../../categories/components/categories-components.module';
+import {ChipsModule} from 'primeng/chips';
 
 /**
  * Translation resources loader.
@@ -54,7 +56,9 @@ export function createTranslateLoader(http: HttpClient) {
         AuthComponentsModule,
         ResearchProblemsComponentsModule,
         JobOffersComponentsModule,
-        PasswordModule
+        PasswordModule,
+        CategoriesComponentsModule,
+        ChipsModule
     ],
     exports: [
         CompaniesDataTableComponent,

@@ -1,14 +1,14 @@
 import {Component, Input} from '@angular/core';
 import {FormType} from '../../../shared/enums/form-type';
 import {Company} from '../../core/models/company';
-import {FormBuilder, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {CompanyService} from '../../core/services/company.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
-import {passwordValidator} from '../../../shared/validators/password-validator';
+import {Category} from '../../../categories/core/models/category';
 
 @Component({
     selector: 'company-general-form',
@@ -19,6 +19,7 @@ export class CompanyGeneralFormComponent {
     @Input() formType!: FormType;
     @Input() company!: Company;
     @Input() returnUrl!: string;
+    @Input() categories!: Category[];
 
     form!: FormGroup;
 
@@ -54,9 +55,6 @@ export class CompanyGeneralFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
-            username: new FormControl('', [Validators.required, Validators.email]),
-            password: new FormControl('', passwordValidator),
-            confirmPassword: new FormControl('', Validators.required),
             name: new FormControl('', Validators.required),
             description: this.fb.group({
                 translations: this.fb.group({
@@ -74,7 +72,10 @@ export class CompanyGeneralFormComponent {
             email: new FormControl('', Validators.required),
             taxCode: new FormControl('', Validators.required),
             website: new FormControl('', Validators.required),
-            numberOfEmployees: new FormControl('', Validators.required)
+            numberOfEmployees: new FormControl('', Validators.required),
+            newsletterCategories: new FormControl('', Validators.required),
+            categories: new FormControl('', Validators.required),
+            categoryTags: new FormControl('', Validators.required)
         })
     }
 
@@ -101,7 +102,10 @@ export class CompanyGeneralFormComponent {
             email: new FormControl(this.company.email, Validators.required),
             taxCode: new FormControl(this.company.taxCode, Validators.required),
             website: new FormControl(this.company.website, Validators.required),
-            numberOfEmployees: new FormControl(this.company.numberOfEmployees, Validators.required)
+            numberOfEmployees: new FormControl(this.company.numberOfEmployees, Validators.required),
+            newsletterCategories: new FormControl(this.company.newsletterCategories.map(x => x.id), Validators.required),
+            categories: new FormControl(this.company.categories.map(x => x.id), Validators.required),
+            categoryTags: new FormControl(this.company.categoryTags.split(";"), Validators.required)
         })
     }
 

@@ -90,7 +90,9 @@ export class ScientistGeneralFormComponent {
             email: new FormControl('', Validators.required),
             website: new FormControl('', Validators.required),
             googleScholarLink: new FormControl('', Validators.required),
-            categories: new FormControl('', Validators.required)
+            newsletterCategories: new FormControl('', Validators.required),
+            categories: new FormControl('', Validators.required),
+            categoryTags: new FormControl('', Validators.required)
         })
     }
 
@@ -135,7 +137,9 @@ export class ScientistGeneralFormComponent {
             email: new FormControl(this.scientist.email, Validators.required),
             website: new FormControl(this.scientist.website, Validators.required),
             googleScholarLink: new FormControl(this.scientist.googleScholarLink, Validators.required),
+            newsletterCategories: new FormControl(this.scientist.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.scientist.categories.map(x => x.id), Validators.required),
+            categoryTags: new FormControl(this.scientist.categoryTags.split(";"), Validators.required)
         })
     }
 
