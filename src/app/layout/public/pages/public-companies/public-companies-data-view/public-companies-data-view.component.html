@@ -1,4 +1,4 @@
-<p-dataView #dv [value]="filteredCompanies" layout="grid" [paginator]="true" [rows]="6" filterBy="name">
+<p-dataView style="background: transparent;" #dv [value]="filteredCompanies" layout="grid" [paginator]="true" [rows]="8" filterBy="name">
     <ng-template pTemplate="header">
         <div class="flex justify-content-end">
                 <span class="p-input-icon-left mr-2">
@@ -9,7 +9,7 @@
         </div>
     </ng-template>
     <ng-template let-company pTemplate="gridItem">
-        <div class="col-3">
+        <div class="col-12 lg:col-3 p-3">
             <entity-card
                 [entityId]="company.id"
                 [entityType]="entityType"

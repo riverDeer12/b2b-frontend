@@ -15,6 +15,7 @@ export class EntityCardComponent {
     @Input() categories!: Category[];
     @Input() entityType!: EntityType;
     @Input() address!: string;
+    @Input() externalLink!: string;
 
 
     constructor(private router: Router) {
