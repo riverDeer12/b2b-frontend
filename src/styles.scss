@@ -54,6 +54,8 @@ button {
 
 .p-card .p-card-title{
     padding: 1rem !important;
+    height: 150px;
+    text-wrap: normal;
 }
 
 .p-card .p-card-body{
@@ -65,4 +67,10 @@ button {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     font-weight: 900 !important;
+}
+
+.p-card-header img{
+    width: 100%;
+    height: 150px;
+    background-size: cover;
 }

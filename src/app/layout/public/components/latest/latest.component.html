@@ -3,7 +3,7 @@
         <h2 class="text-900 font-normal mb-2">{{'news-useful-info' | translate}}</h2>
     </div>
 
-    <div class="grid justify-content-center mt-8 md:mt-0">
+    <div class="grid justify-content-center mt-8 md:mt-0 align-items-stretch">
         <div class="col-12 lg:col-3 p-0 md:p-3" *ngFor="let news of latestNews">
             <simple-entity-card [title]="news.getTitle()" detailsLink=""
                                 [imageLink]="news.featuredImage"></simple-entity-card>
