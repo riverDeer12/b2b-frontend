@@ -1,1 +1,58 @@
-<p>company-details works!</p>
+<div class="justify-content-center grid">
+    <div class="col-6 py-5">
+        <p class="flex justify-content-center">
+            <img height="120" [src]="company.logo" alt="">
+        </p>
+        <p>
+            <label>{{'name' | translate }}</label>
+            {{company.name}}
+        </p>
+
+        <p>
+            <label>{{'address' | translate }}</label>
+            {{company.address}}
+        </p>
+        <p>
+            <label>{{'number-of-employees' | translate }}</label>
+            {{company.numberOfEmployees}}
+        </p>
+        <p>
+            <label>{{'website' | translate }}</label>
+            {{company.website}}
+        </p>
+        <p>
+            <label>{{'categories' | translate }}</label>
+            <span *ngIf="!company.categories.length">{{'no-selected-categories' | translate }}</span>
+            <span *ngFor="let category of company.categories" class="p-tag">
+                        {{category.getName()}}
+            </span>
+        </p>
+        <p>
+            <label>{{'tags' | translate }}</label>
+            <span *ngIf="!company.categoryTags?.length">{{'no-tags-added' | translate }}</span>
+            <span *ngFor="let tag of company.categoryTags?.split(';')?.slice(0, -1)" class="p-tag">
+                        {{tag}}
+            </span>
+        </p>
+        <p>
+            <label>{{'description' | translate }}</label>
+            {{company.getDescription()}}
+        </p>
+        <p-divider></p-divider>
+        <p>
+            <label>{{'research-problems' | translate }}</label>
+            <span *ngIf="!company.researchProblems.length">{{'no-registered-research-problems' | translate }}</span>
+            <span *ngFor="let researchProblem of company.researchProblems" class="p-tag">
+                        {{researchProblem.getTitle()}}
+            </span>
+        </p>
+        <p-divider></p-divider>
+        <p>
+            <label>{{'job-offers' | translate }}</label>
+            <span *ngIf="!company.jobOffers.length">{{'no-registered-job-offers' | translate }}</span>
+            <span *ngFor="let jobOffer of company.jobOffers" class="p-tag">
+                        {{jobOffer.getName()}}
+            </span>
+        </p>
+    </div>
+</div>

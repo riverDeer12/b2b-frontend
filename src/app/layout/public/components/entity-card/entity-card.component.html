@@ -4,8 +4,7 @@
     style="height: 100%; border-radius: 10px; background-color: #ffffff;">
     <img class="h-5 w-5" style="border-top-left-radius: 10px; border-top-right-radius: 10px" [src]="imageLink" alt="free">
     <h4 class="text-600 text-left p-3">{{ title }}</h4>
-    <button pButton pRipple label="{{'read-more' | translate}}"
+    <button pButton pRipple label="{{'read-more' | translate}}" (click)="openDetailsPage()"
             class="block border-none font-light line-height-2 bg-blue-500 text-white">
-        <a [href]="detailsLink"></a>
     </button>
 </div>

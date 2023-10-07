@@ -25,4 +25,8 @@ export class Company {
     newsletterCategories!: Category[];
     researchProblems!: ResearchProblem[];
     jobOffers!: JobOffer[];
+
+    getDescription(): string{
+        return this.description.translations.HR;
+    }
 }

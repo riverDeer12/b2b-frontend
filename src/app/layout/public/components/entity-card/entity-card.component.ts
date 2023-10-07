@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Category} from "../../../../categories/core/models/category";
 import {EntityType} from "../../../../auth/core/enums/entity-type";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'entity-card',
@@ -8,10 +9,17 @@ import {EntityType} from "../../../../auth/core/enums/entity-type";
   styleUrls: ['./entity-card.component.scss']
 })
 export class EntityCardComponent {
+    @Input() entityId!: string;
     @Input() title!: string;
     @Input() imageLink!: string;
-    @Input() detailsLink!: string;
     @Input() categories!: Category[];
     @Input() entityType!: EntityType;
     @Input() address!: string;
+
+
+    constructor(private router: Router) {
+    }
+
+    openDetailsPage = () =>
+        this.router.navigateByUrl(this.entityType + '/details/' + this.entityId)
 }

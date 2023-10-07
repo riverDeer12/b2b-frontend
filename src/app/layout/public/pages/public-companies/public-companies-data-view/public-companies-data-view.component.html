@@ -1,0 +1,20 @@
+<p-dataView #dv [value]="filteredCompanies" layout="grid" [paginator]="true" [rows]="6" filterBy="name">
+    <ng-template pTemplate="header">
+        <div class="flex justify-content-end">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onFilter($event.target)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+        </div>
+    </ng-template>
+    <ng-template let-company pTemplate="gridItem">
+        <div class="col-3">
+            <entity-card
+                [entityId]="company.id"
+                [entityType]="entityType"
+                [imageLink]="company.logo"
+                [title]="company.name"></entity-card>
+        </div>
+    </ng-template>
+</p-dataView>

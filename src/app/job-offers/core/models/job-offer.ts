@@ -19,4 +19,8 @@ export class JobOffer {
     categories!: Category[];
     companyId!: string;
     numberOfViews!: number;
+
+    getName(): string{
+        return this.name.translations.HR;
+    }
 }
