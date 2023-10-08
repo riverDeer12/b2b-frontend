@@ -33,6 +33,8 @@ import {MyProfileResolver} from './core/resolvers/common/my-profile.resolver';
 import {CategoriesResolver} from '../../categories/core/resolvers/categories.resolver';
 import {EntityTypeResolver} from './core/resolvers/common/entity-type.resolver';
 import {EntityDataViewComponent} from './components/entity-data-view/entity-data-view.component';
+import {EntityType} from '../../auth/core/enums/entity-type';
+import {EntityDataViewResolver} from './core/resolvers/common/entity-data-view.resolver';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -80,7 +82,11 @@ export const PublicLayoutRoutes: Routes = [
                 path: '',
                 component: EntityDataViewComponent,
                 resolve: {
-                    companies: PublicCompaniesResolver
+                    entities: EntityDataViewResolver,
+                    categories: CategoriesResolver
+                },
+                data:{
+                    entityType: EntityType.Company
                 }
             },
             {

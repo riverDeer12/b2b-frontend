@@ -1,4 +1,5 @@
-<p-dataView style="background: transparent;" #dv [value]="filteredCompanies" layout="grid" [paginator]="true" [rows]="8" filterBy="name">
+<p-dataView #dv [value]="filteredEntities" layout="grid" [paginator]="true" [rows]="8"
+            filterBy="name">
     <ng-template pTemplate="header">
         <div class="flex justify-content-end">
                 <span class="p-input-icon-left mr-2">
@@ -8,13 +9,24 @@
                 </span>
         </div>
     </ng-template>
-    <ng-template let-company pTemplate="gridItem">
+    <ng-template let-entity pTemplate="gridItem">
         <div class="col-12 lg:col-3 p-3">
+            <simple-entity-card
+                *ngIf="simpleEntity"
+                [imageLink]="entity.image"
+                [title]="entity.title"
+                [detailsLink]="entity.detailsLink">
+            </simple-entity-card>
             <entity-card
-                [entityId]="company.id"
+                *ngIf="!simpleEntity"
+                [entityId]="entity.id"
                 [entityType]="entityType"
-                [imageLink]="company.logo"
-                [title]="company.name"></entity-card>
+                [imageLink]="entity.getImageLink()"
+                [title]="entity.getTitle()"
+                [categories]="categories"
+                [address]="entity.getAddress()"
+                [externalLink]="entity.getExternalLink()">
+            </entity-card>
         </div>
     </ng-template>
 </p-dataView>
