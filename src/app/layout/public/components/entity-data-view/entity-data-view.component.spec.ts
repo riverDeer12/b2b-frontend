@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PublicCompaniesDataViewComponent } from './public-companies-data-view.component';
+import { EntityDataViewComponent } from './entity-data-view.component';
 
 describe('PublicCompaniesDataViewComponent', () => {
-  let component: PublicCompaniesDataViewComponent;
-  let fixture: ComponentFixture<PublicCompaniesDataViewComponent>;
+  let component: EntityDataViewComponent;
+  let fixture: ComponentFixture<EntityDataViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PublicCompaniesDataViewComponent ]
+      declarations: [ EntityDataViewComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PublicCompaniesDataViewComponent);
+    fixture = TestBed.createComponent(EntityDataViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

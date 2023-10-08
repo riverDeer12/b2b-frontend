@@ -20,7 +20,7 @@ import {PublicScientistsComponent} from './pages/public-scientists/public-scient
 import {MainSearchComponent} from './pages/main-search/main-search.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {LoginUserComponent} from '../../auth/pages/login-user/login-user.component';
-import {RegistrationComponent} from './components/registration/registration.component';
+import {RegistrationComponent} from './pages/registration/registration.component';
 import {PublicOrganizationResolver} from './core/resolvers/organizations/public-organization.resolver';
 import {PublicScientistResolver} from './core/resolvers/scientists/public-scientist.resolver';
 import {PublicCompanyResolver} from './core/resolvers/companies/public-company.resolver';
@@ -32,7 +32,7 @@ import {MyProfileComponent} from './components/my-profile/my-profile.component';
 import {MyProfileResolver} from './core/resolvers/common/my-profile.resolver';
 import {CategoriesResolver} from '../../categories/core/resolvers/categories.resolver';
 import {EntityTypeResolver} from './core/resolvers/common/entity-type.resolver';
-import {PublicCompaniesDataViewComponent} from './pages/public-companies/public-companies-data-view/public-companies-data-view.component';
+import {EntityDataViewComponent} from './components/entity-data-view/entity-data-view.component';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -78,7 +78,7 @@ export const PublicLayoutRoutes: Routes = [
         children: [
             {
                 path: '',
-                component: PublicCompaniesDataViewComponent,
+                component: EntityDataViewComponent,
                 resolve: {
                     companies: PublicCompaniesResolver
                 }

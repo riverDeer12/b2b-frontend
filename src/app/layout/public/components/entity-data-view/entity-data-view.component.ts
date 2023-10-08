@@ -1,16 +1,15 @@
 import {Component, Input} from '@angular/core';
-import {Company} from '../../../../../companies/core/models/company';
+import {Company} from '../../../../companies/core/models/company';
 import {ActivatedRoute} from '@angular/router';
-import {News} from '../../../../../news/core/models/news';
-import {EntityType} from '../../../../../auth/core/enums/entity-type';
+import {News} from '../../../../news/core/models/news';
+import {EntityType} from '../../../../auth/core/enums/entity-type';
 
 @Component({
-    selector: 'public-companies-data-view',
-    templateUrl: './public-companies-data-view.component.html',
-    styleUrls: ['./public-companies-data-view.component.scss']
+    selector: 'entity-data-view',
+    templateUrl: './entity-data-view.component.html',
+    styleUrls: ['./entity-data-view.component.scss']
 })
-export class PublicCompaniesDataViewComponent {
-
+export class EntityDataViewComponent {
     companies!: Company[]
 
     filteredCompanies!: Company[];
