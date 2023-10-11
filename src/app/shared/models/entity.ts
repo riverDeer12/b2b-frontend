@@ -1,12 +1,42 @@
 import {EntityType} from '../../auth/core/enums/entity-type';
+import {Scientist} from '../../scientists/core/models/scientist';
+import {Organization} from '../../organizations/core/models/organization';
+import { Company } from 'src/app/companies/core/models/company';
 
 export class Entity {
     title!: string;
     externalLink!: string;
     imageLink!: string;
 
-    getTitle(entity: any, type: EntityType): string {
-        switch (type){
+    /**
+     * Helper for mapping
+     * resolver response to entity.
+     *
+     * @param entityType type of entity.
+     * @param response response from resolver.
+     */
+    public static assignResponseToEntity(entityType: EntityType, response: any) {
+        switch (entityType) {
+            case EntityType.Scientist:
+                let scientist = new Scientist();
+                scientist = Object.assign(new Scientist(), response['entity']);
+                return scientist;
+            case EntityType.Company:
+                let company = new Company();
+                company = Object.assign(new Company(), response['entity']);
+                return company;
+            case EntityType.Organization:
+                let organization = new Organization();
+                organization = Object.assign(new Organization(), response['entity']);
+                return organization;
+            default:
+                return {};
+        }
+    }
+
+
+    public static getTitle(entity: any, type: EntityType): string {
+        switch (type) {
             case EntityType.Organization:
                 return entity.name;
             case EntityType.Company:
@@ -18,8 +48,8 @@ export class Entity {
         }
     }
 
-    getExternalLink(entity: any, type: EntityType): string{
-        switch (type){
+    public static getExternalLink(entity: any, type: EntityType): string {
+        switch (type) {
             case EntityType.Organization:
                 return entity.website;
             case EntityType.Company:
@@ -31,8 +61,8 @@ export class Entity {
         }
     }
 
-    getImageLink(entity: any, type: EntityType): string{
-        switch (type){
+    public static getImageLink(entity: any, type: EntityType): string {
+        switch (type) {
             case EntityType.Organization:
                 return entity.logo;
             case EntityType.Company:
@@ -44,8 +74,8 @@ export class Entity {
         }
     }
 
-    getAddress(entity: any, type: EntityType): string{
-        switch (type){
+    public static getAddress(entity: any, type: EntityType): string {
+        switch (type) {
             case EntityType.Organization:
                 return entity.address;
             case EntityType.Company:

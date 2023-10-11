@@ -9,23 +9,24 @@
                 </span>
         </div>
     </ng-template>
-    <ng-template let-entity pTemplate="gridItem">
+    <ng-template let-entityItem pTemplate="gridItem">
         <div class="col-12 lg:col-3 p-3">
             <simple-entity-card
                 *ngIf="simpleEntity"
-                [imageLink]="entity.image"
-                [title]="entity.title"
-                [detailsLink]="entity.detailsLink">
+                [entityId]="entityItem.id"
+                [entityType]="entityType"
+                [imageLink]="entity.getImageLink(entityItem, entityType)"
+                [title]="entity.getTitle(entityItem, entityType)">
             </simple-entity-card>
             <entity-card
                 *ngIf="!simpleEntity"
-                [entityId]="entity.id"
+                [entityId]="entityItem.id"
                 [entityType]="entityType"
-                [imageLink]="entity.getImageLink()"
-                [title]="entity.getTitle()"
-                [categories]="categories"
-                [address]="entity.getAddress()"
-                [externalLink]="entity.getExternalLink()">
+                [entityCategories] = "entityItem.categories"
+                [imageLink]="entity.getImageLink(entityItem, entityType)"
+                [title]="entity.getTitle(entityItem, entityType)"
+                [address]="entity.getAddress(entityItem, entityType)"
+                [externalLink]="entity.getExternalLink(entityItem, entityType)">
             </entity-card>
         </div>
     </ng-template>

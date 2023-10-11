@@ -6,7 +6,13 @@
 
 <div class="justify-content-center grid">
     <div class="col-8">
-        <router-outlet></router-outlet>
+        <entity-data-view
+            [entities]="companies"
+            [entityType]="entityType"
+            [categories]="categories"
+            [simpleEntity]="false"
+            filterField="name"
+        ></entity-data-view>
     </div>
 </div>
 

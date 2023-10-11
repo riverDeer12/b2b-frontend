@@ -20,6 +20,7 @@ import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import { EntityDetailsComponent } from './entity-details/entity-details.component';
 
 /**
  * Translation resources loader.
@@ -42,7 +43,8 @@ export function createTranslateLoader(http: HttpBackend) {
         PublicNewsComponent,
         PublicOrganizationsComponent,
         PublicScientistsComponent,
-        RegistrationComponent
+        RegistrationComponent,
+        EntityDetailsComponent
     ],
     imports: [
         CommonModule,

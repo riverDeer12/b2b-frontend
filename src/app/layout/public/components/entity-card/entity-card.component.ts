@@ -12,13 +12,16 @@ export class EntityCardComponent {
     @Input() entityId!: string;
     @Input() title!: string;
     @Input() imageLink!: string;
-    @Input() categories!: Category[];
+    @Input() entityCategories!: Category[];
     @Input() entityType!: EntityType;
     @Input() address!: string;
     @Input() externalLink!: string;
 
 
     constructor(private router: Router) {
+    }
+
+    ngOnInit(){
     }
 
     openDetailsPage = () =>

@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {EntityType} from '../../../../auth/core/enums/entity-type';
 import {Category} from '../../../../categories/core/models/category';
-import {ActivatedRoute} from '@angular/router';
+import {Entity} from '../../../../shared/models/entity';
 
 @Component({
     selector: 'entity-data-view',
@@ -17,10 +17,15 @@ export class EntityDataViewComponent {
 
     filteredEntities!: any[];
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    public get entity(): typeof Entity {
+        return Entity;
+    }
+
+    constructor() {
     }
 
     ngOnInit(): void {
+       this.filteredEntities = this.entities;
     }
 
     /**

@@ -21,20 +21,12 @@ import {MainSearchComponent} from './pages/main-search/main-search.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {LoginUserComponent} from '../../auth/pages/login-user/login-user.component';
 import {RegistrationComponent} from './pages/registration/registration.component';
-import {PublicOrganizationResolver} from './core/resolvers/organizations/public-organization.resolver';
-import {PublicScientistResolver} from './core/resolvers/scientists/public-scientist.resolver';
-import {PublicCompanyResolver} from './core/resolvers/companies/public-company.resolver';
-import {OrganizationDetailsComponent} from './components/details/organization-details/organization-details.component';
-import {ScientistDetailsComponent} from './components/details/scientist-details/scientist-details.component';
-import {CompanyDetailsComponent} from './components/details/company-details/company-details.component';
-import {NewsDetailsComponent} from './components/details/news-details/news-details.component';
 import {MyProfileComponent} from './components/my-profile/my-profile.component';
 import {MyProfileResolver} from './core/resolvers/common/my-profile.resolver';
 import {CategoriesResolver} from '../../categories/core/resolvers/categories.resolver';
 import {EntityTypeResolver} from './core/resolvers/common/entity-type.resolver';
-import {EntityDataViewComponent} from './components/entity-data-view/entity-data-view.component';
-import {EntityType} from '../../auth/core/enums/entity-type';
-import {EntityDataViewResolver} from './core/resolvers/common/entity-data-view.resolver';
+import {EntityDetailsResolver} from './core/resolvers/common/entity-details.resolver';
+import {EntityDetailsComponent} from './pages/entity-details/entity-details.component';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -77,74 +69,41 @@ export const PublicLayoutRoutes: Routes = [
     {
         path: 'companies',
         component: PublicCompaniesComponent,
-        children: [
-            {
-                path: '',
-                component: EntityDataViewComponent,
-                resolve: {
-                    entities: EntityDataViewResolver,
-                    categories: CategoriesResolver
-                },
-                data:{
-                    entityType: EntityType.Company
-                }
-            },
-            {
-                path: 'details/:id',
-                component: CompanyDetailsComponent,
-                resolve: {
-                    company: PublicCompanyResolver
-                }
-            }
-        ]
+        resolve: {
+            entities: PublicCompaniesResolver,
+            categories: CategoriesResolver
+        }
     },
     {
         path: 'scientists',
         component: PublicScientistsComponent,
         resolve: {
-            scientists: PublicScientistsResolver,
-        },
-        children: [
-            {
-                path: 'details/:id',
-                component: ScientistDetailsComponent,
-                resolve: {
-                    company: PublicScientistResolver
-                }
-            }
-        ]
+            entities: PublicScientistsResolver,
+            categories: CategoriesResolver
+        }
     },
     {
         path: 'organizations',
         component: PublicOrganizationsComponent,
         resolve: {
-            organizations: PublicOrganizationsResolver,
-        },
-        children: [
-            {
-                path: 'details/:id',
-                component: OrganizationDetailsComponent,
-                resolve: {
-                    company: PublicOrganizationResolver
-                }
-            }
-        ]
+            entities: PublicOrganizationsResolver,
+            categories: CategoriesResolver
+        }
     },
     {
         path: 'news',
         component: PublicNewsComponent,
         resolve: {
             news: PublicNewsListResolver,
-        },
-        children: [
-            {
-                path: 'details/:id',
-                component: NewsDetailsComponent,
-                resolve: {
-                    company: PublicNewsListResolver
-                }
-            }
-        ]
+            categories: CategoriesResolver
+        }
+    },
+    {
+        path: ':entityType/details/:id',
+        component: EntityDetailsComponent,
+        resolve: {
+            entity: EntityDetailsResolver
+        }
     },
     {
         path: 'my-profile',

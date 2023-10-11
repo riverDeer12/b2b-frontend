@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
-import {News} from '../../../news/core/models/news';
 import {SpecificKnowledge} from "../../core/models/specific-knowledge";
 
 @Component({
@@ -22,7 +21,7 @@ export class SpecificKnowledgeHomeComponent implements OnInit {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.specificKnowledge = response['specific-knowledge'].map((x: News) =>
+            this.specificKnowledge = response['specific-knowledge'].map((x: SpecificKnowledge) =>
                 Object.assign(new SpecificKnowledge(), x)
             );
         });

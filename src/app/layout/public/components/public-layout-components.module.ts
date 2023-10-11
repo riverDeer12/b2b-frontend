@@ -7,10 +7,6 @@ import {MyProfileComponent} from './my-profile/my-profile.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {PublicFooterComponent} from './public-footer/public-footer.component';
 import {PublicHeaderComponent} from './public-header/public-header.component';
-import {CompanyDetailsComponent} from './details/company-details/company-details.component';
-import {OrganizationDetailsComponent} from './details/organization-details/organization-details.component';
-import {ScientistDetailsComponent} from './details/scientist-details/scientist-details.component';
-import {NewsDetailsComponent} from './details/news-details/news-details.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpBackend} from '@angular/common/http';
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
@@ -48,10 +44,6 @@ export function createTranslateLoader(http: HttpBackend) {
         NavbarComponent,
         PublicFooterComponent,
         PublicHeaderComponent,
-        CompanyDetailsComponent,
-        OrganizationDetailsComponent,
-        ScientistDetailsComponent,
-        NewsDetailsComponent,
         EntityDataViewComponent
     ],
     imports: [
@@ -83,10 +75,6 @@ export function createTranslateLoader(http: HttpBackend) {
         NavbarComponent,
         PublicFooterComponent,
         PublicHeaderComponent,
-        CompanyDetailsComponent,
-        OrganizationDetailsComponent,
-        ScientistDetailsComponent,
-        NewsDetailsComponent,
         EntityDataViewComponent
     ]
 })
