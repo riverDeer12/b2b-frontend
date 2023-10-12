@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Entity} from '../../../../shared/models/entity';
 import {EntityType} from '../../../../auth/core/enums/entity-type';
 
@@ -9,10 +9,15 @@ import {EntityType} from '../../../../auth/core/enums/entity-type';
     styleUrls: ['./entity-details.component.scss']
 })
 export class EntityDetailsComponent implements OnInit {
-    entityType!: EntityType
-    entity!: any;
+    entityType!: EntityType;
+    entityItem!: any;
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    public get entity(): typeof Entity {
+        return Entity;
+    }
+
+    constructor(private activatedRoute: ActivatedRoute,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -21,7 +26,12 @@ export class EntityDetailsComponent implements OnInit {
 
     listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.entity = Entity.assignResponseToEntity(this.entityType, response);
+
+            this.entityType = this.activatedRoute.snapshot.params['entityType'] as EntityType;
+
+            this.entityItem = Entity.assignResponseToEntity(this.entityType, response);
         });
+
+
     }
 }

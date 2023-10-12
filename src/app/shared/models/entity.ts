@@ -1,7 +1,7 @@
 import {EntityType} from '../../auth/core/enums/entity-type';
 import {Scientist} from '../../scientists/core/models/scientist';
 import {Organization} from '../../organizations/core/models/organization';
-import { Company } from 'src/app/companies/core/models/company';
+import {Company} from 'src/app/companies/core/models/company';
 
 export class Entity {
     title!: string;
@@ -32,6 +32,10 @@ export class Entity {
             default:
                 return {};
         }
+    }
+
+    public static getDescription(entity: any, type: EntityType): string {
+        return entity.description.translations.HR;
     }
 
 

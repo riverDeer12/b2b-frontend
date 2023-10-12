@@ -1,1 +1,36 @@
-<p>entity-details works!</p>
+<div class="justify-content-center grid">
+    <div class="col-8">
+        <p-card>
+            <img [src]="entity.getImageLink(entityItem, entityType)" height="100"
+                 alt="{{entity.getTitle(entityItem, entityType)}}">
+            <p>
+                <label>{{'name' | translate }}</label>
+                {{entity.getTitle(entityItem, entityType)}}
+            </p>
+            <p>
+                <label>{{'address' | translate }}</label>
+                {{entity.getAddress(entityItem, entityType)}}
+            </p>
+            <p>
+                <label>{{'website' | translate }}</label>
+                {{entity.getExternalLink(entityItem, entityType)}}
+            </p>
+            <p>
+                <label>{{'categories' | translate }}</label>
+                <p-chips *ngFor="let category of entityItem.categories">
+                    {{category.getName()}}
+                </p-chips>
+            </p>
+            <p>
+                <label>{{'tags' | translate }}</label>
+                <p-chips *ngFor="let tag of entityItem.categoryTags">
+                    {{tag.name}}
+                </p-chips>
+            </p>
+            <p>
+                <label>{{'tags' | translate }}</label>
+                {{entity.getDescription(entityItem, entityType)}}
+            </p>
+        </p-card>
+    </div>
+</div>

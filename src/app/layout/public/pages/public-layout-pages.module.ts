@@ -21,6 +21,9 @@ import {RippleModule} from 'primeng/ripple';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { EntityDetailsComponent } from './entity-details/entity-details.component';
+import {CardModule} from 'primeng/card';
+import {TagModule} from 'primeng/tag';
+import {ChipsModule} from 'primeng/chips';
 
 /**
  * Translation resources loader.
@@ -65,7 +68,10 @@ export function createTranslateLoader(http: HttpBackend) {
         ButtonModule,
         RippleModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        CardModule,
+        TagModule,
+        ChipsModule
     ],
     exports: [
         AboutUsComponent,
