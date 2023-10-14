@@ -16,6 +16,7 @@ export class SharedService {
 
     parentEntityType = new Subject<EntityType>();
     dialogCloseStatus = new Subject<string>();
+    dataChange = new Subject<string>();
 
     constructor(private router: Router, private http: HttpClient) {
     }
@@ -76,4 +77,14 @@ export class SharedService {
      */
     changeEntityActivity = (entityUrl: string, entityId: string) =>
         this.http.post(entityUrl + '/flipActive', entityId);
+
+
+    setExternalFilterValue(filterValue: string): void {
+        this.dataChange.next(filterValue);
+    }
+
+    getExternalFilterValue(): Subject<string> {
+        return this.dataChange;
+    }
+
 }

@@ -63,7 +63,8 @@ export const PublicLayoutRoutes: Routes = [
         resolve: {
             companies: PublicCompaniesResolver,
             scientists: PublicScientistsResolver,
-            organizations: PublicOrganizationsResolver
+            organizations: PublicOrganizationsResolver,
+            categories: CategoriesResolver
         }
     },
     {

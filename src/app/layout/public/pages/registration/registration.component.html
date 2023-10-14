@@ -1,21 +1,24 @@
 <div class="justify-content-center grid">
-    <div class="col-8 card">
+    <div class="lg-col-8 md-col-8 sm-col-12 card">
         <div class="flex justify-content-center my-5">
             <div class="flex align-items-center">
-                <p-radioButton name="entityType" [value]="entityType.Company" [(ngModel)]="selectedEntityType"
-                               id="company"></p-radioButton>
+                <p-radioButton inputId="company" name="entityType" [value]="entityType.Company"
+                               [(ngModel)]="selectedEntityType"
+                ></p-radioButton>
                 <label for="company" class="m-2">{{'company' | translate}}</label>
             </div>
 
             <div class="flex align-items-center">
-                <p-radioButton name="entityType" [value]="entityType.Scientist" [(ngModel)]="selectedEntityType"
-                               id="scientist"></p-radioButton>
+                <p-radioButton inputId="scientist" name="entityType" [value]="entityType.Scientist"
+                               [(ngModel)]="selectedEntityType"
+                ></p-radioButton>
                 <label for="scientist" class="m-2">{{'scientist' | translate}}</label>
             </div>
 
             <div class="flex align-items-center">
-                <p-radioButton name="entityType" [value]="entityType.Organization" [(ngModel)]="selectedEntityType"
-                               id="organization"></p-radioButton>
+                <p-radioButton inputId="organization" name="entityType" [value]="entityType.Organization"
+                               [(ngModel)]="selectedEntityType"
+                ></p-radioButton>
                 <label for="organization" class="m-2">{{'organization' | translate}}</label>
             </div>
         </div>

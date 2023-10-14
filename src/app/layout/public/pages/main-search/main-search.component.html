@@ -3,3 +3,42 @@
         <h1 class="text-6xl font-bold text-900 line-height-2">{{ 'main-search' | translate }}</h1>
     </div>
 </div>
+
+<div class="justify-content-center grid">
+    <div class="col-8">
+        <p-tabView>
+            <input pInputText type="text" #filter (input)="onFilter($event.target)"
+                   placeholder="{{'keyword' | translate }}" class="w-full"/>
+            <p-tabPanel header="{{'companies' | translate }}">
+                <entity-data-view
+                    [entities]="companies"
+                    [entityType]="entityType.Company"
+                    [categories]="categories"
+                    [showFilterInput]="false"
+                    [externalFilterInput]="true"
+                    filterField="name"
+                ></entity-data-view>
+            </p-tabPanel>
+            <p-tabPanel header="{{'scientists' | translate }}">
+                <entity-data-view
+                    [entities]="scientists"
+                    [entityType]="entityType.Scientist"
+                    [categories]="categories"
+                    [showFilterInput]="false"
+                    [externalFilterInput]="true"
+                    filterField="fullName"
+                ></entity-data-view>
+            </p-tabPanel>
+            <p-tabPanel header="{{'organizations' | translate }}">
+                <entity-data-view
+                    [entities]="organizations"
+                    [entityType]="entityType.Organization"
+                    [categories]="categories"
+                    [showFilterInput]="false"
+                    [externalFilterInput]="true"
+                    filterField="name"
+                ></entity-data-view>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>

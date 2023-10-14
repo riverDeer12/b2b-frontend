@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {EntityType} from '../../../../auth/core/enums/entity-type';
 import {Category} from '../../../../categories/core/models/category';
 import {Entity} from '../../../../shared/models/entity';
+import {SharedService} from '../../../../shared/services/shared.service';
 
 @Component({
     selector: 'entity-data-view',
@@ -11,8 +12,10 @@ import {Entity} from '../../../../shared/models/entity';
 export class EntityDataViewComponent {
     @Input() entityType!: EntityType;
     @Input() entities!: any[];
-    @Input() filterField!: string;
     @Input() categories!: Category[];
+    @Input() externalFilterInput!: boolean;
+    @Input() filterField: string = 'name';
+    @Input() showFilterInput: boolean = true;
 
     filteredEntities!: any[];
 
@@ -20,12 +23,36 @@ export class EntityDataViewComponent {
         return Entity;
     }
 
-    constructor() {
+    constructor(private sharedService: SharedService) {
     }
 
     ngOnInit(): void {
-       this.filteredEntities = this.entities;
+        this.filteredEntities = this.entities;
+
+        if (this.externalFilterInput) {
+            this.subscribeToDataChanges();
+        }
     }
+
+    subscribeToDataChanges(): void {
+        this.sharedService.getExternalFilterValue().subscribe((response: string) => {
+
+            let filteredValue = response as string;
+
+            if (filteredValue.length < 3) {
+
+                if (filteredValue.length == 0) {
+                    this.filteredEntities = this.entities;
+                }
+
+                return;
+            }
+
+            this.filteredEntities = this.entities
+                .filter(x => x[this.filterField].toLocaleLowerCase().includes(filteredValue));
+        })
+    }
+
 
     /**
      * Method for handling

@@ -1,6 +1,6 @@
 <p-dataView #dv [value]="filteredEntities" layout="grid" [paginator]="true" [rows]="8"
-            filterBy="name">
-    <ng-template pTemplate="header">
+            [filterBy]="filterField" emptyMessage="{{'no-data' | translate }}">
+    <ng-template pTemplate="header" *ngIf="showFilterInput">
         <div class="flex justify-content-end">
                 <span class="p-input-icon-left mr-2">
                     <i class="pi pi-search"></i>
@@ -22,7 +22,7 @@
                 *ngIf="!entity.isSimpleEntity(entityType)"
                 [entityId]="entityItem.id"
                 [entityType]="entityType"
-                [entityCategories] = "entityItem.categories"
+                [entityCategories]="entityItem.categories"
                 [imageLink]="entity.getImageLink(entityItem, entityType)"
                 [title]="entity.getTitle(entityItem, entityType)"
                 [address]="entity.getAddress(entityItem, entityType)"

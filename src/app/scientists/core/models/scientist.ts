@@ -27,4 +27,8 @@ export class Scientist {
     newsletterCategories!: Category[];
     equipment!: Equipment[];
     specificKnowledge!: SpecificKnowledge[];
+
+    get fullName(): string {
+        return this.firstname + ' ' + this.lastname;
+    }
 }
