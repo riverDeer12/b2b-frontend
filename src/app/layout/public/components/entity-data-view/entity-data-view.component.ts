@@ -11,7 +11,6 @@ import {Entity} from '../../../../shared/models/entity';
 export class EntityDataViewComponent {
     @Input() entityType!: EntityType;
     @Input() entities!: any[];
-    @Input() simpleEntity!: boolean;
     @Input() filterField!: string;
     @Input() categories!: Category[];
 

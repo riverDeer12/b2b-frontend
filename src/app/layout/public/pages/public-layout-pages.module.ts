@@ -24,6 +24,7 @@ import { EntityDetailsComponent } from './entity-details/entity-details.componen
 import {CardModule} from 'primeng/card';
 import {TagModule} from 'primeng/tag';
 import {ChipsModule} from 'primeng/chips';
+import {DividerModule} from 'primeng/divider';
 
 /**
  * Translation resources loader.
@@ -71,7 +72,8 @@ export function createTranslateLoader(http: HttpBackend) {
         FormsModule,
         CardModule,
         TagModule,
-        ChipsModule
+        ChipsModule,
+        DividerModule
     ],
     exports: [
         AboutUsComponent,

@@ -3,3 +3,14 @@
         <h1 class="text-6xl font-bold text-900 line-height-2">{{ 'organizations' | translate }}</h1>
     </div>
 </div>
+
+<div class="justify-content-center grid">
+    <div class="col-8">
+        <entity-data-view
+            [entities]="organizations"
+            [entityType]="entityType"
+            [categories]="categories"
+            filterField="name"
+        ></entity-data-view>
+    </div>
+</div>

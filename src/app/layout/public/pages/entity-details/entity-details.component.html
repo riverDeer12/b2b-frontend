@@ -7,29 +7,31 @@
                 <label>{{'name' | translate }}</label>
                 {{entity.getTitle(entityItem, entityType)}}
             </p>
+            <div *ngIf="!entity.isSimpleEntity(entityType)">
+                <p>
+                    <label>{{'address' | translate }}</label>
+                    {{entity.getAddress(entityItem, entityType)}}
+                </p>
+                <p>
+                    <label>{{'website' | translate }}</label>
+                    {{entity.getExternalLink(entityItem, entityType)}}
+                </p>
+                <p>
+                    <label>{{'categories.default' | translate }}</label>
+                    <p-tag *ngFor="let category of entityItem.categories">
+                        {{category.getName()}}
+                    </p-tag>
+                </p>
+                <p>
+                    <label>{{'tags' | translate }}</label>
+                    <p-tag *ngFor="let tag of entityItem.categoryTags.split(';').slice(0, -1)">
+                        {{tag}}
+                    </p-tag>
+                </p>
+            </div>
             <p>
-                <label>{{'address' | translate }}</label>
-                {{entity.getAddress(entityItem, entityType)}}
-            </p>
-            <p>
-                <label>{{'website' | translate }}</label>
-                {{entity.getExternalLink(entityItem, entityType)}}
-            </p>
-            <p>
-                <label>{{'categories' | translate }}</label>
-                <p-chips *ngFor="let category of entityItem.categories">
-                    {{category.getName()}}
-                </p-chips>
-            </p>
-            <p>
-                <label>{{'tags' | translate }}</label>
-                <p-chips *ngFor="let tag of entityItem.categoryTags">
-                    {{tag.name}}
-                </p-chips>
-            </p>
-            <p>
-                <label>{{'tags' | translate }}</label>
-                {{entity.getDescription(entityItem, entityType)}}
+                <label>{{'description' | translate }}</label>
+                <span [innerHTML]="entity.getDescription(entityItem, entityType)"></span>
             </p>
         </p-card>
     </div>

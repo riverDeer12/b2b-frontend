@@ -11,13 +11,13 @@ import {EntityType} from '../../../../auth/core/enums/entity-type';
 export class EntityDetailsComponent implements OnInit {
     entityType!: EntityType;
     entityItem!: any;
+    simpleEntity!: boolean;
 
     public get entity(): typeof Entity {
         return Entity;
     }
 
-    constructor(private activatedRoute: ActivatedRoute,
-                private router: Router) {
+    constructor(private activatedRoute: ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -31,7 +31,5 @@ export class EntityDetailsComponent implements OnInit {
 
             this.entityItem = Entity.assignResponseToEntity(this.entityType, response);
         });
-
-
     }
 }

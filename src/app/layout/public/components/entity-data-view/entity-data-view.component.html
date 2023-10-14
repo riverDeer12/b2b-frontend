@@ -12,14 +12,14 @@
     <ng-template let-entityItem pTemplate="gridItem">
         <div class="col-12 lg:col-3 p-3">
             <simple-entity-card
-                *ngIf="simpleEntity"
+                *ngIf="entity.isSimpleEntity(entityType)"
                 [entityId]="entityItem.id"
                 [entityType]="entityType"
                 [imageLink]="entity.getImageLink(entityItem, entityType)"
                 [title]="entity.getTitle(entityItem, entityType)">
             </simple-entity-card>
             <entity-card
-                *ngIf="!simpleEntity"
+                *ngIf="!entity.isSimpleEntity(entityType)"
                 [entityId]="entityItem.id"
                 [entityType]="entityType"
                 [entityCategories] = "entityItem.categories"

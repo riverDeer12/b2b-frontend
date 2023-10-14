@@ -94,7 +94,7 @@ export const PublicLayoutRoutes: Routes = [
         path: 'news',
         component: PublicNewsComponent,
         resolve: {
-            news: PublicNewsListResolver,
+            entities: PublicNewsListResolver,
             categories: CategoriesResolver
         }
     },
