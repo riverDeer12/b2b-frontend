@@ -1,6 +1,6 @@
 <p-card [header]="title">
     <ng-template pTemplate="header">
-        <img alt="Card" [src]="imageLink"/>
+        <img alt="Card" [src]="imageLink ?? 'assets/layout/images/image-default.png'"/>
     </ng-template>
     <ng-template pTemplate="content">
         <p>

@@ -10,7 +10,7 @@ import {Category} from '../../../../categories/core/models/category';
     styleUrls: ['./public-companies.component.scss']
 })
 export class PublicCompaniesComponent {
-    entityType = EntityType.Company;
+    entityType:EntityType = EntityType.Company;
     companies!: Company[];
     categories!: Category[];
 

@@ -5,6 +5,8 @@ import {Company} from "../../../../companies/core/models/company";
 import {Scientist} from "../../../../scientists/core/models/scientist";
 import {Organization} from "../../../../organizations/core/models/organization";
 import {Equipment} from "../../../../equipment/core/models/equipment";
+import {EntityType} from "../../../../auth/core/enums/entity-type";
+import {Entity} from "../../../../shared/models/entity";
 
 @Component({
   selector: 'latest',
@@ -19,4 +21,12 @@ export class LatestComponent {
     @Input() latestScientists!: Scientist[];
     @Input() latestOrganizations!: Organization[];
     @Input() latestEquipment!: Equipment[];
+
+    public get type(): typeof EntityType{
+        return EntityType;
+    }
+
+    public get entity(): typeof Entity{
+        return Entity;
+    }
 }

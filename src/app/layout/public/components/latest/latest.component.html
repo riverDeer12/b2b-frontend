@@ -1,3 +1,4 @@
+<!-- latest news -->
 <div class="py-4 my-2 md:my-4">
     <div class="text-center">
         <h2 class="text-900 font-normal mb-2">{{'news-useful-info' | translate}}</h2>
@@ -5,19 +6,25 @@
 
     <div class="grid justify-content-center mt-8 md:mt-0">
         <div class="col-12 lg:col-2 p-3" *ngFor="let news of latestNews">
-            <simple-entity-card [title]="news.getTitle()" detailsLink=""
-                                [imageLink]="news.featuredImage"></simple-entity-card>
+            <simple-entity-card [title]="news.getTitle()"
+                                [imageLink]="news.featuredImage"
+                                [entityId]="news.id"
+                                [entityType]="type.News"
+            ></simple-entity-card>
         </div>
     </div>
 
     <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
         <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
-            <button pButton pRipple type="button" label="{{'view-all-news' | translate}}"
+            <button pButton pRipple type="button"
+                    [routerLink]="['/news']"
+                    label="{{'view-all-news' | translate}}"
                     class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>
 
+<!-- latest company research problems -->
 <div class="py-4 my-2 md:my-4">
     <div class="text-center">
         <h2 class="text-900 font-normal mb-2">{{'latest-company-research-problems' | translate}}</h2>
@@ -25,27 +32,9 @@
 
     <div class="grid justify-content-center mt-8 md:mt-0">
         <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of latestCompanyResearchProblems">
-            <simple-entity-card [title]="researchProblem.getTitle()" detailsLink=""
-                                [imageLink]="researchProblem.image"></simple-entity-card>
-        </div>
-    </div>
-
-    <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
-        <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
-            <button pButton pRipple type="button" label="{{'view-all-company-research-problems' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
-        </div>
-    </div>
-</div>
-
-<div class="py-6">
-    <div class="text-center">
-        <h2 class="text-900 font-normal mb-2">{{'latest-company-research-problems' | translate}}</h2>
-    </div>
-
-    <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of latestOrganizationResearchProblems">
-            <simple-entity-card [title]="researchProblem.getTitle()" detailsLink=""
+            <simple-entity-card [title]="researchProblem.getTitle()"
+                                [entityId]="researchProblem.companyId"
+                                [entityType]="type.Company"
                                 [imageLink]="researchProblem.image"></simple-entity-card>
         </div>
     </div>
@@ -53,7 +42,139 @@
     <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
         <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
             <button pButton pRipple type="button"
+                    [routerLink]="['/companies/research-problems']"
+                    label="{{'view-all-company-research-problems' | translate}}"
+                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+        </div>
+    </div>
+</div>
+
+<!-- latest organization research problems -->
+<div class="py-6">
+    <div class="text-center">
+        <h2 class="text-900 font-normal mb-2">{{'latest-organization-research-problems' | translate}}</h2>
+    </div>
+
+    <div class="grid mt-8 justify-content-center md:mt-0">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of latestOrganizationResearchProblems">
+            <simple-entity-card [title]="researchProblem.getTitle()"
+                                [entityId]="researchProblem.publicOrganizationId"
+                                [entityType]="type.Organization"
+                                [imageLink]="researchProblem.image"></simple-entity-card>
+        </div>
+    </div>
+
+    <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+        <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
+            <button pButton pRipple type="button"
+                    [routerLink]="['/organizations/research-problems']"
                     label="{{'view-all-organization-research-problems' | translate}}"
+                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+        </div>
+    </div>
+</div>
+
+<!-- latest companies -->
+<div class="py-6">
+    <div class="text-center">
+        <h2 class="text-900 font-normal mb-2">{{'latest-companies' | translate}}</h2>
+    </div>
+
+    <div class="grid mt-8 justify-content-center md:mt-0">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let company of latestCompanies">
+            <entity-card [title]="company.name"
+                         [entityType]="type.Company"
+                         [entityId]="company.id"
+                         [address]="company.address"
+                         [entityCategories]="company.categories"
+                         [imageLink]="company.logo"></entity-card>
+        </div>
+    </div>
+
+    <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+        <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
+            <button pButton pRipple type="button"
+                    [routerLink]="['/companies']"
+                    label="{{'view-all-companies' | translate}}"
+                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+        </div>
+    </div>
+</div>
+
+<!-- latest scientists -->
+<div class="py-6">
+    <div class="text-center">
+        <h2 class="text-900 font-normal mb-2">{{'latest-scientists' | translate}}</h2>
+    </div>
+
+    <div class="grid mt-8 justify-content-center md:mt-0">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let scientist of latestScientists">
+            <entity-card [title]="scientist.fullName"
+                         [entityType]="type.Scientist"
+                         [entityId]="scientist.id"
+                         [address]="entity.getAddress(scientist, type.Scientist)"
+                         [entityCategories]="scientist.categories"
+                         [imageLink]="scientist.profilePicture"></entity-card>
+        </div>
+    </div>
+
+    <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+        <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
+            <button pButton pRipple type="button"
+                    [routerLink]="['/scientists']"
+                    label="{{'view-all-scientists' | translate}}"
+                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+        </div>
+    </div>
+</div>
+
+<!-- latest organizations -->
+<div class="py-6">
+    <div class="text-center">
+        <h2 class="text-900 font-normal mb-2">{{'latest-organizations' | translate}}</h2>
+    </div>
+
+    <div class="grid mt-8 justify-content-center md:mt-0">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let organization of latestOrganizations">
+            <entity-card [title]="organization.name"
+                         [entityType]="type.Organization"
+                         [entityId]="organization.id"
+                         [address]="organization.address"
+                         [entityCategories]="organization.categories"
+                         [imageLink]="organization.logo"></entity-card>
+        </div>
+    </div>
+
+    <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+        <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
+            <button pButton pRipple type="button"
+                    [routerLink]="['/organizations']"
+                    label="{{'view-all-organizations' | translate}}"
+                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+        </div>
+    </div>
+</div>
+
+<!-- latest equipment -->
+<div class="py-6">
+    <div class="text-center">
+        <h2 class="text-900 font-normal mb-2">{{'latest-equipment' | translate}}</h2>
+    </div>
+
+    <div class="grid mt-8 justify-content-center md:mt-0">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let equipment of latestEquipment">
+            <simple-entity-card [title]="equipment.getTitle()"
+                         [entityType]="type.Equipment"
+                         [entityId]="equipment.id"
+                         [imageLink]="equipment.image"></simple-entity-card>
+        </div>
+    </div>
+
+    <div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+        <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
+            <button pButton pRipple type="button"
+                    [routerLink]="['/scientists/equipment']"
+                    label="{{'view-all-equipment' | translate}}"
                     class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
         </div>
     </div>

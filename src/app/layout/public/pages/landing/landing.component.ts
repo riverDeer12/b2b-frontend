@@ -14,7 +14,7 @@ import {Equipment} from "../../../../equipment/core/models/equipment";
     templateUrl: './landing.component.html',
     styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent implements OnInit{
+export class LandingComponent implements OnInit {
     latestNews!: News[];
     latestCompanyResearchProblems!: ResearchProblem[];
     latestOrganizationResearchProblems!: ResearchProblem[];
@@ -45,28 +45,30 @@ export class LandingComponent implements OnInit{
                 Object.assign(new News(), x)
             );
 
-            this.latestCompanyResearchProblems = response['latestCompanyResearchProblems'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.latestCompanyResearchProblems = response['latestCompanyResearchProblems']
+                .map((x: ResearchProblem) =>
+                Object.assign(new ResearchProblem(), x)
             );
 
-            this.latestOrganizationResearchProblems = response['latestOrganizationResearchProblems'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.latestOrganizationResearchProblems = response['latestOrganizationResearchProblems']
+                .map((x: ResearchProblem) =>
+                Object.assign(new ResearchProblem(), x)
             );
 
-            this.latestCompanies = response['latestCompanies'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.latestCompanies = response['latestCompanies'].map((x: Company) =>
+                Object.assign(new Company(), x)
             );
 
-            this.latestScientists = response['latestScientists'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.latestScientists = response['latestScientists'].map((x: Scientist) =>
+                Object.assign(new Scientist(), x)
             );
 
-            this.latestOrganizations = response['latestOrganizations'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.latestOrganizations = response['latestOrganizations'].map((x: Organization) =>
+                Object.assign(new Organization(), x)
             );
 
-            this.latestEquipment = response['latestEquipment'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.latestEquipment = response['latestEquipment'].map((x: Equipment) =>
+                Object.assign(new Equipment(), x)
             );
         });
     }
