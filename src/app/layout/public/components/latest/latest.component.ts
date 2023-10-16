@@ -20,7 +20,7 @@ export class LatestComponent {
     @Input() companies!: Company[];
     @Input() scientists!: Scientist[];
     @Input() organizations!: Organization[];
-    @Input() equipment!: Equipment[];
+    @Input() latestEquipment!: Equipment[];
 
     public get type(): typeof EntityType{
         return EntityType;

@@ -162,7 +162,7 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let equipment of equipment">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let equipment of latestEquipment">
             <simple-entity-card [title]="equipment.getTitle()"
                          [entityType]="type.Equipment"
                          [entityId]="equipment.id"
