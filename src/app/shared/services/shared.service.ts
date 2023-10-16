@@ -14,9 +14,10 @@ import {HttpClient} from '@angular/common/http';
 })
 export class SharedService {
 
+
     parentEntityType = new Subject<EntityType>();
     dialogCloseStatus = new Subject<string>();
-    dataChange = new Subject<string>();
+    filterDataChange = new Subject<string>();
 
     constructor(private router: Router, private http: HttpClient) {
     }
@@ -80,11 +81,11 @@ export class SharedService {
 
 
     setExternalFilterValue(filterValue: string): void {
-        this.dataChange.next(filterValue);
+        this.filterDataChange.next(filterValue);
     }
 
     getExternalFilterValue(): Subject<string> {
-        return this.dataChange;
+        return this.filterDataChange;
     }
 
 }

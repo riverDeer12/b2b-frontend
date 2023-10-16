@@ -18,7 +18,6 @@ export class EntityDataViewComponent {
     @Input() filterField: string = 'name';
     @Input() showFilterInput: boolean = true;
 
-
     filteredEntities!: any[];
 
     public get entity(): typeof Entity {
@@ -32,7 +31,7 @@ export class EntityDataViewComponent {
         this.filteredEntities = this.entities;
 
         if (this.externalFilterInput) {
-            this.subscribeToDataChanges();
+            this.subscribeToFilterDataChanges();
         }
     }
 
@@ -40,7 +39,7 @@ export class EntityDataViewComponent {
      * Method that handles
      * external filter event.
      */
-    subscribeToDataChanges(): void {
+    subscribeToFilterDataChanges(): void {
         this.sharedService.getExternalFilterValue().subscribe((response: string) => {
 
             let filteredValue = response as string;
