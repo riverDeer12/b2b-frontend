@@ -14,7 +14,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class SharedService {
 
-
     parentEntityType = new Subject<EntityType>();
     dialogCloseStatus = new Subject<string>();
     filterDataChange = new Subject<string>();
