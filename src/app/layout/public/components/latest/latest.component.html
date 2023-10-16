@@ -5,7 +5,7 @@
     </div>
 
     <div class="grid justify-content-center mt-8 md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let news of latestNews">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let news of news">
             <simple-entity-card [title]="news.getTitle()"
                                 [imageLink]="news.featuredImage"
                                 [entityId]="news.id"
@@ -31,7 +31,7 @@
     </div>
 
     <div class="grid justify-content-center mt-8 md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of latestCompanyResearchProblems">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of companyResearchProblems">
             <simple-entity-card [title]="researchProblem.localizedTitle"
                                 [entityId]="researchProblem.companyId"
                                 [entityType]="type.Company"
@@ -56,7 +56,7 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of latestOrganizationResearchProblems">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of organizationResearchProblems">
             <simple-entity-card [title]="researchProblem.localizedTitle"
                                 [entityId]="researchProblem.publicOrganizationId"
                                 [entityType]="type.Organization"
@@ -81,7 +81,7 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let company of latestCompanies">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let company of companies">
             <entity-card [title]="company.name"
                          [entityType]="type.Company"
                          [entityId]="company.id"
@@ -108,7 +108,7 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let scientist of latestScientists">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let scientist of scientists">
             <entity-card [title]="scientist.fullName"
                          [entityType]="type.Scientist"
                          [entityId]="scientist.id"
@@ -135,7 +135,7 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let organization of latestOrganizations">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let organization of organizations">
             <entity-card [title]="organization.name"
                          [entityType]="type.Organization"
                          [entityId]="organization.id"
@@ -162,7 +162,7 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let equipment of latestEquipment">
+        <div class="col-12 lg:col-2 p-3" *ngFor="let equipment of equipment">
             <simple-entity-card [title]="equipment.getTitle()"
                          [entityType]="type.Equipment"
                          [entityId]="equipment.id"

@@ -14,13 +14,13 @@ import {Entity} from "../../../../shared/models/entity";
   styleUrls: ['./latest.component.scss']
 })
 export class LatestComponent {
-    @Input() latestNews!: News[];
-    @Input() latestCompanyResearchProblems!: ResearchProblem[];
-    @Input() latestOrganizationResearchProblems!: ResearchProblem[];
-    @Input() latestCompanies!: Company[];
-    @Input() latestScientists!: Scientist[];
-    @Input() latestOrganizations!: Organization[];
-    @Input() latestEquipment!: Equipment[];
+    @Input() news!: News[];
+    @Input() companyResearchProblems!: ResearchProblem[];
+    @Input() organizationResearchProblems!: ResearchProblem[];
+    @Input() companies!: Company[];
+    @Input() scientists!: Scientist[];
+    @Input() organizations!: Organization[];
+    @Input() equipment!: Equipment[];
 
     public get type(): typeof EntityType{
         return EntityType;
