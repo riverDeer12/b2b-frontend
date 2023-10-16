@@ -27,6 +27,8 @@ import {CategoriesResolver} from '../../categories/core/resolvers/categories.res
 import {EntityTypeResolver} from './core/resolvers/common/entity-type.resolver';
 import {EntityDetailsResolver} from './core/resolvers/common/entity-details.resolver';
 import {EntityDetailsComponent} from './pages/entity-details/entity-details.component';
+import {PublicResearchProblemsComponent} from './pages/public-research-problems/public-research-problems.component';
+import {PublicResearchProblemsResolver} from './core/resolvers/research-problems/public-research-problems.resolver';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -96,6 +98,14 @@ export const PublicLayoutRoutes: Routes = [
         component: PublicNewsComponent,
         resolve: {
             entities: PublicNewsListResolver,
+            categories: CategoriesResolver
+        }
+    },
+    {
+        path: ':entityType/research-problems',
+        component: PublicResearchProblemsComponent,
+        resolve: {
+            researchProblems: PublicResearchProblemsResolver,
             categories: CategoriesResolver
         }
     },

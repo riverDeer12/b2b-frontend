@@ -9,9 +9,12 @@ export class Entity {
     externalLink!: string;
     imageLink!: string;
 
-    public static isSimpleEntity(type: EntityType): boolean{
+    public static isSimpleEntity(type: EntityType): boolean {
         switch (type) {
             case EntityType.News:
+            case EntityType.ResearchProblem:
+            case EntityType.Equipment:
+            case EntityType.SpecificKnowledge:
                 return true;
             default:
                 return false;
@@ -55,7 +58,7 @@ export class Entity {
      * @param type entity type.
      */
     public static getDescription(entity: any, type: EntityType): string {
-        switch (type){
+        switch (type) {
             case EntityType.News:
                 return entity.content.translations.HR;
             default:
@@ -78,6 +81,8 @@ export class Entity {
             case EntityType.Scientist:
                 return entity.firstname + ' ' + entity.lastname;
             case EntityType.News:
+                return entity.title.translations.HR;
+            case EntityType.ResearchProblem:
                 return entity.title.translations.HR;
             default:
                 return '';
@@ -119,6 +124,8 @@ export class Entity {
                 return entity.profilePicture;
             case EntityType.News:
                 return entity.featuredImage;
+            case EntityType.ResearchProblem:
+                return entity.image;
             default:
                 return '';
         }

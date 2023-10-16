@@ -17,7 +17,6 @@ export class EntityCardComponent {
     @Input() address!: string;
     @Input() externalLink!: string;
 
-
     constructor(private router: Router) {
     }
 
@@ -25,5 +24,5 @@ export class EntityCardComponent {
     }
 
     openDetailsPage = () =>
-        this.router.navigateByUrl(this.entityType + '/details/' + this.entityId)
+        this.router.navigateByUrl(this.entityType + '/details/' + this.entityId);
 }

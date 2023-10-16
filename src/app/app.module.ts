@@ -27,7 +27,9 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         CommonModule,
-        RouterModule.forRoot(AppRoutes),
+        RouterModule.forRoot(AppRoutes, {
+            scrollPositionRestoration: 'top'
+        }),
         TranslateModule.forRoot({
             defaultLanguage: 'hr',
             loader: {

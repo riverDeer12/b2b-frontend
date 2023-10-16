@@ -11,11 +11,13 @@ import {SharedService} from '../../../../shared/services/shared.service';
 })
 export class EntityDataViewComponent {
     @Input() entityType!: EntityType;
+    @Input() parentEntityType!: EntityType
     @Input() entities!: any[];
     @Input() categories!: Category[];
     @Input() externalFilterInput!: boolean;
     @Input() filterField: string = 'name';
     @Input() showFilterInput: boolean = true;
+
 
     filteredEntities!: any[];
 
@@ -34,6 +36,10 @@ export class EntityDataViewComponent {
         }
     }
 
+    /**
+     * Method that handles
+     * external filter event.
+     */
     subscribeToDataChanges(): void {
         this.sharedService.getExternalFilterValue().subscribe((response: string) => {
 

@@ -1,6 +1,5 @@
 import {Category} from '../../../categories/core/models/category';
-import {EntityType} from "../../../auth/core/enums/entity-type";
-import {LocalizedProperty} from "../../../shared/models/localized-property";
+import {LocalizedProperty} from '../../../shared/models/localized-property';
 
 export class ResearchProblem {
     id!: string;
@@ -14,10 +13,20 @@ export class ResearchProblem {
     publicOrganizationId!: string;
     companyId!: string;
     categories!: Category[];
-    parentEntityType!: EntityType;
-    parentEntityId!: string;
 
-    getTitle(): string {
+    get parentId(): string {
+        return this.companyId ?? this.publicOrganizationId;
+    }
+
+    get localizedTitle(): string {
         return this.title.translations.HR;
+    }
+
+    get localizedDescription(): string {
+        return this.description.translations.HR;
+    }
+
+    get localizedAcademicCommunityContributionPossibility(): string {
+        return this.academicCommunityContributionPossibility.translations.HR;
     }
 }

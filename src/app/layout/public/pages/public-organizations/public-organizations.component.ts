@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {EntityType} from '../../../../auth/core/enums/entity-type';
 import {Category} from '../../../../categories/core/models/category';
 import {ActivatedRoute} from '@angular/router';
 import {Organization} from '../../../../organizations/core/models/organization';
 
 @Component({
-  selector: 'public-organizations',
-  templateUrl: './public-organizations.component.html',
-  styleUrls: ['./public-organizations.component.scss']
+    selector: 'public-organizations',
+    templateUrl: './public-organizations.component.html',
+    styleUrls: ['./public-organizations.component.scss']
 })
 export class PublicOrganizationsComponent {
-    entityType = EntityType.Organization;
     organizations!: Organization[];
     categories!: Category[];
+
+    public get type(): typeof EntityType {
+        return EntityType;
+    }
 
     constructor(private activatedRoute: ActivatedRoute) {
     }

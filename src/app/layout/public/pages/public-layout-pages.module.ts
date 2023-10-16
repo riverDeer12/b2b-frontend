@@ -20,12 +20,13 @@ import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import { EntityDetailsComponent } from './entity-details/entity-details.component';
+import {EntityDetailsComponent} from './entity-details/entity-details.component';
 import {CardModule} from 'primeng/card';
 import {TagModule} from 'primeng/tag';
 import {ChipsModule} from 'primeng/chips';
 import {DividerModule} from 'primeng/divider';
 import {TabViewModule} from 'primeng/tabview';
+import {PublicResearchProblemsComponent} from './public-research-problems/public-research-problems.component';
 
 /**
  * Translation resources loader.
@@ -49,7 +50,8 @@ export function createTranslateLoader(http: HttpBackend) {
         PublicOrganizationsComponent,
         PublicScientistsComponent,
         RegistrationComponent,
-        EntityDetailsComponent
+        EntityDetailsComponent,
+        PublicResearchProblemsComponent
     ],
     imports: [
         CommonModule,
@@ -85,7 +87,9 @@ export function createTranslateLoader(http: HttpBackend) {
         PublicNewsComponent,
         PublicOrganizationsComponent,
         PublicScientistsComponent,
-        RegistrationComponent
+        RegistrationComponent,
+        EntityDetailsComponent,
+        PublicResearchProblemsComponent
     ]
 })
 export class PublicLayoutPagesModule {

@@ -32,7 +32,7 @@
 
     <div class="grid justify-content-center mt-8 md:mt-0">
         <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of latestCompanyResearchProblems">
-            <simple-entity-card [title]="researchProblem.getTitle()"
+            <simple-entity-card [title]="researchProblem.localizedTitle"
                                 [entityId]="researchProblem.companyId"
                                 [entityType]="type.Company"
                                 [imageLink]="researchProblem.image"></simple-entity-card>
@@ -57,7 +57,7 @@
 
     <div class="grid mt-8 justify-content-center md:mt-0">
         <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of latestOrganizationResearchProblems">
-            <simple-entity-card [title]="researchProblem.getTitle()"
+            <simple-entity-card [title]="researchProblem.localizedTitle"
                                 [entityId]="researchProblem.publicOrganizationId"
                                 [entityType]="type.Organization"
                                 [imageLink]="researchProblem.image"></simple-entity-card>
