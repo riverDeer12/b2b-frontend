@@ -80,10 +80,21 @@ export class SharedService {
         this.http.post(entityUrl + '/flipActive', entityId);
 
 
+    /**
+     * Set value of
+     * external filter to trigger
+     * data view data init.
+     *
+     * @param filterValue value entered.
+     */
     setExternalFilterValue(filterValue: string): void {
         this.filterDataChange.next(filterValue);
     }
 
+    /**
+     * External filter value
+     * change listener.
+     */
     getExternalFilterValue(): Subject<string> {
         return this.filterDataChange;
     }
