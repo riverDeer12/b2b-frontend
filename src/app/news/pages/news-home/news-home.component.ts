@@ -9,7 +9,7 @@ import {News} from '../../core/models/news';
     styleUrls: ['./news-home.component.css']
 })
 export class NewsHomeComponent implements OnInit {
-    news: News[] = [];
+    news!: News[];
 
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();

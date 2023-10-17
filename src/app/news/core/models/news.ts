@@ -12,4 +12,8 @@ export class News {
     getTitle(): string {
         return this.title.translations.HR;
     }
+
+    get localizedTitle(): string {
+        return this.title.translations.HR;
+    }
 }
