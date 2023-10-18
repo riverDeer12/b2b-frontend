@@ -5,7 +5,7 @@ export class Category {
     name!: LocalizedProperty;
     description!: LocalizedProperty;
 
-    getName(): string {
-        return this.description.translations.HR;
+    get localizedName(): string {
+        return this.name.translations.HR;
     }
 }

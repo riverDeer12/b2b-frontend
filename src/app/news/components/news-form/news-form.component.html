@@ -9,7 +9,7 @@
                         <input class="{{validationService.getInputClass(form, 'HR', 'required',
                         'title.translations')}}"
                                pInputText type="text" id="title-hr" aria-describedby="title-input"
-                               formControlName="hr"/>
+                               formControlName="HR"/>
                         <label for="title-hr">{{ 'title.default' | translate }}</label>
                     </span>
                             <small class="p-error"
@@ -22,7 +22,7 @@
                                 <p-editor placeholder="{{ 'content.default' | translate }}"
                                           class="{{validationService.getInputClass(form, 'HR', 'required',
                         'content.translations')}}"
-                                          id="content-hr" aria-describedby="content-input" formControlName="hr">
+                                          id="content-hr" aria-describedby="content-input" formControlName="HR">
                                 </p-editor>
                             </span>
                             <small class="p-error"
@@ -34,10 +34,10 @@
                     <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
                         <div class="field field col-md-12" formGroupName="title">
                     <span class="p-float-label" formGroupName="translations">
-                        <input class="{{validationService.getInputClass(form, 'en', 'required',
+                        <input class="{{validationService.getInputClass(form, 'EN', 'required',
                         'title.translations')}}"
                                pInputText type="text" id="title-en" aria-describedby="title-input"
-                               formControlName="en"/>
+                               formControlName="EN"/>
                         <label for="title-en">{{ 'title.default' | translate }}</label>
                     </span>
                             <small class="p-error"
@@ -48,10 +48,10 @@
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
                                     <p-editor placeholder="{{ 'content.default' | translate }}"
-                                              class="{{validationService.getInputClass(form, 'en', 'required',
+                                              class="{{validationService.getInputClass(form, 'EN', 'required',
                                 'content.translations')}}"
                                               id="content-en" aria-describedby="content-input"
-                                              formControlName="en">
+                                              formControlName="EN">
                                     </p-editor>
                             </span>
                             <small class="p-error"

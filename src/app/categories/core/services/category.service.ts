@@ -45,13 +45,15 @@ export class CategoryService {
      * @param id category entity identifier.
      * @param categoryName name value.
      */
-    editCategory = (id: string, categoryName: string) =>
-        this.http.put(this.endpointUrl + id, categoryName);
+    editCategory(id: string, categoryName: string) {
+        return this.http.put(this.endpointUrl + id, categoryName);
+    }
+
 
     /**
      * Delete selected category by identifier.
      *
      * @param id category entity identifier.
      */
-    deleteCategory = (id: string) => this.http.delete(this.endpointUrl +  id);
+    deleteCategory = (id: string) => this.http.delete(this.endpointUrl + id);
 }

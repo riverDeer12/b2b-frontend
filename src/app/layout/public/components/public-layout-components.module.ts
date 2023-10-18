@@ -21,6 +21,7 @@ import {DataViewModule} from 'primeng/dataview';
 import {EntityDataViewComponent} from './entity-data-view/entity-data-view.component';
 import {InputTextModule} from 'primeng/inputtext';
 import {RouterModule} from '@angular/router';
+import {TagModule} from 'primeng/tag';
 
 /**
  * Translation resources loader.
@@ -65,7 +66,8 @@ export function createTranslateLoader(http: HttpBackend) {
         RippleModule,
         DividerModule,
         DataViewModule,
-        InputTextModule
+        InputTextModule,
+        TagModule
     ],
     exports: [
         SimpleEntityCardComponent,

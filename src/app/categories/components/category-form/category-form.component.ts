@@ -114,7 +114,10 @@ export class CategoryFormComponent {
      * updated selected category.
      */
     private editCategory(): void {
-        this.categoryService.editCategory(this.category.id, this.form.value).subscribe(() => {
+        this.categoryService.editCategory(this.category.id, this.form.value).subscribe((response: Object) => {
+
+                console.log(response);
+
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'categories.successfully-updated');
@@ -122,6 +125,7 @@ export class CategoryFormComponent {
                 this.router.navigateByUrl(this.returnUrl).then();
             },
             (error) => {
+            console.log(error);
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');

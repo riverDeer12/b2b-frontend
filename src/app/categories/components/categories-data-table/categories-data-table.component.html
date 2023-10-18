@@ -8,7 +8,7 @@
          currentPageReportTemplate="{first} {{'to' | translate }} {last}
          {{'results' | translate }} {{'from' | translate }}
          {totalRecords} {{'results' | translate }}"
-         [globalFilterFields]="['name']"
+         [globalFilterFields]="['localizedName']"
          [tableStyle]="{'min-width':'75rem'}"
          responsiveLayout="scroll">
     <ng-template pTemplate="caption">
@@ -39,11 +39,11 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:10%"></th>
-            <th pSortableColumn="name">
+            <th pSortableColumn="localizedName">
                 <div class="flex justify-content-between align-items-center">
                     {{ 'name.default' | translate }}
-                    <p-sortIcon field="name"></p-sortIcon>
-                    <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
+                    <p-sortIcon field="localizedName"></p-sortIcon>
+                    <p-columnFilter type="text" field="localizedName" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th>{{'activity' | translate}}</th>
@@ -59,7 +59,7 @@
                         icon="pi pi-pencil"></button>
             </td>
             <td>
-                {{category.name}}
+                {{category.localizedName}}
             </td>
             <td>
                 <p-button icon="{{category.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"

@@ -9,9 +9,9 @@
         </p>
         <p>
             <label>{{'categories' | translate}}</label>
-            <span class="p-tag" *ngFor="let category of entityCategories">
-                {{category.getName()}}
-            </span>
+            <p-tag *ngFor="let category of entityCategories">
+                {{category.localizedName}}
+            </p-tag>
         </p>
     </ng-template>
     <ng-template pTemplate="footer">
