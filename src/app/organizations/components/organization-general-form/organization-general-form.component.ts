@@ -88,7 +88,7 @@ export class OrganizationGeneralFormComponent {
             website: new FormControl(this.organization.website, Validators.required),
             newsletterCategories: new FormControl(this.organization.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.organization.categories.map(x => x.id), Validators.required),
-            categoryTags: new FormControl(this.organization.categoryTags.split(";"), Validators.required)
+            categoryTags: new FormControl(this.organization.categoryTags.split(";").slice(0,-1), Validators.required)
         })
     }
 

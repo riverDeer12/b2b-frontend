@@ -139,7 +139,7 @@ export class ScientistGeneralFormComponent {
             googleScholarLink: new FormControl(this.scientist.googleScholarLink, Validators.required),
             newsletterCategories: new FormControl(this.scientist.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.scientist.categories.map(x => x.id), Validators.required),
-            categoryTags: new FormControl(this.scientist.categoryTags.split(";"), Validators.required)
+            categoryTags: new FormControl(this.scientist.categoryTags.split(";").slice(0,-1), Validators.required)
         })
     }
 
