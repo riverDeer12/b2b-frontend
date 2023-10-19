@@ -3,11 +3,23 @@ import {Scientist} from '../../scientists/core/models/scientist';
 import {Organization} from '../../organizations/core/models/organization';
 import {Company} from 'src/app/companies/core/models/company';
 import {News} from 'src/app/news/core/models/news';
+import {Languages} from '../constants/languages';
+import {TranslationsObject} from './localized-property';
 
 export class Entity {
     title!: string;
     externalLink!: string;
     imageLink!: string;
+
+    public static get currentLanguage(): string {
+        const localStorageData = localStorage.getItem('lang') as string;
+
+        if (!Object.values(Languages).includes(localStorageData)) {
+            return 'HR';
+        } else {
+            return localStorageData;
+        }
+    }
 
     public static isSimpleEntity(type: EntityType): boolean {
         switch (type) {
@@ -60,9 +72,9 @@ export class Entity {
     public static getDescription(entity: any, type: EntityType): string {
         switch (type) {
             case EntityType.News:
-                return entity.content.translations.HR;
+                return entity.content.translations[this.currentLanguage as keyof TranslationsObject];
             default:
-                return entity.description.translations.HR;
+                return entity.description.translations[this.currentLanguage as keyof TranslationsObject];
         }
     }
 
@@ -81,9 +93,9 @@ export class Entity {
             case EntityType.Scientist:
                 return entity.firstname + ' ' + entity.lastname;
             case EntityType.News:
-                return entity.title.translations.HR;
+                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
             case EntityType.ResearchProblem:
-                return entity.title.translations.HR;
+                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
             default:
                 return '';
         }
@@ -144,7 +156,7 @@ export class Entity {
             case EntityType.Company:
                 return entity.address;
             case EntityType.Scientist:
-                return entity.employmentCollege.translations.HR;
+                return entity.employmentCollege.translations[this.currentLanguage as keyof TranslationsObject];
             default:
                 return '';
         }

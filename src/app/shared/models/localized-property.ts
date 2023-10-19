@@ -3,7 +3,7 @@ export class LocalizedProperty {
     translations!: TranslationsObject;
 }
 
-class TranslationsObject {
+export class TranslationsObject {
     HR!: string;
     EN!: string;
 }

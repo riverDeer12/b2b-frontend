@@ -87,8 +87,6 @@ export class NewsFormComponent {
      */
     submit(): void {
 
-        console.log(this.form.value);
-
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
@@ -111,7 +109,7 @@ export class NewsFormComponent {
         this.newsService.createNews(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'category-successfully-created');
+                        'news-successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
             },
@@ -128,6 +126,9 @@ export class NewsFormComponent {
      * updated selected category.
      */
     private editNews(): void {
+
+        console.log(this.returnUrl);
+
         this.newsService.editNews(this.news.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,

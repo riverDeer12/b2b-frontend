@@ -1,38 +1,44 @@
 <div class="justify-content-center grid">
-    <div class="col-8">
-        <p-card>
-            <img [src]="entity.getImageLink(entityItem, entityType)" height="100"
-                 alt="{{entity.getTitle(entityItem, entityType)}}">
-            <p>
-                <label>{{'name' | translate }}</label>
-                {{entity.getTitle(entityItem, entityType)}}
-            </p>
-            <div *ngIf="!entity.isSimpleEntity(entityType)">
-                <p>
-                    <label>{{'address' | translate }}</label>
-                    {{entity.getAddress(entityItem, entityType)}}
-                </p>
-                <p>
-                    <label>{{'website' | translate }}</label>
-                    {{entity.getExternalLink(entityItem, entityType)}}
-                </p>
+    <div class="col-6">
+        <p-card [header]="entity.getTitle(entityItem, entityType)">
+            <ng-template pTemplate="header">
+                <img alt="Card"
+                     [src]="entity.getImageLink(entityItem, entityType) ?? 'assets/layout/images/image-default.png'"/>
+            </ng-template>
+            <ng-template pTemplate="content">
+                <div *ngIf="!entity.isSimpleEntity(entityType)">
+                    <p>
+                        <label>{{'address' | translate }}</label>
+                        {{entity.getAddress(entityItem, entityType)}}
+                    </p>
+                    <p>
+                        <label>{{'website' | translate }}</label>
+                        <a href="{{entity.getExternalLink(entityItem, entityType)}}">
+                            {{entity.getExternalLink(entityItem, entityType)}}
+                        </a>
+                    </p>
+                    <p>
+                        <label>{{'tags' | translate }}</label>
+                        <p-tag *ngFor="let tag of entityItem.categoryTags.split(';').slice(0, -1)">
+                            {{tag}}
+                        </p-tag>
+                    </p>
+                </div>
                 <p>
                     <label>{{'categories.default' | translate }}</label>
-                    <p-tag *ngFor="let category of entityItem.categories">
-                        {{category.getName()}}
+                    <p-tag *ngFor="let category of entityCategories">
+                        {{category.localizedName}}
                     </p-tag>
                 </p>
                 <p>
-                    <label>{{'tags' | translate }}</label>
-                    <p-tag *ngFor="let tag of entityItem.categoryTags.split(';').slice(0, -1)">
-                        {{tag}}
-                    </p-tag>
+                    <label>{{'description' | translate }}</label>
+                    <span [innerHTML]="entity.getDescription(entityItem, entityType)"></span>
                 </p>
-            </div>
-            <p>
-                <label>{{'description' | translate }}</label>
-                <span [innerHTML]="entity.getDescription(entityItem, entityType)"></span>
-            </p>
+            </ng-template>
+            <ng-template pTemplate="footer">
+                <button style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
+        text-white simple-entity-card-button" label="{{'contact-entity' | translate}}"></button>
+            </ng-template>
         </p-card>
     </div>
 </div>
