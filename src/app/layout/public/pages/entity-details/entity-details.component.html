@@ -52,10 +52,38 @@
                         </p>
                     </div>
                 </div>
+                <div *ngIf="hasEquipment">
+                    <h3>{{'equipment' | translate}}</h3>
+                    <p-divider></p-divider>
+                    <div *ngFor="let equipment of equipmentList">
+                        <h5 [innerHTML]="equipment.localizedTitle"></h5>
+                        <img alt="Card" width="100%"
+                             [src]="entity.getImageLink(equipment, entityType.Equipment) ??
+                             'assets/layout/images/image-default.png'"/>
+                        <p>
+                            <label>{{'description' | translate }}</label>
+                            <span [innerHTML]="equipment.localizedDescription"></span>
+                        </p>
+                    </div>
+                </div>
+                <div *ngIf="hasSpecificKnowledge">
+                    <h3>{{'specific-knowledge' | translate}}</h3>
+                    <p-divider></p-divider>
+                    <div *ngFor="let specificKnowledge of specificKnowledgeList">
+                        <h5 [innerHTML]="specificKnowledge.localizedTitle"></h5>
+                        <img alt="Card" width="100%"
+                             [src]="entity.getImageLink(specificKnowledge, entityType.SpecificKnowledge) ??
+                             'assets/layout/images/image-default.png'"/>
+                        <p>
+                            <label>{{'description' | translate }}</label>
+                            <span [innerHTML]="specificKnowledge.localizedDescription"></span>
+                        </p>
+                    </div>
+                </div>
             </ng-template>
-            <ng-template pTemplate="footer">
+            <ng-template pTemplate="footer" *ngIf="showContactButton">
                 <button style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
-        text-white simple-entity-card-button" label="{{'contact-entity' | translate}}"></button>
+                    text-white simple-entity-card-button" label="{{'contact-entity' | translate}}"></button>
             </ng-template>
         </p-card>
     </div>

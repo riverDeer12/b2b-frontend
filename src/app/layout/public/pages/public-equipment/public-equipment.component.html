@@ -1,0 +1,17 @@
+<div id="equipment" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+    <div class="mx-4 md:mx-8 mt-0 md:mt-4 mb-6 text-center">
+        <h1 class="text-6xl font-bold text-100 line-height-2">{{ 'equipment' | translate }}</h1>
+    </div>
+</div>
+
+<div class="justify-content-center grid">
+    <div class="col-8">
+        <entity-data-view
+            [entities]="equipment"
+            [entityType]="type.Equipment"
+            [categories]="categories"
+            [parentEntityType]="parentEntityType"
+            filterField="localizedTitle"
+        ></entity-data-view>
+    </div>
+</div>

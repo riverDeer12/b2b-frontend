@@ -8,12 +8,12 @@ import {Company} from "../../../../companies/core/models/company";
 import {JobOffer} from "../../../../job-offers/core/models/job-offer";
 import {ResearchProblem} from "../../../../research-problems/core/models/research-problem";
 import {Organization} from "../../../../organizations/core/models/organization";
+import {SpecificKnowledge} from '../../../../specific-knowledge/core/models/specific-knowledge';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PublicService {
-
     private publicUrl = environment.apiUrl + '/public/';
 
     constructor(private http: HttpClient) {
@@ -33,6 +33,9 @@ export class PublicService {
 
     getEquipment = () =>
         this.http.get<Equipment[]>(this.publicUrl + 'scientists/equipment');
+
+    getSpecificKnowledge = () =>
+        this.http.get<SpecificKnowledge[]>(this.publicUrl + 'scientists/specific-knowledge');
 
     getCompanies = () =>
         this.http.get<Company[]>(this.publicUrl + 'companies');

@@ -72,18 +72,15 @@ a:hover {
     z-index: 2;
 }
 
-button:hover {
-    background-color: #0c386c !important;
-    color: #ffffff !important;
-}
-
-button {
-    color: var(--primary-color) !important;
-}
 
 .simple-entity-card-button{
     width: 100%;
     font-weight: 900 !important;
+}
+
+.simple-entity-card-button:hover{
+    background-color: #0c386c !important;
+    color: #ffffff !important;
 }
 
 .landing-wrapper{

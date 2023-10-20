@@ -27,6 +27,8 @@ import {ChipsModule} from 'primeng/chips';
 import {DividerModule} from 'primeng/divider';
 import {TabViewModule} from 'primeng/tabview';
 import {PublicResearchProblemsComponent} from './public-research-problems/public-research-problems.component';
+import { PublicEquipmentComponent } from './public-equipment/public-equipment.component';
+import { PublicSpecificKnowledgeComponent } from './public-specific-knowledge/public-specific-knowledge.component';
 
 /**
  * Translation resources loader.
@@ -51,7 +53,9 @@ export function createTranslateLoader(http: HttpBackend) {
         PublicScientistsComponent,
         RegistrationComponent,
         EntityDetailsComponent,
-        PublicResearchProblemsComponent
+        PublicResearchProblemsComponent,
+        PublicEquipmentComponent,
+        PublicSpecificKnowledgeComponent
     ],
     imports: [
         CommonModule,

@@ -19,7 +19,7 @@
             <button pButton pRipple type="button"
                     [routerLink]="['/news']"
                     label="{{'view-all-news' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+                    class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>
@@ -44,7 +44,7 @@
             <button pButton pRipple type="button"
                     [routerLink]="['/companies/research-problems']"
                     label="{{'view-all-company-research-problems' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+                    class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>
@@ -69,7 +69,7 @@
             <button pButton pRipple type="button"
                     [routerLink]="['/organizations/research-problems']"
                     label="{{'view-all-organization-research-problems' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+                    class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>
@@ -96,7 +96,7 @@
             <button pButton pRipple type="button"
                     [routerLink]="['/companies']"
                     label="{{'view-all-companies' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+                    class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>
@@ -123,7 +123,7 @@
             <button pButton pRipple type="button"
                     [routerLink]="['/scientists']"
                     label="{{'view-all-scientists' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+                    class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>
@@ -150,7 +150,7 @@
             <button pButton pRipple type="button"
                     [routerLink]="['/organizations']"
                     label="{{'view-all-organizations' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+                    class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>
@@ -163,7 +163,7 @@
 
     <div class="grid mt-8 justify-content-center md:mt-0">
         <div class="col-12 lg:col-2 p-3" *ngFor="let equipment of latestEquipment">
-            <simple-entity-card [title]="equipment.getTitle()"
+            <simple-entity-card [title]="equipment.localizedTitle"
                          [entityType]="type.Equipment"
                          [entityId]="equipment.id"
                          [imageLink]="equipment.image"></simple-entity-card>
@@ -175,7 +175,7 @@
             <button pButton pRipple type="button"
                     [routerLink]="['/scientists/equipment']"
                     label="{{'view-all-equipment' | translate}}"
-                    class="text-xl border-none mt-3 bg-blue-50 font-normal line-height-3 px-3"></button>
+                    class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
         </div>
     </div>
 </div>

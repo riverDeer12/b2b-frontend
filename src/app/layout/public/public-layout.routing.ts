@@ -29,6 +29,10 @@ import {EntityDetailsResolver} from './core/resolvers/common/entity-details.reso
 import {EntityDetailsComponent} from './pages/entity-details/entity-details.component';
 import {PublicResearchProblemsComponent} from './pages/public-research-problems/public-research-problems.component';
 import {PublicResearchProblemsResolver} from './core/resolvers/research-problems/public-research-problems.resolver';
+import {PublicEquipmentComponent} from './pages/public-equipment/public-equipment.component';
+import {PublicEquipmentResolver} from './core/resolvers/equipment/public-equipment.resolver';
+import {PublicSpecificKnowledgeComponent} from './pages/public-specific-knowledge/public-specific-knowledge.component';
+import {PublicSpecificKnowledgeResolver} from './core/resolvers/specific-knowledge/public-specific-knowledge.resolver';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -82,6 +86,22 @@ export const PublicLayoutRoutes: Routes = [
         component: PublicScientistsComponent,
         resolve: {
             entities: PublicScientistsResolver,
+            categories: CategoriesResolver
+        }
+    },
+    {
+        path: 'scientists/equipment',
+        component: PublicEquipmentComponent,
+        resolve: {
+            equipment: PublicEquipmentResolver,
+            categories: CategoriesResolver
+        }
+    },
+    {
+        path: 'scientists/specific-knowledge',
+        component: PublicSpecificKnowledgeComponent,
+        resolve: {
+            specificKnowledge: PublicSpecificKnowledgeResolver,
             categories: CategoriesResolver
         }
     },

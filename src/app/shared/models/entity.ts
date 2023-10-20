@@ -96,6 +96,10 @@ export class Entity {
                 return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
             case EntityType.ResearchProblem:
                 return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
+            case EntityType.Equipment:
+                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
+            case EntityType.SpecificKnowledge:
+                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
             default:
                 return '';
         }
@@ -137,6 +141,10 @@ export class Entity {
             case EntityType.News:
                 return entity.featuredImage;
             case EntityType.ResearchProblem:
+                return entity.image;
+            case EntityType.SpecificKnowledge:
+                return entity.image;
+            case EntityType.Equipment:
                 return entity.image;
             default:
                 return '';

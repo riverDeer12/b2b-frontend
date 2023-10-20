@@ -23,9 +23,9 @@ export class EntityDetailsComponent implements OnInit {
 
     researchProblems!: ResearchProblem[];
 
-    equipment!: Equipment[];
+    equipmentList!: Equipment[];
 
-    specificKnowledge!: SpecificKnowledge[];
+    specificKnowledgeList!: SpecificKnowledge[];
 
     public get hasResearchProblems(): boolean {
         const validEntityType = this.currentEntityType === EntityType.Company ||
@@ -36,12 +36,24 @@ export class EntityDetailsComponent implements OnInit {
         return this.entityItem.researchProblems.length;
     }
 
+    public get hasEquipment(): boolean {
+        return this.currentEntityType == this.entityType.Scientist;
+    }
+
+    public get hasSpecificKnowledge(): boolean {
+        return this.currentEntityType == this.entityType.Scientist;
+    }
+
     public get entity(): typeof Entity {
         return Entity;
     }
 
     public get entityType(): typeof EntityType {
         return EntityType;
+    }
+
+    public get showContactButton(): boolean {
+        return this.currentEntityType !== this.entityType.News;
     }
 
     constructor(private activatedRoute: ActivatedRoute) {
@@ -71,11 +83,11 @@ export class EntityDetailsComponent implements OnInit {
     }
 
     private initSubEntities(): void {
-        if (this.hasResearchProblems){
+        if (this.hasResearchProblems) {
             this.initResearchProblems();
         }
 
-        if(this.currentEntityType === EntityType.Scientist){
+        if (this.currentEntityType === EntityType.Scientist) {
             this.initEquipment();
             this.initSpecificKnowledge();
         }
@@ -88,13 +100,13 @@ export class EntityDetailsComponent implements OnInit {
     }
 
     private initEquipment() {
-        this.equipment = this.entityItem.equipment.map((x: Equipment) =>
+        this.equipmentList = this.entityItem.equipment.map((x: Equipment) =>
             Object.assign(new Equipment(), x)
         );
     }
 
     private initSpecificKnowledge() {
-        this.specificKnowledge = this.entityItem.specificKnowledge.map((x: SpecificKnowledge) =>
+        this.specificKnowledgeList = this.entityItem.specificKnowledge.map((x: SpecificKnowledge) =>
             Object.assign(new SpecificKnowledge(), x)
         );
     }
