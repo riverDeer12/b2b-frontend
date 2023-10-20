@@ -38,10 +38,10 @@
                     <h3>{{'research-problems' | translate}}</h3>
                     <p-divider></p-divider>
                     <div *ngFor="let researchProblem of researchProblems">
+                        <h5 [innerHTML]="researchProblem.localizedTitle"></h5>
                         <img alt="Card" width="100%"
                              [src]="entity.getImageLink(researchProblem, entityType.ResearchProblem) ??
                              'assets/layout/images/image-default.png'"/>
-                        <h5 [innerHTML]="researchProblem.localizedTitle"></h5>
                         <p>
                             <label>{{'description' | translate }}</label>
                             <span [innerHTML]="researchProblem.localizedDescription"></span>
