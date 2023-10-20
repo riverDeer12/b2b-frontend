@@ -1,20 +1,20 @@
 <div class="justify-content-center grid">
-    <div class="col-6">
-        <p-card [header]="entity.getTitle(entityItem, entityType)">
+    <div class="col-12 lg:col-6 md:col-8">
+        <p-card [header]="entity.getTitle(entityItem, currentEntityType)">
             <ng-template pTemplate="header">
                 <img alt="Card"
-                     [src]="entity.getImageLink(entityItem, entityType) ?? 'assets/layout/images/image-default.png'"/>
+                     [src]="entity.getImageLink(entityItem, currentEntityType) ?? 'assets/layout/images/image-default.png'"/>
             </ng-template>
             <ng-template pTemplate="content">
-                <div *ngIf="!entity.isSimpleEntity(entityType)">
+                <div *ngIf="!entity.isSimpleEntity(currentEntityType)">
                     <p>
                         <label>{{'address' | translate }}</label>
-                        {{entity.getAddress(entityItem, entityType)}}
+                        {{entity.getAddress(entityItem, currentEntityType)}}
                     </p>
                     <p>
                         <label>{{'website' | translate }}</label>
-                        <a href="{{entity.getExternalLink(entityItem, entityType)}}">
-                            {{entity.getExternalLink(entityItem, entityType)}}
+                        <a href="{{entity.getExternalLink(entityItem, currentEntityType)}}">
+                            {{entity.getExternalLink(entityItem, currentEntityType)}}
                         </a>
                     </p>
                     <p>
@@ -32,8 +32,20 @@
                 </p>
                 <p>
                     <label>{{'description' | translate }}</label>
-                    <span [innerHTML]="entity.getDescription(entityItem, entityType)"></span>
+                    <span [innerHTML]="entity.getDescription(entityItem, currentEntityType)"></span>
                 </p>
+                <div *ngIf="hasResearchProblems">
+                    <h2>{{'research-problems' | translate}}</h2>
+                    <p-divider></p-divider>
+                    <div *ngFor="let researchProblem of researchProblems">
+                        <img alt="Card" width="100%"
+                             [src]="entity.getImageLink(researchProblem, entityType.ResearchProblem) ??
+                             'assets/layout/images/image-default.png'"/>
+                        <h5 [innerHTML]="researchProblem.localizedTitle"></h5>
+                        <p [innerHTML]="researchProblem.localizedDescription"></p>
+                        <p [innerHTML]="researchProblem.localizedAcademicCommunityContributionPossibility"></p>
+                    </div>
+                </div>
             </ng-template>
             <ng-template pTemplate="footer">
                 <button style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
