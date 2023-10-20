@@ -22,8 +22,12 @@ export class EntityDetailsComponent implements OnInit {
     researchProblems!: ResearchProblem[];
 
     public get hasResearchProblems(): boolean {
-        return this.currentEntityType === EntityType.Company ||
-            this.currentEntityType === EntityType.Scientist;
+        const validEntityType = this.currentEntityType === EntityType.Company ||
+            this.currentEntityType === EntityType.Organization;
+
+        if (!validEntityType) return false;
+
+        return this.entityItem.researchProblems.length;
     }
 
     public get entity(): typeof Entity {

@@ -35,15 +35,21 @@
                     <span [innerHTML]="entity.getDescription(entityItem, currentEntityType)"></span>
                 </p>
                 <div *ngIf="hasResearchProblems">
-                    <h2>{{'research-problems' | translate}}</h2>
+                    <h3>{{'research-problems' | translate}}</h3>
                     <p-divider></p-divider>
                     <div *ngFor="let researchProblem of researchProblems">
                         <img alt="Card" width="100%"
                              [src]="entity.getImageLink(researchProblem, entityType.ResearchProblem) ??
                              'assets/layout/images/image-default.png'"/>
                         <h5 [innerHTML]="researchProblem.localizedTitle"></h5>
-                        <p [innerHTML]="researchProblem.localizedDescription"></p>
-                        <p [innerHTML]="researchProblem.localizedAcademicCommunityContributionPossibility"></p>
+                        <p>
+                            <label>{{'description' | translate }}</label>
+                            <span [innerHTML]="researchProblem.localizedDescription"></span>
+                        </p>
+                        <p>
+                            <label>{{'academic-community-contribution-possibility' | translate }}</label>
+                            <span [innerHTML]="researchProblem.localizedAcademicCommunityContributionPossibility"></span>
+                        </p>
                     </div>
                 </div>
             </ng-template>
