@@ -93,7 +93,6 @@ export class NewsDataTableComponent {
 
     openFlipActiveDialog(newsId: string): void {
         this.confirmationService.confirm({
-            key: 'confirmDeleteDialog',
             accept: () => {
                 this.sharedService.flipActive(EntityType.News, newsId).subscribe((response: Object) => {
                         this.notificationService

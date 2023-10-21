@@ -6,6 +6,7 @@ import {NewsPagesModule} from './pages/news-pages.module';
 import {NewsComponent} from './news.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../shared/shared.module';
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,9 @@ import {SharedModule} from '../shared/shared.module';
         NewsPagesModule,
         TranslateModule,
         SharedModule
+    ],
+    providers: [
+        ConfirmationService
     ]
 })
 export class NewsModule {
