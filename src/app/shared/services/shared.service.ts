@@ -4,6 +4,7 @@ import {EntityType} from '../../auth/core/enums/entity-type';
 import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 /**
  * Helper service for most common actions
@@ -97,5 +98,14 @@ export class SharedService {
     getExternalFilterValue(): Subject<string> {
         return this.filterDataChange;
     }
+
+    /**
+     * Changes activity status.
+     *
+     * @param type Entity Type.
+     * @param id news entity identifier.
+     */
+    flipActive = (type: EntityType, id: string) =>
+        this.http.get(environment.apiUrl + type + '/' + id + '/flip-active');
 
 }

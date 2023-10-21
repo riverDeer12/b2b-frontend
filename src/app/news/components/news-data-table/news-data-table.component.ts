@@ -3,9 +3,11 @@ import {News} from '../../core/models/news';
 import {Table} from 'primeng/table';
 import {ConfirmationService} from 'primeng/api';
 import {Router} from '@angular/router';
-import {NotificationType} from "../../../shared/enums/notification-type";
-import {NewsService} from "../../core/services/news.service";
-import {NotificationService} from "../../../shared/services/notification.service";
+import {NotificationType} from '../../../shared/enums/notification-type';
+import {NewsService} from '../../core/services/news.service';
+import {NotificationService} from '../../../shared/services/notification.service';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
     selector: 'news-data-table',
@@ -20,6 +22,7 @@ export class NewsDataTableComponent {
 
     constructor(private confirmationService: ConfirmationService,
                 private notificationService: NotificationService,
+                private sharedService: SharedService,
                 private newsService: NewsService,
                 private router: Router) {
     }
@@ -83,6 +86,22 @@ export class NewsDataTableComponent {
                     (error: Object) => {
                         this.notificationService
                             .showNotification(NotificationType.Error, 'error-deleting');
+                    })
+            },
+        });
+    }
+
+    openFlipActiveDialog(newsId: string): void {
+        this.confirmationService.confirm({
+            key: 'confirmDeleteDialog',
+            accept: () => {
+                this.sharedService.flipActive(EntityType.News, newsId).subscribe((response: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'activity.successfully-changed');
+                    },
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'activity.error');
                     })
             },
         });

@@ -83,7 +83,7 @@
                 {{news.updatedAt}}
             </td>
             <td>
-                <p-button icon="{{news.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                <p-button (click)="openFlipActiveDialog(news.id)" icon="{{news.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
                           styleClass="p-button-rounded p-button-text"></p-button>
             </td>
         </tr>
