@@ -7,7 +7,7 @@
                                            [categories]="categories"
                                            [returnUrl]="returnUrl"></organization-general-form>
             </p-tabPanel>
-            <p-tabPanel header="{{ 'username-password' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel header="{{ 'auth.username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
                     <auth-change-password [username]="this.organization.username"
                                           [entityType]="entityType"></auth-change-password>

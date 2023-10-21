@@ -199,7 +199,7 @@ export class JobOffersFormComponent {
         this.jobOfferService.createJobOffer(this.companyId, this.form.value).subscribe((response: JobOffer) => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'job-offer-successfully-created');
+                        'job-offers.successfully-created');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
@@ -222,7 +222,7 @@ export class JobOffersFormComponent {
             .subscribe((response: JobOffer) => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
-                            'job-offer-successfully-updated');
+                            'job-offers.successfully-updated');
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 

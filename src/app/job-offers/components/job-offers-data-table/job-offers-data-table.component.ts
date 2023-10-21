@@ -4,14 +4,15 @@ import {ConfirmationService} from 'primeng/api';
 import {Table} from 'primeng/table';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {JobOffer} from "../../core/models/job-offer";
-import {JobOfferService} from "../../core/services/job-offer.service";
-import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog-form.component";
-import {FormType} from "../../../shared/enums/form-type";
-import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
-import {DialogService} from "primeng/dynamicdialog";
-import {EntityType} from "../../../auth/core/enums/entity-type";
+import {JobOffer} from '../../core/models/job-offer';
+import {JobOfferService} from '../../core/services/job-offer.service';
+import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
+import {FormType} from '../../../shared/enums/form-type';
+import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
+import {DialogService} from 'primeng/dynamicdialog';
+import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
+import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
 
 @Component({
     selector: 'job-offers-data-table',
@@ -125,9 +126,13 @@ export class JobOffersDataTableComponent {
     private listenForDataChanges(): void {
         this.jobOfferService.listenJobOffers()
             .subscribe((response: JobOffer) => {
-                this.data = this.data.filter(x => x.id !== response.id);
-                this.data.unshift(Object.assign(response, new JobOffer()));
-                this.table.reset();
+                this.jobOfferService.getJobOffers(this.companyId)
+                    .subscribe((response: JobOffer[]) => {
+                        this.data = response.map((x: JobOffer) =>
+                            Object.assign(new JobOffer(), x)
+                        );
+                        this.table.reset();
+                    })
             })
     }
 

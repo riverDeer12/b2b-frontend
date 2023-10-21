@@ -35,28 +35,28 @@
             <th style="width:10%"></th>
             <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'firstname' | translate }}
+                    {{ 'scientists.firstname.default' | translate }}
                     <p-sortIcon field="firstname"></p-sortIcon>
                     <p-columnFilter type="text" field="firstname" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'lastname' | translate }}
+                    {{ 'scientists.lastname.default' | translate }}
                     <p-sortIcon field="lastname"></p-sortIcon>
                     <p-columnFilter type="text" field="lastname" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'email' | translate }}
+                    {{ 'scientists.email.default' | translate }}
                     <p-sortIcon field="email"></p-sortIcon>
                     <p-columnFilter type="text" field="email" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="numberOfViews" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'number-of-views' | translate }}
+                    {{ 'scientists.number-of-views' | translate }}
                     <p-sortIcon field="numberOfViews"></p-sortIcon>
                     <p-columnFilter type="number" field="numberOfViews" display="menu"
                                     class="ml-auto"></p-columnFilter>
@@ -94,14 +94,14 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="5">{{'no-scientists-found' | translate }}</td>
+            <td colspan="5">{{'scientists.no-scientists-found' | translate }}</td>
         </tr>
     </ng-template>
 </p-table>
 
-<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
+<p-confirmDialog header="{{'scientists.confirm-delete-action' | translate }}"
                  key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
-                 message="{{'confirm-delete-message' | translate }}"
+                 message="{{'scientists.confirm-delete-message' | translate }}"
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"

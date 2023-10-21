@@ -30,13 +30,13 @@
                     <li>
                         <a (click)="router.navigate(['/companies'])" pRipple
                            class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'companies' | translate}}</span>
+                            <span>{{'companies.default' | translate}}</span>
                         </a>
                     </li>
                     <li>
                         <a (click)="router.navigate(['/scientists'])" pRipple
                            class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'scientists' | translate }}</span>
+                            <span>{{'scientists.default' | translate }}</span>
                         </a>
                     </li>
                     <li>
@@ -54,21 +54,21 @@
                     <li>
                         <a (click)="router.navigate(['/organizations'])" pRipple
                            class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'organizations' | translate }}</span>
+                            <span>{{'organizations.default' | translate }}</span>
                         </a>
                     </li>
                     <li>
                         <a (click)="router.navigate(['/news'])" pRipple
                            class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'news' | translate}}</span>
+                            <span>{{'news.default' | translate}}</span>
                         </a>
                     </li>
                 </ul>
                 <div
                     class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                    <button pButton pRipple label="{{'login' | translate }}" [routerLink]="['/login']"
+                    <button pButton pRipple label="{{'auth.login' | translate }}" [routerLink]="['/login']"
                             class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
-                    <button pButton pRipple label="{{'register' | translate }}" [routerLink]="['/registration']"
+                    <button pButton pRipple label="{{'auth.registration' | translate }}" [routerLink]="['/registration']"
                             class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></button>
                 </div>
             </div>

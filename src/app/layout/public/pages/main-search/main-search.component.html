@@ -9,7 +9,7 @@
         <p-tabView>
             <input pInputText type="text" #filter (input)="onFilter($event.target)"
                    placeholder="{{'keyword' | translate }}" class="w-full"/>
-            <p-tabPanel header="{{'companies' | translate }}">
+            <p-tabPanel header="{{'companies.default' | translate }}">
                 <entity-data-view
                     [entities]="companies"
                     [entityType]="entityType.Company"
@@ -19,7 +19,7 @@
                     filterField="name"
                 ></entity-data-view>
             </p-tabPanel>
-            <p-tabPanel header="{{'scientists' | translate }}">
+            <p-tabPanel header="{{'scientists.default' | translate }}">
                 <entity-data-view
                     [entities]="scientists"
                     [entityType]="entityType.Scientist"
@@ -29,7 +29,7 @@
                     filterField="fullName"
                 ></entity-data-view>
             </p-tabPanel>
-            <p-tabPanel header="{{'organizations' | translate }}">
+            <p-tabPanel header="{{'organizations.default' | translate }}">
                 <entity-data-view
                     [entities]="organizations"
                     [entityType]="entityType.Organization"

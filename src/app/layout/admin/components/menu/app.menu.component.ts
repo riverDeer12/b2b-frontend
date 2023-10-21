@@ -19,45 +19,34 @@ export class AppMenuComponent implements OnInit {
             {
                 items: [
                     {
-                        label: 'home',
-                        icon: 'pi pi-fw pi-home',
-                        routerLink: ['/admin'],
-                        target: '_blank'
-                    },
-                    {
-                        label: 'activities',
+                        label: 'dashboard.default',
                         icon: 'pi pi-fw pi-chart-line',
                         routerLink: ['/admin/activities']
                     },
                     {
-                        label: 'news',
+                        label: 'news.default',
                         icon: 'pi pi-fw pi-megaphone',
                         routerLink: ['/admin/news']
                     },
                     {
-                        label: 'categories',
+                        label: 'categories.default',
                         icon: 'pi pi-fw pi-bookmark',
                         routerLink: ['/admin/categories']
                     },
                     {
-                        label: 'companies',
+                        label: 'companies.default',
                         icon: 'pi pi-fw pi-building',
                         routerLink: ['/admin/companies']
                     },
                     {
-                        label: 'scientists',
+                        label: 'scientists.default',
                         icon: 'pi pi-fw pi-sun',
                         routerLink: ['/admin/scientists']
                     },
                     {
-                        label: 'organizations',
+                        label: 'organizations.default',
                         icon: 'pi pi-fw pi-building',
                         routerLink: ['/admin/organizations']
-                    },
-                    {
-                        label: 'subscribers',
-                        icon: 'pi pi-fw pi-users',
-                        routerLink: ['/admin/subscribers']
                     }
                 ]
             }

@@ -109,7 +109,7 @@ export class NewsFormComponent {
         this.newsService.createNews(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'news-successfully-created');
+                        'news.successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
             },
@@ -132,7 +132,7 @@ export class NewsFormComponent {
         this.newsService.editNews(this.news.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'category-successfully-updated');
+                        'news.successfully-updated');
 
                 this.router.navigateByUrl(this.returnUrl).then();
             },

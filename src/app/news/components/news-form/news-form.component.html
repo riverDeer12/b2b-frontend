@@ -10,16 +10,16 @@
                         'title.translations')}}"
                                pInputText type="text" id="title-hr" aria-describedby="title-input"
                                formControlName="HR"/>
-                        <label for="title-hr">{{ 'title.default' | translate }}</label>
+                        <label for="title-hr">{{ 'news.title.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required',
                            'title.translations')"
-                                   id="title-input-hr">{{ 'title.required' | translate }}</small>
+                                   id="title-input-hr">{{ 'news.title.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
-                                <p-editor placeholder="{{ 'content.default' | translate }}"
+                                <p-editor placeholder="{{ 'news.content.default' | translate }}"
                                           class="{{validationService.getInputClass(form, 'HR', 'required',
                         'content.translations')}}"
                                           id="content-hr" aria-describedby="content-input" formControlName="HR">
@@ -28,7 +28,7 @@
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required',
                            'content.translations')"
-                                   id="content-input-hr">{{ 'content.required' | translate }}</small>
+                                   id="content-input-hr">{{ 'news.content.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                     <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
@@ -38,16 +38,16 @@
                         'title.translations')}}"
                                pInputText type="text" id="title-en" aria-describedby="title-input"
                                formControlName="EN"/>
-                        <label for="title-en">{{ 'title.default' | translate }}</label>
+                        <label for="title-en">{{ 'news.title.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required',
                            'title.translations')"
-                                   id="title-input-en">{{ 'title.required' | translate }}</small>
+                                   id="title-input-en">{{ 'news.title.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
-                                    <p-editor placeholder="{{ 'content.default' | translate }}"
+                                    <p-editor placeholder="{{ 'news.content.default' | translate }}"
                                               class="{{validationService.getInputClass(form, 'EN', 'required',
                                 'content.translations')}}"
                                               id="content-en" aria-describedby="content-input"
@@ -57,7 +57,7 @@
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required',
                            'content.translations')"
-                                   id="content-input-en">{{ 'content.required' | translate }}</small>
+                                   id="content-input-en">{{ 'news.content.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                     <div class="col-6 ml-0 pl-0">

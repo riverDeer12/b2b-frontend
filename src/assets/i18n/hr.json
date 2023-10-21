@@ -131,9 +131,13 @@
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
     "results": "rezultata",
     "correct-validation-errors": "Molimo ispravite pogreške i pokušajte ponovno.",
+    "dashboard": {
+        "default": "Statistika"
+    },
     "auth": {
         "username": "Korisničko ime",
         "password": "Lozinka",
+        "registration": "Registracija",
         "confirm-password": "Potvrda lozinke",
         "username-password": "Korisničko ime i lozinka",
         "welcome-to-dashboard": "Uspješna prijava u RIMAP administraciju.",
@@ -166,14 +170,46 @@
         "no-companies-found": "Nema pronađenih tvrtki",
         "error-deleting": "Greška prilikom brisanja tvrtke.",
         "new-company": "Nova tvrtka",
-        "address": "Adresa",
-        "email": "Email",
+        "name": {
+            "default": "Naziv tvrtke",
+            "required": "Naziv tvrtke je obavezan podatak"
+        },
+        "address": {
+            "default": "Adresa",
+            "required": "Adresa je obavezan podatak"
+        },
+        "email": {
+            "default": "Email",
+            "required": "Email je obavezan podatak.",
+            "invalid": "Email nije u ispravnom obliku."
+        },
+        "description": {
+            "default": "Opis tvrtke",
+            "required": "Opis tvrtke je obavezan podatak.",
+            "invalid": "Opis tvrtke nije u ispravnom obliku."
+        },
+        "tax-code": {
+            "default": "OIB",
+            "required": "OIB je obavezan podatak.",
+            "invalid": "OIB nije u ispravnom obliku."
+        },
+        "website": {
+            "default": "Web sjedište",
+            "required": "Web sjedište je obavezan podatak.",
+            "invalid": "Web sjedište nije u ispravnom obliku."
+        },
+        "projects": {
+            "default": "Projekti",
+            "required": "Projekti su obavezan podatak.",
+            "invalid": "Projekti nisu u ispravnom obliku."
+        },
+        "number-of-employees": {
+            "default": "Broj zaposlenih",
+            "required": "Broj zaposlenih je obavezan podatak.",
+            "invalid": "Broj zaposlenih nije u ispravnom obliku."
+        },
         "number-of-views": "Broj pregleda",
-        "description": "Opis tvrtke",
-        "tax-code": "OIB",
-        "website": "Web sjedište",
-        "projects": "Projekti",
-        "number-of-employees": "Broj zaposlenih",
+        "latest-companies": "Nove registrirane tvrtke",
         "latest-company-research-problems": "Novi razvojni prijedlozi tvrtki",
         "view-all-company-research-problems": "Pogledaj sve razvojne prijedloge tvrtki",
         "new-companies": "Nove registrirane tvrtke",
@@ -199,22 +235,78 @@
         "no-scientists-found": "Nema pronađenih istraživača",
         "error-deleting": "Greška prilikom brisanja istraživača.",
         "new-scientist": "Novi istraživač",
-        "firstname": "Ime",
-        "lastname": "Prezime",
+        "firstname": {
+            "default": "Ime",
+            "required": "Ime je obavezan podatak."
+        },
+        "lastname": {
+            "default": "Prezime",
+            "required": "Prezime je obavezan podatak."
+        },
+        "email": {
+            "default": "Email",
+            "required": "Email je obavezan podatak."
+        },
+        "projects": {
+            "default": "Projekti",
+            "required": "Projekti su obavezan podatak."
+        },
+        "functions": {
+            "default": "Funkcije",
+            "required": "Funkcije su obavezan podatak."
+        },
+        "google-scholar-Link": {
+            "default": "Poveznica na Google Scholar",
+            "required": "Poveznica na Google Scholar je obavezan podatak."
+        },
+        "employment-college": {
+            "default": "Zaposlenje",
+            "required": "Zaposlenje je obavezan podatak."
+        },
+        "education-title": {
+            "default": "Titula",
+            "required": "Titula je obavezan podatak."
+        },
+        "website": {
+            "default": "Web sjedište",
+            "required": "Web sjedište je obavezan podatak."
+        },
+        "description": {
+            "default": "Kratki životopis i opis znanstvenog rada (5-6 rečenica)",
+            "required": "Kratki životopis je obavezan podatak."
+        },
         "number-of-views": "Broj pregleda",
-        "email": "Email",
-        "projects": "Projekti",
-        "functions": "Funkcije",
-        "google-scholar-Link": "Poveznica na Google Scholar",
-        "employment-college": "Zaposlenje",
-        "education-title": "Titula",
-        "new-scientists": "Novi registrirani istraživači",
+        "latest-scientists": "Novi registrirani istraživači",
         "view-all-scientists": "Pogledaj sve istraživače",
         "scientist-equipment": "Istraživačka oprema",
         "scientist-specific-knowledge": "Usluge i kompetencije istraživača"
     },
     "organizations": {
-        "new-organizations": "Nove registrirane javne organizacije",
+        "default": "Javni sektor",
+        "name": {
+            "default": "Naziv javne organizaicije",
+            "required": "Naziv javne organizaicije je obavezan podatak."
+        },
+        "description": {
+            "default": "Opis javne organizacije",
+            "required": "Opis javne organizacije je obavezan podatak."
+        },
+        "email": {
+            "default": "Email",
+            "required": "Email je obavezan podatak."
+        },
+        "address": {
+            "default": "Adresa",
+            "required": "Adresa je obavezan podatak."
+        },
+        "website": {
+            "default": "Web sjedište",
+            "required": "Web sjedište je obavezan podatak."
+        },
+        "edit-organization": "Uređivanje javne organizacije",
+        "number-of-views": "Broj pregleda",
+        "successfully-deleted": "Javna organizacija je uspješno izbrisana.",
+        "latest-organizations": "Nove registrirane javne organizacije",
         "view-all-organizations": "Pogledaj sve organizacije",
         "latest-organization-research-problems": "Novi razvojni prijedlozi javnog sektora",
         "view-all-organization-research-problems": "Pogledaj sve razvojne prijedloge javnog sektora",
@@ -222,6 +314,19 @@
     },
     "categories": {
         "default": "Kategorije",
+        "required": "Kategorije su obavezan podatak",
+        "name": {
+            "default": "Naziv kategorije",
+            "required": "Naziv kategorije je obavezan podatak."
+        },
+        "tags": {
+            "default": "Ključne riječi",
+            "required": "Ključne riječi su obavezan podatak."
+        },
+        "newsletter-categories": {
+            "default": "Newsletter kategorije",
+            "required": "Newsletter kategorije su obavezan podatak."
+        },
         "categories": "Kategorije",
         "category-items": "kategorije",
         "items": "kategorija",
@@ -244,16 +349,47 @@
         "create": "Kreiranje potrebe za ljudskim resursima",
         "edit": "Uređivanje potrebe za ljudskim resursima",
         "no-job-offers-found": "Nema pronađenih potreba za ljudskim resursima.",
-        "location": "Lokacija",
-        "deadline": "Rok prijave",
-        "experience": "Iskustvo",
-        "education": "Razina obrazovanja",
-        "special-conditions": "Posebni uvjeti",
-        "duration": "Trajanje",
-        "apply-method": "Način prijave",
-        "additional": "Dodatno",
         "job-offers": "Potrebe za ljudskim resursima",
-        "job-offer-name": "Naziv potrebe za ljudskim resursima",
+        "name": {
+            "default": "Naziv potrebe za ljudskim resursima",
+            "required": "Naziv potrebe za ljudskim resursima je obavezan podatak"
+        },
+        "deadline": {
+            "default": "Rok prijave",
+            "required": "Rok prijave je obavezan podatak."
+        },
+        "experience": {
+            "default": "Razina iskustva",
+            "required": "Razina iskustva je obavezan podatak."
+        },
+        "location": {
+            "default": "Lokacija",
+            "required": "Lokacija je obavezan podatak"
+        },
+        "education": {
+            "default": "Razina obrazovanja",
+            "required": "Razina obrazovanja je obavezan podatak"
+        },
+        "special-conditions": {
+            "default": "Posebni uvjeti",
+            "required": "Posebni uvjeti su obavezan podatak"
+        },
+        "duration": {
+            "default": "Trajanje",
+            "required": "Trajanje je obavezan podatak."
+        },
+        "apply-method": {
+            "default": "Način prijave",
+            "required": "Način prijave je obavezan podatak."
+        },
+        "additional": {
+            "default": "Dodatno",
+            "required": "Dodatno je obavezan podatak."
+        },
+        "description": {
+            "default": "Opis",
+            "required": "Opis je obavezan podatak."
+        },
         "category-items": "potrebe za ljudskim resursima",
         "items": "potrebe za ljudskim resursima",
         "job-offers-list": "Pregled potreba za ljudskim resursima",
@@ -276,8 +412,21 @@
         "default": "Razvojni prijedlozi",
         "edit": "Uređivanje razvojnog prijedloga",
         "create": "Kreiranje razvojnog prijedloga",
-        "academic-community-contribution-possibility": "Mogućnost akademskog doprinosa",
+        "title": {
+            "default": "Naziv razvojnog prijedloga",
+            "required": "Naziv razvojnog prijedloga je obavezan podatak."
+        },
+        "academic-community-contribution-possibility": {
+            "default": "Mogućnost akademskog doprinosa",
+            "required": "Mogućnost akademskog doprinosa je obavezan podatak."
+        },
+        "description": {
+            "default": "Opis razvojnog prijedloga",
+            "required": "Opis razvojnog prijedloga je obavezan podatak."
+        },
+        "successfully-created": "Razvojni prijedlog je uspješno kreiran.",
         "successfully-updated": "Razvojni prijedlog je uspješno ažuriran.",
+        "successfully-deleted": "Razvojni prijedlog je uspješno izbrisan.",
         "research-problems": "Razvojni prijedlozi",
         "research-problem-items": "razvojnih prijedloga",
         "items": "razvojni prijedlozi",
@@ -290,8 +439,7 @@
         "edit-research-problem": "Uređivanje razvojnog prijedloga",
         "confirm-delete-action": "Jeste li sigurni da želite izbrisati razvojni prijedlog?",
         "confirm-delete-message": "Nakon potvrde odabrani razvojni prijedlog će biti izbrisan.",
-        "successfully-deleted": "Razvojni prijedlog je uspješno izbrisan.",
-        "no-research-problems-found": "Nema pronađenih razvojnih prijedloga",
+        "no-research-problems-found": "Nema pronađenih razvojnih prijedloga.",
         "error-deleting": "Greška prilikom brisanja razvojnog prijedloga.",
         "new-research-problem": "Novi razvojni prijedlog",
         "parent-entity": "Nadređeni entitet",
@@ -304,6 +452,14 @@
         "edit": "Uređivanje usluga i kompetencija istraživača",
         "create": "Kreiranje usluge i kompetencije istraživača",
         "no-specific-knowledge-found": "Nema pronađenih usluga i kompetencija istraživača.",
+        "title": {
+            "default": "Naziv usluge/kompetencije",
+            "required": "Naziv usluge/kompetencije je obavezan podatak."
+        },
+        "description": {
+            "default": "Opis usluge/kompetencije",
+            "required": "Opis usluge/kompetencije je obavezan podatak."
+        },
         "specific-knowledge": "Usluge i kompetencije",
         "specific-knowledge-items": "usluge i kompetencije",
         "items": "usluga i kompetencija",
@@ -328,6 +484,14 @@
         "successfully-created": "Uspješno kreirana istraživačka oprema",
         "successfully-updated": "Uspješno ažurirana istraživačka oprema",
         "no-equipment-found": "Nema pronađene istraživačke opreme.",
+        "title": {
+            "default": "Naziv istraživačke opreme",
+            "required": "Naziv istraživačke opreme je obavezan podatak"
+        },
+        "description": {
+            "default": "Opis istraživačke opreme",
+            "required": "Opis istraživačke opreme je obavezan podatak"
+        },
         "equipment": "Oprema",
         "equipment-items": "opreme",
         "items": "opreme",
@@ -341,6 +505,7 @@
         "successfully-deleted": "Oprema je uspješno izbrisana.",
         "error-deleting": "Greška prilikom brisanja opreme.",
         "new-equipment": "Nova istraživačka oprema",
+        "latest-equipment": "Nova registrirana istraživačka oprema",
         "view-all-equipment": "Pogledaj svu istraživačku opremu"
     },
     "news": {
@@ -354,6 +519,8 @@
             "default": "Sadržaj",
             "required": "Sadržaj je obavezan podatak."
         },
+        "successfully-created": "Objava je uspješno kreirana.",
+        "successfully-updated": "Objava je uspješno ažurirana.",
         "created-at": "Datum kreiranja",
         "updated-at": "Datum zadnje izmjene",
         "number-of-views": "Broj pregleda",

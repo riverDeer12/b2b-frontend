@@ -6,7 +6,7 @@
                                         [scientist]="scientist"
                                         [categories]="categories"></scientist-general-form>
             </p-tabPanel>
-            <p-tabPanel header="{{ 'username-password' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel header="{{ 'auth.username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
                     <auth-change-password [username]="this.scientist.username"
                                           [entityType]="entityType"></auth-change-password>

@@ -115,14 +115,14 @@ export class ResearchProblemsDataTableComponent {
             key: 'confirmDeleteDialog',
             accept: () => {
                 this.researchProblemService.deleteResearchProblem(this.parentEntityType,
-                    this.parentEntityId,researchProblemId).subscribe(() => {
+                    this.parentEntityId, researchProblemId).subscribe(() => {
                         this.notificationService
-                            .showNotification(NotificationType.Success, 'successfully-deleted');
+                            .showNotification(NotificationType.Success, 'research-problems.successfully-deleted');
                         this.data = this.data.filter((x => x.id !== researchProblemId));
                     },
                     () => {
                         this.notificationService
-                            .showNotification(NotificationType.Error, 'error-deleting');
+                            .showNotification(NotificationType.Error, 'research-problems.error-deleting');
                     })
             },
         });
@@ -152,10 +152,14 @@ export class ResearchProblemsDataTableComponent {
      */
     private listenForDataChanges(): void {
         this.researchProblemService.listenResearchProblems()
-            .subscribe((newResearchProblem: ResearchProblem) => {
-                this.data = this.data.filter(x => x.id !== newResearchProblem.id);
-                this.data.unshift(Object.assign(newResearchProblem, new ResearchProblem()));
-                this.table.reset();
+            .subscribe((response: ResearchProblem) => {
+                this.researchProblemService.getResearchProblems(this.parentEntityType, this.parentEntityId)
+                    .subscribe((response: ResearchProblem[]) => {
+                        this.data = response.map((x: ResearchProblem) =>
+                            Object.assign(new ResearchProblem(), x)
+                        );
+                        this.table.reset();
+                    })
             })
     }
 }

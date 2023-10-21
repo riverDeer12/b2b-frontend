@@ -9,13 +9,13 @@
                                 <input class="{{validationService.getInputClass(form, 'HR', 'required',
                                 'name.translations')}}"
                                        aria-describedby="name-input-hr"
-                                       pInputText type="text" id="name-hr" formControlName="hr"/>
-                                <label for="name-hr">{{ 'name.default' | translate }}</label>
+                                       pInputText type="text" id="name-hr" formControlName="HR"/>
+                                <label for="name-hr">{{ 'job-offers.name.default' | translate }}</label>
                             </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'name.translations')"
-                                   id="name-input-hr">{{ 'name.required' | translate }}</small>
+                                   id="name-input-hr">{{ 'job-offers.name.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="description">
                             <span class="p-float-label" formGroupName="translations">
@@ -25,158 +25,158 @@
                                     aria-describedby="description-input-hr"
                                     pInputText
                                     id="description-hr"
-                                    formControlName="hr"></textarea>
-                                <label for="description-hr">{{ 'description.default' | translate }}</label>
+                                    formControlName="HR"></textarea>
+                                <label for="description-hr">{{ 'job-offers.description.default' | translate }}</label>
                             </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'description.translations')"
-                                   id="description-input-hr">{{ 'description.required' | translate }}</small>
+                                   id="description-input-hr">{{ 'job-offers.description.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="experience">
                             <span class="p-float-label" formGroupName="translations">
                         <input class="{{validationService.getInputClass(form, 'HR', 'required', 'experience.translations')}}"
                                aria-describedby="experience-input-hr"
-                               pInputText type="text" id="experience-input-hr" formControlName="hr"/>
-                        <label for="experience-input">{{ 'experience.default' | translate }}</label>
+                               pInputText type="text" id="experience-input-hr" formControlName="HR"/>
+                        <label for="experience-input">{{ 'job-offers.experience.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required', 'experience.translations')"
-                                   id="experience-input">{{ 'experience.required' | translate }}</small>
+                                   id="experience-input">{{ 'job-offers.experience.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="education">
                             <span class="p-float-label" formGroupName="translations">
                         <input class="{{validationService.getInputClass(form, 'HR', 'required', 'education.translations')}}"
                                aria-describedby="education-input-hr"
-                               pInputText type="text" id="education-input-hr" formControlName="hr"/>
-                        <label for="education-input-hr">{{ 'education.default' | translate }}</label>
+                               pInputText type="text" id="education-input-hr" formControlName="HR"/>
+                        <label for="education-input-hr">{{ 'job-offers.education.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required', 'education.translations')"
-                                   id="education-hr">{{ 'education.required' | translate }}</small>
+                                   id="education-hr">{{ 'job-offers.education.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="specialConditions">
                             <span class="p-float-label" formGroupName="translations">
                         <input class="{{validationService.getInputClass(form, 'HR', 'required',
                         'specialConditions.translations')}}"
                                aria-describedby="specialConditions-input"
-                               pInputText type="text" id="specialConditions-input-hr" formControlName="hr"/>
-                        <label for="specialConditions-input-hr">{{ 'special-conditions.default' | translate }}</label>
+                               pInputText type="text" id="specialConditions-input-hr" formControlName="HR"/>
+                        <label for="specialConditions-input-hr">{{ 'job-offers.special-conditions.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required', 'specialConditions.translations')"
-                                   id="specialConditions-hr">{{ 'special-conditions.required' | translate }}</small>
+                                   id="specialConditions-hr">{{ 'job-offers.special-conditions.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="applyMethod">
                             <span class="p-float-label" formGroupName="translations">
                         <input class="{{validationService.getInputClass(form, 'HR', 'required', 'applyMethod.translations')}}"
                                aria-describedby="applyMethod-input-hr"
-                               pInputText type="text" id="applyMethod-input-hr" formControlName="hr"/>
-                        <label for="applyMethod-input-hr">{{ 'apply-method.default' | translate }}</label>
+                               pInputText type="text" id="applyMethod-input-hr" formControlName="HR"/>
+                        <label for="applyMethod-input-hr">{{ 'job-offers.apply-method.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required',
                                    'applyMethod.translations')"
-                                   id="applyMethod-hr">{{ 'apply-method.required' | translate }}</small>
+                                   id="applyMethod-hr">{{ 'job-offers.apply-method.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="additional">
                             <span class="p-float-label" formGroupName="translations">
                         <input class="{{validationService.getInputClass(form, 'HR', 'required', 'additional.translations')}}"
                                aria-describedby="additional-input-hr"
-                               pInputText type="text" id="additional-input-hr" formControlName="hr"/>
-                        <label for="additional-input-hr">{{ 'additional.default' | translate }}</label>
+                               pInputText type="text" id="additional-input-hr" formControlName="HR"/>
+                        <label for="additional-input-hr">{{ 'job-offers.additional.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required', 'additional.translations')"
-                                   id="additional-hr">{{ 'additional.required' | translate }}</small>
+                                   id="additional-hr">{{ 'job-offers.additional.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                     <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
                         <div class="field field col-md-12" formGroupName="name">
                             <span class="p-float-label" formGroupName="translations">
-                                <input class="{{validationService.getInputClass(form, 'en', 'required',
+                                <input class="{{validationService.getInputClass(form, 'EN', 'required',
                                 'name.translations')}}"
                                        aria-describedby="name-input-en"
-                                       pInputText type="text" id="name-en" formControlName="en"/>
-                                <label for="name-en">{{ 'name.default' | translate }}</label>
+                                       pInputText type="text" id="name-en" formControlName="EN"/>
+                                <label for="name-en">{{ 'job-offers.name.default' | translate }}</label>
                             </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required',
                                    'name.translations')"
-                                   id="name-input-en">{{ 'name.required' | translate }}</small>
+                                   id="name-input-en">{{ 'job-offers.name.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="description">
                             <span class="p-float-label" formGroupName="translations">
                                 <textarea
-                                    class="{{validationService.getInputClass(form, 'en', 'required',
+                                    class="{{validationService.getInputClass(form, 'EN', 'required',
                                     'description.translations')}}"
                                     aria-describedby="description-input-hr"
                                     pInputText
                                     id="description-en"
-                                    formControlName="en"></textarea>
-                                <label for="description-en">{{ 'description.default' | translate }}</label>
+                                    formControlName="EN"></textarea>
+                                <label for="description-en">{{ 'job-offers.description.default' | translate }}</label>
                             </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required',
                                    'description.translations')"
-                                   id="description-input-en">{{ 'description.required' | translate }}</small>
+                                   id="description-input-en">{{ 'job-offers.description.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="experience">
                             <span class="p-float-label" formGroupName="translations">
-                        <input class="{{validationService.getInputClass(form, 'en', 'required', 'experience.translations')}}"
+                        <input class="{{validationService.getInputClass(form, 'EN', 'required', 'experience.translations')}}"
                                aria-describedby="experience-input-en"
-                               pInputText type="text" id="experience-input-en" formControlName="en"/>
-                        <label for="experience-input">{{ 'experience.default' | translate }}</label>
+                               pInputText type="text" id="experience-input-en" formControlName="EN"/>
+                        <label for="experience-input">{{ 'job-offers.experience.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required', 'experience.translations')"
-                                   id="experience-en">{{ 'experience.required' | translate }}</small>
+                                   id="experience-en">{{ 'job-offers.experience.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="education">
                             <span class="p-float-label" formGroupName="translations">
-                        <input class="{{validationService.getInputClass(form, 'en', 'required', 'education.translations')}}"
+                        <input class="{{validationService.getInputClass(form, 'EN', 'required', 'education.translations')}}"
                                aria-describedby="education-input-en"
-                               pInputText type="text" id="education-input-en" formControlName="en"/>
-                        <label for="education-input-en">{{ 'education.default' | translate }}</label>
+                               pInputText type="text" id="education-input-en" formControlName="EN"/>
+                        <label for="education-input-en">{{ 'job-offers.education.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required', 'education.translations')"
-                                   id="education-en">{{ 'education.required' | translate }}</small>
+                                   id="education-en">{{ 'job-offers.education.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="specialConditions">
                             <span class="p-float-label" formGroupName="translations">
-                        <input class="{{validationService.getInputClass(form, 'en', 'required',
+                        <input class="{{validationService.getInputClass(form, 'EN', 'required',
                         'specialConditions.translations')}}"
                                aria-describedby="specialConditions-input"
-                               pInputText type="text" id="specialConditions-input-en" formControlName="en"/>
-                        <label for="specialConditions-input-en">{{ 'special-conditions.default' | translate }}</label>
+                               pInputText type="text" id="specialConditions-input-en" formControlName="EN"/>
+                        <label for="specialConditions-input-en">{{ 'job-offers.special-conditions.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required', 'specialConditions.translations')"
-                                   id="specialConditions-en">{{ 'special-conditions.required' | translate }}</small>
+                                   id="specialConditions-en">{{ 'job-offers.special-conditions.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="applyMethod">
                             <span class="p-float-label" formGroupName="translations">
-                        <input class="{{validationService.getInputClass(form, 'en', 'required', 'applyMethod.translations')}}"
+                        <input class="{{validationService.getInputClass(form, 'EN', 'required', 'applyMethod.translations')}}"
                                aria-describedby="applyMethod-input-en"
-                               pInputText type="text" id="applyMethod-input-en" formControlName="en"/>
-                        <label for="applyMethod-input-en">{{ 'apply-method.default' | translate }}</label>
+                               pInputText type="text" id="applyMethod-input-en" formControlName="EN"/>
+                        <label for="applyMethod-input-en">{{ 'job-offers.apply-method.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required',
                                    'applyMethod.translations')"
-                                   id="applyMethod-en">{{ 'apply-method.required' | translate }}</small>
+                                   id="applyMethod-en">{{ 'job-offers.apply-method.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="additional">
                             <span class="p-float-label" formGroupName="translations">
-                        <input class="{{validationService.getInputClass(form, 'en', 'required', 'additional.translations')}}"
+                        <input class="{{validationService.getInputClass(form, 'EN', 'required', 'additional.translations')}}"
                                aria-describedby="additional-input-en"
-                               pInputText type="text" id="additional-input-en" formControlName="en"/>
-                        <label for="additional-input-en">{{ 'additional.default' | translate }}</label>
+                               pInputText type="text" id="additional-input-en" formControlName="EN"/>
+                        <label for="additional-input-en">{{ 'job-offers.additional.default' | translate }}</label>
                     </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required', 'additional.translations')"
-                                   id="additional-en">{{ 'additional.required' | translate }}</small>
+                                   id="additional-en">{{ 'job-offers.additional.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                 </p-tabView>
@@ -185,35 +185,35 @@
                         <input class="{{validationService.getInputClass(form, 'location', 'required')}}"
                                aria-describedby="location-input"
                                pInputText type="text" id="location" formControlName="location"/>
-                        <label for="location">{{ 'location.default' | translate }}</label>
+                        <label for="location">{{ 'job-offers.location.default' | translate }}</label>
                     </span>
                     <small class="p-error"
                            *ngIf="validationService.hasErrors(form, 'location', 'required')"
-                           id="location-input">{{ 'location.required' | translate }}</small>
+                           id="location-input">{{ 'job-offers.location.required' | translate }}</small>
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
                         <p-calendar class="{{validationService.getInputClass(form, 'deadline', 'required')}}"
                                     aria-describedby="deadline-input"
                                     id="deadline" formControlName="deadline" dateFormat="dd.mm.yy"></p-calendar>
-                        <label for="deadline">{{ 'deadline.default' | translate }}</label>
+                        <label for="deadline">{{ 'job-offers.deadline.default' | translate }}</label>
                     </span>
                     <small class="p-error"
                            *ngIf="validationService.hasErrors(form, 'deadline', 'required')"
-                           id="deadline-input">{{ 'deadline.required' | translate }}</small>
+                           id="deadline-input">{{ 'job-offers.deadline.required' | translate }}</small>
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
                         <input class="{{validationService.getInputClass(form, 'duration', 'required')}}"
                                aria-describedby="duration-input"
                                pInputText type="text" id="duration" formControlName="duration"/>
-                        <label for="duration">{{ 'duration.default' | translate }}</label>
+                        <label for="duration">{{ 'job-offers.duration.default' | translate }}</label>
                     </span>
                     <small class="p-error"
                            *ngIf="validationService.hasErrors(form, 'duration', 'required')"
-                           id="duration-input">{{ 'duration.required' | translate }}</small>
+                           id="duration-input">{{ 'job-offers.duration.required' | translate }}</small>
                 </div>
-                <div class="field col-md-12 mt-5">
+                <div class="field col-md-12">
                     <span class="p-float-label">
                         <categories-selector
                             controlName="categories"

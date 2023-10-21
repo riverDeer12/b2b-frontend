@@ -136,7 +136,7 @@ export class SpecificKnowledgeFormComponent {
             .subscribe(() => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
-                            'specific-knowledge-successfully-updated');
+                            'specific-knowledge.successfully-updated');
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
@@ -159,7 +159,7 @@ export class SpecificKnowledgeFormComponent {
             .subscribe((response: SpecificKnowledge) => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
-                            'specific-knowledge-successfully-updated');
+                            'specific-knowledge.successfully-updated');
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 

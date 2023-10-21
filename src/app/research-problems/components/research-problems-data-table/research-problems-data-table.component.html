@@ -11,7 +11,7 @@
          currentPageReportTemplate="{first} {{'to' | translate }} {last}
          {{'results' | translate }} {{'from' | translate }}
          {totalRecords} {{'results' | translate }}"
-         [globalFilterFields]="['title']"
+         [globalFilterFields]="['localizedTitle']"
          [tableStyle]="{'min-width':'75rem'}"
          responsiveLayout="scroll">
     <ng-template pTemplate="caption">
@@ -44,10 +44,10 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:10%"></th>
-            <th pSortableColumn="title">
+            <th pSortableColumn="localizedTitle">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'title' | translate }}
-                    <p-sortIcon field="title"></p-sortIcon>
+                    {{ 'research-problems.title.default' | translate }}
+                    <p-sortIcon field="localizedTitle"></p-sortIcon>
                     <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
@@ -58,34 +58,40 @@
                     <p-columnFilter type="date" field="updatedAt" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
+            <th>{{'activity' | translate}}</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-researchProblem>
         <tr>
             <td>
-                <button (click)="confirmDelete(researchProblem.id)" class="p-button-danger m-1" pButton pRipple type="button"
+                <button (click)="confirmDelete(researchProblem.id)" class="p-button-danger m-1" pButton pRipple
+                        type="button"
                         icon="pi pi-trash"></button>
                 <button type="button" class="m-1" (click)="prepareEditControl(researchProblem)"
-                        pButton pRipple  icon="pi pi-pencil"></button>
+                        pButton pRipple icon="pi pi-pencil"></button>
             </td>
             <td>
-                {{researchProblem.title}}
+                {{researchProblem.localizedTitle}}
             </td>
             <td>
                 {{researchProblem.updatedAt | date : 'dd.MM.yyyy HH:mm:ss'}}
+            </td>
+            <td>
+                <p-button icon="{{researchProblem.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                          styleClass="p-button-rounded p-button-text"></p-button>
             </td>
         </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="5">{{'no-research-problems-found' | translate }}</td>
+            <td colspan="5">{{'research-problems.no-research-problems-found' | translate }}</td>
         </tr>
     </ng-template>
 </p-table>
 
-<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
+<p-confirmDialog header="{{'research-problems.confirm-delete-action' | translate }}"
                  key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
-                 message="{{'confirm-delete-message' | translate }}"
+                 message="{{'research-problems.confirm-delete-message' | translate }}"
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"

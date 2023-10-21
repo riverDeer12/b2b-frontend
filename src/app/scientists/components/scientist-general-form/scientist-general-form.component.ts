@@ -170,7 +170,7 @@ export class ScientistGeneralFormComponent {
         this.scientistService.createScientist(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'scientist-successfully-created');
+                        'scientists.successfully-created');
             },
             (error) => {
                 this.notificationService
@@ -188,7 +188,7 @@ export class ScientistGeneralFormComponent {
         this.scientistService.editScientist(this.scientist.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'scientist-successfully-updated');
+                        'scientists.successfully-updated');
             },
             (error) => {
                 this.notificationService

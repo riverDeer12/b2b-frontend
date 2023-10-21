@@ -22,7 +22,7 @@ import {TranslateService} from '@ngx-translate/core';
             <a *ngIf="(item.routerLink && !item.items) && item.visible !== false" (click)="itemClick($event)"
                [ngClass]="item.class"
                [routerLink]="item.routerLink" routerLinkActive="active-route"
-               [routerLinkActiveOptions]="item.routerLinkActiveOptions||{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' }"
+               [routerLinkActiveOptions]="item.routerLinkActiveOptions||{ paths: 'subset', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' }"
                [fragment]="item.fragment" [queryParamsHandling]="item.queryParamsHandling"
                [preserveFragment]="item.preserveFragment"
                [skipLocationChange]="item.skipLocationChange" [replaceUrl]="item.replaceUrl" [state]="item.state"
@@ -97,9 +97,6 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
-        this.translateService.use('hr');
-
         this.key = this.parentKey ? this.parentKey + '-' + this.index : String(this.index);
 
         if (this.item.routerLink) {
@@ -109,7 +106,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     updateActiveStateFromRoute() {
         let activeRoute = this.router.isActive(this.item.routerLink[0], {
-            paths: 'exact',
+            paths: 'subset',
             queryParams: 'ignored',
             matrixParams: 'ignored',
             fragment: 'ignored'

@@ -9,7 +9,7 @@
          [value]="data"
          [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5, 10, 20]"
          [paginator]="true"
-         [globalFilterFields]="['title','content']"
+         [globalFilterFields]="['localizedTitle','content']"
          [tableStyle]="{'min-width':'75rem'}">
     <ng-template pTemplate="caption">
         <div class="flex justify-content-between flex-column sm:flex-row">
@@ -31,7 +31,7 @@
             <button (click)="goToCreatePage()"
                     icon="pi pi-plus"
                     iconPos="right"
-                    label="{{'new-news'| translate }}"
+                    label="{{'news.new-news'| translate }}"
                     pButton pRipple
                     type="button"></button>
         </div>
@@ -39,16 +39,16 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:10%"></th>
-            <th pSortableColumn="title" style="width:20%">
+            <th pSortableColumn="localizedTitle" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'title.default' | translate }}
+                    {{ 'news.title.default' | translate }}
                     <p-sortIcon field="title"></p-sortIcon>
                     <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="numberOfViews" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'number-of-views' | translate }}
+                    {{ 'news.number-of-views' | translate }}
                     <p-sortIcon field="numberOfViews"></p-sortIcon>
                     <p-columnFilter type="number" field="numberOfViews" display="menu"
                                     class="ml-auto"></p-columnFilter>
@@ -56,7 +56,7 @@
             </th>
             <th pSortableColumn="updatedAt" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'updated-at' | translate }}
+                    {{ 'news.updated-at' | translate }}
                     <p-sortIcon field="updatedAt"></p-sortIcon>
                     <p-columnFilter type="date" field="updatedAt" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
@@ -90,7 +90,7 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="5">{{'no-news-found' | translate }}</td>
+            <td colspan="5">{{'news.no-news-found' | translate }}</td>
         </tr>
     </ng-template>
 </p-table>

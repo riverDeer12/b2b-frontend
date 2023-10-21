@@ -161,7 +161,7 @@ export class ResearchProblemFormComponent {
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
-                    this.researchProblemService.pingResearchProblems(response);
+                    this.researchProblemService.pingResearchProblems(this.form.value);
                 },
                 () => {
                     this.notificationService

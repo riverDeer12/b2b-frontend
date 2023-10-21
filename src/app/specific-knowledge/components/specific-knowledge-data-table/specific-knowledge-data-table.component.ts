@@ -13,6 +13,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {DialogService} from 'primeng/dynamicdialog';
 import {Category} from '../../../categories/core/models/category';
 import {SharedService} from '../../../shared/services/shared.service';
+import {Equipment} from '../../../equipment/core/models/equipment';
 
 @Component({
     selector: 'specific-knowledge-data-table',
@@ -155,9 +156,13 @@ export class SpecificKnowledgeDataTableComponent {
     private listenForDataChanges(): void {
         this.specificKnowledgeService.listenSpecificKnowledge()
             .subscribe((response: SpecificKnowledge) => {
-                this.data = this.data.filter(x => x.id !== response.id);
-                this.data.unshift(Object.assign(response, new SpecificKnowledge()));
-                this.table.reset();
+                this.specificKnowledgeService.getSpecificKnowledgeList(this.scientistId)
+                    .subscribe((response: SpecificKnowledge[]) => {
+                        this.data = response.map((x: SpecificKnowledge) =>
+                            Object.assign(new SpecificKnowledge(), x)
+                        );
+                        this.table.reset();
+                    })
             })
     }
 }

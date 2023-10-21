@@ -158,6 +158,8 @@ export class EquipmentFormComponent {
                         'equipment.successfully-updated');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+
+                this.equipmentService.pingEquipment(this.form.value as Equipment);
             },
             () => {
                 this.notificationService

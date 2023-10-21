@@ -35,28 +35,28 @@
             <th style="width:10%"></th>
             <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'name.default' | translate }}
+                    {{ 'organizations.name.default' | translate }}
                     <p-sortIcon field="name"></p-sortIcon>
                     <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'email' | translate }}
+                    {{ 'organizations.email.default' | translate }}
                     <p-sortIcon field="email"></p-sortIcon>
                     <p-columnFilter type="text" field="email" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="title" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'address' | translate }}
+                    {{ 'organizations.address.default' | translate }}
                     <p-sortIcon field="address"></p-sortIcon>
                     <p-columnFilter type="text" field="address" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="numberOfViews" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'number-of-views' | translate }}
+                    {{ 'organizations.number-of-views' | translate }}
                     <p-sortIcon field="numberOfViews"></p-sortIcon>
                     <p-columnFilter type="number" field="numberOfViews" display="menu"
                                     class="ml-auto"></p-columnFilter>
@@ -94,14 +94,14 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="5">{{'no-organizations-found' | translate }}</td>
+            <td colspan="5">{{'organizations.no-organizations-found' | translate }}</td>
         </tr>
     </ng-template>
 </p-table>
 
-<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
+<p-confirmDialog header="{{'organizations.confirm-delete-action' | translate }}"
                  key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
-                 message="{{'confirm-delete-message' | translate }}"
+                 message="{{'organizations.confirm-delete-message' | translate }}"
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"

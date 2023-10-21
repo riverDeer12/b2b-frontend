@@ -12,6 +12,7 @@ import {FormType} from "../../../shared/enums/form-type";
 import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
 import {DialogService} from "primeng/dynamicdialog";
 import {Category} from '../../../categories/core/models/category';
+import {JobOffer} from '../../../job-offers/core/models/job-offer';
 
 @Component({
     selector: 'equipment-data-table',
@@ -151,9 +152,13 @@ export class EquipmentDataTableComponent {
     private listenForDataChanges(): void {
         this.equipmentService.listenEquipment()
             .subscribe((response: Equipment) => {
-                this.data = this.data.filter(x => x.id !== response.id);
-                this.data.unshift(Object.assign(response, new Equipment()));
-                this.table.reset();
+                this.equipmentService.getEquipment(this.scientistId)
+                    .subscribe((response: Equipment[]) => {
+                        this.data = response.map((x: Equipment) =>
+                            Object.assign(new Equipment(), x)
+                        );
+                        this.table.reset();
+                    })
             })
     }
 }
