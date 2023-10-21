@@ -23,18 +23,6 @@ import {InputTextModule} from 'primeng/inputtext';
 import {RouterModule} from '@angular/router';
 import {TagModule} from 'primeng/tag';
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpBackend) {
-    return new MultiTranslateHttpLoader(http, [
-        './assets/i18n/layouts/public/',
-        './assets/i18n/shared/'
-    ]);
-}
-
 
 @NgModule({
     declarations: [
@@ -50,14 +38,7 @@ export function createTranslateLoader(http: HttpBackend) {
     imports: [
         CommonModule,
         RouterModule,
-        TranslateModule.forChild({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpBackend]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         OrganizationsComponentsModule,
         CompaniesComponentsModule,
         ScientistsComponentsModule,

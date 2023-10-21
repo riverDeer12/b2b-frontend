@@ -8,15 +8,6 @@ import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CategoriesComponentsModule} from '../components/categories-components.module';
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/categories/', '.json');
-}
-
 
 @NgModule({
     declarations: [
@@ -27,15 +18,7 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         CategoriesComponentsModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        })
+        TranslateModule
     ],
     exports: [
         CategoriesHomeComponent,

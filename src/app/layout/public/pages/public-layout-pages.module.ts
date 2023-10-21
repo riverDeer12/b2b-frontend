@@ -30,18 +30,6 @@ import {PublicResearchProblemsComponent} from './public-research-problems/public
 import { PublicEquipmentComponent } from './public-equipment/public-equipment.component';
 import { PublicSpecificKnowledgeComponent } from './public-specific-knowledge/public-specific-knowledge.component';
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpBackend) {
-    return new MultiTranslateHttpLoader(http, [
-        './assets/i18n/layouts/public/',
-        './assets/i18n/shared/'
-    ]);
-}
-
 @NgModule({
     declarations: [
         AboutUsComponent,
@@ -59,14 +47,7 @@ export function createTranslateLoader(http: HttpBackend) {
     ],
     imports: [
         CommonModule,
-        TranslateModule.forChild({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpBackend]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         RouterModule,
         PublicLayoutComponentsModule,
         RadioButtonModule,

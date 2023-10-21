@@ -21,15 +21,6 @@ import {SpecificKnowledgeComponentsModule} from "../../specific-knowledge/compon
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {ChipsModule} from 'primeng/chips';
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/scientists/', '.json');
-}
-
 @NgModule({
     declarations: [
         ScientistsDataTableComponent,
@@ -38,15 +29,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         CommonModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         SharedModule,
         TableModule,
         ButtonModule,

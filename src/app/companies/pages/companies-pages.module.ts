@@ -10,15 +10,6 @@ import {CompaniesComponentsModule} from '../components/companies-components.modu
 import {ConfirmationService} from 'primeng/api';
 
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/companies/', '.json');
-}
-
 @NgModule({
     declarations: [
         CompaniesHomeComponent,
@@ -28,15 +19,7 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         CompaniesComponentsModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        })
+        TranslateModule
     ],
     exports: [
         CompaniesHomeComponent,

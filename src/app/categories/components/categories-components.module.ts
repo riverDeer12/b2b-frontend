@@ -17,15 +17,6 @@ import {CategoriesSelectorComponent} from './categories-selector/categories-sele
 import {RouterModule} from '@angular/router';
 import {TabViewModule} from "primeng/tabview";
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/categories/', '.json');
-}
-
 @NgModule({
     declarations: [
         CategoryFormComponent,
@@ -38,15 +29,7 @@ export function createTranslateLoader(http: HttpClient) {
         ButtonModule,
         RouterModule,
         ReactiveFormsModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         TableModule,
         RippleModule,
         ConfirmDialogModule,

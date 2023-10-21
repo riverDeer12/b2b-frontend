@@ -11,30 +11,13 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../shared/shared.module';
 import {ConfirmationService} from 'primeng/api';
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/subscribers/', '.json');
-}
-
 @NgModule({
     declarations: [
         SubscribersDataTableComponent
     ],
     imports: [
         CommonModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         SharedModule,
         ConfirmDialogModule,
         TableModule,

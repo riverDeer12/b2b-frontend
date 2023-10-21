@@ -9,15 +9,6 @@ import {HttpClient} from '@angular/common/http';
 import {SharedModule} from '../../shared/shared.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/organizations/', '.json');
-}
-
 @NgModule({
     declarations: [
         OrganizationsHomeComponent,
@@ -27,17 +18,8 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         OrganizationsComponentsModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        }),
-        SharedModule,
-
+        TranslateModule,
+        SharedModule
     ],
     exports: [
         OrganizationsHomeComponent,

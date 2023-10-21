@@ -16,15 +16,6 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {ValidationService} from '../../shared/services/validation.service';
 import {TabViewModule} from "primeng/tabview";
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/news/', '.json');
-}
-
 
 @NgModule({
     declarations: [
@@ -34,16 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         TableModule,
-        TranslateModule.forChild({
-                defaultLanguage: 'hr',
-                loader: {
-                    provide: TranslateLoader,
-                    useFactory: (createTranslateLoader),
-                    deps: [HttpClient]
-                },
-                isolate: true
-            }
-        ),
+        TranslateModule,
         InputTextModule,
         ButtonModule,
         RippleModule,

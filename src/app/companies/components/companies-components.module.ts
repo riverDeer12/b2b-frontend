@@ -20,15 +20,6 @@ import {PasswordModule} from 'primeng/password';
 import {CategoriesComponentsModule} from '../../categories/components/categories-components.module';
 import {ChipsModule} from 'primeng/chips';
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/companies/', '.json');
-}
-
 @NgModule({
     declarations: [
         CompaniesDataTableComponent,
@@ -37,15 +28,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         CommonModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         TableModule,
         ButtonModule,
         RippleModule,

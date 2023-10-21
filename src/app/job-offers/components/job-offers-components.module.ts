@@ -14,21 +14,8 @@ import {ConfirmationService} from 'primeng/api';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {RouterModule} from '@angular/router';
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
-import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 import {CalendarModule} from 'primeng/calendar';
 import {TabViewModule} from "primeng/tabview";
-
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpBackend) {
-    return new MultiTranslateHttpLoader(http, [
-        './assets/i18n/job-offers/',
-        './assets/i18n/shared/'
-    ]);
-}
 
 
 @NgModule({
@@ -42,15 +29,7 @@ export function createTranslateLoader(http: HttpBackend) {
         ButtonModule,
         RouterModule,
         ReactiveFormsModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpBackend]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         TableModule,
         RippleModule,
         ConfirmDialogModule,

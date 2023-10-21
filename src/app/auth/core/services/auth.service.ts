@@ -122,12 +122,17 @@ export class AuthService {
      */
     getLogoutUrl(): string {
         const tokenStorageValue = localStorage.getItem('token');
+
+        if (!tokenStorageValue) {
+            return '';
+        }
+
         const decodedToken = jwtDecode(tokenStorageValue as string) as AuthToken;
 
         if (decodedToken.role === 'SuperAdmin') {
             return 'auth/admin-login';
         } else {
-            return 'auth/user-login';
+            return '';
         }
     }
 

@@ -20,15 +20,6 @@ import {AuthComponentsModule} from '../../auth/components/auth-components.module
 import { OrganizationGeneralFormComponent } from './organization-general-form/organization-general-form.component';
 import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/organizations/', '.json');
-}
-
 @NgModule({
     declarations: [
         OrganizationsDataTableComponent,
@@ -37,15 +28,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         CommonModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         SharedModule,
         TableModule,
         ConfirmDialogModule,

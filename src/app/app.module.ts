@@ -18,7 +18,7 @@ import {DefaultInterceptor} from './shared/interceptors/default.interceptor';
  * @param http client for loading translations.
  */
 export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/app/', '.json');
+    return new TranslateHttpLoader(http);
 }
 
 @NgModule({

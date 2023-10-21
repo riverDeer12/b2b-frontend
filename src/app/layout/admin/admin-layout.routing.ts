@@ -10,13 +10,8 @@ import {ResearchProblemsComponent} from "../../research-problems/research-proble
 import {SpecificKnowledgeComponent} from "../../specific-knowledge/specific-knowledge.component";
 import {EquipmentComponent} from "../../equipment/equipment.component";
 import {JobOffersComponent} from "../../job-offers/job-offers.component";
-import {HomeComponent} from '../../home/home.component';
 
 export const AdminLayoutRoutes: Routes = [
-    {
-        path: '',
-        component: HomeComponent
-    },
     {
         path: 'activities',
         component: ActivitiesComponent,

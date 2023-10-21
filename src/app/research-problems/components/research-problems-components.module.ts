@@ -17,15 +17,6 @@ import {RadioButtonModule} from "primeng/radiobutton";
 import {DialogService} from 'primeng/dynamicdialog';
 import {TabViewModule} from "primeng/tabview";
 
-/**
- * Translation resources loader.
- *
- * @param http client for loading translations.
- */
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/research-problems/', '.json');
-}
-
 @NgModule({
     declarations: [
         ResearchProblemsDataTableComponent,
@@ -33,15 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         CommonModule,
-        TranslateModule.forChild({
-            defaultLanguage: 'hr',
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            },
-            isolate: true
-        }),
+        TranslateModule,
         TableModule,
         InputTextModule,
         ConfirmDialogModule,
