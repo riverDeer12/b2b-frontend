@@ -1,7 +1,6 @@
 import {Routes} from '@angular/router';
 import {EquipmentHomeComponent} from "./pages/equipment-home/equipment-home.component";
 import {EquipmentEditComponent} from "./pages/equipment-edit/equipment-edit.component";
-import {EquipmentCreateComponent} from "./pages/equipment-create/equipment-create.component";
 import {EquipmentListResolver} from "./core/resolvers/equipment-list.resolver";
 import {EquipmentResolver} from "./core/resolvers/equipment.resolver";
 

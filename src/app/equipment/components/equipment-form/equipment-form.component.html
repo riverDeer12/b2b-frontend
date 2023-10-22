@@ -2,6 +2,14 @@
     <div class="grid">
         <div class="col-12">
             <div class="p-fluid">
+                <div class="field field col-md-12">
+                    <file-uploader name="image"
+                                   [parentForm]="form"
+                                   [entityType]="entityType"
+                                   [entityId]="equipment.id"
+                                   [parentEntityType]="type.Scientist"
+                                   [parentEntityId]="equipment.scientistId"></file-uploader>
+                </div>
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
                         <div class="field field col-md-12" formGroupName="title">

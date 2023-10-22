@@ -42,13 +42,11 @@ export class ResearchProblemFormComponent {
     @Input() dialogId!: string;
     @Input() categories!: Category[];
 
+    entityType = EntityType.ResearchProblem;
+
     isLoading: boolean = false;
 
     form!: FormGroup;
-
-    public get entityType(): typeof EntityType {
-        return EntityType;
-    }
 
     constructor(
         public validationService: ValidationService,

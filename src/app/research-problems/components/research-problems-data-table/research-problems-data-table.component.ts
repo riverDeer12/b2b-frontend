@@ -8,11 +8,11 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {ResearchProblem} from '../../core/models/research-problem';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {DialogService} from 'primeng/dynamicdialog';
-import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
 import {FormType} from '../../../shared/enums/form-type';
-import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
 import {Category} from '../../../categories/core/models/category';
 import {SharedService} from '../../../shared/services/shared.service';
+import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
+import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
 
 @Component({
     selector: 'research-problems-data-table',

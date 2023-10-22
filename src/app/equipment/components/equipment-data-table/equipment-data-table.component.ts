@@ -7,12 +7,12 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {EquipmentService} from '../../core/services/equipment.service';
 import {Equipment} from '../../core/models/equipment';
 import {EntityType} from '../../../auth/core/enums/entity-type';
-import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
 import {FormType} from '../../../shared/enums/form-type';
-import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
 import {DialogService} from 'primeng/dynamicdialog';
 import {Category} from '../../../categories/core/models/category';
 import {SharedService} from '../../../shared/services/shared.service';
+import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
+import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
 
 @Component({
     selector: 'equipment-data-table',

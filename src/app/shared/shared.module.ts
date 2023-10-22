@@ -5,20 +5,21 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {DropdownModule} from 'primeng/dropdown';
-import {DialogFormComponent} from './components/dialog-form/dialog-form.component';
-import {ResearchProblemsComponentsModule} from '../research-problems/components/research-problems-components.module';
 import {ButtonModule} from 'primeng/button';
-import {JobOffersComponentsModule} from '../job-offers/components/job-offers-components.module';
-import {EquipmentComponentsModule} from '../equipment/components/equipment-components.module';
-import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
-import { ActivityComponent } from './components/activity/activity.component';
+import {ActivityComponent} from './components/activity/activity.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ValidationService} from './services/validation.service';
+import {FileUploadModule} from 'primeng/fileupload';
+import {DialogFormComponent} from './components/dialog-form/dialog-form.component';
+import {JobOffersComponentsModule} from '../job-offers/components/job-offers-components.module';
+import {EquipmentComponentsModule} from '../equipment/components/equipment-components.module';
+import {ResearchProblemsComponentsModule} from '../research-problems/components/research-problems-components.module';
+import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
 
 @NgModule({
     declarations: [
-        DialogFormComponent,
-        ActivityComponent
+        ActivityComponent,
+        DialogFormComponent
     ],
     imports: [
         CommonModule,
@@ -26,12 +27,17 @@ import {ValidationService} from './services/validation.service';
         ReactiveFormsModule,
         TranslateModule,
         DropdownModule,
-        ResearchProblemsComponentsModule,
         ButtonModule,
+        CheckboxModule,
+        FileUploadModule,
         JobOffersComponentsModule,
         EquipmentComponentsModule,
-        SpecificKnowledgeComponentsModule,
-        CheckboxModule
+        ResearchProblemsComponentsModule,
+        SpecificKnowledgeComponentsModule
+    ],
+    exports: [
+        ActivityComponent,
+        DialogFormComponent
     ],
     providers: [
         NotificationService,

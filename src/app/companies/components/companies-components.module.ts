@@ -1,8 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateModule} from '@ngx-translate/core';
 import {CompaniesDataTableComponent} from './companies-data-table/companies-data-table.component';
 import {CompanyFormComponent} from './company-form/company-form.component';
 import {TableModule} from 'primeng/table';
@@ -19,6 +17,9 @@ import {JobOffersComponentsModule} from '../../job-offers/components/job-offers-
 import {PasswordModule} from 'primeng/password';
 import {CategoriesComponentsModule} from '../../categories/components/categories-components.module';
 import {ChipsModule} from 'primeng/chips';
+import {FileUploadModule} from 'primeng/fileupload';
+import {SharedModule} from '../../shared/shared.module';
+import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,10 @@ import {ChipsModule} from 'primeng/chips';
         JobOffersComponentsModule,
         PasswordModule,
         CategoriesComponentsModule,
-        ChipsModule
+        ChipsModule,
+        FileUploadModule,
+        SharedModule,
+        CustomControlsModule
     ],
     exports: [
         CompaniesDataTableComponent,

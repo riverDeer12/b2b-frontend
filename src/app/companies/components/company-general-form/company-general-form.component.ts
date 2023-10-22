@@ -180,5 +180,4 @@ export class CompanyGeneralFormComponent {
                 this.isLoading = false;
             })
     }
-
 }

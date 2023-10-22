@@ -10,6 +10,7 @@ import {RedirectType} from '../../../shared/enums/redirect-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from "../../../shared/services/validation.service";
+import {EntityType} from '../../../auth/core/enums/entity-type';
 
 /**
  * Component responsible for
@@ -39,9 +40,15 @@ export class EquipmentFormComponent {
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
 
+    entityType = EntityType.Equipment;
+
     isLoading: boolean = false;
 
     form!: FormGroup;
+
+    public get type(): typeof EntityType{
+        return EntityType;
+    }
 
     constructor(
         public validationService: ValidationService,

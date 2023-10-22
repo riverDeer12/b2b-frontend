@@ -18,6 +18,8 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {RouterModule} from '@angular/router';
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {TabViewModule} from "primeng/tabview";
+import {SharedModule} from '../../shared/shared.module';
+import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 
 @NgModule({
     declarations: [
@@ -37,7 +39,8 @@ import {TabViewModule} from "primeng/tabview";
         MultiSelectModule,
         ReactiveFormsModule,
         CategoriesComponentsModule,
-        TabViewModule
+        TabViewModule,
+        CustomControlsModule
     ],
     providers: [
         ConfirmationService

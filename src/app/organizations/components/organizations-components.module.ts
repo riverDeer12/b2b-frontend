@@ -19,6 +19,7 @@ import {TabViewModule} from 'primeng/tabview';
 import {AuthComponentsModule} from '../../auth/components/auth-components.module';
 import { OrganizationGeneralFormComponent } from './organization-general-form/organization-general-form.component';
 import {ResearchProblemsComponentsModule} from "../../research-problems/components/research-problems-components.module";
+import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import {ResearchProblemsComponentsModule} from "../../research-problems/componen
         PasswordModule,
         TabViewModule,
         AuthComponentsModule,
-        ResearchProblemsComponentsModule
+        ResearchProblemsComponentsModule,
+        CustomControlsModule
     ],
     providers: [
         ConfirmationService

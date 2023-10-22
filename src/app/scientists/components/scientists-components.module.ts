@@ -20,6 +20,7 @@ import {EquipmentComponentsModule} from "../../equipment/components/equipment-co
 import {SpecificKnowledgeComponentsModule} from "../../specific-knowledge/components/specific-knowledge-components.module";
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {ChipsModule} from 'primeng/chips';
+import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import {ChipsModule} from 'primeng/chips';
         EquipmentComponentsModule,
         SpecificKnowledgeComponentsModule,
         CategoriesComponentsModule,
-        ChipsModule
+        ChipsModule,
+        CustomControlsModule
     ],
     providers:[
         ConfirmationService
