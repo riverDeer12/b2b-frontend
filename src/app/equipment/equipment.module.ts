@@ -5,6 +5,7 @@ import {EquipmentRoutes} from "./equipment.routing";
 import {TranslateModule} from "@ngx-translate/core";
 import {EquipmentComponent} from "./equipment.component";
 import {EquipmentPagesModule} from "./pages/equipment-pages.module";
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
     declarations: [EquipmentComponent],
@@ -13,7 +14,8 @@ import {EquipmentPagesModule} from "./pages/equipment-pages.module";
         RouterModule.forChild(EquipmentRoutes),
         EquipmentPagesModule,
         TranslateModule
-    ]
+    ],
+    providers: [ConfirmationService]
 })
 export class EquipmentModule {
 }

@@ -13,7 +13,6 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {DialogService} from 'primeng/dynamicdialog';
 import {Category} from '../../../categories/core/models/category';
 import {SharedService} from '../../../shared/services/shared.service';
-import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
 
 @Component({
     selector: 'specific-knowledge-data-table',
@@ -168,6 +167,7 @@ export class SpecificKnowledgeDataTableComponent {
 
     openFlipActiveDialog(specificKnowledgeId: string): void {
         this.confirmationService.confirm({
+            key: 'confirmSpecificKnowledgeActivityChangeDialog',
             accept: () => {
                 this.sharedService.flipActive(EntityType.SpecificKnowledge, specificKnowledgeId, EntityType.Scientist,
                     this.scientistId).subscribe((response: any) => {

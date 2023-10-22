@@ -125,7 +125,7 @@ export class OrganizationGeneralFormComponent {
         this.organizationService.createOrganization(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'organization-successfully-created');
+                        'organizations.successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
 
@@ -149,7 +149,7 @@ export class OrganizationGeneralFormComponent {
         this.organizationService.editOrganization(this.organization.id, this.form.value).subscribe(() => {
             this.notificationService
                 .showNotification(NotificationType.Success,
-                    'organization-successfully-updated');
+                    'organizations.successfully-updated');
 
             this.router.navigateByUrl(this.returnUrl).then();
 

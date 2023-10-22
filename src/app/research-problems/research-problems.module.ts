@@ -6,6 +6,7 @@ import {RouterModule} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 import {ResearchProblemsComponent} from "./research-problems.component";
 import {SharedModule} from "../shared/shared.module";
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
     declarations: [ResearchProblemsComponent],
@@ -15,7 +16,8 @@ import {SharedModule} from "../shared/shared.module";
         TranslateModule,
         ResearchProblemsPagesModule,
         SharedModule
-    ]
+    ],
+    providers: [ConfirmationService]
 })
 export class ResearchProblemsModule {
 }

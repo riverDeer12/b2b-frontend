@@ -142,7 +142,7 @@ export class CompanyGeneralFormComponent {
         this.companyService.createCompany(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'company-successfully-created');
+                        'companies.successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
 
@@ -166,7 +166,7 @@ export class CompanyGeneralFormComponent {
         this.companyService.editCompany(this.company.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'company-successfully-updated');
+                        'companies.successfully-updated');
 
                 this.router.navigateByUrl(this.returnUrl).then();
 

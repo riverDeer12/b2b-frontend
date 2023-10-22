@@ -165,6 +165,7 @@ export class EquipmentDataTableComponent {
 
     openFlipActiveDialog(equipmentId: string): void {
         this.confirmationService.confirm({
+            key: 'confirmEquipmentActivityChangeDialog',
             accept: () => {
                 this.sharedService.flipActive(EntityType.Equipment, equipmentId, EntityType.Scientist,
                     this.scientistId).subscribe((response: any) => {

@@ -164,6 +164,7 @@ export class JobOffersDataTableComponent {
 
     openFlipActiveDialog(jobOfferId: string): void {
         this.confirmationService.confirm({
+            key: 'confirmJobOfferActivityChangeDialog',
             accept: () => {
                 this.sharedService.flipActive(EntityType.JobOffer, jobOfferId, EntityType.Company,
                     this.companyId).subscribe((response: any) => {
