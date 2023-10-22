@@ -7,7 +7,7 @@
             </ng-template>
             <ng-template pTemplate="content">
                 <p class="text-center">
-                    <button style="width: 20%" pButton class="font-light line-height-2 bg-blue-500
+                    <button (click)="openMessageDialog()" style="width: 20%" pButton class="font-light line-height-2 bg-blue-500
                     text-white simple-entity-card-button" label="{{'contact-entity.default' | translate}}"></button>
                 </p>
                 <div class="mt-5" *ngIf="!entity.isSimpleEntity(currentEntityType)">
