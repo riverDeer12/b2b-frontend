@@ -9,7 +9,7 @@ import {EntityType} from '../../../../auth/core/enums/entity-type';
 })
 export class SimpleEntityCardComponent {
     @Input() title!: string;
-    @Input() imageLink!: string;
+    @Input() imageLink?: string;
     @Input() entityType!: EntityType;
     @Input() parentEntityType!: EntityType;
     @Input() parentEntityId!: string;

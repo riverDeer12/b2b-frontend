@@ -13,7 +13,7 @@ import {Equipment} from "../../../equipment/core/models/equipment";
     styleUrls: ['./scientist-edit.component.scss']
 })
 export class ScientistEditComponent {
-    returnUrl = '/admin/scientist';
+    returnUrl = '/admin/scientists';
     formType = FormType.Edit;
 
     scientist!: Scientist;

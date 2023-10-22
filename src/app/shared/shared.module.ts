@@ -15,6 +15,7 @@ import {JobOffersComponentsModule} from '../job-offers/components/job-offers-com
 import {EquipmentComponentsModule} from '../equipment/components/equipment-components.module';
 import {ResearchProblemsComponentsModule} from '../research-problems/components/research-problems-components.module';
 import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
+import {DialogService} from 'primeng/dynamicdialog';
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/component
     ],
     providers: [
         NotificationService,
+        DialogService,
         ValidationService
     ]
 })

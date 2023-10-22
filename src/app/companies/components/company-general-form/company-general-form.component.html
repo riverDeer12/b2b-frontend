@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="p-fluid">
-        <div class="field field col-md-12">
+        <div class="field field col-md-12" *ngIf="formType === type.Edit">
             <file-uploader
                 name="image"
                 [parentForm]="form"

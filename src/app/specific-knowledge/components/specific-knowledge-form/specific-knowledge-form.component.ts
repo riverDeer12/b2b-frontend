@@ -47,6 +47,10 @@ export class SpecificKnowledgeFormComponent {
 
     form!: FormGroup;
 
+    public get formActionType(): typeof FormType{
+        return FormType;
+    }
+
     public get type(): typeof EntityType{
         return EntityType;
     }
@@ -122,7 +126,6 @@ export class SpecificKnowledgeFormComponent {
      * by clicking submit button.
      */
     submit(): void {
-
         this.isLoading = true;
 
         if (this.form.invalid) {

@@ -2,7 +2,7 @@
     <div class="grid">
         <div class="col-12 mt-2">
             <div class="p-fluid">
-                <div class="field field col-md-12">
+                <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
                     <file-uploader name="image"
                                    [parentForm]="form"
                                    [entityType]="entityType"

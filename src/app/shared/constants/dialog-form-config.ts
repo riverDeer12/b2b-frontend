@@ -5,7 +5,7 @@ export const DialogFormConfig: DynamicDialogConfig = {
     dismissableMask: true,
     closeOnEscape: true,
     transitionOptions: '200ms',
-    style:{
+    style: {
         'width': '100%',
         'maxWidth': '500px'
     }

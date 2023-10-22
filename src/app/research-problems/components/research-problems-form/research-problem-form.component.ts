@@ -48,6 +48,10 @@ export class ResearchProblemFormComponent {
 
     form!: FormGroup;
 
+    public get formActionType(): typeof FormType{
+        return FormType;
+    }
+
     constructor(
         public validationService: ValidationService,
         private fb: FormBuilder,

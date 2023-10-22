@@ -50,6 +50,10 @@ export class JobOffersFormComponent {
         return EntityType;
     }
 
+    public get formActionType(): typeof FormType {
+        return FormType;
+    }
+
     constructor(
         public validationService: ValidationService,
         private fb: FormBuilder,

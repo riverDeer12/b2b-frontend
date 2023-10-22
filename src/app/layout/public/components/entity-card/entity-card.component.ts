@@ -12,7 +12,7 @@ import {News} from '../../../../news/core/models/news';
 export class EntityCardComponent {
     @Input() entityId!: string;
     @Input() title!: string;
-    @Input() imageLink!: string;
+    @Input() imageLink?: string;
     @Input() entityCategories!: Category[];
     @Input() entityType!: EntityType;
     @Input() address!: string;

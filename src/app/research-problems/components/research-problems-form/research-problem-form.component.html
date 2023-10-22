@@ -2,7 +2,7 @@
     <div class="grid">
         <div class="col-12 mt-2">
             <div class="p-fluid">
-                <div class="field field col-md-12">
+                <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
                     <file-uploader name="image"
                                    [parentForm]="form"
                                    [entityType]="entityType"
@@ -60,7 +60,7 @@
                            'HR', 'required',
                            'academicCommunityContributionPossibility.translations')"
                                    id="academicCommunityContributionPossibility-input">
-                                {{ 'research-problems.academicCommunityContributionPossibility.required' | translate }}</small>
+                                {{ 'research-problems.academic-community-contribution-possibility.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                     <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">

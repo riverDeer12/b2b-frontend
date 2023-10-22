@@ -130,7 +130,7 @@ export class Entity {
      * @param entity entity data.
      * @param type entity type.
      */
-    public static getImageLink(entity: any, type: EntityType): string {
+    public static getImageLink(entity: any, type: EntityType) {
         switch (type) {
             case EntityType.Organization:
                 return entity.logo;

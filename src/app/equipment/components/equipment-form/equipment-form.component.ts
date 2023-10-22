@@ -9,7 +9,7 @@ import {Equipment} from '../../core/models/equipment';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
-import {ValidationService} from "../../../shared/services/validation.service";
+import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 
 /**
@@ -46,8 +46,12 @@ export class EquipmentFormComponent {
 
     form!: FormGroup;
 
-    public get type(): typeof EntityType{
+    public get type(): typeof EntityType {
         return EntityType;
+    }
+
+    public get formActionType(): typeof FormType {
+        return FormType;
     }
 
     constructor(
@@ -69,7 +73,6 @@ export class EquipmentFormComponent {
      */
     initFormGroup = () => this.formType === FormType.Create ?
         this.initCreateForm() : this.initEditForm();
-
 
     /**
      * Initializes form if
