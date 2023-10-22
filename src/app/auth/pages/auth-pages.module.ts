@@ -16,6 +16,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {ErrorComponent} from './error/error.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
         ButtonModule,
         RippleModule,
         InputTextModule,
-        ToastModule
+        ToastModule,
+        RadioButtonModule
     ],
     exports: [
         LoginAdminComponent,

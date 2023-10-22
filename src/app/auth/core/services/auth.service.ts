@@ -29,10 +29,9 @@ export class AuthService {
      * entity type for user login.
      *
      * @param authUnit credentials (auth data).
-     * @param entityType type of entity that wants to log in.
      */
-    loginUser(authUnit: AuthUnit, entityType: EntityType): Observable<object> {
-        switch (entityType) {
+    loginUser(authUnit: AuthUnit): Observable<object> {
+        switch (authUnit.entityType) {
             case EntityType.Company:
                 return this.loginCompany(authUnit);
             case EntityType.Organization:
