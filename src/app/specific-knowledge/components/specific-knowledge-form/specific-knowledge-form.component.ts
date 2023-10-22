@@ -40,6 +40,8 @@ export class SpecificKnowledgeFormComponent {
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     constructor(
@@ -113,11 +115,15 @@ export class SpecificKnowledgeFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -141,11 +147,15 @@ export class SpecificKnowledgeFormComponent {
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                     this.specificKnowledgeService.pingSpecificKnowledge(this.form.value as SpecificKnowledge);
+
+                    this.isLoading = false;
                 },
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
+
+                    this.isLoading = false;
                 })
     }
 
@@ -164,11 +174,15 @@ export class SpecificKnowledgeFormComponent {
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                     this.specificKnowledgeService.pingSpecificKnowledge(response as SpecificKnowledge);
+
+                    this.isLoading = false;
                 },
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
+
+                    this.isLoading = false;
                 })
     }
 }

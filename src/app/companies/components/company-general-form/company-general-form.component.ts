@@ -21,6 +21,8 @@ export class CompanyGeneralFormComponent {
     @Input() returnUrl!: string;
     @Input() categories!: Category[];
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     entityType = EntityType.Company;
@@ -114,11 +116,15 @@ export class CompanyGeneralFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -139,11 +145,15 @@ export class CompanyGeneralFormComponent {
                         'company-successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
+
+                this.isLoading = false;
             },
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 
@@ -159,11 +169,15 @@ export class CompanyGeneralFormComponent {
                         'company-successfully-updated');
 
                 this.router.navigateByUrl(this.returnUrl).then();
+
+                this.isLoading = false;
             },
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 

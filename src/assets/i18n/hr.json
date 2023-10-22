@@ -537,7 +537,7 @@
         "default": "Pretplatnici"
     },
     "activity-change": {
-        "title": "Promjena vidljivosti objave",
+        "title": "Promjena vidljivosti zapisa",
         "message": "Molimo da potvrdite skrivanje/otkrivanje zapisa. Nakon što je unos skriven on više neće biti vidljiv u aplikaciji prilikom pretrage klijenta.",
         "successfully-changed": "Vidljivost zapisa je uspješno izmjenjena.",
         "error": "Greška prilikom izmjene vidljivosti zapisa."

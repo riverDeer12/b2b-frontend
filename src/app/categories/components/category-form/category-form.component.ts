@@ -20,6 +20,8 @@ export class CategoryFormComponent {
 
     form!: FormGroup;
 
+    isLoading: boolean = false;
+
     constructor(
         public validationService: ValidationService,
         private fb: FormBuilder,
@@ -75,11 +77,15 @@ export class CategoryFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -100,11 +106,13 @@ export class CategoryFormComponent {
                         'categories.successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
+                this.isLoading = false;
             },
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+                this.isLoading = false;
             })
     }
 
@@ -116,19 +124,20 @@ export class CategoryFormComponent {
     private editCategory(): void {
         this.categoryService.editCategory(this.category.id, this.form.value).subscribe((response: Object) => {
 
-                console.log(response);
-
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'categories.successfully-updated');
 
                 this.router.navigateByUrl(this.returnUrl).then();
+
+                this.isLoading = false;
             },
             (error) => {
             console.log(error);
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+                this.isLoading = false;
             })
     }
 }

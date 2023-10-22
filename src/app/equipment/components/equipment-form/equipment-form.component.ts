@@ -39,6 +39,8 @@ export class EquipmentFormComponent {
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     constructor(
@@ -111,11 +113,15 @@ export class EquipmentFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -138,11 +144,15 @@ export class EquipmentFormComponent {
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                 this.equipmentService.pingEquipment(this.form.value as Equipment);
+
+                this.isLoading = false;
             },
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 
@@ -160,11 +170,15 @@ export class EquipmentFormComponent {
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                 this.equipmentService.pingEquipment(this.form.value as Equipment);
+
+                this.isLoading = false;
             },
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 }

@@ -18,6 +18,8 @@ export class NewsFormComponent {
     @Input() news!: News
     @Input() returnUrl!: string;
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     constructor(public validationService: ValidationService,
@@ -87,11 +89,14 @@ export class NewsFormComponent {
      */
     submit(): void {
 
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -106,17 +111,19 @@ export class NewsFormComponent {
      * create new category.
      */
     private createNews(): void {
+
         this.newsService.createNews(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'news.successfully-created');
-
                 this.router.navigateByUrl(this.returnUrl).then();
+                this.isLoading = false;
             },
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+                this.isLoading = false;
             })
     }
 
@@ -127,19 +134,18 @@ export class NewsFormComponent {
      */
     private editNews(): void {
 
-        console.log(this.returnUrl);
-
         this.newsService.editNews(this.news.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'news.successfully-updated');
-
                 this.router.navigateByUrl(this.returnUrl).then();
+                this.isLoading = false;
             },
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+                this.isLoading = false;
             })
     }
 }

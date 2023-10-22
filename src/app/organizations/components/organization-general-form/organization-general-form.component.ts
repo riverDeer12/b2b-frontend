@@ -21,6 +21,8 @@ export class OrganizationGeneralFormComponent {
     @Input() categories!: Category[];
     @Input() returnUrl!: string;
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     entityType = EntityType.Organization;
@@ -97,11 +99,15 @@ export class OrganizationGeneralFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -122,11 +128,15 @@ export class OrganizationGeneralFormComponent {
                         'organization-successfully-created');
 
                 this.router.navigateByUrl(this.returnUrl).then();
+
+                this.isLoading = false;
             },
             error => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 
@@ -143,10 +153,14 @@ export class OrganizationGeneralFormComponent {
 
             this.router.navigateByUrl(this.returnUrl).then();
 
+            this.isLoading = false;
+
         }, () => {
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+
+            this.isLoading = false;
         })
     }
 }

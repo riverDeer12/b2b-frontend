@@ -42,6 +42,8 @@ export class ResearchProblemFormComponent {
     @Input() dialogId!: string;
     @Input() categories!: Category[];
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     public get entityType(): typeof EntityType {
@@ -133,11 +135,14 @@ export class ResearchProblemFormComponent {
      */
     submit(): void {
 
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -162,11 +167,15 @@ export class ResearchProblemFormComponent {
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                     this.researchProblemService.pingResearchProblems(this.form.value);
+
+                    this.isLoading = false;
                 },
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
+
+                    this.isLoading = false;
                 })
     }
 
@@ -186,11 +195,15 @@ export class ResearchProblemFormComponent {
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                     this.researchProblemService.pingResearchProblems(response);
+
+                    this.isLoading = false;
                 },
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
+
+                    this.isLoading = false;
                 })
     }
 }

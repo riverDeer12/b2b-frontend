@@ -39,6 +39,8 @@ export class JobOffersFormComponent {
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     constructor(
@@ -177,11 +179,15 @@ export class JobOffersFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -204,11 +210,15 @@ export class JobOffersFormComponent {
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                 this.jobOfferService.pingJobOffers(response);
+
+                this.isLoading = false;
             },
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 
@@ -227,11 +237,15 @@ export class JobOffersFormComponent {
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
                     this.jobOfferService.pingJobOffers(response);
+
+                    this.isLoading = false;
                 },
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
                             'correct-validation-errors');
+
+                    this.isLoading = false;
                 })
     }
 }

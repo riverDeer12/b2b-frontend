@@ -21,6 +21,8 @@ export class ScientistGeneralFormComponent {
     @Input() categories!: Category[];
     @Input() returnUrl!: string;
 
+    isLoading: boolean = false;
+
     form!: FormGroup;
 
     entityType = EntityType.Scientist;
@@ -148,11 +150,15 @@ export class ScientistGeneralFormComponent {
      * by clicking submit button.
      */
     submit(): void {
+
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+            this.isLoading = false;
             return;
         }
 
@@ -171,11 +177,17 @@ export class ScientistGeneralFormComponent {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'scientists.successfully-created');
+
+                this.router.navigateByUrl(this.returnUrl).then();
+
+                this.isLoading = false;
             },
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 
@@ -189,11 +201,17 @@ export class ScientistGeneralFormComponent {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'scientists.successfully-updated');
+
+                this.router.navigateByUrl(this.returnUrl).then();
+
+                this.isLoading = false;
             },
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
+
+                this.isLoading = false;
             })
     }
 }
