@@ -12,6 +12,7 @@ export class Equipment {
     numberOfViews!: number;
     categories!: Category[];
     scientistId!: string;
+    isActive!: boolean;
 
     get currentLanguage(): string {
         const localStorageData = localStorage.getItem('lang') as string;

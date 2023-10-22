@@ -13,7 +13,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {DialogService} from 'primeng/dynamicdialog';
 import {Category} from '../../../categories/core/models/category';
 import {SharedService} from '../../../shared/services/shared.service';
-import {Equipment} from '../../../equipment/core/models/equipment';
+import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
 
 @Component({
     selector: 'specific-knowledge-data-table',
@@ -164,6 +164,27 @@ export class SpecificKnowledgeDataTableComponent {
                         this.table.reset();
                     })
             })
+    }
+
+    openFlipActiveDialog(specificKnowledgeId: string): void {
+        this.confirmationService.confirm({
+            accept: () => {
+                this.sharedService.flipActive(EntityType.SpecificKnowledge, specificKnowledgeId, EntityType.Scientist,
+                    this.scientistId).subscribe((response: any) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+
+                        let flippedEntity = this.data.find(x => x.id === response.id) as SpecificKnowledge;
+
+                        flippedEntity.isActive = !flippedEntity.isActive;
+                    },
+
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'activity-change.error');
+                    })
+            },
+        });
     }
 }
 

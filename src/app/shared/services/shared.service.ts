@@ -102,10 +102,21 @@ export class SharedService {
     /**
      * Changes activity status.
      *
+     * @param parentType Entity Type of parent Entity.
+     * @param parentId parent entity identifier.
      * @param type Entity Type.
      * @param id news entity identifier.
      */
-    flipActive = (type: EntityType, id: string) =>
-        this.http.get(environment.apiUrl + type + '/' + id + '/flip-active');
+    flipActive(type: EntityType, id: string, parentType?: EntityType, parentId?: string,) {
+        if (!parentType && !parentId) {
+            return this.http.post(environment.apiUrl + '/' + type + '/' + id + '/flip-active', {});
+        } else {
+
+            const parentEntityPrefix = parentType + '/' + parentId;
+
+            return this.http.post(environment.apiUrl + '/' + parentEntityPrefix + '/'
+                + type + '/' + id + '/flip-active', {});
+        }
+    }
 
 }

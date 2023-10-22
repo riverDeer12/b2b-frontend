@@ -6,5 +6,6 @@ export enum EntityType {
     Equipment = "equipment",
     ResearchProblem = "research-problems",
     JobOffer = "job-offers",
-    SpecificKnowledge = "specific-knowledge"
+    SpecificKnowledge = "specific-knowledge",
+    Category = "categories"
 }

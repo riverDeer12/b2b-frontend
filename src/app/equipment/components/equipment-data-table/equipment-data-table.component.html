@@ -58,6 +58,7 @@
                     <p-columnFilter type="date" field="updatedAt" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
+            <th>{{'activity' | translate}}</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-equipment>
@@ -75,6 +76,11 @@
             <td>
                 {{equipment.updatedAt | date: 'dd.MM.yyyy HH:mm:ss'}}
             </td>
+            <td>
+                <p-button (click)="openFlipActiveDialog(equipment.id)"
+                          icon="{{equipment.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                          styleClass="p-button-rounded p-button-text"></p-button>
+            </td>
         </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">
@@ -90,4 +96,11 @@
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<p-confirmDialog header="{{'activity-change.title' | translate }}"
+                 message="{{'activity-change.message' | translate }}"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 icon="pi pi-exclamation-triangle"
                  rejectButtonStyleClass="p-button-text"></p-confirmDialog>

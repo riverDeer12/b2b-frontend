@@ -83,7 +83,8 @@
                 {{news.updatedAt}}
             </td>
             <td>
-                <p-button (click)="openFlipActiveDialog(news.id)" icon="{{news.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                <p-button (click)="openFlipActiveDialog(news.id)"
+                          icon="{{news.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
                           styleClass="p-button-rounded p-button-text"></p-button>
             </td>
         </tr>
@@ -95,12 +96,18 @@
     </ng-template>
 </p-table>
 
-<p-confirmDialog header="{{'confirm-delete-action' | translate }}"
-                 key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
-                 message="{{'confirm-delete-message' | translate }}"
+<p-confirmDialog header="{{'news.confirm-delete-action' | translate }}"
+                 message="{{'news.confirm-delete-message' | translate }}"
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"
+                 key="confirmDeleteDialog"
+                 icon="pi pi-exclamation-triangle"
                  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
 
-<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+<p-confirmDialog header="{{'activity-change.title' | translate }}"
+                 message="{{'activity-change.message' | translate }}"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 icon="pi pi-exclamation-triangle"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>

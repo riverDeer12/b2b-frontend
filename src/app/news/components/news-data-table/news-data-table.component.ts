@@ -94,13 +94,18 @@ export class NewsDataTableComponent {
     openFlipActiveDialog(newsId: string): void {
         this.confirmationService.confirm({
             accept: () => {
-                this.sharedService.flipActive(EntityType.News, newsId).subscribe((response: Object) => {
+                this.sharedService.flipActive(EntityType.News, newsId).subscribe((response: any) => {
                         this.notificationService
-                            .showNotification(NotificationType.Success, 'activity.successfully-changed');
+                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+
+                        let flippedEntity = this.data.find(x => x.id === response.id) as News;
+
+                        flippedEntity.isActive = !flippedEntity.isActive;
                     },
+
                     (error: Object) => {
                         this.notificationService
-                            .showNotification(NotificationType.Error, 'activity.error');
+                            .showNotification(NotificationType.Error, 'activity-change.error');
                     })
             },
         });

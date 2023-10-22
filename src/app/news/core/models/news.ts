@@ -8,6 +8,7 @@ export class News {
     updatedAt!: Date;
     numberOfViews!: number;
     featuredImage!: string;
+    isActive!: boolean;
 
     getTitle(): string {
         return this.title.translations.HR;

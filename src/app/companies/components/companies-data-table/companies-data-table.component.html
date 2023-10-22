@@ -89,7 +89,7 @@
                 {{company.numberOfViews}}
             </td>
             <td>
-                <p-button icon="{{company.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                <p-button (click)="openFlipActiveDialog(company.id)" icon="{{company.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
                           styleClass="p-button-rounded p-button-text"></p-button>
             </td>
         </tr>
@@ -107,4 +107,11 @@
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<p-confirmDialog header="{{'activity-change.title' | translate }}"
+                 message="{{'activity-change.message' | translate }}"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 icon="pi pi-exclamation-triangle"
                  rejectButtonStyleClass="p-button-text"></p-confirmDialog>

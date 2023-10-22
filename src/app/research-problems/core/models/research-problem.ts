@@ -14,6 +14,7 @@ export class ResearchProblem {
     publicOrganizationId!: string;
     companyId!: string;
     categories!: Category[];
+    isActive!: boolean;
 
     get currentLanguage(): string {
         const localStorageData = localStorage.getItem('lang') as string;

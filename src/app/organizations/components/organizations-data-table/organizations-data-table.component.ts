@@ -6,6 +6,8 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {Router} from '@angular/router';
 import {Table} from 'primeng/table';
 import {NotificationType} from '../../../shared/enums/notification-type';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'organizations-data-table',
@@ -19,6 +21,7 @@ export class OrganizationsDataTableComponent {
 
     constructor(private confirmationService: ConfirmationService,
                 private organizationService: OrganizationService,
+                private sharedService: SharedService,
                 private notificationService: NotificationService,
                 private router: Router) {
     }
@@ -73,6 +76,26 @@ export class OrganizationsDataTableComponent {
                     (error: Object) => {
                         this.notificationService
                             .showNotification(NotificationType.Error, 'error-deleting');
+                    })
+            },
+        });
+    }
+
+    openFlipActiveDialog(organizationId: string): void {
+        this.confirmationService.confirm({
+            accept: () => {
+                this.sharedService.flipActive(EntityType.Organization, organizationId).subscribe((response: any) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+
+                        let flippedEntity = this.data.find(x => x.id === response.id) as Organization;
+
+                        flippedEntity.isActive = !flippedEntity.isActive;
+                    },
+
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'activity-change.error');
                     })
             },
         });

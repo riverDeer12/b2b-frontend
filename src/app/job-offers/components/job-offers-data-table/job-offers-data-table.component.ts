@@ -12,7 +12,7 @@ import {DialogContentTypes} from '../../../shared/constants/dialog-content-types
 import {DialogService} from 'primeng/dynamicdialog';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
-import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
     selector: 'job-offers-data-table',
@@ -30,6 +30,7 @@ export class JobOffersDataTableComponent {
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
+                private sharedService: SharedService,
                 private jobOfferService: JobOfferService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -156,6 +157,27 @@ export class JobOffersDataTableComponent {
                     () => {
                         this.notificationService
                             .showNotification(NotificationType.Error, 'error-deleting');
+                    })
+            },
+        });
+    }
+
+    openFlipActiveDialog(jobOfferId: string): void {
+        this.confirmationService.confirm({
+            accept: () => {
+                this.sharedService.flipActive(EntityType.JobOffer, jobOfferId, EntityType.Company,
+                    this.companyId).subscribe((response: any) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+
+                        let flippedEntity = this.data.find(x => x.id === response.id) as JobOffer;
+
+                        flippedEntity.isActive = !flippedEntity.isActive;
+                    },
+
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'activity-change.error');
                     })
             },
         });

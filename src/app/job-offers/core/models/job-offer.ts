@@ -20,6 +20,7 @@ export class JobOffer {
     categories!: Category[];
     companyId!: string;
     numberOfViews!: number;
+    isActive!: boolean;
 
     get currentLanguage(): string {
         const localStorageData = localStorage.getItem('lang') as string;

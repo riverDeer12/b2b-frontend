@@ -12,6 +12,7 @@ import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog
 import {FormType} from '../../../shared/enums/form-type';
 import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
 import {Category} from '../../../categories/core/models/category';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
     selector: 'research-problems-data-table',
@@ -32,6 +33,7 @@ export class ResearchProblemsDataTableComponent {
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
+                private sharedService: SharedService,
                 private researchProblemService: ResearchProblemService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -161,5 +163,26 @@ export class ResearchProblemsDataTableComponent {
                         this.table.reset();
                     })
             })
+    }
+
+    openFlipActiveDialog(researchProblemId: string): void {
+        this.confirmationService.confirm({
+            accept: () => {
+                this.sharedService.flipActive(EntityType.ResearchProblem, researchProblemId, this.parentEntityType,
+                    this.parentEntityId).subscribe((response: any) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+
+                        let flippedEntity = this.data.find(x => x.id === response.id) as ResearchProblem;
+
+                        flippedEntity.isActive = !flippedEntity.isActive;
+                    },
+
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'activity-change.error');
+                    })
+            },
+        });
     }
 }

@@ -6,6 +6,8 @@ import {Table} from 'primeng/table';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {Scientist} from '../../core/models/scientist';
 import {ScientistService} from '../../core/services/scientist.service';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'scientists-data-table',
@@ -19,6 +21,7 @@ export class ScientistsDataTableComponent {
 
     constructor(private confirmationService: ConfirmationService,
                 private scientistService: ScientistService,
+                private sharedService: SharedService,
                 private notificationService: NotificationService,
                 private router: Router) {
     }
@@ -75,6 +78,26 @@ export class ScientistsDataTableComponent {
                     (error: Object) => {
                         this.notificationService
                             .showNotification(NotificationType.Error, 'error-deleting');
+                    })
+            },
+        });
+    }
+
+    openFlipActiveDialog(scientistId: string): void {
+        this.confirmationService.confirm({
+            accept: () => {
+                this.sharedService.flipActive(EntityType.Scientist, scientistId).subscribe((response: any) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+
+                        let flippedEntity = this.data.find(x => x.id === response.id) as Scientist;
+
+                        flippedEntity.isActive = !flippedEntity.isActive;
+                    },
+
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'activity-change.error');
                     })
             },
         });

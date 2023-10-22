@@ -5,6 +5,7 @@ export class Category {
     id!: string;
     name!: LocalizedProperty;
     description!: LocalizedProperty;
+    isActive!: boolean;
 
     constructor() {
 

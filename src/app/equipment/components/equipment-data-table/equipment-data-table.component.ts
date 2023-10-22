@@ -5,14 +5,14 @@ import {Table} from 'primeng/table';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {EquipmentService} from '../../core/services/equipment.service';
-import {Equipment} from "../../core/models/equipment";
-import {EntityType} from "../../../auth/core/enums/entity-type";
-import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog-form.component";
-import {FormType} from "../../../shared/enums/form-type";
-import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
-import {DialogService} from "primeng/dynamicdialog";
+import {Equipment} from '../../core/models/equipment';
+import {EntityType} from '../../../auth/core/enums/entity-type';
+import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
+import {FormType} from '../../../shared/enums/form-type';
+import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
+import {DialogService} from 'primeng/dynamicdialog';
 import {Category} from '../../../categories/core/models/category';
-import {JobOffer} from '../../../job-offers/core/models/job-offer';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
     selector: 'equipment-data-table',
@@ -30,6 +30,7 @@ export class EquipmentDataTableComponent {
 
     constructor(private confirmationService: ConfirmationService,
                 private dialogService: DialogService,
+                private sharedService: SharedService,
                 private equipmentService: EquipmentService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -160,6 +161,27 @@ export class EquipmentDataTableComponent {
                         this.table.reset();
                     })
             })
+    }
+
+    openFlipActiveDialog(equipmentId: string): void {
+        this.confirmationService.confirm({
+            accept: () => {
+                this.sharedService.flipActive(EntityType.Equipment, equipmentId, EntityType.Scientist,
+                    this.scientistId).subscribe((response: any) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+
+                        let flippedEntity = this.data.find(x => x.id === response.id) as Equipment;
+
+                        flippedEntity.isActive = !flippedEntity.isActive;
+                    },
+
+                    (error: Object) => {
+                        this.notificationService
+                            .showNotification(NotificationType.Error, 'activity-change.error');
+                    })
+            },
+        });
     }
 }
 
