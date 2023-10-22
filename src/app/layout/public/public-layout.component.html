@@ -16,9 +16,9 @@
                 style="top:120px">
                 <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
                     <li>
-                        <a (click)="router.navigate(['/about-us'])" pRipple
+                        <a (click)="router.navigate(['/news'])" pRipple
                            class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'about-us' | translate }}</span>
+                            <span>{{'news.default' | translate}}</span>
                         </a>
                     </li>
                     <li>
@@ -40,15 +40,9 @@
                         </a>
                     </li>
                     <li>
-                        <a (click)="router.navigate(['/public-organizations/research-problems'])" pRipple
-                           class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'organizations-research-problems' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
                         <a (click)="router.navigate(['/companies/research-problems'])" pRipple
                            class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'companies-research-problems' | translate }}</span>
+                            <span>{{'companies.research-problems' | translate }}</span>
                         </a>
                     </li>
                     <li>
@@ -58,9 +52,15 @@
                         </a>
                     </li>
                     <li>
-                        <a (click)="router.navigate(['/news'])" pRipple
+                        <a (click)="router.navigate(['/public-organizations/research-problems'])" pRipple
                            class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
-                            <span>{{'news.default' | translate}}</span>
+                            <span>{{'organizations.research-problems' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="router.navigate(['/scientists/equipment'])" pRipple
+                           class="flex m-0 md:ml-5 px-0 py-3  font-medium line-height-3">
+                            <span>{{'equipment.default' | translate }}</span>
                         </a>
                     </li>
                 </ul>

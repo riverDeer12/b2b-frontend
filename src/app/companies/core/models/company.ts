@@ -6,7 +6,7 @@ import {LocalizedProperty} from "../../../shared/models/localized-property";
 export class Company {
     id!: string;
     isActive!: boolean;
-    logo!: string;
+    image!: string;
     username!: string;
     password!: string;
     name!: string;

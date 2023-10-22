@@ -16,5 +16,9 @@ export const DialogContentTypes = {
     Equipment: {
         type: DialogFormContentType.Equipment,
         dialogId: 'equipmentFormDialog'
+    },
+    Message: {
+        type: DialogFormContentType.Message,
+        dialogId: 'sendMessageFormDialog'
     }
 }

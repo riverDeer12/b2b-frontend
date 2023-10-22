@@ -17,7 +17,7 @@
                 [entityType]="entityType"
                 [parentEntityId]="entityItem.parentId"
                 [parentEntityType]="parentEntityType"
-                [imageLink]="entity.getImageLink(entityItem, entityType)"
+                [imageLink]="entityItem.image"
                 [title]="entity.getTitle(entityItem, entityType)">
             </simple-entity-card>
             <entity-card
@@ -25,7 +25,7 @@
                 [entityId]="entityItem.id"
                 [entityType]="entityType"
                 [entityCategories]="entityItem.categories"
-                [imageLink]="entity.getImageLink(entityItem, entityType)"
+                [imageLink]="entityItem.image"
                 [title]="entity.getTitle(entityItem, entityType)"
                 [address]="entity.getAddress(entityItem, entityType)"
                 [externalLink]="entity.getExternalLink(entityItem, entityType)">

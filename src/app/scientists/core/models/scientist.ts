@@ -6,7 +6,7 @@ import {LocalizedProperty} from '../../../shared/models/localized-property';
 export class Scientist {
     id!: string;
     isActive!: boolean;
-    profilePicture!: string;
+    image!: string;
     username!: string;
     password!: string;
     title!: LocalizedProperty;

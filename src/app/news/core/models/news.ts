@@ -7,7 +7,7 @@ export class News {
     createdAt!: Date;
     updatedAt!: Date;
     numberOfViews!: number;
-    featuredImage!: string;
+    image!: string;
     isActive!: boolean;
 
     getTitle(): string {

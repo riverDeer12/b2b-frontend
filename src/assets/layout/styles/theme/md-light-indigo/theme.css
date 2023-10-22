@@ -4869,7 +4869,8 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-card .p-card-content img {
-    width: 100%;
+    width: 50%;
+    object-fit: cover;
 }
 
 .p-card .p-card-body {

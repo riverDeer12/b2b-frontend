@@ -3,22 +3,26 @@
         <p-card [header]="entity.getTitle(entityItem, currentEntityType)">
             <ng-template pTemplate="header">
                 <img alt="Card"
-                     [src]="entity.getImageLink(entityItem, currentEntityType) ?? 'assets/layout/images/image-default.png'"/>
+                     [src]="entityItem.image ?? 'assets/layout/images/image-default.png'"/>
             </ng-template>
             <ng-template pTemplate="content">
-                <div *ngIf="!entity.isSimpleEntity(currentEntityType)">
+                <p class="text-center">
+                    <button style="width: 20%" pButton class="font-light line-height-2 bg-blue-500
+                    text-white simple-entity-card-button" label="{{'contact-entity.default' | translate}}"></button>
+                </p>
+                <div class="mt-5" *ngIf="!entity.isSimpleEntity(currentEntityType)">
                     <p>
-                        <label>{{'address' | translate }}</label>
+                        <label>{{'address.label' | translate }}</label>
                         {{entity.getAddress(entityItem, currentEntityType)}}
                     </p>
                     <p>
-                        <label>{{'website' | translate }}</label>
+                        <label>{{'website.label' | translate }}</label>
                         <a href="{{entity.getExternalLink(entityItem, currentEntityType)}}">
                             {{entity.getExternalLink(entityItem, currentEntityType)}}
                         </a>
                     </p>
                     <p>
-                        <label>{{'tags' | translate }}</label>
+                        <label>{{'categories.tags.label' | translate }}</label>
                         <p-tag *ngFor="let tag of entityItem.categoryTags.split(';').slice(0, -1)">
                             {{tag}}
                         </p-tag>
@@ -31,59 +35,59 @@
                     </p-tag>
                 </p>
                 <p>
-                    <label>{{'description' | translate }}</label>
+                    <label>{{'description.label' | translate }}</label>
                     <span [innerHTML]="entity.getDescription(entityItem, currentEntityType)"></span>
                 </p>
-                <div *ngIf="hasResearchProblems">
-                    <h3>{{'research-problems' | translate}}</h3>
+                <div class="mt-5" *ngIf="hasResearchProblems">
+                    <h3>{{'research-problems.default' | translate}}</h3>
                     <p-divider></p-divider>
-                    <div *ngFor="let researchProblem of researchProblems">
+                    <div class="mt-5" *ngFor="let researchProblem of researchProblems">
                         <h5 [innerHTML]="researchProblem.localizedTitle"></h5>
                         <img alt="Card" width="100%"
-                             [src]="entity.getImageLink(researchProblem, entityType.ResearchProblem) ??
+                             [src]="entityItem.image ??
                              'assets/layout/images/image-default.png'"/>
                         <p>
-                            <label>{{'description' | translate }}</label>
+                            <label>{{'description.label' | translate }}</label>
                             <span [innerHTML]="researchProblem.localizedDescription"></span>
                         </p>
                         <p>
-                            <label>{{'academic-community-contribution-possibility' | translate }}</label>
+                            <label>{{'research-problems.academic-community-contribution-possibility.label' | translate }}</label>
                             <span [innerHTML]="researchProblem.localizedAcademicCommunityContributionPossibility"></span>
                         </p>
                     </div>
                 </div>
-                <div *ngIf="hasEquipment">
-                    <h3>{{'equipment' | translate}}</h3>
+                <div class="mt-5" *ngIf="hasEquipment">
+                    <h3>{{'equipment.default' | translate}}</h3>
                     <p-divider></p-divider>
-                    <div *ngFor="let equipment of equipmentList">
+                    <div class="mt-5" *ngFor="let equipment of equipmentList">
                         <h5 [innerHTML]="equipment.localizedTitle"></h5>
                         <img alt="Card" width="100%"
-                             [src]="entity.getImageLink(equipment, entityType.Equipment) ??
+                             [src]="equipment.image ??
                              'assets/layout/images/image-default.png'"/>
                         <p>
-                            <label>{{'description' | translate }}</label>
+                            <label>{{'description.label' | translate }}</label>
                             <span [innerHTML]="equipment.localizedDescription"></span>
                         </p>
                     </div>
                 </div>
-                <div *ngIf="hasSpecificKnowledge">
-                    <h3>{{'specific-knowledge' | translate}}</h3>
+                <div class="mt-5" *ngIf="hasSpecificKnowledge">
+                    <h3>{{'specific-knowledge.default' | translate}}</h3>
                     <p-divider></p-divider>
-                    <div *ngFor="let specificKnowledge of specificKnowledgeList">
+                    <div class="mt-5" *ngFor="let specificKnowledge of specificKnowledgeList">
                         <h5 [innerHTML]="specificKnowledge.localizedTitle"></h5>
                         <img alt="Card" width="100%"
-                             [src]="entity.getImageLink(specificKnowledge, entityType.SpecificKnowledge) ??
+                             [src]="specificKnowledge.image ??
                              'assets/layout/images/image-default.png'"/>
                         <p>
-                            <label>{{'description' | translate }}</label>
+                            <label>{{'description.label' | translate }}</label>
                             <span [innerHTML]="specificKnowledge.localizedDescription"></span>
                         </p>
                     </div>
                 </div>
             </ng-template>
             <ng-template pTemplate="footer" *ngIf="showContactButton">
-                <button style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
-                    text-white simple-entity-card-button" label="{{'contact-entity' | translate}}"></button>
+                <button (click)="openMessageDialog()" style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
+                    text-white simple-entity-card-button" label="{{'contact-entity.default' | translate}}"></button>
             </ng-template>
         </p-card>
     </div>

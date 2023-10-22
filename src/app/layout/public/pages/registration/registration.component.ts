@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class RegistrationComponent {
     categories!: Category[];
-    selectedEntityType!: EntityType;
+    selectedEntityType = EntityType.Company;
 
     public get entityType(): typeof EntityType {
         return EntityType;

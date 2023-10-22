@@ -125,33 +125,6 @@ export class Entity {
     }
 
     /**
-     * Entity image getter.
-     *
-     * @param entity entity data.
-     * @param type entity type.
-     */
-    public static getImageLink(entity: any, type: EntityType) {
-        switch (type) {
-            case EntityType.Organization:
-                return entity.logo;
-            case EntityType.Company:
-                return entity.logo;
-            case EntityType.Scientist:
-                return entity.profilePicture;
-            case EntityType.News:
-                return entity.featuredImage;
-            case EntityType.ResearchProblem:
-                return entity.image;
-            case EntityType.SpecificKnowledge:
-                return entity.image;
-            case EntityType.Equipment:
-                return entity.image;
-            default:
-                return '';
-        }
-    }
-
-    /**
      * Entity address getter.
      *
      * @param entity entity data.

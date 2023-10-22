@@ -112,7 +112,10 @@
     "activity": "Aktivnost",
     "active": "Aktivno",
     "not-active": "Nije aktivno",
-    "description": "Opis",
+    "description": {
+        "default": "Opis",
+        "label": "Opis:"
+    },
     "createdAt": "Vrijeme kreiranja",
     "updatedAt": "Zadnje ažuriranje",
     "search": "Pretraga",
@@ -127,7 +130,10 @@
     "general": "Opći podaci",
     "choose-option": "Odaberite vrijednost",
     "email": "Email adresa",
-    "website": "Web stranica",
+    "website":{
+        "default": "Web stranica",
+        "label": "Web stranica:"
+    },
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
     "results": "rezultata",
     "correct-validation-errors": "Molimo ispravite pogreške i pokušajte ponovno.",
@@ -135,10 +141,23 @@
         "default": "Statistika"
     },
     "auth": {
-        "username": "Korisničko ime",
-        "password": "Lozinka",
+        "username": {
+            "default": "Korisničko ime",
+            "required": "Korisničko ime je obavezan podatak.",
+            "not-unique": "Korisničko ime se već koristi.",
+            "invalid-email": "Email je neispravan."
+        },
+        "password": {
+            "default": "Lozinka",
+            "required": "Lozinka je obavezan podatak.",
+            "min-length": "Lozinka mora sadržavati minimalno 8 znakova."
+        },
+        "confirm-password": {
+            "default": "Potvrda lozinke",
+            "required": "Potvrda lozinke je obavezan podatak.",
+            "mismatch": "Potvrda lozinke mora biti identična lozinki."
+        },
         "registration": "Registracija",
-        "confirm-password": "Potvrda lozinke",
         "username-password": "Korisničko ime i lozinka",
         "welcome-to-dashboard": "Uspješna prijava u RIMAP administraciju.",
         "login": "Prijava",
@@ -208,6 +227,7 @@
             "required": "Broj zaposlenih je obavezan podatak.",
             "invalid": "Broj zaposlenih nije u ispravnom obliku."
         },
+        "research-problems": "Razvojni prijedlozi tvrtki",
         "number-of-views": "Broj pregleda",
         "latest-companies": "Nove registrirane tvrtke",
         "latest-company-research-problems": "Novi razvojni prijedlozi tvrtki",
@@ -303,6 +323,7 @@
             "default": "Web sjedište",
             "required": "Web sjedište je obavezan podatak."
         },
+        "research-problems": "Razvojni prijedlozi javnog sektora",
         "edit-organization": "Uređivanje javne organizacije",
         "number-of-views": "Broj pregleda",
         "successfully-deleted": "Javna organizacija je uspješno izbrisana.",
@@ -314,6 +335,7 @@
     },
     "categories": {
         "default": "Kategorije",
+        "label": "Kategorije:",
         "required": "Kategorije su obavezan podatak",
         "name": {
             "default": "Naziv kategorije",
@@ -321,6 +343,7 @@
         },
         "tags": {
             "default": "Ključne riječi",
+            "label": "Područja interesa:",
             "required": "Ključne riječi su obavezan podatak."
         },
         "newsletter-categories": {
@@ -418,6 +441,7 @@
         },
         "academic-community-contribution-possibility": {
             "default": "Mogućnost akademskog doprinosa",
+            "label": "Mogućnost akademskog doprinosa:",
             "required": "Mogućnost akademskog doprinosa je obavezan podatak."
         },
         "description": {
@@ -533,6 +557,10 @@
         "news-useful-info": "Novosti i korisne informacije",
         "view-all-news": "Pogledaj sve novosti"
     },
+    "communications": {
+        "send-message": "Slanje poruke",
+        "not-logged": "Da biste ostvarili kontakt, morate biti prijavljeni na RIMAP platformi."
+    },
     "subscribers": {
         "default": "Pretplatnici"
     },
@@ -542,13 +570,16 @@
         "successfully-changed": "Vidljivost zapisa je uspješno izmjenjena.",
         "error": "Greška prilikom izmjene vidljivosti zapisa."
     },
-    "file-upload":{
+    "file-upload": {
         "successfully-uploaded": "Datoteka je uspješno prenesena",
         "error": "Greška prilikom prijenosa datoteke",
         "please-choose-your-image": "Ovdje možete odabrati novu profilnu sliku.",
         "choose-button": "Odaberi datoteku",
         "upload-button": "Pokreni prijenos datoteke",
         "cancel-button": "Ukloni odabranu datoteku"
+    },
+    "address": {
+        "label": "Adresa:"
     },
     "rimap": "Regional innovation matchmaking platform",
     "rimap-description": "Regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva s ciljem razvoja inovacijskog ekosustava u regiji. Pozivamo Vas da se registrirate, unesete Vaše razvojne prijedloge/potrebe za ljudskim resursima/kompetencije/istraživačku opremu te pretražite profile ostalih korisnika i kontaktirate ih o mogućoj suradnji klikom na \"Kontaktiraj\".",
@@ -561,5 +592,8 @@
     "useful-links": "Korisne poveznice",
     "entities-view": "Pregled",
     "about-us": "O nama",
-    "main-search": "Pretraga"
+    "main-search": "Pretraga",
+    "contact-entity": {
+        "default": "Ostvari kontakt"
+    }
 }

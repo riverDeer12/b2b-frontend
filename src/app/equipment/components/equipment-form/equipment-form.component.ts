@@ -123,7 +123,6 @@ export class EquipmentFormComponent {
      * by clicking submit button.
      */
     submit(): void {
-
         this.isLoading = true;
 
         if (this.form.invalid) {

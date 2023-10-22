@@ -6,6 +6,15 @@ import {Category} from '../../../../categories/core/models/category';
 import {ResearchProblem} from '../../../../research-problems/core/models/research-problem';
 import {Equipment} from '../../../../equipment/core/models/equipment';
 import {SpecificKnowledge} from '../../../../specific-knowledge/core/models/specific-knowledge';
+import {CommunicationService} from '../../../../shared/services/communication.service';
+import {DialogFormComponent} from '../../../../shared/components/dialog-form/dialog-form.component';
+import {FormType} from '../../../../shared/enums/form-type';
+import {DialogContentTypes} from '../../../../shared/constants/dialog-content-types';
+import {DialogService} from 'primeng/dynamicdialog';
+import {RedirectType} from '../../../../shared/enums/redirect-type';
+import {AuthService} from '../../../../auth/core/services/auth.service';
+import {NotificationType} from '../../../../shared/enums/notification-type';
+import {NotificationService} from '../../../../shared/services/notification.service';
 
 @Component({
     selector: 'entity-details',
@@ -37,11 +46,15 @@ export class EntityDetailsComponent implements OnInit {
     }
 
     public get hasEquipment(): boolean {
-        return this.currentEntityType == this.entityType.Scientist;
+        const isScientist = this.currentEntityType == this.entityType.Scientist;
+
+        return isScientist && this.entityItem.equipment.length;
     }
 
     public get hasSpecificKnowledge(): boolean {
-        return this.currentEntityType == this.entityType.Scientist;
+        const isScientist = this.currentEntityType == this.entityType.Scientist;
+
+        return isScientist && this.entityItem.specificKnowledge.length;
     }
 
     public get entity(): typeof Entity {
@@ -56,7 +69,11 @@ export class EntityDetailsComponent implements OnInit {
         return this.currentEntityType !== this.entityType.News;
     }
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    constructor(private activatedRoute: ActivatedRoute,
+                private authService: AuthService,
+                private notificationService: NotificationService,
+                private communicationService: CommunicationService,
+                private dialogService: DialogService) {
     }
 
     ngOnInit() {
@@ -74,6 +91,27 @@ export class EntityDetailsComponent implements OnInit {
 
             this.initSubEntities();
         });
+    }
+
+    /**
+     * Opens dialog for
+     * sending message to entity.
+     */
+    openMessageDialog() {
+
+        if (!this.authService.userLogged()) {
+            this.notificationService
+                .showNotification(NotificationType.Warning, 'communications.not-logged');
+            return;
+        }
+
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'communications.send-message',
+                formType: FormType.Create,
+                contentType: DialogContentTypes.Message
+            }
+        })
     }
 
     private initCategories(): void {

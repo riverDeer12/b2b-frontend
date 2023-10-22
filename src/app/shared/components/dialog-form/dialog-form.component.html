@@ -38,3 +38,10 @@
     [scientistId]="parentEntityId"
     [specificKnowledge]="data">
 </specific-knowledge-form>
+
+<send-message-form
+    *ngIf="contentType.type === dialogFormContentType.Message"
+    [formType]="formType"
+    [dialogId]="dialogId"
+    [redirectType]="dialogRedirectType">
+</send-message-form>

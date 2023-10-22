@@ -4,11 +4,11 @@
     </ng-template>
     <ng-template pTemplate="content">
         <p>
-            <label>{{'address' | translate}}</label>
+            <label class="bold">{{'address.label' | translate}}</label>
             {{address}}
         </p>
         <p>
-            <label>{{'categories.default' | translate}}</label>
+            <label>{{'categories.label' | translate}}</label>
             <p-tag *ngFor="let category of entityCategories">
                 {{category.localizedName}}
             </p-tag>

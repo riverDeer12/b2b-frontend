@@ -16,11 +16,13 @@ import {EquipmentComponentsModule} from '../equipment/components/equipment-compo
 import {ResearchProblemsComponentsModule} from '../research-problems/components/research-problems-components.module';
 import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
 import {DialogService} from 'primeng/dynamicdialog';
+import { SendMessageFormComponent } from './components/send-message-form/send-message-form.component';
 
 @NgModule({
     declarations: [
         ActivityComponent,
-        DialogFormComponent
+        DialogFormComponent,
+        SendMessageFormComponent
     ],
     imports: [
         CommonModule,
@@ -38,7 +40,8 @@ import {DialogService} from 'primeng/dynamicdialog';
     ],
     exports: [
         ActivityComponent,
-        DialogFormComponent
+        DialogFormComponent,
+        SendMessageFormComponent
     ],
     providers: [
         NotificationService,
