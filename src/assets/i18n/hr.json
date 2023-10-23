@@ -171,7 +171,8 @@
         "resource-not-available": "Traženi sadržaj nije dostupan.",
         "back-to-home-page": "Povratak na naslovnu stranicu",
         "login-error": "Korisničko ime ili lozinka nisu ispravni. Pokušajte ponovno.",
-        "successfully-changed-password": "Lozinka je uspješno promijenjena."
+        "successfully-changed-password": "Lozinka je uspješno promijenjena.",
+        "choose-login-type": "Odaberite način prijave"
     },
     "companies": {
         "default": "Tvrtke",
