@@ -10,6 +10,8 @@ import {StyleClassModule} from 'primeng/styleclass';
 import {ButtonModule} from 'primeng/button';
 import {PublicLayoutComponentsModule} from './components/public-layout-components.module';
 import {MenubarModule} from 'primeng/menubar';
+import {DropdownModule} from 'primeng/dropdown';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import {MenubarModule} from 'primeng/menubar';
         StyleClassModule,
         ButtonModule,
         PublicLayoutComponentsModule,
-        MenubarModule
+        MenubarModule,
+        DropdownModule,
+        FormsModule
     ]
 })
 export class PublicLayoutModule {

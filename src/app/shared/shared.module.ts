@@ -17,12 +17,14 @@ import {ResearchProblemsComponentsModule} from '../research-problems/components/
 import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
 import {DialogService} from 'primeng/dynamicdialog';
 import { SendMessageFormComponent } from './components/send-message-form/send-message-form.component';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
 @NgModule({
     declarations: [
         ActivityComponent,
         DialogFormComponent,
-        SendMessageFormComponent
+        SendMessageFormComponent,
+        LanguageSelectorComponent
     ],
     imports: [
         CommonModule,

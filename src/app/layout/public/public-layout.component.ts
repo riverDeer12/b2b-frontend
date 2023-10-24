@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {MenuItem} from 'primeng/api';
 import {TranslateService} from '@ngx-translate/core';
 import {PublicMenuItems} from './core/constants/public-menu-items';
+import {Languages} from '../../shared/constants/languages';
 
 @Component({
     selector: 'app-public-layout',
@@ -15,6 +16,9 @@ export class PublicLayoutComponent {
 
     menuItems: MenuItem[] = PublicMenuItems;
 
+    availableLanguages = Languages;
+
+    selectedLanguage!: string;
 
     constructor(public layoutService: LayoutService,
                 private translateService: TranslateService,
