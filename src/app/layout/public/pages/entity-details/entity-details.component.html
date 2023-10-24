@@ -6,7 +6,7 @@
                      [src]="entityItem.image ?? 'assets/layout/images/image-default.png'"/>
             </ng-template>
             <ng-template pTemplate="content">
-                <p class="text-center px-8">
+                <p class="text-center px-8" *ngIf="showContactButton">
                     <button (click)="openMessageDialog()" style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
                     text-white simple-entity-card-button" label="{{'contact-entity.default' | translate}}"></button>
                 </p>

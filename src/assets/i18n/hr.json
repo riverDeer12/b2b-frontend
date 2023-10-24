@@ -172,7 +172,8 @@
         "back-to-home-page": "Povratak na naslovnu stranicu",
         "login-error": "Korisničko ime ili lozinka nisu ispravni. Pokušajte ponovno.",
         "successfully-changed-password": "Lozinka je uspješno promijenjena.",
-        "choose-login-type": "Odaberite način prijave"
+        "choose-login-type": "Molimo odaberite način prijave",
+        "choose-registration-type": "Molimo odaberite vrstu registracije"
     },
     "companies": {
         "default": "Tvrtke",
