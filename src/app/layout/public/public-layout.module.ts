@@ -9,6 +9,7 @@ import {RippleModule} from 'primeng/ripple';
 import {StyleClassModule} from 'primeng/styleclass';
 import {ButtonModule} from 'primeng/button';
 import {PublicLayoutComponentsModule} from './components/public-layout-components.module';
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import {PublicLayoutComponentsModule} from './components/public-layout-component
         RippleModule,
         StyleClassModule,
         ButtonModule,
-        PublicLayoutComponentsModule
+        PublicLayoutComponentsModule,
+        MenubarModule
     ]
 })
 export class PublicLayoutModule {

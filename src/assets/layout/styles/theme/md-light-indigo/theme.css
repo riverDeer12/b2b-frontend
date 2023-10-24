@@ -5743,11 +5743,11 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-megamenu .p-megamenu-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-megamenu .p-megamenu-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-megamenu .p-megamenu-root-list > .p-menuitem > .p-menuitem-link:focus {
@@ -5763,12 +5763,12 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 
 .p-megamenu .p-megamenu-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text,
 .p-megamenu .p-megamenu-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
-    color: rgba(0, 0, 0, 0.87);
+    color: #ffffff;
 }
 
 .p-megamenu .p-megamenu-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
 .p-megamenu .p-megamenu-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-megamenu .p-megamenu-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon,
@@ -5789,7 +5789,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-megamenu .p-menuitem-link .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
     margin-right: 0.5rem;
 }
 
@@ -5806,7 +5806,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-megamenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-megamenu .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
@@ -5863,7 +5863,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-megamenu .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon, .p-megamenu .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-megamenu.p-megamenu-vertical {
@@ -5915,7 +5915,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-menu .p-menuitem-link .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
     margin-right: 0.5rem;
 }
 
@@ -5932,7 +5932,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menu .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
@@ -5992,8 +5992,8 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     padding: 1rem;
     background: transparent;
     color: rgba(0, 0, 0, 0.87);
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
+    border: none;
+    margin-bottom: 1rem;
 }
 
 .p-menubar .p-menuitem-link {
@@ -6005,16 +6005,16 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-menubar .p-menuitem-link .p-menuitem-text {
-    color: rgba(0, 0, 0, 0.87);
+    color: #ffffff;
 }
 
 .p-menubar .p-menuitem-link .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
     margin-right: 0.5rem;
 }
 
 .p-menubar .p-menuitem-link .p-submenu-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menubar .p-menuitem-link:not(.p-disabled):hover {
@@ -6026,7 +6026,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-menubar .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menubar .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
@@ -6048,33 +6048,34 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
-    color: rgba(0, 0, 0, 0.87);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
     margin-right: 0.5rem;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
     margin-left: 0.5rem;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
     background: rgba(0, 0, 0, 0.04);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
-    color: rgba(0, 0, 0, 0.87);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
@@ -6086,26 +6087,27 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link,
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover {
     background: rgba(0, 0, 0, 0.04);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text,
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
-    color: rgba(0, 0, 0, 0.87);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon,
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menubar .p-submenu-list {
     padding: 0.5rem 0;
-    background: #ffffff;
+    background: var(--surface-0);
     border: 0 none;
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     width: 12.5rem;
@@ -6133,11 +6135,11 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
-    color: rgba(0, 0, 0, 0.87);
+    color: #ffffff;
 }
 
 .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon, .p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon {
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 .p-menubar .p-menuitem-badge {
@@ -6160,16 +6162,17 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     }
 
     .p-menubar .p-menubar-button {
+        position: absolute;
+        right: 2rem;
         display: flex;
         width: 2.5rem;
         height: 2.5rem;
-        color: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
         border-radius: 50%;
         transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
     }
 
     .p-menubar .p-menubar-button:hover {
-        color: rgba(0, 0, 0, 0.6);
         background: rgba(0, 0, 0, 0.04);
     }
 
@@ -6205,7 +6208,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
         padding: 1rem 1rem;
-        color: rgba(0, 0, 0, 0.87);
+        color: #ffffff;
         border-radius: 0;
         transition: none;
         user-select: none;
@@ -6226,18 +6229,19 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
         background: rgba(0, 0, 0, 0.04);
+        color: #ffffff;
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
-        color: rgba(0, 0, 0, 0.87);
+        color: #ffffff;
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-        color: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
-        color: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
