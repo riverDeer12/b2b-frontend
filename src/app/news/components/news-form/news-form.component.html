@@ -2,6 +2,17 @@
     <div class="grid">
         <div class="col-12">
             <div class="p-fluid">
+                <div class="field field col-md-12 text-center" *ngIf="formType === formActionType.Edit">
+                    <img class="profile-picture" [src]="news.imageUrl" height="250" width="250">
+                </div>
+                <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
+                    <file-uploader
+                        name="image"
+                        [parentForm]="form"
+                        [entityType]="entityType"
+                        [entityId]="news.id">
+                    </file-uploader>
+                </div>
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
                         <div class="field field col-md-12" formGroupName="title">

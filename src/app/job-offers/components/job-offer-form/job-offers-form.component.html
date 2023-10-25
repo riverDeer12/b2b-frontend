@@ -1,6 +1,9 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="grid">
         <div class="col-12 mt-2">
+            <div class="field field col-md-12 text-center" *ngIf="formType === formActionType.Edit">
+                <img class="profile-picture" [src]="jobOffer.image" height="250" width="250">
+            </div>
             <div class="p-fluid">
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
                     <file-uploader name="image"

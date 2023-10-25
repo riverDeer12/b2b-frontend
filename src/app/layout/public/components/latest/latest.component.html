@@ -5,8 +5,9 @@
     </div>
 
     <div class="grid justify-content-center mt-8 md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let news of news">
-            <simple-entity-card [title]="news.getTitle()"
+        <div class="col-12 lg:col-3 p-3" *ngFor="let news of news">
+            <simple-entity-card [title]="news.localizedTitle"
+                                [content]="news.localizedContent"
                                 [imageLink]="news.image"
                                 [entityId]="news.id"
                                 [entityType]="type.News"
@@ -31,8 +32,9 @@
     </div>
 
     <div class="grid justify-content-center mt-8 md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of companyResearchProblems">
+        <div class="col-12 lg:col-3 p-3" *ngFor="let researchProblem of companyResearchProblems">
             <simple-entity-card [title]="researchProblem.localizedTitle"
+                                [content]="researchProblem.localizedDescription"
                                 [entityId]="researchProblem.companyId"
                                 [entityType]="type.Company"
                                 [imageLink]="researchProblem.image"></simple-entity-card>
@@ -56,8 +58,9 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let researchProblem of organizationResearchProblems">
+        <div class="col-12 lg:col-3 p-3" *ngFor="let researchProblem of organizationResearchProblems">
             <simple-entity-card [title]="researchProblem.localizedTitle"
+                                [content]="researchProblem.localizedDescription"
                                 [entityId]="researchProblem.publicOrganizationId"
                                 [entityType]="type.Organization"
                                 [imageLink]="researchProblem.image"></simple-entity-card>
@@ -81,9 +84,10 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let company of companies">
+        <div class="col-12 lg:col-3 p-3" *ngFor="let company of companies">
             <entity-card [title]="company.name"
                          [entityType]="type.Company"
+                         [website]="company.website"
                          [entityId]="company.id"
                          [address]="company.address"
                          [entityCategories]="company.categories"
@@ -108,9 +112,10 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let scientist of scientists">
+        <div class="col-12 lg:col-3 p-3" *ngFor="let scientist of scientists">
             <entity-card [title]="scientist.fullName"
                          [entityType]="type.Scientist"
+                         [website]="scientist.website"
                          [entityId]="scientist.id"
                          [address]="entity.getAddress(scientist, type.Scientist)"
                          [entityCategories]="scientist.categories"
@@ -135,8 +140,9 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let organization of organizations">
+        <div class="col-12 lg:col-3 p-3" *ngFor="let organization of organizations">
             <entity-card [title]="organization.name"
+                         [website]="organization.website"
                          [entityType]="type.Organization"
                          [entityId]="organization.id"
                          [address]="organization.address"
@@ -162,9 +168,10 @@
     </div>
 
     <div class="grid mt-8 justify-content-center md:mt-0">
-        <div class="col-12 lg:col-2 p-3" *ngFor="let equipment of latestEquipment">
+        <div class="col-12 lg:col-3 p-3" *ngFor="let equipment of latestEquipment">
             <simple-entity-card
                 [title]="equipment.localizedTitle"
+                [content]="equipment.localizedDescription"
                 [entityType]="type.Equipment"
                 [entityId]="equipment.id"
                 [imageLink]="equipment.image"

@@ -7,6 +7,7 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {News} from '../../core/models/news';
 import {NewsService} from '../../core/services/news.service';
 import {ValidationService} from '../../../shared/services/validation.service';
+import {EntityType} from '../../../auth/core/enums/entity-type';
 
 @Component({
     selector: 'news-form',
@@ -18,9 +19,15 @@ export class NewsFormComponent {
     @Input() news!: News
     @Input() returnUrl!: string;
 
+    entityType = EntityType.News;
+
     isLoading: boolean = false;
 
     form!: FormGroup;
+
+    public get formActionType(): typeof FormType {
+        return FormType;
+    }
 
     constructor(public validationService: ValidationService,
                 private fb: FormBuilder,

@@ -3,7 +3,10 @@
     <div id="home" class="overflow-hidden" style="width: 100%">
         <p-menubar [model]="menuItems">
             <ng-template pTemplate="start">
-                <img src="assets/layout/images/rimap-logo-bijeli.svg" alt="Sakai Logo" height="40" class="mr-0 lg:mr-2">
+                <a href="">
+                    <img src="assets/layout/images/rimap-logo-bijeli.svg"
+                         alt="Sakai Logo" height="40" class="mr-0 lg:mr-2">
+                </a>
             </ng-template>
             <ng-template pTemplate="end">
                 <button pButton pRipple label="{{'auth.login' | translate }}" [routerLink]="['/login']"

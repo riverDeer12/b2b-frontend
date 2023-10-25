@@ -17,8 +17,8 @@
                     </p>
                     <p>
                         <label>{{'website.label' | translate }}</label>
-                        <a href="{{entity.getExternalLink(entityItem, currentEntityType)}}">
-                            {{entity.getExternalLink(entityItem, currentEntityType)}}
+                        <a href="{{entityItem.website}}">
+                            {{entityItem.website}}
                         </a>
                     </p>
                     <p>
@@ -28,7 +28,7 @@
                         </p-tag>
                     </p>
                 </div>
-                <p>
+                <p *ngIf="currentEntityType !== entityType.News">
                     <label>{{'categories.default' | translate }}</label>
                     <p-tag *ngFor="let category of entityCategories">
                         {{category.localizedName}}
@@ -62,8 +62,7 @@
                     <div class="mt-5" *ngFor="let equipment of equipmentList">
                         <h5 [innerHTML]="equipment.localizedTitle"></h5>
                         <img alt="Card" width="100%"
-                             [src]="equipment.image ??
-                             'assets/layout/images/image-default.png'"/>
+                             [src]="equipment.imageUrl"/>
                         <p>
                             <label>{{'description.label' | translate }}</label>
                             <span [innerHTML]="equipment.localizedDescription"></span>
@@ -76,8 +75,7 @@
                     <div class="mt-5" *ngFor="let specificKnowledge of specificKnowledgeList">
                         <h5 [innerHTML]="specificKnowledge.localizedTitle"></h5>
                         <img alt="Card" width="100%"
-                             [src]="specificKnowledge.image ??
-                             'assets/layout/images/image-default.png'"/>
+                             [src]="specificKnowledge.imageUrl"/>
                         <p>
                             <label>{{'description.label' | translate }}</label>
                             <span [innerHTML]="specificKnowledge.localizedDescription"></span>

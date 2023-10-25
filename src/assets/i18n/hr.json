@@ -584,6 +584,11 @@
     "address": {
         "label": "Adresa:"
     },
+    "no-data": "Nema podataka.",
+    "external-link": {
+        "default": "Vanjska poveznica",
+        "label": "Vanjska poveznica:"
+    },
     "rimap": "Regional innovation matchmaking platform",
     "rimap-description": "Regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva s ciljem razvoja inovacijskog ekosustava u regiji. Pozivamo Vas da se registrirate, unesete Vaše razvojne prijedloge/potrebe za ljudskim resursima/kompetencije/istraživačku opremu te pretražite profile ostalih korisnika i kontaktirate ih o mogućoj suradnji klikom na \"Kontaktiraj\".",
     "about-us-description": "RIMAP je regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva u Primorsko-goranskoj županiji i šire s ciljem razvoja inovacijskog ekosustava u regiji.\n\nPlatforma omogućuje umrežavanje gospodarskih subjekata, poduzetnika, istraživača, znanstvenika, javnog i nevladinog sektora te ostalih zainteresiranih sudionika s ciljem transfera znanja temeljenog na rezultatima istraživanja i razvojnih djelatnosti. Platforma potiče višesmjernu interakciju i proaktivno umrežavanje za povezivanje razvojnih projekata i potreba gospodarskog i javnog sektora s istraživačkim i inovacijskim rješenjima, dostignućima, kompetencijama i potencijalima znanstvenog sektora.\n\n Platforma omogućuje mapiranje potreba gospodarstva i javnog sektora na polju razvoja i implementacije naprednih digitalnih tehnologija s potencijalom stvaranja proizvoda i usluga više dodane vrijednosti kroz multidisciplinaran pristup objedinjujući resurse, infrastrukturu, znanja, kompentencije, te dostupnost ljudskog kapitala u regiji.",

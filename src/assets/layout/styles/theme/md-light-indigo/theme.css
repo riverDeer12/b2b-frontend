@@ -264,6 +264,22 @@
     --primary-900: #192048;
 }
 
+/** CUSTOM **/
+
+label{
+    font-weight: bolder;
+    color: #1d508f;
+}
+
+.profile-picture{
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+/** CUSTOM **/
+
 .p-autocomplete .p-autocomplete-loader {
     right: 1rem;
 }
@@ -4877,27 +4893,25 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     padding: 0;
 }
 
-.p-card-header{
+.p-card-header {
     text-align: center;
     padding: 1rem;
 }
 
-.p-card-header img{
+.p-card-header img {
     object-fit: cover;
-    height: 200px;
+    height: 250px;
     border-radius: 50%;
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .p-card .p-card-title {
-    text-align: center;
+    text-align: left;
     font-weight: 700;
-    height: 100px;
-    margin-bottom: 0.5rem;
-    padding: 1rem !important;
+    height: 80px;
+    padding: 1.5rem !important;
     text-wrap: normal;
     font-size: 1.3rem;
-    padding-bottom: 2rem !important;
 }
 
 .p-card .p-card-subtitle {
@@ -4908,6 +4922,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 
 .p-card .p-card-content {
     padding: 1.5rem;
+    width: 100%;
 }
 
 .p-card .p-card-footer {
@@ -5989,7 +6004,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-menubar {
-    padding: 1rem;
+    padding: 2rem;
     background: transparent;
     color: rgba(0, 0, 0, 0.87);
     border: none;
@@ -6186,7 +6201,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
         position: absolute;
         display: none;
         padding: 0.5rem 0;
-        background: #ffffff;
+        background: var(--surface-0);
         border: 0 none;
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
         width: 100%;
@@ -6215,7 +6230,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
-        color: rgba(0, 0, 0, 0.87);
+        color: #ffffff;
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
@@ -6224,7 +6239,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
-        color: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
     }
 
     .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {

@@ -14,6 +14,7 @@
             <simple-entity-card
                 *ngIf="entity.isSimpleEntity(entityType)"
                 [entityId]="entityItem.id"
+                [content]="entity.getDescription(entityItem, entityType)"
                 [entityType]="entityType"
                 [parentEntityId]="entityItem.parentId"
                 [parentEntityType]="parentEntityType"
@@ -26,9 +27,9 @@
                 [entityType]="entityType"
                 [entityCategories]="entityItem.categories"
                 [imageLink]="entityItem.image"
+                [website]="entityItem.website"
                 [title]="entity.getTitle(entityItem, entityType)"
-                [address]="entity.getAddress(entityItem, entityType)"
-                [externalLink]="entity.getExternalLink(entityItem, entityType)">
+                [address]="entity.getAddress(entityItem, entityType)">
             </entity-card>
         </div>
     </ng-template>

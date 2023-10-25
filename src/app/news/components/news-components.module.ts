@@ -15,6 +15,7 @@ import {EditorModule} from "primeng/editor";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ValidationService} from '../../shared/services/validation.service';
 import {TabViewModule} from "primeng/tabview";
+import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {TabViewModule} from "primeng/tabview";
         ConfirmDialogModule,
         EditorModule,
         ReactiveFormsModule,
-        TabViewModule
+        TabViewModule,
+        CustomControlsModule
     ],
     providers: [
         ConfirmationService,

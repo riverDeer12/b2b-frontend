@@ -22,7 +22,7 @@ export class FileUploaderComponent {
     constructor(private sharedService: SharedService, private notificationService: NotificationService) {
     }
 
-    get uploadImageUrl(): string{
+    get uploadImageUrl(): string {
         if (!this.parentEntityType && !this.parentEntityId) {
             return environment.apiUrl + '/' + this.entityType + '/' + this.entityId + '/images';
         } else {
@@ -32,6 +32,10 @@ export class FileUploaderComponent {
             return environment.apiUrl + '/' + parentEntityPrefix + '/'
                 + this.entityType + '/' + this.entityId + '/images'
         }
+    }
+
+    profilePictureChange(): void {
+        window.location.reload();
     }
 
     onError(): void {

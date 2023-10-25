@@ -9,9 +9,7 @@ import {PublicOrganizationsComponent} from './public-organizations/public-organi
 import {PublicScientistsComponent} from './public-scientists/public-scientists.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {PublicLayoutComponentsModule} from '../components/public-layout-components.module';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpBackend} from '@angular/common/http';
-import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
+import {TranslateModule} from '@ngx-translate/core';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {CompaniesComponentsModule} from '../../../companies/components/companies-components.module';
 import {ScientistsComponentsModule} from '../../../scientists/components/scientists-components.module';

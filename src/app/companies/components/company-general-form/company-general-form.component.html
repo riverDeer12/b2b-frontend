@@ -1,5 +1,8 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="p-fluid">
+        <div class="field field col-md-12 text-center" *ngIf="formType === type.Edit">
+            <img class="profile-picture" [src]="company.image" height="250" width="250">
+        </div>
         <div class="field field col-md-12" *ngIf="formType === type.Edit">
             <file-uploader
                 name="image"

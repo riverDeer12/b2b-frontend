@@ -24,6 +24,11 @@ export class Equipment {
         }
     }
 
+    get imageUrl(): string {
+        return this.image ??
+            'assets/layout/images/image-default.png'
+    }
+
     get parentId(): string {
         return this.scientistId;
     }

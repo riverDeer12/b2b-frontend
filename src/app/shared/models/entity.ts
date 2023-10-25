@@ -106,25 +106,6 @@ export class Entity {
     }
 
     /**
-     * Entity external connection link getter.
-     *
-     * @param entity entity data.
-     * @param type entity type.
-     */
-    public static getExternalLink(entity: any, type: EntityType): string {
-        switch (type) {
-            case EntityType.Organization:
-                return entity.website;
-            case EntityType.Company:
-                return entity.website;
-            case EntityType.Scientist:
-                return entity.googleScholarLink;
-            default:
-                return '';
-        }
-    }
-
-    /**
      * Entity address getter.
      *
      * @param entity entity data.

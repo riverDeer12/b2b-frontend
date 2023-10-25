@@ -9,6 +9,7 @@ import {EntityType} from '../../../../auth/core/enums/entity-type';
 })
 export class SimpleEntityCardComponent {
     @Input() title!: string;
+    @Input() content!: string;
     @Input() imageLink?: string;
     @Input() entityType!: EntityType;
     @Input() parentEntityType!: EntityType;
@@ -18,13 +19,30 @@ export class SimpleEntityCardComponent {
     constructor(private router: Router) {
     }
 
+
+    get shortContent(): string {
+        if (this.content.length < 100) {
+            return this.content;
+        }
+
+        return this.content.slice(0, 100) + '...';
+    }
+
+    get shortTitle(): string {
+        if (this.title.length < 100) {
+            return this.title;
+        }
+
+        return this.title.slice(0, 100) + '...';
+    }
+
     /**
      * Redirect user to
      * page with entity details.
      */
     openDetailsPage = () => {
         return this.parentEntityType ?
-            this.router.navigateByUrl(this.parentEntityType + '/details/' + this.parentEntityId).then():
+            this.router.navigateByUrl(this.parentEntityType + '/details/' + this.parentEntityId).then() :
             this.router.navigateByUrl(this.entityType + '/details/' + this.entityId).then();
     }
 }

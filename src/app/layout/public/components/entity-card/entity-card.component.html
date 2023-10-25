@@ -1,15 +1,21 @@
-<p-card [header]="title">
+<p-card [header]="shortTitle">
     <ng-template pTemplate="header">
         <img alt="Card" [src]="imageLink ?? 'assets/layout/images/image-default.png'"/>
     </ng-template>
     <ng-template pTemplate="content">
         <p>
-            <label class="bold">{{'address.label' | translate}}</label>
-            {{address}}
+            <label>{{'address.label' | translate}}</label>
+            {{shortAddress ?? 'no-data' | translate }}
         </p>
         <p>
+            <label>{{'website.label' | translate}}</label>
+            <a href="{{website}}">
+                {{shortWebsite ?? 'no-data' | translate }}
+            </a>
+        </p>
+        <p style="height: 40px;">
             <label>{{'categories.label' | translate}}</label>
-            <p-tag *ngFor="let category of entityCategories">
+            <p-tag *ngFor="let category of entityCategories.slice(0, 2)">
                 {{category.localizedName}}
             </p-tag>
         </p>

@@ -1,6 +1,7 @@
 <form [formGroup]="parentForm">
     <p-fileUpload [name]="name"
                   [url]="uploadImageUrl"
+                  (onUpload)="profilePictureChange()"
                   [multiple]="false"
                   accept="image/*"
                   [maxFileSize]="1000000"

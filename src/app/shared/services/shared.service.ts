@@ -18,6 +18,7 @@ export class SharedService {
     parentEntityType = new Subject<EntityType>();
     dialogCloseStatus = new Subject<string>();
     filterDataChange = new Subject<string>();
+    profilePictureChanged = new Subject<boolean>();
 
     constructor(private router: Router, private http: HttpClient) {
     }
@@ -118,5 +119,4 @@ export class SharedService {
                 + type + '/' + id + '/flip-active', {});
         }
     }
-
 }
