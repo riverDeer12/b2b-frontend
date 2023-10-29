@@ -12,6 +12,7 @@ import {PublicLayoutComponentsModule} from './components/public-layout-component
 import {MenubarModule} from 'primeng/menubar';
 import {DropdownModule} from 'primeng/dropdown';
 import {FormsModule} from '@angular/forms';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import {FormsModule} from '@angular/forms';
         PublicLayoutComponentsModule,
         MenubarModule,
         DropdownModule,
-        FormsModule
+        FormsModule,
+        SharedModule
     ]
 })
 export class PublicLayoutModule {

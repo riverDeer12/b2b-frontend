@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NotificationService} from './services/notification.service';
 import {AutoCompleteModule} from 'primeng/autocomplete';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
@@ -34,6 +34,8 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
         DropdownModule,
         ButtonModule,
         CheckboxModule,
+        FormsModule,
+        ReactiveFormsModule,
         FileUploadModule,
         JobOffersComponentsModule,
         EquipmentComponentsModule,
@@ -43,7 +45,8 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
     exports: [
         ActivityComponent,
         DialogFormComponent,
-        SendMessageFormComponent
+        SendMessageFormComponent,
+        LanguageSelectorComponent
     ],
     providers: [
         NotificationService,

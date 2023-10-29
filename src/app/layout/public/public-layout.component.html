@@ -9,10 +9,14 @@
                 </a>
             </ng-template>
             <ng-template pTemplate="end">
-                <button pButton pRipple label="{{'auth.login' | translate }}" [routerLink]="['/login']"
-                        class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
-                <button pButton pRipple label="{{'auth.registration' | translate }}" [routerLink]="['/registration']"
-                        class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></button>
+                <div class="flex ql-align-center">
+                    <language-selector></language-selector>
+                    <button pButton pRipple label="{{'auth.login' | translate }}" [routerLink]="['/login']"
+                            class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
+                    <button pButton pRipple label="{{'auth.registration' | translate }}" [routerLink]="['/registration']"
+                            class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></button>
+                </div>
+
             </ng-template>
         </p-menubar>
         <div class="landing-wrapper" style="width: 100%">
