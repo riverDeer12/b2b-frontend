@@ -29,34 +29,24 @@ export class Scientist {
     equipment!: Equipment[];
     specificKnowledge!: SpecificKnowledge[];
 
-    get currentLanguage(): string {
-        const localStorageData = localStorage.getItem('lang') as string;
-
-        if (!Object.values(Languages).includes(localStorageData)) {
-            return 'HR';
-        } else {
-            return localStorageData;
-        }
-    }
-
     get localizedEducationTitle(): string {
-        return this.title.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedDescription(): string {
-        return this.description.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedEmploymentCollege(): string {
-        return this.employmentCollege.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.employmentCollege.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedFunctions(): string {
-        return this.functions.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.functions.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedProjects(): string {
-        return this.projects.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.projects.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get fullName(): string {

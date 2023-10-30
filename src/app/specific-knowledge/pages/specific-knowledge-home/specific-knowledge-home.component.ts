@@ -16,7 +16,7 @@ export class SpecificKnowledgeHomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.translateService.use('hr')
+
     }
 
     private listenToResolver() {

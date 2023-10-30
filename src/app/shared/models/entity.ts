@@ -11,16 +11,6 @@ export class Entity {
     externalLink!: string;
     imageLink!: string;
 
-    public static get currentLanguage(): string {
-        const localStorageData = localStorage.getItem('lang') as string;
-
-        if (!Object.values(Languages).includes(localStorageData)) {
-            return 'HR';
-        } else {
-            return localStorageData;
-        }
-    }
-
     public static isSimpleEntity(type: EntityType): boolean {
         switch (type) {
             case EntityType.News:
@@ -72,9 +62,9 @@ export class Entity {
     public static getDescription(entity: any, type: EntityType): string {
         switch (type) {
             case EntityType.News:
-                return entity.content.translations[this.currentLanguage as keyof TranslationsObject];
+                return entity.content.translations[localStorage.getItem('language') as keyof TranslationsObject];
             default:
-                return entity.description.translations[this.currentLanguage as keyof TranslationsObject];
+                return entity.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
         }
     }
 
@@ -93,13 +83,13 @@ export class Entity {
             case EntityType.Scientist:
                 return entity.firstname + ' ' + entity.lastname;
             case EntityType.News:
-                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
+                return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             case EntityType.ResearchProblem:
-                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
+                return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             case EntityType.Equipment:
-                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
+                return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             case EntityType.SpecificKnowledge:
-                return entity.title.translations[this.currentLanguage as keyof TranslationsObject];
+                return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             default:
                 return '';
         }
@@ -118,7 +108,7 @@ export class Entity {
             case EntityType.Company:
                 return entity.address;
             case EntityType.Scientist:
-                return entity.employmentCollege.translations[this.currentLanguage as keyof TranslationsObject];
+                return entity.employmentCollege.translations[localStorage.getItem('language') as keyof TranslationsObject];
             default:
                 return '';
         }

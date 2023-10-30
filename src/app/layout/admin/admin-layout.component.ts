@@ -59,7 +59,7 @@ export class AdminLayoutComponent implements OnDestroy {
     }
 
     ngOnInit() {
-        this.translateService.use('hr');
+        ;
     }
 
     hideMenu() {

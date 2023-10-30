@@ -17,7 +17,7 @@ export class JobOffersHomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.translateService.use('hr')
+
     }
 
     private listenToResolver() {

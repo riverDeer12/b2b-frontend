@@ -16,7 +16,7 @@ export class CategoriesHomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.translateService.use('hr')
+
     }
 
     private listenToResolver() {

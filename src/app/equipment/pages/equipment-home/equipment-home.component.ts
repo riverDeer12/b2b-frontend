@@ -16,7 +16,7 @@ export class EquipmentHomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.translateService.use('hr')
+
     }
 
     private listenToResolver() {

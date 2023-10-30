@@ -11,22 +11,12 @@ export class News {
     image!: string;
     isActive!: boolean;
 
-    get currentLanguage(): string {
-        const localStorageData = localStorage.getItem('lang') as string;
-
-        if (!Object.values(Languages).includes(localStorageData)) {
-            return 'HR';
-        } else {
-            return localStorageData;
-        }
-    }
-
     get localizedContent(): string {
-        return this.content.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.content.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedTitle(): string {
-        return this.title.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get imageUrl(): string {

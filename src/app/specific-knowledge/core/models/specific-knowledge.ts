@@ -14,16 +14,6 @@ export class SpecificKnowledge {
     scientistId!: string;
     isActive!: boolean;
 
-    get currentLanguage(): string {
-        const localStorageData = localStorage.getItem('lang') as string;
-
-        if (!Object.values(Languages).includes(localStorageData)) {
-            return 'HR';
-        } else {
-            return localStorageData;
-        }
-    }
-
     get imageUrl(): string {
         return this.image ??
         'assets/layout/images/image-default.png'
@@ -34,11 +24,11 @@ export class SpecificKnowledge {
     }
 
     get localizedTitle(): string {
-        return this.title.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedDescription(): string {
-        return this.description.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
 }

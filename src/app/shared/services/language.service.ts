@@ -12,14 +12,4 @@ export class LanguageService {
 
     constructor() {
     }
-
-    public get currentLanguage(): string {
-        const localStorageData = localStorage.getItem('lang') as string;
-
-        if (!Object.values(this.languages).includes(localStorageData)) {
-            return this.croatian;
-        } else {
-            return localStorageData;
-        }
-    }
 }

@@ -8,6 +8,6 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class ScientistsComponent {
     constructor(private translateService: TranslateService) {
-        this.translateService.use('hr');
+        ;
     }
 }

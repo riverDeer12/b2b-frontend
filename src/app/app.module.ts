@@ -31,7 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
             scrollPositionRestoration: 'top'
         }),
         TranslateModule.forRoot({
-            defaultLanguage: 'hr',
+            defaultLanguage: 'HR',
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),

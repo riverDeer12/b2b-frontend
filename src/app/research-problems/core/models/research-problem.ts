@@ -16,29 +16,19 @@ export class ResearchProblem {
     categories!: Category[];
     isActive!: boolean;
 
-    get currentLanguage(): string {
-        const localStorageData = localStorage.getItem('lang') as string;
-
-        if (!Object.values(Languages).includes(localStorageData)) {
-            return 'HR';
-        } else {
-            return localStorageData;
-        }
-    }
-
     get parentId(): string {
         return this.companyId ?? this.publicOrganizationId;
     }
 
     get localizedDescription(): string {
-        return this.description.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedTitle(): string {
-        return this.title.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedAcademicCommunityContributionPossibility(): string {
-        return this.academicCommunityContributionPossibility.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.academicCommunityContributionPossibility.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 }

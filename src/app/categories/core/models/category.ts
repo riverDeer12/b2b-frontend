@@ -11,21 +11,12 @@ export class Category {
 
     }
 
-    get currentLanguage(): string {
-        const localStorageData = localStorage.getItem('lang') as string;
-
-        if (!Object.values(Languages).includes(localStorageData)) {
-            return 'HR';
-        } else {
-            return localStorageData;
-        }
-    }
 
     get localizedDescription(): string {
-        return this.description.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
     get localizedName(): string {
-        return this.name.translations[this.currentLanguage as keyof TranslationsObject];
+        return this.name.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 }

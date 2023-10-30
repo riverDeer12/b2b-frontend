@@ -32,7 +32,7 @@ export class LandingComponent implements OnInit {
 
 
     ngOnInit(): void {
-        this.translateService.use('hr');
+        ;
     }
 
     /**

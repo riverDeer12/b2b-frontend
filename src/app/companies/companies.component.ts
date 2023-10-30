@@ -9,7 +9,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class CompaniesComponent implements OnInit {
 
     constructor(private translateService: TranslateService) {
-        this.translateService.use('hr');
+        ;
     }
 
   ngOnInit(): void {
