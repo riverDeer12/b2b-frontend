@@ -158,6 +158,7 @@ export class ScientistGeneralFormComponent {
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'correct-validation-errors');
+
             this.isLoading = false;
             return;
         }

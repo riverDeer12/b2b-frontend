@@ -174,7 +174,7 @@
         "login-error": "Korisničko ime ili lozinka nisu ispravni. Pokušajte ponovno.",
         "successfully-changed-password": "Lozinka je uspješno promijenjena.",
         "choose-login-type": "Molimo odaberite način prijave",
-        "choose-registration-type": "Molimo odaberite vrstu registracije",
+        "choose-registration-type": "Odaberite vrstu registracije",
         "my-profile": "Moj profil"
     },
     "companies": {
