@@ -1,2 +1,4 @@
-<p-dropdown (onChange)="languageChanged()" [options]="languages" [(ngModel)]="selectedLanguage" optionLabel="name"
-            optionValue="value"></p-dropdown>
+<div class="flex ql-align-center mr-8">
+    <button pButton class="p-button-link p-0 ml-3" [style.color]="getTextColor(language)"
+       *ngFor="let language of languages" (click)="languageChanged(language.value)">{{ language.name | translate}}</button>
+</div>

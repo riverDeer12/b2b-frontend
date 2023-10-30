@@ -38,19 +38,14 @@ export class MyProfileComponent {
 
             switch (this.profileEntityType) {
                 case EntityType.Company:
-                    this.entity = response['entity'].map((x: Company) =>
-                        Object.assign(new Company(), x)
-                    );
+                    this.entity = Object.assign(new Company(), response['entity']);
                     break;
                 case EntityType.Organization:
-                    this.entity = response['entity'].map((x: Organization) =>
-                        Object.assign(new Organization(), x)
-                    );
+                    this.entity = Object.assign(new Organization(), response['entity']);
                     break;
                 case EntityType.Scientist:
-                    this.entity = response['entity'].map((x: Scientist) =>
-                        Object.assign(new Scientist(), x)
-                    );
+                    this.entity = Object.assign(new Scientist(), response['entity']);
+                    break;
             }
 
 

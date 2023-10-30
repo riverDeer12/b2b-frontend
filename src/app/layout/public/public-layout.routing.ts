@@ -140,9 +140,9 @@ export const PublicLayoutRoutes: Routes = [
         path: 'my-profile',
         component: MyProfileComponent,
         resolve: {
-            profile: MyProfileResolver,
+            entity: MyProfileResolver,
             categories: CategoriesResolver,
-            profileType: EntityTypeResolver
+            entityType: EntityTypeResolver
         }
     }
 ]

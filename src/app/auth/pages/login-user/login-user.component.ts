@@ -25,7 +25,7 @@ export class LoginUserComponent {
     password!: string;
     loginForm!: FormGroup;
     isLoading!: boolean;
-    selectedEntityType!: EntityType;
+    selectedEntityType: EntityType = EntityType.Company;
 
     public get entityType(): typeof EntityType {
         return EntityType;
@@ -70,7 +70,7 @@ export class LoginUserComponent {
 
             localStorage.setItem('token', response.token);
 
-            this.router.navigateByUrl('').then();
+            this.router.navigateByUrl('my-profile').then();
 
             this.notificationService
                 .showNotification(NotificationType.Success,

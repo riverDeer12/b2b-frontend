@@ -3,7 +3,6 @@ import {Scientist} from '../../scientists/core/models/scientist';
 import {Organization} from '../../organizations/core/models/organization';
 import {Company} from 'src/app/companies/core/models/company';
 import {News} from 'src/app/news/core/models/news';
-import {Languages} from '../constants/languages';
 import {TranslationsObject} from './localized-property';
 
 export class Entity {

@@ -3,6 +3,7 @@
     <div id="home" class="overflow-hidden" style="width: 100%">
         <p-menubar [model]="menuItems">
             <ng-template pTemplate="start">
+
                 <a href="">
                     <img src="assets/layout/images/rimap-logo-bijeli.svg"
                          alt="Sakai Logo" height="40" class="mr-0 lg:mr-2">
@@ -11,12 +12,7 @@
             <ng-template pTemplate="end">
                 <div class="flex ql-align-center">
                     <language-selector></language-selector>
-                    <button pButton pRipple label="{{'auth.login' | translate }}" [routerLink]="['/login']"
-                            class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
-                    <button pButton pRipple label="{{'auth.registration' | translate }}" [routerLink]="['/registration']"
-                            class="p-button-rounded border-none font-light line-height-2 bg-blue-500 text-white"></button>
                 </div>
-
             </ng-template>
         </p-menubar>
         <div class="landing-wrapper" style="width: 100%">

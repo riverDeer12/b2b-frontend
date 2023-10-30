@@ -1,4 +1,7 @@
 import {MenuItem} from 'primeng/api';
+import {AuthService} from '../../../../auth/core/services/auth.service';
+import jwtDecode from 'jwt-decode';
+import {AuthToken} from '../../../../auth/core/models/auth-token';
 
 export const PublicMenuItems: MenuItem[] = [
     {
@@ -13,7 +16,6 @@ export const PublicMenuItems: MenuItem[] = [
         routerLinkActiveOptions: {exact: true},
         expanded: false
     },
-
     {
         label: 'companies.default',
         routerLinkActiveOptions: {exact: true},
@@ -43,13 +45,13 @@ export const PublicMenuItems: MenuItem[] = [
         label: 'organizations.default',
         routerLinkActiveOptions: {exact: true},
         expanded: false,
-        items:[
+        items: [
             {
                 label: 'organizations.view-all-organizations',
                 routerLink: '/organizations',
                 routerLinkActiveOptions: {exact: true},
                 expanded: false
-            }          ,
+            },
             {
                 label: 'organizations.research-problems',
                 routerLink: '/organizations/research-problems',
@@ -82,5 +84,56 @@ export const PublicMenuItems: MenuItem[] = [
                 expanded: false
             }
         ]
+    },
+    {
+        label: 'auth.login',
+        routerLink: '/login',
+        routerLinkActiveOptions: {exact: true},
+        expanded: false,
+        visible: !userLogged()
+
+    },
+    {
+        label: 'auth.registration',
+        routerLink: '/registration',
+        routerLinkActiveOptions: {exact: true},
+        expanded: false,
+        visible: !userLogged()
+    },
+    {
+        label: 'auth.my-profile',
+        routerLink: '/my-profile',
+        routerLinkActiveOptions: {exact: true},
+        expanded: false,
+        visible: userLogged()
+    },
+    {
+        label: 'auth.logout',
+        routerLink: '',
+        routerLinkActiveOptions: {exact: true},
+        expanded: false,
+        visible: userLogged()
     }
 ];
+
+function userLogged() {
+
+    const tokenStorageValue = localStorage.getItem('token');
+
+    if (tokenStorageValue === null) {
+        return false;
+    }
+
+    const decodedToken = jwtDecode(tokenStorageValue) as AuthToken;
+
+    const now = Date.now().valueOf() / 1000
+
+    if (decodedToken.exp < now) {
+        return false;
+    }
+
+    return decodedToken.role === 'Scientist' ||
+        decodedToken.role === 'PublicOrganization' ||
+        decodedToken.role === 'Company';
+}
+

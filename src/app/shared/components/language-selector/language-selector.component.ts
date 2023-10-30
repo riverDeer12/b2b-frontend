@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Languages} from '../../constants/languages';
 import {TranslateService} from '@ngx-translate/core';
+import {Language} from '../../models/language';
 
 @Component({
     selector: 'language-selector',
@@ -21,6 +22,11 @@ export class LanguageSelectorComponent {
     setDefaultLanguage(): void {
         const localStorageData = localStorage.getItem('language') as string;
 
+        if(!localStorageData){
+            localStorage.setItem('language', 'HR');
+            this.selectedLanguage = 'HR';
+        }
+
         if (!Object.values(this.availableLanguages).includes(localStorageData)) {
             localStorage.setItem('language', 'HR');
             this.selectedLanguage = 'HR';
@@ -30,8 +36,13 @@ export class LanguageSelectorComponent {
         }
     }
 
-    languageChanged(): void {
-        localStorage.setItem('language', this.selectedLanguage);
-        this.translateService.use(this.selectedLanguage);
+    languageChanged(languageValue: string): void {
+        localStorage.setItem('language', languageValue);
+        this.translateService.use(languageValue);
+    }
+
+    getTextColor(language: Language): string {
+        return language.value == localStorage.getItem('language') as string ?
+            '#1bd6b7' : '#ffffff';
     }
 }

@@ -11,7 +11,6 @@ import {DialogFormComponent} from '../../../../shared/components/dialog-form/dia
 import {FormType} from '../../../../shared/enums/form-type';
 import {DialogContentTypes} from '../../../../shared/constants/dialog-content-types';
 import {DialogService} from 'primeng/dynamicdialog';
-import {RedirectType} from '../../../../shared/enums/redirect-type';
 import {AuthService} from '../../../../auth/core/services/auth.service';
 import {NotificationType} from '../../../../shared/enums/notification-type';
 import {NotificationService} from '../../../../shared/services/notification.service';

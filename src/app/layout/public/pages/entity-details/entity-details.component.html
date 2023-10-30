@@ -1,6 +1,6 @@
 <div class="justify-content-center grid">
     <div class="col-12 lg:col-6 md:col-8 p-0">
-        <p-card [header]="entity.getTitle(entityItem, currentEntityType)">
+        <p-card styleClass="my-4" [header]="entity.getTitle(entityItem, currentEntityType)">
             <ng-template pTemplate="header">
                 <img alt="Card"
                      [src]="entityItem.image ?? 'assets/layout/images/image-default.png'"/>
@@ -35,7 +35,7 @@
                     </p-tag>
                 </p>
                 <p>
-                    <label>{{'description.label' | translate }}</label>
+                    <label *ngIf="currentEntityType !== entityType.News">{{'description.label' | translate }}</label>
                     <span [innerHTML]="entity.getDescription(entityItem, currentEntityType)"></span>
                 </p>
                 <div class="mt-5" *ngIf="hasResearchProblems">
