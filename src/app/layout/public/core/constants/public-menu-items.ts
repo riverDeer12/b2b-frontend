@@ -1,7 +1,6 @@
 import {MenuItem} from 'primeng/api';
 import jwtDecode from 'jwt-decode';
 import {AuthToken} from '../../../../auth/core/models/auth-token';
-import {Router} from '@angular/router';
 
 export const PublicMenuItems: MenuItem[] = [
     {
