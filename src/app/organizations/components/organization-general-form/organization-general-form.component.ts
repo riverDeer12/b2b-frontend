@@ -146,7 +146,8 @@ export class OrganizationGeneralFormComponent {
      * updated selected organization.
      */
     private editOrganization(): void {
-        this.organizationService.editOrganization(this.organization.id, this.form.value).subscribe(() => {
+        this.organizationService
+            .editOrganization(this.organization.id, this.form.value).subscribe(() => {
             this.notificationService
                 .showNotification(NotificationType.Success,
                     'organizations.successfully-updated');

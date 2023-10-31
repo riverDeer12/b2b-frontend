@@ -1,7 +1,7 @@
 import {MenuItem} from 'primeng/api';
-import {AuthService} from '../../../../auth/core/services/auth.service';
 import jwtDecode from 'jwt-decode';
 import {AuthToken} from '../../../../auth/core/models/auth-token';
+import {Router} from '@angular/router';
 
 export const PublicMenuItems: MenuItem[] = [
     {
@@ -112,7 +112,10 @@ export const PublicMenuItems: MenuItem[] = [
         routerLink: '',
         routerLinkActiveOptions: {exact: true},
         expanded: false,
-        visible: userLogged()
+        visible: userLogged(),
+        command: () => {
+            logOut();
+        }
     }
 ];
 
@@ -135,5 +138,10 @@ function userLogged() {
     return decodedToken.role === 'Scientist' ||
         decodedToken.role === 'PublicOrganization' ||
         decodedToken.role === 'Company';
+}
+
+function logOut() {
+    localStorage.removeItem('token');
+    window.location.href = '';
 }
 
