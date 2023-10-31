@@ -44,6 +44,8 @@ export class SendMessageFormComponent {
 
     submit(): void {
 
+        this.isLoading = true;
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
@@ -67,6 +69,8 @@ export class SendMessageFormComponent {
                         'communications.message-sent-successfully');
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+
+                this.isLoading = false;
 
             }, () => {
                 this.isLoading = false;
