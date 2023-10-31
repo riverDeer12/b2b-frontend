@@ -331,6 +331,8 @@
         "research-problems": "Razvojni prijedlozi javnog sektora",
         "edit-organization": "Uređivanje javne organizacije",
         "number-of-views": "Broj pregleda",
+        "successfully-created": "Javna organizacija je uspješno kreirana.",
+        "successfully-updated": "Javna organizacija je uspješno ažurirana.",
         "successfully-deleted": "Javna organizacija je uspješno izbrisana.",
         "latest-organizations": "Nove registrirane javne organizacije",
         "view-all-organizations": "Pogledaj sve organizacije",
