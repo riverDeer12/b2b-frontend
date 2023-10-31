@@ -21,6 +21,6 @@ export class OrganizationResearchProblemsResolver implements Resolve<ResearchPro
             this.router.navigateByUrl('admin/organizations').then();
         }
 
-        return this.service.getResearchProblems(EntityType.Organization, organizationId as string);
+        return this.service.getResearchProblems(EntityType.PublicOrganization, organizationId as string);
     }
 }

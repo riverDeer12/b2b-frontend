@@ -17,13 +17,13 @@ export class CommunicationService {
      * Send message to entity.
      *
      * @param receiverId id of receiver entity.
-     * @param entityType type of receiver entity.
+     * @param receiverUserType type of receiver entity.
      * @param content message content.
      */
-    sendMessage(receiverId: string, entityType: EntityType, content: string) {
+    sendMessage(receiverId: string, receiverUserType: string, content: string) {
         return this.http.post(this.endpointUrl + 'messages/send', {
             receiverId,
-            entityType,
+            receiverUserType,
             content
         });
     }

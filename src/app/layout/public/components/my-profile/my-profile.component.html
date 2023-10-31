@@ -7,7 +7,7 @@
               [researchProblems]="entity?.researchProblems"
 ></company-form>
 
-<organization-form *ngIf="profileEntityType == entityType.Organization"
+<organization-form *ngIf="profileEntityType == entityType.PublicOrganization"
                    [organization]="entity"
                    [formType]="formType.Edit"
                    [categories]="categories"

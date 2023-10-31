@@ -24,7 +24,7 @@ export class EntityTypeResolver implements Resolve<EntityType> {
 
         switch (decodedToken.role) {
             case 'PublicOrganization':
-                return EntityType.Organization;
+                return EntityType.PublicOrganization;
             case 'Company':
                 return EntityType.Company;
             case 'Scientist':

@@ -40,7 +40,7 @@ export class MyProfileComponent {
                 case EntityType.Company:
                     this.entity = Object.assign(new Company(), response['entity']);
                     break;
-                case EntityType.Organization:
+                case EntityType.PublicOrganization:
                     this.entity = Object.assign(new Organization(), response['entity']);
                     break;
                 case EntityType.Scientist:

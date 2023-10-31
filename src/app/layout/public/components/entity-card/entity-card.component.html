@@ -5,12 +5,12 @@
     <ng-template pTemplate="content">
         <p>
             <label>{{'address.label' | translate}}</label>
-            {{shortAddress ?? 'no-data' | translate }}
+            {{shortAddress ? shortAddress : 'no-data' | translate }}
         </p>
         <p>
             <label>{{'website.label' | translate}}</label>
             <a href="{{website}}">
-                {{shortWebsite ?? 'no-data' | translate }}
+                {{shortWebsite ? shortWebsite : 'no-data' | translate }}
             </a>
         </p>
         <p style="height: 40px;">

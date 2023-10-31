@@ -46,6 +46,7 @@ export class EntityCardComponent {
     }
 
     get shortAddress(): string {
+
         if (this.address.length < 30) {
             return this.address;
         }

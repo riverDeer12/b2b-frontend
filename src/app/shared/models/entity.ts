@@ -39,7 +39,7 @@ export class Entity {
                 let company = new Company();
                 company = Object.assign(new Company(), response['entity']);
                 return company;
-            case EntityType.Organization:
+            case EntityType.PublicOrganization:
                 let organization = new Organization();
                 organization = Object.assign(new Organization(), response['entity']);
                 return organization;
@@ -75,7 +75,7 @@ export class Entity {
      */
     public static getTitle(entity: any, type: EntityType): string {
         switch (type) {
-            case EntityType.Organization:
+            case EntityType.PublicOrganization:
                 return entity.name;
             case EntityType.Company:
                 return entity.name;
@@ -102,7 +102,7 @@ export class Entity {
      */
     public static getAddress(entity: any, type: EntityType): string {
         switch (type) {
-            case EntityType.Organization:
+            case EntityType.PublicOrganization:
                 return entity.address;
             case EntityType.Company:
                 return entity.address;

@@ -22,7 +22,7 @@
             </div>
 
             <div class="flex align-items-center">
-                <p-radioButton inputId="organization" name="entityType" [value]="entityType.Organization"
+                <p-radioButton inputId="organization" name="entityType" [value]="entityType.PublicOrganization"
                                [(ngModel)]="selectedEntityType"
                 ></p-radioButton>
                 <label for="organization" class="m-2">{{'organizations.default' | translate}}</label>
@@ -35,7 +35,7 @@
                                       returnUrl="" [categories]="categories"></company-general-form>
                 <scientist-general-form *ngIf="selectedEntityType == entityType.Scientist" [formType]="formType.Create"
                                         returnUrl="" [categories]="categories"></scientist-general-form>
-                <organization-general-form *ngIf="selectedEntityType == entityType.Organization"
+                <organization-general-form *ngIf="selectedEntityType == entityType.PublicOrganization"
                                            [formType]="formType.Create"
                                            returnUrl="" [categories]="categories"></organization-general-form>
             </div>

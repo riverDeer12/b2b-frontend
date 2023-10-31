@@ -25,7 +25,7 @@ export class OrganizationGeneralFormComponent {
 
     form!: FormGroup;
 
-    entityType = EntityType.Organization;
+    entityType = EntityType.PublicOrganization;
 
     public get type(): typeof FormType {
         return FormType;

@@ -37,7 +37,7 @@ export class EntityDetailsComponent implements OnInit {
 
     public get hasResearchProblems(): boolean {
         const validEntityType = this.currentEntityType === EntityType.Company ||
-            this.currentEntityType === EntityType.Organization;
+            this.currentEntityType === EntityType.PublicOrganization;
 
         if (!validEntityType) return false;
 
@@ -106,9 +106,11 @@ export class EntityDetailsComponent implements OnInit {
 
         this.dialogService.open(DialogFormComponent, {
             data: {
-                header: 'communications.send-message',
+                header: 'communications.send-message.title',
                 formType: FormType.Create,
-                contentType: DialogContentTypes.Message
+                contentType: DialogContentTypes.Message,
+                parentEntityType: this.currentEntityType,
+                parentEntityId: this.entityItem.id
             }
         })
     }

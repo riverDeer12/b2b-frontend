@@ -62,7 +62,7 @@
             <simple-entity-card [title]="researchProblem.localizedTitle"
                                 [content]="researchProblem.localizedDescription"
                                 [entityId]="researchProblem.publicOrganizationId"
-                                [entityType]="type.Organization"
+                                [entityType]="type.PublicOrganization"
                                 [imageLink]="researchProblem.image"></simple-entity-card>
         </div>
     </div>
@@ -143,7 +143,7 @@
         <div class="col-12 lg:col-3 p-3" *ngFor="let organization of organizations">
             <entity-card [title]="organization.name"
                          [website]="organization.website"
-                         [entityType]="type.Organization"
+                         [entityType]="type.PublicOrganization"
                          [entityId]="organization.id"
                          [address]="organization.address"
                          [entityCategories]="organization.categories"

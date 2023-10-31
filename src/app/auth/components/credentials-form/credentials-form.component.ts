@@ -55,7 +55,7 @@ export class CredentialsFormComponent implements OnInit{
             case EntityType.Scientist:
                 this.checkScientistUsername(username);
                 break;
-            case EntityType.Organization:
+            case EntityType.PublicOrganization:
                 this.checkOrganizationUsername(username);
                 break;
         }

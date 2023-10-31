@@ -18,6 +18,7 @@ import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/component
 import {DialogService} from 'primeng/dynamicdialog';
 import { SendMessageFormComponent } from './components/send-message-form/send-message-form.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
         JobOffersComponentsModule,
         EquipmentComponentsModule,
         ResearchProblemsComponentsModule,
-        SpecificKnowledgeComponentsModule
+        SpecificKnowledgeComponentsModule,
+        InputTextModule
     ],
     exports: [
         ActivityComponent,

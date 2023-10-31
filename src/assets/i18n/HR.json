@@ -563,7 +563,16 @@
         "view-all-news": "Pogledaj sve novosti"
     },
     "communications": {
-        "send-message": "Slanje poruke",
+        "send-message": {
+            "title": "Pošalji poruku korisniku",
+            "submit": "Pošalji"
+        },
+        "content": {
+            "default": "Sadržaj poruke",
+            "required": "Sadržaj poruke je obavezan podatak."
+        },
+        "error-sending-message": "Greška prilikom slanja poruke.",
+        "message-sent-successfully": "Poruka je uspješno poslana.",
         "not-logged": "Da biste ostvarili kontakt, morate biti prijavljeni na RIMAP platformi."
     },
     "subscribers": {

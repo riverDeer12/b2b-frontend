@@ -34,7 +34,7 @@ export class AuthService {
         switch (authUnit.entityType) {
             case EntityType.Company:
                 return this.loginCompany(authUnit);
-            case EntityType.Organization:
+            case EntityType.PublicOrganization:
                 return this.loginPublicOrganization(authUnit);
             case EntityType.Scientist:
                 return this.loginScientist(authUnit);

@@ -84,7 +84,7 @@ export class OrganizationsDataTableComponent {
     openFlipActiveDialog(organizationId: string): void {
         this.confirmationService.confirm({
             accept: () => {
-                this.sharedService.flipActive(EntityType.Organization, organizationId).subscribe((response: any) => {
+                this.sharedService.flipActive(EntityType.PublicOrganization, organizationId).subscribe((response: any) => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
 
