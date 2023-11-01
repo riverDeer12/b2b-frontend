@@ -17,11 +17,11 @@
                     </p>
                     <p>
                         <label>{{'website.label' | translate }}</label>
-                        <a href="{{entityItem.website}}">
-                            {{entityItem.website}}
+                        <a href="{{entityItem.website ? entityItem.website : '#'}}">
+                            {{entityItem.website ? entityItem.website : 'no-data' | translate}}
                         </a>
                     </p>
-                    <p>
+                    <p class="mb-2">
                         <label>{{'categories.tags.label' | translate }}</label>
                         <p-tag *ngFor="let tag of entityItem.categoryTags?.split(';').slice(0, -1)">
                             {{tag}}
@@ -29,57 +29,65 @@
                     </p>
                 </div>
                 <p *ngIf="currentEntityType !== entityType.News">
-                    <label>{{'categories.default' | translate }}</label>
+                    <label>{{'categories.label' | translate }}</label>
                     <p-tag *ngFor="let category of entityCategories">
                         {{category.localizedName}}
                     </p-tag>
                 </p>
                 <p>
-                    <label *ngIf="currentEntityType !== entityType.News">{{'description.label' | translate }}</label>
-                    <span [innerHTML]="entity.getDescription(entityItem, currentEntityType)"></span>
+                    <label *ngIf="currentEntityType !== entityType.News"
+                           class="mr-1">{{'description.label' | translate }}</label>
+                    <span
+                        [innerHTML]="entity.getDescription(entityItem, currentEntityType) ?
+                        entity.getDescription(entityItem, currentEntityType)  : 'no-data' | translate"></span>
                 </p>
-                <div class="mt-5" *ngIf="hasResearchProblems">
+                <div class="text-center mt-5" *ngIf="hasResearchProblems">
                     <h3>{{'research-problems.default' | translate}}</h3>
                     <p-divider></p-divider>
                     <div class="mt-5" *ngFor="let researchProblem of researchProblems">
-                        <h5 [innerHTML]="researchProblem.localizedTitle"></h5>
+                        <h5 class="mb-3" [innerHTML]="researchProblem.localizedTitle"></h5>
                         <img alt="Card" width="100%"
                              [src]="entityItem.image ??
                              'assets/layout/images/image-default.png'"/>
-                        <p>
-                            <label>{{'description.label' | translate }}</label>
+                        <p class="text-left mt-2">
+                            <label class="mr-1">{{'description.label' | translate }}</label>
                             <span [innerHTML]="researchProblem.localizedDescription"></span>
                         </p>
-                        <p>
-                            <label>{{'research-problems.academic-community-contribution-possibility.label' | translate }}</label>
-                            <span [innerHTML]="researchProblem.localizedAcademicCommunityContributionPossibility"></span>
+                        <p class="text-left mt-2">
+                            <label
+                                class="mr-1">{{'research-problems.academic-community-contribution-possibility.label' | translate }}</label>
+                            <span
+                                [innerHTML]="researchProblem.localizedAcademicCommunityContributionPossibility"></span>
                         </p>
+                        <p-divider></p-divider>
                     </div>
                 </div>
-                <div class="mt-5" *ngIf="hasEquipment">
+                <div class="text-center mt-5" *ngIf="hasEquipment">
                     <h3>{{'equipment.default' | translate}}</h3>
                     <p-divider></p-divider>
                     <div class="mt-5" *ngFor="let equipment of equipmentList">
                         <h5 [innerHTML]="equipment.localizedTitle"></h5>
                         <img alt="Card" width="100%"
                              [src]="equipment.imageUrl"/>
-                        <p>
-                            <label>{{'description.label' | translate }}</label>
+                        <p class="text-left mt-2">
+                            <label class="mr-1">{{'description.label' | translate }}</label>
                             <span [innerHTML]="equipment.localizedDescription"></span>
                         </p>
+                        <p-divider></p-divider>
                     </div>
                 </div>
-                <div class="mt-5" *ngIf="hasSpecificKnowledge">
+                <div class="text-center mt-5" *ngIf="hasSpecificKnowledge">
                     <h3>{{'specific-knowledge.default' | translate}}</h3>
                     <p-divider></p-divider>
                     <div class="mt-5" *ngFor="let specificKnowledge of specificKnowledgeList">
                         <h5 [innerHTML]="specificKnowledge.localizedTitle"></h5>
                         <img alt="Card" width="100%"
                              [src]="specificKnowledge.imageUrl"/>
-                        <p>
-                            <label>{{'description.label' | translate }}</label>
+                        <p class="text-left mt-2">
+                            <label class="mr-1">{{'description.label' | translate }}</label>
                             <span [innerHTML]="specificKnowledge.localizedDescription"></span>
                         </p>
+                        <p-divider></p-divider>
                     </div>
                 </div>
             </ng-template>

@@ -327,7 +327,7 @@ label{
     margin-left: 0.5rem;
 }
 
-p-autocomplete.ng-dirty.ng-invalid > .p-autocomplete > .p-inputtext {
+.p-autocomplete.ng-dirty.ng-invalid > .p-autocomplete > .p-inputtext {
     border-color: #B00020;
 }
 

@@ -116,7 +116,7 @@ export class EntityDetailsComponent implements OnInit {
     }
 
     private initCategories(): void {
-        this.entityCategories = this.entityItem.categories.map((x: Category) =>
+        this.entityCategories = this.entityItem.categories?.map((x: Category) =>
             Object.assign(new Category(), x)
         );
     }
