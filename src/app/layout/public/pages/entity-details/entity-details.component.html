@@ -6,30 +6,42 @@
                      [src]="entityItem.image ?? 'assets/layout/images/image-default.png'"/>
             </ng-template>
             <ng-template pTemplate="content">
+                <p *ngIf="currentEntityType === entityType.News">
+                    <i class="pi pi-clock label-icon"></i>
+                    <label class="ml-2">{{'news.published-at.label' | translate }}</label>
+                    <span>
+                        {{ entityItem.createdAt | date: 'dd.MM.yyyy HH:mm:ss'}}
+                    </span>
+                </p>
                 <p class="text-center px-8" *ngIf="showContactButton">
                     <button (click)="openMessageDialog()" style="width: 100%" pButton class="font-light line-height-2 bg-blue-500
                     text-white simple-entity-card-button" label="{{'contact-entity.default' | translate}}"></button>
                 </p>
                 <div class="mt-5" *ngIf="!entity.isSimpleEntity(currentEntityType)">
                     <p>
-                        <label>{{'address.label' | translate }}</label>
+                        <i class="pi pi-building label-icon"></i>
+                        <label class="ml-1">{{'address.label' | translate }}</label>
                         {{entity.getAddress(entityItem, currentEntityType)}}
                     </p>
                     <p>
-                        <label>{{'website.label' | translate }}</label>
+                        <i class="pi pi-globe label-icon"></i>
+                        <label class="ml-1">{{'website.label' | translate }}</label>
                         <a href="{{entityItem.website ? entityItem.website : '#'}}">
                             {{entityItem.website ? entityItem.website : 'no-data' | translate}}
                         </a>
                     </p>
                     <p class="mb-2">
-                        <label>{{'categories.tags.label' | translate }}</label>
+                        <i class="pi pi-tags label-icon"></i>
+                        <label class="mx-1">{{'categories.tags.label' | translate }}</label>
+                        <span *ngIf="!entityItem.categoryTags?.length">{{'no-data' | translate}}</span>
                         <p-tag *ngFor="let tag of entityItem.categoryTags?.split(';').slice(0, -1)">
                             {{tag}}
                         </p-tag>
                     </p>
                 </div>
                 <p *ngIf="currentEntityType !== entityType.News">
-                    <label>{{'categories.label' | translate }}</label>
+                    <i class="pi pi-tags label-icon"></i>
+                    <label class="mx-1">{{'categories.label' | translate }}</label>
                     <p-tag *ngFor="let category of entityCategories">
                         {{category.localizedName}}
                     </p-tag>

@@ -95,7 +95,7 @@
         "emptyMessage": "No results",
         "emptyFilterMessage": "No results found"
     },
-    "croatian": "Hrvatski",
+    "croatian": "Croatian",
     "english": "English",
     "home": "Home",
     "clear": "Clear",
@@ -542,6 +542,10 @@
     "news": {
         "default": "Posts",
         "news-item": "post",
+        "published-at": {
+            "default": "Published At",
+            "label": "Published At:"
+        },
         "title": {
             "default": "Title",
             "required": "Title is mandatory information."

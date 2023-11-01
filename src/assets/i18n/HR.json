@@ -542,6 +542,10 @@
     "news": {
         "default": "Objave",
         "news-item": "objava",
+        "published-at": {
+            "default": "Objavljeno",
+            "label": "Objavljeno:"
+        },
         "title": {
             "default": "Naslov",
             "required": "Naslov je obavezan podatak."

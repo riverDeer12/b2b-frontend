@@ -19,6 +19,7 @@ import {SharedModule} from '../../shared/shared.module';
         PublicLayoutComponent,
     ],
     exports: [
+        PublicLayoutComponent
     ],
     imports: [
         CommonModule,

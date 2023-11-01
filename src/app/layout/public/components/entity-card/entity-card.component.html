@@ -4,17 +4,20 @@
     </ng-template>
     <ng-template pTemplate="content">
         <p>
-            <label>{{'address.label' | translate}}</label>
+            <i class="pi pi-building label-icon"></i>
+            <label class="ml-1">{{'address.label' | translate}}</label>
             {{shortAddress ? shortAddress : 'no-data' | translate }}
         </p>
         <p>
-            <label>{{'website.label' | translate}}</label>
+            <i class="pi pi-globe label-icon"></i>
+            <label class="ml-1">{{'website.label' | translate}}</label>
             <a href="{{website}}">
                 {{shortWebsite ? shortWebsite : 'no-data' | translate }}
             </a>
         </p>
         <p style="height: 40px;">
-            <label>{{'categories.label' | translate}}</label>
+            <i class="pi pi-tags label-icon"></i>
+            <label class="ml-1">{{'categories.label' | translate}}</label>
             <p-tag *ngFor="let category of entityCategories.slice(0, 2)">
                 {{category.localizedName}}
             </p-tag>

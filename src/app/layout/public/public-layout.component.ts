@@ -14,7 +14,7 @@ import {Languages} from '../../shared/constants/languages';
 export class PublicLayoutComponent {
     title!: string;
 
-    menuItems: MenuItem[] = PublicMenuItems;
+    menuItems!: MenuItem[];
 
     availableLanguages = Languages;
 
@@ -23,24 +23,35 @@ export class PublicLayoutComponent {
     constructor(public layoutService: LayoutService,
                 private translateService: TranslateService,
                 public router: Router) {
-        this.initMenuItems();
+        this.translateService.onLangChange.subscribe((response) => {
+            this.menuItems = [];
+            this.initMenuItems();
+        })
+    }
+
+    ngOnInit(): void {
+
     }
 
     initMenuItems(): void {
-        this.menuItems.forEach((menuItem: MenuItem) => {
-            this.translateService.get(menuItem.label as string).subscribe((resource: string) => {
-                    menuItem.label = resource;
+        PublicMenuItems.forEach((publicMenuItem: MenuItem) => {
 
+            this.translateService.get(publicMenuItem.label as string).subscribe((resource: string) => {
 
-                    if (!menuItem.items?.length) {
+                    publicMenuItem.label = resource;
+
+                    if (!publicMenuItem.items?.length) {
+                        this.menuItems.push(publicMenuItem);
                         return;
                     }
 
-                    menuItem.items.forEach((childMenuItem: MenuItem) => {
+                    publicMenuItem.items.forEach((childMenuItem: MenuItem) => {
                         this.translateService.get(childMenuItem.label as string).subscribe((resource: string) => {
                             childMenuItem.label = resource;
                         });
                     });
+
+                    this.menuItems.push(publicMenuItem);
                 }
             );
         });
