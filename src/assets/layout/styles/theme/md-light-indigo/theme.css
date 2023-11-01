@@ -2174,7 +2174,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 
 .p-button {
     color: #ffffff;
-    background: #3F51B5;
+    background: #22d6b7;
     border: 0 none;
     padding: 0.714rem 1rem;
     font-size: 1rem;
@@ -2182,7 +2182,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-button:enabled:hover {
-    background: rgba(63, 81, 181, 0.92);
+    background: #1d508f;
     color: #ffffff;
     border-color: transparent;
 }

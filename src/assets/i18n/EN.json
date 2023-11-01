@@ -1,28 +1,28 @@
 {
     "primeNgConfig": {
-        "startsWith": "Starts With",
+        "startsWith": "Starts with",
         "contains": "Contains",
-        "notContains": "Doesn't Contain",
-        "endsWith": "Ends With",
-        "equals": "Equals",
-        "notEquals": "Isn't Equal",
-        "noFilter": "Without Filter",
+        "notContains": "Does not contain",
+        "endsWith": "Ends with",
+        "equals": "Equal",
+        "notEquals": "Not equal",
+        "noFilter": "No filter",
         "lt": "Less",
-        "lte": "Less Or Equal",
+        "lte": "Less than or equal to",
         "gt": "More",
-        "gte": "More Or Equal",
+        "gte": "Greater than or equal to",
         "is": "Is",
-        "isNot": "Is Not",
+        "isNot": "It is not",
         "before": "Before",
         "after": "After",
-        "dateIs": "Exact Date",
-        "dateIsNot": "It Isn't Date",
-        "dateBefore": "Date Is Before",
-        "dateAfter": "Date Is After",
+        "dateIs": "Exact date",
+        "dateIsNot": "Not a date",
+        "dateBefore": "The date is before",
+        "dateAfter": "The date is after",
         "clear": "Clear",
         "apply": "Apply",
         "matchAll": "All",
-        "matchAny": "Any",
+        "matchAny": "Some",
         "addRule": "Add Rule",
         "removeRule": "Remove Rule",
         "accept": "Yes",
@@ -42,20 +42,20 @@
         "dayNamesShort": [
             "Sun",
             "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat"
+            "Tuesday",
+            "Sri",
+            "Thurs",
+            "Five",
+            "Sub"
         ],
         "dayNamesMin": [
-            "Su",
-            "Mo",
-            "Tu",
-            "We",
-            "Th",
-            "Fr",
-            "Sa"
+            "Not",
+            "Per",
+            "Tue",
+            "Sr",
+            "Che",
+            "Pe",
+            "are"
         ],
         "monthNames": [
             "January",
@@ -72,18 +72,18 @@
             "December"
         ],
         "monthNamesShort": [
-            "Jan",
-            "Feb",
-            "Mar",
+            "Shine",
+            "Vel",
+            "March",
             "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"
+            "All",
+            "Lip",
+            "Sickle",
+            "Coll",
+            "September",
+            "Fox",
+            "Stu",
+            "pro"
         ],
         "dateFormat": "dd.mm.yy.",
         "today": "Today",
@@ -91,294 +91,531 @@
         "weak": "Weak",
         "medium": "Medium",
         "strong": "Strong",
-        "passwordPrompt": "Enter Password",
-        "emptyMessage": "No Results",
-        "emptyFilterMessage": "No Results Found"
+        "passwordPrompt": "Enter password",
+        "emptyMessage": "No results",
+        "emptyFilterMessage": "No results found"
     },
-    "croatian": "Croatian",
+    "croatian": "Hrvatski",
     "english": "English",
-    "home": "Home page",
+    "home": "Home",
     "clear": "Clear",
     "save": "Save",
     "success": "Success",
     "error": "Error",
-    "warn": "Warrning",
-    "info": "Information",
+    "warn": "Warning",
+    "info": "Notice",
     "yes": "Yes",
     "no": "No",
-    "from": "From",
-    "to": "To",
+    "from": "from",
+    "to": "to",
     "add": "Add",
     "activity": "Activity",
     "active": "Active",
-    "not-active": "Not Active",
-    "description": "Description",
-    "createdAt": "Time Of Creation",
-    "updatedAt": "Last Updated",
+    "not-active": "Not active",
+    "description": {
+        "default": "Description",
+        "label": "Description:"
+    },
+    "createdAt": "Time of creation",
+    "updatedAt": "Last updated",
     "search": "Search",
     "read-more": "Read more",
-    "pages": "Pages",
+    "pages": "page",
     "contact": "Contact",
     "name": {
         "default": "Name",
-        "required": "Category name is required."
+        "required": "Category name is mandatory information."
     },
-    "keyword": "Key Word",
-    "general": "General Data",
-    "choose-option": "Choose Option",
-    "email": "Email Adress",
-    "website": "Web Page",
-    "no-error-details": "Error, No Additional Details!",
-    "results": "Results",
-    "correct-validation-errors": "Please Correct Errors And Try Again.",
+    "keyword": "Keyword",
+    "general": "General information",
+    "choose-option": "Choose a value",
+    "email": "Email address",
+    "website": {
+        "default": "Website",
+        "label": "Website:"
+    },
+    "no-error-details": "An error occurred, no additional details!",
+    "results": "resultata",
+    "correct-validation-errors": "Please correct the errors and try again.",
+    "dashboard": {
+        "default": "Statistics"
+    },
     "auth": {
-        "username": "Username",
-        "password": "Password",
-        "confirm-password": "Confirm Password",
+        "username": {
+            "default": "Username",
+            "required": "Username is mandatory information.",
+            "not-unique": "The username is already in use.",
+            "invalid-email": "The email is invalid."
+        },
+        "password": {
+            "default": "Password",
+            "required": "Password is mandatory information.",
+            "min-length": "The password must contain a minimum of 8 characters."
+        },
+        "confirm-password": {
+            "default": "Password confirmation",
+            "required": "Password confirmation is mandatory information.",
+            "mismatch": "Password confirmation must be identical to the password."
+        },
+        "registration": "Registration",
         "username-password": "Username and password",
-        "welcome-to-dashboard": "Succesful Login to RIMAP administracion.",
+        "welcome-to-dashboard": "Successful login to RIMAP administration.",
+        "welcome-to-platform": "Successful login to the RIMAP platform.",
         "login": "Login",
-        "correct-validation-errors": "Please Check Entered Data And Try Again.",
+        "logout": "Logout",
+        "correct-validation-errors": "Please review the information entered and try again.",
         "access-denied": "Access Denied",
-        "resource-not-found": "Resource Not Found",
-        "try-another-page": "Please, Try Another Page",
-        "you-dont-have-permissions": "You Don't Have Permissions. Please Contact Administrator.",
-        "error-occurred": "Error Accured During Your Authentication.",
-        "resource-not-available": "Resource Not Available.",
-        "back-to-home-page": "Back To Home Page",
-        "login-error": "Username or Password is not correct. Please, Try Again.",
-        "successfully-changed-password": "Password is successfully changed."
+        "resource-not-found": "Content not found",
+        "try-another-page": "Please try to find the content through another link.",
+        "you-dont-have-permissions": "You do not have the right to access the content. Please contact the administrator.",
+        "error-occurred": "An error occurred during login.",
+        "resource-not-available": "Requested content is not available.",
+        "back-to-home-page": "Back to home page",
+        "login-error": "Your username or password is incorrect. Please try again.",
+        "successfully-changed-password": "The password has been successfully changed.",
+        "choose-login-type": "Please choose a login type",
+        "choose-registration-type": "Choose a registration type",
+        "my-profile": "My profile"
     },
     "companies": {
         "default": "Companies",
         "company-items": "companies",
         "items": "companies",
-        "companies-list": "Companies Overview",
-        "create-company": "Create a New Company",
-        "correct-validation-errors": "Please review the entered data and try again.",
-        "successfully-created": "Company successfully created.",
-        "successfully-updated": "Company successfully updated.",
-        "successfully-deleted": "Company successfully deleted.",
+        "companies-list": "List of companies",
+        "create-company": "Creating a new company",
+        "correct-validation-errors": "Please review the information entered and try again.",
+        "successfully-created": "The company was successfully created.",
+        "successfully-updated": "The company was successfully updated.",
+        "successfully-deleted": "The company was successfully deleted.",
         "no-error-details": "An error occurred, no additional details!",
-        "edit-company": "Edit Company",
+        "edit-company": "Edit company",
         "confirm-delete-action": "Are you sure you want to delete the company?",
         "confirm-delete-message": "After confirmation, the selected company will be deleted.",
         "no-companies-found": "No companies found",
-        "error-deleting": "Error deleting the company.",
-        "new-company": "New Company",
-        "address": "Address",
-        "email": "Email",
-        "number-of-views": "Number of Views",
-        "description": "Company Description",
-        "tax-code": "TIN",
-        "website": "Website",
-        "projects": "Projects",
-        "number-of-employees": "Number of Employees",
-        "latest-company-research-problems": "Latest Company Research Proposals",
-        "view-all-company-research-problems": "View All Company Research Proposals",
-        "new-companies": "Newly Registered Companies",
-        "view-all-companies": "View All Companies",
-        "company-research-problems": "Company Research Proposals",
+        "error-deleting": "Error deleting company.",
+        "new-company": "New company",
+        "name": {
+            "default": "Company Name",
+            "required": "Company name is mandatory information"
+        },
+        "address": {
+            "default": "Address",
+            "required": "Address is mandatory information"
+        },
+        "email": {
+            "default": "Email",
+            "required": "Email is mandatory information.",
+            "invalid": "The email is not in the correct format."
+        },
+        "description": {
+            "default": "Company Description",
+            "required": "Company description is mandatory information.",
+            "invalid": "The company description is not in the correct format."
+        },
+        "tax-code": {
+            "default": "OIB",
+            "required": "OIB is mandatory information.",
+            "invalid": "The OIB is not in the correct form."
+        },
+        "website": {
+            "default": "Web Headquarters",
+            "required": "The web address is mandatory information.",
+            "invalid": "The web site is not in the correct form."
+        },
+        "projects": {
+            "default": "Projects",
+            "required": "Projects are mandatory information.",
+            "invalid": "Projects are not in the correct form."
+        },
+        "number-of-employees": {
+            "default": "Number of employees",
+            "required": "The number of employees is mandatory information.",
+            "invalid": "The number of employees is not in the correct format."
+        },
+        "research-problems": "Development proposals of companies",
+        "number-of-views": "Number of views",
+        "latest-companies": "New registered companies",
+        "latest-company-research-problems": "New company development proposals",
+        "view-all-company-research-problems": "View all company development proposals",
+        "new-companies": "New registered companies",
+        "view-all-companies": "View all companies",
+        "company-research-problems": "Company development proposals",
         "company-job-offers": "Human Resources Needs"
     },
     "scientists": {
-        "default": "Scientists",
-        "scientist-items": "scientists",
-        "items": "scientists",
-        "scientists-list": "Scientists Overview",
-        "create-scientist": "Create a New Scientist",
+        "default": "Researchers",
+        "scientist-items": "researchers",
+        "items": "researcher",
+        "scientists-list": "List of researchers",
+        "create-scientist": "Creating a new scientist",
         "choose-option": "Choose a value",
-        "correct-validation-errors": "Please review the entered data and try again.",
-        "successfully-created": "Scientist successfully created.",
-        "successfully-updated": "Scientist successfully updated.",
+        "correct-validation-errors": "Please review the information entered and try again.",
+        "successfully-created": "Explorer has been successfully created.",
+        "successfully-updated": "Explorer has been successfully updated.",
         "no-error-details": "An error occurred, no additional details!",
         "edit-scientist": "Edit Scientist",
-        "confirm-delete-action": "Are you sure you want to delete the scientist?",
-        "confirm-delete-message": "After confirmation, the selected scientist will be deleted.",
-        "successfully-deleted": "Scientist successfully deleted.",
+        "confirm-delete-action": "Are you sure you want to delete the explorer?",
+        "confirm-delete-message": "After confirmation, the selected explorer will be deleted.",
+        "successfully-deleted": "Explorer has been successfully deleted.",
         "no-scientists-found": "No scientists found",
-        "error-deleting": "Error deleting the scientist.",
-        "new-scientist": "New Scientist",
-        "firstname": "First Name",
-        "lastname": "Last Name",
-        "number-of-views": "Number of Views",
-        "email": "Email",
-        "projects": "Projects",
-        "functions": "Functions",
-        "google-scholar-Link": "Google Scholar Link",
-        "employment-college": "Employment",
-        "education-title": "Title",
-        "new-scientists": "Newly Registered Scientists",
-        "view-all-scientists": "View All Scientists",
-        "scientist-equipment": "Scientific Equipment",
-        "scientist-specific-knowledge": "Scientist Services and Competencies"
+        "error-deleting": "Error deleting explorer.",
+        "new-scientist": "New researcher",
+        "first name": {
+            "default": "Name",
+            "required": "Name is required."
+        },
+        "lastname": {
+            "default": "Surname",
+            "required": "Surname is mandatory information."
+        },
+        "email": {
+            "default": "Email",
+            "required": "Email is mandatory."
+        },
+        "projects": {
+            "default": "Projects",
+            "required": "Projects are mandatory information."
+        },
+        "functions": {
+            "default": "Functions",
+            "required": "Functions are mandatory information."
+        },
+        "google-scholar-Link": {
+            "default": "Link to Google Scholar",
+            "required": "A link to Google Scholar is required."
+        },
+        "employment-college": {
+            "default": "Employment",
+            "required": "Employment is mandatory information."
+        },
+        "education-title": {
+            "default": "Title",
+            "required": "The title is mandatory information."
+        },
+        "website": {
+            "default": "Web Headquarters",
+            "required": "The web address is mandatory information."
+        },
+        "description": {
+            "default": "Short CV and description of scientific work (5-6 sentences)",
+            "required": "A short CV is mandatory information."
+        },
+        "number-of-views": "Number of views",
+        "latest-scientists": "Newly registered researchers",
+        "view-all-scientists": "View all researchers",
+        "scientist-equipment": "Research Equipment",
+        "scientist-specific-knowledge": "Services and competences of researchers"
     },
     "organizations": {
-        "new-organizations": "Newly Registered Public Organizations",
-        "view-all-organizations": "View All Organizations",
-        "latest-organization-research-problems": "Latest Public Sector Research Proposals",
-        "view-all-organization-research-problems": "View All Public Sector Research Proposals",
-        "organization-research-problems": "Public Sector Research Proposals"
+        "default": "Public sector",
+        "name": {
+            "default": "Name of public organization",
+            "required": "The name of the public organization is mandatory information."
+        },
+        "description": {
+            "default": "Public organization description",
+            "required": "The description of the public organization is mandatory information."
+        },
+        "email": {
+            "default": "Email",
+            "required": "Email is mandatory."
+        },
+        "address": {
+            "default": "Address",
+            "required": "Address is mandatory information."
+        },
+        "website": {
+            "default": "Web Headquarters",
+            "required": "The web address is mandatory information."
+        },
+        "research-problems": "Public sector development proposals",
+        "edit-organization": "Edit public organization",
+        "number-of-views": "Number of views",
+        "successfully-created": "The public organization was successfully created.",
+        "successfully-updated": "The public organization was successfully updated.",
+        "successfully-deleted": "The public organization was successfully deleted.",
+        "latest-organizations": "New registered public organizations",
+        "view-all-organizations": "View all organizations",
+        "latest-organization-research-problems": "New development proposals of the public sector",
+        "view-all-organization-research-problems": "View all development proposals of the public sector",
+        "organization-research-problems": "Public sector development proposals"
     },
     "categories": {
         "default": "Categories",
+        "label": "Categories:",
+        "required": "Categories are mandatory information",
+        "name": {
+            "default": "Category Name",
+            "required": "Category name is mandatory information."
+        },
+        "tags": {
+            "default": "Keywords",
+            "label": "Areas of interest:",
+            "required": "Keywords are mandatory information."
+        },
+        "newsletter-categories": {
+            "default": "Newsletter category",
+            "required": "Newsletter categories are mandatory information."
+        },
         "categories": "Categories",
         "category-items": "categories",
         "items": "category",
-        "categories-list": "Categories Overview",
-        "create-category": "Create a New Category",
+        "categories-list": "View categories",
+        "create-category": "Creating a new category",
         "subcategories": "Subcategories",
-        "correct-validation-errors": "Please review the entered data and try again.",
-        "successfully-created": "Category successfully created.",
-        "successfully-updated": "Category successfully updated.",
+        "correct-validation-errors": "Please review the information entered and try again.",
+        "successfully-created": "The category was successfully created.",
+        "successfully-updated": "Category has been successfully updated.",
         "edit-category": "Edit Category",
         "confirm-delete-action": "Are you sure you want to delete the category?",
         "confirm-delete-message": "After confirmation, the selected category will be deleted.",
-        "successfully-deleted": "Category successfully deleted.",
+        "successfully-deleted": "The category was successfully deleted.",
         "no-categories-found": "No categories found",
-        "error-deleting": "Error deleting the category.",
-        "new-category": "New Category"
+        "error-deleting": "Error deleting category.",
+        "new-category": "New category"
     },
     "job-offers": {
-        "default": "Human Resources Needs",
-        "create": "Create Human Resources Needs",
-        "edit": "Edit Human Resources Needs",
-        "no-job-offers-found": "No human resources needs found.",
-        "location": "Location",
-        "deadline": "Application Deadline",
-        "experience": "Experience",
-        "education": "Education Level",
-        "special-conditions": "Special Conditions",
-        "duration": "Duration",
-        "apply-method": "Application Method",
-        "additional": "Additional",
-        "job-offers": "Human Resources Needs",
-        "job-offer-name": "Human Resources Needs Name",
-        "category-items": "human resources needs",
-        "items": "human resources needs",
-        "job-offers-list": "Human Resources Needs Overview",
-        "create-job-offer": "Create New Human Resources Needs",
+        "default": "Human resource needs",
+        "create": "Creating a need for human resources",
+        "edit": "Editing the need for human resources",
+        "no-job-offers-found": "No job offers found.",
+        "job-offers": "Human resource needs",
+        "name": {
+            "default": "HR Requirement Name",
+            "required": "The name of the need for human resources is mandatory information"
+        },
+        "deadline": {
+            "default": "Registration deadline",
+            "required": "Registration deadline is mandatory information."
+        },
+        "experience": {
+            "default": "Experience Level",
+            "required": "Experience level is mandatory."
+        },
+        "location": {
+            "default": "Location",
+            "required": "Location is mandatory information"
+        },
+        "education": {
+            "default": "Education level",
+            "required": "Education level is mandatory information"
+        },
+        "special-conditions": {
+            "default": "Special conditions",
+            "required": "Special conditions are mandatory information"
+        },
+        "duration": {
+            "default": "Duration",
+            "required": "Duration is mandatory."
+        },
+        "apply-method": {
+            "default": "Login method",
+            "required": "Login method is mandatory information."
+        },
+        "additional": {
+            "default": "Additional",
+            "required": "Additional information is required."
+        },
+        "description": {
+            "default": "Description",
+            "required": "Description is mandatory information."
+        },
+        "category-items": "human resource needs",
+        "items": "human resource needs",
+        "job-offers-list": "Human resources needs overview",
+        "create-job-offer": "Creating a new HR requirement",
         "subcategories": "Subcategories",
-        "correct-validation-errors": "Please review the entered data and try again.",
-        "successfully-created": "Human Resources Needs successfully created.",
-        "successfully-updated": "Human Resources Needs successfully updated.",
+        "correct-validation-errors": "Please review the information entered and try again.",
+        "successfully-created": "The need for human resources has been successfully created.",
+        "successfully-updated": "The HR requirement has been successfully updated.",
         "no-error-details": "An error occurred, no additional details!",
-        "edit-category": "Edit Human Resources Needs",
-        "confirm-delete-action": "Are you sure you want to delete the human resources needs?",
-        "confirm-delete-message": "After confirmation, the selected human resources needs will be deleted.",
-        "successfully-deleted": "Human Resources Needs successfully deleted.",
-        "error-deleting": "Error deleting human resources needs.",
-        "new-job-offer": "New Human Resources Needs",
-        "new-job-offers": "New Human Resources Needs",
-        "view-all-job-offers": "View All Human Resources Needs"
+        "edit-category": "Editing the need for human resources",
+        "confirm-delete-action": "Are you sure you want to delete the HR requirement?",
+        "confirm-delete-message": "After confirmation, the selected HR requirement will be deleted.",
+        "successfully-deleted": "The HR requirement has been successfully deleted.",
+        "error-deleting": "Error deleting HR requirement.",
+        "new-job-offer": "New need for human resources",
+        "new-job-offers": "New needs for human resources",
+        "view-all-job-offers": "View all HR needs"
     },
     "research-problems": {
-        "default": "Research Proposals",
-        "edit": "Edit Research Proposal",
-        "create": "Create Research Proposal",
-        "academic-community-contribution-possibility": "Possibility of Academic Contribution",
-        "successfully-updated": "Research Proposal successfully updated.",
-        "research-problems": "Research Proposals",
-        "research-problem-items": "research proposals",
-        "items": "research proposals",
-        "research-problems-list": "Research Proposals Overview",
-        "create-research-problem": "Create New Research Proposal",
-        "correct-validation-errors": "Please review the entered data and try again.",
-        "research-problem-successfully-created": "Research Proposal successfully created.",
-        "research-problem-successfully-updated": "Research Proposal successfully updated.",
+        "default": "Development Proposals",
+        "edit": "Edit development proposal",
+        "create": "Creating development proposal",
+        "title": {
+            "default": "Development proposal name",
+            "required": "The name of the development proposal is mandatory information."
+        },
+        "academic-community-contribution-possibility": {
+            "default": "Academic Contribution Option",
+            "label": "Possibility of academic contribution:",
+            "required": "The possibility of academic contribution is mandatory information."
+        },
+        "description": {
+            "default": "Description of the development proposal",
+            "required": "The description of the development proposal is mandatory information."
+        },
+        "successfully-created": "The development proposal was successfully created.",
+        "successfully-updated": "The development proposal has been successfully updated.",
+        "successfully-deleted": "The development proposal was successfully deleted.",
+        "research-problems": "Development proposals",
+        "research-problem-items": "development proposals",
+        "items": "development proposals",
+        "research-problems-list": "Review of development proposals",
+        "create-research-problem": "Creating a new development proposal",
+        "correct-validation-errors": "Please review the information entered and try again.",
+        "research-problem-successfully-created": "The development proposal was successfully created.",
+        "research-problem-successfully-updated": "The development proposal has been successfully updated.",
         "no-error-details": "An error occurred, no additional details!",
-        "edit-research-problem": "Edit Research Proposal",
-        "confirm-delete-action": "Are you sure you want to delete the research proposal?",
-        "confirm-delete-message": "After confirmation, the selected research proposal will be deleted.",
-        "successfully-deleted": "Research Proposal successfully deleted.",
-        "no-research-problems-found": "No research proposals found",
-        "error-deleting": "Error deleting the research proposal.",
-        "new-research-problem": "New Research Proposal",
-        "parent-entity": "Parent Entity",
-        "categories": "Related Categories",
+        "edit-research-problem": "Editing a development proposal",
+        "confirm-delete-action": "Are you sure you want to delete the development proposal?",
+        "confirm-delete-message": "After confirmation, the selected development proposal will be deleted.",
+        "no-research-problems-found": "No development proposals found.",
+        "error-deleting": "Error deleting development proposal.",
+        "new-research-problem": "New development proposal",
+        "parent-entity": "Parent entity",
+        "categories": "Belonging categories",
         "company": "Company",
-        "organization": "Public Organization"
+        "organization": "Public organization"
     },
     "specific-knowledge": {
-        "default": "Scientist Services and Competencies",
-        "edit": "Edit Scientist Services and Competencies",
-        "create": "Create Scientist Services and Competencies",
-        "no-specific-knowledge-found": "No scientist services and competencies found.",
-        "specific-knowledge": "Scientist Services and Competencies",
-        "specific-knowledge-items": "scientist services and competencies",
-        "items": "scientist services and competencies",
-        "specific-knowledge-list": "Scientist Services and Competencies Overview",
-        "create-specific-knowledge": "Create New Scientist Services and Competencies",
+        "default": "Researcher services and competences",
+        "edit": "Editing researcher services and competencies",
+        "create": "Creating Researcher Service and Competence",
+        "no-specific-knowledge-found": "No researcher services and competencies found.",
+        "title": {
+            "default": "Name of service/competency",
+            "required": "The name of the service/competency is mandatory information."
+        },
+        "description": {
+            "default": "Description of service/competence",
+            "required": "Description of the service/competence is mandatory information."
+        },
+        "specific-knowledge": "Services and competences",
+        "specific-knowledge-items": "services and competencies",
+        "items": "service and competence",
+        "specific-knowledge-list": "Overview of services and competences",
+        "create-specific-knowledge": "Creating a new service and competence",
         "subcategories": "Subcategories",
-        "correct-validation-errors": "Please review the entered data and try again.",
-        "specific-knowledge-successfully-created": "Scientist services and competencies successfully created.",
-        "specific-knowledge-successfully-updated": "Scientist services and competencies successfully updated.",
+        "correct-validation-errors": "Please review the information entered and try again.",
+        "specific-knowledge-successfully-created": "The service and competence has been successfully created.",
+        "specific-knowledge-successfully-updated": "The service and competence has been successfully updated.",
         "no-error-details": "An error occurred, no additional details!",
-        "edit-specific-knowledge": "Edit Scientist Services and Competencies",
-        "confirm-delete-action": "Are you sure you want to delete scientist services and competencies?",
-        "confirm-delete-message": "After confirmation, the selected scientist services and competencies will be deleted.",
-        "successfully-deleted": "Scientist services and competencies successfully deleted.",
-        "error-deleting": "Error deleting scientist services and competencies.",
-        "new-specific-knowledge": "New Scientist Services and Competencies"
+        "edit-specific-knowledge": "Edit service and competence",
+        "confirm-delete-action": "Are you sure you want to delete the service and competence?",
+        "confirm-delete-message": "After confirmation, the selected service and competence will be deleted.",
+        "successfully-deleted": "The service and competence has been successfully deleted.",
+        "error-deleting": "Error deleting services and competencies.",
+        "new-specific-knowledge": "New service and competencies"
     },
     "equipment": {
-        "default": "Scientific Equipment",
-        "edit": "Edit Scientific Equipment",
-        "create": "Create Scientific Equipment",
-        "successfully-created": "Scientific Equipment successfully created",
-        "successfully-updated": "Scientific Equipment successfully updated",
-        "no-equipment-found": "No scientific equipment found.",
+        "default": "Research Equipment",
+        "edit": "Edit research equipment",
+        "create": "Creating research equipment",
+        "successfully-created": "Successfully created research equipment",
+        "successfully-updated": "Successfully updated research equipment",
+        "no-equipment-found": "No research equipment found.",
+        "title": {
+            "default": "Research equipment name",
+            "required": "The name of the research equipment is mandatory information"
+        },
+        "description": {
+            "default": "Description of research equipment",
+            "required": "The description of the research equipment is mandatory information"
+        },
         "equipment": "Equipment",
         "equipment-items": "equipment",
         "items": "equipment",
-        "equipment-list": "Equipment Overview",
-        "create-equipment": "Create New Equipment",
+        "equipment-list": "Equipment overview",
+        "create-equipment": "Creating new equipment",
         "subcategories": "Subcategories",
-        "correct-validation-errors": "Please review the entered data and try again.",
+        "correct-validation-errors": "Please review the information entered and try again.",
         "no-error-details": "An error occurred, no additional details!",
         "confirm-delete-action": "Are you sure you want to delete the equipment?",
         "confirm-delete-message": "After confirmation, the selected equipment will be deleted.",
-        "successfully-deleted": "Equipment successfully deleted.",
+        "successfully-deleted": "Equipment has been successfully deleted.",
         "error-deleting": "Error deleting equipment.",
-        "new-equipment": "New Scientific Equipment",
-        "view-all-equipment": "View All Scientific Equipment"
+        "new-equipment": "New research equipment",
+        "latest-equipment": "New registered research equipment",
+        "view-all-equipment": "View all research equipment"
     },
     "news": {
-        "default": "News",
-        "news-item": "news item",
+        "default": "Posts",
+        "news-item": "post",
         "title": {
             "default": "Title",
-            "required": "Title is a required field."
+            "required": "Title is mandatory information."
         },
         "content": {
             "default": "Content",
-            "required": "Content is a required field."
+            "required": "Content is mandatory information."
         },
-        "created-at": "Creation Date",
-        "updated-at": "Last Modified Date",
-        "number-of-views": "Number of Views",
-        "items": "news items",
+        "successfully-created": "The post was successfully created.",
+        "successfully-updated": "The post was successfully updated.",
+        "created-at": "Created-at",
+        "updated-at": "Date last modified",
+        "number-of-views": "Number of views",
+        "items": "post",
         "no-news-found": "No news found.",
         "confirm-delete-action": "Are you sure?",
-        "confirm-delete-message": "By confirming the action, you will delete the selected news item.",
-        "create-news": "Create New News",
-        "new-news": "New News",
-        "news-useful-info": "News and Useful Information",
-        "view-all-news": "View All News"
+        "confirm-delete-message": "Confirming the action will delete the selected post.",
+        "create-news": "Create new news",
+        "new-news": "New announcement",
+        "news-useful-info": "News and useful information",
+        "view-all-news": "View all news"
+    },
+    "communications": {
+        "send-message": {
+            "title": "Send a message to the user",
+            "submit": "Submit"
+        },
+        "content": {
+            "default": "Message content",
+            "required": "The content of the message is mandatory information."
+        },
+        "error-sending-message": "Error sending message.",
+        "message-sent-successfully": "Message sent successfully.",
+        "not-logged": "To make contact, you must be logged in on the RIMAP platform."
     },
     "subscribers": {
         "default": "Subscribers"
     },
-    "rimap": "Regional Innovation Matchmaking Platform",
-    "rimap-description": "A regional digital innovation platform for knowledge transfer between the academic community and the economy, aiming to develop an innovation ecosystem in the region. We invite you to register, enter your research proposals/human resources needs/competencies/scientific equipment, and browse the profiles of other users and contact them for possible collaboration by clicking 'Contact.'",
-    "about-us-description": "RIMAP is a regional digital innovation platform for knowledge transfer between the academic community and the economy in the Primorsko-Goranska County and beyond, with the aim of developing an innovation ecosystem in the region.\n\nThe platform enables networking of economic entities, entrepreneurs, researchers, scientists, the public and non-profit sectors, and other interested participants to transfer knowledge based on research results and development activities. The platform promotes multi-directional interaction and proactive networking to connect development projects and the needs of the economic and public sectors with research and innovation solutions, achievements, competencies, and potential of the scientific sector.\n\nThe platform enables mapping the needs of the economy and the public sector in the field of advanced digital technologies with the potential to create products and services with added value through a multidisciplinary approach that combines resources, infrastructure, knowledge, competencies, and the availability of human capital in the region.",
-    "join-us": "Join Us",
-    "search-registered-subjects": "Search Registered Subjects",
-    "all-rights-reserved": "All Rights Reserved | RIMAP",
-    "powered-by": "Regional Innovation Matchmaking Platform powered by",
+    "activity-change": {
+        "title": "Change record visibility",
+        "message": "Please confirm the hiding/revealing of the record. After the entry is hidden it will no longer be visible in the application when searching the client.",
+        "successfully-changed": "Record visibility has been successfully changed.",
+        "error": "Error while changing record visibility."
+    },
+    "file-upload": {
+        "successfully-uploaded": "The file was successfully uploaded",
+        "error": "Error while uploading file",
+        "please-choose-your-image": "You can choose a new profile picture here.",
+        "choose-button": "Choose file",
+        "upload-button": "Start file upload",
+        "cancel-button": "Remove selected file"
+    },
+    "address": {
+        "label": "Address:"
+    },
+    "no-data": "No data.",
+    "external-link": {
+        "default": "External link",
+        "label": "External link:"
+    },
+    "rimap": "Regional innovation matchmaking platform",
+    "rimap-description": "Regional digital innovation platform for the transfer of knowledge between the academic community and the economy with the aim of developing the innovation ecosystem in the region. We invite you to register, enter your development proposals/needs for human resources/competencies/research equipment and search profiles other users and contact them about possible cooperation by clicking on \"Contact\".",
+    "about-us-description": "RIMAP is a regional digital innovation platform for the transfer of knowledge between the academic community and the economy in the Primorje-Gorski Kotar County and beyond with the aim of developing the innovation ecosystem in the region.\n\nThe platform enables the networking of economic entities, entrepreneurs, researchers , scientists, public and non-governmental sector and other interested participants with the aim of knowledge transfer based on the results of research and development activities. The platform encourages multidirectional interaction and proactive networking to connect development projects and needs of the economic and public sector with research and innovation solutions, achievements, competences and potentials of the scientific sector.\n\n The platform enables the mapping of the needs of the economy and the public sector in the field of development and implementation of advanced digital technologies with the potential to create products and services with more added value through a multidisciplinary approach combining resources, infrastructure, knowledge, competences, and the availability of human capital in region.",
+    "join-us": "Join",
+    "search-registered-subjects": "Search registered subjects",
+    "all-rights-reserved": "All rights reserved | RIMAP",
+    "powered-by": "Regional innovation matchmaking platform powered by",
     "rimap-email": "rimap@uniri.hr",
-    "useful-links": "Useful Links",
-    "entities-view": "Overview",
-    "about-us": "About Us",
-    "main-search": "Search"
+    "useful-links": "Useful links",
+    "entities-view": "View",
+    "about-us": "About us",
+    "main-search": "Search",
+    "contact-entity": {
+        "default": "Make contact"
+    }
 }
+
