@@ -4,6 +4,12 @@ import {AuthToken} from '../../../../auth/core/models/auth-token';
 
 export const PublicMenuItems: MenuItem[] = [
     {
+        label: 'about-us',
+        routerLink: '/about-us',
+        routerLinkActiveOptions: {exact: true},
+        expanded: false
+    },
+    {
         label: 'news.default',
         routerLink: '/news',
         routerLinkActiveOptions: {exact: true},

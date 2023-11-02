@@ -1,11 +1,12 @@
 {
-    "name": "sakai-ng",
+    "name": "b2b-frontend",
     "version": "15.0.0",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
         "development": "ng build --configuration development",
+        "production": "ng build --configuration production",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "lint": "ng lint"
