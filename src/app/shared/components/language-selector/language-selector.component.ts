@@ -43,6 +43,6 @@ export class LanguageSelectorComponent {
 
     getTextColor(language: Language): string {
         return language.value == localStorage.getItem('language') as string ?
-            '#1bd6b7' : '#ffffff';
+            '#ffffff' : 'rgb(9, 88, 108)';
     }
 }

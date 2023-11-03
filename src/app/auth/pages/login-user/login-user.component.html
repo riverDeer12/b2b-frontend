@@ -4,52 +4,54 @@
     </div>
 </div>
 
-<div class="card p-4">
-    <form [formGroup]="loginForm" (submit)="submit()">
-        <div class="flex flex-column align-items-center justify-content-center p-8">
-            <div>
-                <div class="flex justify-content-center mb-4">
-                    <div class="flex align-items-center">
-                        <p-radioButton inputId="company" formControlName="entityType" [value]="entityType.Company"
-                        ></p-radioButton>
-                        <label for="company" class="m-2">{{'companies.default' | translate}}</label>
-                    </div>
+<div class="justify-content-center grid">
+    <div class="col-12 log:col-8 md:col-8 card mb-6">
+        <form [formGroup]="loginForm" (submit)="submit()">
+            <div class="flex flex-column align-items-center justify-content-center p-8">
+                <div>
+                    <div class="flex justify-content-center mb-4">
+                        <div class="flex align-items-center">
+                            <p-radioButton inputId="company" formControlName="entityType" [value]="entityType.Company"
+                            ></p-radioButton>
+                            <label for="company" class="m-2">{{'companies.default' | translate}}</label>
+                        </div>
 
-                    <div class="flex align-items-center">
-                        <p-radioButton inputId="scientist" formControlName="entityType" [value]="entityType.Scientist"
-                        ></p-radioButton>
-                        <label for="scientist" class="m-2">{{'scientists.default' | translate}}</label>
-                    </div>
+                        <div class="flex align-items-center">
+                            <p-radioButton inputId="scientist" formControlName="entityType" [value]="entityType.Scientist"
+                            ></p-radioButton>
+                            <label for="scientist" class="m-2">{{'scientists.default' | translate}}</label>
+                        </div>
 
-                    <div class="flex align-items-center">
-                        <p-radioButton inputId="organization" formControlName="entityType"
-                                       [value]="entityType.PublicOrganization"
-                        ></p-radioButton>
-                        <label for="organization" class="m-2">{{'organizations.default' | translate}}</label>
+                        <div class="flex align-items-center">
+                            <p-radioButton inputId="organization" formControlName="entityType"
+                                           [value]="entityType.PublicOrganization"
+                            ></p-radioButton>
+                            <label for="organization" class="m-2">{{'organizations.default' | translate}}</label>
+                        </div>
                     </div>
-                </div>
-                <div class="w-full surface-card pt-2 px-5 sm:px-8">
-                    <div class="field field col-md-12">
+                    <div class="w-full surface-card pt-2 px-5 sm:px-8">
+                        <div class="field field col-md-12">
                         <span class="p-float-label">
                             <input type="text" class="w-full p-3 md:w-30rem" pInputText id="username"
                                    formControlName="username"/>
                             <label for="username">{{ 'auth.username.default' | translate }}</label>
                         </span>
-                    </div>
-                    <div class="field field col-md-12">
+                        </div>
+                        <div class="field field col-md-12">
                         <span class="p-float-label">
                             <p-password inputStyleClass="w-full p-3 md:w-30rem" id="password"
                                         [formControlName]="'password'" [feedback]="false"
                                         [toggleMask]="true"></p-password>
                             <label for="password">{{'auth.password.default' | translate }}</label>
                         </span>
+                        </div>
+                        <p-button styleClass="w-full" icon="pi pi-sign-in" iconPos="right" type="submit"
+                                  label="{{'auth.login' | translate }}"
+                                  [loading]="isLoading"></p-button>
                     </div>
-                    <p-button styleClass="w-full" icon="pi pi-sign-in" iconPos="right" type="submit"
-                              label="{{'auth.login' | translate }}"
-                              [loading]="isLoading"></p-button>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 

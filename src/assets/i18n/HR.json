@@ -130,7 +130,7 @@
     "general": "Opći podaci",
     "choose-option": "Odaberite vrijednost",
     "email": "Email adresa",
-    "website":{
+    "website": {
         "default": "Web stranica",
         "label": "Web stranica:"
     },
@@ -620,5 +620,6 @@
     "main-search": "Pretraga",
     "contact-entity": {
         "default": "Ostvari kontakt"
-    }
+    },
+    "edih-adria-description": "EDIH Adria konzorcij (Projekt je sufinanciran od strane Europske unije prema Ugovoru o dodjeli bespovratnih sredstava br. 101083838 i Nacionalnom planu oporavka i otpornosti Republike Hrvatske 2021.-2026.)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
 }

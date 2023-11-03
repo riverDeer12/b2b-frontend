@@ -34,50 +34,71 @@ a:hover{
     background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    background-size: cover;
+    min-height: 220px;
+    justify-content: center;
 }
 
 #main-search {
     background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    background-size: cover;
+    min-height: 220px;
+    justify-content: center;
 }
 
 #companies {
     background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    background-size: cover;
+    min-height: 220px;
 }
 
 #scientists {
     background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    min-height: 220px;
+    justify-content: center;
 }
 
 #organizations {
     background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    background-size: cover;
+    min-height: 220px;
+    justify-content: center;
 }
 
 #news {
-    background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
+    background: url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    background-size: cover;
+    min-height: 220px;
+    justify-content: center;
 }
 
 #research-problems {
     background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    background-size: cover;
+    min-height: 220px;
+    justify-content: center;
 }
 
 #equipment {
     background: #0c386c url('assets/layout/images/header-01.jpg') 100% no-repeat;
     content: " ";
     z-index: 2;
+    background-size: cover;
+    min-height: 220px;
+    justify-content: center;
 }
-
 
 .simple-entity-card-button{
     width: 100%;
@@ -85,7 +106,7 @@ a:hover{
 }
 
 .simple-entity-card-button:hover{
-    background-color: #0c386c !important;
+    background-color: rgb(9, 88, 108) !important;
     color: #ffffff !important;
 }
 
@@ -95,5 +116,9 @@ a:hover{
 
 .label-icon{
     font-weight: bolder !important;
-    color: #1d508f !important;
+    color: #0c748d !important;
+}
+
+.card{
+    border-radius: 0 !important;
 }

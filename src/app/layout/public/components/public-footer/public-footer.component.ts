@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
     styleUrls: ['./public-footer.component.scss']
 })
 export class PublicFooterComponent {
-    currentYear = (new Date()).getFullYear();
+    currentYear = (new Date()).getFullYear() + '. ';
 
     constructor(public layoutService: LayoutService,
                 public router: Router,) {
