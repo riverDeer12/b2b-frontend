@@ -1,4 +1,4 @@
-<div class="flex ql-align-center mr-8">
-    <span class="p-0 m-0" [style.color]="getTextColor(language)"
+<div class="flex ql-align-center mr-6">
+    <span class="p-0 ml-2" [style.color]="getTextColor(language)"
        *ngFor="let language of languages" (click)="languageChanged(language.value)">{{ language.name | translate}}</span>
 </div>
