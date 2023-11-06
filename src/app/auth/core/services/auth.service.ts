@@ -143,7 +143,9 @@ export class AuthService {
      * @param resetPasswordEndpoint endpoint for resetting user's password.
      */
     resetPassword = (username: string, resetPasswordEndpoint: string) =>
-        this.http.post(resetPasswordEndpoint, {username});
+        this.http.post(resetPasswordEndpoint, {
+            username
+        });
 
     /**
      * Helper method for checking if

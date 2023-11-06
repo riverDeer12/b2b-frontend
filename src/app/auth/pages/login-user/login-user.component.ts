@@ -7,6 +7,10 @@ import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {EntityType} from '../../core/enums/entity-type';
+import {DialogFormComponent} from '../../../shared/components/dialog-form/dialog-form.component';
+import {FormType} from '../../../shared/enums/form-type';
+import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
+import {DialogService} from 'primeng/dynamicdialog';
 
 @Component({
     selector: 'auth-login-user',
@@ -33,6 +37,7 @@ export class LoginUserComponent {
 
     constructor(public layoutService: LayoutService,
                 private fb: FormBuilder,
+                private dialogService: DialogService,
                 private authService: AuthService,
                 private notificationService: NotificationService,
                 private translateService: TranslateService,
@@ -80,6 +85,28 @@ export class LoginUserComponent {
             this.notificationService
                 .showNotification(NotificationType.Error,
                     'auth.login-error');
+        })
+    }
+
+    openForgotPasswordDialog(): void {
+
+        if(this.loginForm.get('entityType')?.invalid){
+
+            this.notificationService
+                .showNotification(NotificationType.Error,
+                    'auth.login-type-required');
+
+            return;
+        }
+
+
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'auth.forgot-password.default',
+                formType: FormType.Create,
+                contentType: DialogContentTypes.ForgotPassword,
+                parentEntityType: this.loginForm.get('entityType')?.value as EntityType
+            }
         })
     }
 }

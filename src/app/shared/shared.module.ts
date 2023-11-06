@@ -19,6 +19,7 @@ import {DialogService} from 'primeng/dynamicdialog';
 import { SendMessageFormComponent } from './components/send-message-form/send-message-form.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import {InputTextModule} from 'primeng/inputtext';
+import {AuthComponentsModule} from '../auth/components/auth-components.module';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import {InputTextModule} from 'primeng/inputtext';
         EquipmentComponentsModule,
         ResearchProblemsComponentsModule,
         SpecificKnowledgeComponentsModule,
-        InputTextModule
+        InputTextModule,
+        AuthComponentsModule
     ],
     exports: [
         ActivityComponent,

@@ -157,6 +157,10 @@
             "required": "Password confirmation is mandatory information.",
             "mismatch": "Password confirmation must be identical to the password."
         },
+        "forgot-password": {
+            "default": "Forgot Password",
+            "description": "Please enter the correct name in the field below\nyour email address that you use to log in to the system\nSo that we can send you a login link.\n\nRecommendation: After logging into the system via\nlink change your password."
+        },
         "registration": "Registration",
         "username-password": "Username and password",
         "welcome-to-dashboard": "Successful login to RIMAP administration.",
@@ -172,8 +176,10 @@
         "resource-not-available": "Requested content is not available.",
         "back-to-home-page": "Back to home page",
         "login-error": "Your username or password is incorrect. Please try again.",
-        "successfully-changed-password": "The password has been successfully changed.",
+        "successfully-sent-change-password-email": "Reset password email is successfully sent.",
+        "error-sending-change-password-email": "Error sending reset password email.",
         "choose-login-type": "Please choose a login type",
+        "login-type-required": "For password reset you need to select login type.",
         "choose-registration-type": "Choose a registration type",
         "my-profile": "My profile"
     },
@@ -606,6 +612,7 @@
         "default": "External link",
         "label": "External link:"
     },
+    "send-email": "Send Email",
     "rimap": "Regional innovation matchmaking platform",
     "rimap-description": "Regional digital innovation platform for the transfer of knowledge between the academic community and the economy with the aim of developing the innovation ecosystem in the region. We invite you to register, enter your development proposals/needs for human resources/competencies/research equipment and search profiles other users and contact them about possible cooperation by clicking on \"Contact\".",
     "about-us-description": "RIMAP is a regional digital innovation platform for the transfer of knowledge between the academic community and the economy in the Primorje-Gorski Kotar County and beyond with the aim of developing the innovation ecosystem in the region.\n\nThe platform enables the networking of economic entities, entrepreneurs, researchers , scientists, public and non-governmental sector and other interested participants with the aim of knowledge transfer based on the results of research and development activities. The platform encourages multidirectional interaction and proactive networking to connect development projects and needs of the economic and public sector with research and innovation solutions, achievements, competences and potentials of the scientific sector.\n\n The platform enables the mapping of the needs of the economy and the public sector in the field of development and implementation of advanced digital technologies with the potential to create products and services with more added value through a multidisciplinary approach combining resources, infrastructure, knowledge, competences, and the availability of human capital in region.",

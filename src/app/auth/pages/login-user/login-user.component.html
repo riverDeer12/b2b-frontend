@@ -17,7 +17,8 @@
                         </div>
 
                         <div class="flex align-items-center">
-                            <p-radioButton inputId="scientist" formControlName="entityType" [value]="entityType.Scientist"
+                            <p-radioButton inputId="scientist" formControlName="entityType"
+                                           [value]="entityType.Scientist"
                             ></p-radioButton>
                             <label for="scientist" class="m-2">{{'scientists.default' | translate}}</label>
                         </div>
@@ -48,6 +49,9 @@
                         <p-button styleClass="w-full" icon="pi pi-sign-in" iconPos="right" type="submit"
                                   label="{{'auth.login' | translate }}"
                                   [loading]="isLoading"></p-button>
+                        <p-button (click)="openForgotPasswordDialog()" styleClass="w-full mt-2" icon="pi pi-question"
+                                  iconPos="right" type="button"
+                                  label="{{'auth.forgot-password.default' | translate }}"></p-button>
                     </div>
                 </div>
             </div>

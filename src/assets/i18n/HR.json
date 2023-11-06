@@ -157,6 +157,10 @@
             "required": "Potvrda lozinke je obavezan podatak.",
             "mismatch": "Potvrda lozinke mora biti identična lozinki."
         },
+        "forgot-password": {
+            "default": "Zaboravljena lozinka",
+            "description": "Molimo da u donje polje upišite točan naziv\nsvoje email adrese koju koristite za prijavu u sustav\nKako bismo Vam mogli poslati poveznicu za prijavu.\n\nPreporuka: Nakon prijave u sustav putem\npoveznice promijenite svoju lozinku."
+        },
         "registration": "Registracija",
         "username-password": "Korisničko ime i lozinka",
         "welcome-to-dashboard": "Uspješna prijava u RIMAP administraciju.",
@@ -172,8 +176,10 @@
         "resource-not-available": "Traženi sadržaj nije dostupan.",
         "back-to-home-page": "Povratak na naslovnu stranicu",
         "login-error": "Korisničko ime ili lozinka nisu ispravni. Pokušajte ponovno.",
-        "successfully-changed-password": "Lozinka je uspješno promijenjena.",
+        "successfully-sent-change-password-email": "Uspješno poslan email za izmjenu lozinke.",
+        "error-sending-change-password-email": "Greška prilikom slanja emaila za izmjenu lozinke.",
         "choose-login-type": "Molimo odaberite način prijave",
+        "login-type-required": "Za obnovu lozinke potrebno je odabrati način prijave.",
         "choose-registration-type": "Odaberite vrstu registracije",
         "my-profile": "Moj profil"
     },
@@ -606,6 +612,7 @@
         "default": "Vanjska poveznica",
         "label": "Vanjska poveznica:"
     },
+    "send-email": "Pošalji email",
     "rimap": "Regional innovation matchmaking platform",
     "rimap-description": "Regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva s ciljem razvoja inovacijskog ekosustava u regiji. Pozivamo Vas da se registrirate, unesete Vaše razvojne prijedloge/potrebe za ljudskim resursima/kompetencije/istraživačku opremu te pretražite profile ostalih korisnika i kontaktirate ih o mogućoj suradnji klikom na \"Kontaktiraj\".",
     "about-us-description": "RIMAP je regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva u Primorsko-goranskoj županiji i šire s ciljem razvoja inovacijskog ekosustava u regiji.\n\nPlatforma omogućuje umrežavanje gospodarskih subjekata, poduzetnika, istraživača, znanstvenika, javnog i nevladinog sektora te ostalih zainteresiranih sudionika s ciljem transfera znanja temeljenog na rezultatima istraživanja i razvojnih djelatnosti. Platforma potiče višesmjernu interakciju i proaktivno umrežavanje za povezivanje razvojnih projekata i potreba gospodarskog i javnog sektora s istraživačkim i inovacijskim rješenjima, dostignućima, kompetencijama i potencijalima znanstvenog sektora.\n\n Platforma omogućuje mapiranje potreba gospodarstva i javnog sektora na polju razvoja i implementacije naprednih digitalnih tehnologija s potencijalom stvaranja proizvoda i usluga više dodane vrijednosti kroz multidisciplinaran pristup objedinjujući resurse, infrastrukturu, znanja, kompentencije, te dostupnost ljudskog kapitala u regiji.",

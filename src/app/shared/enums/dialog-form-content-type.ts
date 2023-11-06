@@ -4,4 +4,5 @@ export enum DialogFormContentType {
     SpecificKnowledge,
     Equipment,
     Message,
+    ForgotPassword,
 }

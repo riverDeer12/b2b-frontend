@@ -20,5 +20,9 @@ export const DialogContentTypes = {
     Message: {
         type: DialogFormContentType.Message,
         dialogId: 'sendMessageFormDialog'
-    }
+    },
+    ForgotPassword: {
+        type: DialogFormContentType.ForgotPassword,
+        dialogId: 'forgotPasswordFormDialog'
+    },
 }

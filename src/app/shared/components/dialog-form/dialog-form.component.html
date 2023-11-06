@@ -47,3 +47,10 @@
     [receiverId]="parentEntityId"
     [redirectType]="dialogRedirectType">
 </send-message-form>
+
+<forgot-password
+    *ngIf="contentType.type === dialogFormContentType.ForgotPassword"
+    [dialogId]="dialogId"
+    [entityType]="parentEntityType"
+    [redirectType]="dialogRedirectType">
+</forgot-password>
