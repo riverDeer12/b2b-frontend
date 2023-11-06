@@ -106,7 +106,7 @@ export const PublicLayoutRoutes: Routes = [
         }
     },
     {
-        path: 'organizations',
+        path: 'public-organizations',
         component: PublicOrganizationsComponent,
         resolve: {
             entities: PublicOrganizationsResolver,

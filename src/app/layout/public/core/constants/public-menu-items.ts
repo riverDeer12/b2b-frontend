@@ -53,13 +53,13 @@ export const PublicMenuItems: MenuItem[] = [
         items: [
             {
                 label: 'organizations.view-all-organizations',
-                routerLink: '/organizations',
+                routerLink: '/public-organizations',
                 routerLinkActiveOptions: {exact: true},
                 expanded: false
             },
             {
                 label: 'organizations.research-problems',
-                routerLink: '/organizations/research-problems',
+                routerLink: '/public-organizations/research-problems',
                 routerLinkActiveOptions: {exact: true},
                 expanded: false
             }

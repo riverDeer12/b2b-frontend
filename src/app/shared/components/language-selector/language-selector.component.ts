@@ -39,6 +39,7 @@ export class LanguageSelectorComponent {
     languageChanged(languageValue: string): void {
         localStorage.setItem('language', languageValue);
         this.translateService.use(languageValue);
+        window.location.reload();
     }
 
     getTextColor(language: Language): string {
