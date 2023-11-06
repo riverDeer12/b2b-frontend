@@ -48,8 +48,9 @@
                     </p-tag>
                 </p>
                 <p>
+                    <i class="pi pi-info-circle label-icon"></i>
                     <label *ngIf="currentEntityType !== entityType.News"
-                           class="mr-1">{{'description.label' | translate }}</label>
+                           class="mx-1">{{'description.label' | translate }}</label>
                     <span
                         [innerHTML]="entity.getDescription(entityItem, currentEntityType) ?
                         entity.getDescription(entityItem, currentEntityType)  : 'no-data' | translate"></span>
@@ -63,7 +64,8 @@
                              [src]="entityItem.image ??
                              'assets/layout/images/image-default.png'"/>
                         <p class="text-left mt-2">
-                            <label class="mr-1">{{'description.label' | translate }}</label>
+                            <i class="pi pi-info-circle label-icon"></i>
+                            <label class="mx-1">{{'description.label' | translate }}</label>
                             <span [innerHTML]="researchProblem.localizedDescription"></span>
                         </p>
                         <p class="text-left mt-2">
@@ -83,7 +85,8 @@
                         <img alt="Card" width="100%"
                              [src]="equipment.imageUrl"/>
                         <p class="text-left mt-2">
-                            <label class="mr-1">{{'description.label' | translate }}</label>
+                            <i class="pi pi-info-circle label-icon"></i>
+                            <label class="mx-1">{{'description.label' | translate }}</label>
                             <span [innerHTML]="equipment.localizedDescription"></span>
                         </p>
                         <p-divider></p-divider>
@@ -97,7 +100,8 @@
                         <img alt="Card" width="100%"
                              [src]="specificKnowledge.imageUrl"/>
                         <p class="text-left mt-2">
-                            <label class="mr-1">{{'description.label' | translate }}</label>
+                            <i class="pi pi-info-circle label-icon"></i>
+                            <label class="mx-1">{{'description.label' | translate }}</label>
                             <span [innerHTML]="specificKnowledge.localizedDescription"></span>
                         </p>
                         <p-divider></p-divider>
