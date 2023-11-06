@@ -48,7 +48,7 @@
                     </p-tag>
                 </p>
                 <p>
-                    <i class="pi pi-info-circle label-icon"></i>
+                    <i *ngIf="currentEntityType !== entityType.News" class="pi pi-info-circle label-icon"></i>
                     <label *ngIf="currentEntityType !== entityType.News"
                            class="mx-1">{{'description.label' | translate }}</label>
                     <span

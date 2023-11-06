@@ -27,6 +27,7 @@ import {TabViewModule} from 'primeng/tabview';
 import {PublicResearchProblemsComponent} from './public-research-problems/public-research-problems.component';
 import { PublicEquipmentComponent } from './public-equipment/public-equipment.component';
 import { PublicSpecificKnowledgeComponent } from './public-specific-knowledge/public-specific-knowledge.component';
+import { PublicJobOffersComponent } from './public-job-offers/public-job-offers.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { PublicSpecificKnowledgeComponent } from './public-specific-knowledge/pu
         EntityDetailsComponent,
         PublicResearchProblemsComponent,
         PublicEquipmentComponent,
-        PublicSpecificKnowledgeComponent
+        PublicSpecificKnowledgeComponent,
+        PublicJobOffersComponent
     ],
     imports: [
         CommonModule,

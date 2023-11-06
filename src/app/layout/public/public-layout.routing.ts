@@ -33,6 +33,8 @@ import {PublicEquipmentComponent} from './pages/public-equipment/public-equipmen
 import {PublicEquipmentResolver} from './core/resolvers/equipment/public-equipment.resolver';
 import {PublicSpecificKnowledgeComponent} from './pages/public-specific-knowledge/public-specific-knowledge.component';
 import {PublicSpecificKnowledgeResolver} from './core/resolvers/specific-knowledge/public-specific-knowledge.resolver';
+import {PublicJobOffersComponent} from './pages/public-job-offers/public-job-offers.component';
+import {PublicJobOffersResolver} from './core/resolvers/job-offers/public-job-offers.resolver';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -78,6 +80,14 @@ export const PublicLayoutRoutes: Routes = [
         component: PublicCompaniesComponent,
         resolve: {
             entities: PublicCompaniesResolver,
+            categories: CategoriesResolver
+        }
+    },
+    {
+        path: 'companies/job-offers',
+        component: PublicJobOffersComponent,
+        resolve: {
+            jobOffers: PublicJobOffersResolver,
             categories: CategoriesResolver
         }
     },
