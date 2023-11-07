@@ -150,7 +150,11 @@
         "password": {
             "default": "Password",
             "required": "Password is mandatory information.",
-            "min-length": "The password must contain a minimum of 8 characters."
+            "min-length": "The password must contain a minimum of 8 characters.",
+            "weak": "Weak",
+            "standard": "Medium",
+            "strong": "Strong",
+            "enter": "Enter password"
         },
         "confirm-password": {
             "default": "Password confirmation",

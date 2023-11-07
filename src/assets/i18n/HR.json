@@ -150,7 +150,11 @@
         "password": {
             "default": "Lozinka",
             "required": "Lozinka je obavezan podatak.",
-            "min-length": "Lozinka mora sadržavati minimalno 8 znakova."
+            "min-length": "Lozinka mora sadržavati minimalno 8 znakova.",
+            "weak": "Slaba lozinka",
+            "standard": "Standardna lozinka",
+            "strong": "Jaka lozinka",
+            "enter": "Unesite lozinku"
         },
         "confirm-password": {
             "default": "Potvrda lozinke",

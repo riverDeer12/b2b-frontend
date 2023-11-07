@@ -29,6 +29,11 @@ export class Scientist {
     equipment!: Equipment[];
     specificKnowledge!: SpecificKnowledge[];
 
+    get imageUrl(): string {
+        return this.image ??
+            'assets/layout/images/image-default.png'
+    }
+
     get localizedEducationTitle(): string {
         return this.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
@@ -51,10 +56,5 @@ export class Scientist {
 
     get fullName(): string {
         return this.firstname + ' ' + this.lastname;
-    }
-
-    get imageUrl(): string {
-        return this.image ??
-            'assets/layout/images/image-default.png'
     }
 }

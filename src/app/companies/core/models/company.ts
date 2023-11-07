@@ -1,7 +1,7 @@
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Category} from '../../../categories/core/models/category';
 import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
-import {LocalizedProperty} from "../../../shared/models/localized-property";
+import {LocalizedProperty} from '../../../shared/models/localized-property';
 
 export class Company {
     id!: string;
@@ -26,7 +26,12 @@ export class Company {
     researchProblems!: ResearchProblem[];
     jobOffers!: JobOffer[];
 
-    getDescription(): string{
+    get imageUrl(): string {
+        return this.image ??
+            'assets/layout/images/image-default.png'
+    }
+
+    getDescription(): string {
         return this.description.translations.HR;
     }
 }
