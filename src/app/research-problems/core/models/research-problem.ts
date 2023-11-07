@@ -1,6 +1,5 @@
 import {Category} from '../../../categories/core/models/category';
 import {LocalizedProperty, TranslationsObject} from '../../../shared/models/localized-property';
-import {Languages} from '../../../shared/constants/languages';
 
 export class ResearchProblem {
     id!: string;
@@ -15,6 +14,11 @@ export class ResearchProblem {
     companyId!: string;
     categories!: Category[];
     isActive!: boolean;
+
+    get imageUrl(): string {
+        return this.image ??
+            'assets/layout/images/image-default.png'
+    }
 
     get parentId(): string {
         return this.companyId ?? this.publicOrganizationId;

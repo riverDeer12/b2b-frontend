@@ -3,7 +3,8 @@
         <div class="col-12 mt-2">
             <div class="p-fluid">
                 <div class="field field col-md-12 text-center" *ngIf="formType === formActionType.Edit">
-                    <img class="profile-picture" [src]="researchProblem.image" height="250" width="250">
+                    <img class="profile-picture" [src]="researchProblem.imageUrl" height="250" width="250"
+                         alt="research-problem-image">
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
                     <file-uploader name="image"
@@ -40,7 +41,8 @@
                                         formControlName="HR"
                                         rows="10">
                                     </textarea>
-                                    <label for="description-hr">{{ 'research-problems.description.default' | translate }}</label>
+                                    <label
+                                        for="description-hr">{{ 'research-problems.description.default' | translate }}</label>
                                 </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required',
@@ -91,7 +93,8 @@
                                         formControlName="EN"
                                         rows="10">
                                     </textarea>
-                                    <label for="description-en">{{ 'research-problems.description.default' | translate }}</label>
+                                    <label
+                                        for="description-en">{{ 'research-problems.description.default' | translate }}</label>
                                 </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required',
