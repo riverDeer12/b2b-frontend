@@ -1,4 +1,4 @@
-![rimap-logo](src/assets/layout/images/rimap-logo-bijeli.svg)
+![rimap-logo](https://rimap-test.uniri.hr/assets/layout/images/rimap-logo-bijeli.svg)
 
 Regional digital innovation platform for the transfer of knowledge between academic communities and the economy in the Primorje-Gorski Kotar County and beyond with the aim of developing the innovation ecosystem in the region.
 
