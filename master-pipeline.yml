@@ -23,7 +23,7 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/admin/dist'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/b2b'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactMasterDirectory)/drop_fr_master.zip'
