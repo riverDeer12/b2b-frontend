@@ -30,6 +30,7 @@ export class DefaultInterceptor implements HttpInterceptor {
             return next.handle(clonedRequest).pipe(
                 tap(
                     () => {
+                        loadingRef?.close();
                     },
                     (error) => {
                         loadingRef?.close();
