@@ -22,6 +22,14 @@ export class CompanyFormComponent {
     entityType = EntityType.Company;
 
     ngOnInit() {
-
+        this.researchProblems = this.researchProblems.map((x: ResearchProblem) =>
+            Object.assign(new ResearchProblem(), x)
+        );
+        this.jobOffers = this.jobOffers.map((x: JobOffer) =>
+            Object.assign(new JobOffer(), x)
+        );
+        this.categories = this.categories.map((x: Category) =>
+            Object.assign(new Category(), x)
+        );
     }
 }

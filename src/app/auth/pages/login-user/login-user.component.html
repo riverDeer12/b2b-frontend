@@ -11,25 +11,36 @@
                 <div>
                     <div class="flex justify-content-center mb-4">
                         <div class="flex align-items-center">
-                            <p-radioButton inputId="company" formControlName="entityType" [value]="entityType.Company"
+                            <p-radioButton class="{{validationService.getInputClass(loginForm,
+                                   'entityType', 'required')}}" inputId="company" formControlName="entityType"
+                                           [value]="entityType.Company"
                             ></p-radioButton>
                             <label for="company" class="m-2">{{'companies.default' | translate}}</label>
                         </div>
 
                         <div class="flex align-items-center">
-                            <p-radioButton inputId="scientist" formControlName="entityType"
+                            <p-radioButton class="{{validationService.getInputClass(loginForm,
+                                   'entityType', 'required')}}" inputId="scientist" formControlName="entityType"
                                            [value]="entityType.Scientist"
                             ></p-radioButton>
                             <label for="scientist" class="m-2">{{'scientists.default' | translate}}</label>
                         </div>
 
                         <div class="flex align-items-center">
-                            <p-radioButton inputId="organization" formControlName="entityType"
+                            <p-radioButton class="{{validationService.getInputClass(loginForm,
+                                   'entityType', 'required')}}" inputId="organization" formControlName="entityType"
                                            [value]="entityType.PublicOrganization"
                             ></p-radioButton>
                             <label for="organization" class="m-2">{{'organizations.default' | translate}}</label>
                         </div>
                     </div>
+
+                    <p class="text-center">
+                        <small class="p-error"
+                               *ngIf="validationService.hasErrors(loginForm, 'entityType', 'required')"
+                               id="entity-type-required">{{ 'auth.login-type-required' | translate }}</small>
+                    </p>
+
                     <div class="w-full surface-card pt-2 px-5 sm:px-8">
                         <div class="field field col-md-12">
                         <span class="p-float-label">

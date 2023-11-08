@@ -20,4 +20,9 @@ export class OrganizationFormComponent {
     entityType = EntityType.PublicOrganization;
 
     constructor() {}
+
+
+    ngOnInit(){
+
+    }
 }

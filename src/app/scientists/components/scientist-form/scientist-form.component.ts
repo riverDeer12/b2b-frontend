@@ -20,4 +20,16 @@ export class ScientistFormComponent {
     @Input() returnUrl!: string;
 
     entityType = EntityType.Scientist;
+
+    ngOnInit(){
+        this.specificKnowledge = this.specificKnowledge.map((x: SpecificKnowledge) =>
+            Object.assign(new SpecificKnowledge(), x)
+        );
+        this.equipment = this.equipment.map((x: Equipment   ) =>
+            Object.assign(new Equipment(), x)
+        );
+        this.categories = this.categories.map((x: Category) =>
+            Object.assign(new Category(), x)
+        );
+    }
 }
