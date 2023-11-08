@@ -33,18 +33,28 @@
                     <div class="w-full surface-card pt-2 px-5 sm:px-8">
                         <div class="field field col-md-12">
                         <span class="p-float-label">
-                            <input type="text" class="w-full p-3 md:w-30rem" pInputText id="username"
+                            <input type="text"
+                                   class="w-full p-3 md:w-30rem {{validationService.getInputClass(loginForm,
+                                   'username', 'required')}}"
+                                   pInputText id="username"
                                    formControlName="username"/>
                             <label for="username">{{ 'auth.username.default' | translate }}</label>
                         </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(loginForm, 'username', 'required')"
+                                   id="username-required">{{ 'auth.username.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12">
                         <span class="p-float-label">
-                            <p-password inputStyleClass="w-full p-3 md:w-30rem" id="password"
+                            <p-password inputStyleClass="w-full p-3 md:w-30rem {{validationService.getInputClass(loginForm,
+                                   'password', 'required')}}" id="password"
                                         [formControlName]="'password'" [feedback]="false"
                                         [toggleMask]="true"></p-password>
                             <label for="password">{{'auth.password.default' | translate }}</label>
                         </span>
+                            <small class="p-error"
+                                   *ngIf="validationService.hasErrors(loginForm, 'password', 'required')"
+                                   id="password-required">{{ 'auth.password.required' | translate }}</small>
                         </div>
                         <p-button styleClass="w-full" icon="pi pi-sign-in" iconPos="right" type="submit"
                                   label="{{'auth.login' | translate }}"
