@@ -20,13 +20,16 @@ import { SendMessageFormComponent } from './components/send-message-form/send-me
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import {InputTextModule} from 'primeng/inputtext';
 import {AuthComponentsModule} from '../auth/components/auth-components.module';
+import { LoaderComponent } from './components/loader/loader.component';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
     declarations: [
         ActivityComponent,
         DialogFormComponent,
         SendMessageFormComponent,
-        LanguageSelectorComponent
+        LanguageSelectorComponent,
+        LoaderComponent
     ],
     imports: [
         CommonModule,
@@ -44,7 +47,8 @@ import {AuthComponentsModule} from '../auth/components/auth-components.module';
         ResearchProblemsComponentsModule,
         SpecificKnowledgeComponentsModule,
         InputTextModule,
-        AuthComponentsModule
+        AuthComponentsModule,
+        ProgressSpinnerModule
     ],
     exports: [
         ActivityComponent,
