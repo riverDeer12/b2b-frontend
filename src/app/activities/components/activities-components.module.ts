@@ -5,6 +5,8 @@ import {ConfirmationService} from 'primeng/api';
 import {MostPopularEntitiesComponent} from './most-popular-entities/most-popular-entities.component';
 import {TabViewModule} from 'primeng/tabview';
 import {TranslateModule} from '@ngx-translate/core';
+import {ChartModule} from 'primeng/chart';
+import {FieldsetModule} from 'primeng/fieldset';
 
 @NgModule({
     declarations: [
@@ -14,7 +16,9 @@ import {TranslateModule} from '@ngx-translate/core';
     imports: [
         CommonModule,
         TabViewModule,
-        TranslateModule
+        TranslateModule,
+        ChartModule,
+        FieldsetModule
     ],
     exports: [
         ActivityListComponent,

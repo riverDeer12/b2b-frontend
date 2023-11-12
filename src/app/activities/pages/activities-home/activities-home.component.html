@@ -3,6 +3,7 @@
     <h5>{{'activities.created-entities' | translate }}</h5>
 
     <activity-list
+        [dataType]="activityType.Created"
         [companies]="lastActivities.createdCompanies"
         [organizations]="lastActivities.createdPublicOrganizations"
         [scientists]="lastActivities.createdScientists"
@@ -19,6 +20,7 @@
     <h5>{{'activities.updated-entities' | translate }}</h5>
 
     <activity-list
+        [dataType]="activityType.Updated"
         [companies]="lastActivities.updatedCompanies"
         [organizations]="lastActivities.updatedPublicOrganizations"
         [scientists]="lastActivities.updatedScientists"
@@ -33,14 +35,11 @@
 
 <div class="m-4">
     <h5>{{'activities.most-popular-entities' | translate }}</h5>
-
-    <p>TO-DO</p>
-
-    <!--<most-popular-entities
-        [organizations]="mostPopularOrganizations"
-        [scientists]="mostPopularScientists"
-        [companies]="mostPopularCompanies"
-        [news]="mostPopularNews">
+<!--    <most-popular-entities
+        [organizations]="mostPopular.mostPopularPublicOrganizations"
+        [scientists]="mostPopular.mostPopularScientists"
+        [companies]="mostPopular.mostPopularCompanies"
+        [news]="mostPopular.mostPopularNews">
     </most-popular-entities>-->
 </div>
 

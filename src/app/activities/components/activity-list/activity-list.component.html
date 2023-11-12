@@ -1,11 +1,100 @@
-<p-tabView>
-    <p-tabPanel header="{{ 'companies.default' | translate }}" class="line-height-3 m-0">
+<p-fieldset>
+    <ng-template pTemplate="header">
+        <div class="flex align-items-center text-primary">
+            <span class="pi pi-building mr-2"></span>
+            <span class="font-bold text-lg">{{'companies.default' | translate }}</span>
+        </div>
+    </ng-template>
+    <p-tabView>
+        <p-tabPanel header="{{ 'activities.'+ dataType + '-companies' | translate }}" class="line-height-3 m-0">
+            <div *ngIf="companies?.length">
+                <p *ngFor="let company of companies">
+                    <a [href]="'/admin/companies/edit/' + company.id" target="_blank">{{company.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!companies?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+        <p-tabPanel header="{{ 'activities.companies-with-'+ dataType + '-research-problems' | translate }}"
+                    class="line-height-3 m-0">
+            <div *ngIf="companiesWithResearchProblems?.length">
+                <p *ngFor="let company of companiesWithResearchProblems">
+                    <a [href]="'/admin/companies/edit/' + company.id" target="_blank">{{company.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!companiesWithResearchProblems?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+        <p-tabPanel header="{{ 'activities.companies-with-'+ dataType + '-job-offers' | translate }}"
+                    class="line-height-3 m-0">
+            <div *ngIf="companiesWithJobOffers?.length">
+                <p *ngFor="let company of companiesWithJobOffers">
+                    <a [href]="'/admin/companies/edit/' + company.id" target="_blank">{{company.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!companiesWithJobOffers?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+    </p-tabView>
+</p-fieldset>
 
-    </p-tabPanel>
-    <p-tabPanel header="{{ 'scientists.default' | translate }}" class="line-height-3 m-0">
+<p-fieldset>
+    <ng-template pTemplate="header">
+        <div class="flex align-items-center text-primary">
+            <span class="pi pi-building mr-2"></span>
+            <span class="font-bold text-lg">{{'scientists.default' | translate }}</span>
+        </div>
+    </ng-template>
+    <p-tabView>
+        <p-tabPanel header="{{ 'activities.'+ dataType + '-scientists' | translate }}" class="line-height-3 m-0">
+            <div *ngIf="scientists?.length">
+                <p *ngFor="let scientist of scientists">
+                    <a [href]="'/admin/scientists/edit/' + scientist.id" target="_blank">{{scientist.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!scientists?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+        <p-tabPanel header="{{ 'activities.scientists-with-'+ dataType + '-equipment' | translate }}" class="line-height-3 m-0">
+            <div *ngIf="scientistsWithEquipment?.length">
+                <p *ngFor="let scientist of scientistsWithEquipment">
+                    <a [href]="'/admin/scientists/edit/' + scientist.id" target="_blank">{{scientist.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!scientistsWithEquipment?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+        <p-tabPanel header="{{ 'activities.scientists-with-'+ dataType + '-specific-knowledge' | translate }}" class="line-height-3 m-0">
+            <div *ngIf="scientistsWithSpecificKnowledge?.length">
+                <p *ngFor="let scientist of scientistsWithSpecificKnowledge">
+                    <a [href]="'/admin/scientists/edit/' + scientist.id" target="_blank">{{scientist.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!scientistsWithSpecificKnowledge?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+    </p-tabView>
+</p-fieldset>
 
-    </p-tabPanel>
-    <p-tabPanel header="{{ 'organizations.default' | translate }}" class="line-height-3 m-0">
+<p-fieldset>
+    <ng-template pTemplate="header">
+        <div class="flex align-items-center text-primary">
+            <span class="pi pi-building mr-2"></span>
+            <span class="font-bold text-lg">{{'organizations.default' | translate }}</span>
+        </div>
+    </ng-template>
+    <p-tabView>
+        <p-tabPanel header="{{ 'activities.'+ dataType + '-organizations' | translate }}" class="line-height-3 m-0">
+            <div *ngIf="organizations?.length">
+                <p *ngFor="let organization of organizations">
+                    <a [href]="'/admin/organizations/edit/' + organization.id" target="_blank">{{organization.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!organizations?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+        <p-tabPanel header="{{ 'activities.organizations-with-'+ dataType + '-research-problems' | translate }}"
+                    class="line-height-3 m-0">
+            <div *ngIf="organizationsWithResearchProblems?.length">
+                <p *ngFor="let organization of organizationsWithResearchProblems">
+                    <a [href]="'/admin/organizations/edit/' + organization.id" target="_blank">{{organization.name}}</a>
+                </p>
+            </div>
+            <span *ngIf="!organizationsWithResearchProblems?.length">{{'no-data' | translate}}</span>
+        </p-tabPanel>
+    </p-tabView>
+</p-fieldset>
 
-    </p-tabPanel>
-</p-tabView>
