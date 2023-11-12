@@ -13,15 +13,22 @@ import {Activity} from '../models/activity';
 })
 export class ActivitiesService {
 
-    endpointUrl = environment.apiUrl + '/activity';
+    endpointUrl = environment.apiUrl + '/activity/';
 
     constructor(private http: HttpClient) {
     }
 
     /**
      * Get report for last
-     * activities for main entities.
+     * activities on platform.
      */
     getLastActivities = () =>
-        this.http.get<Activity>(this.endpointUrl + '/get');
+        this.http.get<Activity>(this.endpointUrl);
+
+    /**
+     * Get report for most
+     * popular main entities on platform.
+     */
+    getMostPopularEntities = () =>
+        this.http.get<Activity>(this.endpointUrl + 'most-popular');
 }

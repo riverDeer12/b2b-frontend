@@ -5,23 +5,27 @@ import {ActivityCreateComponent} from './activity-create/activity-create.compone
 import {ActivitiesHomeComponent} from './activities-home/activities-home.component';
 import {ActivityEditComponent} from './activity-edit/activity-edit.component';
 import {RouterModule} from '@angular/router';
+import {TranslateModule} from '@ngx-translate/core';
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
-  declarations: [
-    ActivitiesHomeComponent,
-    ActivityCreateComponent,
-    ActivityEditComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ActivitiesComponentsModule
-  ],
-  exports: [
-    ActivitiesHomeComponent,
-    ActivityCreateComponent,
-    ActivityEditComponent
-  ]
+    declarations: [
+        ActivitiesHomeComponent,
+        ActivityCreateComponent,
+        ActivityEditComponent
+    ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        ActivitiesComponentsModule,
+        TranslateModule
+    ],
+    exports: [
+        ActivitiesHomeComponent,
+        ActivityCreateComponent,
+        ActivityEditComponent
+    ],
+    providers: [ConfirmationService]
 })
 export class ActivitiesPagesModule {
 }

@@ -6,22 +6,17 @@ import {
 } from '@angular/router';
 import {Observable, of} from 'rxjs';
 import {ActivitiesService} from "../services/activities.service";
+import {Activity} from '../models/activity';
 
 @Injectable({
     providedIn: 'root'
 })
-export class LastActivitiesResolver implements Resolve<object> {
+export class LastActivitiesResolver implements Resolve<Activity> {
 
     constructor(private router: Router, private service: ActivitiesService) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<object> {
-        const routeId = route.paramMap.get('id');
-
-        if (!routeId) {
-            this.router.navigateByUrl('admin/categories').then();
-        }
-
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Activity> {
         return this.service.getLastActivities();
     }
 }

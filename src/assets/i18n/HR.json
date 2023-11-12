@@ -554,7 +554,9 @@
         "last-scientist-activities": "Zadnje aktivnosti istraživača",
         "last-company-activities": "Zadnje aktivnosti tvrtki",
         "last-organization-activities": "Zadnje aktivnosti javnog sektora",
-        "most-popular-entities": "Najpopularniji korisnici na platformi"
+        "most-popular-entities": "Najpopularniji korisnici na platformi",
+        "created-entities": "Novi entiteti i podentiteti platforme",
+        "updated-entities": "Ažurirani entiteti i podentiteti platforme"
     },
     "news": {
         "default": "Objave",

@@ -367,13 +367,6 @@
             "default": "Newsletter category",
             "required": "Newsletter categories are mandatory information."
         },
-        "activities": {
-            "default": "Last Activities on Platform",
-            "last-scientist-activities": "Last Scientist Activities",
-            "last-company-activities": "Last Company Activities",
-            "last-organization-activities": "Last Organization Activities",
-            "most-popular-entities": "Most Popular Users on Platform"
-        },
         "categories": "Categories",
         "category-items": "categories",
         "items": "category",
@@ -555,6 +548,15 @@
         "new-equipment": "New research equipment",
         "latest-equipment": "New registered research equipment",
         "view-all-equipment": "View all research equipment"
+    },
+    "activities": {
+        "default": "Last Activities on Platform",
+        "last-scientist-activities": "Last Scientist Activities",
+        "last-company-activities": "Last Company Activities",
+        "last-organization-activities": "Last Organization Activities",
+        "most-popular-entities": "Most Popular Users on Platform",
+        "created-entities": "New Entities on Platform",
+        "updated-entities": "Updated Entities on Platform"
     },
     "news": {
         "default": "Posts",

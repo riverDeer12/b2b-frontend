@@ -1,1 +1,46 @@
 
+<div class="mt-6 m-4">
+    <h5>{{'activities.created-entities' | translate }}</h5>
+
+    <activity-list
+        [companies]="lastActivities.createdCompanies"
+        [organizations]="lastActivities.createdPublicOrganizations"
+        [scientists]="lastActivities.createdScientists"
+        [companiesWithJobOffers]="lastActivities.companiesWithCreatedJobOffers"
+        [scientistsWithEquipment]="lastActivities.scientistsWithCreatedEquipment"
+        [scientistsWithSpecificKnowledge]="lastActivities.scientistsWithCreatedSpecificKnowledge"
+        [companiesWithResearchProblems]="lastActivities.companiesWithCreatedResearchProblems"
+        [organizationsWithResearchProblems]="lastActivities.publicOrganizationsWithCreatedResearchProblems">
+    </activity-list>
+</div>
+
+
+<div class="m-4">
+    <h5>{{'activities.updated-entities' | translate }}</h5>
+
+    <activity-list
+        [companies]="lastActivities.updatedCompanies"
+        [organizations]="lastActivities.updatedPublicOrganizations"
+        [scientists]="lastActivities.updatedScientists"
+        [companiesWithJobOffers]="lastActivities.companiesWithUpdatedJobOffers"
+        [scientistsWithEquipment]="lastActivities.scientistsWithCreatedEquipment"
+        [scientistsWithSpecificKnowledge]="lastActivities.scientistsWithUpdatedSpecificKnowledge"
+        [companiesWithResearchProblems]="lastActivities.companiesWithUpdatedResearchProblems"
+        [organizationsWithResearchProblems]="lastActivities.publicOrganizationsWithUpdatedResearchProblems">
+    </activity-list>
+</div>
+
+
+<div class="m-4">
+    <h5>{{'activities.most-popular-entities' | translate }}</h5>
+
+    <p>TO-DO</p>
+
+    <!--<most-popular-entities
+        [organizations]="mostPopularOrganizations"
+        [scientists]="mostPopularScientists"
+        [companies]="mostPopularCompanies"
+        [news]="mostPopularNews">
+    </most-popular-entities>-->
+</div>
+
