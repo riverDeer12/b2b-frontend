@@ -367,6 +367,13 @@
             "default": "Newsletter category",
             "required": "Newsletter categories are mandatory information."
         },
+        "activities": {
+            "default": "Last Activities on Platform",
+            "last-scientist-activities": "Last Scientist Activities",
+            "last-company-activities": "Last Company Activities",
+            "last-organization-activities": "Last Organization Activities",
+            "most-popular-entities": "Most Popular Users on Platform"
+        },
         "categories": "Categories",
         "category-items": "categories",
         "items": "category",

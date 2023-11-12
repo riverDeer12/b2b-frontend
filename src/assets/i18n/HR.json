@@ -549,6 +549,13 @@
         "latest-equipment": "Nova registrirana istraživačka oprema",
         "view-all-equipment": "Pogledaj svu istraživačku opremu"
     },
+    "activities": {
+        "default": "Zadnje aktivnosti na RIMAP platformi",
+        "last-scientist-activities": "Zadnje aktivnosti istraživača",
+        "last-company-activities": "Zadnje aktivnosti tvrtki",
+        "last-organization-activities": "Zadnje aktivnosti javnog sektora",
+        "most-popular-entities": "Najpopularniji korisnici na platformi"
+    },
     "news": {
         "default": "Objave",
         "news-item": "objava",
