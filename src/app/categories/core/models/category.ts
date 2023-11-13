@@ -11,7 +11,6 @@ export class Category {
 
     }
 
-
     get localizedDescription(): string {
         return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }

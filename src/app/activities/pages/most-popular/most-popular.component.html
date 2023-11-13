@@ -1,0 +1,34 @@
+<h4>{{'activities.most-popular-entities-on-platform' | translate}}</h4>
+
+<div class="grid m-4">
+    <div class="col-12 lg:col-6 md:col-6">
+        <h5>{{'activities.most-popular-companies' | translate }}</h5>
+        <most-popular-entities
+            [entities]="mostPopular.mostPopularCompanies">
+        </most-popular-entities>
+    </div>
+    <div class="col-12 lg:col-6 md:col-6">
+        <h5>{{'activities.most-popular-scientists' | translate }}</h5>
+        <most-popular-entities
+            [entities]="mostPopular.mostPopularScientists">
+        </most-popular-entities>
+    </div>
+</div>
+
+<div class="grid m-4">
+    <div class="col-12 lg:col-6 md:col-6">
+        <h5>{{'activities.most-popular-organizations' | translate }}</h5>
+        <most-popular-entities
+            [entities]="mostPopular.mostPopularPublicOrganizations">
+        </most-popular-entities>
+    </div>
+</div>
+
+<div class="grid m-4">
+    <div class="col-12 lg:col-10 md:col-10">
+        <h5>{{'activities.most-popular-news' | translate }}</h5>
+        <most-popular-entities
+            [entities]="mostPopular.mostPopularNews">
+        </most-popular-entities>
+    </div>
+</div>

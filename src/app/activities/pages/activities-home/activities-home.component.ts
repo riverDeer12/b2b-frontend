@@ -31,5 +31,4 @@ export class ActivitiesHomeComponent implements OnInit {
             this.mostPopular = Object.assign(response, new MostPopular());
         });
     }
-
 }

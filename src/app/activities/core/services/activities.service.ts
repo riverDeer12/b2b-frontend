@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {Activity} from '../models/activity';
+import {MostPopular} from '../models/most-popular';
 
 /**
  * Service that provides communication between
@@ -14,6 +15,8 @@ import {Activity} from '../models/activity';
 export class ActivitiesService {
 
     endpointUrl = environment.apiUrl + '/activity/';
+
+    private mostPopularEntities = 5;
 
     constructor(private http: HttpClient) {
     }
@@ -30,5 +33,6 @@ export class ActivitiesService {
      * popular main entities on platform.
      */
     getMostPopularEntities = () =>
-        this.http.get<Activity>(this.endpointUrl + 'most-popular');
+        this.http.get<MostPopular>(this.endpointUrl +
+            'most-popular/?numberOfEntitiesToReturn=' + this.mostPopularEntities);
 }

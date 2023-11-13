@@ -21,7 +21,21 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'dashboard.default',
                         icon: 'pi pi-fw pi-chart-line',
-                        routerLink: ['/admin/activities']
+                        expanded: true,
+                        items:[
+                            {
+                                label: 'activities.last-activities',
+                                icon: 'pi pi-fw pi-chart-line',
+                                routerLinkActiveOptions: {exact: true},
+                                routerLink: ['/admin/activities'],
+                            },
+                            {
+                                label: 'activities.most-popular-entities',
+                                icon: 'pi pi-fw pi-chart-line',
+                                routerLinkActiveOptions: {exact: true},
+                                routerLink: ['/admin/activities/most-popular'],
+                            }
+                        ]
                     },
                     {
                         label: 'news.default',

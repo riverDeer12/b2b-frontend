@@ -7,12 +7,14 @@ import {ActivityEditComponent} from './activity-edit/activity-edit.component';
 import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 import {ConfirmationService} from 'primeng/api';
+import { MostPopularComponent } from './most-popular/most-popular.component';
 
 @NgModule({
     declarations: [
         ActivitiesHomeComponent,
         ActivityCreateComponent,
-        ActivityEditComponent
+        ActivityEditComponent,
+        MostPopularComponent
     ],
     imports: [
         CommonModule,
