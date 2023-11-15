@@ -11,9 +11,10 @@
         <p>
             <i class="pi pi-globe label-icon"></i>
             <label class="ml-1">{{'website.label' | translate}}</label>
-            <a href="{{website}}" target="_blank">
+            <a *ngIf="website" href="{{website}}" target="_blank">
                 {{shortWebsite ? shortWebsite : 'no-data' | translate }}
             </a>
+            <span class="ml-1" *ngIf="!website">{{'no-data' | translate }}</span>
         </p>
         <p style="height: 40px;">
             <i class="pi pi-tags label-icon"></i>
