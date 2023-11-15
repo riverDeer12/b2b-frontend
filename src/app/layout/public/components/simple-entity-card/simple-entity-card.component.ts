@@ -21,19 +21,19 @@ export class SimpleEntityCardComponent {
 
 
     get shortContent(): string {
-        if (this.content.length < 100) {
+        if (this.content.length < 80) {
             return this.content;
         }
 
-        return this.content.slice(0, 100) + '...';
+        return this.content.slice(0, 80) + '...';
     }
 
     get shortTitle(): string {
-        if (this.title.length < 100) {
+        if (this.title.length < 60) {
             return this.title;
         }
 
-        return this.title.slice(0, 100) + '...';
+        return this.title.slice(0, 60) + '...';
     }
 
     /**
