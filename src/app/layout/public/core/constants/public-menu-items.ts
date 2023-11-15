@@ -91,6 +91,12 @@ export const PublicMenuItems: MenuItem[] = [
         ]
     },
     {
+        label: 'activities.default',
+        routerLink: '/most-popular',
+        routerLinkActiveOptions: {exact: true},
+        expanded: false
+    },
+    {
         label: 'auth.login',
         routerLink: '/login',
         routerLinkActiveOptions: {exact: true},

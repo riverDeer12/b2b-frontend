@@ -35,6 +35,9 @@ import {PublicSpecificKnowledgeComponent} from './pages/public-specific-knowledg
 import {PublicSpecificKnowledgeResolver} from './core/resolvers/specific-knowledge/public-specific-knowledge.resolver';
 import {PublicJobOffersComponent} from './pages/public-job-offers/public-job-offers.component';
 import {PublicJobOffersResolver} from './core/resolvers/job-offers/public-job-offers.resolver';
+import {ActivitiesHomeComponent} from '../../activities/pages/activities-home/activities-home.component';
+import {MostPopularComponent} from '../../activities/pages/most-popular/most-popular.component';
+import {MostPopularResolver} from '../../activities/core/resolvers/most-popular.resolver';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -153,6 +156,13 @@ export const PublicLayoutRoutes: Routes = [
             entity: MyProfileResolver,
             categories: CategoriesResolver,
             entityType: EntityTypeResolver
+        }
+    },
+    {
+        path: 'most-popular',
+        component: MostPopularComponent,
+        resolve:{
+            mostPopular: MostPopularResolver
         }
     }
 ]
