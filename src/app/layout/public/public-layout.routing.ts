@@ -38,6 +38,7 @@ import {PublicJobOffersResolver} from './core/resolvers/job-offers/public-job-of
 import {ActivitiesHomeComponent} from '../../activities/pages/activities-home/activities-home.component';
 import {MostPopularComponent} from '../../activities/pages/most-popular/most-popular.component';
 import {MostPopularResolver} from '../../activities/core/resolvers/most-popular.resolver';
+import {PublicMostPopularComponent} from "./pages/public-most-popular/public-most-popular.component";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -160,7 +161,7 @@ export const PublicLayoutRoutes: Routes = [
     },
     {
         path: 'most-popular',
-        component: MostPopularComponent,
+        component: PublicMostPopularComponent,
         resolve:{
             mostPopular: MostPopularResolver
         }

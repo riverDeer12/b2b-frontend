@@ -25,9 +25,12 @@ import {ChipsModule} from 'primeng/chips';
 import {DividerModule} from 'primeng/divider';
 import {TabViewModule} from 'primeng/tabview';
 import {PublicResearchProblemsComponent} from './public-research-problems/public-research-problems.component';
-import { PublicEquipmentComponent } from './public-equipment/public-equipment.component';
-import { PublicSpecificKnowledgeComponent } from './public-specific-knowledge/public-specific-knowledge.component';
-import { PublicJobOffersComponent } from './public-job-offers/public-job-offers.component';
+import {PublicEquipmentComponent} from './public-equipment/public-equipment.component';
+import {PublicSpecificKnowledgeComponent} from './public-specific-knowledge/public-specific-knowledge.component';
+import {PublicJobOffersComponent} from './public-job-offers/public-job-offers.component';
+import {PublicMostPopularComponent} from './public-most-popular/public-most-popular.component';
+import {ActivitiesPagesModule} from "../../../activities/pages/activities-pages.module";
+import {ActivitiesComponentsModule} from "../../../activities/components/activities-components.module";
 
 @NgModule({
     declarations: [
@@ -43,7 +46,8 @@ import { PublicJobOffersComponent } from './public-job-offers/public-job-offers.
         PublicResearchProblemsComponent,
         PublicEquipmentComponent,
         PublicSpecificKnowledgeComponent,
-        PublicJobOffersComponent
+        PublicJobOffersComponent,
+        PublicMostPopularComponent
     ],
     imports: [
         CommonModule,
@@ -62,7 +66,9 @@ import { PublicJobOffersComponent } from './public-job-offers/public-job-offers.
         TagModule,
         ChipsModule,
         DividerModule,
-        TabViewModule
+        TabViewModule,
+        ActivitiesPagesModule,
+        ActivitiesComponentsModule
     ],
     exports: [
         AboutUsComponent,

@@ -1,0 +1,44 @@
+<div id="news" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+    <div class="mx-4 md:mx-8 mt-0 md:mt-4 mb-6 text-center">
+        <h1 class="text-6xl font-bold line-height-2 text-100">{{ 'activities.default' | translate }}</h1>
+    </div>
+</div>
+
+<div class="justify-content-center grid">
+    <div class="lg:col-10 md:col-10 col-12">
+        <div class="grid lg:m-4 md:m-4">
+            <div class="col-12 lg:col-6 md:col-6">
+                <h5>{{'activities.most-popular-companies' | translate }}</h5>
+                <most-popular-entities
+                    [entities]="mostPopular.mostPopularCompanies">
+                </most-popular-entities>
+            </div>
+            <div class="col-12 lg:col-6 md:col-6">
+                <h5>{{'activities.most-popular-scientists' | translate }}</h5>
+                <most-popular-entities
+                    [entities]="mostPopular.mostPopularScientists">
+                </most-popular-entities>
+            </div>
+        </div>
+
+        <div class="grid lg:m-4 md:m-4">
+            <div class="col-12 lg:col-6 md:col-6">
+                <h5>{{'activities.most-popular-organizations' | translate }}</h5>
+                <most-popular-entities
+                    [entities]="mostPopular.mostPopularPublicOrganizations">
+                </most-popular-entities>
+            </div>
+        </div>
+
+        <div class="grid lg:m-4 md:m-4">
+            <div class="col-12 lg:col-10 md:col-10">
+                <h5>{{'activities.most-popular-news' | translate }}</h5>
+                <most-popular-entities
+                    [entities]="mostPopular.mostPopularNews">
+                </most-popular-entities>
+            </div>
+        </div>
+
+    </div>
+</div>
+

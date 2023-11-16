@@ -25,7 +25,8 @@ import { MostPopularComponent } from './most-popular/most-popular.component';
     exports: [
         ActivitiesHomeComponent,
         ActivityCreateComponent,
-        ActivityEditComponent
+        ActivityEditComponent,
+        MostPopularComponent
     ],
     providers: [ConfirmationService]
 })
