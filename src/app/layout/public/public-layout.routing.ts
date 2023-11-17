@@ -27,7 +27,7 @@ import {CategoriesResolver} from '../../categories/core/resolvers/categories.res
 import {EntityTypeResolver} from './core/resolvers/common/entity-type.resolver';
 import {EntityDetailsResolver} from './core/resolvers/common/entity-details.resolver';
 import {EntityDetailsComponent} from './pages/entity-details/entity-details.component';
-import {PublicResearchProblemsComponent} from './pages/public-research-problems/public-research-problems.component';
+import {PublicCompanyResearchProblemsComponent} from './pages/public-company-research-problems/public-company-research-problems.component';
 import {PublicResearchProblemsResolver} from './core/resolvers/research-problems/public-research-problems.resolver';
 import {PublicEquipmentComponent} from './pages/public-equipment/public-equipment.component';
 import {PublicEquipmentResolver} from './core/resolvers/equipment/public-equipment.resolver';
@@ -35,10 +35,11 @@ import {PublicSpecificKnowledgeComponent} from './pages/public-specific-knowledg
 import {PublicSpecificKnowledgeResolver} from './core/resolvers/specific-knowledge/public-specific-knowledge.resolver';
 import {PublicJobOffersComponent} from './pages/public-job-offers/public-job-offers.component';
 import {PublicJobOffersResolver} from './core/resolvers/job-offers/public-job-offers.resolver';
-import {ActivitiesHomeComponent} from '../../activities/pages/activities-home/activities-home.component';
-import {MostPopularComponent} from '../../activities/pages/most-popular/most-popular.component';
 import {MostPopularResolver} from '../../activities/core/resolvers/most-popular.resolver';
 import {PublicMostPopularComponent} from "./pages/public-most-popular/public-most-popular.component";
+import {
+    PublicOrganizationResearchProblemsComponent
+} from "./pages/public-organization-research-problems/public-organization-research-problems.component";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -96,6 +97,14 @@ export const PublicLayoutRoutes: Routes = [
         }
     },
     {
+        path: 'companies/research-problems',
+        component: PublicCompanyResearchProblemsComponent,
+        resolve: {
+            researchProblems: PublicResearchProblemsResolver,
+            categories: CategoriesResolver
+        }
+    },
+    {
         path: 'scientists',
         component: PublicScientistsComponent,
         resolve: {
@@ -128,18 +137,18 @@ export const PublicLayoutRoutes: Routes = [
         }
     },
     {
-        path: 'news',
-        component: PublicNewsComponent,
+        path: 'public-organizations/research-problems',
+        component: PublicOrganizationResearchProblemsComponent,
         resolve: {
-            entities: PublicNewsListResolver,
+            researchProblems: PublicResearchProblemsResolver,
             categories: CategoriesResolver
         }
     },
     {
-        path: ':entityType/research-problems',
-        component: PublicResearchProblemsComponent,
+        path: 'news',
+        component: PublicNewsComponent,
         resolve: {
-            researchProblems: PublicResearchProblemsResolver,
+            entities: PublicNewsListResolver,
             categories: CategoriesResolver
         }
     },

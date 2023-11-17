@@ -18,7 +18,8 @@ export class PublicResearchProblemsResolver implements Resolve<ResearchProblem[]
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ResearchProblem[]> {
-        const entityType = route.paramMap.get('entityType') as EntityType;
+
+        const entityType = route.routeConfig?.path?.split('/')[0] as EntityType;
 
         const companyOrOrganization = entityType == EntityType.PublicOrganization || entityType == EntityType.Company;
 

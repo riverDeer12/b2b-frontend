@@ -24,13 +24,14 @@ import {TagModule} from 'primeng/tag';
 import {ChipsModule} from 'primeng/chips';
 import {DividerModule} from 'primeng/divider';
 import {TabViewModule} from 'primeng/tabview';
-import {PublicResearchProblemsComponent} from './public-research-problems/public-research-problems.component';
+import {PublicCompanyResearchProblemsComponent} from './public-company-research-problems/public-company-research-problems.component';
 import {PublicEquipmentComponent} from './public-equipment/public-equipment.component';
 import {PublicSpecificKnowledgeComponent} from './public-specific-knowledge/public-specific-knowledge.component';
 import {PublicJobOffersComponent} from './public-job-offers/public-job-offers.component';
 import {PublicMostPopularComponent} from './public-most-popular/public-most-popular.component';
 import {ActivitiesPagesModule} from "../../../activities/pages/activities-pages.module";
 import {ActivitiesComponentsModule} from "../../../activities/components/activities-components.module";
+import { PublicOrganizationResearchProblemsComponent } from './public-organization-research-problems/public-organization-research-problems.component';
 
 @NgModule({
     declarations: [
@@ -43,11 +44,12 @@ import {ActivitiesComponentsModule} from "../../../activities/components/activit
         PublicScientistsComponent,
         RegistrationComponent,
         EntityDetailsComponent,
-        PublicResearchProblemsComponent,
+        PublicCompanyResearchProblemsComponent,
         PublicEquipmentComponent,
         PublicSpecificKnowledgeComponent,
         PublicJobOffersComponent,
-        PublicMostPopularComponent
+        PublicMostPopularComponent,
+        PublicOrganizationResearchProblemsComponent
     ],
     imports: [
         CommonModule,
@@ -80,7 +82,7 @@ import {ActivitiesComponentsModule} from "../../../activities/components/activit
         PublicScientistsComponent,
         RegistrationComponent,
         EntityDetailsComponent,
-        PublicResearchProblemsComponent
+        PublicCompanyResearchProblemsComponent
     ]
 })
 export class PublicLayoutPagesModule {

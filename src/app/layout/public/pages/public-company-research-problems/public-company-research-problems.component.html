@@ -1,0 +1,17 @@
+<div id="research-problems" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+    <div class="mx-4 md:mx-8 mt-0 md:mt-4 mb-6 text-center">
+        <h1 class="text-6xl font-bold text-100 line-height-2">{{ 'companies.company-research-problems' | translate }}</h1>
+    </div>
+</div>
+
+<div class="justify-content-center grid">
+    <div class="lg:col-10 md:col-10 col-12">
+        <entity-data-view
+            [entities]="researchProblems"
+            [entityType]="type.ResearchProblem"
+            [categories]="categories"
+            [parentEntityType]="parentEntityType"
+            filterField="localizedTitle"
+        ></entity-data-view>
+    </div>
+</div>
