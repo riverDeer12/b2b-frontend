@@ -12,7 +12,7 @@ import {ResearchProblem} from '../../../../research-problems/core/models/researc
 export class PublicCompanyResearchProblemsComponent {
     researchProblems!: ResearchProblem[];
     categories!: Category[];
-    parentEntityType!: EntityType.Company;
+    parentEntityType = EntityType.Company;
 
     public get type(): typeof EntityType {
         return EntityType;

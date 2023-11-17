@@ -12,7 +12,8 @@ import {ActivatedRoute} from "@angular/router";
 export class PublicOrganizationResearchProblemsComponent {
     researchProblems!: ResearchProblem[];
     categories!: Category[];
-    parentEntityType!: EntityType.PublicOrganization;
+
+    parentEntityType = EntityType.PublicOrganization;
 
     public get type(): typeof EntityType {
         return EntityType;
