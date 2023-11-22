@@ -241,7 +241,11 @@
                            id="categories-input">{{ 'categories.required' | translate }}</small>
                 </div>
                 <div class="field field col-md-12">
-                    <span class="p-float-label">
+                    <small class="helper-text">
+                        <i class="pi pi-info-circle"></i>
+                        {{'categories.tags.please-hit-enter' | translate }}
+                    </small>
+                    <span class="p-float-label mt-1">
                         <p-chips class="{{validationService.getInputClass(form, 'categoryTags', 'required')}}"
                                  aria-describedby="tags-input"
                                  id="tags" formControlName="categoryTags"></p-chips>

@@ -361,7 +361,8 @@
         "tags": {
             "default": "Keywords",
             "label": "Areas of interest:",
-            "required": "Keywords are mandatory information."
+            "required": "Keywords are mandatory information.",
+            "please-hit-enter": "Hit \"ENTER\" button after keyword."
         },
         "newsletter-categories": {
             "default": "Newsletter category",
