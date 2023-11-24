@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'equipment',
@@ -7,7 +6,6 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./equipment.component.scss']
 })
 export class EquipmentComponent {
-    constructor(private translateService: TranslateService) {
-        ;
+    constructor() {
     }
 }

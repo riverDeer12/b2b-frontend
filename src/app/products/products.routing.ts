@@ -9,14 +9,14 @@ export const ProductsRoutes: Routes = [
         path: '',
         component: ProductsHomeComponent,
         resolve: {
-            equipment: ProductsListResolver
+            products: ProductsListResolver
         }
     },
     {
         path: 'edit/:company-id/:id',
         component: ProductEditComponent,
         resolve: {
-            equipment: ProductResolver
+            product: ProductResolver
         }
     }
 ]
