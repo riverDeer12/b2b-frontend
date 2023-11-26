@@ -22,6 +22,7 @@ import {EntityDataViewComponent} from './entity-data-view/entity-data-view.compo
 import {InputTextModule} from 'primeng/inputtext';
 import {RouterModule} from '@angular/router';
 import {TagModule} from 'primeng/tag';
+import {CategoriesComponentsModule} from '../../../categories/components/categories-components.module';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {TagModule} from 'primeng/tag';
         DividerModule,
         DataViewModule,
         InputTextModule,
-        TagModule
+        TagModule,
+        CategoriesComponentsModule
     ],
     exports: [
         SimpleEntityCardComponent,
