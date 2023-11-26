@@ -24,6 +24,8 @@ export class ProductsDataTableComponent {
     @Input() companyId!: string;
     @Input() categories!: Category[];
     @Input() dialogEdit!: boolean;
+    @Input() parentEntityType!: EntityType;
+    @Input() parentEntityId!: string;
 
     @ViewChild('filter') filter!: ElementRef;
     @ViewChild('productsDataTable') table!: Table;
@@ -124,7 +126,7 @@ export class ProductsDataTableComponent {
     /**
      * Trigger popup to
      * confirm deleting selected
-     * equipment item from data table.
+     * product item from data table.
      *
      * @param companyId selected product company id
      * @param productId selected product id
@@ -165,9 +167,9 @@ export class ProductsDataTableComponent {
 
     openFlipActiveDialog(productId: string): void {
         this.confirmationService.confirm({
-            key: 'confirmEquipmentActivityChangeDialog',
+            key: 'confirmProductActivityChangeDialog',
             accept: () => {
-                this.sharedService.flipActive(EntityType.Equipment, productId, EntityType.Scientist,
+                this.sharedService.flipActive(EntityType.Product, productId, EntityType.Company,
                     this.companyId).subscribe((response: any) => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
