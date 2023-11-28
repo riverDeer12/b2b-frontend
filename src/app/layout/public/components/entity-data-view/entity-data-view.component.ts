@@ -19,7 +19,10 @@ export class EntityDataViewComponent {
     @Input() filterField: string = 'name';
     @Input() showFilterInput: boolean = true;
 
-    filteredValue!: string;
+
+    categoryEntities: Category[] = [];
+
+    filterValue!: string;
 
     form!: FormGroup;
 
@@ -43,6 +46,15 @@ export class EntityDataViewComponent {
         this.initCategoriesFilter();
     }
 
+    /**
+     * Initialize filter form
+     * for categories.
+     *
+     * Comment: needed becaouse of throwed error. Will be
+     * removed because it is not used in that way of
+     * form group.
+     *
+     */
     private initFilterForm() {
         this.form = this.fb.group({
             filterCategories: new FormControl('')
@@ -53,19 +65,10 @@ export class EntityDataViewComponent {
      * Method that handles
      * external filter event.
      */
-    subscribeToFilterDataChanges(): void {
+    private subscribeToFilterDataChanges(): void {
         this.sharedService.getExternalFilterValue().subscribe((response: string) => {
             this.filterEntities(response as string);
         })
-    }
-
-
-    /**
-     * Method for handling
-     * global filter across data.
-     */
-    onFilter(eventTarget: any) {
-        this.filterEntities(eventTarget.value);
     }
 
     /**
@@ -73,40 +76,53 @@ export class EntityDataViewComponent {
      * that is triggered by
      * selected categories.
      */
-    initCategoriesFilter(): void {
+    private initCategoriesFilter(): void {
         this.sharedService.getSelectedCategories().subscribe((response: string[]) => {
             if (!response.length) {
-                this.filterEntities(this.filteredValue);
+                this.categoryEntities = [];
+                this.filterEntities(this.filterValue);
             } else {
-
-                let categoryEntities: any = [];
 
                 this.entities.forEach((entity: any) => {
                     entity.categories.map((category: Category) => {
                         if (response.includes(category.id)) {
-                            categoryEntities.push(entity);
+                            this.categoryEntities.push(entity);
                         }
                     });
                 })
 
-                if (categoryEntities) {
-                    this.filteredEntities = categoryEntities;
+                if (this.categoryEntities) {
+                    this.filteredEntities = this.categoryEntities;
+                    this.filterEntities(this.filterValue);
                 }
             }
         })
     }
 
-    private filterEntities(enteredValue: string) {
-        this.filteredValue = enteredValue as string;
+    /**
+     * Helper method that
+     * handles filtering action.
+     *
+     * @param value filter value
+     */
+    private filterEntities(value: string) {
+        this.filterValue = value as string;
 
-        if (!this.filteredValue) {
+        if (!this.filterValue) {
             this.filteredEntities = this.entities;
-            return;
+
+            if (this.categoryEntities.length) {
+                this.filteredEntities = this.categoryEntities;
+                return;
+            } else {
+                this.filteredEntities = this.entities
+                return;
+            }
         }
 
-        if (this.filteredValue.length < 3) {
+        if (this.filterValue.length < 3) {
 
-            if (this.filteredValue.length == 0) {
+            if (this.filterValue.length == 0) {
                 this.filteredEntities = this.entities;
             }
 
@@ -114,6 +130,14 @@ export class EntityDataViewComponent {
         }
 
         this.filteredEntities = this.entities
-            .filter(x => x[this.filterField].toLocaleLowerCase().includes(this.filteredValue));
+            .filter(x => x[this.filterField].toLocaleLowerCase().includes(this.filterValue));
+    }
+
+    /**
+     * Method for handling
+     * global filter across data.
+     */
+    onFilter(eventTarget: any) {
+        this.filterEntities(eventTarget.value);
     }
 }
