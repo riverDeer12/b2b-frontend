@@ -2,11 +2,10 @@
             [filterBy]="filterField" emptyMessage="{{'no-data' | translate }}">
     <ng-template pTemplate="header" *ngIf="showFilterInput">
         <div class="flex">
-                <span class="p-input-icon-left w-full">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" #filter (input)="onFilter($event.target)"
-                           placeholder="{{'keyword' | translate }}" class="w-full"/>
-                </span>
+              <span class="p-float-label w-full">
+                  <input pInputText type="text" #filter (input)="onFilter($event.target)" class="w-full"/>
+                <label for="address">{{ 'keyword' | translate }}</label>
+            </span>
         </div>
         <div class="flex mt-3">
             <span class="p-input-icon-left w-full">

@@ -7,8 +7,10 @@
 <div class="justify-content-center grid">
     <div class="lg:col-10 md:col-10 col-12">
         <p-tabView>
-            <input pInputText type="text" #filter (input)="onFilter($event.target)"
-                   placeholder="{{'keyword' | translate }}" class="w-full"/>
+              <span class="p-float-label">
+                  <input pInputText type="text" #filter (input)="onFilter($event.target)" class="w-full"/>
+                <label for="address">{{ 'keyword' | translate }}</label>
+            </span>
             <p-tabPanel header="{{'companies.default' | translate }}">
                 <entity-data-view
                     [entities]="companies"
