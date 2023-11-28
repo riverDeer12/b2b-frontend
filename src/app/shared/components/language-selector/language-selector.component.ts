@@ -20,12 +20,14 @@ export class LanguageSelectorComponent {
     }
 
     setDefaultLanguage(): void {
-        const localStorageData = localStorage.getItem('language') as string;
+        let localStorageData = localStorage.getItem('language') as string;
 
         if(!localStorageData){
             localStorage.setItem('language', 'HR');
             this.selectedLanguage = 'HR';
         }
+
+        localStorageData = localStorageData.toUpperCase();
 
         if (!Object.values(this.availableLanguages).includes(localStorageData)) {
             localStorage.setItem('language', 'HR');

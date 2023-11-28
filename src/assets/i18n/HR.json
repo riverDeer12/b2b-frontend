@@ -361,7 +361,8 @@
         "tags": {
             "default": "Ključne riječi",
             "label": "Područja interesa:",
-            "required": "Ključne riječi su obavezan podatak."
+            "required": "Ključne riječi su obavezan podatak.",
+            "please-hit-enter": "Pritisnite \"ENTER\" tipku nakon upisane ključne riječi."
         },
         "newsletter-categories": {
             "default": "Newsletter kategorije",

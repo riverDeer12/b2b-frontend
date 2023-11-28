@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
 import {Category} from '../../core/models/category';
 
@@ -11,12 +10,11 @@ import {Category} from '../../core/models/category';
 export class CategoriesHomeComponent implements OnInit {
     categories: Category[] = [];
 
-    constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
-        this.listenToResolver();
+    constructor(private activatedRoute: ActivatedRoute) {
     }
 
     ngOnInit(): void {
-
+        this.listenToResolver();
     }
 
     private listenToResolver() {
