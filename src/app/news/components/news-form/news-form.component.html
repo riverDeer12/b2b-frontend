@@ -3,7 +3,7 @@
         <div class="col-12">
             <div class="p-fluid">
                 <div class="field field col-md-12 text-center" *ngIf="formType === formActionType.Edit">
-                    <img class="profile-picture" [src]="news.imageUrl" height="250" width="250">
+                    <img class="profile-picture" [src]="news.imageUrl" height="250" width="250" alt="">
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
                     <file-uploader

@@ -611,6 +611,30 @@
         "news-useful-info": "Novosti i korisne informacije",
         "view-all-news": "Pogledaj sve novosti"
     },
+    "products": {
+        "default": "Proizvodi",
+        "title": {
+            "default": "Naziv",
+            "required": "Naziv je obavezan podatak."
+        },
+        "description": {
+            "default": "Opis",
+            "required": "Opis je obavezan podatak."
+        },
+        "successfully-created": "Proizvod je uspješno kreiran.",
+        "successfully-updated": "Proizvod je uspješno ažuriran.",
+        "created-at": "Datum kreiranja",
+        "updated-at": "Datum zadnje izmjene",
+        "number-of-products": "Broj pregleda",
+        "products-list": "Pregled proizvoda",
+        "items": "proizvoda",
+        "no-products-found": "Nema pronađenih proizvoda.",
+        "confirm-delete-action": "Jeste li sigurni?",
+        "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani proizvod.",
+        "create-product": "Kreiranje novog proizvoda",
+        "new-product": "Novi proizvod",
+        "view-all-products": "Pogledaj sve proizvode"
+    },
     "communications": {
         "send-message": {
             "title": "Pošalji poruku korisniku",

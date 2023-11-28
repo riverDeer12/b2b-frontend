@@ -3,6 +3,7 @@ import {Category} from '../../../categories/core/models/category';
 
 export class Product {
     id!: string;
+    imageUrl!: string;
     title!: LocalizedProperty;
     description!: LocalizedProperty;
     categories!: Category[];

@@ -611,6 +611,30 @@
         "news-useful-info": "News and useful information",
         "view-all-news": "View all news"
     },
+    "products": {
+        "default": "Products",
+        "title": {
+            "default": "Title",
+            "required": "Title is required."
+        },
+        "description": {
+            "default": "Descrption",
+            "required": "Descrption is required."
+        },
+        "successfully-created": "Product is created successfully.",
+        "successfully-updated": "Product is updated successfully.",
+        "created-at": "Created At",
+        "updated-at": "Updated At",
+        "number-of-products": "Number of Products",
+        "products-list": "Products List",
+        "items": "products",
+        "no-products-found": "No products found.",
+        "confirm-delete-action": "Are you sure?",
+        "confirm-delete-message": "Confirming the action will delete the selected product.",
+        "create-product": "Create Product",
+        "new-product": "New Product",
+        "view-all-products": "View all products"
+    },
     "communications": {
         "send-message": {
             "title": "Send a message to the user",

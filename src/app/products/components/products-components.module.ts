@@ -9,6 +9,11 @@ import {RippleModule} from 'primeng/ripple';
 import {SharedModule} from 'primeng/api';
 import {TableModule} from 'primeng/table';
 import {TranslateModule} from '@ngx-translate/core';
+import {CategoriesComponentsModule} from '../../categories/components/categories-components.module';
+import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
+import {PaginatorModule} from 'primeng/paginator';
+import {ReactiveFormsModule} from '@angular/forms';
+import {TabViewModule} from 'primeng/tabview';
 
 @NgModule({
     declarations: [
@@ -23,7 +28,12 @@ import {TranslateModule} from '@ngx-translate/core';
         RippleModule,
         SharedModule,
         TableModule,
-        TranslateModule
+        TranslateModule,
+        CategoriesComponentsModule,
+        CustomControlsModule,
+        PaginatorModule,
+        ReactiveFormsModule,
+        TabViewModule
     ],
     exports: [
         ProductFormComponent,
