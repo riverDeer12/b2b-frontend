@@ -127,16 +127,17 @@
                    id="newsletterCategories-input">{{ 'categories.newsletter-categories.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
-            <small class="helper-text">
-                <i class="pi pi-info-circle"></i>
-                {{'categories.tags.please-hit-enter' | translate }}
-            </small>
-            <span class="p-float-label mt-1">
+            <span class="p-float-label mb-1">
                 <p-chips class="{{validationService.getInputClass(form, 'categoryTags', 'required')}}"
                          aria-describedby="tags-input"
                          id="tags" formControlName="categoryTags"></p-chips>
                 <label for="tags">{{ 'categories.tags.default' | translate }}</label>
             </span>
+            <small class="helper-text">
+                <i class="pi pi-info-circle"></i>
+                {{'categories.tags.please-hit-enter' | translate }}
+            </small>
+            <br/>
             <small class="p-error"
                    *ngIf="validationService.hasErrors(form, 'categoryTags', 'required')"
                    id="tags-input">{{ 'categories.tags.required' | translate }}</small>
