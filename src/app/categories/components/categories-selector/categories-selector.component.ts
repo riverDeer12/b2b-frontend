@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {Category} from '../../core/models/category';
+import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
     selector: 'categories-selector',
@@ -13,6 +14,13 @@ export class CategoriesSelectorComponent {
     @Input() label!: string;
     @Input() data!: Category[];
 
+    constructor(private sharedService: SharedService) {
+    }
+
     ngOnInit(){
+    }
+
+    onCategoriesChange(selectedCategoryIds: string[]) {
+        this.sharedService.setSelectedCategories(selectedCategoryIds);
     }
 }

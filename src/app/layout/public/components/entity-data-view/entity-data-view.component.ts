@@ -3,6 +3,7 @@ import {EntityType} from '../../../../auth/core/enums/entity-type';
 import {Category} from '../../../../categories/core/models/category';
 import {Entity} from '../../../../shared/models/entity';
 import {SharedService} from '../../../../shared/services/shared.service';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'entity-data-view',
@@ -18,13 +19,21 @@ export class EntityDataViewComponent {
     @Input() filterField: string = 'name';
     @Input() showFilterInput: boolean = true;
 
+
+    categoryEntities: Category[] = [];
+
+    filterValue!: string;
+
+    form!: FormGroup;
+
     filteredEntities!: any[];
 
     public get entity(): typeof Entity {
         return Entity;
     }
 
-    constructor(private sharedService: SharedService) {
+    constructor(private sharedService: SharedService, private fb: FormBuilder) {
+        this.initFilterForm();
     }
 
     ngOnInit(): void {
@@ -33,43 +42,87 @@ export class EntityDataViewComponent {
         if (this.externalFilterInput) {
             this.subscribeToFilterDataChanges();
         }
+
+        this.initCategoriesFilter();
+    }
+
+    /**
+     * Initialize filter form
+     * for categories.
+     *
+     * Comment: needed becaouse of throwed error. Will be
+     * removed because it is not used in that way of
+     * form group.
+     *
+     */
+    private initFilterForm() {
+        this.form = this.fb.group({
+            filterCategories: new FormControl('')
+        })
     }
 
     /**
      * Method that handles
      * external filter event.
      */
-    subscribeToFilterDataChanges(): void {
+    private subscribeToFilterDataChanges(): void {
         this.sharedService.getExternalFilterValue().subscribe((response: string) => {
-
-            let filteredValue = response as string;
-
-            if (filteredValue.length < 3) {
-
-                if (filteredValue.length == 0) {
-                    this.filteredEntities = this.entities;
-                }
-
-                return;
-            }
-
-            this.filteredEntities = this.entities
-                .filter(x => x[this.filterField].toLocaleLowerCase().includes(filteredValue));
+            this.filterEntities(response as string);
         })
     }
 
+    /**
+     * Initialize filter
+     * that is triggered by
+     * selected categories.
+     */
+    private initCategoriesFilter(): void {
+        this.sharedService.getSelectedCategories().subscribe((response: string[]) => {
+            if (!response.length) {
+                this.categoryEntities = [];
+                this.filterEntities(this.filterValue);
+            } else {
+
+                this.entities.forEach((entity: any) => {
+                    entity.categories.map((category: Category) => {
+                        if (response.includes(category.id)) {
+                            this.categoryEntities.push(entity);
+                        }
+                    });
+                })
+
+                if (this.categoryEntities) {
+                    this.filteredEntities = this.categoryEntities;
+                    this.filterEntities(this.filterValue);
+                }
+            }
+        })
+    }
 
     /**
-     * Method for handling
-     * global filter across data.
+     * Helper method that
+     * handles filtering action.
+     *
+     * @param value filter value
      */
-    onFilter(eventTarget: any) {
+    private filterEntities(value: string) {
+        this.filterValue = value as string;
 
-        const filteredValue = eventTarget.value;
+        if (!this.filterValue) {
+            this.filteredEntities = this.entities;
 
-        if (filteredValue.length < 3) {
+            if (this.categoryEntities.length) {
+                this.filteredEntities = this.categoryEntities;
+                return;
+            } else {
+                this.filteredEntities = this.entities
+                return;
+            }
+        }
 
-            if (filteredValue.length == 0) {
+        if (this.filterValue.length < 3) {
+
+            if (this.filterValue.length == 0) {
                 this.filteredEntities = this.entities;
             }
 
@@ -77,6 +130,14 @@ export class EntityDataViewComponent {
         }
 
         this.filteredEntities = this.entities
-            .filter(x => x[this.filterField].toLocaleLowerCase().includes(filteredValue));
+            .filter(x => x[this.filterField].toLocaleLowerCase().includes(this.filterValue));
+    }
+
+    /**
+     * Method for handling
+     * global filter across data.
+     */
+    onFilter(eventTarget: any) {
+        this.filterEntities(eventTarget.value);
     }
 }
