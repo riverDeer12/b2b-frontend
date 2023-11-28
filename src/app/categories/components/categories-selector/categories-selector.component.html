@@ -5,6 +5,8 @@
             emptyFilterMessage="{{ 'categories.no-categories-found' | translate }}"
             optionLabel="localizedName"
             optionValue="id"
+            (onChange)="onCategoriesChange($event.value)"
+            [style]="{'width':'100%'}"
             [lazy]="true"
             [formControlName]="controlName"
             [options]="data"
