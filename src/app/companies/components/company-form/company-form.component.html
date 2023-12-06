@@ -31,13 +31,11 @@
                 ></job-offers-data-table>
             </p-tabPanel>
             <p-tabPanel header="{{ 'products.default' | translate }}" class="line-height-3 m-0">
-                <div class="p-fluid">
-                    <products-data-table [data]="products"
-                                         [categories]="categories"
-                                         [parentEntityType]="entityType"
-                                         [parentEntityId]="company.id"
-                                         [dialogEdit]="true"></products-data-table>
-                </div>
+                <products-data-table [data]="products"
+                                     [categories]="categories"
+                                     [parentEntityType]="entityType"
+                                     [parentEntityId]="company.id"
+                                     [dialogEdit]="true"></products-data-table>
             </p-tabPanel>
         </p-tabView>
     </div>
