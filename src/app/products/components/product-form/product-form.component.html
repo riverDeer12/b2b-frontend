@@ -4,7 +4,7 @@
             <div class="p-fluid">
                 <div class="field field col-md-12 text-center" *ngIf="formType === formActionType.Edit">
                     <img class="profile-picture" [src]="product.imageUrl" height="250" width="250"
-                         alt="research-problem-image">
+                         alt="product-image">
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
                     <file-uploader name="image"
@@ -12,7 +12,7 @@
                                    [entityType]="entityType"
                                    [entityId]="product.id"
                                    [parentEntityType]="parentEntityType"
-                                   [parentEntityId]="companyId">
+                                   [parentEntityId]="parentEntityId">
                     </file-uploader>
                 </div>
                 <p-tabView>

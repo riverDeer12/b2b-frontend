@@ -621,6 +621,7 @@
             "default": "Descrption",
             "required": "Descrption is required."
         },
+        "edit": "Edit Product",
         "create": "Create New Product",
         "successfully-created": "Product is created successfully.",
         "successfully-updated": "Product is updated successfully.",

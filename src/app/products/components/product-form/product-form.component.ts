@@ -19,15 +19,14 @@ import {ProductService} from '../../core/services/product.service';
 export class ProductFormComponent {
     @Input() formType!: FormType;
     @Input() redirectType!: RedirectType;
-    @Input() companyId!: string;
+    @Input() parentEntityId!: string;
+    @Input() parentEntityType!: EntityType;
     @Input() product!: Product;
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
     @Input() categories!: Category[];
 
     entityType: EntityType = EntityType.Product;
-
-    parentEntityType: EntityType = EntityType.Company;
 
     isLoading: boolean = false;
 
@@ -130,7 +129,7 @@ export class ProductFormComponent {
      */
     private createProduct() {
         this.productService
-            .createProduct(this.companyId, this.form.value)
+            .createProduct(this.parentEntityId, this.form.value)
             .subscribe((response: Product) => {
                     this.notificationService
                         .showNotification(NotificationType.Success,
@@ -158,7 +157,7 @@ export class ProductFormComponent {
      */
     private editProduct(): void {
         this.productService
-            .editProduct(this.companyId, this.product.id, this.form.value)
+            .editProduct(this.parentEntityId, this.product.id, this.form.value)
             .subscribe((response: Product) => {
                     this.notificationService
                         .showNotification(NotificationType.Success,

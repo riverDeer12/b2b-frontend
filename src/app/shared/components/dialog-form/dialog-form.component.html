@@ -58,7 +58,10 @@
 <product-form
     *ngIf="contentType.type === dialogFormContentType.Product"
     [formType]="formType"
+    [product]="data"
     [dialogId]="dialogId"
     [categories]="categories"
-    [redirectType]="dialogRedirectType">
+    [redirectType]="dialogRedirectType"
+    [parentEntityId]="parentEntityId"
+    [parentEntityType]="parentEntityType">
 </product-form>

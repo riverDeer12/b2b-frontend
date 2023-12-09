@@ -621,6 +621,7 @@
             "default": "Opis",
             "required": "Opis je obavezan podatak."
         },
+        "edit": "Uređivanje proizvoda",
         "create": "Kreiranje novog proizvoda",
         "successfully-created": "Proizvod je uspješno kreiran.",
         "successfully-updated": "Proizvod je uspješno ažuriran.",

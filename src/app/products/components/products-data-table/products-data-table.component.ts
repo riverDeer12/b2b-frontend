@@ -99,7 +99,7 @@ export class ProductsDataTableComponent {
                 contentType: DialogContentTypes.Product,
                 data: product,
                 parentEntityType: EntityType.Company,
-                parentEntityId: this.companyId,
+                parentEntityId: this.parentEntityId,
                 categories: this.categories
             }
         })
@@ -117,7 +117,7 @@ export class ProductsDataTableComponent {
                 formType: FormType.Create,
                 contentType: DialogContentTypes.Product,
                 parentEntityType: EntityType.Company,
-                parentEntityId: this.companyId,
+                parentEntityId: this.parentEntityId,
                 categories: this.categories
             }
         })
@@ -128,14 +128,14 @@ export class ProductsDataTableComponent {
      * confirm deleting selected
      * product item from data table.
      *
-     * @param companyId selected product company id
+     * @param parentEntityId selected product parent entity identitifer
      * @param productId selected product id
      */
-    confirmDelete(companyId: string, productId: string): void {
+    confirmDelete(parentEntityId: string, productId: string): void {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.productService.deleteProduct(companyId, productId).subscribe(() => {
+                this.productService.deleteProduct(parentEntityId, productId).subscribe(() => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
                         this.data = this.data.filter((x => x.id !== productId));
@@ -155,7 +155,7 @@ export class ProductsDataTableComponent {
     private listenForDataChanges(): void {
         this.productService.listenProduct()
             .subscribe((response: Product) => {
-                this.productService.getProducts(this.companyId)
+                this.productService.getProducts(this.parentEntityId)
                     .subscribe((response: Product[]) => {
                         this.data = response.map((x: Product) =>
                             Object.assign(new Product(), x)
@@ -169,8 +169,8 @@ export class ProductsDataTableComponent {
         this.confirmationService.confirm({
             key: 'confirmProductActivityChangeDialog',
             accept: () => {
-                this.sharedService.flipActive(EntityType.Product, productId, EntityType.Company,
-                    this.companyId).subscribe((response: any) => {
+                this.sharedService.flipActive(EntityType.Product, productId, this.parentEntityType,
+                    this.parentEntityId).subscribe((response: any) => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
 
