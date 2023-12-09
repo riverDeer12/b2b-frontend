@@ -16,6 +16,7 @@ export class Entity {
             case EntityType.ResearchProblem:
             case EntityType.Equipment:
             case EntityType.SpecificKnowledge:
+            case EntityType.Product:
                 return true;
             default:
                 return false;
@@ -63,7 +64,7 @@ export class Entity {
             case EntityType.News:
                 return entity.content.translations[localStorage.getItem('language') as keyof TranslationsObject];
             default:
-                return entity.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
+                return entity.localizedDescription;
         }
     }
 
@@ -88,6 +89,8 @@ export class Entity {
             case EntityType.Equipment:
                 return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             case EntityType.SpecificKnowledge:
+                return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
+            case EntityType.Product:
                 return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             default:
                 return '';

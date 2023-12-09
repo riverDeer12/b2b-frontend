@@ -43,6 +43,12 @@ export const PublicMenuItems: MenuItem[] = [
                 routerLink: '/companies/research-problems',
                 routerLinkActiveOptions: {exact: true},
                 expanded: false
+            },
+            {
+                label: 'companies.products',
+                routerLink: '/companies/products',
+                routerLinkActiveOptions: {exact: true},
+                expanded: false
             }
         ]
     },

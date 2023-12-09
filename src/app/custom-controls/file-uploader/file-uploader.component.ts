@@ -27,7 +27,7 @@ export class FileUploaderComponent {
             return environment.apiUrl + '/' + this.entityType + '/' + this.entityId + '/images';
         } else {
 
-            const parentEntityPrefix = this.parentEntityType + '/' + this.parentEntityId;
+            const parentEntityPrefix:string = this.parentEntityType + '/' + this.parentEntityId;
 
             return environment.apiUrl + '/' + parentEntityPrefix + '/'
                 + this.entityType + '/' + this.entityId + '/images'
