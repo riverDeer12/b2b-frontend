@@ -14,8 +14,16 @@ export class Product {
         return this.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
     }
 
+    get localizedDescription(): string {
+        return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
+    }
+
     get imageUrl(): string {
         return this.image ??
             'assets/layout/images/image-default.png'
+    }
+
+    get parentId(): string {
+        return this.companyId;
     }
 }

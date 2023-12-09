@@ -243,6 +243,7 @@
             "invalid": "The number of employees is not in the correct format."
         },
         "research-problems": "Development proposals of companies",
+        "products": "Companies Products",
         "number-of-views": "Number of views",
         "latest-companies": "New registered companies",
         "latest-company-research-problems": "New company development proposals",

@@ -32,6 +32,7 @@ import {PublicMostPopularComponent} from './public-most-popular/public-most-popu
 import {ActivitiesPagesModule} from "../../../activities/pages/activities-pages.module";
 import {ActivitiesComponentsModule} from "../../../activities/components/activities-components.module";
 import { PublicOrganizationResearchProblemsComponent } from './public-organization-research-problems/public-organization-research-problems.component';
+import { PublicProductsComponent } from './public-products/public-products.component';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import { PublicOrganizationResearchProblemsComponent } from './public-organizati
         PublicSpecificKnowledgeComponent,
         PublicJobOffersComponent,
         PublicMostPopularComponent,
-        PublicOrganizationResearchProblemsComponent
+        PublicOrganizationResearchProblemsComponent,
+        PublicProductsComponent
     ],
     imports: [
         CommonModule,
@@ -82,7 +84,8 @@ import { PublicOrganizationResearchProblemsComponent } from './public-organizati
         PublicScientistsComponent,
         RegistrationComponent,
         EntityDetailsComponent,
-        PublicCompanyResearchProblemsComponent
+        PublicCompanyResearchProblemsComponent,
+        PublicProductsComponent
     ]
 })
 export class PublicLayoutPagesModule {
