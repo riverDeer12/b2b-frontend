@@ -2,6 +2,7 @@ import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Category} from '../../../categories/core/models/category';
 import {ResearchProblem} from '../../../research-problems/core/models/research-problem';
 import {LocalizedProperty} from '../../../shared/models/localized-property';
+import {Product} from '../../../products/core/models/product';
 
 export class Company {
     id!: string;
@@ -25,6 +26,7 @@ export class Company {
     newsletterCategories!: Category[];
     researchProblems!: ResearchProblem[];
     jobOffers!: JobOffer[];
+    products!: Product[];
 
     get imageUrl(): string {
         return this.image ??

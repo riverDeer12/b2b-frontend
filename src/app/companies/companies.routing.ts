@@ -6,6 +6,7 @@ import {CompanyEditComponent} from './pages/company-edit/company-edit.component'
 import {CompanyResearchProblemsResolver} from "../research-problems/core/resolvers/company-research-problems.resolver";
 import {CategoriesResolver} from '../categories/core/resolvers/categories.resolver';
 import {CompanyJobOffersResolver} from '../job-offers/core/resolvers/company-job-offers.resolver';
+import {CompanyProductsResolver} from '../products/core/resolvers/company-products.resolver';
 
 export const CompaniesRoutes: Routes = [
     {
@@ -22,7 +23,8 @@ export const CompaniesRoutes: Routes = [
             company: CompanyResolver,
             categories: CategoriesResolver,
             jobOffers: CompanyJobOffersResolver,
-            researchProblems: CompanyResearchProblemsResolver
+            researchProblems: CompanyResearchProblemsResolver,
+            products: CompanyProductsResolver
         }
     }
 ]

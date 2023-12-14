@@ -9,6 +9,7 @@ import {JobOffer} from "../../../../job-offers/core/models/job-offer";
 import {ResearchProblem} from "../../../../research-problems/core/models/research-problem";
 import {Organization} from "../../../../organizations/core/models/organization";
 import {SpecificKnowledge} from '../../../../specific-knowledge/core/models/specific-knowledge';
+import {Product} from '../../../../products/core/models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -57,4 +58,7 @@ export class PublicService {
 
     getOrganizationResearchProblems = () =>
         this.http.get<ResearchProblem[]>(this.publicUrl + 'public-organizations/research-problems');
+
+    getProducts = () =>
+        this.http.get<Product[]>(this.publicUrl + 'companies/products');
 }

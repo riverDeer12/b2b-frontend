@@ -107,6 +107,21 @@
                         <p-divider></p-divider>
                     </div>
                 </div>
+                <div class="text-center mt-5" *ngIf="hasProducts">
+                    <h3>{{'products.default' | translate}}</h3>
+                    <p-divider></p-divider>
+                    <div class="mt-5" *ngFor="let product of productsList">
+                        <h5 [innerHTML]="product.localizedTitle"></h5>
+                        <img alt="Card" width="100%"
+                             [src]="product.imageUrl"/>
+                        <p class="text-left mt-2">
+                            <i class="pi pi-info-circle label-icon"></i>
+                            <label class="mx-1">{{'description.label' | translate }}</label>
+                            <span [innerHTML]="product.localizedDescription"></span>
+                        </p>
+                        <p-divider></p-divider>
+                    </div>
+                </div>
             </ng-template>
             <ng-template pTemplate="footer" *ngIf="showContactButton">
                 <button (click)="openMessageDialog()" style="width: 100%" pButton class="font-light line-height-2 bg-blue-500

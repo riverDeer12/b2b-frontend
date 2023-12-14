@@ -243,6 +243,7 @@
             "invalid": "The number of employees is not in the correct format."
         },
         "research-problems": "Development proposals of companies",
+        "products": "Companies Products",
         "number-of-views": "Number of views",
         "latest-companies": "New registered companies",
         "latest-company-research-problems": "New company development proposals",
@@ -610,6 +611,32 @@
         "new-news": "New announcement",
         "news-useful-info": "News and useful information",
         "view-all-news": "View all news"
+    },
+    "products": {
+        "default": "Products",
+        "title": {
+            "default": "Title",
+            "required": "Title is required."
+        },
+        "description": {
+            "default": "Descrption",
+            "required": "Descrption is required."
+        },
+        "edit": "Edit Product",
+        "create": "Create New Product",
+        "successfully-created": "Product is created successfully.",
+        "successfully-updated": "Product is updated successfully.",
+        "created-at": "Created At",
+        "updated-at": "Updated At",
+        "number-of-products": "Number of Products",
+        "products-list": "Products List",
+        "items": "products",
+        "no-products-found": "No products found.",
+        "confirm-delete-action": "Are you sure?",
+        "confirm-delete-message": "Confirming the action will delete the selected product.",
+        "create-product": "Create Product",
+        "new-product": "New Product",
+        "view-all-products": "View all products"
     },
     "communications": {
         "send-message": {

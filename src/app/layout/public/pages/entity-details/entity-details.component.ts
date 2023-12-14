@@ -14,6 +14,7 @@ import {DialogService} from 'primeng/dynamicdialog';
 import {AuthService} from '../../../../auth/core/services/auth.service';
 import {NotificationType} from '../../../../shared/enums/notification-type';
 import {NotificationService} from '../../../../shared/services/notification.service';
+import {Product} from '../../../../products/core/models/product';
 
 @Component({
     selector: 'entity-details',
@@ -35,6 +36,8 @@ export class EntityDetailsComponent implements OnInit {
 
     specificKnowledgeList!: SpecificKnowledge[];
 
+    productsList!: Product[];
+
     public get hasResearchProblems(): boolean {
         const validEntityType = this.currentEntityType === EntityType.Company ||
             this.currentEntityType === EntityType.PublicOrganization;
@@ -54,6 +57,12 @@ export class EntityDetailsComponent implements OnInit {
         const isScientist = this.currentEntityType == this.entityType.Scientist;
 
         return isScientist && this.entityItem.specificKnowledge.length;
+    }
+
+    public get hasProducts(): boolean {
+        const isCompany = this.currentEntityType == this.entityType.Company;
+
+        return isCompany && this.entityItem.products.length;
     }
 
     public get entity(): typeof Entity {
@@ -92,6 +101,51 @@ export class EntityDetailsComponent implements OnInit {
         });
     }
 
+    private initCategories(): void {
+        this.entityCategories = this.entityItem.categories?.map((x: Category) =>
+            Object.assign(new Category(), x)
+        );
+    }
+
+    private initSubEntities(): void {
+        if (this.hasResearchProblems) {
+            this.initResearchProblems();
+        }
+
+        if (this.currentEntityType === EntityType.Scientist) {
+            this.initEquipment();
+            this.initSpecificKnowledge();
+        }
+
+        if(this.currentEntityType === EntityType.Company){
+            this.initProducts();
+        }
+    }
+
+    private initResearchProblems() {
+        this.researchProblems = this.entityItem.researchProblems.map((x: ResearchProblem) =>
+            Object.assign(new ResearchProblem(), x)
+        );
+    }
+
+    private initEquipment() {
+        this.equipmentList = this.entityItem.equipment.map((x: Equipment) =>
+            Object.assign(new Equipment(), x)
+        );
+    }
+
+    private initSpecificKnowledge() {
+        this.specificKnowledgeList = this.entityItem.specificKnowledge.map((x: SpecificKnowledge) =>
+            Object.assign(new SpecificKnowledge(), x)
+        );
+    }
+
+    private initProducts() {
+        this.productsList = this.entityItem.products.map((x: Product) =>
+            Object.assign(new Product(), x)
+        );
+    }
+
     /**
      * Opens dialog for
      * sending message to entity.
@@ -113,40 +167,5 @@ export class EntityDetailsComponent implements OnInit {
                 parentEntityId: this.entityItem.id
             }
         })
-    }
-
-    private initCategories(): void {
-        this.entityCategories = this.entityItem.categories?.map((x: Category) =>
-            Object.assign(new Category(), x)
-        );
-    }
-
-    private initSubEntities(): void {
-        if (this.hasResearchProblems) {
-            this.initResearchProblems();
-        }
-
-        if (this.currentEntityType === EntityType.Scientist) {
-            this.initEquipment();
-            this.initSpecificKnowledge();
-        }
-    }
-
-    private initResearchProblems() {
-        this.researchProblems = this.entityItem.researchProblems.map((x: ResearchProblem) =>
-            Object.assign(new ResearchProblem(), x)
-        );
-    }
-
-    private initEquipment() {
-        this.equipmentList = this.entityItem.equipment.map((x: Equipment) =>
-            Object.assign(new Equipment(), x)
-        );
-    }
-
-    private initSpecificKnowledge() {
-        this.specificKnowledgeList = this.entityItem.specificKnowledge.map((x: SpecificKnowledge) =>
-            Object.assign(new SpecificKnowledge(), x)
-        );
     }
 }

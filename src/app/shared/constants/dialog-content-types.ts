@@ -25,4 +25,8 @@ export const DialogContentTypes = {
         type: DialogFormContentType.ForgotPassword,
         dialogId: 'forgotPasswordFormDialog'
     },
+    Product: {
+        type: DialogFormContentType.Product,
+        dialogId: 'productFormDialog'
+    }
 }

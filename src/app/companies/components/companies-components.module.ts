@@ -20,6 +20,7 @@ import {ChipsModule} from 'primeng/chips';
 import {FileUploadModule} from 'primeng/fileupload';
 import {SharedModule} from '../../shared/shared.module';
 import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
+import {ProductsComponentsModule} from '../../products/components/products-components.module';
 
 @NgModule({
     declarations: [
@@ -45,7 +46,8 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         ChipsModule,
         FileUploadModule,
         SharedModule,
-        CustomControlsModule
+        CustomControlsModule,
+        ProductsComponentsModule
     ],
     exports: [
         CompaniesDataTableComponent,
