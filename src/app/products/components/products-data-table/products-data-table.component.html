@@ -1,0 +1,107 @@
+<p-table #productsDataTable
+         [rowHover]="true"
+         [showLoader]="true"
+         [value]="data"
+         sortField="updatedAt"
+         dataKey="id"
+         [rows]="5" [showCurrentPageReport]="true"
+         [rowsPerPageOptions]="[5, 10, 20]"
+         [paginator]="true"
+         [sortOrder]="-1"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'results' | translate }} {{'from' | translate }}
+         {totalRecords} {{'results' | translate }}"
+         [globalFilterFields]="['title']"
+         [tableStyle]="{'min-width':'75rem'}"
+         responsiveLayout="scroll">
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between flex-column sm:flex-row">
+            <div class="flex">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(productsDataTable, $event)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+                <button
+                    (click)="clear(productsDataTable)"
+                    label="{{'clear'| translate }}"
+                    icon="pi pi-times"
+                    iconPos="right"
+                    pButton pRipple
+                    type="button">
+                </button>
+            </div>
+            <button
+                (click)="openCreateDialog()"
+                label="{{'add'| translate }}"
+                icon="pi pi-plus"
+                iconPos="right"
+                pButton pRipple
+                type="button">
+            </button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%"></th>
+            <th pSortableColumn="localizedTitle">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'products.title.default' | translate }}
+                    <p-sortIcon field="localizedTitle"></p-sortIcon>
+                    <p-columnFilter type="text" field="localizedTitle" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="updatedAt">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'updatedAt' | translate }}
+                    <p-sortIcon field="updatedAt"></p-sortIcon>
+                    <p-columnFilter type="date" field="updatedAt" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th>{{'activity' | translate}}</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td class="d-flex">
+                <button type="button" class="p-button-danger m-1" pButton pRipple
+                        (click)="confirmDelete(product.companyId, product.id)"
+                        icon="pi pi-trash"></button>
+                <button type="button" class="p-button m-1" pButton pRipple (click)="prepareEditControl(product)"
+                        icon="pi pi-pencil"></button>
+            </td>
+            <td>
+                {{product.localizedTitle}}
+            </td>
+            <td>
+                {{product.updatedAt | date: 'dd.MM.yyyy HH:mm:ss'}}
+            </td>
+            <td>
+                <p-button (click)="openFlipActiveDialog(product.id)"
+                          icon="{{product.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                          styleClass="p-button-rounded p-button-text"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{ 'products.no-products-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-confirmDialog header="{{'product.confirm-delete-action' | translate }}"
+                 key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
+                 message="{{'product.confirm-delete-message' | translate }}"
+                 acceptButtonStyleClass="p-button-text"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<p-confirmDialog header="{{'activity-change.title' | translate }}"
+                 message="{{'activity-change.message' | translate }}"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 icon="pi pi-exclamation-triangle"
+                 key="confirmProductActivityChangeDialog"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>

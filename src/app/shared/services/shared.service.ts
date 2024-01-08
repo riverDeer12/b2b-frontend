@@ -5,6 +5,7 @@ import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
+import {Category} from '../../categories/core/models/category';
 
 /**
  * Helper service for most common actions
@@ -15,10 +16,10 @@ import {environment} from '../../../environments/environment';
 })
 export class SharedService {
 
-    parentEntityType = new Subject<EntityType>();
-    dialogCloseStatus = new Subject<string>();
-    filterDataChange = new Subject<string>();
-    profilePictureChanged = new Subject<boolean>();
+    parentEntityType: Subject<EntityType> = new Subject<EntityType>();
+    dialogCloseStatus: Subject<string> = new Subject<string>();
+    filterDataChange: Subject<string> = new Subject<string>();
+    categoriesChanged: Subject<string[]> = new Subject<string[]>();
 
     constructor(private router: Router, private http: HttpClient) {
     }
@@ -98,6 +99,14 @@ export class SharedService {
      */
     getExternalFilterValue(): Subject<string> {
         return this.filterDataChange;
+    }
+
+    setSelectedCategories(categories: string[]): void {
+        this.categoriesChanged.next(categories);
+    }
+
+    getSelectedCategories(): Subject<string[]> {
+        return this.categoriesChanged;
     }
 
     /**

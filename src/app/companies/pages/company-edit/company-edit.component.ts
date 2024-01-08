@@ -5,6 +5,7 @@ import {Company} from '../../core/models/company';
 import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
 import {Category} from '../../../categories/core/models/category';
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
+import {Product} from "../../../products/core/models/product";
 
 @Component({
     selector: 'company-edit',
@@ -24,6 +25,8 @@ export class CompanyEditComponent {
 
     categories!: Category[];
 
+    products!: Product[];
+
     constructor(private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
     }
@@ -42,6 +45,9 @@ export class CompanyEditComponent {
             );
             this.categories = response["categories"].map((x: Category) =>
                 Object.assign(new Category(), x)
+            );
+            this.products = response["products"].map((x: Product) =>
+                Object.assign(new Product(), x)
             );
         });
     }

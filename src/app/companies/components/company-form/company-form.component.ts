@@ -5,6 +5,7 @@ import {FormType} from '../../../shared/enums/form-type';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
+import {Product} from '../../../products/core/models/product';
 
 @Component({
     selector: 'company-form',
@@ -16,10 +17,12 @@ export class CompanyFormComponent {
     @Input() company!: Company;
     @Input() researchProblems!: ResearchProblem[];
     @Input() jobOffers!: JobOffer[];
-    @Input() returnUrl!: string;
+    @Input() products!: Product[];
     @Input() categories!: Category[];
 
-    entityType = EntityType.Company;
+    @Input() returnUrl!: string;
+
+    entityType: EntityType = EntityType.Company;
 
     ngOnInit() {
         this.researchProblems = this.researchProblems.map((x: ResearchProblem) =>
@@ -27,6 +30,9 @@ export class CompanyFormComponent {
         );
         this.jobOffers = this.jobOffers.map((x: JobOffer) =>
             Object.assign(new JobOffer(), x)
+        );
+        this.products = this.products.map((x: Product) =>
+            Object.assign(new Product(), x)
         );
         this.categories = this.categories.map((x: Category) =>
             Object.assign(new Category(), x)

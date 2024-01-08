@@ -34,5 +34,5 @@ export class ActivitiesService {
      */
     getMostPopularEntities = () =>
         this.http.get<MostPopular>(this.endpointUrl +
-            'most-popular/?numberOfEntitiesToReturn=' + this.mostPopularEntities);
+            'most-popular?numberOfEntitiesToReturn=' + this.mostPopularEntities);
 }

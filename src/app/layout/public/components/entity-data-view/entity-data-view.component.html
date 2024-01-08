@@ -1,12 +1,21 @@
 <p-dataView #dv [value]="filteredEntities" layout="grid" [paginator]="true" [rows]="8"
             [filterBy]="filterField" emptyMessage="{{'no-data' | translate }}">
     <ng-template pTemplate="header" *ngIf="showFilterInput">
-        <div class="flex justify-content-end">
-                <span class="p-input-icon-left mr-2">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" #filter (input)="onFilter($event.target)"
-                           placeholder="{{'keyword' | translate }}" class="w-full"/>
-                </span>
+        <div class="flex">
+              <span class="p-float-label w-full">
+                  <input pInputText type="text" #filter (input)="onFilter($event.target)" class="w-full"/>
+                <label for="address">{{ 'keyword' | translate }}</label>
+            </span>
+        </div>
+        <div class="flex mt-3">
+            <span class="p-input-icon-left w-full">
+                <categories-selector
+                    controlName="filterCategories"
+                    label="{{ 'categories.default' | translate }}"
+                    [form]="form"
+                    [data]="categories"
+                ></categories-selector>
+            </span>
         </div>
     </ng-template>
     <ng-template let-entityItem pTemplate="gridItem">

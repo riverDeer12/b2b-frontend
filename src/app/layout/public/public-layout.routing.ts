@@ -40,6 +40,8 @@ import {PublicMostPopularComponent} from "./pages/public-most-popular/public-mos
 import {
     PublicOrganizationResearchProblemsComponent
 } from "./pages/public-organization-research-problems/public-organization-research-problems.component";
+import {PublicProductsComponent} from './pages/public-products/public-products.component';
+import {PublicProductsResolver} from './core/resolvers/products/public-products.resolver';
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -101,6 +103,14 @@ export const PublicLayoutRoutes: Routes = [
         component: PublicCompanyResearchProblemsComponent,
         resolve: {
             researchProblems: PublicResearchProblemsResolver,
+            categories: CategoriesResolver
+        }
+    },
+    {
+        path: 'companies/products',
+        component: PublicProductsComponent,
+        resolve: {
+            products: PublicProductsResolver,
             categories: CategoriesResolver
         }
     },

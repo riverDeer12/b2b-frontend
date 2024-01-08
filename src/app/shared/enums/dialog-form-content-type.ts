@@ -5,4 +5,5 @@ export enum DialogFormContentType {
     Equipment,
     Message,
     ForgotPassword,
+    Product,
 }

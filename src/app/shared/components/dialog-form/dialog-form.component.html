@@ -54,3 +54,14 @@
     [entityType]="parentEntityType"
     [redirectType]="dialogRedirectType">
 </forgot-password>
+
+<product-form
+    *ngIf="contentType.type === dialogFormContentType.Product"
+    [formType]="formType"
+    [product]="data"
+    [dialogId]="dialogId"
+    [categories]="categories"
+    [redirectType]="dialogRedirectType"
+    [parentEntityId]="parentEntityId"
+    [parentEntityType]="parentEntityType">
+</product-form>
