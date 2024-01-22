@@ -651,6 +651,22 @@
         "message-sent-successfully": "Message sent successfully.",
         "not-logged": "To make contact, you must be logged in on the RIMAP platform."
     },
+    "clients": {
+        "default": "Clients",
+        "name": {
+            "default": "Name",
+            "required": "Client name is required.",
+            "not-unique": "Client name is not unique."
+        },
+        "created-at": "Created At",
+        "api-key": "Secret Key",
+        "number-of-usages": "Number of Sent Requests",
+        "no-clients-found": "No clients found.",
+        "new-client": "Add New Client",
+        "create": "Create New Client",
+        "successfully-created": "Client is successfully created.",
+        "successfully-updated": "Client is successfully updated."
+    },
     "subscribers": {
         "default": "Subscribers"
     },

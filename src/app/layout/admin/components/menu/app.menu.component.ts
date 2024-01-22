@@ -61,6 +61,11 @@ export class AppMenuComponent implements OnInit {
                         label: 'organizations.default',
                         icon: 'pi pi-fw pi-building',
                         routerLink: ['/admin/organizations']
+                    },
+                    {
+                        label: 'clients.default',
+                        icon: 'pi pi-fw pi-users',
+                        routerLink: ['/admin/clients']
                     }
                 ]
             }
