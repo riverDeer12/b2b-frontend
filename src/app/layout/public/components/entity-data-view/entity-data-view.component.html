@@ -1,4 +1,4 @@
-<p-dataView #dv [value]="filteredEntities" layout="grid" [paginator]="true" [rows]="8"
+<p-dataView #dv [value]="filteredEntities" layout="grid" [paginator]="true" [rows]="8" responsive
             [filterBy]="filterField" emptyMessage="{{'no-data' | translate }}">
     <ng-template pTemplate="header" *ngIf="showFilterInput">
         <div class="flex">
