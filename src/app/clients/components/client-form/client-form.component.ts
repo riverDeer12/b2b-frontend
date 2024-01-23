@@ -53,6 +53,7 @@ export class ClientFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
+            isActive: new FormControl(true),
             name: new FormControl('', Validators.required)
         })
     }
@@ -63,6 +64,7 @@ export class ClientFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
+            isActive: new FormControl(this.client.isActive),
             name: new FormControl(this.client.name, Validators.required)
         })
     }
@@ -125,8 +127,6 @@ export class ClientFormComponent {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'clients.successfully-updated');
-
-                this.router.navigateByUrl(this.returnUrl).then();
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 

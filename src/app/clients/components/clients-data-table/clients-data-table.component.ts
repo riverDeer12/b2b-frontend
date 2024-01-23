@@ -12,7 +12,6 @@ import {DialogFormComponent} from "../../../shared/components/dialog-form/dialog
 import {FormType} from "../../../shared/enums/form-type";
 import {DialogContentTypes} from "../../../shared/constants/dialog-content-types";
 import {DialogService} from "primeng/dynamicdialog";
-import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
 
 @Component({
     selector: 'clients-data-table',
@@ -34,7 +33,7 @@ export class ClientsDataTableComponent {
                 private sharedService: SharedService) {
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.listenForDataChanges();
     }
 
@@ -58,6 +57,15 @@ export class ClientsDataTableComponent {
     clear(table: Table) {
         table.clear();
         this.filter.nativeElement.value = '';
+    }
+
+    /**
+     * Show notification when
+     * api key is copied.
+     */
+    apiKeyCopiedNotification = () => {
+        this.notificationService
+            .showNotification(NotificationType.Success, 'clients.api-key-copied');
     }
 
     /**
@@ -100,8 +108,15 @@ export class ClientsDataTableComponent {
      * Open dialog with
      * edit form for desired entity.
      */
-    openEditDialog(clientId: string): void {
-
+    openEditDialog(client: Client): void {
+        this.dialogService.open(DialogFormComponent, {
+            data: {
+                header: 'clients.edit',
+                formType: FormType.Edit,
+                contentType: DialogContentTypes.Client,
+                data: client
+            }
+        })
     }
 
     /**

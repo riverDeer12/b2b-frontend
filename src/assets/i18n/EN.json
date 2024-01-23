@@ -660,12 +660,16 @@
         },
         "created-at": "Created At",
         "api-key": "Secret Key",
+        "api-key-copied": "Secret Key Copied.",
         "number-of-usages": "Number of Sent Requests",
         "no-clients-found": "No clients found.",
         "new-client": "Add New Client",
         "create": "Create New Client",
         "successfully-created": "Client is successfully created.",
-        "successfully-updated": "Client is successfully updated."
+        "successfully-updated": "Client is successfully updated.",
+        "confirm-delete-action": "Are you sure?",
+        "confirm-delete-message": "Confirming the action will delete the selected client.",
+        "successfully-deleted": "Client is deleted successfully."
     },
     "subscribers": {
         "default": "Subscribers"

@@ -3,6 +3,9 @@
         <div class="col-12">
             <div class="p-fluid">
                 <div class="field field col-md-12">
+                    <p-checkbox formControlName="isActive" [binary]="true" label="{{'activity' | translate}}"></p-checkbox>
+                </div>
+                <div class="field field col-md-12">
                     <span class="p-float-label">
                         <input
                             class="{{validationService.getInputClass(form, 'name', 'required')}}"

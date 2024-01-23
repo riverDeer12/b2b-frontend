@@ -7,7 +7,6 @@ import {SharedModule} from "../shared/shared.module";
 import {ClientsRoutes} from "./clients.routing";
 import {ClientsPagesModule} from "./pages/clients-pages.module";
 
-
 @NgModule({
     declarations: [ClientsComponent],
     imports: [

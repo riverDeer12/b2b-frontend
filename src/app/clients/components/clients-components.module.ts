@@ -8,6 +8,8 @@ import {InputTextModule} from "primeng/inputtext";
 import {TranslateModule} from "@ngx-translate/core";
 import { ClientFormComponent } from './client-form/client-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {ClipboardModule} from "@angular/cdk/clipboard";
+import {CheckboxModule} from "primeng/checkbox";
 
 @NgModule({
     declarations: [
@@ -21,7 +23,9 @@ import {ReactiveFormsModule} from "@angular/forms";
         ConfirmDialogModule,
         RippleModule,
         InputTextModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ClipboardModule,
+        CheckboxModule
     ],
     exports: [
         ClientsDataTableComponent,

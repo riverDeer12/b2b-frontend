@@ -46,6 +46,11 @@
                     <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
             </th>
+            <th>
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'clients.api-key' | translate }}
+                </div>
+            </th>
             <th pSortableColumn="createdAt">
                 <div class="flex justify-content-between align-items-center">
                     {{'clients.created-at' | translate}}
@@ -67,11 +72,20 @@
                 <button type="button" class="p-button-danger m-1" pButton pRipple
                         (click)="confirmDelete(client.id)"
                         icon="pi pi-trash"></button>
-                <button type="button" class="p-button m-1" pButton pRipple (click)="openEditDialog(client.id)"
+                <button type="button" class="p-button m-1" pButton pRipple (click)="openEditDialog(client)"
                         icon="pi pi-pencil"></button>
             </td>
             <td>
                 {{client.name}}
+            </td>
+            <td>
+                {{client.apiKey | slice:0:30 }} ...
+                <button
+                    type="button"
+                    (click)="apiKeyCopiedNotification()"
+                    [cdkCopyToClipboard]="client.apiKey"
+                    class="p-button-icon m-1" pButton pRipple
+                    icon="pi pi-copy"></button>
             </td>
             <td>
                 {{client.createdAt | date: 'dd.MM.yyyy HH:mm:ss'}}
@@ -80,7 +94,7 @@
                 {{client.numberOfUsages}}
             </td>
             <td>
-                <p-button (click)="openFlipActiveDialog(client.id)"
+                <p-button
                           icon="{{client.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
                           styleClass="p-button-rounded p-button-text"></p-button>
             </td>
@@ -99,11 +113,4 @@
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"
-                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
-
-<p-confirmDialog header="{{'activity-change.title' | translate }}"
-                 message="{{'activity-change.message' | translate }}"
-                 acceptLabel="{{'yes' | translate }}"
-                 rejectLabel="{{'no' | translate }}"
-                 icon="pi pi-exclamation-triangle"
                  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
