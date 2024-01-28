@@ -28,5 +28,9 @@ export const DialogContentTypes = {
     Product: {
         type: DialogFormContentType.Product,
         dialogId: 'productFormDialog'
+    },
+    Client: {
+        type: DialogFormContentType.Client,
+        dialogId: 'clientFormDialog'
     }
 }

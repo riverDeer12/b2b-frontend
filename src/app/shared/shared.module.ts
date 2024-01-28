@@ -23,6 +23,7 @@ import {AuthComponentsModule} from '../auth/components/auth-components.module';
 import { LoaderComponent } from './components/loader/loader.component';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ProductsComponentsModule} from "../products/components/products-components.module";
+import {ClientsComponentsModule} from "../clients/components/clients-components.module";
 
 @NgModule({
     declarations: [
@@ -50,7 +51,8 @@ import {ProductsComponentsModule} from "../products/components/products-componen
         InputTextModule,
         AuthComponentsModule,
         ProgressSpinnerModule,
-        ProductsComponentsModule
+        ProductsComponentsModule,
+        ClientsComponentsModule
     ],
     exports: [
         ActivityComponent,

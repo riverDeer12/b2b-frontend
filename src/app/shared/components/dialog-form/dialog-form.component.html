@@ -65,3 +65,11 @@
     [parentEntityId]="parentEntityId"
     [parentEntityType]="parentEntityType">
 </product-form>
+
+<client-form
+    *ngIf="contentType.type === dialogFormContentType.Client"
+    [formType]="formType"
+    [client]="data"
+    [dialogId]="dialogId"
+    [redirectType]="dialogRedirectType">
+</client-form>

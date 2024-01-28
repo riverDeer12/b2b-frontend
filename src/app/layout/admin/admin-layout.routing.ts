@@ -10,6 +10,7 @@ import {ResearchProblemsComponent} from "../../research-problems/research-proble
 import {SpecificKnowledgeComponent} from "../../specific-knowledge/specific-knowledge.component";
 import {EquipmentComponent} from "../../equipment/equipment.component";
 import {JobOffersComponent} from "../../job-offers/job-offers.component";
+import {ClientsComponent} from "../../clients/clients.component";
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -66,5 +67,10 @@ export const AdminLayoutRoutes: Routes = [
         path: 'equipment',
         component: EquipmentComponent,
         loadChildren: () => import('../../equipment/equipment.module').then(m => m.EquipmentModule)
+    },
+    {
+        path: 'clients',
+        component: ClientsComponent,
+        loadChildren: () => import('../../clients/clients.module').then(m => m.ClientsModule)
     }
 ]
