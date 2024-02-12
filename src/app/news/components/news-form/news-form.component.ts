@@ -8,6 +8,9 @@ import {News} from '../../core/models/news';
 import {NewsService} from '../../core/services/news.service';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {LanguageService} from "../../../shared/services/language.service";
 
 @Component({
     selector: 'news-form',
@@ -23,6 +26,8 @@ export class NewsFormComponent {
 
     isLoading: boolean = false;
 
+    translateLoading: boolean = false;
+
     form!: FormGroup;
 
     public get formActionType(): typeof FormType {
@@ -32,6 +37,7 @@ export class NewsFormComponent {
     constructor(public validationService: ValidationService,
                 private fb: FormBuilder,
                 private router: Router,
+                private languageService: LanguageService,
                 private notificationService: NotificationService,
                 private newsService: NewsService) {
     }
@@ -153,6 +159,28 @@ export class NewsFormComponent {
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');
                 this.isLoading = false;
+            })
+    }
+
+    translateNewsToEnglish(): void {
+        this.translateLoading = true;
+        this.translateContent('title');
+        this.translateContent('content');
+    }
+
+    /**
+     * Translate news content
+     * from croatian to english.
+     */
+    translateContent(formControlName: string): void {
+        const formGroup = this.form.controls[formControlName] as FormGroup;
+        const translationFormGroup = formGroup.controls['translations'] as FormGroup;
+        const croatianValue = translationFormGroup.controls['HR'].value;
+
+        this.newsService.translate(croatianValue, "hr", "en")
+            .subscribe((response: any) => {
+                translationFormGroup.controls['EN'].setValue(response.translatedText as string);
+                this.translateLoading = false;
             })
     }
 }

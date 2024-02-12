@@ -53,4 +53,22 @@ export class NewsService {
      * @param id news entity identifier.
      */
     deleteNews = (id: string) => this.http.delete(this.newsUrl + id);
+
+    /**
+     * Translate any input text
+     * with Google Cloud service function.
+     *
+     * @param text text value
+     * @param sourceLanguage language of text (hr - croatian).
+     * @param targetLanguage target language of translation (en - english).
+     */
+    translate(text: string, sourceLanguage: string, targetLanguage: string) {
+        const translateRequest = {
+            text: text,
+            sourceLanguage: sourceLanguage,
+            targetLanguage: targetLanguage
+        };
+
+        return this.http.post(this.newsUrl + 'translate-content', translateRequest);
+    }
 }
