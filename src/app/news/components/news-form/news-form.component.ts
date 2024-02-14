@@ -107,7 +107,7 @@ export class NewsFormComponent {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
-                .showNotification(NotificationType.Error,
+                .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
             this.isLoading = false;
             return;
@@ -177,6 +177,11 @@ export class NewsFormComponent {
         const translationFormGroup = formGroup.controls['translations'] as FormGroup;
         const croatianValue = translationFormGroup.controls['HR'].value;
 
+        if(!croatianValue) {
+            this.translateLoading = false;
+            return;
+        }
+
         this.newsService.translate(croatianValue, "hr", "en")
             .subscribe((response: any) => {
                     translationFormGroup.controls['EN'].setValue(response.translatedText as string);
@@ -187,7 +192,7 @@ export class NewsFormComponent {
                 },
                 error => {
                     this.notificationService
-                        .showNotification(NotificationType.Error,
+                        .showNotification(NotificationType.Warning,
                             'translate.translate-error');
                     this.translateLoading = false;
                 })

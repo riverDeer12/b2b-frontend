@@ -55,7 +55,7 @@ export class ForgotPasswordComponent implements OnInit {
             this.form.markAllAsTouched();
 
             this.notificationService
-                .showNotification(NotificationType.Error,
+                .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
 
             this.isLoading = false;

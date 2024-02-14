@@ -45,7 +45,7 @@ export class ChangePasswordComponent {
             this.form.markAllAsTouched();
 
             this.notificationService
-                .showNotification(NotificationType.Error,
+                .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
 
             return;
