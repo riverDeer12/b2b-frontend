@@ -97,7 +97,11 @@
     },
     "croatian": "HRV",
     "english": "ENG",
-    "translate": "Prevedi objavu na engleski jezik",
+    "translate": {
+        "translate-to-english": "Prevedi na engleski jezik",
+        "successfully-translated": "Uspješno prevedena novost! Molimo napravite još jednu provjeru prije objave.",
+        "translate-error": "Greška prilikom prevođenja. Prevedite ručno ili pokušajte ponovno."
+    },
     "home": "Početna",
     "clear": "Obriši",
     "save": "Spremi",

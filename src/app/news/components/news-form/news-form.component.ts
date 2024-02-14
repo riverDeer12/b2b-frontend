@@ -179,8 +179,17 @@ export class NewsFormComponent {
 
         this.newsService.translate(croatianValue, "hr", "en")
             .subscribe((response: any) => {
-                translationFormGroup.controls['EN'].setValue(response.translatedText as string);
-                this.translateLoading = false;
-            })
+                    translationFormGroup.controls['EN'].setValue(response.translatedText as string);
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'translate.successfully-translated');
+                    this.translateLoading = false;
+                },
+                error => {
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'translate.translate-error');
+                    this.translateLoading = false;
+                })
     }
 }
