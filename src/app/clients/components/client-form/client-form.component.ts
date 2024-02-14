@@ -80,7 +80,7 @@ export class ClientFormComponent {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
-                .showNotification(NotificationType.Error,
+                .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
             this.isLoading = false;
             return;
