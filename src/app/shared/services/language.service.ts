@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +14,7 @@ export class LanguageService {
 
     currentLanguage = new Subject<boolean>();
 
-    constructor() {
+    constructor(private http: HttpClient) {
     }
 
     /**

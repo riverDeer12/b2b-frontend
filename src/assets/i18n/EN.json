@@ -97,6 +97,11 @@
     },
     "croatian": "CRO",
     "english": "ENG",
+    "translate": {
+        "translate-to-english": "Translate to English",
+        "successfully-translated": "News is successfully translated! Please, do one more check before publishing.",
+        "translate-error": "Error during translation. Please, translate by hand or try again."
+    },
     "home": "Home",
     "clear": "Clear",
     "save": "Save",
