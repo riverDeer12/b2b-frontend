@@ -8,8 +8,6 @@ import {News} from '../../core/models/news';
 import {NewsService} from '../../core/services/news.service';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
 import {LanguageService} from "../../../shared/services/language.service";
 
 @Component({
@@ -182,7 +180,7 @@ export class NewsFormComponent {
             return;
         }
 
-        this.newsService.translate(croatianValue, "hr", "en")
+        this.languageService.translate(croatianValue, "hr", "en")
             .subscribe((response: any) => {
                     translationFormGroup.controls['EN'].setValue(response.translatedText as string);
                     this.notificationService
