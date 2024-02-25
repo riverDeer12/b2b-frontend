@@ -5,7 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {News} from "../../core/models/news";
 
 @Component({
-    selector: 'news-edit',
+    selector: 'newsletter-edit',
     templateUrl: './news-edit.component.html',
     styleUrls: ['./news-edit.component.scss']
 })

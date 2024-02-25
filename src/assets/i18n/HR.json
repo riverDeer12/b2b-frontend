@@ -679,6 +679,18 @@
         "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabranog klijenta.",
         "successfully-deleted": "Klijent je uspješno izbrisan."
     },
+    "newsletters": {
+        "default": "Newsletteri",
+        "news-item": "newslettera",
+        "published-at": {
+            "default": "Objavljeno",
+            "label": "Objavljeno:"
+        },
+        "content": {
+            "default": "Sadržaj",
+            "required": "Sadržaj je obavezan podatak."
+        }
+    },
     "activity-change": {
         "title": "Promjena vidljivosti zapisa",
         "message": "Molimo da potvrdite skrivanje/otkrivanje zapisa. Nakon što je unos skriven on više neće biti vidljiv u aplikaciji prilikom pretrage klijenta.",

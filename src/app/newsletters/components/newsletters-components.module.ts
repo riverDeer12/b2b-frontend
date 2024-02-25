@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NewsFormComponent} from './news-form/news-form.component';
-import {NewsDataTableComponent} from './news-data-table/news-data-table.component';
+import {NewsletterFormComponent} from './news-form/newsletter-form.component';
+import {NewslettersDataTableComponent} from './newsletters-data-table/newsletters-data-table.component';
 import {TableModule} from 'primeng/table';
 import {TranslateModule} from '@ngx-translate/core';
 import {InputTextModule} from 'primeng/inputtext';
@@ -18,8 +18,8 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
 
 @NgModule({
     declarations: [
-        NewsFormComponent,
-        NewsDataTableComponent
+        NewsletterFormComponent,
+        NewslettersDataTableComponent
     ],
     imports: [
         CommonModule,
@@ -39,9 +39,9 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         ValidationService
     ],
     exports: [
-        NewsFormComponent,
-        NewsDataTableComponent
+        NewsletterFormComponent,
+        NewslettersDataTableComponent
     ]
 })
-export class NewsComponentsModule {
+export class NewslettersComponentsModule {
 }

@@ -66,6 +66,11 @@ export class AppMenuComponent implements OnInit {
                         label: 'clients.default',
                         icon: 'pi pi-fw pi-users',
                         routerLink: ['/admin/clients']
+                    },
+                    {
+                        label: 'newsletters.default',
+                        icon: 'pi pi-fw pi-sitemap',
+                        routerLink: ['/admin/newsletters']
                     }
                 ]
             }

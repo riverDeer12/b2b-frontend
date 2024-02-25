@@ -676,6 +676,18 @@
         "confirm-delete-message": "Confirming the action will delete the selected client.",
         "successfully-deleted": "Client is deleted successfully."
     },
+    "newsletters": {
+        "default": "Newsletters",
+        "news-item": "newsletters",
+        "published-at": {
+            "default": "Published At",
+            "label": "Published At:"
+        },
+        "content": {
+            "default": "Content",
+            "required": "Content is mandatory information."
+        }
+    },
     "subscribers": {
         "default": "Subscribers"
     },

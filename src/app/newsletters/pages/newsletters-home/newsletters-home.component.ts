@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute, Route} from '@angular/router';
-import {News} from '../../core/models/news';
+import {Newsletter} from '../../core/models/newsletter';
 
 @Component({
     selector: 'newsletters-home',
-    templateUrl: './news-home.component.html',
-    styleUrls: ['./news-home.component.css']
+    templateUrl: './newsletters-home.component.html',
+    styleUrls: ['./newsletters-home.component.css']
 })
-export class NewsHomeComponent implements OnInit {
-    news!: News[];
+export class NewslettersHomeComponent implements OnInit {
+    newsletters!: Newsletter[];
 
     constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
@@ -20,8 +20,8 @@ export class NewsHomeComponent implements OnInit {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.news = response['news'].map((x: News) =>
-                Object.assign(new News(), x)
+            this.newsletters = response['newsletters'].map((x: Newsletter) =>
+                Object.assign(new Newsletter(), x)
             );
         });
     }

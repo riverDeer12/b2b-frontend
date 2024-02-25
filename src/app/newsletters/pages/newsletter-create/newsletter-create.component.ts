@@ -3,11 +3,11 @@ import {FormType} from "../../../shared/enums/form-type";
 
 @Component({
   selector: 'newsletter-create',
-  templateUrl: './news-create.component.html',
-  styleUrls: ['./news-create.component.scss']
+  templateUrl: './newsletter-create.component.html',
+  styleUrls: ['./newsletter-create.component.scss']
 })
-export class NewsCreateComponent {
-    returnUrl = '/admin/news';
+export class NewsletterCreateComponent {
+    returnUrl = '/admin/newsletter';
 
     formType = FormType.Create;
 }
