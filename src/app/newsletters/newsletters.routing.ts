@@ -3,13 +3,15 @@ import {NewslettersHomeComponent} from './pages/newsletters-home/newsletters-hom
 import {NewsletterEditComponent} from './pages/newsletter-edit/newsletter-edit.component';
 import {NewsletterCreateComponent} from './pages/newsletter-create/newsletter-create.component';
 import {NewslettersResolver} from './core/resolvers/newsletters.resolver';
+import {FreeFormNewslettersComponent} from "./pages/free-form-newsletters/free-form-newsletters.component";
+import {FreeFormNewslettersResolver} from "./core/resolvers/free-form-newsletters.resolver";
 
 export const NewslettersRoutes: Routes = [
     {
         path: '',
         component: NewslettersHomeComponent,
         resolve: {
-            news: NewslettersResolver
+            newsletters: NewslettersResolver
         }
     },
     {
@@ -20,7 +22,14 @@ export const NewslettersRoutes: Routes = [
         path: 'edit/:id',
         component: NewsletterEditComponent,
         resolve: {
-            news: NewslettersResolver
+            newsletter: NewslettersResolver
+        }
+    },
+    {
+        path: 'free-form-newsletters',
+        component: FreeFormNewslettersComponent,
+        resolve: {
+            freeFormNewsletters: FreeFormNewslettersResolver
         }
     }
 ]

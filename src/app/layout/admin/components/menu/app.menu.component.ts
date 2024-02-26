@@ -70,7 +70,21 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'newsletters.default',
                         icon: 'pi pi-fw pi-sitemap',
-                        routerLink: ['/admin/newsletters']
+                        expanded: true,
+                        items:[
+                            {
+                                label: 'newsletters.general',
+                                icon: 'pi pi-fw pi-sitemap',
+                                routerLinkActiveOptions: {exact: true},
+                                routerLink: ['/admin/newsletters'],
+                            },
+                            {
+                                label: 'newsletters.free-form-newsletters',
+                                icon: 'pi pi-fw pi-sitemap',
+                                routerLinkActiveOptions: {exact: true},
+                                routerLink: ['/admin/newsletters/free-form-newsletters'],
+                            }
+                        ]
                     }
                 ]
             }

@@ -5,12 +5,14 @@ import {NewsletterCreateComponent} from './newsletter-create/newsletter-create.c
 import {NewsletterEditComponent} from './newsletter-edit/newsletter-edit.component';
 import {NewslettersComponentsModule} from '../components/newsletters-components.module';
 import {TranslateModule} from '@ngx-translate/core';
+import {FreeFormNewslettersComponent} from './free-form-newsletters/free-form-newsletters.component';
 
 @NgModule({
     declarations: [
         NewslettersHomeComponent,
         NewsletterCreateComponent,
-        NewsletterEditComponent
+        NewsletterEditComponent,
+        FreeFormNewslettersComponent
     ],
     imports: [
         CommonModule,
@@ -20,7 +22,8 @@ import {TranslateModule} from '@ngx-translate/core';
     exports: [
         NewslettersHomeComponent,
         NewsletterCreateComponent,
-        NewsletterEditComponent
+        NewsletterEditComponent,
+        FreeFormNewslettersComponent
     ]
 })
 export class NewslettersPagesModule {

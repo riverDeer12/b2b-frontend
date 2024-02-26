@@ -31,7 +31,7 @@
             <button (click)="goToCreatePage()"
                     icon="pi pi-plus"
                     iconPos="right"
-                    label="{{'news.new-news'| translate }}"
+                    label="{{'newsletters.new-newsletter'| translate }}"
                     pButton pRipple
                     type="button"></button>
         </div>
@@ -39,24 +39,9 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:10%"></th>
-            <th pSortableColumn="localizedTitle" style="width:20%">
+            <th pSortableColumn="createdAt" style="width:20%">
                 <div class="flex justify-content-between align-items-center">
-                    {{ 'news.title.default' | translate }}
-                    <p-sortIcon field="title"></p-sortIcon>
-                    <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
-                </div>
-            </th>
-            <th pSortableColumn="numberOfViews" style="width:20%">
-                <div class="flex justify-content-between align-items-center">
-                    {{ 'news.number-of-views' | translate }}
-                    <p-sortIcon field="numberOfViews"></p-sortIcon>
-                    <p-columnFilter type="number" field="numberOfViews" display="menu"
-                                    class="ml-auto"></p-columnFilter>
-                </div>
-            </th>
-            <th pSortableColumn="updatedAt" style="width:20%">
-                <div class="flex justify-content-between align-items-center">
-                    {{ 'news.created-at' | translate }}
+                    {{ 'newsletters.created-at' | translate }}
                     <p-sortIcon field="createdAt"></p-sortIcon>
                     <p-columnFilter type="date" field="createdAt" display="menu" class="ml-auto"></p-columnFilter>
                 </div>
@@ -64,40 +49,34 @@
             <th>{{'activity' | translate }}</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-news>
+    <ng-template pTemplate="body" let-newsletter>
         <tr>
             <td class="d-flex">
                 <button type="button" class="p-button-danger m-1" pButton pRipple
-                        (click)="confirmDelete(news.id)"
+                        (click)="confirmDelete(newsletter.id)"
                         icon="pi pi-trash"></button>
-                <button type="button" class="p-button m-1" pButton pRipple (click)="goToEditPage(news.id)"
+                <button type="button" class="p-button m-1" pButton pRipple (click)="goToEditPage(newsletter.id)"
                         icon="pi pi-pencil"></button>
             </td>
             <td>
-                {{news.localizedTitle}}
+                {{newsletter.createdAt | date : 'dd.MM.yyyy HH:mm:ss'}}
             </td>
             <td>
-                {{news.numberOfViews}}
-            </td>
-            <td>
-                {{news.createdAt | date : 'dd.MM.yyyy HH:mm:ss'}}
-            </td>
-            <td>
-                <p-button (click)="openFlipActiveDialog(news.id)"
-                          icon="{{news.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                <p-button (click)="openFlipActiveDialog(newsletter.id)"
+                          icon="{{newsletter.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
                           styleClass="p-button-rounded p-button-text"></p-button>
             </td>
         </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="5">{{'news.no-news-found' | translate }}</td>
+            <td colspan="5">{{'newsletters.no-newsletters-found' | translate }}</td>
         </tr>
     </ng-template>
 </p-table>
 
-<p-confirmDialog header="{{'news.confirm-delete-action' | translate }}"
-                 message="{{'news.confirm-delete-message' | translate }}"
+<p-confirmDialog header="{{'newsletters.confirm-delete-action' | translate }}"
+                 message="{{'newsletters.confirm-delete-message' | translate }}"
                  acceptButtonStyleClass="p-button-text"
                  acceptLabel="{{'yes' | translate }}"
                  rejectLabel="{{'no' | translate }}"

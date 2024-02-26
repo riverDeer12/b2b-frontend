@@ -689,7 +689,19 @@
         "content": {
             "default": "Sadržaj",
             "required": "Sadržaj je obavezan podatak."
-        }
+        },
+        "successfully-created": "Newsletter je uspješno kreiran.",
+        "successfully-updated": "Newsletter je uspješno ažurirana.",
+        "created-at": "Datum kreiranja",
+        "updated-at": "Datum zadnje izmjene",
+        "items": "newslettera",
+        "no-newsletters-found": "Nema pronađenih newslettera.",
+        "confirm-delete-action": "Jeste li sigurni?",
+        "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani newsletter.",
+        "create-newsletter": "Kreiranje novog newslettera",
+        "new-newsletter": "Novi newsletter",
+        "newsletter-useful-info": "Newsletteri i korisne informacije",
+        "view-all-newsletters": "Pogledaj sve newslettere"
     },
     "activity-change": {
         "title": "Promjena vidljivosti zapisa",
