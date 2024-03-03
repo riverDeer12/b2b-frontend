@@ -4,7 +4,7 @@ import {
     RouterStateSnapshot,
     ActivatedRouteSnapshot
 } from '@angular/router';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 import {Newsletter} from '../models/newsletter';
 import {NewsletterService} from '../services/newsletter.service';
 
