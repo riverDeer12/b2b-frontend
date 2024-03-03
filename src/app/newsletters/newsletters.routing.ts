@@ -5,6 +5,7 @@ import {NewsletterCreateComponent} from './pages/newsletter-create/newsletter-cr
 import {NewslettersResolver} from './core/resolvers/newsletters.resolver';
 import {FreeFormNewslettersComponent} from "./pages/free-form-newsletters/free-form-newsletters.component";
 import {FreeFormNewslettersResolver} from "./core/resolvers/free-form-newsletters.resolver";
+import {NewsletterResolver} from "./core/resolvers/newsletter.service";
 
 export const NewslettersRoutes: Routes = [
     {
@@ -22,7 +23,7 @@ export const NewslettersRoutes: Routes = [
         path: 'edit/:id',
         component: NewsletterEditComponent,
         resolve: {
-            newsletter: NewslettersResolver
+            newsletter: NewsletterResolver
         }
     },
     {
@@ -30,6 +31,16 @@ export const NewslettersRoutes: Routes = [
         component: FreeFormNewslettersComponent,
         resolve: {
             freeFormNewsletters: FreeFormNewslettersResolver
-        }
-    }
+        },
+        children: [
+            {
+                path: 'create',
+                component: FreeFormNewsletterCreateComponent
+            },
+            {
+                path: 'edit',
+                component: FreeFormNewsletterEditComponent
+            },
+        ]
+    },
 ]
