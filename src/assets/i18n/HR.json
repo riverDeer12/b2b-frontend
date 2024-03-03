@@ -681,6 +681,7 @@
     },
     "newsletters": {
         "default": "Newsletteri",
+        "general": "Opći newsletteri",
         "news-item": "newslettera",
         "published-at": {
             "default": "Objavljeno",
@@ -701,7 +702,10 @@
         "create-newsletter": "Kreiranje novog newslettera",
         "new-newsletter": "Novi newsletter",
         "newsletter-useful-info": "Newsletteri i korisne informacije",
-        "view-all-newsletters": "Pogledaj sve newslettere"
+        "view-all-newsletters": "Pogledaj sve newslettere",
+        "free-form-newsletters": {
+            "default": "Free Form newsletteri"
+        }
     },
     "activity-change": {
         "title": "Promjena vidljivosti zapisa",

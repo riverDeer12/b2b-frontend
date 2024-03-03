@@ -3,16 +3,16 @@ import {Resolve,
     RouterStateSnapshot,
     ActivatedRouteSnapshot
 } from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {Newsletter} from '../models/newsletter';
-import {NewsletterService} from '../services/newsletter.service';
+import {Observable} from 'rxjs';
+import {Newsletter} from '../../../core/models/newsletter';
+import {FreeFormNewsletterService} from "../services/free-form-newsletter.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class FreeFormNewslettersResolver implements Resolve<Newsletter[]> {
 
-    constructor(private service: NewsletterService) {
+    constructor(private service: FreeFormNewsletterService) {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Newsletter[]> {

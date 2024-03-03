@@ -3,9 +3,8 @@ import {NewslettersHomeComponent} from './pages/newsletters-home/newsletters-hom
 import {NewsletterEditComponent} from './pages/newsletter-edit/newsletter-edit.component';
 import {NewsletterCreateComponent} from './pages/newsletter-create/newsletter-create.component';
 import {NewslettersResolver} from './core/resolvers/newsletters.resolver';
-import {FreeFormNewslettersComponent} from "./pages/free-form-newsletters/free-form-newsletters.component";
-import {FreeFormNewslettersResolver} from "./core/resolvers/free-form-newsletters.resolver";
-import {NewsletterResolver} from "./core/resolvers/newsletter.service";
+import {NewsletterResolver} from "./core/resolvers/newsletter.resolver";
+import {FreeFormNewslettersComponent} from "./free-form-newsletters/free-form-newsletters.component";
 
 export const NewslettersRoutes: Routes = [
     {
@@ -29,18 +28,7 @@ export const NewslettersRoutes: Routes = [
     {
         path: 'free-form-newsletters',
         component: FreeFormNewslettersComponent,
-        resolve: {
-            freeFormNewsletters: FreeFormNewslettersResolver
-        },
-        children: [
-            {
-                path: 'create',
-                component: FreeFormNewsletterCreateComponent
-            },
-            {
-                path: 'edit',
-                component: FreeFormNewsletterEditComponent
-            },
-        ]
+        loadChildren: () => import('../newsletters/free-form-newsletters/free-form-newsletters.module')
+            .then(m => m.FreeFormNewslettersModule)
     },
 ]

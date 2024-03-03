@@ -79,7 +79,7 @@ export class AppMenuComponent implements OnInit {
                                 routerLink: ['/admin/newsletters'],
                             },
                             {
-                                label: 'newsletters.free-form-newsletters',
+                                label: 'newsletters.free-form-newsletters.default',
                                 icon: 'pi pi-fw pi-sitemap',
                                 routerLinkActiveOptions: {exact: true},
                                 routerLink: ['/admin/newsletters/free-form-newsletters'],

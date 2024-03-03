@@ -12,10 +12,16 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {TabViewModule} from "primeng/tabview";
 import {ValidationService} from "../../../shared/services/validation.service";
 import {CustomControlsModule} from "../../../custom-controls/custom-controls.module";
+import {FreeFormNewsletterFormComponent} from './free-form-newsletter-form/free-form-newsletter-form.component';
+import {
+    FreeFormNewsletterDataTableComponent
+} from './free-form-newsletter-data-table/free-form-newsletter-data-table.component';
 
 
 @NgModule({
     declarations: [
+        FreeFormNewsletterFormComponent,
+        FreeFormNewsletterDataTableComponent
     ],
     imports: [
         CommonModule,
@@ -35,6 +41,8 @@ import {CustomControlsModule} from "../../../custom-controls/custom-controls.mod
         ValidationService
     ],
     exports: [
+        FreeFormNewsletterFormComponent,
+        FreeFormNewsletterDataTableComponent
     ]
 })
 export class FreeFormNewslettersComponentsModule {
