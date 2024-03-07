@@ -4,20 +4,20 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {Newsletter} from '../../core/models/newsletter';
-import {NewsletterService} from '../../core/services/newsletter.service';
+import {NewsletterAdditionalContent} from '../../core/models/newsletter-additional-content';
+import {NewsletterAdditionalContentService} from '../../core/services/newsletter-additional-content.service';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {LanguageService} from "../../../shared/services/language.service";
 
 @Component({
-    selector: 'newsletter-form',
-    templateUrl: './newsletter-form.component.html',
-    styleUrls: ['./newsletter-form.component.scss']
+    selector: 'newsletter-additional-content-form',
+    templateUrl: './newsletter-additional-content-form.component.html',
+    styleUrls: ['./newsletter-additional-content-form.component.scss']
 })
-export class NewsletterFormComponent {
+export class NewsletterAdditionalContentFormComponent {
     @Input() formType!: FormType;
-    @Input() newsletter!: Newsletter
+    @Input() newsletter!: NewsletterAdditionalContent;
     @Input() returnUrl!: string;
 
     entityType = EntityType.Newsletter;
@@ -37,7 +37,7 @@ export class NewsletterFormComponent {
                 private router: Router,
                 private languageService: LanguageService,
                 private notificationService: NotificationService,
-                private newsletterService: NewsletterService) {
+                private newsletterService: NewsletterAdditionalContentService) {
     }
 
     ngOnInit() {
@@ -58,12 +58,15 @@ export class NewsletterFormComponent {
      */
     private initCreateForm(): void {
         this.form = this.fb.group({
+            name: new FormControl('', Validators.required),
             content: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl('', Validators.required),
                     EN: new FormControl('', Validators.required)
                 })
-            })
+            }),
+            visibleFrom: new FormControl('', Validators.required),
+            visibleUntil: new FormControl('', Validators.required)
         })
     }
 
@@ -73,12 +76,15 @@ export class NewsletterFormComponent {
      */
     private initEditForm(): void {
         this.form = this.fb.group({
+            name: new FormControl(this.newsletter.name, Validators.required),
             content: this.fb.group({
                 translations: this.fb.group({
                     HR: new FormControl(this.newsletter.content.translations.HR, Validators.required),
                     EN: new FormControl(this.newsletter.content.translations.EN, Validators.required)
                 })
-            })
+            }),
+            visibleFrom: new FormControl(new Date(this.newsletter.visibleFrom), Validators.required),
+            visibleUntil: new FormControl(new Date(this.newsletter.visibleFrom), Validators.required)
         })
     }
 
@@ -111,7 +117,7 @@ export class NewsletterFormComponent {
      */
     private createNewsletter(): void {
 
-        this.newsletterService.createNewsletter(this.form.value).subscribe(() => {
+        this.newsletterService.createNewsletterAdditionalContent(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'news.successfully-created');
@@ -133,7 +139,7 @@ export class NewsletterFormComponent {
      */
     private editNewsletter(): void {
 
-        this.newsletterService.editNewsletter(this.newsletter.id, this.form.value).subscribe(() => {
+        this.newsletterService.editNewsletterAdditionalContent(this.newsletter.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'news.successfully-updated');
@@ -150,7 +156,6 @@ export class NewsletterFormComponent {
 
     translateNewsToEnglish(): void {
         this.translateLoading = true;
-        this.translateContent('title');
         this.translateContent('content');
     }
 
@@ -163,7 +168,7 @@ export class NewsletterFormComponent {
         const translationFormGroup = formGroup.controls['translations'] as FormGroup;
         const croatianValue = translationFormGroup.controls['HR'].value;
 
-        if(!croatianValue) {
+        if (!croatianValue) {
             this.translateLoading = false;
             return;
         }

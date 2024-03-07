@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {Newsletter} from "../../../core/models/newsletter";
+import {NewsletterAdditionalContent} from "../../../core/models/newsletter-additional-content";
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +19,14 @@ export class FreeFormNewsletterService {
     /**
      * Get free form newsletters created on platform.
      */
-    getFreeFormNewsletters = () => this.http.get<Newsletter[]>(this.freeFormNewslettersUrl);
+    getFreeFormNewsletters = () => this.http.get<NewsletterAdditionalContent[]>(this.freeFormNewslettersUrl);
 
     /**
      * Get free form newsletter entity by identifier.
      *
      * @param id free form newsletter entity identifier.
      */
-    getFreeFormNewsletter = (id: string) => this.http.get<Newsletter>(this.freeFormNewslettersUrl + id);
+    getFreeFormNewsletter = (id: string) => this.http.get<NewsletterAdditionalContent>(this.freeFormNewslettersUrl + id);
 
     /**
      * Sending form data to create
@@ -34,7 +34,7 @@ export class FreeFormNewsletterService {
      *
      * @param postData data for creating new free form newsletter entity.
      */
-    createFreeFormNewsletter = (postData: Newsletter) => this.http.post(this.freeFormNewslettersUrl, postData);
+    createFreeFormNewsletter = (postData: NewsletterAdditionalContent) => this.http.post(this.freeFormNewslettersUrl, postData);
 
     /**
      * Sending form data to update
@@ -43,7 +43,7 @@ export class FreeFormNewsletterService {
      * @param id free form newsletter entity identifier.
      * @param updateData for updating existing free form newsletter entity.
      */
-    editFreeFormNewsletter = (id: string, updateData: Newsletter) =>
+    editFreeFormNewsletter = (id: string, updateData: NewsletterAdditionalContent) =>
         this.http.put(this.freeFormNewslettersUrl + id, updateData);
 
     /**

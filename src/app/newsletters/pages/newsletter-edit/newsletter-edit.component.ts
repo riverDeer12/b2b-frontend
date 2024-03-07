@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormType} from "../../../shared/enums/form-type";
 import {ActivatedRoute} from "@angular/router";
-import {Newsletter} from "../../core/models/newsletter";
+import {NewsletterAdditionalContent} from "../../core/models/newsletter-additional-content";
 
 @Component({
     selector: 'newsletter-edit',
@@ -14,7 +14,7 @@ export class NewsletterEditComponent {
 
     formType = FormType.Edit;
 
-    newsletter!: Newsletter;
+    newsletter!: NewsletterAdditionalContent;
 
     constructor(private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
@@ -25,7 +25,7 @@ export class NewsletterEditComponent {
 
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
-            this.newsletter = Object.assign(new Newsletter(), response["newsletter"]);
+            this.newsletter = Object.assign(new NewsletterAdditionalContent(), response["newsletter"]);
         });
     }
 }

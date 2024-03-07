@@ -6,17 +6,17 @@ import {
 } from '@angular/router';
 import {Observable} from 'rxjs';
 import {FreeFormNewsletterService} from "../services/free-form-newsletter.service";
-import {Newsletter} from "../../../core/models/newsletter";
+import {NewsletterAdditionalContent} from "../../../core/models/newsletter-additional-content";
 
 @Injectable({
     providedIn: 'root'
 })
-export class FreeFormNewsletterResolver implements Resolve<Newsletter> {
+export class FreeFormNewsletterResolver implements Resolve<NewsletterAdditionalContent> {
 
     constructor(private service: FreeFormNewsletterService, private router: Router) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Newsletter> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<NewsletterAdditionalContent> {
         const routeId = route.paramMap.get('id');
 
         if (!routeId) {

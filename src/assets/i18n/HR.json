@@ -681,8 +681,20 @@
     },
     "newsletters": {
         "default": "Newsletteri",
-        "general": "Opći newsletteri",
+        "general": "Dodatci newsletterima",
         "news-item": "newslettera",
+        "name": {
+            "default": "Naziv dodatka newsletteru",
+            "required": "Naziv dodatka newsletteru je obavezan podatak."
+        },
+        "visible-from": {
+            "default": "Vidljiv od",
+            "required": "Datum za vidljivost newslettera je obavezan podatak."
+        },
+        "visible-until": {
+            "default": "Vidljiv do",
+            "required": "Datum za vidljivost newslettera je obavezan podatak."
+        },
         "published-at": {
             "default": "Objavljeno",
             "label": "Objavljeno:"
@@ -691,18 +703,18 @@
             "default": "Sadržaj",
             "required": "Sadržaj je obavezan podatak."
         },
-        "successfully-created": "Newsletter je uspješno kreiran.",
-        "successfully-updated": "Newsletter je uspješno ažurirana.",
+        "successfully-created": "Newsletter dodatak je uspješno kreiran.",
+        "successfully-updated": "Newsletter dodatak je uspješno ažuriran.",
         "created-at": "Datum kreiranja",
         "updated-at": "Datum zadnje izmjene",
         "items": "newslettera",
-        "no-newsletters-found": "Nema pronađenih newslettera.",
+        "no-newsletters-found": "Nema pronađenih newsletter dodataka.",
         "confirm-delete-action": "Jeste li sigurni?",
-        "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani newsletter.",
-        "create-newsletter": "Kreiranje novog newslettera",
-        "new-newsletter": "Novi newsletter",
-        "newsletter-useful-info": "Newsletteri i korisne informacije",
-        "view-all-newsletters": "Pogledaj sve newslettere",
+        "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani newsletter dodatak.",
+        "create-newsletter": "Kreiranje novog newsletter dodatka",
+        "new-newsletter": "Novi dodatak newsletteru",
+        "newsletter-useful-info": "Newsletter dodatci i korisne informacije",
+        "view-all-newsletters": "Pogledaj sve newsletter dodatake",
         "free-form-newsletters": {
             "default": "Free Form newsletteri"
         }

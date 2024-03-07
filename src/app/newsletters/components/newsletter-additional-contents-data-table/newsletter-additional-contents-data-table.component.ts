@@ -1,29 +1,29 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {Newsletter} from '../../core/models/newsletter';
+import {NewsletterAdditionalContent} from '../../core/models/newsletter-additional-content';
 import {Table} from 'primeng/table';
 import {ConfirmationService} from 'primeng/api';
 import {Router} from '@angular/router';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {NewsletterService} from '../../core/services/newsletter.service';
+import {NewsletterAdditionalContentService} from '../../core/services/newsletter-additional-content.service';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {SharedService} from '../../../shared/services/shared.service';
 
 @Component({
-    selector: 'newsletters-data-table',
-    templateUrl: './newsletters-data-table.component.html',
-    styleUrls: ['./newsletters-data-table.component.scss']
+    selector: 'newsletter-additional-contents-data-table',
+    templateUrl: './newsletter-additional-contents-data-table.component.html',
+    styleUrls: ['./newsletter-additional-contents-data-table.component.scss']
 })
-export class NewslettersDataTableComponent {
+export class NewsletterAdditionalContentsDataTableComponent {
 
-    @Input() data!: Newsletter[];
+    @Input() data!: NewsletterAdditionalContent[];
 
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
                 private notificationService: NotificationService,
                 private sharedService: SharedService,
-                private newsletterService: NewsletterService,
+                private newsletterService: NewsletterAdditionalContentService,
                 private router: Router) {
     }
 
@@ -78,7 +78,7 @@ export class NewslettersDataTableComponent {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.newsletterService.deleteNewsletter(newsId).subscribe((response: Object) => {
+                this.newsletterService.deleteNewsletterAdditionalContent(newsId).subscribe((response: Object) => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
                         this.data = this.data.filter((x => x.id !== newsId));
@@ -98,7 +98,7 @@ export class NewslettersDataTableComponent {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
 
-                        let flippedEntity = this.data.find(x => x.id === response.id) as Newsletter;
+                        let flippedEntity = this.data.find(x => x.id === response.id) as NewsletterAdditionalContent;
 
                         flippedEntity.isActive = !flippedEntity.isActive;
                     },

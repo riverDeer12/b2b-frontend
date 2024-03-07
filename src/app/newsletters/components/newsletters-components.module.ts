@@ -1,7 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NewsletterFormComponent} from './news-form/newsletter-form.component';
-import {NewslettersDataTableComponent} from './newsletters-data-table/newsletters-data-table.component';
 import {TableModule} from 'primeng/table';
 import {TranslateModule} from '@ngx-translate/core';
 import {InputTextModule} from 'primeng/inputtext';
@@ -14,12 +12,19 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {ValidationService} from '../../shared/services/validation.service';
 import {TabViewModule} from "primeng/tabview";
 import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
+import {CalendarModule} from "primeng/calendar";
+import {
+    NewsletterAdditionalContentFormComponent
+} from "./newsletter-additional-content-form/newsletter-additional-content-form.component";
+import {
+    NewsletterAdditionalContentsDataTableComponent
+} from "./newsletter-additional-contents-data-table/newsletter-additional-contents-data-table.component";
 
 
 @NgModule({
     declarations: [
-        NewsletterFormComponent,
-        NewslettersDataTableComponent
+        NewsletterAdditionalContentFormComponent,
+        NewsletterAdditionalContentsDataTableComponent
     ],
     imports: [
         CommonModule,
@@ -32,15 +37,16 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         EditorModule,
         ReactiveFormsModule,
         TabViewModule,
-        CustomControlsModule
+        CustomControlsModule,
+        CalendarModule
     ],
     providers: [
         ConfirmationService,
         ValidationService
     ],
     exports: [
-        NewsletterFormComponent,
-        NewslettersDataTableComponent
+        NewsletterAdditionalContentFormComponent,
+        NewsletterAdditionalContentsDataTableComponent
     ]
 })
 export class NewslettersComponentsModule {
