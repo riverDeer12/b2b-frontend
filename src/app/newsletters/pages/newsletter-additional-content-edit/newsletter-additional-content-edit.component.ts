@@ -4,11 +4,11 @@ import {ActivatedRoute} from "@angular/router";
 import {NewsletterAdditionalContent} from "../../core/models/newsletter-additional-content";
 
 @Component({
-    selector: 'newsletter-edit',
-    templateUrl: './newsletter-edit.component.html',
-    styleUrls: ['./newsletter-edit.component.scss']
+    selector: 'newsletter-additional-content-edit',
+    templateUrl: './newsletter-additional-content-edit.component.html',
+    styleUrls: ['./newsletter-additional-content-edit.component.scss']
 })
-export class NewsletterEditComponent {
+export class NewsletterAdditionalContentEditComponent {
 
     returnUrl = "/admin/newsletters";
 

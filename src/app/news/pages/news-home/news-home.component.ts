@@ -4,7 +4,7 @@ import {ActivatedRoute, Route} from '@angular/router';
 import {News} from '../../core/models/news';
 
 @Component({
-    selector: 'newsletters-home',
+    selector: 'news-home',
     templateUrl: './news-home.component.html',
     styleUrls: ['./news-home.component.css']
 })

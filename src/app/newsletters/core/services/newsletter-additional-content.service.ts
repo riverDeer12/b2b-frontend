@@ -13,7 +13,7 @@ import {NewsletterAdditionalContent} from '../models/newsletter-additional-conte
 })
 export class NewsletterAdditionalContentService {
 
-    newsletterAdditionalContentsUrl = environment.apiUrl + '/newsletters/additional-contents';
+    newsletterAdditionalContentsUrl = environment.apiUrl + '/newsletters/additional-contents/';
 
     constructor(private http: HttpClient) {
     }

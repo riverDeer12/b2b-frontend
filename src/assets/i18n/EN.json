@@ -99,7 +99,7 @@
     "english": "ENG",
     "translate": {
         "translate-to-english": "Translate to English",
-        "successfully-translated": "News is successfully translated! Please, do one more check before publishing.",
+        "successfully-translated": "Successfully translated! Please, do one more check before saving.",
         "translate-error": "Error during translation. Please, translate by hand or try again."
     },
     "home": "Home",

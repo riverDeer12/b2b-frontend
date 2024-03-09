@@ -6,7 +6,6 @@ export class NewsletterAdditionalContent {
     content!: LocalizedProperty;
     createdAt!: Date;
     updatedAt!: Date;
-    numberOfViews!: number;
     image!: string;
     isActive!: boolean;
     visibleFrom!: Date;

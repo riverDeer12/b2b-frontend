@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute, Route} from '@angular/router';
 import {NewsletterAdditionalContent} from '../../core/models/newsletter-additional-content';
 
@@ -11,7 +10,7 @@ import {NewsletterAdditionalContent} from '../../core/models/newsletter-addition
 export class NewslettersHomeComponent implements OnInit {
     newsletters!: NewsletterAdditionalContent[];
 
-    constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
+    constructor(private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
     }
 

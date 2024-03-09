@@ -11,7 +11,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {LanguageService} from "../../../shared/services/language.service";
 
 @Component({
-    selector: 'newsletter-additional-content-form',
+    selector: 'news-form',
     templateUrl: './news-form.component.html',
     styleUrls: ['./news-form.component.scss']
 })

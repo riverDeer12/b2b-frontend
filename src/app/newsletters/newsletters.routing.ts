@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
 import {NewslettersHomeComponent} from './pages/newsletters-home/newsletters-home.component';
-import {NewsletterEditComponent} from './pages/newsletter-edit/newsletter-edit.component';
-import {NewsletterCreateComponent} from './pages/newsletter-create/newsletter-create.component';
+import {NewsletterAdditionalContentEditComponent} from './pages/newsletter-additional-content-edit/newsletter-additional-content-edit.component';
+import {NewsletterAdditionalContentCreateComponent} from './pages/newsletter-additional-content-create/newsletter-additional-content-create.component';
 import {NewsletterAdditionalContentsResolver} from './core/resolvers/newsletter-additional-contents.resolver';
 import {NewsletterAdditionalContentResolver} from "./core/resolvers/newsletter-additional-content.resolver";
 import {FreeFormNewslettersComponent} from "./free-form-newsletters/free-form-newsletters.component";
@@ -16,11 +16,11 @@ export const NewslettersRoutes: Routes = [
     },
     {
         path: 'create',
-        component: NewsletterCreateComponent
+        component: NewsletterAdditionalContentCreateComponent
     },
     {
         path: 'edit/:id',
-        component: NewsletterEditComponent,
+        component: NewsletterAdditionalContentEditComponent,
         resolve: {
             newsletter: NewsletterAdditionalContentResolver
         }

@@ -84,7 +84,7 @@ export class NewsletterAdditionalContentFormComponent {
                 })
             }),
             visibleFrom: new FormControl(new Date(this.newsletter.visibleFrom), Validators.required),
-            visibleUntil: new FormControl(new Date(this.newsletter.visibleFrom), Validators.required)
+            visibleUntil: new FormControl(new Date(this.newsletter.visibleUntil), Validators.required)
         })
     }
 
@@ -120,7 +120,7 @@ export class NewsletterAdditionalContentFormComponent {
         this.newsletterService.createNewsletterAdditionalContent(this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'news.successfully-created');
+                        'newsletters.successfully-created');
                 this.router.navigateByUrl(this.returnUrl).then();
                 this.isLoading = false;
             },
@@ -142,7 +142,7 @@ export class NewsletterAdditionalContentFormComponent {
         this.newsletterService.editNewsletterAdditionalContent(this.newsletter.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
-                        'news.successfully-updated');
+                        'newsletters.successfully-updated');
                 this.router.navigateByUrl(this.returnUrl).then();
                 this.isLoading = false;
             },
