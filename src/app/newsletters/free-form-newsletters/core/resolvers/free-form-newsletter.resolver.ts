@@ -20,7 +20,7 @@ export class FreeFormNewsletterResolver implements Resolve<NewsletterAdditionalC
         const routeId = route.paramMap.get('id');
 
         if (!routeId) {
-            this.router.navigateByUrl('admin/newsletters/free-form-newsletters').then();
+            this.router.navigateByUrl('admin/newsletters/free-form').then();
         }
 
         return this.service.getFreeFormNewsletter(routeId as string);

@@ -716,7 +716,21 @@
         "newsletter-useful-info": "Newsletter dodatci i korisne informacije",
         "view-all-newsletters": "Pogledaj sve newsletter dodatake",
         "free-form-newsletters": {
-            "default": "Free Form newsletteri"
+            "default": "Free form newsletteri",
+            "title": {
+                "default": "Naslov",
+                "required": "Naslov je obavezan podatak."
+            },
+            "content": {
+                "default": "Sadržaj",
+                "required": "Sadržaj je obavezan podatak."
+            },
+            "send-to-all-companies": "Pošalji svim tvrtkama",
+            "send-to-all-public-organizations": "Pošalji svim javnim organizacijama",
+            "send-to-all-scientists": "Pošalji svim istraživačima",
+            "not-found": "Nema pronađenih free form newslettera.",
+            "create": "Kreiraj novi free form newsletter",
+            "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
         }
     },
     "activity-change": {

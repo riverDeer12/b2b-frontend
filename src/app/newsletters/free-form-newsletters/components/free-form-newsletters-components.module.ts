@@ -16,6 +16,8 @@ import {FreeFormNewsletterFormComponent} from './free-form-newsletter-form/free-
 import {
     FreeFormNewsletterDataTableComponent
 } from './free-form-newsletter-data-table/free-form-newsletter-data-table.component';
+import {CalendarModule} from "primeng/calendar";
+import {CheckboxModule} from "primeng/checkbox";
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import {
         EditorModule,
         ReactiveFormsModule,
         TabViewModule,
-        CustomControlsModule
+        CustomControlsModule,
+        CalendarModule,
+        CheckboxModule
     ],
     providers: [
         ConfirmationService,

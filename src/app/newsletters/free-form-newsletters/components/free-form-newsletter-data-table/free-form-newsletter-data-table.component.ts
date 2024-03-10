@@ -58,13 +58,13 @@ export class FreeFormNewsletterDataTableComponent {
      *
      * @param id id of selected newsletters item.
      */
-    goToEditPage = (id: string) => this.router.navigateByUrl('/admin/newsletters/free-form-newsletters/edit/' + id).then();
+    goToEditPage = (id: string) => this.router.navigateByUrl('/admin/newsletters/free-form/edit/' + id).then();
 
     /**
      * Redirect user to newsletters
      * create page.
      */
-    goToCreatePage = () => this.router.navigateByUrl('/admin/newsletters/free-form-newsletters/create').then();
+    goToCreatePage = () => this.router.navigateByUrl('/admin/newsletters/free-form/create').then();
 
     /**
      * Trigger popup to

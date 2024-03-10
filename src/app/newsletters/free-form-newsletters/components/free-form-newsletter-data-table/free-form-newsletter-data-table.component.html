@@ -1,1 +1,86 @@
-<p>free-form-newsletter-data-table works!</p>
+<p-table #newslettersDataTable
+         dataKey="id"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'results' | translate }} {{'from' | translate }}
+         {totalRecords} {{'results' | translate }}"
+         responsiveLayout="scroll"
+         [rowHover]="true"
+         [showLoader]="true"
+         [value]="data"
+         [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5, 10, 20]"
+         [paginator]="true"
+         [globalFilterFields]="['title']"
+         [tableStyle]="{'min-width':'75rem'}">
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between flex-column sm:flex-row">
+            <div class="flex">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(newslettersDataTable, $event)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+                <button
+                    (click)="clear(newslettersDataTable)"
+                    label="{{'clear'| translate }}"
+                    icon="pi pi-times"
+                    iconPos="right"
+                    pButton pRipple
+                    type="button">
+                </button>
+            </div>
+            <button (click)="goToCreatePage()"
+                    icon="pi pi-plus"
+                    iconPos="right"
+                    label="{{'newsletters.free-form-newsletters.create'| translate }}"
+                    pButton pRipple
+                    type="button"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%"></th>
+            <th>{{'newsletters.free-form-newsletters.title.default' | translate }}</th>
+            <th>{{'activity' | translate }}</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-newsletter>
+        <tr>
+            <td class="d-flex">
+                <button type="button" class="p-button-danger m-1" pButton pRipple
+                        (click)="confirmDelete(newsletter.id)"
+                        icon="pi pi-trash"></button>
+                <button type="button" class="p-button m-1" pButton pRipple (click)="goToEditPage(newsletter.id)"
+                        icon="pi pi-pencil"></button>
+            </td>
+            <td>
+                {{newsletter.title}}
+            </td>
+            <td>
+                <p-button (click)="openFlipActiveDialog(newsletter.id)"
+                          icon="{{newsletter.isActive ? 'pi pi-eye' : 'pi pi-eye-slash'}}"
+                          styleClass="p-button-rounded p-button-text"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{'newsletters.free-form-newsletters.not-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-confirmDialog header="{{'newsletters.confirm-delete-action' | translate }}"
+                 message="{{'newsletters.confirm-delete-message' | translate }}"
+                 acceptButtonStyleClass="p-button-text"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 key="confirmDeleteDialog"
+                 icon="pi pi-exclamation-triangle"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<p-confirmDialog header="{{'activity-change.title' | translate }}"
+                 message="{{'activity-change.message' | translate }}"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 icon="pi pi-exclamation-triangle"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>

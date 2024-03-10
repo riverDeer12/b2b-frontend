@@ -26,7 +26,7 @@ export const NewslettersRoutes: Routes = [
         }
     },
     {
-        path: 'free-form-newsletters',
+        path: 'free-form',
         component: FreeFormNewslettersComponent,
         loadChildren: () => import('../newsletters/free-form-newsletters/free-form-newsletters.module')
             .then(m => m.FreeFormNewslettersModule)
