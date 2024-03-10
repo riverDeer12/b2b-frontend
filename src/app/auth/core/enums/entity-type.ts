@@ -11,4 +11,5 @@ export enum EntityType {
     Product = "products",
     Client = "clients",
     Newsletter = "newsletters",
+    MainEntities = "companies, public-organizations, scientists"
 }

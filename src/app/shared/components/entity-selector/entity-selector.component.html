@@ -1,0 +1,10 @@
+<form [formGroup]="formGroup">
+    <span class="p-float-label">
+        <p-multiSelect [options]="entities"
+                       [formControlName]="controlName"
+                       placeholder="{{ placeholder | translate }}"
+                       optionLabel="name" inputId="float-label"></p-multiSelect>
+        <label>{{ label | translate }}</label>
+    </span>
+</form>
+

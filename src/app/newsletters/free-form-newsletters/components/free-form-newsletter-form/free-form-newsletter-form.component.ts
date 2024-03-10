@@ -9,6 +9,7 @@ import {NotificationType} from "../../../../shared/enums/notification-type";
 import {FreeFormNewsletter} from "../../core/models/free-form-newsletter";
 import {FreeFormNewsletterService} from "../../core/services/free-form-newsletter.service";
 import {environment} from "../../../../../environments/environment";
+import {EntityType} from "../../../../auth/core/enums/entity-type";
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -25,6 +26,10 @@ export class FreeFormNewsletterFormComponent {
     translateLoading: boolean = false;
 
     form!: FormGroup;
+
+    public get entityType(): typeof EntityType {
+        return EntityType;
+    }
 
     public get formActionType(): typeof FormType {
         return FormType;
@@ -117,6 +122,9 @@ export class FreeFormNewsletterFormComponent {
                 .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
             this.isLoading = false;
+
+            console.log(this.form.value);
+
             return;
         }
 

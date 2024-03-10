@@ -68,6 +68,33 @@
                         </div>
                     </p-tabPanel>
                     <div class="field field col-md-12">
+                        <entity-selector
+                            [entityType]="entityType.Company"
+                            [formGroup]="form"
+                            label="companies.default"
+                            placeholder="companies.placeholder"
+                            controlName="recipients"
+                        ></entity-selector>
+                    </div>
+                    <div class="field field col-md-12">
+                        <entity-selector
+                            [entityType]="entityType.PublicOrganization"
+                            [formGroup]="form"
+                            label="organizations.default"
+                            placeholder="organizations.placeholder"
+                            controlName="recipients"
+                        ></entity-selector>
+                    </div>
+                    <div class="field field col-md-12">
+                        <entity-selector
+                            [entityType]="entityType.Scientist"
+                            [formGroup]="form"
+                            label="scientists.default"
+                            placeholder="scientists.placeholder"
+                            controlName="recipients"
+                        ></entity-selector>
+                    </div>
+                    <div class="field field col-md-12">
                         <p-checkbox formControlName="sendToAllCompanies" [binary]="true"
                                     label="{{'newsletters.free-form-newsletters.send-to-all-companies' | translate}}">
                         </p-checkbox>

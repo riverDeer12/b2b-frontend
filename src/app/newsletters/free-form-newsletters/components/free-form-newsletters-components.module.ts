@@ -18,6 +18,7 @@ import {
 } from './free-form-newsletter-data-table/free-form-newsletter-data-table.component';
 import {CalendarModule} from "primeng/calendar";
 import {CheckboxModule} from "primeng/checkbox";
+import {SharedModule} from "../../../shared/shared.module";
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {CheckboxModule} from "primeng/checkbox";
         TabViewModule,
         CustomControlsModule,
         CalendarModule,
-        CheckboxModule
+        CheckboxModule,
+        SharedModule
     ],
     providers: [
         ConfirmationService,
