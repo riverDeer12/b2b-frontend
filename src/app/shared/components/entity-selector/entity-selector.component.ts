@@ -19,6 +19,8 @@ export class EntitySelectorComponent implements OnInit {
     @Input() controlName!: string;
     @Input() label!: string;
     @Input() placeholder!: string;
+    @Input() optionLabel!: string;
+    @Input() isDisabled!: boolean;
 
     entities!: any[];
 

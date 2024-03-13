@@ -116,21 +116,22 @@ export class FreeFormNewsletterFormComponent {
 
         this.isLoading = true;
 
+        console.log(this.form.value);
+
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
-            this.isLoading = false;
 
-            console.log(this.form.value);
+            this.isLoading = false;
 
             return;
         }
 
-        this.formType === FormType.Create ?
-            this.createNewsletter() :
-            this.editNewsletter();
+        // this.formType === FormType.Create ?
+        //     this.createNewsletter() :
+        //     this.editNewsletter();
     }
 
     /**
@@ -162,19 +163,20 @@ export class FreeFormNewsletterFormComponent {
      */
     private editNewsletter(): void {
 
-        this.newsletterService.editFreeFormNewsletter(this.newsletter.id, this.form.value).subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'newsletters.free-form-newsletters.successfully-updated');
-                this.router.navigateByUrl(this.returnUrl).then();
-                this.isLoading = false;
-            },
-            () => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-                this.isLoading = false;
-            })
+        this.newsletterService.editFreeFormNewsletter(this.newsletter.id, this.form.value)
+            .subscribe(() => {
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'newsletters.free-form-newsletters.successfully-updated');
+                    this.router.navigateByUrl(this.returnUrl).then();
+                    this.isLoading = false;
+                },
+                () => {
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'correct-validation-errors');
+                    this.isLoading = false;
+                })
     }
 
     translateNewsToEnglish(): void {

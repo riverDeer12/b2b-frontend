@@ -58,7 +58,8 @@ export class FreeFormNewsletterDataTableComponent {
      *
      * @param id id of selected newsletters item.
      */
-    goToEditPage = (id: string) => this.router.navigateByUrl('/admin/newsletters/free-form/edit/' + id).then();
+    goToEditPage = (id: string) =>
+        this.router.navigateByUrl('/admin/newsletters/free-form/edit/' + id).then();
 
     /**
      * Redirect user to newsletters
@@ -77,15 +78,16 @@ export class FreeFormNewsletterDataTableComponent {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.newsletterService.deleteFreeFormNewsletter(newsId).subscribe((response: Object) => {
-                        this.notificationService
-                            .showNotification(NotificationType.Success, 'successfully-deleted');
-                        this.data = this.data.filter((x => x.id !== newsId));
-                    },
-                    (error: Object) => {
-                        this.notificationService
-                            .showNotification(NotificationType.Error, 'error-deleting');
-                    })
+                this.newsletterService.deleteFreeFormNewsletter(newsId)
+                    .subscribe((response: Object) => {
+                            this.notificationService
+                                .showNotification(NotificationType.Success, 'successfully-deleted');
+                            this.data = this.data.filter((x => x.id !== newsId));
+                        },
+                        (error: Object) => {
+                            this.notificationService
+                                .showNotification(NotificationType.Error, 'error-deleting');
+                        })
             },
         });
     }
@@ -93,20 +95,22 @@ export class FreeFormNewsletterDataTableComponent {
     openFlipActiveDialog(newsId: string): void {
         this.confirmationService.confirm({
             accept: () => {
-                this.sharedService.flipActive(EntityType.Newsletter, newsId).subscribe((response: any) => {
-                        this.notificationService
-                            .showNotification(NotificationType.Success, 'activity-change.successfully-changed');
+                this.sharedService.flipActive(EntityType.Newsletter, newsId)
+                    .subscribe((response: any) => {
+                            this.notificationService
+                                .showNotification(NotificationType.Success,
+                                    'activity-change.successfully-changed');
 
-                        let flippedEntity = this.data
-                            .find(x => x.id === response.id) as FreeFormNewsletter;
+                            let flippedEntity = this.data
+                                .find(x => x.id === response.id) as FreeFormNewsletter;
 
-                        flippedEntity.isActive = !flippedEntity.isActive;
-                    },
+                            flippedEntity.isActive = !flippedEntity.isActive;
+                        },
 
-                    (error: Object) => {
-                        this.notificationService
-                            .showNotification(NotificationType.Error, 'activity-change.error');
-                    })
+                        (error: Object) => {
+                            this.notificationService
+                                .showNotification(NotificationType.Error, 'activity-change.error');
+                        })
             },
         });
     }
