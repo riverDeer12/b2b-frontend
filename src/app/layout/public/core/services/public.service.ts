@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from "../../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {News} from "../../../../news/core/models/news";
@@ -10,9 +10,10 @@ import {ResearchProblem} from "../../../../research-problems/core/models/researc
 import {Organization} from "../../../../organizations/core/models/organization";
 import {SpecificKnowledge} from '../../../../specific-knowledge/core/models/specific-knowledge';
 import {Product} from '../../../../products/core/models/product';
+import {EntityType} from "../../../../auth/core/enums/entity-type";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class PublicService {
     private publicUrl = environment.apiUrl + '/public/';
@@ -30,7 +31,7 @@ export class PublicService {
         this.http.get<Scientist[]>(this.publicUrl + 'scientists');
 
     getScientist = (id: string) =>
-        this.http.get<Scientist>(this.publicUrl + 'scientists/' +  id);
+        this.http.get<Scientist>(this.publicUrl + 'scientists/' + id);
 
     getEquipment = () =>
         this.http.get<Equipment[]>(this.publicUrl + 'scientists/equipment');
@@ -42,7 +43,7 @@ export class PublicService {
         this.http.get<Company[]>(this.publicUrl + 'companies');
 
     getCompany = (id: string) =>
-        this.http.get<Company>(this.publicUrl + 'companies/' +  id);
+        this.http.get<Company>(this.publicUrl + 'companies/' + id);
 
     getJobOffers = () =>
         this.http.get<JobOffer[]>(this.publicUrl + 'companies/job-offers');
@@ -54,11 +55,22 @@ export class PublicService {
         this.http.get<Organization[]>(this.publicUrl + 'public-organizations');
 
     getOrganization = (id: string) =>
-        this.http.get<Organization>(this.publicUrl + 'public-organizations/' +  id);
+        this.http.get<Organization>(this.publicUrl + 'public-organizations/' + id);
 
     getOrganizationResearchProblems = () =>
         this.http.get<ResearchProblem[]>(this.publicUrl + 'public-organizations/research-problems');
 
     getProducts = () =>
         this.http.get<Product[]>(this.publicUrl + 'companies/products');
+
+    sendKeywordPhrase = (keywords: string[],
+                         entityType: EntityType,
+                         parentEntityType?: EntityType) =>
+        parentEntityType ?
+            this.http.post(this.publicUrl + parentEntityType + '/' + entityType.toString() + '/keywords', {
+                keywords: keywords
+            }) :
+            this.http.post(this.publicUrl + entityType.toString() + '/keywords', {
+                keywords: keywords
+            });
 }

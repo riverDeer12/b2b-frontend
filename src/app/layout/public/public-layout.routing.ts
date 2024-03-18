@@ -42,6 +42,10 @@ import {
 } from "./pages/public-organization-research-problems/public-organization-research-problems.component";
 import {PublicProductsComponent} from './pages/public-products/public-products.component';
 import {PublicProductsResolver} from './core/resolvers/products/public-products.resolver';
+import {PublicOrganizationResolver} from "./core/resolvers/organizations/public-organization.resolver";
+import {Scientist} from "../../scientists/core/models/scientist";
+import {KeywordResultsComponent} from "./pages/keyword-results/keyword-results.component";
+import {KeywordPhraseResolver} from "./core/resolvers/keyword-results/keyword-phrase.resolver";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -183,6 +187,13 @@ export const PublicLayoutRoutes: Routes = [
         component: PublicMostPopularComponent,
         resolve:{
             mostPopular: MostPopularResolver
+        }
+    },
+    {
+        path: 'keyword-search/:keyword-phrase',
+        component: KeywordResultsComponent,
+        resolve: {
+            keywords: KeywordPhraseResolver
         }
     }
 ]

@@ -8,6 +8,7 @@ import {News} from '../../core/models/news';
 import {NewsService} from '../../core/services/news.service';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {LanguageService} from "../../../shared/services/language.service";
 
 @Component({
     selector: 'news-form',
@@ -23,6 +24,8 @@ export class NewsFormComponent {
 
     isLoading: boolean = false;
 
+    translateLoading: boolean = false;
+
     form!: FormGroup;
 
     public get formActionType(): typeof FormType {
@@ -32,6 +35,7 @@ export class NewsFormComponent {
     constructor(public validationService: ValidationService,
                 private fb: FormBuilder,
                 private router: Router,
+                private languageService: LanguageService,
                 private notificationService: NotificationService,
                 private newsService: NewsService) {
     }
@@ -101,7 +105,7 @@ export class NewsFormComponent {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
-                .showNotification(NotificationType.Error,
+                .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
             this.isLoading = false;
             return;
@@ -154,5 +158,41 @@ export class NewsFormComponent {
                         'correct-validation-errors');
                 this.isLoading = false;
             })
+    }
+
+    translateNewsToEnglish(): void {
+        this.translateLoading = true;
+        this.translateContent('title');
+        this.translateContent('content');
+    }
+
+    /**
+     * Translate news content
+     * from croatian to english.
+     */
+    translateContent(formControlName: string): void {
+        const formGroup = this.form.controls[formControlName] as FormGroup;
+        const translationFormGroup = formGroup.controls['translations'] as FormGroup;
+        const croatianValue = translationFormGroup.controls['HR'].value;
+
+        if(!croatianValue) {
+            this.translateLoading = false;
+            return;
+        }
+
+        this.languageService.translate(croatianValue, "hr", "en")
+            .subscribe((response: any) => {
+                    translationFormGroup.controls['EN'].setValue(response.translatedText as string);
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'translate.successfully-translated');
+                    this.translateLoading = false;
+                },
+                error => {
+                    this.notificationService
+                        .showNotification(NotificationType.Warning,
+                            'translate.translate-error');
+                    this.translateLoading = false;
+                })
     }
 }

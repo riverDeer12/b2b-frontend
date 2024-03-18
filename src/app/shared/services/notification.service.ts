@@ -13,6 +13,11 @@ import {ApiErrorMessage} from '../models/api-error-message';
 })
 export class NotificationService {
 
+    /**
+     * Notification lifetime in miliseconds.
+     */
+    private NOFITICATION_LIFETIME: number = 8000;
+
     constructor(
         private translateService: TranslateService,
         private messageService: MessageService
@@ -44,6 +49,8 @@ export class NotificationService {
                 summary: summary,
                 severity: type,
                 detail: message,
+                sticky: false,
+                life: this.NOFITICATION_LIFETIME,
                 icon: this.getIconKey(type)
             });
         });
