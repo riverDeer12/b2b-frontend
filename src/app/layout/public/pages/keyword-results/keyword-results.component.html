@@ -1,0 +1,173 @@
+<div id="scientists" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+    <div class="mx-4 md:mx-8 mt-0 md:mt-4 mb-6 text-center">
+        <h1 class="text-6xl font-bold text-100 line-height-2">{{ 'keyword-search.results' | translate }}</h1>
+    </div>
+</div>
+
+
+<div class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+    <div class="mx-4 md:mx-8 mt-0 md:mt-4 text-center">
+        <input pInputText
+               type="text"
+               id="keywords"
+               style="width: 60%"
+               aria-describedby="keywords"
+               [(ngModel)]="keywordPhrase"/>
+        <button pButton pRipple type="submit"
+                label="{{'search' | translate}}"
+                (click)="sendKeywordPhrase()"
+                class="text-xl border-none mt-3 font-normal line-height-3 px-3"></button>
+    </div>
+</div>
+
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'scientists.default' | translate }}</h4>
+        <div *ngIf="!scientists.length">{{'no-data' | translate }}</div>
+        <div *ngIf="scientists.length">
+            <div *ngIf="!areScientistsLoading">
+                <span class="mr-3" *ngFor="let scientist of scientists">
+                    <a [href]="'scientists/details/' + scientist.id">{{ scientist.fullName }}</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'equipment.default' | translate }}</h4>
+        <div *ngIf="!equipment.length">{{'no-data' | translate }}</div>
+        <div *ngIf="equipment.length">
+            <div *ngIf="!areEquipmentLoading">
+                <span class="mr-3" *ngFor="let equipmentItem of equipment">
+                    <a [href]="'scientists/details/' + equipmentItem.scientistId">
+                        {{ equipmentItem.localizedTitle }}</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'specific-knowledge.default' | translate }}</h4>
+        <div *ngIf="!specificKnowledge.length">{{'no-data' | translate }}</div>
+        <div *ngIf="specificKnowledge.length">
+            <div *ngIf="!areSpecificKnowledgeLoading">
+                <span class="mr-3" *ngFor="let specificKnowledgeItem of specificKnowledge">
+                <a
+                    [href]="'scientists/details/' + specificKnowledgeItem.scientistId">{{ specificKnowledgeItem.localizedTitle }}</a>
+                            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'organizations.default' | translate }}</h4>
+        <div *ngIf="!organizations.length">{{'no-data' | translate }}</div>
+        <div *ngIf="organizations.length">
+            <div *ngIf="!areOrganizationsLoading">
+                <span class="mr-3" *ngFor="let organization of organizations">
+                <a
+                    [href]="'public-organizations/details/' + organization.id">{{ organization.name }}</a>
+                            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'organizations.research-problems' | translate }}</h4>
+        <div *ngIf="!organizationResearchProblems.length">{{'no-data' | translate }}</div>
+        <div *ngIf="organizationResearchProblems.length">
+            <div *ngIf="!areOrganizationResearchProblemsLoading">
+                <span class="mr-3" *ngFor="let researchProblem of organizationResearchProblems">
+                <a
+                    [href]="'public-organizations/details/' + researchProblem.publicOrganizationId">
+                    {{ researchProblem.localizedTitle }}</a>
+                            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'companies.default' | translate }}</h4>
+        <div *ngIf="!companies.length">{{'no-data' | translate }}</div>
+        <div *ngIf="companies.length">
+            <div *ngIf="!areCompaniesLoading">
+                <span class="mr-3" *ngFor="let company of companies">
+                    <a [href]="'companies/details/' + company.id">{{ company.name }}</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'job-offers.default' | translate }}</h4>
+        <div *ngIf="!jobOffers.length">{{'no-data' | translate }}</div>
+        <div *ngIf="jobOffers.length">
+            <div *ngIf="!areJobOffersLoading">
+                <span class="mr-3" *ngFor="let jobOffer of jobOffers">
+                <a
+                    [href]="'companies/details/' + jobOffer.companyId">{{ jobOffer.localizedName }}</a>
+                            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'products.default' | translate }}</h4>
+        <div *ngIf="!products.length">{{'no-data' | translate }}</div>
+        <div *ngIf="products.length">
+            <div *ngIf="products.length">
+                <div *ngIf="!areProductsLoading">
+                    <span class="mr-3" *ngFor="let product of products">
+                    <a
+                        [href]="'companies/details/' + product.companyId">{{ product.localizedTitle }}</a>
+                                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="justify-content-center grid my-3 mb-5">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'companies.research-problems' | translate }}</h4>
+        <div *ngIf="!companyResearchProblems.length">{{'no-data' | translate }}</div>
+        <div *ngIf="companyResearchProblems.length">
+            <div *ngIf="!areCompanyResearchProblemsLoading">
+                <span class="mr-3" *ngFor="let researchProblem of companyResearchProblems">
+                <a
+                    [href]="'companies/details/' + researchProblem.companyId">{{ researchProblem.localizedTitle}}</a>
+               </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
