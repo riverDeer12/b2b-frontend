@@ -8,6 +8,9 @@ import {
 } from "./pages/free-form-newsletter-create/free-form-newsletter-create.component";
 import {FreeFormNewslettersResolver} from "./core/resolvers/free-form-newsletters.resolver";
 import {FreeFormNewsletterResolver} from "./core/resolvers/free-form-newsletter.resolver";
+import {ScientistsResolver} from "../../scientists/core/resolvers/scientists.resolver";
+import {CompaniesResolver} from "../../companies/core/resolvers/companies.resolver";
+import {OrganizationsResolver} from "../../organizations/core/resolvers/organizations.resolver";
 
 export const FreeFormNewslettersRoutes: Routes = [
     {
@@ -19,13 +22,11 @@ export const FreeFormNewslettersRoutes: Routes = [
     },
     {
         path: 'create',
-        component: FreeFormNewsletterCreateComponent
-    },
-    {
-        path: 'edit/:id',
-        component: FreeFormNewsletterEditComponent,
-        resolve: {
-            newsletter: FreeFormNewsletterResolver
+        component: FreeFormNewsletterCreateComponent,
+        resolve:{
+            scientists: ScientistsResolver,
+            companies: CompaniesResolver,
+            organizations: OrganizationsResolver,
         }
     }
 ]

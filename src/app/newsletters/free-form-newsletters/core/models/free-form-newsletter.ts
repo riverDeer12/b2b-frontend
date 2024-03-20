@@ -1,6 +1,4 @@
-import {environment} from "../../../../../environments/environment";
 import {LocalizedProperty, TranslationsObject} from "../../../../shared/models/localized-property";
-
 
 export class FreeFormNewsletter {
     id!: string;
@@ -24,7 +22,22 @@ export class FreeFormNewsletter {
 
 }
 
+export enum RecipientType {
+    SuperAdmin,
+    Company,
+    Scientist,
+    PublicOrganization
+}
+
 export class Recipient {
     userId!: string;
-    userType!: number;
+    userType!: RecipientType;
+    firstname!: string;
+    lastname!: string;
+    email!: string;
+    defaultLanguage!: number;
+
+    get fullName(): string {
+        return this.firstname + ' ' + this.lastname;
+    }
 }

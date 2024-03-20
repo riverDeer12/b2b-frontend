@@ -19,6 +19,7 @@ import {
 import {CalendarModule} from "primeng/calendar";
 import {CheckboxModule} from "primeng/checkbox";
 import {SharedModule} from "../../../shared/shared.module";
+import {MultiSelectModule} from "primeng/multiselect";
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {SharedModule} from "../../../shared/shared.module";
         CustomControlsModule,
         CalendarModule,
         CheckboxModule,
-        SharedModule
+        SharedModule,
+        MultiSelectModule
     ],
     providers: [
         ConfirmationService,

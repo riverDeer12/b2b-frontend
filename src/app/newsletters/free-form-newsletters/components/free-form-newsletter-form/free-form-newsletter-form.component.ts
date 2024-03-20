@@ -6,10 +6,9 @@ import {Router} from "@angular/router";
 import {LanguageService} from "../../../../shared/services/language.service";
 import {NotificationService} from "../../../../shared/services/notification.service";
 import {NotificationType} from "../../../../shared/enums/notification-type";
-import {FreeFormNewsletter} from "../../core/models/free-form-newsletter";
+import {FreeFormNewsletter, Recipient, RecipientType} from "../../core/models/free-form-newsletter";
 import {FreeFormNewsletterService} from "../../core/services/free-form-newsletter.service";
 import {environment} from "../../../../../environments/environment";
-import {EntityType} from "../../../../auth/core/enums/entity-type";
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -17,9 +16,11 @@ import {EntityType} from "../../../../auth/core/enums/entity-type";
     styleUrls: ['./free-form-newsletter-form.component.scss']
 })
 export class FreeFormNewsletterFormComponent {
-    @Input() formType!: FormType;
     @Input() newsletter!: FreeFormNewsletter;
     @Input() returnUrl!: string;
+    @Input() scientists!: Recipient[];
+    @Input() companies!: Recipient[];
+    @Input() organizations!: Recipient[];
 
     isLoading: boolean = false;
 
@@ -27,8 +28,10 @@ export class FreeFormNewsletterFormComponent {
 
     form!: FormGroup;
 
-    public get entityType(): typeof EntityType {
-        return EntityType;
+    finalRecipients = [];
+
+    public get recipientType(): typeof RecipientType {
+        return RecipientType;
     }
 
     public get formActionType(): typeof FormType {
@@ -44,15 +47,8 @@ export class FreeFormNewsletterFormComponent {
     }
 
     ngOnInit() {
-        this.initFormGroup();
+        this.initCreateForm();
     }
-
-    /**
-     * Switch function depending on
-     * form action type from input decorator.
-     */
-    initFormGroup = () => this.formType === FormType.Create ?
-        this.initCreateForm() : this.initEditForm();
 
 
     /**
@@ -74,37 +70,13 @@ export class FreeFormNewsletterFormComponent {
                 })
             }),
             sendEmail: new FormControl(environment.production),
-            sendToAllCompanies: new FormControl('', Validators.required),
-            sendToAllScientists: new FormControl('', Validators.required),
-            sendToAllPublicOrganizations: new FormControl('', Validators.required),
-            recipients: new FormControl('', Validators.required)
-        })
-    }
-
-    /**
-     * Initializes form if
-     * edit form action is triggered.
-     */
-    private initEditForm(): void {
-        this.form = this.fb.group({
-            title: this.fb.group({
-                translations: this.fb.group({
-                    HR: new FormControl(this.newsletter.title.translations.HR, Validators.required),
-                    EN: new FormControl(this.newsletter.title.translations.HR, Validators.required)
-                })
-            }),
-            content: this.fb.group({
-                translations: this.fb.group({
-                    HR: new FormControl(this.newsletter.content.translations.HR, Validators.required),
-                    EN: new FormControl(this.newsletter.content.translations.EN, Validators.required)
-                })
-            }),
-            sendEmail: new FormControl(environment.production),
-            sendToAllCompanies: new FormControl(this.newsletter.sendToAllCompanies, Validators.required),
-            sendToAllScientists: new FormControl(this.newsletter.sendToAllScientists, Validators.required),
-            sendToAllPublicOrganizations: new FormControl(this.newsletter.sendToAllPublicOrganizations,
-                Validators.required),
-            recipients: new FormControl(this.newsletter.recipients, Validators.required)
+            sendToAllCompanies: new FormControl(''),
+            sendToAllScientists: new FormControl(''),
+            sendToAllPublicOrganizations: new FormControl(''),
+            companies: new FormControl('',),
+            organizations: new FormControl('',),
+            scientists: new FormControl('',),
+            recipients: new FormControl('')
         })
     }
 
@@ -115,8 +87,6 @@ export class FreeFormNewsletterFormComponent {
     submit(): void {
 
         this.isLoading = true;
-
-        console.log(this.form.value);
 
         if (this.form.invalid) {
             this.form.markAllAsTouched();
@@ -129,9 +99,22 @@ export class FreeFormNewsletterFormComponent {
             return;
         }
 
-        // this.formType === FormType.Create ?
-        //     this.createNewsletter() :
-        //     this.editNewsletter();
+        this.prepareRecipients();
+
+        this.createNewsletter();
+    }
+
+    private prepareRecipients(): void {
+        this.finalRecipients = [];
+
+        const controls = ['organizations', 'companies', 'scientists'];
+
+        for (const control of controls) {
+            const values = this.form.controls[control].value;
+            if (values.length) {
+                this.finalRecipients = this.finalRecipients.concat(values);
+            }
+        }
     }
 
     /**
@@ -141,43 +124,39 @@ export class FreeFormNewsletterFormComponent {
      */
     private createNewsletter(): void {
 
-        this.newsletterService.createFreeFormNewsletter(this.form.value).subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'newsletters.free-form-newsletters.successfully-created');
-                this.router.navigateByUrl(this.returnUrl).then();
-                this.isLoading = false;
-            },
-            () => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-                this.isLoading = false;
-            })
+        this.form.controls['recipients'].setValue(this.finalRecipients);
+
+        console.log(this.form.value);
+
+        // this.newsletterService.createFreeFormNewsletter(this.form.value).subscribe(() => {
+        //         this.notificationService
+        //             .showNotification(NotificationType.Success,
+        //                 'newsletters.free-form-newsletters.successfully-created');
+        //         this.router.navigateByUrl(this.returnUrl).then();
+        //         this.isLoading = false;
+        //     },
+        //     () => {
+        //         this.notificationService
+        //             .showNotification(NotificationType.Error,
+        //                 'correct-validation-errors');
+        //         this.isLoading = false;
+        //     })
     }
 
-    /**
-     * Connecting to category
-     * service and sending form data to
-     * updated selected category.
-     */
-    private editNewsletter(): void {
+    triggerEntitySelector(event: any, recipientType: string) {
 
-        this.newsletterService.editFreeFormNewsletter(this.newsletter.id, this.form.value)
-            .subscribe(() => {
-                    this.notificationService
-                        .showNotification(NotificationType.Success,
-                            'newsletters.free-form-newsletters.successfully-updated');
-                    this.router.navigateByUrl(this.returnUrl).then();
-                    this.isLoading = false;
-                },
-                () => {
-                    this.notificationService
-                        .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
-                    this.isLoading = false;
-                })
+        console.log(event);
+
+        console.log(recipientType);
+
+        if (!event.checked) {
+            this.form.controls[recipientType].enabled;
+        } else {
+            this.form.controls[recipientType].setValue([]);
+            this.form.controls[recipientType].disabled;
+        }
     }
+
 
     translateNewsToEnglish(): void {
         this.translateLoading = true;
@@ -189,7 +168,7 @@ export class FreeFormNewsletterFormComponent {
      * Translate news content
      * from croatian to english.
      */
-    translateContent(formControlName: string): void {
+    private translateContent(formControlName: string): void {
         const formGroup = this.form.controls[formControlName] as FormGroup;
         const translationFormGroup = formGroup.controls['translations'] as FormGroup;
         const croatianValue = translationFormGroup.controls['HR'].value;

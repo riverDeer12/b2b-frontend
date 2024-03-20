@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {FormType} from "../../../../shared/enums/form-type";
+import {Recipient, RecipientType} from "../../core/models/free-form-newsletter";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'free-form-newsletter-additional-content-create',
@@ -8,6 +9,43 @@ import {FormType} from "../../../../shared/enums/form-type";
 })
 export class FreeFormNewsletterCreateComponent {
     returnUrl = '/admin/newsletters/free-form';
+    companies!: Recipient[];
+    organizations!: Recipient[];
+    scientists!: Recipient[];
 
-    formType = FormType.Create;
+    constructor(private activatedRoute:ActivatedRoute) {
+    }
+
+    ngOnInit(): void{
+        this.listenToResolver();
+    }
+
+    private listenToResolver() {
+        this.activatedRoute.data.subscribe((response) => {
+
+            this.companies = response['companies'].map((x: any) =>
+                Object.assign(new Recipient(), x)
+            );
+
+            for (const company of this.companies) {
+                company['userType'] = RecipientType.Company;
+            }
+
+            this.organizations = response['organizations'].map((x: any) =>
+                Object.assign(new Recipient(), x)
+            );
+
+            for (const organization of this.organizations) {
+                organization['userType'] = RecipientType.PublicOrganization;
+            }
+
+            this.scientists = response['scientists'].map((x: any) =>
+                Object.assign(new Recipient(), x)
+            );
+
+            for (const scientist of this.scientists) {
+                scientist['userType'] = RecipientType.Scientist;
+            }
+        });
+    }
 }
