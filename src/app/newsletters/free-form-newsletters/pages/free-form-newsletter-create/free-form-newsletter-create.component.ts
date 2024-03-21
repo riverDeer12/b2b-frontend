@@ -29,6 +29,7 @@ export class FreeFormNewsletterCreateComponent {
 
             for (const company of this.companies) {
                 company['userType'] = RecipientType.Company;
+                company['userId'] = company.id;
             }
 
             this.organizations = response['organizations'].map((x: any) =>
@@ -37,6 +38,7 @@ export class FreeFormNewsletterCreateComponent {
 
             for (const organization of this.organizations) {
                 organization['userType'] = RecipientType.PublicOrganization;
+                organization['userId'] = organization.id;
             }
 
             this.scientists = response['scientists'].map((x: any) =>
@@ -45,6 +47,7 @@ export class FreeFormNewsletterCreateComponent {
 
             for (const scientist of this.scientists) {
                 scientist['userType'] = RecipientType.Scientist;
+                scientist['userId'] = scientist.id;
             }
         });
     }

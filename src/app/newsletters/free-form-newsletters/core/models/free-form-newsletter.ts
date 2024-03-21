@@ -30,6 +30,7 @@ export enum RecipientType {
 }
 
 export class Recipient {
+    id!: string;
     userId!: string;
     userType!: RecipientType;
     firstname!: string;

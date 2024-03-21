@@ -728,11 +728,16 @@
                 "default": "Sadržaj",
                 "required": "Sadržaj je obavezan podatak."
             },
+            "sent-on": {
+                "default": "Vrijeme slanja"
+            },
             "send-to-all-companies": "Pošalji svim tvrtkama",
             "send-to-all-public-organizations": "Pošalji svim javnim organizacijama",
             "send-to-all-scientists": "Pošalji svim istraživačima",
             "not-found": "Nema pronađenih free form newslettera.",
             "create": "Kreiraj novi free form newsletter",
+            "successfully-created": "Uspješno kreiran i poslan free form newsletter.",
+            "error-creating": "Greška prilikom slanja free form newslettera.",
             "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
         }
     },

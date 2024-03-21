@@ -70,9 +70,9 @@ export class FreeFormNewsletterFormComponent {
                 })
             }),
             sendEmail: new FormControl(environment.production),
-            sendToAllCompanies: new FormControl(''),
-            sendToAllScientists: new FormControl(''),
-            sendToAllPublicOrganizations: new FormControl(''),
+            sendToAllCompanies: new FormControl(false),
+            sendToAllScientists: new FormControl(false),
+            sendToAllPublicOrganizations: new FormControl(false),
             companies: new FormControl('',),
             organizations: new FormControl('',),
             scientists: new FormControl('',),
@@ -126,35 +126,23 @@ export class FreeFormNewsletterFormComponent {
 
         this.form.controls['recipients'].setValue(this.finalRecipients);
 
-        console.log(this.form.value);
-
-        // this.newsletterService.createFreeFormNewsletter(this.form.value).subscribe(() => {
-        //         this.notificationService
-        //             .showNotification(NotificationType.Success,
-        //                 'newsletters.free-form-newsletters.successfully-created');
-        //         this.router.navigateByUrl(this.returnUrl).then();
-        //         this.isLoading = false;
-        //     },
-        //     () => {
-        //         this.notificationService
-        //             .showNotification(NotificationType.Error,
-        //                 'correct-validation-errors');
-        //         this.isLoading = false;
-        //     })
+        this.newsletterService.createFreeFormNewsletter(this.form.value).subscribe(() => {
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'newsletters.free-form-newsletters.successfully-created');
+                this.router.navigateByUrl(this.returnUrl).then();
+                this.isLoading = false;
+            },
+            () => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors');
+                this.isLoading = false;
+            })
     }
 
-    triggerEntitySelector(event: any, recipientType: string) {
-
-        console.log(event);
-
-        console.log(recipientType);
-
-        if (!event.checked) {
-            this.form.controls[recipientType].enabled;
-        } else {
-            this.form.controls[recipientType].setValue([]);
-            this.form.controls[recipientType].disabled;
-        }
+    triggerEntitySelector(recipientType: string) {
+        this.form.controls[recipientType].setValue([]);
     }
 
 

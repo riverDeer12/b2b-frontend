@@ -73,7 +73,7 @@
                     <div class="field field col-md-12">
                         <div class="field field col-md-12">
                             <p-checkbox formControlName="sendToAllCompanies" [binary]="true"
-                                        (onChange)="triggerEntitySelector($event, 'companies')"
+                                        (onChange)="triggerEntitySelector('companies')"
                                         label="{{'newsletters.free-form-newsletters.send-to-all-companies'
                                          | translate}}">
                             </p-checkbox>
@@ -81,6 +81,7 @@
                         <span class="p-float-label">
                             <p-multiSelect [options]="companies"
                                            [showToggleAll]="false"
+                                           [disabled]="form.controls['sendToAllCompanies'].value"
                                            formControlName="companies"
                                            placeholder="{{ 'companies.placeholder' | translate }}"
                                            optionLabel="name"
@@ -91,7 +92,7 @@
                     <div class="field field col-md-12">
                         <div class="field field col-md-12">
                             <p-checkbox [binary]="true" formControlName="sendToAllPublicOrganizations"
-                                        (onChange)="triggerEntitySelector($event, 'organizations')"
+                                        (onChange)="triggerEntitySelector('organizations')"
                                         label="{{'newsletters.free-form-newsletters.send-to-all-public-organizations'
                                          | translate}}">
                             </p-checkbox>
@@ -99,6 +100,7 @@
                         <span class="p-float-label">
                             <p-multiSelect [options]="organizations"
                                            [showToggleAll]="false"
+                                           [disabled]="form.controls['sendToAllPublicOrganizations'].value"
                                            formControlName="organizations"
                                            placeholder="{{ 'organizations.placeholder' | translate }}"
                                            optionLabel="name"
@@ -109,7 +111,7 @@
                     <div class="field field col-md-12">
                         <div class="field field col-md-12">
                             <p-checkbox [binary]="true" formControlName="sendToAllScientists"
-                                        (onChange)="triggerEntitySelector($event, 'scientists')"
+                                        (onChange)="triggerEntitySelector('scientists')"
                                         label="{{'newsletters.free-form-newsletters.send-to-all-scientists' |
                                         translate}}">
                             </p-checkbox>
@@ -117,6 +119,7 @@
                         <span class="p-float-label">
                             <p-multiSelect [options]="scientists"
                                            [showToggleAll]="false"
+                                           [disabled]="form.controls['sendToAllScientists'].value"
                                            formControlName="scientists"
                                            placeholder="{{ 'scientists.placeholder' | translate }}"
                                            optionLabel="fullName"
