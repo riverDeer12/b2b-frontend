@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import {Recipient, RecipientType} from "../../core/models/free-form-newsletter";
 import {ActivatedRoute} from "@angular/router";
+import {Company} from "../../../../companies/core/models/company";
+import {Organization} from "../../../../organizations/core/models/organization";
+import {Scientist} from "../../../../scientists/core/models/scientist";
 
 @Component({
   selector: 'free-form-newsletter-additional-content-create',
@@ -23,7 +26,7 @@ export class FreeFormNewsletterCreateComponent {
     private listenToResolver() {
         this.activatedRoute.data.subscribe((response) => {
 
-            this.companies = response['companies'].map((x: any) =>
+            this.companies = response['companies'].map((x: Company) =>
                 Object.assign(new Recipient(), x)
             );
 
@@ -32,7 +35,7 @@ export class FreeFormNewsletterCreateComponent {
                 company['userId'] = company.id;
             }
 
-            this.organizations = response['organizations'].map((x: any) =>
+            this.organizations = response['organizations'].map((x: Organization) =>
                 Object.assign(new Recipient(), x)
             );
 
@@ -41,7 +44,7 @@ export class FreeFormNewsletterCreateComponent {
                 organization['userId'] = organization.id;
             }
 
-            this.scientists = response['scientists'].map((x: any) =>
+            this.scientists = response['scientists'].map((x: Scientist) =>
                 Object.assign(new Recipient(), x)
             );
 

@@ -8,7 +8,6 @@ import {NotificationService} from "../../../../shared/services/notification.serv
 import {NotificationType} from "../../../../shared/enums/notification-type";
 import {FreeFormNewsletter, Recipient, RecipientType} from "../../core/models/free-form-newsletter";
 import {FreeFormNewsletterService} from "../../core/services/free-form-newsletter.service";
-import {environment} from "../../../../../environments/environment";
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -69,7 +68,7 @@ export class FreeFormNewsletterFormComponent {
                     EN: new FormControl('', Validators.required)
                 })
             }),
-            sendEmail: new FormControl(environment.production),
+            sendEmails: new FormControl(true),
             sendToAllCompanies: new FormControl(false),
             sendToAllScientists: new FormControl(false),
             sendToAllPublicOrganizations: new FormControl(false),
