@@ -4,9 +4,7 @@ import {NewsHomeComponent} from './news-home/news-home.component';
 import {NewsCreateComponent} from './news-create/news-create.component';
 import {NewsEditComponent} from './news-edit/news-edit.component';
 import {NewsComponentsModule} from '../components/news-components.module';
-import {HttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
     declarations: [

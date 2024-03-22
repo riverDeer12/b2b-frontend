@@ -11,6 +11,7 @@ import {SpecificKnowledgeComponent} from "../../specific-knowledge/specific-know
 import {EquipmentComponent} from "../../equipment/equipment.component";
 import {JobOffersComponent} from "../../job-offers/job-offers.component";
 import {ClientsComponent} from "../../clients/clients.component";
+import {NewslettersComponent} from "../../newsletters/newsletters.component";
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -72,5 +73,10 @@ export const AdminLayoutRoutes: Routes = [
         path: 'clients',
         component: ClientsComponent,
         loadChildren: () => import('../../clients/clients.module').then(m => m.ClientsModule)
+    },
+    {
+        path: 'newsletters',
+        component: NewslettersComponent,
+        loadChildren: () => import('../../newsletters/newsletters.module').then(m => m.NewslettersModule)
     }
 ]

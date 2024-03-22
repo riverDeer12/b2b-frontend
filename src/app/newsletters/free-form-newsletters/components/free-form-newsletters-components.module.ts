@@ -1,7 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NewsFormComponent} from './news-form/news-form.component';
-import {NewsDataTableComponent} from './news-data-table/news-data-table.component';
 import {TableModule} from 'primeng/table';
 import {TranslateModule} from '@ngx-translate/core';
 import {InputTextModule} from 'primeng/inputtext';
@@ -11,15 +9,23 @@ import {ConfirmationService} from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {EditorModule} from "primeng/editor";
 import {ReactiveFormsModule} from "@angular/forms";
-import {ValidationService} from '../../shared/services/validation.service';
 import {TabViewModule} from "primeng/tabview";
-import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
+import {ValidationService} from "../../../shared/services/validation.service";
+import {CustomControlsModule} from "../../../custom-controls/custom-controls.module";
+import {FreeFormNewsletterFormComponent} from './free-form-newsletter-form/free-form-newsletter-form.component';
+import {
+    FreeFormNewsletterDataTableComponent
+} from './free-form-newsletter-data-table/free-form-newsletter-data-table.component';
+import {CalendarModule} from "primeng/calendar";
+import {CheckboxModule} from "primeng/checkbox";
+import {SharedModule} from "../../../shared/shared.module";
+import {MultiSelectModule} from "primeng/multiselect";
 
 
 @NgModule({
     declarations: [
-        NewsFormComponent,
-        NewsDataTableComponent
+        FreeFormNewsletterFormComponent,
+        FreeFormNewsletterDataTableComponent
     ],
     imports: [
         CommonModule,
@@ -32,16 +38,20 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         EditorModule,
         ReactiveFormsModule,
         TabViewModule,
-        CustomControlsModule
+        CustomControlsModule,
+        CalendarModule,
+        CheckboxModule,
+        SharedModule,
+        MultiSelectModule
     ],
     providers: [
         ConfirmationService,
         ValidationService
     ],
     exports: [
-        NewsFormComponent,
-        NewsDataTableComponent
+        FreeFormNewsletterFormComponent,
+        FreeFormNewsletterDataTableComponent
     ]
 })
-export class NewsComponentsModule {
+export class FreeFormNewslettersComponentsModule {
 }

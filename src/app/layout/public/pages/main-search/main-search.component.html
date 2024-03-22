@@ -9,7 +9,7 @@
         <p-tabView>
               <span class="p-float-label">
                   <input pInputText type="text" #filter (input)="onFilter($event.target)" class="w-full"/>
-                <label for="address">{{ 'keyword' | translate }}</label>
+                <label>{{ 'keyword' | translate }}</label>
             </span>
             <p-tabPanel header="{{'companies.default' | translate }}">
                 <entity-data-view

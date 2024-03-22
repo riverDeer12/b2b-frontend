@@ -9,5 +9,7 @@ export enum EntityType {
     SpecificKnowledge = "specific-knowledge",
     Category = "categories",
     Product = "products",
-    Client = "clients"
+    Client = "clients",
+    Newsletter = "newsletters",
+    MainEntities = "companies, public-organizations, scientists"
 }
