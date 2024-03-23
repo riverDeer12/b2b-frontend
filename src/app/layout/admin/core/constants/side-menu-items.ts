@@ -42,32 +42,6 @@ export const SideMenuItems: MenuItem[] = [
             },
         ]
     },
-    // {
-    //     label: 'subentities',
-    //     icon: 'pi pi-fw pi-sitemap',
-    //     items: [
-    //         {
-    //             label: 'research-problems',
-    //             icon: 'pi pi-fw pi-search',
-    //             routerLink: ['/admin/research-problems']
-    //         },
-    //         {
-    //             label: 'specific-knowledge',
-    //             icon: 'pi pi-fw pi-bolt',
-    //             routerLink: ['/admin/specific-knowledge']
-    //         },
-    //         {
-    //             label: 'job-offers',
-    //             icon: 'pi pi-fw pi-briefcase',
-    //             routerLink: ['/admin/job-offers']
-    //         },
-    //         {
-    //             label: 'equipment',
-    //             icon: 'pi pi-fw pi-tablet',
-    //             routerLink: ['/admin/equipment']
-    //         },
-    //     ]
-    // },
     {
         label: 'subscribers', icon: 'pi pi-fw pi-users', routerLink: ['/admin/subscribers']
     }

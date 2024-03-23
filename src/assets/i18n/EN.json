@@ -99,7 +99,7 @@
     "english": "ENG",
     "translate": {
         "translate-to-english": "Translate to English",
-        "successfully-translated": "News is successfully translated! Please, do one more check before publishing.",
+        "successfully-translated": "Successfully translated! Please, do one more check before saving.",
         "translate-error": "Error during translation. Please, translate by hand or try again."
     },
     "home": "Home",
@@ -675,6 +675,30 @@
         "confirm-delete-action": "Are you sure?",
         "confirm-delete-message": "Confirming the action will delete the selected client.",
         "successfully-deleted": "Client is deleted successfully."
+    },
+    "newsletters": {
+        "default": "Newsletters",
+        "news-item": "newsletters",
+        "published-at": {
+            "default": "Published At",
+            "label": "Published At:"
+        },
+        "content": {
+            "default": "Content",
+            "required": "Content is mandatory information."
+        },
+        "successfully-created": "The newsletter was successfully created.",
+        "successfully-updated": "The newsletter was successfully updated.",
+        "created-at": "Created-at",
+        "updated-at": "Date last modified",
+        "items": "newsletter",
+        "no-news-found": "No newsletters found.",
+        "confirm-delete-action": "Are you sure?",
+        "confirm-delete-message": "Confirming the action will delete the selected newsletter.",
+        "create-newsletter": "Create new newsletter",
+        "new-newsletter": "New announcement",
+        "news-useful-info": "Newsletters and useful information",
+        "view-all-newsletters": "View all newsletters"
     },
     "subscribers": {
         "default": "Subscribers"

@@ -99,7 +99,7 @@
     "english": "ENG",
     "translate": {
         "translate-to-english": "Prevedi na engleski jezik",
-        "successfully-translated": "Uspješno prevedena novost! Molimo napravite još jednu provjeru prije objave.",
+        "successfully-translated": "Uspješno prevedeno! Molimo napravite još jednu provjeru prije spremanja.",
         "translate-error": "Greška prilikom prevođenja. Prevedite ručno ili pokušajte ponovno."
     },
     "home": "Početna",
@@ -194,6 +194,7 @@
     },
     "companies": {
         "default": "Tvrtke",
+        "placeholder": "Odaberite tvrtke",
         "company-items": "tvrtke",
         "items": "tvrtke",
         "companies-list": "Pregled tvrtki",
@@ -260,6 +261,7 @@
     },
     "scientists": {
         "default": "Istraživači",
+        "placeholder": "Odaberite istraživače",
         "scientist-items": "istraživača",
         "items": "istraživača",
         "scientists-list": "Pregled istraživača",
@@ -324,6 +326,7 @@
     },
     "organizations": {
         "default": "Javni sektor",
+        "placeholder": "Odaberite javne organizacije",
         "name": {
             "default": "Naziv javne organizaicije",
             "required": "Naziv javne organizaicije je obavezan podatak."
@@ -679,6 +682,65 @@
         "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabranog klijenta.",
         "successfully-deleted": "Klijent je uspješno izbrisan."
     },
+    "newsletters": {
+        "default": "Newsletteri",
+        "general": "Dodatci newsletterima",
+        "news-item": "newslettera",
+        "name": {
+            "default": "Naziv dodatka newsletteru",
+            "required": "Naziv dodatka newsletteru je obavezan podatak."
+        },
+        "visible-from": {
+            "default": "Vidljiv od",
+            "required": "Datum za vidljivost newslettera je obavezan podatak."
+        },
+        "visible-until": {
+            "default": "Vidljiv do",
+            "required": "Datum za vidljivost newslettera je obavezan podatak."
+        },
+        "published-at": {
+            "default": "Objavljeno",
+            "label": "Objavljeno:"
+        },
+        "content": {
+            "default": "Sadržaj",
+            "required": "Sadržaj je obavezan podatak."
+        },
+        "successfully-created": "Newsletter dodatak je uspješno kreiran.",
+        "successfully-updated": "Newsletter dodatak je uspješno ažuriran.",
+        "created-at": "Datum kreiranja",
+        "updated-at": "Datum zadnje izmjene",
+        "items": "newslettera",
+        "no-newsletters-found": "Nema pronađenih newsletter dodataka.",
+        "confirm-delete-action": "Jeste li sigurni?",
+        "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani newsletter dodatak.",
+        "create-newsletter": "Kreiranje novog newsletter dodatka",
+        "new-newsletter": "Novi dodatak newsletteru",
+        "newsletter-useful-info": "Newsletter dodatci i korisne informacije",
+        "view-all-newsletters": "Pogledaj sve newsletter dodatake",
+        "free-form-newsletters": {
+            "default": "Free form newsletteri",
+            "title": {
+                "default": "Naslov",
+                "required": "Naslov je obavezan podatak."
+            },
+            "content": {
+                "default": "Sadržaj",
+                "required": "Sadržaj je obavezan podatak."
+            },
+            "sent-on": {
+                "default": "Vrijeme slanja"
+            },
+            "send-to-all-companies": "Pošalji svim tvrtkama",
+            "send-to-all-public-organizations": "Pošalji svim javnim organizacijama",
+            "send-to-all-scientists": "Pošalji svim istraživačima",
+            "not-found": "Nema pronađenih free form newslettera.",
+            "create": "Kreiraj novi free form newsletter",
+            "successfully-created": "Uspješno kreiran i poslan free form newsletter.",
+            "error-creating": "Greška prilikom slanja free form newslettera.",
+            "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
+        }
+    },
     "activity-change": {
         "title": "Promjena vidljivosti zapisa",
         "message": "Molimo da potvrdite skrivanje/otkrivanje zapisa. Nakon što je unos skriven on više neće biti vidljiv u aplikaciji prilikom pretrage klijenta.",
@@ -721,6 +783,9 @@
     "main-search": "Pretraga",
     "contact-entity": {
         "default": "Ostvari kontakt"
+    },
+    "entity-selector": {
+        "select-entities": "Odabir entiteta za slanje newslettera"
     },
     "edih-adria-description": "EDIH Adria konzorcij (Projekt je sufinanciran od strane Europske unije prema Ugovoru o dodjeli bespovratnih sredstava br. 101083838 i Nacionalnom planu oporavka i otpornosti Republike Hrvatske 2021.-2026.)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
 }

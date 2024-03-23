@@ -16,14 +16,16 @@ import {EquipmentComponentsModule} from '../equipment/components/equipment-compo
 import {ResearchProblemsComponentsModule} from '../research-problems/components/research-problems-components.module';
 import {SpecificKnowledgeComponentsModule} from '../specific-knowledge/components/specific-knowledge-components.module';
 import {DialogService} from 'primeng/dynamicdialog';
-import { SendMessageFormComponent } from './components/send-message-form/send-message-form.component';
-import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import {SendMessageFormComponent} from './components/send-message-form/send-message-form.component';
+import {LanguageSelectorComponent} from './components/language-selector/language-selector.component';
 import {InputTextModule} from 'primeng/inputtext';
 import {AuthComponentsModule} from '../auth/components/auth-components.module';
-import { LoaderComponent } from './components/loader/loader.component';
+import {LoaderComponent} from './components/loader/loader.component';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ProductsComponentsModule} from "../products/components/products-components.module";
 import {ClientsComponentsModule} from "../clients/components/clients-components.module";
+import {EntitySelectorComponent} from './components/entity-selector/entity-selector.component';
+import {MultiSelectModule} from "primeng/multiselect";
 
 @NgModule({
     declarations: [
@@ -31,7 +33,8 @@ import {ClientsComponentsModule} from "../clients/components/clients-components.
         DialogFormComponent,
         SendMessageFormComponent,
         LanguageSelectorComponent,
-        LoaderComponent
+        LoaderComponent,
+        EntitySelectorComponent
     ],
     imports: [
         CommonModule,
@@ -52,13 +55,15 @@ import {ClientsComponentsModule} from "../clients/components/clients-components.
         AuthComponentsModule,
         ProgressSpinnerModule,
         ProductsComponentsModule,
-        ClientsComponentsModule
+        ClientsComponentsModule,
+        MultiSelectModule
     ],
     exports: [
         ActivityComponent,
         DialogFormComponent,
         SendMessageFormComponent,
-        LanguageSelectorComponent
+        LanguageSelectorComponent,
+        EntitySelectorComponent
     ],
     providers: [
         NotificationService,

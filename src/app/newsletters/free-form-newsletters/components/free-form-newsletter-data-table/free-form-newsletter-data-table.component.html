@@ -1,0 +1,76 @@
+<p-table #newslettersDataTable
+         dataKey="id"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'results' | translate }} {{'from' | translate }}
+         {totalRecords} {{'results' | translate }}"
+         responsiveLayout="scroll"
+         [rowHover]="true"
+         [showLoader]="true"
+         [value]="data"
+         [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5, 10, 20]"
+         [paginator]="true"
+         [globalFilterFields]="['localizedTitle']"
+         [tableStyle]="{'min-width':'75rem'}">
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between flex-column sm:flex-row">
+            <div class="flex">
+                <span class="p-input-icon-left mr-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(newslettersDataTable, $event)"
+                           placeholder="{{'keyword' | translate }}" class="w-full"/>
+                </span>
+                <button
+                    (click)="clear(newslettersDataTable)"
+                    label="{{'clear'| translate }}"
+                    icon="pi pi-times"
+                    iconPos="right"
+                    pButton pRipple
+                    type="button">
+                </button>
+            </div>
+            <button (click)="goToCreatePage()"
+                    icon="pi pi-plus"
+                    iconPos="right"
+                    label="{{'newsletters.free-form-newsletters.create'| translate }}"
+                    pButton pRipple
+                    type="button"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>{{'newsletters.free-form-newsletters.title.default' | translate }}</th>
+            <th>{{'newsletters.free-form-newsletters.sent-on.default' | translate }}</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-newsletter>
+        <tr>
+            <td>
+                {{newsletter.localizedTitle}}
+            </td>
+            <td>
+                {{newsletter.sentOn | date: 'dd.MM.yyyy HH:mm:ss'}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{'newsletters.free-form-newsletters.not-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-confirmDialog header="{{'newsletters.confirm-delete-action' | translate }}"
+                 message="{{'newsletters.confirm-delete-message' | translate }}"
+                 acceptButtonStyleClass="p-button-text"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 key="confirmDeleteDialog"
+                 icon="pi pi-exclamation-triangle"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<p-confirmDialog header="{{'activity-change.title' | translate }}"
+                 message="{{'activity-change.message' | translate }}"
+                 acceptLabel="{{'yes' | translate }}"
+                 rejectLabel="{{'no' | translate }}"
+                 icon="pi pi-exclamation-triangle"
+                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
