@@ -678,7 +678,20 @@
     },
     "newsletters": {
         "default": "Newsletters",
+        "general": "Newsletter Additionals",
         "news-item": "newsletters",
+        "name": {
+            "default": "Name",
+            "required": "Name is required."
+        },
+        "visible-from": {
+            "default": "Visible from",
+            "required": "Visible from is required."
+        },
+        "visible-until": {
+            "default": "Visible until",
+            "required": "Visible until is required."
+        },
         "published-at": {
             "default": "Published At",
             "label": "Published At:"
@@ -698,7 +711,29 @@
         "create-newsletter": "Create new newsletter",
         "new-newsletter": "New announcement",
         "news-useful-info": "Newsletters and useful information",
-        "view-all-newsletters": "View all newsletters"
+        "view-all-newsletters": "View all newsletters",
+        "free-form-newsletters": {
+            "default": "Free form newsletters",
+            "title": {
+                "default": "Title",
+                "required": "Title is required."
+            },
+            "content": {
+                "default": "Content",
+                "required": "Content is required."
+            },
+            "sent-on": {
+                "default": "Sent on"
+            },
+            "send-to-all-companies": "Send to all companies",
+            "send-to-all-public-organizations": "Send to all organizations",
+            "send-to-all-scientists": "Send to all scientists",
+            "not-found": "No newsletters found.",
+            "create": "Create new free form newsletter",
+            "successfully-created": "Newsletter successfully created.",
+            "error-creating": "Error creating newsletter.",
+            "confirm-delete-message": "By confirming this message newsletter will be deleted."
+        }
     },
     "subscribers": {
         "default": "Subscribers"
@@ -744,6 +779,9 @@
     "main-search": "Search",
     "contact-entity": {
         "default": "Make contact"
+    },
+    "entity-selector": {
+        "select-entities": "Select entities"
     },
     "edih-adria-description": "EDIH Adria consortium (The project is co-financed by the European Union under the Grant Agreement No. 101083838 and the National Recovery and Resilience Plan of the Republic of Croatia 2021-2026)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
 }
