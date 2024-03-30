@@ -35,6 +35,7 @@ import { PublicOrganizationResearchProblemsComponent } from './public-organizati
 import { PublicProductsComponent } from './public-products/public-products.component';
 import { KeywordResultsComponent } from './keyword-results/keyword-results.component';
 import {MailConfirmedComponent} from "./mail-confirmed/mail-confirmed.component";
+import { MailAlreadyConfirmedComponent } from './mail-already-confirmed/mail-already-confirmed.component';
 
 @NgModule({
     declarations: [
@@ -55,7 +56,8 @@ import {MailConfirmedComponent} from "./mail-confirmed/mail-confirmed.component"
         PublicOrganizationResearchProblemsComponent,
         PublicProductsComponent,
         KeywordResultsComponent,
-        MailConfirmedComponent
+        MailConfirmedComponent,
+        MailAlreadyConfirmedComponent
     ],
     imports: [
         CommonModule,

@@ -194,6 +194,10 @@
         "mail-confirmed": {
             "title": "Email successfully confirmed!",
             "description": "Thanks for your registration! Your email has been confirmed successfully."
+        },
+        "mail-already-confirmed":{
+            "title": "Email address is already confirmed",
+            "description": "Your email address has already been confirmed. You can continue using platform."
         }
     },
     "companies": {
