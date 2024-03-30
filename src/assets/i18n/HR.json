@@ -190,7 +190,11 @@
         "choose-login-type": "Molimo odaberite način prijave",
         "login-type-required": "Za obnovu lozinke potrebno je odabrati način prijave.",
         "choose-registration-type": "Odaberite vrstu registracije",
-        "my-profile": "Moj profil"
+        "my-profile": "Moj profil",
+        "mail-confirmed":{
+            "title": "Uspješno potvrđena email adresa!",
+            "description": "Hvala Vam na registraciji! Vaš email je uspješno potvrđen."
+        }
     },
     "companies": {
         "default": "Tvrtke",

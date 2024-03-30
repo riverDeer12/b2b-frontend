@@ -46,6 +46,7 @@ import {PublicOrganizationResolver} from "./core/resolvers/organizations/public-
 import {Scientist} from "../../scientists/core/models/scientist";
 import {KeywordResultsComponent} from "./pages/keyword-results/keyword-results.component";
 import {KeywordPhraseResolver} from "./core/resolvers/keyword-results/keyword-phrase.resolver";
+import {MailConfirmedComponent} from "./pages/mail-confirmed/mail-confirmed.component";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -60,6 +61,10 @@ export const PublicLayoutRoutes: Routes = [
             latestOrganizations: LatestOrganizationsResolver,
             latestEquipment: LatestEquipmentResolver
         }
+    },
+    {
+        path: 'mail-confirmed',
+        component: MailConfirmedComponent
     },
     {
         path: 'login',
