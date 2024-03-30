@@ -192,7 +192,7 @@
         "choose-registration-type": "Choose a registration type",
         "my-profile": "My profile",
         "mail-confirmed": {
-            "title": "Email successfully confirmed",
+            "title": "Email successfully confirmed!",
             "description": "Thanks for your registration! Your email has been confirmed successfully."
         }
     },
