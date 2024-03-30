@@ -47,6 +47,7 @@ import {Scientist} from "../../scientists/core/models/scientist";
 import {KeywordResultsComponent} from "./pages/keyword-results/keyword-results.component";
 import {KeywordPhraseResolver} from "./core/resolvers/keyword-results/keyword-phrase.resolver";
 import {MailConfirmedComponent} from "./pages/mail-confirmed/mail-confirmed.component";
+import {MailAlreadyConfirmedComponent} from "./pages/mail-already-confirmed/mail-already-confirmed.component";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -65,6 +66,10 @@ export const PublicLayoutRoutes: Routes = [
     {
         path: 'mail-confirmed',
         component: MailConfirmedComponent
+    },
+    {
+        path: 'already-confirmed',
+        component: MailAlreadyConfirmedComponent
     },
     {
         path: 'login',

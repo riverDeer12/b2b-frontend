@@ -194,6 +194,10 @@
         "mail-confirmed":{
             "title": "Uspješno potvrđena email adresa!",
             "description": "Hvala Vam na registraciji! Vaš email je uspješno potvrđen."
+        },
+        "mail-already-confirmed":{
+            "title": "Email adresa je već potvrđena!",
+            "description": "Vaš email je već ranije potvrđen, možete nastaviti sa korištenjem platforme"
         }
     },
     "companies": {
