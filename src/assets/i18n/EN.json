@@ -190,7 +190,11 @@
         "choose-login-type": "Please choose a login type",
         "login-type-required": "For password reset you need to select login type.",
         "choose-registration-type": "Choose a registration type",
-        "my-profile": "My profile"
+        "my-profile": "My profile",
+        "mail-confirmed": {
+            "title": "Email successfully confirmed!",
+            "description": "Thanks for your registration! Your email has been confirmed successfully."
+        }
     },
     "companies": {
         "default": "Companies",

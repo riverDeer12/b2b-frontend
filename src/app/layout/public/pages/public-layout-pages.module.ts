@@ -34,6 +34,7 @@ import {ActivitiesComponentsModule} from "../../../activities/components/activit
 import { PublicOrganizationResearchProblemsComponent } from './public-organization-research-problems/public-organization-research-problems.component';
 import { PublicProductsComponent } from './public-products/public-products.component';
 import { KeywordResultsComponent } from './keyword-results/keyword-results.component';
+import {MailConfirmedComponent} from "./mail-confirmed/mail-confirmed.component";
 
 @NgModule({
     declarations: [
@@ -53,7 +54,8 @@ import { KeywordResultsComponent } from './keyword-results/keyword-results.compo
         PublicMostPopularComponent,
         PublicOrganizationResearchProblemsComponent,
         PublicProductsComponent,
-        KeywordResultsComponent
+        KeywordResultsComponent,
+        MailConfirmedComponent
     ],
     imports: [
         CommonModule,

@@ -23,7 +23,7 @@ import {RadioButtonModule} from 'primeng/radiobutton';
         LoginUserComponent,
         ForbiddenComponent,
         ErrorComponent,
-        NotFoundComponent
+        NotFoundComponent,
     ],
     imports: [
         CommonModule,
