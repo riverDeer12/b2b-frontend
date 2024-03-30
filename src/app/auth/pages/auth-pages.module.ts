@@ -16,6 +16,7 @@ import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {ErrorComponent} from './error/error.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import { MailConfirmedComponent } from './mail-confirmed/mail-confirmed.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
         LoginUserComponent,
         ForbiddenComponent,
         ErrorComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        MailConfirmedComponent
     ],
     imports: [
         CommonModule,
