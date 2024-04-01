@@ -198,6 +198,10 @@
         "mail-already-confirmed":{
             "title": "Email adresa je već potvrđena!",
             "description": "Vaš email je već ranije potvrđen, možete nastaviti sa korištenjem platforme"
+        },
+        "unsubscribed":{
+            "title": "Odjavljeni ste sa newslettera!",
+            "description": "Vaš email je uspješno odjavljen sa budućih newsletter obavijesti."
         }
     },
     "companies": {

@@ -20,6 +20,6 @@ export const AppRoutes: Routes = [
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
     },
     {
-        path: '**', redirectTo: '/auth/not-found'
+        path: '**', redirectTo: '/not-found'
     }
 ]
