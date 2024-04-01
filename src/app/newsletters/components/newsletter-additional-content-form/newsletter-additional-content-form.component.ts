@@ -4,7 +4,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
-import {NewsletterAdditionalContent} from '../../core/models/newsletter-additional-content';
+import {NewsletterAdditionalContent, NewsletterType} from '../../core/models/newsletter-additional-content';
 import {NewsletterAdditionalContentService} from '../../core/services/newsletter-additional-content.service';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
@@ -32,6 +32,12 @@ export class NewsletterAdditionalContentFormComponent {
         return FormType;
     }
 
+    newsletterTypes = [
+        {label: 'Free Form', value: NewsletterType.FreeForm},
+        {label: 'Platform News', value: NewsletterType.PlatformNews},
+        {label: 'Matchmaking', value: NewsletterType.Matchmaking}
+    ];
+
     constructor(public validationService: ValidationService,
                 private fb: FormBuilder,
                 private router: Router,
@@ -51,7 +57,6 @@ export class NewsletterAdditionalContentFormComponent {
     initFormGroup = () => this.formType === FormType.Create ?
         this.initCreateForm() : this.initEditForm();
 
-
     /**
      * Initializes form if
      * create form action is triggered.
@@ -66,7 +71,8 @@ export class NewsletterAdditionalContentFormComponent {
                 })
             }),
             visibleFrom: new FormControl('', Validators.required),
-            visibleUntil: new FormControl('', Validators.required)
+            visibleUntil: new FormControl('', Validators.required),
+            attachedTo: new FormControl('', Validators.required)
         })
     }
 
@@ -84,7 +90,8 @@ export class NewsletterAdditionalContentFormComponent {
                 })
             }),
             visibleFrom: new FormControl(new Date(this.newsletter.visibleFrom), Validators.required),
-            visibleUntil: new FormControl(new Date(this.newsletter.visibleUntil), Validators.required)
+            visibleUntil: new FormControl(new Date(this.newsletter.visibleUntil), Validators.required),
+            attachedTo: new FormControl(this.newsletter.attachedTo, Validators.required)
         })
     }
 
