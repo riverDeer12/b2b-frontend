@@ -8,6 +8,7 @@ import {NotificationService} from "../../../../shared/services/notification.serv
 import {NotificationType} from "../../../../shared/enums/notification-type";
 import {FreeFormNewsletter, Recipient, RecipientType} from "../../core/models/free-form-newsletter";
 import {FreeFormNewsletterService} from "../../core/services/free-form-newsletter.service";
+import {Category} from "../../../../categories/core/models/category";
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -20,6 +21,7 @@ export class FreeFormNewsletterFormComponent {
     @Input() scientists!: Recipient[];
     @Input() companies!: Recipient[];
     @Input() organizations!: Recipient[];
+    @Input() categories!: Category[];
 
     isLoading: boolean = false;
 
@@ -75,7 +77,8 @@ export class FreeFormNewsletterFormComponent {
             companies: new FormControl('',),
             organizations: new FormControl('',),
             scientists: new FormControl('',),
-            recipients: new FormControl('')
+            recipients: new FormControl(''),
+            includeCategoryIds: new FormControl('')
         })
     }
 

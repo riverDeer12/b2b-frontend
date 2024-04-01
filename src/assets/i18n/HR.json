@@ -404,7 +404,9 @@
         "successfully-deleted": "Kategorija je uspješno izbrisana.",
         "no-categories-found": "Nema pronađenih kategorija",
         "error-deleting": "Greška prilikom brisanja kategorije.",
-        "new-category": "Nova kategorija"
+        "new-category": "Nova kategorija",
+        "entity-categories": "Kategorije entiteta",
+        "select-entity-newsletter-categories": "Odabir kategorija entiteta za slanje newslettera"
     },
     "job-offers": {
         "default": "Potrebe za ljudskim resursima",

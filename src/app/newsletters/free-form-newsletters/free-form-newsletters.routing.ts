@@ -11,6 +11,7 @@ import {FreeFormNewsletterResolver} from "./core/resolvers/free-form-newsletter.
 import {ScientistsResolver} from "../../scientists/core/resolvers/scientists.resolver";
 import {CompaniesResolver} from "../../companies/core/resolvers/companies.resolver";
 import {OrganizationsResolver} from "../../organizations/core/resolvers/organizations.resolver";
+import {CategoriesResolver} from "../../categories/core/resolvers/categories.resolver";
 
 export const FreeFormNewslettersRoutes: Routes = [
     {
@@ -27,6 +28,7 @@ export const FreeFormNewslettersRoutes: Routes = [
             scientists: ScientistsResolver,
             companies: CompaniesResolver,
             organizations: OrganizationsResolver,
+            categories: CategoriesResolver,
         }
     }
 ]
