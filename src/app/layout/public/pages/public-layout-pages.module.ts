@@ -36,6 +36,8 @@ import { PublicProductsComponent } from './public-products/public-products.compo
 import { KeywordResultsComponent } from './keyword-results/keyword-results.component';
 import {MailConfirmedComponent} from "./mail-confirmed/mail-confirmed.component";
 import { MailAlreadyConfirmedComponent } from './mail-already-confirmed/mail-already-confirmed.component';
+import { UnsubscribedComponent } from './unsubscribed/unsubscribed.component';
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 @NgModule({
     declarations: [
@@ -57,7 +59,9 @@ import { MailAlreadyConfirmedComponent } from './mail-already-confirmed/mail-alr
         PublicProductsComponent,
         KeywordResultsComponent,
         MailConfirmedComponent,
-        MailAlreadyConfirmedComponent
+        MailAlreadyConfirmedComponent,
+        UnsubscribedComponent,
+        NotFoundComponent
     ],
     imports: [
         CommonModule,
@@ -91,7 +95,8 @@ import { MailAlreadyConfirmedComponent } from './mail-already-confirmed/mail-alr
         RegistrationComponent,
         EntityDetailsComponent,
         PublicCompanyResearchProblemsComponent,
-        PublicProductsComponent
+        PublicProductsComponent,
+        NotFoundComponent
     ]
 })
 export class PublicLayoutPagesModule {
