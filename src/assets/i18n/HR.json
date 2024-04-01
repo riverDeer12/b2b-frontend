@@ -753,6 +753,13 @@
             "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
         }
     },
+    "newsletter-type": {
+        "platform-news": "Vijesti sa platforme",
+        "matchmaking": "Personalizirani newsletter (matchmaking)",
+        "free-form": "Free Form newsletter",
+        "select-type": "Odabir vrste newslettera za newsletter dodatak",
+        "select-newsletter-type": "Odaberite newsletter"
+    },
     "activity-change": {
         "title": "Promjena vidljivosti zapisa",
         "message": "Molimo da potvrdite skrivanje/otkrivanje zapisa. Nakon što je unos skriven on više neće biti vidljiv u aplikaciji prilikom pretrage klijenta.",
