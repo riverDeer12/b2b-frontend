@@ -4,8 +4,7 @@ import {LoginUserComponent} from './pages/login-user/login-user.component';
 import {ForbiddenComponent} from './pages/forbidden/forbidden.component';
 import {ErrorComponent} from './pages/error/error.component';
 import {DefaultGuard} from '../shared/guards/default.guard';
-import {NotFoundComponent} from './pages/not-found/not-found.component';
-import {MailConfirmedComponent} from "../layout/public/pages/mail-confirmed/mail-confirmed.component";
+import {NotFoundComponent} from '../layout/public/pages/not-found/not-found.component';
 
 export const AuthRoutes: Routes = [
     {
@@ -29,9 +28,5 @@ export const AuthRoutes: Routes = [
     {
         path: 'error',
         component: ErrorComponent
-    },
-    {
-        path: 'mail-confirmed',
-        component: MailConfirmedComponent
     }
 ]

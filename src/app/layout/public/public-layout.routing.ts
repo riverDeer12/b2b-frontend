@@ -42,12 +42,12 @@ import {
 } from "./pages/public-organization-research-problems/public-organization-research-problems.component";
 import {PublicProductsComponent} from './pages/public-products/public-products.component';
 import {PublicProductsResolver} from './core/resolvers/products/public-products.resolver';
-import {PublicOrganizationResolver} from "./core/resolvers/organizations/public-organization.resolver";
-import {Scientist} from "../../scientists/core/models/scientist";
 import {KeywordResultsComponent} from "./pages/keyword-results/keyword-results.component";
 import {KeywordPhraseResolver} from "./core/resolvers/keyword-results/keyword-phrase.resolver";
 import {MailConfirmedComponent} from "./pages/mail-confirmed/mail-confirmed.component";
 import {MailAlreadyConfirmedComponent} from "./pages/mail-already-confirmed/mail-already-confirmed.component";
+import {NotFoundComponent} from "./pages/not-found/not-found.component";
+import {UnsubscribedComponent} from "./pages/unsubscribed/unsubscribed.component";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -70,6 +70,14 @@ export const PublicLayoutRoutes: Routes = [
     {
         path: 'already-confirmed',
         component: MailAlreadyConfirmedComponent
+    },
+    {
+        path: 'unsubscribed',
+        component: UnsubscribedComponent
+    },
+    {
+        path: 'not-found',
+        component: NotFoundComponent
     },
     {
         path: 'login',
