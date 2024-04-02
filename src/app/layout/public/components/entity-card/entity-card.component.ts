@@ -14,7 +14,7 @@ export class EntityCardComponent {
     @Input() title!: string;
     @Input() imageLink?: string;
     @Input() entityCategories!: Category[];
-    @Input() products!: Product[];
+    @Input() products: Product[] = [];
     @Input() entityType!: EntityType;
     @Input() address!: string;
     @Input() website!: string;
