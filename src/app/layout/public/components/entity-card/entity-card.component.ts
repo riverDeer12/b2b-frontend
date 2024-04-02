@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Category} from '../../../../categories/core/models/category';
 import {EntityType} from '../../../../auth/core/enums/entity-type';
 import {Router} from '@angular/router';
+import {Product} from "../../../../products/core/models/product";
 
 @Component({
     selector: 'entity-card',
@@ -13,13 +14,17 @@ export class EntityCardComponent {
     @Input() title!: string;
     @Input() imageLink?: string;
     @Input() entityCategories!: Category[];
+    @Input() products!: Product[];
     @Input() entityType!: EntityType;
     @Input() address!: string;
     @Input() website!: string;
     @Input() externalLink!: string;
 
-
     categories!: any[];
+
+    public get type(): typeof EntityType {
+        return EntityType;
+    }
 
     constructor(private router: Router) {
     }
@@ -27,6 +32,9 @@ export class EntityCardComponent {
     ngOnInit() {
         this.entityCategories = this.entityCategories.map((x: Category) =>
             Object.assign(new Category(), x));
+
+        this.products = this.products.map((x: Product) =>
+            Object.assign(new Product(), x));
     }
 
     get shortExternalLink(): string {

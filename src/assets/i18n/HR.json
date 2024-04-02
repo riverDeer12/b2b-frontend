@@ -634,6 +634,7 @@
     },
     "products": {
         "default": "Proizvodi",
+        "label": "Proizvodi:",
         "title": {
             "default": "Naziv",
             "required": "Naziv je obavezan podatak."

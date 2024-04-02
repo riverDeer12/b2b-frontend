@@ -4,7 +4,7 @@
         <div class="flex">
               <span class="p-float-label w-full">
                   <input pInputText type="text" #filter (input)="onFilter($event.target)" class="w-full"/>
-                <label for="address">{{ 'keyword' | translate }}</label>
+                <label>{{ 'keyword' | translate }}</label>
             </span>
         </div>
         <div class="flex mt-3">
@@ -38,7 +38,8 @@
                 [imageLink]="entityItem.image"
                 [website]="entityItem.website"
                 [title]="entity.getTitle(entityItem, entityType)"
-                [address]="entity.getAddress(entityItem, entityType)">
+                [address]="entity.getAddress(entityItem, entityType)"
+                [products]="entityItem.products">
             </entity-card>
         </div>
     </ng-template>
