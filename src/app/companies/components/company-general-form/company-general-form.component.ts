@@ -20,6 +20,7 @@ export class CompanyGeneralFormComponent {
     @Input() company!: Company;
     @Input() returnUrl!: string;
     @Input() categories!: Category[];
+    @Input() newsletterCategories!: Category[];
 
     isLoading: boolean = false;
 
