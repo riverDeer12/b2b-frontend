@@ -23,6 +23,15 @@
                 {{category.localizedName}}
             </p-tag>
         </p>
+        <p style="height: 40px;">
+            <span *ngIf="entityType === type.Company && products.length">
+                <i class="pi pi-box label-icon"></i>
+                <label class="ml-1">{{'products.label' | translate}}</label>
+                <p-tag *ngFor="let product of products?.slice(0, 2)">
+                    {{product.localizedTitle}}
+                </p-tag>
+            </span>
+        </p>
     </ng-template>
     <ng-template pTemplate="footer">
         <button style="width: 100%" (click)="openDetailsPage()" pButton class="font-light line-height-2 bg-blue-500

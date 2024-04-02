@@ -4,6 +4,7 @@ import {Category} from '../../../../categories/core/models/category';
 import {Entity} from '../../../../shared/models/entity';
 import {SharedService} from '../../../../shared/services/shared.service';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Product} from "../../../../products/core/models/product";
 
 @Component({
     selector: 'entity-data-view',
@@ -50,7 +51,7 @@ export class EntityDataViewComponent {
      * Initialize filter form
      * for categories.
      *
-     * Comment: needed becaouse of throwed error. Will be
+     * Comment: needed because of threw error. Will be
      * removed because it is not used in that way of
      * form group.
      *

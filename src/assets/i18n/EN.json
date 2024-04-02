@@ -631,6 +631,7 @@
     },
     "products": {
         "default": "Products",
+        "label": "Products:",
         "title": {
             "default": "Title",
             "required": "Title is required."

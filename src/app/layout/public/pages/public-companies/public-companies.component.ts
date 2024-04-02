@@ -30,6 +30,7 @@ export class PublicCompaniesComponent {
             this.companies = response['entities'].map((x: any) =>
                 Object.assign(new Company(), x)
             );
+
             this.categories = response['categories'].map((x: Category) =>
                 Object.assign(new Category(), x)
             );

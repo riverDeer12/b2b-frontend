@@ -109,7 +109,7 @@ export const PublicLayoutRoutes: Routes = [
         component: PublicCompaniesComponent,
         resolve: {
             entities: PublicCompaniesResolver,
-            categories: CategoriesResolver
+            categories: CategoriesResolver,
         }
     },
     {
