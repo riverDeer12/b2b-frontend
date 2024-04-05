@@ -12,7 +12,7 @@ import {passwordValidator} from '../../../shared/validators/password-validator';
     templateUrl: './credentials-form.component.html',
     styleUrls: ['./credentials-form.component.scss']
 })
-export class CredentialsFormComponent implements OnInit{
+export class CredentialsFormComponent implements OnInit {
     @Input() entityType!: EntityType;
     @Input() form!: FormGroup;
 
@@ -64,7 +64,7 @@ export class CredentialsFormComponent implements OnInit{
     checkScientistUsername(username: string): void {
         this.scientistService.checkScientistUsername(username).subscribe(
             (response: any) => {
-                this.form.get('username')?.setErrors({unique: null});
+                this.form.get('username')?.clearValidators();
                 this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             },
@@ -79,7 +79,7 @@ export class CredentialsFormComponent implements OnInit{
     checkOrganizationUsername(username: string): void {
         this.organizationService.checkOrganizationUsername(username).subscribe(
             (response: any) => {
-                this.form.get('username')?.setErrors(null);
+                this.form.get('username')?.clearValidators();
                 this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             },
@@ -94,7 +94,7 @@ export class CredentialsFormComponent implements OnInit{
     checkCompanyUsername(username: string): void {
         this.companyService.checkCompanyUsername(username).subscribe(
             (response: any) => {
-                this.form.get('username')?.setErrors(null);
+                this.form.get('username')?.clearValidators();
                 this.form.updateValueAndValidity();
                 this.usernameCheckLoading = false;
             },
@@ -105,6 +105,4 @@ export class CredentialsFormComponent implements OnInit{
             }
         );
     }
-
-
 }
