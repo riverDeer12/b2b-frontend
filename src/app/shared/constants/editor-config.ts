@@ -13,6 +13,7 @@ export const DEFAULT_EDITOR_CONFIG = {
             {'color': ["#0c748d", "#000000", "#ffffff", "#ff0000", "#0000ff"]},  // Text color options
             {'background': ["#0c748d", "#000000", "#ffffff", "#ff0000", "#0000ff"]}  // Background color options
         ],
+        ['link', 'image', 'video'],  // Link, image, and video buttons
         [{'script': 'sub'}, {'script': 'super'}],      // Subscript, superscript
         ['clean']                                      // Clear formatting
     ]
