@@ -8,6 +8,7 @@ import {NotificationService} from "../../../../shared/services/notification.serv
 import {NotificationType} from "../../../../shared/enums/notification-type";
 import {FreeFormNewsletter, Recipient, RecipientType} from "../../core/models/free-form-newsletter";
 import {FreeFormNewsletterService} from "../../core/services/free-form-newsletter.service";
+import {DEFAULT_EDITOR_CONFIG} from "../../../../shared/constants/editor-config";
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -28,6 +29,8 @@ export class FreeFormNewsletterFormComponent {
     form!: FormGroup;
 
     finalRecipients = [];
+
+    editorModules = DEFAULT_EDITOR_CONFIG;
 
     public get recipientType(): typeof RecipientType {
         return RecipientType;
