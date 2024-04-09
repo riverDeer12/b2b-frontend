@@ -9,6 +9,7 @@ import {NewsService} from '../../core/services/news.service';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {LanguageService} from "../../../shared/services/language.service";
+import {DEFAULT_EDITOR_CONFIG} from "../../../shared/constants/editor-config";
 
 @Component({
     selector: 'news-form',
@@ -27,6 +28,8 @@ export class NewsFormComponent {
     translateLoading: boolean = false;
 
     form!: FormGroup;
+
+    editorModules = DEFAULT_EDITOR_CONFIG;
 
     public get formActionType(): typeof FormType {
         return FormType;
@@ -175,7 +178,7 @@ export class NewsFormComponent {
         const translationFormGroup = formGroup.controls['translations'] as FormGroup;
         const croatianValue = translationFormGroup.controls['HR'].value;
 
-        if(!croatianValue) {
+        if (!croatianValue) {
             this.translateLoading = false;
             return;
         }

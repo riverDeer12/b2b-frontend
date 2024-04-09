@@ -9,6 +9,7 @@ import {NewsletterAdditionalContentService} from '../../core/services/newsletter
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {LanguageService} from "../../../shared/services/language.service";
+import {DEFAULT_EDITOR_CONFIG} from "../../../shared/constants/editor-config";
 
 @Component({
     selector: 'newsletter-additional-content-form',
@@ -27,6 +28,8 @@ export class NewsletterAdditionalContentFormComponent {
     translateLoading: boolean = false;
 
     form!: FormGroup;
+
+    editorModules = DEFAULT_EDITOR_CONFIG;
 
     public get formActionType(): typeof FormType {
         return FormType;

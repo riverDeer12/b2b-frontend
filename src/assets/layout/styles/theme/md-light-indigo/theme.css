@@ -266,12 +266,12 @@
 
 /** CUSTOM **/
 
-label{
+label {
     font-weight: bolder;
     color: #0c748d;
 }
 
-.profile-picture{
+.profile-picture {
     object-fit: cover;
     height: 250px;
     width: 250px;
@@ -1066,6 +1066,7 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
     background: #ffffff;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+    display: none;
 }
 
 .p-editor-container .p-editor-toolbar.ql-snow {
@@ -2180,7 +2181,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-button:enabled:hover {
-    background: rgb(9,88,108);
+    background: rgb(9, 88, 108);
     color: #ffffff;
     border-color: transparent;
 }
