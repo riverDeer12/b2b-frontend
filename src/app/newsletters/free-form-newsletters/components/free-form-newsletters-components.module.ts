@@ -20,6 +20,7 @@ import {CalendarModule} from "primeng/calendar";
 import {CheckboxModule} from "primeng/checkbox";
 import {SharedModule} from "../../../shared/shared.module";
 import {MultiSelectModule} from "primeng/multiselect";
+import {CategoriesComponentsModule} from "../../../categories/components/categories-components.module";
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {MultiSelectModule} from "primeng/multiselect";
         CalendarModule,
         CheckboxModule,
         SharedModule,
-        MultiSelectModule
+        MultiSelectModule,
+        CategoriesComponentsModule
     ],
     providers: [
         ConfirmationService,
