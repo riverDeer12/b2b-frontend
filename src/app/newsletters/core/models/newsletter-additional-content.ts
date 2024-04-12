@@ -10,6 +10,7 @@ export class NewsletterAdditionalContent {
     isActive!: boolean;
     visibleFrom!: Date;
     visibleUntil!: Date;
+    attachedTo!: NewsletterType;
 
     get localizedContent(): string {
         return this.content.translations[localStorage.getItem('language') as keyof TranslationsObject];
@@ -20,3 +21,10 @@ export class NewsletterAdditionalContent {
             'assets/layout/images/image-default.png'
     }
 }
+
+export enum NewsletterType {
+    FreeForm,
+    PlatformNews,
+    Matchmaking
+}
+

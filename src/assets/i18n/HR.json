@@ -636,6 +636,7 @@
     },
     "products": {
         "default": "Proizvodi",
+        "label": "Proizvodi:",
         "title": {
             "default": "Naziv",
             "required": "Naziv je obavezan podatak."
@@ -754,6 +755,13 @@
             "error-creating": "Greška prilikom slanja free form newslettera.",
             "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
         }
+    },
+    "newsletter-type": {
+        "platform-news": "Vijesti sa platforme",
+        "matchmaking": "Personalizirani newsletter (matchmaking)",
+        "free-form": "Free Form newsletter",
+        "select-type": "Odabir vrste newslettera za newsletter dodatak",
+        "select-newsletter-type": "Odaberite newsletter"
     },
     "activity-change": {
         "title": "Promjena vidljivosti zapisa",

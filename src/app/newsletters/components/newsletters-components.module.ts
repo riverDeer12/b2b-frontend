@@ -19,6 +19,9 @@ import {
 import {
     NewsletterAdditionalContentsDataTableComponent
 } from "./newsletter-additional-contents-data-table/newsletter-additional-contents-data-table.component";
+import {DropdownModule} from "primeng/dropdown";
+import {RadioButtonModule} from "primeng/radiobutton";
+import {MultiSelectModule} from "primeng/multiselect";
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import {
         ReactiveFormsModule,
         TabViewModule,
         CustomControlsModule,
-        CalendarModule
+        CalendarModule,
+        DropdownModule,
+        RadioButtonModule,
+        MultiSelectModule
     ],
     providers: [
         ConfirmationService,

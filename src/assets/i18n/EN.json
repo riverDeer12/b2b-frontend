@@ -633,6 +633,7 @@
     },
     "products": {
         "default": "Products",
+        "label": "Products:",
         "title": {
             "default": "Title",
             "required": "Title is required."
@@ -748,6 +749,13 @@
             "error-creating": "Error creating newsletter.",
             "confirm-delete-message": "By confirming this message newsletter will be deleted."
         }
+    },
+    "newsletter-type": {
+        "platform-news": "Platform News",
+        "matchmaking": "Personalized Newsletter (Matchmaking)",
+        "free-form": "Free Form Newsletter",
+        "select-type": "Newsletter type for additional content",
+        "select-newsletter-type": "Select newsletter"
     },
     "subscribers": {
         "default": "Subscribers"

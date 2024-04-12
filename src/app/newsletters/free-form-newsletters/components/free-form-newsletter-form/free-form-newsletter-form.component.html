@@ -19,7 +19,7 @@
                         </div>
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
-                                <p-editor placeholder="{{ 'news.content.default' | translate }}"
+                                <p-editor [modules]="editorModules" placeholder="{{ 'news.content.default' | translate }}"
                                           class="{{validationService.getInputClass(form, 'HR',
                                            'required',
                             'content.translations')}}"
@@ -53,7 +53,7 @@
                         </div>
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
-                                    <p-editor placeholder="{{ 'news.content.default' | translate }}"
+                                    <p-editor [modules]="editorModules" placeholder="{{ 'news.content.default' | translate }}"
                                               class="{{validationService.getInputClass(form, 'EN',
                                                'required',
                                 'content.translations')}}"

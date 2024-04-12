@@ -34,6 +34,10 @@ export class MyProfileComponent {
     private listenToResolver(): void {
         this.activatedRoute.data.subscribe((response) => {
 
+            this.categories = response['categories'].map((x: Category) =>
+                Object.assign(new Category(), x)
+            );
+
             this.profileEntityType = response['entityType'] as EntityType;
 
             switch (this.profileEntityType) {
