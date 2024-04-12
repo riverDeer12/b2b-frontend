@@ -36,7 +36,8 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         MultiSelectModule,
         ReactiveFormsModule,
         TabViewModule,
-        CustomControlsModule
+        CustomControlsModule,
+        SharedModule
     ],
     providers: [
         ConfirmationService

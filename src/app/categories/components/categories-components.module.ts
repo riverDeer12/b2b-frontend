@@ -16,6 +16,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {CategoriesSelectorComponent} from './categories-selector/categories-selector.component';
 import {RouterModule} from '@angular/router';
 import {TabViewModule} from "primeng/tabview";
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import {TabViewModule} from "primeng/tabview";
         ConfirmDialogModule,
         MultiSelectModule,
         ReactiveFormsModule,
-        TabViewModule
+        TabViewModule,
+        SharedModule
     ],
     providers: [
         ConfirmationService

@@ -23,12 +23,10 @@ export class TranslateButtonComponent {
 
     translate(): void {
         this.translateLoading = true;
-
         this.formControlNames.forEach((control) => {
             this.translateContent(control);
         })
     }
-
 
     /**
      * Translate news content

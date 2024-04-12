@@ -39,7 +39,8 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         CategoriesComponentsModule,
         CalendarModule,
         TabViewModule,
-        CustomControlsModule
+        CustomControlsModule,
+        SharedModule
     ],
     providers: [
         ConfirmationService
