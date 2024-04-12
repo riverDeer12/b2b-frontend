@@ -26,6 +26,7 @@ import {ProductsComponentsModule} from "../products/components/products-componen
 import {ClientsComponentsModule} from "../clients/components/clients-components.module";
 import {EntitySelectorComponent} from './components/entity-selector/entity-selector.component';
 import {MultiSelectModule} from "primeng/multiselect";
+import { TranslateButtonComponent } from './components/translate-button/translate-button.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import {MultiSelectModule} from "primeng/multiselect";
         SendMessageFormComponent,
         LanguageSelectorComponent,
         LoaderComponent,
-        EntitySelectorComponent
+        EntitySelectorComponent,
+        TranslateButtonComponent
     ],
     imports: [
         CommonModule,
@@ -63,7 +65,8 @@ import {MultiSelectModule} from "primeng/multiselect";
         DialogFormComponent,
         SendMessageFormComponent,
         LanguageSelectorComponent,
-        EntitySelectorComponent
+        EntitySelectorComponent,
+        TranslateButtonComponent
     ],
     providers: [
         NotificationService,
