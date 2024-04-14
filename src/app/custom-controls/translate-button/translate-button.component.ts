@@ -40,6 +40,9 @@ export class TranslateButtonComponent {
         const croatianValue = translationFormGroup.controls[this.sourceLanguage].value;
 
         if (!croatianValue) {
+            this.notificationService
+                .showNotification(NotificationType.Warning,
+                    'translate.required-fields');
             this.translateLoading = false;
             return;
         }
