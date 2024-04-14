@@ -100,7 +100,8 @@
     "translate": {
         "translate-to-english": "Prevedi na engleski jezik",
         "successfully-translated": "Uspješno prevedeno! Molimo napravite još jednu provjeru prije spremanja.",
-        "translate-error": "Greška prilikom prevođenja. Prevedite ručno ili pokušajte ponovno."
+        "translate-error": "Greška prilikom prevođenja. Prevedite ručno ili pokušajte ponovno.",
+        "required-fields": "Prijevod nije moguć. Nisu ispunjena sva potrebna polja."
     },
     "home": "Početna",
     "clear": "Obriši",

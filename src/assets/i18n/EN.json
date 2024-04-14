@@ -100,7 +100,8 @@
     "translate": {
         "translate-to-english": "Translate to English",
         "successfully-translated": "Successfully translated! Please, do one more check before saving.",
-        "translate-error": "Error during translation. Please, translate by hand or try again."
+        "translate-error": "Error during translation. Please, translate by hand or try again.",
+        "required-fields": "Translation is not possible. Required fields are not empty."
     },
     "home": "Home",
     "clear": "Clear",
