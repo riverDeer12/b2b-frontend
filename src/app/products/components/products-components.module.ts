@@ -13,7 +13,6 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
 import {PaginatorModule} from 'primeng/paginator';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TabViewModule} from 'primeng/tabview';
-import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -26,15 +25,13 @@ import {SharedModule} from "../../shared/shared.module";
         ConfirmDialogModule,
         InputTextModule,
         RippleModule,
-        SharedModule,
         TableModule,
         TranslateModule,
         CategoriesComponentsModule,
         CustomControlsModule,
         PaginatorModule,
         ReactiveFormsModule,
-        TabViewModule,
-        SharedModule
+        TabViewModule
     ],
     exports: [
         ProductFormComponent,

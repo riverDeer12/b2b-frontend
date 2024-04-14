@@ -4,9 +4,7 @@ import {CategoryFormComponent} from './category-form/category-form.component';
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {ReactiveFormsModule} from "@angular/forms";
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateModule} from '@ngx-translate/core';
 import {CategoriesDataTableComponent} from './categories-data-table/categories-data-table.component';
 import {TableModule} from 'primeng/table';
 import {RippleModule} from 'primeng/ripple';
@@ -16,7 +14,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {CategoriesSelectorComponent} from './categories-selector/categories-selector.component';
 import {RouterModule} from '@angular/router';
 import {TabViewModule} from "primeng/tabview";
-import {SharedModule} from "../../shared/shared.module";
+import {CustomControlsModule} from "../../custom-controls/custom-controls.module";
 
 @NgModule({
     declarations: [
@@ -37,7 +35,7 @@ import {SharedModule} from "../../shared/shared.module";
         MultiSelectModule,
         ReactiveFormsModule,
         TabViewModule,
-        SharedModule
+        CustomControlsModule
     ],
     providers: [
         ConfirmationService

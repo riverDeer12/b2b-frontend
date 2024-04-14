@@ -4,9 +4,7 @@ import {SpecificKnowledgeFormComponent} from './specific-knowledge-form/specific
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {ReactiveFormsModule} from "@angular/forms";
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateModule} from '@ngx-translate/core';
 import {
     SpecificKnowledgeDataTableComponent
 } from './specific-knowledge-data-table/specific-knowledge-data-table.component';
@@ -18,7 +16,6 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {RouterModule} from '@angular/router';
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {TabViewModule} from "primeng/tabview";
-import {SharedModule} from '../../shared/shared.module';
 import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 
 @NgModule({
@@ -40,8 +37,7 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         ReactiveFormsModule,
         CategoriesComponentsModule,
         TabViewModule,
-        CustomControlsModule,
-        SharedModule
+        CustomControlsModule
     ],
     providers: [
         ConfirmationService

@@ -5,7 +5,6 @@ import {ScientistsComponent} from '../../scientists/scientists.component';
 import {ActivitiesComponent} from '../../activities/activities.component';
 import {NewsComponent} from '../../news/news.component';
 import {OrganizationsComponent} from '../../organizations/organizations.component';
-import {SubscribersComponent} from '../../subscribers/subscribers.component';
 import {ResearchProblemsComponent} from "../../research-problems/research-problems.component";
 import {SpecificKnowledgeComponent} from "../../specific-knowledge/specific-knowledge.component";
 import {EquipmentComponent} from "../../equipment/equipment.component";
@@ -43,11 +42,6 @@ export const AdminLayoutRoutes: Routes = [
         path: 'organizations',
         component: OrganizationsComponent,
         loadChildren: () => import('../../organizations/organizations.module').then(m => m.OrganizationsModule)
-    },
-    {
-        path: 'subscribers',
-        component: SubscribersComponent,
-        loadChildren: () => import('../../subscribers/subscribers.module').then(m => m.SubscribersModule)
     },
     {
         path: 'research-problems',

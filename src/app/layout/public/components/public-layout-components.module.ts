@@ -7,9 +7,7 @@ import {MyProfileComponent} from './my-profile/my-profile.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {PublicFooterComponent} from './public-footer/public-footer.component';
 import {PublicHeaderComponent} from './public-header/public-header.component';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpBackend} from '@angular/common/http';
-import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
+import {TranslateModule} from '@ngx-translate/core';
 import {OrganizationsComponentsModule} from '../../../organizations/components/organizations-components.module';
 import {CompaniesComponentsModule} from '../../../companies/components/companies-components.module';
 import {ScientistsComponentsModule} from '../../../scientists/components/scientists-components.module';
@@ -43,14 +41,14 @@ import {CategoriesComponentsModule} from '../../../categories/components/categor
         OrganizationsComponentsModule,
         CompaniesComponentsModule,
         ScientistsComponentsModule,
+        CategoriesComponentsModule,
         CardModule,
         ButtonModule,
         RippleModule,
         DividerModule,
         DataViewModule,
         InputTextModule,
-        TagModule,
-        CategoriesComponentsModule
+        TagModule
     ],
     exports: [
         SimpleEntityCardComponent,

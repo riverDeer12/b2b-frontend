@@ -4,10 +4,7 @@ import {ScientistsHomeComponent} from './scientists-home/scientists-home.compone
 import {ScientistsComponentsModule} from '../components/scientists-components.module';
 import {ScientistCreateComponent} from './scientist-create/scientist-create.component';
 import {ScientistEditComponent} from './scientist-edit/scientist-edit.component';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
-import {SharedModule} from '../../shared/shared.module';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateModule} from '@ngx-translate/core';
 import {DialogService} from "primeng/dynamicdialog";
 
 @NgModule({
@@ -19,8 +16,7 @@ import {DialogService} from "primeng/dynamicdialog";
     imports: [
         CommonModule,
         ScientistsComponentsModule,
-        TranslateModule,
-        SharedModule
+        TranslateModule
     ],
     providers: [
         DialogService

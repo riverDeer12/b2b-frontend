@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import {NotificationType} from "../../enums/notification-type";
-import {LanguageService} from "../../services/language.service";
-import {NotificationService} from "../../services/notification.service";
+import {NotificationType} from "../../shared/enums/notification-type";
+import {LanguageService} from "../../shared/services/language.service";
+import {NotificationService} from "../../shared/services/notification.service";
 
 @Component({
     selector: 'translate-button',

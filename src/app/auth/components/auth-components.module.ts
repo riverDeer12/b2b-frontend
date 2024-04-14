@@ -9,8 +9,8 @@ import {ButtonModule} from 'primeng/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
-import { CredentialsFormComponent } from './credentials-form/credentials-form.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import {CredentialsFormComponent} from './credentials-form/credentials-form.component';
+import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 
 @NgModule({
     declarations: [

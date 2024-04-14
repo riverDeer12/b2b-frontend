@@ -6,9 +6,7 @@ import {AppFooterComponent} from './footer/app.footer.component';
 import {AppMenuComponent} from './menu/app.menu.component';
 import {AppSidebarComponent} from './sidebar/app.sidebar.component';
 import {RouterModule} from '@angular/router';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
     declarations: [

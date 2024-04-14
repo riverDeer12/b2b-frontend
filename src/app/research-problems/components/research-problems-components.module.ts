@@ -15,7 +15,6 @@ import {RadioButtonModule} from "primeng/radiobutton";
 import {DialogService} from 'primeng/dynamicdialog';
 import {TabViewModule} from "primeng/tabview";
 import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
-import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -34,8 +33,7 @@ import {SharedModule} from "../../shared/shared.module";
         RadioButtonModule,
         FormsModule,
         TabViewModule,
-        CustomControlsModule,
-        SharedModule
+        CustomControlsModule
     ],
     providers: [
         DialogService

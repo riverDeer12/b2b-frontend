@@ -4,10 +4,13 @@ import {FileUploaderComponent} from './file-uploader/file-uploader.component';
 import {FileUploadModule} from 'primeng/fileupload';
 import {TranslateModule} from '@ngx-translate/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import {TranslateButtonComponent} from "./translate-button/translate-button.component";
 
 @NgModule({
-    declarations: [FileUploaderComponent],
+    declarations: [
+        FileUploaderComponent,
+        TranslateButtonComponent
+    ],
     imports: [
         CommonModule,
         FileUploadModule,
@@ -16,7 +19,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         ReactiveFormsModule
     ],
     exports: [
-        FileUploaderComponent
+        FileUploaderComponent,
+        TranslateButtonComponent
     ]
 })
 export class CustomControlsModule {
