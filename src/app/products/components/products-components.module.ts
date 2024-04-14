@@ -6,7 +6,6 @@ import {ButtonModule} from 'primeng/button';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
-import {SharedModule} from 'primeng/api';
 import {TableModule} from 'primeng/table';
 import {TranslateModule} from '@ngx-translate/core';
 import {CategoriesComponentsModule} from '../../categories/components/categories-components.module';
@@ -14,6 +13,7 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
 import {PaginatorModule} from 'primeng/paginator';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TabViewModule} from 'primeng/tabview';
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -33,7 +33,8 @@ import {TabViewModule} from 'primeng/tabview';
         CustomControlsModule,
         PaginatorModule,
         ReactiveFormsModule,
-        TabViewModule
+        TabViewModule,
+        SharedModule
     ],
     exports: [
         ProductFormComponent,

@@ -40,7 +40,8 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         ReactiveFormsModule,
         CategoriesComponentsModule,
         TabViewModule,
-        CustomControlsModule
+        CustomControlsModule,
+        SharedModule
     ],
     providers: [
         ConfirmationService
