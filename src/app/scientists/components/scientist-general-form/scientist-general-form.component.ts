@@ -163,7 +163,7 @@ export class ScientistGeneralFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
 
             this.isLoading = false;
             return;
@@ -192,7 +192,7 @@ export class ScientistGeneralFormComponent {
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })
@@ -216,7 +216,7 @@ export class ScientistGeneralFormComponent {
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })

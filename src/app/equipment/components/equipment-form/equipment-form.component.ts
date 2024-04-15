@@ -127,7 +127,7 @@ export class EquipmentFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -157,7 +157,7 @@ export class EquipmentFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })
@@ -184,7 +184,7 @@ export class EquipmentFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })

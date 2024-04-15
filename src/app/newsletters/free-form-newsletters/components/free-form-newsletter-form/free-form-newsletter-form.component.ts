@@ -97,7 +97,7 @@ export class FreeFormNewsletterFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
 
             this.isLoading = false;
 
@@ -141,7 +141,7 @@ export class FreeFormNewsletterFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
                 this.isLoading = false;
             })
     }
