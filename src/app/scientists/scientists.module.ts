@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {ScientistsPagesModule} from './pages/scientists-pages.module';
 import {ScientistsComponent} from './scientists.component';
 import {TranslateModule} from '@ngx-translate/core';
-import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
 import {ScientistsRoutes} from './scientists.routing';
 import {DialogService} from 'primeng/dynamicdialog';
@@ -16,13 +15,11 @@ import {DialogService} from 'primeng/dynamicdialog';
         CommonModule,
         ScientistsPagesModule,
         RouterModule.forChild(ScientistsRoutes),
-        TranslateModule,
-        SharedModule
+        TranslateModule
     ],
     providers:[
         DialogService
     ]
-
 })
 export class ScientistsModule {
 }

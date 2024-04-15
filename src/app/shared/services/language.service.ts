@@ -46,8 +46,8 @@ export class LanguageService {
     translate(text: string, sourceLanguage: string, targetLanguage: string) {
         const translateRequest = {
             text: text,
-            sourceLanguage: sourceLanguage,
-            targetLanguage: targetLanguage
+            sourceLanguage: sourceLanguage.toLowerCase(),
+            targetLanguage: targetLanguage.toLowerCase()
         };
 
         return this.http.post(environment.apiUrl + '/translations/translate-text', translateRequest);

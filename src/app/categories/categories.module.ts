@@ -5,7 +5,6 @@ import {CategoriesRoutes} from './categories.routing';
 import {CategoriesPagesModule} from './pages/categories-pages.module';
 import {CategoriesComponent} from './categories.component';
 import {TranslateModule} from '@ngx-translate/core';
-import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -15,7 +14,6 @@ import {SharedModule} from '../shared/shared.module';
         CommonModule,
         RouterModule.forChild(CategoriesRoutes),
         TranslateModule,
-        SharedModule,
         CategoriesPagesModule
     ]
 })

@@ -106,7 +106,7 @@ export class OrganizationGeneralFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -134,7 +134,7 @@ export class OrganizationGeneralFormComponent {
             error => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })
@@ -159,7 +159,7 @@ export class OrganizationGeneralFormComponent {
         }, () => {
             this.notificationService
                 .showNotification(NotificationType.Error,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
 
             this.isLoading = false;
         })

@@ -109,7 +109,7 @@ export class NewsFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -136,7 +136,7 @@ export class NewsFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
                 this.isLoading = false;
             })
     }
@@ -158,44 +158,8 @@ export class NewsFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
                 this.isLoading = false;
             })
-    }
-
-    translateNewsToEnglish(): void {
-        this.translateLoading = true;
-        this.translateContent('title');
-        this.translateContent('content');
-    }
-
-    /**
-     * Translate news content
-     * from croatian to english.
-     */
-    translateContent(formControlName: string): void {
-        const formGroup = this.form.controls[formControlName] as FormGroup;
-        const translationFormGroup = formGroup.controls['translations'] as FormGroup;
-        const croatianValue = translationFormGroup.controls['HR'].value;
-
-        if (!croatianValue) {
-            this.translateLoading = false;
-            return;
-        }
-
-        this.languageService.translate(croatianValue, "hr", "en")
-            .subscribe((response: any) => {
-                    translationFormGroup.controls['EN'].setValue(response.translatedText as string);
-                    this.notificationService
-                        .showNotification(NotificationType.Success,
-                            'translate.successfully-translated');
-                    this.translateLoading = false;
-                },
-                error => {
-                    this.notificationService
-                        .showNotification(NotificationType.Warning,
-                            'translate.translate-error');
-                    this.translateLoading = false;
-                })
     }
 }
