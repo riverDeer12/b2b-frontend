@@ -11,6 +11,7 @@ import {EquipmentComponent} from "../../equipment/equipment.component";
 import {JobOffersComponent} from "../../job-offers/job-offers.component";
 import {ClientsComponent} from "../../clients/clients.component";
 import {NewslettersComponent} from "../../newsletters/newsletters.component";
+import {SpecialCategoriesComponent} from "../../special-categories/special-categories.component";
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -72,5 +73,10 @@ export const AdminLayoutRoutes: Routes = [
         path: 'newsletters',
         component: NewslettersComponent,
         loadChildren: () => import('../../newsletters/newsletters.module').then(m => m.NewslettersModule)
+    },
+    {
+        path: 'special-categories',
+        component: SpecialCategoriesComponent,
+        loadChildren: () => import('../../special-categories/special-categories.module').then(m => m.SpecialCategoriesModule)
     }
 ]
