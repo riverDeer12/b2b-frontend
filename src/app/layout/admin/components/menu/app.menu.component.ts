@@ -85,7 +85,12 @@ export class AppMenuComponent implements OnInit {
                                 routerLink: ['/admin/newsletters/free-form'],
                             }
                         ]
-                    }
+                    },
+                    {
+                        label: 'special-categories.default',
+                        icon: 'pi pi-fw pi-star',
+                        routerLink: ['/admin/special-categories']
+                    },
                 ]
             }
         ];

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormType} from "../../../shared/enums/form-type";
 
 @Component({
   selector: 'special-category-create',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./special-category-create.component.scss']
 })
 export class SpecialCategoryCreateComponent {
-
+    formType = FormType.Create;
 }

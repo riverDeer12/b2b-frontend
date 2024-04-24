@@ -3,6 +3,7 @@ import {SpecialCategoriesHomeComponent} from "./pages/special-categories-home/sp
 import {SpecialCategoriesResolver} from "./core/resolvers/special-categories.resolver";
 import {SpecialCategoryResolver} from "./core/resolvers/special-category.resolver";
 import {SpecialCategoryEditComponent} from "./pages/special-category-edit/special-category-edit.component";
+import {SpecialCategoryCreateComponent} from "./pages/special-category-create/special-category-create.component";
 
 export const SpecialCategoriesRoutes: Routes = [
     {
@@ -11,6 +12,10 @@ export const SpecialCategoriesRoutes: Routes = [
         resolve: {
             specialCategories: SpecialCategoriesResolver
         }
+    },
+    {
+        path: 'create',
+        component: SpecialCategoryCreateComponent
     },
     {
         path: 'edit/:id',

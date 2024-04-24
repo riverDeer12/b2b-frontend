@@ -406,6 +406,11 @@
         "entity-categories": "Entity Categories",
         "select-entity-newsletter-categories": "Entity categories for newsletters"
     },
+    "special-categories": {
+        "default": "Special categories",
+        "create": "Create special category",
+        "edit": "Edit special category"
+    },
     "job-offers": {
         "default": "Human resource needs",
         "create": "Creating a need for human resources",

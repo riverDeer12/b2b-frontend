@@ -8,7 +8,7 @@ import {SpecialCategory} from "../models/special-category";
 })
 export class SpecialCategoryService {
 
-    endpointUrl = environment.apiUrl + '/special-categories/';
+    endpointUrl = environment.apiUrl + '/user-tags/';
 
     constructor(private http: HttpClient) {
     }
