@@ -10,8 +10,8 @@ import {FormType} from "../../../shared/enums/form-type";
 })
 export class SpecialCategoryEditComponent {
     specialCategory!: SpecialCategory;
-
     formType = FormType.Edit;
+    returnUrl = '/admin/special-categories'
 
     constructor(private activatedRoute: ActivatedRoute) {
     }

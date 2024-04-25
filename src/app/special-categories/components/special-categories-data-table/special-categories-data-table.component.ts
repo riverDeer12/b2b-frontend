@@ -1,13 +1,13 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {SpecialCategory} from "../../core/models/special-category";
 import {ConfirmationService} from "primeng/api";
-import {CategoryService} from "../../../categories/core/services/category.service";
 import {SharedService} from "../../../shared/services/shared.service";
 import {NotificationService} from "../../../shared/services/notification.service";
 import {Router} from "@angular/router";
 import {Table} from "primeng/table";
 import {NotificationType} from "../../../shared/enums/notification-type";
 import {EntityType} from "../../../auth/core/enums/entity-type";
+import {SpecialCategoryService} from "../../core/services/special-category.service";
 
 @Component({
     selector: 'special-categories-data-table',
@@ -20,7 +20,7 @@ export class SpecialCategoriesDataTableComponent {
     @ViewChild('filter') filter!: ElementRef;
 
     constructor(private confirmationService: ConfirmationService,
-                private categoryService: CategoryService,
+                private categoryService: SpecialCategoryService,
                 private sharedService: SharedService,
                 private notificationService: NotificationService,
                 private router: Router) {
@@ -78,12 +78,12 @@ export class SpecialCategoriesDataTableComponent {
             accept: () => {
                 this.categoryService.deleteCategory(categoryId).subscribe((response: Object) => {
                         this.notificationService
-                            .showNotification(NotificationType.Success, 'successfully-deleted');
+                            .showNotification(NotificationType.Success, 'categories.successfully-deleted');
                         this.data = this.data.filter((x => x.id !== categoryId));
                     },
                     (error: Object) => {
                         this.notificationService
-                            .showNotification(NotificationType.Error, 'error-deleting');
+                            .showNotification(NotificationType.Error, 'categories.error-deleting');
                     })
             },
         });
