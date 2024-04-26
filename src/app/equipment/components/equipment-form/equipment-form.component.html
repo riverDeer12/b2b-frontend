@@ -7,12 +7,12 @@
                          alt="equipment-image">
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
-                    <file-uploader name="image"
+                    <profile-picture name="image"
                                    [parentForm]="form"
                                    [entityType]="entityType"
                                    [entityId]="equipment.id"
                                    [parentEntityType]="type.Scientist"
-                                   [parentEntityId]="equipment.scientistId"></file-uploader>
+                                   [parentEntityId]="equipment.scientistId"></profile-picture>
                 </div>
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">

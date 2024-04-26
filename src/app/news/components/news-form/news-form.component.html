@@ -6,12 +6,12 @@
                     <img class="profile-picture" [src]="news.imageUrl" height="250" width="250" alt="">
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
-                    <file-uploader
+                    <profile-picture
                         name="image"
                         [parentForm]="form"
                         [entityType]="entityType"
                         [entityId]="news.id">
-                    </file-uploader>
+                    </profile-picture>
                 </div>
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">

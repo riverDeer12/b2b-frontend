@@ -9,6 +9,7 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
     selector: 'company-general-form',
@@ -27,6 +28,10 @@ export class CompanyGeneralFormComponent {
     form!: FormGroup;
 
     entityType = EntityType.Company;
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
 
     public get type(): typeof FormType {
         return FormType;

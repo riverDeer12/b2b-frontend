@@ -6,13 +6,13 @@
             </div>
             <div class="p-fluid">
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
-                    <file-uploader name="image"
+                    <profile-picture name="image"
                                    [parentForm]="form"
                                    [entityType]="entityType"
                                    [entityId]="jobOffer.id"
                                    [parentEntityType]="type.Company"
                                    [parentEntityId]="jobOffer.companyId">
-                    </file-uploader>
+                    </profile-picture>
                 </div>
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">

@@ -11,6 +11,7 @@ import {SharedService} from '../../../shared/services/shared.service';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from "../../../shared/services/validation.service";
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 /**
  * Component responsible for
@@ -47,6 +48,10 @@ export class ResearchProblemFormComponent {
     isLoading: boolean = false;
 
     form!: FormGroup;
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
 
     public get formActionType(): typeof FormType{
         return FormType;

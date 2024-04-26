@@ -7,15 +7,15 @@ import {environment} from '../../../environments/environment';
 import {NotificationType} from '../../shared/enums/notification-type';
 
 @Component({
-    selector: 'file-uploader',
-    templateUrl: './file-uploader.component.html',
-    styleUrls: ['./file-uploader.component.scss']
+    selector: 'profile-picture',
+    templateUrl: './profile-picture.component.html',
+    styleUrls: ['./profile-picture.component.scss']
 })
-export class FileUploaderComponent {
+export class ProfilePictureComponent {
     @Input() parentForm!: FormGroup;
     @Input() entityType!: EntityType;
-    @Input() entityId!: string;
     @Input() parentEntityType!: EntityType;
+    @Input() entityId!: string;
     @Input() parentEntityId!: string;
     @Input() name!: string;
 
@@ -27,7 +27,7 @@ export class FileUploaderComponent {
             return environment.apiUrl + '/' + this.entityType + '/' + this.entityId + '/images';
         } else {
 
-            const parentEntityPrefix:string = this.parentEntityType + '/' + this.parentEntityId;
+            const parentEntityPrefix: string = this.parentEntityType + '/' + this.parentEntityId;
 
             return environment.apiUrl + '/' + parentEntityPrefix + '/'
                 + this.entityType + '/' + this.entityId + '/images'

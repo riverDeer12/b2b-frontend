@@ -810,5 +810,8 @@
     "entity-selector": {
         "select-entities": "Odabir entiteta za slanje newslettera"
     },
+    "documents": {
+        "default": "Dokumenti"
+    },
     "edih-adria-description": "EDIH Adria konzorcij (Projekt je sufinanciran od strane Europske unije prema Ugovoru o dodjeli bespovratnih sredstava br. 101083838 i Nacionalnom planu oporavka i otpornosti Republike Hrvatske 2021.-2026.)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
 }
