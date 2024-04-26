@@ -58,5 +58,5 @@ export class SpecialCategoryService {
      *
      * @param request entities id data.
      */
-    assignCategory = (request: any) => this.http.post(this.endpointUrl + 'assign', request);
+    assignCategory = (request: any) => this.http.put(this.endpointUrl + 'assign', request);
 }
