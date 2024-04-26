@@ -409,7 +409,8 @@
     "special-categories": {
         "default": "Special categories",
         "create": "Create special category",
-        "edit": "Edit special category"
+        "edit": "Edit special category",
+        "assigned-entities": "Assigned entities"
     },
     "job-offers": {
         "default": "Human resource needs",

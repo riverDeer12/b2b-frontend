@@ -4,6 +4,9 @@ import {SpecialCategoriesResolver} from "./core/resolvers/special-categories.res
 import {SpecialCategoryResolver} from "./core/resolvers/special-category.resolver";
 import {SpecialCategoryEditComponent} from "./pages/special-category-edit/special-category-edit.component";
 import {SpecialCategoryCreateComponent} from "./pages/special-category-create/special-category-create.component";
+import {CompaniesResolver} from "../companies/core/resolvers/companies.resolver";
+import {ScientistsResolver} from "../scientists/core/resolvers/scientists.resolver";
+import {OrganizationsResolver} from "../organizations/core/resolvers/organizations.resolver";
 
 export const SpecialCategoriesRoutes: Routes = [
     {
@@ -15,13 +18,21 @@ export const SpecialCategoriesRoutes: Routes = [
     },
     {
         path: 'create',
-        component: SpecialCategoryCreateComponent
+        component: SpecialCategoryCreateComponent,
+        resolve: {
+            scientists: ScientistsResolver,
+            companies: CompaniesResolver,
+            organizations: OrganizationsResolver
+        }
     },
     {
         path: 'edit/:id',
         component: SpecialCategoryEditComponent,
         resolve: {
-            specialCategory: SpecialCategoryResolver
+            specialCategory: SpecialCategoryResolver,
+            scientists: ScientistsResolver,
+            companies: CompaniesResolver,
+            organizations: OrganizationsResolver
         }
     }
 ]

@@ -13,12 +13,17 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {CustomControlsModule} from "../../custom-controls/custom-controls.module";
 import {InputTextModule} from "primeng/inputtext";
 import {TranslateModule} from "@ngx-translate/core";
+import {MultiSelectModule} from "primeng/multiselect";
+import {
+    SpecialCategoryAssignFormComponent
+} from './special-category-assign-form/special-category-assign-form.component';
 
 
 @NgModule({
     declarations: [
         SpecialCategoriesDataTableComponent,
-        SpecialCategoryFormComponent
+        SpecialCategoryFormComponent,
+        SpecialCategoryAssignFormComponent
     ],
     imports: [
         CommonModule,
@@ -30,11 +35,13 @@ import {TranslateModule} from "@ngx-translate/core";
         TabViewModule,
         ReactiveFormsModule,
         CustomControlsModule,
-        InputTextModule
+        InputTextModule,
+        MultiSelectModule
     ],
     exports: [
         SpecialCategoriesDataTableComponent,
-        SpecialCategoryFormComponent
+        SpecialCategoryFormComponent,
+        SpecialCategoryAssignFormComponent
     ]
 })
 export class SpecialCategoriesComponentsModule {

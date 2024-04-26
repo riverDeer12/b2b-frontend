@@ -1,26 +1,39 @@
-<form [formGroup]="form" (submit)="submit()">
-    <div class="grid">
-        <div class="col-12">
-            <div class="p-fluid">
-                <div class="field field col-md-12">
-                            <span class="p-float-label">
-                                <input
-                                    class="{{validationService.getInputClass(form, 'name', 'required')}}"
-                                    pInputText type="text" id="name"
-                                    aria-describedby="name-input"
-                                    formControlName="name"/>
-                                <label for="name">{{ 'name.default' | translate }}</label>
-                            </span>
+<p-tabView>
+    <p-tabPanel header="{{ 'general' | translate }}" class="line-height-3 m-0">
+        <form [formGroup]="form" (submit)="submit()">
+            <div class="grid">
+                <div class="col-12">
+                    <div class="p-fluid">
+                        <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input
+                            class="{{validationService.getInputClass(form, 'name', 'required')}}"
+                            pInputText type="text" id="name"
+                            aria-describedby="name-input"
+                            formControlName="name"/>
+                        <label for="name">{{ 'name.default' | translate }}</label>
+                    </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'name', 'required')"
                                    id="name-input">{{ 'name.required' | translate }}</small>
                         </div>
-                <div class="col-12 ml-0 pl-0">
-                    <p-button iconPos="right" class="mt-3" type="submit"
-                              label="{{ 'save' | translate }}" icon="pi pi-save"
-                              [loading]="isLoading"></p-button>
+                        <div class="col-12 ml-0 pl-0">
+                            <p-button iconPos="right" class="mt-3" type="submit"
+                                      label="{{ 'save' | translate }}" icon="pi pi-save"
+                                      [loading]="isLoading"></p-button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</form>
+        </form>
+    </p-tabPanel>
+    <p-tabPanel header="{{ 'special-categories.assigned-entities' | translate }}" *ngIf="formType !== type.Create">
+        <special-category-assign-form
+            [category]="category"
+            [scientists]="scientists"
+            [companies]="companies"
+            [organizations]="organizations">
+        </special-category-assign-form>
+    </p-tabPanel>
+</p-tabView>
+

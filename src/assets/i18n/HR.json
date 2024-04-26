@@ -413,7 +413,8 @@
     "special-categories": {
         "default": "Posebne kategorije",
         "create": "Kreiranje posebne kategorije",
-        "edit": "Uređivanje posebne kategorije"
+        "edit": "Uređivanje posebne kategorije",
+        "assigned-entities": "Pripadni entiteti"
     },
     "job-offers": {
         "default": "Potrebe za ljudskim resursima",

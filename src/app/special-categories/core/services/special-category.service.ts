@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from "../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {SpecialCategory} from "../models/special-category";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class SpecialCategoryService {
 
@@ -51,4 +51,12 @@ export class SpecialCategoryService {
      * @param id category entity identifier.
      */
     deleteCategory = (id: string) => this.http.delete(this.endpointUrl + id);
+
+    /**
+     * Assign selected entities to
+     * category by identifier.
+     *
+     * @param request entities id data.
+     */
+    assignCategory = (request: any) => this.http.post(this.endpointUrl + 'assign', request);
 }

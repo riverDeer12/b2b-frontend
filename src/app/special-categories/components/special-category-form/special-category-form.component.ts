@@ -7,6 +7,9 @@ import {NotificationService} from "../../../shared/services/notification.service
 import {NotificationType} from "../../../shared/enums/notification-type";
 import {SpecialCategory} from "../../core/models/special-category";
 import {SpecialCategoryService} from "../../core/services/special-category.service";
+import {Company} from "../../../companies/core/models/company";
+import {Scientist} from "../../../scientists/core/models/scientist";
+import {Organization} from "../../../organizations/core/models/organization";
 
 @Component({
   selector: 'special-category-form',
@@ -18,9 +21,17 @@ export class SpecialCategoryFormComponent {
     @Input() category!: SpecialCategory
     @Input() returnUrl!: string;
 
+    @Input() scientists!: Scientist[];
+    @Input() companies!: Company[];
+    @Input() organizations!: Organization[];
+
     form!: FormGroup;
 
     isLoading: boolean = false;
+
+    public get type(): typeof FormType {
+        return FormType;
+    }
 
     constructor(
         public validationService: ValidationService,
