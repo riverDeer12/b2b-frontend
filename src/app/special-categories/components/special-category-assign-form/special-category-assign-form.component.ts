@@ -7,7 +7,6 @@ import {NotificationType} from "../../../shared/enums/notification-type";
 import {SpecialCategory} from "../../core/models/special-category";
 import {NotificationService} from "../../../shared/services/notification.service";
 import {SpecialCategoryService} from "../../core/services/special-category.service";
-import {Router} from "@angular/router";
 
 @Component({
     selector: 'special-category-assign-form',
@@ -25,7 +24,6 @@ export class SpecialCategoryAssignFormComponent {
     isLoading!: boolean;
 
     constructor(
-        private router: Router,
         private categoryService: SpecialCategoryService,
         private notificationService: NotificationService,
         private fb: FormBuilder) {
@@ -41,10 +39,10 @@ export class SpecialCategoryAssignFormComponent {
      */
     private initForm(): void {
         this.form = this.fb.group({
-            userTagId: new FormControl(this.category.id),
-            scientistIds: new FormControl(this.category.scientistIds ?? []),
-            companyIds: new FormControl(this.category.companyIds ?? []),
-            publicOrganizationIds: new FormControl(this.category.publicOrganizationIds ?? [])
+            companyIds: new FormControl(this.category.assignedCompanies.map(x => x.id) ?? []),
+            publicOrganizationIds: new FormControl(this.category.assignedPublicOrganizations.map(x => x.id) ?? []),
+            scientistIds: new FormControl(this.category.assignedScientists.map(x => x.id) ?? []),
+            userTagId: new FormControl(this.category.id)
         })
     }
 

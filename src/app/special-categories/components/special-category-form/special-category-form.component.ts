@@ -12,9 +12,9 @@ import {Scientist} from "../../../scientists/core/models/scientist";
 import {Organization} from "../../../organizations/core/models/organization";
 
 @Component({
-  selector: 'special-category-form',
-  templateUrl: './special-category-form.component.html',
-  styleUrls: ['./special-category-form.component.scss']
+    selector: 'special-category-form',
+    templateUrl: './special-category-form.component.html',
+    styleUrls: ['./special-category-form.component.scss']
 })
 export class SpecialCategoryFormComponent {
     @Input() formType!: FormType;
@@ -123,22 +123,23 @@ export class SpecialCategoryFormComponent {
      * updated selected category.
      */
     private editCategory(): void {
-        this.categoryService.editCategory(this.category.id, this.form.value).subscribe((response: Object) => {
+        this.categoryService.editCategory(this.category.id, this.form.value)
+            .subscribe((response: Object) => {
 
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'categories.successfully-updated');
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'categories.successfully-updated');
 
-                this.router.navigateByUrl(this.returnUrl).then();
+                    this.router.navigateByUrl(this.returnUrl).then();
 
-                this.isLoading = false;
-            },
-            (error) => {
-                console.log(error);
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
-                this.isLoading = false;
-            })
+                    this.isLoading = false;
+                },
+                (error) => {
+                    console.log(error);
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'correct-validation-errors');
+                    this.isLoading = false;
+                })
     }
 }
