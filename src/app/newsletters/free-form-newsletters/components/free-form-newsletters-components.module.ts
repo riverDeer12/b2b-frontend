@@ -21,6 +21,9 @@ import {CheckboxModule} from "primeng/checkbox";
 import {SharedModule} from "../../../shared/shared.module";
 import {MultiSelectModule} from "primeng/multiselect";
 import {CategoriesComponentsModule} from "../../../categories/components/categories-components.module";
+import {
+    SpecialCategoriesComponentsModule
+} from "../../../special-categories/components/special-categories-components.module";
 
 
 @NgModule({
@@ -44,7 +47,8 @@ import {CategoriesComponentsModule} from "../../../categories/components/categor
         CheckboxModule,
         SharedModule,
         MultiSelectModule,
-        CategoriesComponentsModule
+        CategoriesComponentsModule,
+        SpecialCategoriesComponentsModule
     ],
     providers: [
         ConfirmationService,

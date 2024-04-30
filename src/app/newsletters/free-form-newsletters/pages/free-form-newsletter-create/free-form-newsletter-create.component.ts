@@ -5,6 +5,7 @@ import {Company} from "../../../../companies/core/models/company";
 import {Organization} from "../../../../organizations/core/models/organization";
 import {Scientist} from "../../../../scientists/core/models/scientist";
 import {Category} from "../../../../categories/core/models/category";
+import {SpecialCategory} from "../../../../special-categories/core/models/special-category";
 
 @Component({
   selector: 'free-form-newsletter-additional-content-create',
@@ -17,6 +18,7 @@ export class FreeFormNewsletterCreateComponent {
     organizations!: Recipient[];
     scientists!: Recipient[];
     categories!: Category[];
+    specialCategories!: SpecialCategory[];
 
     constructor(private activatedRoute:ActivatedRoute) {
     }
@@ -30,6 +32,10 @@ export class FreeFormNewsletterCreateComponent {
 
             this.categories = response['categories'].map((x: Category) =>
                 Object.assign(new Category(), x)
+            );
+
+            this.specialCategories = response['specialCategories'].map((x: SpecialCategory) =>
+                Object.assign(new SpecialCategory(), x)
             );
 
             this.companies = response['companies'].map((x: Company) =>

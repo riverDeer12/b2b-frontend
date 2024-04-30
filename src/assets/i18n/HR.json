@@ -414,7 +414,8 @@
         "default": "Posebne kategorije",
         "create": "Kreiranje posebne kategorije",
         "edit": "Uređivanje posebne kategorije",
-        "assigned-entities": "Pripadni entiteti"
+        "assigned-entities": "Pripadni entiteti",
+        "special-category-entities": "Posebne kategorije entiteta"
     },
     "job-offers": {
         "default": "Potrebe za ljudskim resursima",

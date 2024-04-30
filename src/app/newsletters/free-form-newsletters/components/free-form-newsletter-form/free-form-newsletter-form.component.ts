@@ -10,6 +10,7 @@ import {FreeFormNewsletter, Recipient, RecipientType} from "../../core/models/fr
 import {FreeFormNewsletterService} from "../../core/services/free-form-newsletter.service";
 import {DEFAULT_EDITOR_CONFIG} from "../../../../shared/constants/editor-config";
 import {Category} from "../../../../categories/core/models/category";
+import {SpecialCategory} from "../../../../special-categories/core/models/special-category";
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -23,6 +24,7 @@ export class FreeFormNewsletterFormComponent {
     @Input() companies!: Recipient[];
     @Input() organizations!: Recipient[];
     @Input() categories!: Category[];
+    @Input() specialCategories!: SpecialCategory[];
 
     isLoading: boolean = false;
 
@@ -81,7 +83,8 @@ export class FreeFormNewsletterFormComponent {
             organizations: new FormControl('',),
             scientists: new FormControl('',),
             recipients: new FormControl(''),
-            includeCategoryIds: new FormControl('')
+            includeCategoryIds: new FormControl(''),
+            specialCategoryIds: new FormControl('')
         })
     }
 
@@ -148,42 +151,5 @@ export class FreeFormNewsletterFormComponent {
 
     triggerEntitySelector(recipientType: string) {
         this.form.controls[recipientType].setValue([]);
-    }
-
-
-    translateNewsToEnglish(): void {
-        this.translateLoading = true;
-        this.translateContent('title');
-        this.translateContent('content');
-    }
-
-    /**
-     * Translate news content
-     * from croatian to english.
-     */
-    private translateContent(formControlName: string): void {
-        const formGroup = this.form.controls[formControlName] as FormGroup;
-        const translationFormGroup = formGroup.controls['translations'] as FormGroup;
-        const croatianValue = translationFormGroup.controls['HR'].value;
-
-        if (!croatianValue) {
-            this.translateLoading = false;
-            return;
-        }
-
-        this.languageService.translate(croatianValue, "hr", "en")
-            .subscribe((response: any) => {
-                    translationFormGroup.controls['EN'].setValue(response.translatedText as string);
-                    this.notificationService
-                        .showNotification(NotificationType.Success,
-                            'translate.successfully-translated');
-                    this.translateLoading = false;
-                },
-                error => {
-                    this.notificationService
-                        .showNotification(NotificationType.Warning,
-                            'translate.translate-error');
-                    this.translateLoading = false;
-                })
     }
 }

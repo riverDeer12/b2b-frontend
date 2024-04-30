@@ -410,7 +410,8 @@
         "default": "Special categories",
         "create": "Create special category",
         "edit": "Edit special category",
-        "assigned-entities": "Assigned entities"
+        "assigned-entities": "Assigned entities",
+        "special-category-entities": "Special entity categories"
     },
     "job-offers": {
         "default": "Human resource needs",

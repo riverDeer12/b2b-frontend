@@ -17,13 +17,15 @@ import {MultiSelectModule} from "primeng/multiselect";
 import {
     SpecialCategoryAssignFormComponent
 } from './special-category-assign-form/special-category-assign-form.component';
+import { SpecialCategoriesSelectorComponent } from './special-categories-selector/special-categories-selector.component';
 
 
 @NgModule({
     declarations: [
         SpecialCategoriesDataTableComponent,
         SpecialCategoryFormComponent,
-        SpecialCategoryAssignFormComponent
+        SpecialCategoryAssignFormComponent,
+        SpecialCategoriesSelectorComponent
     ],
     imports: [
         CommonModule,
@@ -41,7 +43,8 @@ import {
     exports: [
         SpecialCategoriesDataTableComponent,
         SpecialCategoryFormComponent,
-        SpecialCategoryAssignFormComponent
+        SpecialCategoryAssignFormComponent,
+        SpecialCategoriesSelectorComponent
     ]
 })
 export class SpecialCategoriesComponentsModule {
