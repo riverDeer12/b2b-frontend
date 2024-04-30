@@ -1,0 +1,50 @@
+<form [formGroup]="form" (submit)="submit()">
+    <div class="grid">
+        <div class="col-12">
+            <div class="p-fluid">
+                <div class="field field col-md-12">
+                        <span class="p-float-label">
+                            <p-multiSelect [options]="companies"
+                                           [showToggleAll]="false"
+                                           formControlName="companyIds"
+                                           placeholder="{{ 'companies.placeholder' | translate }}"
+                                           optionLabel="name"
+                                           optionValue="id"
+                                           inputId="float-label"></p-multiSelect>
+                            <label>{{ 'companies.default' | translate }}</label>
+                        </span>
+                </div>
+                <div class="field field col-md-12">
+                        <span class="p-float-label">
+                            <p-multiSelect [options]="scientists"
+                                           [showToggleAll]="false"
+                                           formControlName="scientistIds"
+                                           placeholder="{{ 'scientists.placeholder' | translate }}"
+                                           optionLabel="fullName"
+                                           optionValue="id"
+                                           inputId="float-label"></p-multiSelect>
+                            <label>{{ 'scientists.default' | translate }}</label>
+                        </span>
+                </div>
+                <div class="field field col-md-12">
+                        <span class="p-float-label">
+                            <p-multiSelect [options]="organizations"
+                                           [showToggleAll]="false"
+                                           formControlName="publicOrganizationIds"
+                                           placeholder="{{ 'organizations.placeholder' | translate }}"
+                                           optionLabel="name"
+                                           optionValue="id"
+                                           inputId="float-label">
+                            </p-multiSelect>
+                            <label>{{ 'organizations.default' | translate }}</label>
+                        </span>
+                </div>
+                <div class="col-12 ml-0 pl-0">
+                    <p-button iconPos="right" class="mt-3" type="submit"
+                              label="{{ 'save' | translate }}" icon="pi pi-save"
+                              [loading]="isLoading"></p-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

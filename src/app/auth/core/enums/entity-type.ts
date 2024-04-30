@@ -8,6 +8,7 @@ export enum EntityType {
     JobOffer = "job-offers",
     SpecificKnowledge = "specific-knowledge",
     Category = "categories",
+    SpecialCategory = "special-categories",
     Product = "products",
     Client = "clients",
     Newsletter = "newsletters",

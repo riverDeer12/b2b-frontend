@@ -410,6 +410,13 @@
         "entity-categories": "Kategorije entiteta",
         "select-entity-newsletter-categories": "Odabir kategorija entiteta za slanje newslettera"
     },
+    "special-categories": {
+        "default": "Posebne kategorije",
+        "create": "Kreiranje posebne kategorije",
+        "edit": "Uređivanje posebne kategorije",
+        "assigned-entities": "Pripadni entiteti",
+        "special-category-entities": "Posebne kategorije entiteta"
+    },
     "job-offers": {
         "default": "Potrebe za ljudskim resursima",
         "create": "Kreiranje potrebe za ljudskim resursima",
