@@ -84,7 +84,7 @@ export class FreeFormNewsletterFormComponent {
             scientists: new FormControl('',),
             recipients: new FormControl(''),
             includeCategoryIds: new FormControl(''),
-            specialCategoryIds: new FormControl('')
+            includeUserTags: new FormControl('')
         })
     }
 
