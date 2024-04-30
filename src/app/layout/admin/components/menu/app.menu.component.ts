@@ -48,6 +48,11 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/admin/categories']
                     },
                     {
+                        label: 'special-categories.default',
+                        icon: 'pi pi-fw pi-star',
+                        routerLink: ['/admin/special-categories']
+                    },
+                    {
                         label: 'companies.default',
                         icon: 'pi pi-fw pi-building',
                         routerLink: ['/admin/companies']
@@ -85,12 +90,7 @@ export class AppMenuComponent implements OnInit {
                                 routerLink: ['/admin/newsletters/free-form'],
                             }
                         ]
-                    },
-                    {
-                        label: 'special-categories.default',
-                        icon: 'pi pi-fw pi-star',
-                        routerLink: ['/admin/special-categories']
-                    },
+                    }
                 ]
             }
         ];
