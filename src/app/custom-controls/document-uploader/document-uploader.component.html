@@ -1,4 +1,3 @@
-
 <p-fileUpload
     [multiple]="false"
     [maxFileSize]="1000000"
@@ -19,4 +18,15 @@
     invalidFileTypeMessageDetail="{{'file-upload.invalid-size.detail' | translate }}"
     invalidFileLimitMessageDetail="{{'file-upload.invalid-file-limit.summary' | translate }}"
     invalidFileLimitMessageSummary="{{'file-upload.invalid-file-limit.detail' | translate }}">
+    <ng-template pTemplate="content">
+        <ul *ngIf="documents.length">
+            <li class="my-3" style="list-style: none;" *ngFor="let document of documents">
+                <span class="mr-3">{{'file-upload.document-name' | translate }} {{ document.name }}</span>
+                <span class="mr-3">{{'file-upload.uploaded-at' | translate }}
+                    {{document.uploadedAt | date: 'dd.MM.yyyy HH:mm:ss'}}
+                </span>
+                <a href="{{document.path}}" target="_blank" download>{{'file-upload.download-document' | translate }}</a>
+            </li>
+        </ul>
+    </ng-template>
 </p-fileUpload>

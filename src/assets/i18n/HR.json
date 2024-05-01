@@ -777,7 +777,10 @@
         "please-choose-your-image": "Ovdje možete odabrati novu profilnu sliku.",
         "choose-button": "Odaberi datoteku",
         "upload-button": "Pokreni prijenos datoteke",
-        "cancel-button": "Ukloni odabranu datoteku"
+        "cancel-button": "Ukloni odabranu datoteku",
+        "download-document": "Preuzmi dokument",
+        "uploaded-at": "Vrijeme prijenosa datoteke:",
+        "document-name": "Naziv dokumenta:"
     },
     "address": {
         "label": "Adresa:"

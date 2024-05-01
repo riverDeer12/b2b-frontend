@@ -1,4 +1,6 @@
 export class EntityDocument {
+    id!: string;
     name!: string;
-    document!: any;
+    path!: string;
+    uploadedAt!: Date;
 }

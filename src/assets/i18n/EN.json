@@ -773,7 +773,10 @@
         "please-choose-your-image": "You can choose a new profile picture here.",
         "choose-button": "Choose file",
         "upload-button": "Start file upload",
-        "cancel-button": "Remove selected file"
+        "cancel-button": "Remove selected file",
+        "download-document": "Download document",
+        "uploaded-at": "Document uploaded at:",
+        "document-name": "Document name:"
     },
     "address": {
         "label": "Address:"

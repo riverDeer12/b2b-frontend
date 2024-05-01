@@ -1,9 +1,10 @@
 import {Component, Input} from '@angular/core';
 import {EntityType} from "../../auth/core/enums/entity-type";
-import {FormBuilder} from "@angular/forms";
-import {NotificationService} from "../../shared/services/notification.service";
 import {environment} from "../../../environments/environment";
-import {HttpClient, HttpEvent, HttpRequest} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
+import {EntityDocument} from "../core/model/entity-document";
+import {NotificationService} from "../../shared/services/notification.service";
+import {NotificationType} from "../../shared/enums/notification-type";
 
 @Component({
     selector: 'document-uploader',
@@ -13,13 +14,13 @@ import {HttpClient, HttpEvent, HttpRequest} from "@angular/common/http";
 export class DocumentUploaderComponent {
     @Input() entityType!: EntityType;
     @Input() entityId!: string;
-    @Input() documents!: any;
+    @Input() documents!: EntityDocument[];
 
     addDocumentUrl!: string;
+
     deleteDocumentUrl!: string;
 
-    constructor(private fb: FormBuilder,
-                private http: HttpClient,
+    constructor(private http: HttpClient,
                 private notificationService: NotificationService) {
     }
 
@@ -33,15 +34,19 @@ export class DocumentUploaderComponent {
 
         formData.append('document', event.files[0]);
 
-        // Append the additional JSON data
         formData.append('name', event.files[0].name);
 
         this.http.post(this.addDocumentUrl, formData).subscribe((response => {
-            console.log(response);
-        }))
+            this.notificationService
+                .showNotification(NotificationType.Success, 'file-upload.successfully-uploaded');
+
+        }), (error) => {
+            this.notificationService
+                .showNotification(NotificationType.Error, 'file-upload.error-uploading-document');
+        })
     }
 
-    deleteDocument(event: any): void {
-        console.log(event);
+    deleteDocument(documentId: string): void {
+
     }
 }

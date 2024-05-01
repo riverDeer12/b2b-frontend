@@ -6,7 +6,6 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Product} from '../../../products/core/models/product';
-import {UploadType} from "../../../custom-controls/core/types/upload-type";
 import {EntityDocument} from "../../../custom-controls/core/model/entity-document";
 
 @Component({
@@ -21,18 +20,13 @@ export class CompanyFormComponent {
     @Input() jobOffers!: JobOffer[];
     @Input() products!: Product[];
     @Input() categories!: Category[];
+    @Input() documents!: EntityDocument[];
 
     @Input() returnUrl!: string;
 
     public get type(): typeof FormType {
         return FormType;
     }
-
-    public get uploadType(): typeof UploadType {
-        return UploadType;
-    }
-
-    documents!: void[];
 
     entityType: EntityType = EntityType.Company;
 
@@ -49,9 +43,5 @@ export class CompanyFormComponent {
         this.categories = this.categories.map((x: Category) =>
             Object.assign(new Category(), x)
         );
-
-        this.documents = this.company.documents.map((x: EntityDocument) => {
-            Object.assign(new EntityDocument(), x)
-        })
     }
 }
