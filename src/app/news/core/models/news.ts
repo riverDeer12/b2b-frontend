@@ -1,5 +1,4 @@
 import {LocalizedProperty, TranslationsObject} from '../../../shared/models/localized-property';
-import {Languages} from '../../../shared/constants/languages';
 
 export class News {
     id!: string;

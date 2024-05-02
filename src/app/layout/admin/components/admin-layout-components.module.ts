@@ -7,6 +7,8 @@ import {AppMenuComponent} from './menu/app.menu.component';
 import {AppSidebarComponent} from './sidebar/app.sidebar.component';
 import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
+import {ButtonModule} from "primeng/button";
+import {SharedModule} from "../../../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import {TranslateModule} from '@ngx-translate/core';
     imports: [
         CommonModule,
         RouterModule,
-        TranslateModule
+        TranslateModule,
+        ButtonModule,
+        SharedModule
     ],
     exports: [
         AppMenuitemComponent,
