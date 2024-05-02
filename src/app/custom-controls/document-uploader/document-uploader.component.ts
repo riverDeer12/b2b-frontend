@@ -50,6 +50,9 @@ export class DocumentUploaderComponent {
         this.http.delete(this.deleteDocumentUrl + documentId).subscribe((response) => {
             this.notificationService
                 .showNotification(NotificationType.Success, 'file-upload.successfully-deleted');
+
+            this.documents = this.documents.filter(x => x.id != documentId);
+
         }, (error) => {
             this.notificationService
                 .showNotification(NotificationType.Error, 'file-upload.error-deleting');

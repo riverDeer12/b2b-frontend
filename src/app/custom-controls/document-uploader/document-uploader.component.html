@@ -19,14 +19,38 @@
     invalidFileLimitMessageDetail="{{'file-upload.invalid-file-limit.summary' | translate }}"
     invalidFileLimitMessageSummary="{{'file-upload.invalid-file-limit.detail' | translate }}">
     <ng-template pTemplate="content">
-        <ul *ngIf="documents.length">
-            <li class="my-3" style="list-style: none;" *ngFor="let document of documents">
-                <span class="mr-3">{{'file-upload.document-name' | translate }} {{ document.name }}</span>
-                <span class="mr-3">{{'file-upload.uploaded-at' | translate }}
-                    {{document.uploadedAt | date: 'dd.MM.yyyy HH:mm:ss'}}
-                </span>
-                <a href="{{document.path}}" target="_blank" download>{{'file-upload.download-document' | translate }}</a>
-            </li>
-        </ul>
+        <p-table [value]="documents" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>{{'file-upload.document-name' | translate }}</th>
+                    <th>{{'file-upload.uploaded-at' | translate }}</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-document>
+                <tr>
+                    <td>{{ document.name }}</td>
+                    <td>{{ document.uploadedAt | date: 'dd.MM.yyyy HH:mm:ss' }}</td>
+                    <td>
+                        <a
+                            style="text-decoration: none;"
+                            pButton
+                            class="mr-2"
+                            icon="pi pi-download"
+                            href="{{document.path}}"
+                            target="_blank"
+                            download>
+                        </a>
+                        <a
+                            style="text-decoration: none;"
+                            (click)="deleteDocument(document.id)"
+                            pButton
+                            class="mr-2"
+                            icon="pi pi-times">
+                        </a>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
     </ng-template>
 </p-fileUpload>

@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TranslateButtonComponent} from "./translate-button/translate-button.component";
 import {DocumentUploaderComponent} from './document-uploader/document-uploader.component';
 import {ProfilePictureComponent} from "./profile-picture/profile-picture.component";
+import {TableModule} from "primeng/table";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import {ProfilePictureComponent} from "./profile-picture/profile-picture.compone
         FileUploadModule,
         TranslateModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TableModule
     ],
     exports: [
         ProfilePictureComponent,
