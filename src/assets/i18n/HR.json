@@ -780,7 +780,9 @@
         "cancel-button": "Ukloni odabranu datoteku",
         "download-document": "Preuzmi dokument",
         "uploaded-at": "Vrijeme prijenosa datoteke:",
-        "document-name": "Naziv dokumenta:"
+        "document-name": "Naziv dokumenta:",
+        "successfully-deleted": "Uspješno izbrisan dokument",
+        "error-deleting": "Greška prilikom brisanja dokumenta"
     },
     "address": {
         "label": "Adresa:"

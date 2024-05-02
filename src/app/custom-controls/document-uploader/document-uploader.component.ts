@@ -42,11 +42,17 @@ export class DocumentUploaderComponent {
 
         }), (error) => {
             this.notificationService
-                .showNotification(NotificationType.Error, 'file-upload.error-uploading-document');
+                .showNotification(NotificationType.Error, 'file-upload.error');
         })
     }
 
     deleteDocument(documentId: string): void {
-
+        this.http.delete(this.deleteDocumentUrl + documentId).subscribe((response) => {
+            this.notificationService
+                .showNotification(NotificationType.Success, 'file-upload.successfully-deleted');
+        }, (error) => {
+            this.notificationService
+                .showNotification(NotificationType.Error, 'file-upload.error-deleting');
+        })
     }
 }

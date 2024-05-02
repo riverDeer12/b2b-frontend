@@ -776,7 +776,9 @@
         "cancel-button": "Remove selected file",
         "download-document": "Download document",
         "uploaded-at": "Document uploaded at:",
-        "document-name": "Document name:"
+        "document-name": "Document name:",
+        "successfully-deleted": "Successfully deleted document",
+        "error-deleting": "Error deleting document"
     },
     "address": {
         "label": "Address:"
