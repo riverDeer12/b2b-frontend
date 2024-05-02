@@ -15,8 +15,6 @@ export class AdminGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean {
 
-        console.log("Entered admin guard.");
-
         const localStorageValue = localStorage.getItem('token');
 
         if (localStorageValue === null || localStorageValue === undefined) {

@@ -7,6 +7,7 @@ import {Category} from '../../../categories/core/models/category';
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Product} from '../../../products/core/models/product';
 import {EntityDocument} from "../../../custom-controls/core/model/entity-document";
+import {AuthService} from "../../../auth/core/services/auth.service";
 
 @Component({
     selector: 'company-form',
@@ -24,11 +25,16 @@ export class CompanyFormComponent {
 
     @Input() returnUrl!: string;
 
+    constructor(private authService: AuthService) {
+    }
+
     public get type(): typeof FormType {
         return FormType;
     }
 
     entityType: EntityType = EntityType.Company;
+
+    userHasAccess = () => this.authService.isSuperAdminLogged();
 
     ngOnInit() {
         this.researchProblems = this.researchProblems.map((x: ResearchProblem) =>

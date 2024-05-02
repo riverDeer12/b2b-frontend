@@ -37,7 +37,8 @@
                                      [parentEntityId]="company.id"
                                      [dialogEdit]="true"></products-data-table>
             </p-tabPanel>
-            <p-tabPanel *ngIf="formType == type.Edit" header="{{ 'documents.default' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel *ngIf="formType == type.Edit && userHasAccess()"
+                        header="{{ 'documents.default' | translate }}" class="line-height-3 m-0">
                 <document-uploader
                     [entityType]="entityType"
                     [entityId]="company.id"
