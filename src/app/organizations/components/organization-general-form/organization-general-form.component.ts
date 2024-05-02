@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from "../../../shared/services/validation.service";
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
     selector: 'organization-general-form',
@@ -26,6 +27,10 @@ export class OrganizationGeneralFormComponent {
     form!: FormGroup;
 
     entityType = EntityType.PublicOrganization;
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
 
     public get type(): typeof FormType {
         return FormType;

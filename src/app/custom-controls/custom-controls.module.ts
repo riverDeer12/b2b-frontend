@@ -1,26 +1,31 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FileUploaderComponent} from './file-uploader/file-uploader.component';
 import {FileUploadModule} from 'primeng/fileupload';
 import {TranslateModule} from '@ngx-translate/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TranslateButtonComponent} from "./translate-button/translate-button.component";
+import {DocumentUploaderComponent} from './document-uploader/document-uploader.component';
+import {ProfilePictureComponent} from "./profile-picture/profile-picture.component";
+import {TableModule} from "primeng/table";
 
 @NgModule({
     declarations: [
-        FileUploaderComponent,
-        TranslateButtonComponent
+        ProfilePictureComponent,
+        TranslateButtonComponent,
+        DocumentUploaderComponent
     ],
     imports: [
         CommonModule,
         FileUploadModule,
         TranslateModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TableModule
     ],
     exports: [
-        FileUploaderComponent,
-        TranslateButtonComponent
+        ProfilePictureComponent,
+        TranslateButtonComponent,
+        DocumentUploaderComponent
     ]
 })
 export class CustomControlsModule {

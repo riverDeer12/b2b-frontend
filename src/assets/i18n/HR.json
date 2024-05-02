@@ -784,7 +784,12 @@
         "please-choose-your-image": "Ovdje možete odabrati novu profilnu sliku.",
         "choose-button": "Odaberi datoteku",
         "upload-button": "Pokreni prijenos datoteke",
-        "cancel-button": "Ukloni odabranu datoteku"
+        "cancel-button": "Ukloni odabranu datoteku",
+        "download-document": "Preuzmi dokument",
+        "uploaded-at": "Vrijeme prijenosa datoteke",
+        "document-name": "Naziv dokumenta",
+        "successfully-deleted": "Uspješno izbrisan dokument",
+        "error-deleting": "Greška prilikom brisanja dokumenta"
     },
     "address": {
         "label": "Adresa:"
@@ -816,6 +821,9 @@
     },
     "entity-selector": {
         "select-entities": "Odabir entiteta za slanje newslettera"
+    },
+    "documents": {
+        "default": "Dokumenti"
     },
     "edih-adria-description": "EDIH Adria konzorcij (Projekt je sufinanciran od strane Europske unije prema Ugovoru o dodjeli bespovratnih sredstava br. 101083838 i Nacionalnom planu oporavka i otpornosti Republike Hrvatske 2021.-2026.)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
 }

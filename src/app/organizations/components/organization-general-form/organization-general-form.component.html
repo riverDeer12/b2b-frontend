@@ -4,12 +4,12 @@
             <img class="profile-picture" [src]="organization.imageUrl" height="250" width="250">
         </div>
         <div class="field field col-md-12" *ngIf="formType === type.Edit">
-            <file-uploader
+            <profile-picture
                 name="image"
                 [parentForm]="form"
                 [entityType]="entityType"
                 [entityId]="organization.id">
-            </file-uploader>
+            </profile-picture>
         </div>
 
         <credentials-form *ngIf="formType === type.Create" [entityType]="entityType" [form]="form"></credentials-form>

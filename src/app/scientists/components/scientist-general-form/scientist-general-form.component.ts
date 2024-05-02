@@ -9,6 +9,7 @@ import {ScientistService} from "../../core/services/scientist.service";
 import {Category} from "../../../categories/core/models/category";
 import {ValidationService} from "../../../shared/services/validation.service";
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
     selector: 'scientist-general-form',
@@ -29,6 +30,10 @@ export class ScientistGeneralFormComponent {
 
     public get type(): typeof FormType {
         return FormType;
+    }
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
     }
 
     constructor(

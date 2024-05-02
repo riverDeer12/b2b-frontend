@@ -7,13 +7,13 @@
                          alt="specific-knowledge-image">
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
-                    <file-uploader name="image"
+                    <profile-picture name="image"
                                    [parentForm]="form"
                                    [entityType]="entityType"
                                    [entityId]="specificKnowledge.id"
                                    [parentEntityType]="type.Scientist"
                                    [parentEntityId]="specificKnowledge.scientistId">
-                    </file-uploader>
+                    </profile-picture>
                 </div>
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">

@@ -10,6 +10,7 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {Product} from '../../core/models/product';
 import {ProductService} from '../../core/services/product.service';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
     selector: 'product-form',
@@ -34,6 +35,10 @@ export class ProductFormComponent {
 
     public get formActionType(): typeof FormType {
         return FormType;
+    }
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
     }
 
     constructor(

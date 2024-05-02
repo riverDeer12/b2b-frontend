@@ -6,6 +6,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Product} from '../../../products/core/models/product';
+import {EntityDocument} from "../../../custom-controls/core/model/entity-document";
 
 @Component({
     selector: 'company-form',
@@ -19,8 +20,13 @@ export class CompanyFormComponent {
     @Input() jobOffers!: JobOffer[];
     @Input() products!: Product[];
     @Input() categories!: Category[];
+    @Input() documents!: EntityDocument[];
 
     @Input() returnUrl!: string;
+
+    public get type(): typeof FormType {
+        return FormType;
+    }
 
     entityType: EntityType = EntityType.Company;
 

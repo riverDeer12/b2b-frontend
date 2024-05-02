@@ -10,6 +10,7 @@ import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 /**
  * Component responsible for
@@ -47,6 +48,10 @@ export class JobOffersFormComponent {
 
     public get type(): typeof EntityType {
         return EntityType;
+    }
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
     }
 
     public get formActionType(): typeof FormType {
