@@ -1,14 +1,13 @@
 <p-fileUpload
+    #uploader
     [multiple]="false"
-    [maxFileSize]="1000000"
-    [previewWidth]="200"
+    [maxFileSize]="10485760"
     [customUpload]="true"
     (onUpload)="addDocument($event)"
     (onSend)="addDocument($event)"
     (onProgress)="addDocument($event)"
-    (onRemove)="deleteDocument($event)"
-    (onClear)="deleteDocument($event)"
     (uploadHandler)="addDocument($event)"
+    accept="application/pdf"
     chooseLabel="{{'file-upload.choose-button' | translate}}"
     uploadLabel="{{'file-upload.upload-button' | translate}}"
     cancelLabel="{{'file-upload.cancel-button' | translate}}"
