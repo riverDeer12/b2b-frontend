@@ -19,8 +19,6 @@ import {AuthToken} from '../models/auth-token';
 export class AuthService {
     authUrl = environment.apiUrl + '/auth';
 
-    loginSubject = new Subject<any>();
-
     constructor(private http: HttpClient, private router: Router) {
     }
 
@@ -111,7 +109,7 @@ export class AuthService {
      * @param redirectUrl preferred redirect url.
      */
     logOut(redirectUrl: string): void {
-        localStorage.clear();
+        localStorage.removeItem('token');
         this.router.navigateByUrl(redirectUrl).then();
     }
 
@@ -167,5 +165,27 @@ export class AuthService {
         }
 
         return decodedToken.role === 'SuperAdmin';
+    }
+
+    /**
+     * Helper method for checking if
+     * editor is logged.
+     */
+    isEditorLogged(): boolean {
+        const tokenStorageValue = localStorage.getItem('token');
+
+        if (tokenStorageValue === null) {
+            return false;
+        }
+
+        const decodedToken = jwtDecode(tokenStorageValue) as AuthToken;
+
+        const now = Date.now().valueOf() / 1000;
+
+        if (decodedToken.exp < now) {
+            return false;
+        }
+
+        return decodedToken.isEditor == "true";
     }
 }

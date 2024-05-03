@@ -4,4 +4,5 @@ export class AuthToken {
     nbf!: number;
     exp!: number;
     iat!: number;
+    isEditor!: string;
 }

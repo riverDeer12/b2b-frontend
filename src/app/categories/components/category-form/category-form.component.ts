@@ -133,7 +133,6 @@ export class CategoryFormComponent {
                 this.isLoading = false;
             },
             (error) => {
-            console.log(error);
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');

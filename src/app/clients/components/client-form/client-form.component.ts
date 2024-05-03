@@ -135,7 +135,6 @@ export class ClientFormComponent {
                 this.isLoading = false;
             },
             (error) => {
-                console.log(error);
                 this.notificationService
                     .showNotification(NotificationType.Error,
                         'correct-validation-errors');

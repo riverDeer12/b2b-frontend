@@ -18,7 +18,6 @@ export class ActivityComponent {
     activityEndpoint = environment.apiUrl + this.entityType + '/' + this.entityId;
 
     constructor(private sharedService: SharedService, private notificationService: NotificationService) {
-        console.log(this.activityEndpoint);
     }
 
     /**

@@ -158,12 +158,6 @@ export class ScientistGeneralFormComponent {
 
         this.isLoading = true;
 
-        Object.keys(this.form.controls).forEach(key => {
-
-            console.log(key);
-            console.log(this.form.get(key)?.errors);
-        });
-
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             this.notificationService
