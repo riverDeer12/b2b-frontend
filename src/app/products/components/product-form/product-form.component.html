@@ -100,9 +100,17 @@
                 </div>
                 <div class="col-12 ml-0 pl-0">
                     <translate-button [form]="form"
+                                      [formControlNames]="['title','description']"
+                                      label="translate.translate-to-english"
                                       sourceLanguage="HR"
                                       targetLanguage="EN"
-                                      [formControlNames]="['title','description']"></translate-button>
+                                      ></translate-button>
+                    <translate-button [form]="form"
+                                      [formControlNames]="['title','description']"
+                                      label="translate.translate-to-croatian"
+                                      sourceLanguage="EN"
+                                      targetLanguage="HR"
+                    ></translate-button>
                     <p-button iconPos="right" type="submit"
                               label="{{ 'save' | translate }}" icon="pi pi-save"
                               [loading]="isLoading"></p-button>

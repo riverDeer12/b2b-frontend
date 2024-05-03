@@ -11,6 +11,7 @@ import {NotificationService} from "../../shared/services/notification.service";
 })
 export class TranslateButtonComponent {
     @Input() form!: FormGroup;
+    @Input() label!: string;
     @Input() sourceLanguage!: string;
     @Input() targetLanguage!: string;
     @Input() formControlNames!: string[];
@@ -37,9 +38,9 @@ export class TranslateButtonComponent {
     translateContent(formControlName: string): void {
         const formGroup = this.form.controls[formControlName] as FormGroup;
         const translationFormGroup = formGroup.controls['translations'] as FormGroup;
-        const croatianValue = translationFormGroup.controls[this.sourceLanguage].value;
+        const sourceLanguageValue = translationFormGroup.controls[this.sourceLanguage].value;
 
-        if (!croatianValue) {
+        if (!sourceLanguageValue) {
             this.notificationService
                 .showNotification(NotificationType.Warning,
                     'translate.required-fields');
@@ -47,7 +48,7 @@ export class TranslateButtonComponent {
             return;
         }
 
-        this.languageService.translate(croatianValue, this.sourceLanguage, this.targetLanguage)
+        this.languageService.translate(sourceLanguageValue, this.sourceLanguage, this.targetLanguage)
             .subscribe((response: any) => {
                     translationFormGroup.controls[this.targetLanguage].setValue(response.translatedText as string);
                     this.notificationService
