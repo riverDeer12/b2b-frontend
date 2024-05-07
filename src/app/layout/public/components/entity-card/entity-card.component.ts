@@ -33,7 +33,7 @@ export class EntityCardComponent {
         this.entityCategories = this.entityCategories.map((x: Category) =>
             Object.assign(new Category(), x));
 
-        this.products = this.products.map((x: Product) =>
+        this.products = this.products?.map((x: Product) =>
             Object.assign(new Product(), x));
     }
 
