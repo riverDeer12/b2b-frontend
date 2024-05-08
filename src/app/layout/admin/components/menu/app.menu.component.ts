@@ -99,7 +99,13 @@ export class AppMenuComponent implements OnInit {
                                 routerLink: ['/admin/newsletters/free-form'],
                             }
                         ]
-                    }
+                    },
+                    {
+                        label: 'onboardings.default',
+                        icon: 'pi pi-fw pi-letter',
+                        visible: !this.authService.isEditorLogged(),
+                        routerLink: ['/admin/onboardings']
+                    },
                 ]
             }
         ];
