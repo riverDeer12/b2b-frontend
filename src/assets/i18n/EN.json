@@ -759,6 +759,105 @@
             "confirm-delete-message": "By confirming this message newsletter will be deleted."
         }
     },
+    "onboardings": {
+        "default": "Import Data",
+        "batch-type": {
+            "default": "Data Source"
+        },
+        "full-name": {
+            "default": "Full name",
+            "label": "Full name: "
+        },
+        "abbreviated-name": {
+            "default": "Abbreviated name",
+            "label": "Abbreviated name: "
+        },
+        "authorized-representatives": {
+            "default": "Authorized representatives",
+            "label": "Authorized representatives: "
+        },
+        "county": {
+            "default": "County",
+            "label": "County: "
+        },
+        "company-size": {
+            "default": "Company size",
+            "label": "Company size: "
+        },
+        "court-registration-number": {
+            "default": "Court Registration Number",
+            "label": "Court Registration Number: "
+        },
+        "email": {
+            "default": "Email",
+            "label": "Email: "
+        },
+        "fax": {
+            "default": "Fax",
+            "label": "Fax: "
+        },
+        "managers-or-liquidators": {
+            "default": "Managers/Liquidators",
+            "label": "Managers/Liquidators: "
+        },
+        "nkd-code": {
+            "default": "NKD code (2007)",
+            "label": "NKD code (2007): "
+        },
+        "nkd-name": {
+            "default": "NKD name (2007)",
+            "label": "NKD name (2007): "
+        },
+        "number-of-employee-hours": {
+            "default": "Number of employee hours",
+            "label": "Number of employee hours: "
+        },
+        "number-of-employees": {
+            "default": "Number of employees",
+            "label": "Number of employees: "
+        },
+        "personal-identification-number": {
+            "default": "Personal Identification Number",
+            "label": "Personal Identification Number: "
+        },
+        "postal-code": {
+            "default": "Postal code",
+            "label": "Postal code: "
+        },
+        "registration-number": {
+            "default": "Registration number",
+            "label": "Registration number: "
+        },
+        "mobile": {
+            "default": "Mobile phone",
+            "label": "Mobile phone: "
+        },
+        "telephone": {
+            "default": "Telephone",
+            "label": "Telephone: "
+        },
+        "website": {
+            "default": "Website",
+            "label": "Website: "
+        },
+        "location": {
+            "default": "Location",
+            "label": "Location: "
+        },
+        "address": {
+            "default": "Address",
+            "label": "Address: "
+        },
+        "court-register-email": {
+            "default": "Court register email",
+            "label": "Court register email: "
+        },
+        "data-view": {
+            "default": "Data View",
+            "label": "Data View For:"
+        },
+        "HgkCompanies": "HGK Companies"
+    },
     "newsletter-type": {
         "platform-news": "Platform News",
         "matchmaking": "Personalized Newsletter (Matchmaking)",

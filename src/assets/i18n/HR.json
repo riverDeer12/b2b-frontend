@@ -766,6 +766,105 @@
             "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
         }
     },
+    "onboardings": {
+        "default": "Podatci za import",
+        "batch-type": {
+            "default": "Izvor podataka"
+        },
+        "full-name": {
+            "default": "Puni naziv",
+            "label": "Puni naziv: "
+        },
+        "abbreviated-name": {
+            "default": "Skraćeni naziv",
+            "label": "Skraćeni naziv: "
+        },
+        "authorized-representatives": {
+            "default": "Ovlašteni predstavnici",
+            "label": "Ovlašteni predstavnici: "
+        },
+        "county": {
+            "default": "Županija",
+            "label": "Županija: "
+        },
+        "company-size": {
+            "default": "Veličina tvrtke",
+            "label": "Veličina tvrtke: "
+        },
+        "court-registration-number": {
+            "default": "MBS",
+            "label": "MBS: "
+        },
+        "email": {
+            "default": "Email",
+            "label": "Email: "
+        },
+        "fax": {
+            "default": "Fax",
+            "label": "Fax: "
+        },
+        "managers-or-liquidators": {
+            "default": "Upravitelji/likvidatori",
+            "label": "Upravitelji/likvidatori: "
+        },
+        "nkd-code": {
+            "default": "Šifra NKD (2007)",
+            "label": "Šifra NKD (2007): "
+        },
+        "nkd-name": {
+            "default": "Naziv NKD (2007)",
+            "label": "Naziv NKD (2007): "
+        },
+        "number-of-employee-hours": {
+            "default": "Broj zaposlenih (sati)",
+            "label": "Broj zaposlenih (sati): "
+        },
+        "number-of-employees": {
+            "default": "Broj zaposlenih",
+            "label": "Broj zaposlenih: "
+        },
+        "personal-identification-number": {
+            "default": "OIB",
+            "label": "OIB: "
+        },
+        "postal-code": {
+            "default": "Poštanski broj",
+            "label": "Poštanski broj: "
+        },
+        "registration-number": {
+            "default": "Matični broj",
+            "label": "Matični broj: "
+        },
+        "mobile": {
+            "default": "Mobilni telefon",
+            "label": "Mobilni telefon: "
+        },
+        "telephone": {
+            "default": "Telefon",
+            "label": "Telefon: "
+        },
+        "website": {
+            "default": "Web stranica",
+            "label": "Web stranica: "
+        },
+        "location": {
+            "default": "Lokacija",
+            "label": "Lokacija: "
+        },
+        "address": {
+            "default": "Adresa",
+            "label": "Adresa: "
+        },
+        "court-register-email": {
+            "default": "Email(sudski registar)",
+            "label": "Email(sudski registar): "
+        },
+        "data-view": {
+            "default": "Pregled podataka",
+            "label": "Pregled podataka za:"
+        },
+        "HgkCompanies": "HGK Tvrtke"
+    },
     "newsletter-type": {
         "platform-news": "Vijesti sa platforme",
         "matchmaking": "Personalizirani newsletter (matchmaking)",
