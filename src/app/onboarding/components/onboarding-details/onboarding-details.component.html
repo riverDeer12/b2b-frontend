@@ -1,3 +1,6 @@
+
+<h4>{{'onboardings.data-view.label' | translate }} {{onboarding.data.abbreviatedName}}</h4>
+
 <p>
     <label>{{'onboardings.full-name.label' | translate }} </label>
     {{ onboarding.data.fullName }}
@@ -32,11 +35,11 @@
 </p>
 <p>
     <label>{{'onboardings.email.label' | translate }} </label>
-    {{ onboarding.data.email || 'N/A' }}
+    {{ onboarding.data.email || 'no-data'  | translate }}
 </p>
 <p>
     <label>{{'onboardings.fax.label' | translate }} </label>
-    {{ onboarding.data.fax || 'N/A' }}
+    {{ onboarding.data.fax || 'no-data'  | translate }}
 </p>
 <p>
     <label>{{'onboardings.location.label' | translate }} </label>
@@ -44,11 +47,11 @@
 </p>
 <p>
     <label>{{'onboardings.managers-or-liquidators.label' | translate }} </label>
-    {{ onboarding.data.managersOrLiquidators || 'N/A' }}
+    {{ onboarding.data.managersOrLiquidators || 'no-data'  | translate }}
 </p>
 <p>
     <label>{{'onboardings.mobile.label' | translate }} </label>
-    {{ onboarding.data.mobile || 'N/A' }}
+    {{ onboarding.data.mobile || 'no-data'  | translate }}
 </p>
 <p>
     <label>{{'onboardings.nkd-code.label' | translate }} </label>
@@ -80,10 +83,10 @@
 </p>
 <p>
     <label>{{'onboardings.telephone.label' | translate }} </label>
-    {{ onboarding.data.telephone || 'N/A' }}
+    {{ onboarding.data.telephone || 'no-data'  | translate }}
 </p>
 <p>
     <label>{{'onboardings.website.label' | translate }} </label>
-    {{ onboarding.data.website || 'N/A' }}
+    {{ onboarding.data.website || 'no-data'  | translate }}
 </p>
 

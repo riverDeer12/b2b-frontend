@@ -859,6 +859,10 @@
             "default": "Email(sudski registar)",
             "label": "Email(sudski registar): "
         },
+        "data-view": {
+            "default": "Pregled podataka",
+            "label": "Pregled podataka za:"
+        },
         "HgkCompanies": "HGK Tvrtke"
     },
     "newsletter-type": {
