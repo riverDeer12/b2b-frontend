@@ -1,8 +1,8 @@
 import {Routes} from "@angular/router";
 import {OnboardingHomeComponent} from "./pages/onboarding-home/onboarding-home.component";
-import {OnboardingDetailsComponent} from "./components/onboarding-details/onboarding-details.component";
 import {OnboardingResolver} from "./core/resolvers/onboarding.resolver";
 import {OnboardingsResolver} from "./core/resolvers/onboardings.resolver";
+import {OnboardingInfoComponent} from "./pages/onboarding-info/onboarding-info.component";
 
 export const OnboardingRoutes: Routes = [
     {
@@ -14,7 +14,7 @@ export const OnboardingRoutes: Routes = [
     },
     {
         path: 'info/:batchId/items/:id',
-        component: OnboardingDetailsComponent,
+        component: OnboardingInfoComponent,
         resolve: {
             onboarding: OnboardingResolver
         }

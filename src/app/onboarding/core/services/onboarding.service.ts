@@ -17,7 +17,7 @@ export class OnboardingService {
     getOnboardingBatches = () => this.http.get<OnboardingBatch[]>(this.endpointUrl);
 
     getOnboardingBatchDetails = (batchId: string, id: string) =>
-        this.http.get<OnboardingBatch>(this.endpointUrl + batchId + '/items/' + id);
+        this.http.get<Onboarding>(this.endpointUrl + batchId + '/items/' + id);
 
     deleteOnboarding = (id: string) => this.http.delete(this.endpointUrl + id);
 }

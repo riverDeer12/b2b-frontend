@@ -6,17 +6,17 @@ import {
 } from '@angular/router';
 import {Observable} from 'rxjs';
 import {OnboardingService} from "../services/onboarding.service";
-import {OnboardingBatch} from "../models/onboarding-batch";
+import {Onboarding} from "../models/onboarding";
 
 @Injectable({
     providedIn: 'root'
 })
-export class OnboardingResolver implements Resolve<OnboardingBatch> {
+export class OnboardingResolver implements Resolve<Onboarding> {
 
     constructor(private service: OnboardingService, private router: Router) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<OnboardingBatch> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Onboarding> {
         const batchId = route.paramMap.get('batchId');
 
         if (!batchId) {

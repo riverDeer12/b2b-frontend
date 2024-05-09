@@ -765,16 +765,20 @@
             "default": "Data Source"
         },
         "full-name": {
-            "default": "Full Name"
+            "default": "Full Name",
+            "label": "Full Name: "
         },
         "location": {
-            "default": "Location"
+            "default": "Location",
+            "label": "Location: "
         },
         "address": {
-            "default": "Address"
+            "default": "Address",
+            "label": "Address: "
         },
         "court-register-email": {
-            "default": "Court Register Email"
+            "default": "Court Register Email",
+            "label": "Court Register Email: "
         },
         "HgkCompanies": "HGK Companies"
     },
