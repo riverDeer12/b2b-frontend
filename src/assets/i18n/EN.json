@@ -759,6 +759,25 @@
             "confirm-delete-message": "By confirming this message newsletter will be deleted."
         }
     },
+    "onboardings": {
+        "default": "Import Data",
+        "batch-type": {
+            "default": "Data Source"
+        },
+        "full-name": {
+            "default": "Full Name"
+        },
+        "location": {
+            "default": "Location"
+        },
+        "address": {
+            "default": "Address"
+        },
+        "court-register-email": {
+            "default": "Court Register Email"
+        },
+        "HgkCompanies": "HGK Companies"
+    },
     "newsletter-type": {
         "platform-news": "Platform News",
         "matchmaking": "Personalized Newsletter (Matchmaking)",

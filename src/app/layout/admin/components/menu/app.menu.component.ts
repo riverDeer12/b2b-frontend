@@ -102,7 +102,7 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'onboardings.default',
-                        icon: 'pi pi-fw pi-letter',
+                        icon: 'pi pi-fw pi-inbox',
                         visible: !this.authService.isEditorLogged(),
                         routerLink: ['/admin/onboardings']
                     },

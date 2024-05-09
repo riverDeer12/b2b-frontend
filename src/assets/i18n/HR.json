@@ -766,6 +766,25 @@
             "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
         }
     },
+    "onboardings": {
+        "default": "Podatci za import",
+        "batch-type": {
+            "default": "Izvor podataka"
+        },
+        "full-name": {
+            "default": "Puni naziv"
+        },
+        "location": {
+            "default": "Lokacija"
+        },
+        "address": {
+            "default": "Adresa"
+        },
+        "court-register-email": {
+            "default": "Sluzbeni email"
+        },
+        "HgkCompanies": "HGK Tvrtke"
+    },
     "newsletter-type": {
         "platform-news": "Vijesti sa platforme",
         "matchmaking": "Personalizirani newsletter (matchmaking)",

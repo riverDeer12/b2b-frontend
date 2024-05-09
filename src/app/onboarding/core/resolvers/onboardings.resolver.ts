@@ -4,19 +4,19 @@ import {
     RouterStateSnapshot,
     ActivatedRouteSnapshot
 } from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {Onboarding} from "../models/onboarding";
+import {Observable} from 'rxjs';
 import {OnboardingService} from "../services/onboarding.service";
+import {OnboardingBatch} from "../models/onboarding-batch";
 
 @Injectable({
     providedIn: 'root'
 })
-export class OnboardingsResolver implements Resolve<Onboarding[]> {
+export class OnboardingsResolver implements Resolve<OnboardingBatch[]> {
 
     constructor(private service: OnboardingService) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Onboarding[]> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<OnboardingBatch[]> {
         return this.service.getOnboardingBatches();
     }
 }

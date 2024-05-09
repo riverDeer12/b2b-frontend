@@ -9,11 +9,11 @@ export const OnboardingRoutes: Routes = [
         path: '',
         component: OnboardingHomeComponent,
         resolve: {
-            organizations: OnboardingsResolver
+            onboardings: OnboardingsResolver
         }
     },
     {
-        path: 'details/:id',
+        path: 'info/:batchId/items/:id',
         component: OnboardingDetailsComponent,
         resolve: {
             onboarding: OnboardingResolver

@@ -4,25 +4,31 @@ import {
     RouterStateSnapshot,
     ActivatedRouteSnapshot
 } from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {Onboarding} from "../models/onboarding";
+import {Observable} from 'rxjs';
 import {OnboardingService} from "../services/onboarding.service";
+import {OnboardingBatch} from "../models/onboarding-batch";
 
 @Injectable({
     providedIn: 'root'
 })
-export class OnboardingResolver implements Resolve<Onboarding> {
+export class OnboardingResolver implements Resolve<OnboardingBatch> {
 
     constructor(private service: OnboardingService, private router: Router) {
     }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Onboarding> {
-        const routeId = route.paramMap.get('id');
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<OnboardingBatch> {
+        const batchId = route.paramMap.get('batchId');
 
-        if (!routeId) {
+        if (!batchId) {
             this.router.navigateByUrl('admin/onboardings').then();
         }
 
-        return this.service.getOnboardingBatchDetails(routeId as string);
+        const itemId = route.paramMap.get('id');
+
+        if (!itemId) {
+            this.router.navigateByUrl('admin/onboardings').then();
+        }
+
+        return this.service.getOnboardingBatchDetails(batchId as string, itemId as string);
     }
 }
