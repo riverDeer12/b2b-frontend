@@ -25,7 +25,7 @@ export class ProductsDataTableComponent {
     @Input() categories!: Category[];
     @Input() dialogEdit!: boolean;
     @Input() parentEntityType!: EntityType;
-    @Input() parentEntityId!: string;
+    @Input() parentEntityId!: string | undefined;
 
     @ViewChild('filter') filter!: ElementRef;
     @ViewChild('productsDataTable') table!: Table;
@@ -155,7 +155,7 @@ export class ProductsDataTableComponent {
     private listenForDataChanges(): void {
         this.productService.listenProduct()
             .subscribe((response: Product) => {
-                this.productService.getProducts(this.parentEntityId)
+                this.productService.getProducts(this.parentEntityId as string)
                     .subscribe((response: Product[]) => {
                         this.data = response.map((x: Product) =>
                             Object.assign(new Product(), x)

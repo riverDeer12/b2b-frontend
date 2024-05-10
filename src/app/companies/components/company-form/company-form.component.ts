@@ -34,19 +34,23 @@ export class CompanyFormComponent {
 
     entityType: EntityType = EntityType.Company;
 
-    userHasAccess = () => this.authService.isSuperAdminLogged();
+
+    /**
+     * Check if user has access to documents.
+     */
+    documentsAccess = () => this.authService.isSuperAdminLogged();
 
     ngOnInit() {
-        this.researchProblems = this.researchProblems.map((x: ResearchProblem) =>
+        this.researchProblems = this.researchProblems?.map((x: ResearchProblem) =>
             Object.assign(new ResearchProblem(), x)
         );
-        this.jobOffers = this.jobOffers.map((x: JobOffer) =>
+        this.jobOffers = this.jobOffers?.map((x: JobOffer) =>
             Object.assign(new JobOffer(), x)
         );
-        this.products = this.products.map((x: Product) =>
+        this.products = this.products?.map((x: Product) =>
             Object.assign(new Product(), x)
         );
-        this.categories = this.categories.map((x: Category) =>
+        this.categories = this.categories?.map((x: Category) =>
             Object.assign(new Category(), x)
         );
     }

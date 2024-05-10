@@ -6,6 +6,7 @@ import {CompanyService} from '../../../companies/core/services/company.service';
 import {OrganizationService} from '../../../organizations/core/services/organization.service';
 import {ScientistService} from '../../../scientists/core/services/scientist.service';
 import {passwordValidator} from '../../../shared/validators/password-validator';
+import {FormType} from "../../../shared/enums/form-type";
 
 @Component({
     selector: 'credentials-form',
@@ -14,6 +15,7 @@ import {passwordValidator} from '../../../shared/validators/password-validator';
 })
 export class CredentialsFormComponent implements OnInit {
     @Input() entityType!: EntityType;
+    @Input() formType!: FormType;
     @Input() form!: FormGroup;
 
     usernameCheckLoading!: boolean;
