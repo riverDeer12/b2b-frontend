@@ -37,7 +37,14 @@ export class CompanyService {
      *
      * @param postData data for creating new company.
      */
-    createCompany = (postData: Company) => this.http.post(this.companiesUrl, postData);
+    createCompany = (postData: Company) => this.http.post(this.companiesUrl + 'create-by-super-admin', postData);
+
+    /**
+     * Create new company with form data.
+     *
+     * @param postData data for registering new company.
+     */
+    registerCompany = (postData: Company) => this.http.post(this.companiesUrl, postData);
 
     /**
      * Update existing company

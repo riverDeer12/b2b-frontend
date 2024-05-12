@@ -12,7 +12,7 @@ import {AuthService} from '../../core/services/auth.service';
     styleUrls: ['./change-password.component.scss']
 })
 export class ChangePasswordComponent {
-    @Input() username!: string | undefined;
+    @Input() username!: string;
     @Input() entityType!: EntityType;
 
     form!: FormGroup;

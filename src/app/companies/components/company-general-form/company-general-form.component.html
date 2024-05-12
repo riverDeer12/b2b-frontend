@@ -11,7 +11,8 @@
                 [entityId]="company.id">
             </profile-picture>
         </div>
-        <credentials-form *ngIf="formType === type.Create" [entityType]="entityType" [form]="form"></credentials-form>
+
+        <credentials-form [formType]="formType" [entityType]="entityType" [form]="form"></credentials-form>
 
         <div class="field field col-md-12">
             <span class="p-float-label">
@@ -190,14 +191,14 @@
         <div class="col-12 ml-0 p-0">
             <translate-button
                 [form]="form"
-                [formControlNames]="['description, projects']"
+                [formControlNames]="['description', 'projects']"
                 label="translate.translate-to-english"
                 sourceLanguage="HR"
                 targetLanguage="EN"
             ></translate-button>
             <translate-button
                 [form]="form"
-                [formControlNames]="['description, projects']"
+                [formControlNames]="['description', 'projects']"
                 label="translate.translate-to-croatian"
                 sourceLanguage="EN"
                 targetLanguage="HR"

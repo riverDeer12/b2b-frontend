@@ -46,9 +46,6 @@
     <ng-template pTemplate="body" let-onboarding>
         <tr>
             <td class="d-flex">
-                <button type="button" class="p-button-danger m-1" pButton pRipple
-                        (click)="confirmDelete(onboarding.id)"
-                        icon="pi pi-trash"></button>
                 <button type="button" class="p-button m-1" pButton pRipple
                         (click)="goToInfoPage(onboarding.onboardingBatchId, onboarding.id)"
                         icon="pi pi-info"></button>
@@ -69,22 +66,7 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
         <tr>
-            <td colspan="5">{{'categories.no-categories-found' | translate }}</td>
+            <td colspan="5">{{'onboardings.no-onboardings-found' | translate }}</td>
         </tr>
     </ng-template>
 </p-table>
-
-<p-confirmDialog header="{{'categories.confirm-delete-action' | translate }}"
-                 key="confirmDeleteDialog" icon="pi pi-exclamation-triangle"
-                 message="{{'categories.confirm-delete-message' | translate }}"
-                 acceptButtonStyleClass="p-button-text"
-                 acceptLabel="{{'yes' | translate }}"
-                 rejectLabel="{{'no' | translate }}"
-                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
-
-<p-confirmDialog header="{{'activity-change.title' | translate }}"
-                 message="{{'activity-change.message' | translate }}"
-                 acceptLabel="{{'yes' | translate }}"
-                 rejectLabel="{{'no' | translate }}"
-                 icon="pi pi-exclamation-triangle"
-                 rejectButtonStyleClass="p-button-text"></p-confirmDialog>
