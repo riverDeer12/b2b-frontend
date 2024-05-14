@@ -38,7 +38,7 @@ export class OnboardingProcessComponent {
             switch (this.type) {
                 case OnboardingProcessType.Accepted:
                 case OnboardingProcessType.AlreadyAccepted:
-                    this.iconType = 'times';
+                    this.iconType = 'check';
                     return;
                 case OnboardingProcessType.Declined:
                 case OnboardingProcessType.AlreadyDeclined:
