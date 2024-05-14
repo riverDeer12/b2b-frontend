@@ -103,7 +103,7 @@ export const PublicLayoutRoutes: Routes = [
         path: 'onboarding-accepted',
         component: OnboardingProcessComponent,
         resolve: {
-            type: OnboardingProcessResolver
+            type: OnboardingProcessResolver,
         },
         data: {
             type: OnboardingProcessType.Accepted

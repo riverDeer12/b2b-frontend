@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {OnboardingProcessType} from "../../core/types/onboarding-process-type";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {AuthService} from "../../../../auth/core/services/auth.service";
 
 @Component({
     selector: 'onboarding-process',
@@ -10,12 +11,25 @@ import {ActivatedRoute} from "@angular/router";
 export class OnboardingProcessComponent {
     type!: OnboardingProcessType;
     iconType!: string;
+    token!: string;
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    isLoading = false;
+
+    public get onboardingType(): typeof OnboardingProcessType {
+        return OnboardingProcessType;
+    }
+
+    constructor(private activatedRoute: ActivatedRoute,
+                private router: Router,
+                private authService: AuthService) {
     }
 
     ngOnInit(): void {
         this.listenToResolver();
+
+        if (this.type === this.onboardingType.Accepted) {
+            this.token = this.activatedRoute.snapshot.queryParams['token'];
+        }
     }
 
     listenToResolver(): void {
@@ -24,7 +38,7 @@ export class OnboardingProcessComponent {
             switch (this.type) {
                 case OnboardingProcessType.Accepted:
                 case OnboardingProcessType.AlreadyAccepted:
-                    this.iconType = 'check';
+                    this.iconType = 'times';
                     return;
                 case OnboardingProcessType.Declined:
                 case OnboardingProcessType.AlreadyDeclined:
@@ -33,5 +47,16 @@ export class OnboardingProcessComponent {
             }
         });
 
+    }
+
+    /**
+     * Login user after accepted
+     * onboarding process.
+     */
+    loginUser(): void {
+        this.isLoading = true;
+        localStorage.setItem('token', this.token);
+        this.router.navigateByUrl('my-profile').then();
+        this.isLoading = false;
     }
 }
