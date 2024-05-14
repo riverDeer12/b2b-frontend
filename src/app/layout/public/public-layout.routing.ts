@@ -27,7 +27,9 @@ import {CategoriesResolver} from '../../categories/core/resolvers/categories.res
 import {EntityTypeResolver} from './core/resolvers/common/entity-type.resolver';
 import {EntityDetailsResolver} from './core/resolvers/common/entity-details.resolver';
 import {EntityDetailsComponent} from './pages/entity-details/entity-details.component';
-import {PublicCompanyResearchProblemsComponent} from './pages/public-company-research-problems/public-company-research-problems.component';
+import {
+    PublicCompanyResearchProblemsComponent
+} from './pages/public-company-research-problems/public-company-research-problems.component';
 import {PublicResearchProblemsResolver} from './core/resolvers/research-problems/public-research-problems.resolver';
 import {PublicEquipmentComponent} from './pages/public-equipment/public-equipment.component';
 import {PublicEquipmentResolver} from './core/resolvers/equipment/public-equipment.resolver';
@@ -48,6 +50,9 @@ import {MailConfirmedComponent} from "./pages/mail-confirmed/mail-confirmed.comp
 import {MailAlreadyConfirmedComponent} from "./pages/mail-already-confirmed/mail-already-confirmed.component";
 import {NotFoundComponent} from "./pages/not-found/not-found.component";
 import {UnsubscribedComponent} from "./pages/unsubscribed/unsubscribed.component";
+import {OnboardingProcessComponent} from "./pages/onboarding-process/onboarding-process.component";
+import {OnboardingProcessType} from "./core/types/onboarding-process-type";
+import {OnboardingProcessResolver} from "./core/resolvers/onboarding/onboarding-process.resolver";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -93,6 +98,46 @@ export const PublicLayoutRoutes: Routes = [
     {
         path: 'about-us',
         component: AboutUsComponent
+    },
+    {
+        path: 'onboarding-accepted',
+        component: OnboardingProcessComponent,
+        resolve: {
+            type: OnboardingProcessResolver
+        },
+        data: {
+            type: OnboardingProcessType.Accepted
+        }
+    },
+    {
+        path: 'onboarding-already-accepted',
+        component: OnboardingProcessComponent,
+        resolve: {
+            type: OnboardingProcessResolver
+        },
+        data: {
+            type: OnboardingProcessType.AlreadyAccepted
+        }
+    },
+    {
+        path: 'onboarding-declined',
+        component: OnboardingProcessComponent,
+        resolve: {
+            type: OnboardingProcessResolver
+        },
+        data: {
+            type: OnboardingProcessType.Declined
+        }
+    },
+    {
+        path: 'onboarding-already-declined',
+        component: OnboardingProcessComponent,
+        resolve: {
+            type: OnboardingProcessResolver
+        },
+        data: {
+            type: OnboardingProcessType.AlreadyDeclined
+        }
     },
     {
         path: 'main-search',
@@ -203,7 +248,7 @@ export const PublicLayoutRoutes: Routes = [
     {
         path: 'most-popular',
         component: PublicMostPopularComponent,
-        resolve:{
+        resolve: {
             mostPopular: MostPopularResolver
         }
     },

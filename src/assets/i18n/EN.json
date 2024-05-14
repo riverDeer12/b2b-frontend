@@ -856,7 +856,23 @@
             "default": "Data View",
             "label": "Data View For:"
         },
-        "HgkCompanies": "HGK Companies"
+        "HgkCompanies": "HGK Companies",
+        "accepted": {
+            "title": "Registration Accepted!",
+            "text": "Thank you for accepting the registration, welcome to the RIMAP platform."
+        },
+        "already-accepted": {
+            "title": "Registration Already Accepted!",
+            "text": "Click on Login to access your profile and edit your information."
+        },
+        "declined": {
+            "title": "Registration Declined!",
+            "text": "You have not accepted the registration on the RIMAP platform. If you change your mind, feel free to contact us."
+        },
+        "already-declined": {
+            "title": "Registration Already Declined!",
+            "text": "You have not accepted the registration on the RIMAP platform. If you change your mind, feel free to contact us."
+        }
     },
     "newsletter-type": {
         "platform-news": "Platform News",

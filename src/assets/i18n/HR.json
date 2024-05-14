@@ -863,7 +863,23 @@
             "default": "Pregled podataka",
             "label": "Pregled podataka za:"
         },
-        "HgkCompanies": "HGK Tvrtke"
+        "HgkCompanies": "HGK Tvrtke",
+        "accepted": {
+            "title": "Registracija prihvaćena!",
+            "text": "Hvala Vam na prihvaćenoj registraciji, dobrodošli na RIMAP platformu."
+        },
+        "already-accepted": {
+            "title": "Registracija je već prihvaćena!",
+            "text": "Klikom na Prijava se možete prijaviti u svoj profil i urediti podatke."
+        },
+        "declined": {
+            "title": "Registracija odbijena!",
+            "text": "Niste prihvatili registraciju na RIMAP platformu, ukoliko se predomislite slobodno nas kontaktirajte."
+        },
+        "already-declined": {
+            "title": "Registracija je već odbijena!",
+            "text": "Niste prihvatili registraciju na RIMAP platformu, ukoliko se predomislite slobodno nas kontaktirajte."
+        }
     },
     "newsletter-type": {
         "platform-news": "Vijesti sa platforme",
