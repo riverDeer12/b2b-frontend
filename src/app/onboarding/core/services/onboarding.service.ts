@@ -20,4 +20,7 @@ export class OnboardingService {
         this.http.get<Onboarding>(this.endpointUrl + batchId + '/items/' + id);
 
     deleteOnboarding = (id: string) => this.http.delete(this.endpointUrl + id);
+
+    sendEmails = (batchId: string, postData: any) =>
+        this.http.post(this.endpointUrl + batchId + '/notify', postData)
 }

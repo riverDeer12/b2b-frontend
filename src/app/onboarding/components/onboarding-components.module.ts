@@ -8,12 +8,16 @@ import {TableModule} from "primeng/table";
 import {InputTextModule} from "primeng/inputtext";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {TranslateModule} from "@ngx-translate/core";
+import { OnboardingItemsSelectorComponent } from './onboarding-items-selector/onboarding-items-selector.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MultiSelectModule} from "primeng/multiselect";
 
 
 @NgModule({
     declarations: [
         OnboardingDataTableComponent,
-        OnboardingDetailsComponent
+        OnboardingDetailsComponent,
+        OnboardingItemsSelectorComponent
     ],
     imports: [
         CommonModule,
@@ -22,11 +26,14 @@ import {TranslateModule} from "@ngx-translate/core";
         RippleModule,
         TableModule,
         InputTextModule,
-        ConfirmDialogModule
+        ConfirmDialogModule,
+        ReactiveFormsModule,
+        MultiSelectModule
     ],
     exports: [
         OnboardingDataTableComponent,
-        OnboardingDetailsComponent
+        OnboardingDetailsComponent,
+        OnboardingItemsSelectorComponent
     ]
 })
 export class OnboardingComponentsModule {

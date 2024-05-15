@@ -761,6 +761,7 @@
     },
     "onboardings": {
         "default": "Import Data",
+        "view-of-imported-data": "View of imported data",
         "batch-type": {
             "default": "Data Source"
         },
@@ -915,6 +916,7 @@
         "results": "Search Results"
     },
     "send-email": "Send Email",
+    "send-notifications": "Send Notifications",
     "rimap": "Regional innovation matchmaking platform",
     "rimap-description": "Regional digital innovation platform for the transfer of knowledge between the academic community and the economy with the aim of developing the innovation ecosystem in the region. We invite you to register, enter your development proposals/needs for human resources/competencies/research equipment and search profiles other users and contact them about possible cooperation by clicking on \"Contact\".",
     "about-us-description": "RIMAP is a regional digital innovation platform for the transfer of knowledge between the academic community and the economy in the Primorje-Gorski Kotar County and beyond with the aim of developing the innovation ecosystem in the region.\n\nThe platform enables the networking of economic entities, entrepreneurs, researchers , scientists, public and non-governmental sector and other interested participants with the aim of knowledge transfer based on the results of research and development activities. The platform encourages multidirectional interaction and proactive networking to connect development projects and needs of the economic and public sector with research and innovation solutions, achievements, competences and potentials of the scientific sector.\n\n The platform enables the mapping of the needs of the economy and the public sector in the field of development and implementation of advanced digital technologies with the potential to create products and services with more added value through a multidisciplinary approach combining resources, infrastructure, knowledge, competences, and the availability of human capital in region.",
