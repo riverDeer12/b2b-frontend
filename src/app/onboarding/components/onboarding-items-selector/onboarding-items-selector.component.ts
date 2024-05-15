@@ -27,7 +27,6 @@ export class OnboardingItemsSelectorComponent {
     }
 
     ngOnInit(): void {
-
     }
 
     initForm() {

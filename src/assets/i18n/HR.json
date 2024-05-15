@@ -881,6 +881,14 @@
             "title": "Registracija je već odbijena!",
             "text": "Niste prihvatili registraciju na RIMAP platformu, ukoliko se predomislite slobodno nas kontaktirajte."
         },
+        "status": {
+            "default": "Status",
+            "label": "Status:",
+            "pending": "Na čekanju",
+            "accepted": "Prihvaćeno",
+            "declined": "Odbijeno",
+            "notified": "Poslano"
+        },
         "send-email-notifications": "Slanje email obavijesti",
         "emails-send-successfully": "Email obavijesti su uspješno poslane.",
         "error-sending-emails": "Greška prilikom slanja email obavijesti."

@@ -873,7 +873,18 @@
         "already-declined": {
             "title": "Registration Already Declined!",
             "text": "You have not accepted the registration on the RIMAP platform. If you change your mind, feel free to contact us."
-        }
+        },
+        "status": {
+            "default": "Status",
+            "label": "Status:",
+            "pending": "Pending",
+            "accepted": "Accepted",
+            "declined": "Declined",
+            "notified": "Notified"
+        },
+        "send-email-notifications": "Send email notifications",
+        "emails-send-successfully": "Email notifications were sent successfully.",
+        "error-sending-emails": "Error sending email notifications."
     },
     "newsletter-type": {
         "platform-news": "Platform News",
