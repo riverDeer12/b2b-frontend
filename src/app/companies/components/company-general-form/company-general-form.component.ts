@@ -115,7 +115,7 @@ export class CompanyGeneralFormComponent {
             numberOfEmployees: new FormControl(this.company.numberOfEmployees, Validators.required),
             newsletterCategories: new FormControl(this.company.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.company.categories.map(x => x.id), Validators.required),
-            categoryTags: new FormControl(this.company.categoryTags.split(";").slice(0, -1), Validators.required)
+            categoryTags: new FormControl(this.company.categoryTags?.split(";")?.slice(0, -1), Validators.required)
         })
     }
 
