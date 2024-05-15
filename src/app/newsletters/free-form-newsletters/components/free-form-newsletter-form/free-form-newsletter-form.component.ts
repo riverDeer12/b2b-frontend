@@ -11,6 +11,7 @@ import {FreeFormNewsletterService} from "../../core/services/free-form-newslette
 import {DEFAULT_EDITOR_CONFIG} from "../../../../shared/constants/editor-config";
 import {Category} from "../../../../categories/core/models/category";
 import {SpecialCategory} from "../../../../special-categories/core/models/special-category";
+import {environment} from "../../../../../environments/environment";
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -75,7 +76,7 @@ export class FreeFormNewsletterFormComponent {
                     EN: new FormControl('', Validators.required)
                 })
             }),
-            sendEmails: new FormControl(true),
+            sendEmails: new FormControl(environment.sendEmails),
             sendToAllCompanies: new FormControl(false),
             sendToAllScientists: new FormControl(false),
             sendToAllPublicOrganizations: new FormControl(false),

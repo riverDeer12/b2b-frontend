@@ -51,8 +51,6 @@ export class MyProfileComponent {
                     this.entity = Object.assign(new Scientist(), response['entity']);
                     break;
             }
-
-
         });
     }
 
