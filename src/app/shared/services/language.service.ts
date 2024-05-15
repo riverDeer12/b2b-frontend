@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Subject} from 'rxjs';
+import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 
 @Injectable({
@@ -46,8 +46,8 @@ export class LanguageService {
     translate(text: string, sourceLanguage: string, targetLanguage: string) {
         const translateRequest = {
             text: text,
-            sourceLanguage: sourceLanguage,
-            targetLanguage: targetLanguage
+            sourceLanguage: sourceLanguage.toLowerCase(),
+            targetLanguage: targetLanguage.toLowerCase()
         };
 
         return this.http.post(environment.apiUrl + '/translations/translate-text', translateRequest);

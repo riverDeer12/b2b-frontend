@@ -66,8 +66,6 @@ export class ForgotPasswordComponent implements OnInit {
         this.authService.resetPassword(this.form.get('username')?.value as string,
             this.changePasswordEndpoint).subscribe((response) => {
 
-                console.log(response);
-
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'auth.successfully-sent-change-password-email');
@@ -77,8 +75,6 @@ export class ForgotPasswordComponent implements OnInit {
                 this.isLoading = false;
             },
             (error: any) => {
-
-                console.log(error);
 
                 this.notificationService
                     .showNotification(NotificationType.Error,

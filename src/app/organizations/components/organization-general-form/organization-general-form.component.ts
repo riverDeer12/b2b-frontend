@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from "../../../shared/services/validation.service";
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
     selector: 'organization-general-form',
@@ -26,6 +27,10 @@ export class OrganizationGeneralFormComponent {
     form!: FormGroup;
 
     entityType = EntityType.PublicOrganization;
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
 
     public get type(): typeof FormType {
         return FormType;
@@ -106,7 +111,7 @@ export class OrganizationGeneralFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -134,7 +139,7 @@ export class OrganizationGeneralFormComponent {
             error => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })
@@ -159,7 +164,7 @@ export class OrganizationGeneralFormComponent {
         }, () => {
             this.notificationService
                 .showNotification(NotificationType.Error,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
 
             this.isLoading = false;
         })

@@ -22,7 +22,7 @@ import {DialogContentTypes} from '../../../shared/constants/dialog-content-types
 export class JobOffersDataTableComponent {
     @Input() data: JobOffer[] = [];
     @Input() dialogEdit!: boolean;
-    @Input() companyId!: string;
+    @Input() companyId!: string | undefined;
     @Input() categories!: Category[];
 
     @ViewChild('globalFilter') filter!: ElementRef;
@@ -127,7 +127,7 @@ export class JobOffersDataTableComponent {
     private listenForDataChanges(): void {
         this.jobOfferService.listenJobOffers()
             .subscribe((response: JobOffer) => {
-                this.jobOfferService.getJobOffers(this.companyId)
+                this.jobOfferService.getJobOffers(this.companyId as string)
                     .subscribe((response: JobOffer[]) => {
                         this.data = response.map((x: JobOffer) =>
                             Object.assign(new JobOffer(), x)

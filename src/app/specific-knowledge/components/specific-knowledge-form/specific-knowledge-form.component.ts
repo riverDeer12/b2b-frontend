@@ -11,6 +11,7 @@ import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 /**
  * Component responsible for
@@ -46,6 +47,10 @@ export class SpecificKnowledgeFormComponent {
     isLoading: boolean = false;
 
     form!: FormGroup;
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
 
     public get formActionType(): typeof FormType{
         return FormType;
@@ -132,7 +137,7 @@ export class SpecificKnowledgeFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -163,7 +168,7 @@ export class SpecificKnowledgeFormComponent {
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
+                            'correct-validation-errors-with-translations');
 
                     this.isLoading = false;
                 })
@@ -190,7 +195,7 @@ export class SpecificKnowledgeFormComponent {
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
+                            'correct-validation-errors-with-translations');
 
                     this.isLoading = false;
                 })

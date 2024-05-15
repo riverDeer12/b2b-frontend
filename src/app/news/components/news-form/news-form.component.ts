@@ -10,6 +10,7 @@ import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {LanguageService} from "../../../shared/services/language.service";
 import {DEFAULT_EDITOR_CONFIG} from "../../../shared/constants/editor-config";
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
     selector: 'news-form',
@@ -30,6 +31,10 @@ export class NewsFormComponent {
     form!: FormGroup;
 
     editorModules = DEFAULT_EDITOR_CONFIG;
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
 
     public get formActionType(): typeof FormType {
         return FormType;
@@ -109,7 +114,7 @@ export class NewsFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -136,7 +141,7 @@ export class NewsFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
                 this.isLoading = false;
             })
     }
@@ -158,44 +163,8 @@ export class NewsFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
                 this.isLoading = false;
             })
-    }
-
-    translateNewsToEnglish(): void {
-        this.translateLoading = true;
-        this.translateContent('title');
-        this.translateContent('content');
-    }
-
-    /**
-     * Translate news content
-     * from croatian to english.
-     */
-    translateContent(formControlName: string): void {
-        const formGroup = this.form.controls[formControlName] as FormGroup;
-        const translationFormGroup = formGroup.controls['translations'] as FormGroup;
-        const croatianValue = translationFormGroup.controls['HR'].value;
-
-        if (!croatianValue) {
-            this.translateLoading = false;
-            return;
-        }
-
-        this.languageService.translate(croatianValue, "hr", "en")
-            .subscribe((response: any) => {
-                    translationFormGroup.controls['EN'].setValue(response.translatedText as string);
-                    this.notificationService
-                        .showNotification(NotificationType.Success,
-                            'translate.successfully-translated');
-                    this.translateLoading = false;
-                },
-                error => {
-                    this.notificationService
-                        .showNotification(NotificationType.Warning,
-                            'translate.translate-error');
-                    this.translateLoading = false;
-                })
     }
 }

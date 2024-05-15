@@ -10,6 +10,7 @@ import {NotificationService} from '../../../shared/services/notification.service
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {Product} from '../../core/models/product';
 import {ProductService} from '../../core/services/product.service';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
     selector: 'product-form',
@@ -34,6 +35,10 @@ export class ProductFormComponent {
 
     public get formActionType(): typeof FormType {
         return FormType;
+    }
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
     }
 
     constructor(
@@ -112,7 +117,7 @@ export class ProductFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -144,7 +149,7 @@ export class ProductFormComponent {
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
+                            'correct-validation-errors-with-translations');
 
                     this.isLoading = false;
                 })
@@ -172,7 +177,7 @@ export class ProductFormComponent {
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
+                            'correct-validation-errors-with-translations');
 
                     this.isLoading = false;
                 })

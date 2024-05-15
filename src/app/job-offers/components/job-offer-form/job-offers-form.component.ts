@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormType} from '../../../shared/enums/form-type';
-import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {JobOffer} from '../../core/models/job-offer';
@@ -11,6 +10,7 @@ import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 /**
  * Component responsible for
@@ -50,6 +50,10 @@ export class JobOffersFormComponent {
         return EntityType;
     }
 
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
+
     public get formActionType(): typeof FormType {
         return FormType;
     }
@@ -57,7 +61,6 @@ export class JobOffersFormComponent {
     constructor(
         public validationService: ValidationService,
         private fb: FormBuilder,
-        private router: Router,
         private sharedService: SharedService,
         private notificationService: NotificationService,
         private jobOfferService: JobOfferService) {
@@ -197,7 +200,7 @@ export class JobOffersFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -227,7 +230,7 @@ export class JobOffersFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })
@@ -254,7 +257,7 @@ export class JobOffersFormComponent {
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
+                            'correct-validation-errors-with-translations');
 
                     this.isLoading = false;
                 })

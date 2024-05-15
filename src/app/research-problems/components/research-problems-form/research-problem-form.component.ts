@@ -11,6 +11,7 @@ import {SharedService} from '../../../shared/services/shared.service';
 import {RedirectType} from '../../../shared/enums/redirect-type';
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from "../../../shared/services/validation.service";
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 /**
  * Component responsible for
@@ -47,6 +48,10 @@ export class ResearchProblemFormComponent {
     isLoading: boolean = false;
 
     form!: FormGroup;
+
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
 
     public get formActionType(): typeof FormType{
         return FormType;
@@ -143,7 +148,7 @@ export class ResearchProblemFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -175,7 +180,7 @@ export class ResearchProblemFormComponent {
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
+                            'correct-validation-errors-with-translations');
 
                     this.isLoading = false;
                 })
@@ -203,7 +208,7 @@ export class ResearchProblemFormComponent {
                 () => {
                     this.notificationService
                         .showNotification(NotificationType.Error,
-                            'correct-validation-errors');
+                            'correct-validation-errors-with-translations');
 
                     this.isLoading = false;
                 })

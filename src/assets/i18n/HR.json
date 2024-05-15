@@ -99,8 +99,10 @@
     "english": "ENG",
     "translate": {
         "translate-to-english": "Prevedi na engleski jezik",
+        "translate-to-croatian": "Prevedi na hrvatski jezik",
         "successfully-translated": "Uspješno prevedeno! Molimo napravite još jednu provjeru prije spremanja.",
-        "translate-error": "Greška prilikom prevođenja. Prevedite ručno ili pokušajte ponovno."
+        "translate-error": "Greška prilikom prevođenja. Prevedite ručno ili pokušajte ponovno.",
+        "required-fields": "Prijevod nije moguć. Nisu ispunjena sva potrebna polja."
     },
     "home": "Početna",
     "clear": "Obriši",
@@ -142,6 +144,7 @@
     "no-error-details": "Dogodila se pogreška, nema dodatnih detalja!",
     "results": "rezultata",
     "correct-validation-errors": "Molimo ispravite pogreške i pokušajte ponovno.",
+    "correct-validation-errors-with-translations": "Molimo ispravite pogreške i pokušajte ponovno. Provjerite jesu li sva polja ispunjena i prevedena na sve dostupne jezike platforme.",
     "dashboard": {
         "default": "Statistika"
     },
@@ -191,15 +194,15 @@
         "login-type-required": "Za obnovu lozinke potrebno je odabrati način prijave.",
         "choose-registration-type": "Odaberite vrstu registracije",
         "my-profile": "Moj profil",
-        "mail-confirmed":{
+        "mail-confirmed": {
             "title": "Uspješno potvrđena email adresa!",
             "description": "Hvala Vam na registraciji! Vaš email je uspješno potvrđen."
         },
-        "mail-already-confirmed":{
+        "mail-already-confirmed": {
             "title": "Email adresa je već potvrđena!",
             "description": "Vaš email je već ranije potvrđen, možete nastaviti sa korištenjem platforme"
         },
-        "unsubscribed":{
+        "unsubscribed": {
             "title": "Odjavljeni ste sa newslettera!",
             "description": "Vaš email je uspješno odjavljen sa budućih newsletter obavijesti."
         }
@@ -407,6 +410,13 @@
         "new-category": "Nova kategorija",
         "entity-categories": "Kategorije entiteta",
         "select-entity-newsletter-categories": "Odabir kategorija entiteta za slanje newslettera"
+    },
+    "special-categories": {
+        "default": "Posebne kategorije",
+        "create": "Kreiranje posebne kategorije",
+        "edit": "Uređivanje posebne kategorije",
+        "assigned-entities": "Pripadni entiteti",
+        "special-category-entities": "Posebne kategorije entiteta"
     },
     "job-offers": {
         "default": "Potrebe za ljudskim resursima",
@@ -756,6 +766,133 @@
             "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
         }
     },
+    "onboardings": {
+        "default": "Podatci za import",
+        "view-of-imported-data": "Pregled import podataka",
+        "batch-type": {
+            "default": "Izvor podataka"
+        },
+        "full-name": {
+            "default": "Puni naziv",
+            "label": "Puni naziv: "
+        },
+        "abbreviated-name": {
+            "default": "Skraćeni naziv",
+            "label": "Skraćeni naziv: "
+        },
+        "authorized-representatives": {
+            "default": "Ovlašteni predstavnici",
+            "label": "Ovlašteni predstavnici: "
+        },
+        "county": {
+            "default": "Županija",
+            "label": "Županija: "
+        },
+        "company-size": {
+            "default": "Veličina tvrtke",
+            "label": "Veličina tvrtke: "
+        },
+        "court-registration-number": {
+            "default": "MBS",
+            "label": "MBS: "
+        },
+        "email": {
+            "default": "Email",
+            "label": "Email: "
+        },
+        "fax": {
+            "default": "Fax",
+            "label": "Fax: "
+        },
+        "managers-or-liquidators": {
+            "default": "Upravitelji/likvidatori",
+            "label": "Upravitelji/likvidatori: "
+        },
+        "nkd-code": {
+            "default": "Šifra NKD (2007)",
+            "label": "Šifra NKD (2007): "
+        },
+        "nkd-name": {
+            "default": "Naziv NKD (2007)",
+            "label": "Naziv NKD (2007): "
+        },
+        "number-of-employee-hours": {
+            "default": "Broj zaposlenih (sati)",
+            "label": "Broj zaposlenih (sati): "
+        },
+        "number-of-employees": {
+            "default": "Broj zaposlenih",
+            "label": "Broj zaposlenih: "
+        },
+        "personal-identification-number": {
+            "default": "OIB",
+            "label": "OIB: "
+        },
+        "postal-code": {
+            "default": "Poštanski broj",
+            "label": "Poštanski broj: "
+        },
+        "registration-number": {
+            "default": "Matični broj",
+            "label": "Matični broj: "
+        },
+        "mobile": {
+            "default": "Mobilni telefon",
+            "label": "Mobilni telefon: "
+        },
+        "telephone": {
+            "default": "Telefon",
+            "label": "Telefon: "
+        },
+        "website": {
+            "default": "Web stranica",
+            "label": "Web stranica: "
+        },
+        "location": {
+            "default": "Lokacija",
+            "label": "Lokacija: "
+        },
+        "address": {
+            "default": "Adresa",
+            "label": "Adresa: "
+        },
+        "court-register-email": {
+            "default": "Email(sudski registar)",
+            "label": "Email(sudski registar): "
+        },
+        "data-view": {
+            "default": "Pregled podataka",
+            "label": "Pregled podataka za:"
+        },
+        "HgkCompanies": "HGK Tvrtke",
+        "accepted": {
+            "title": "Registracija prihvaćena!",
+            "text": "Hvala Vam na prihvaćenoj registraciji, dobrodošli na RIMAP platformu."
+        },
+        "already-accepted": {
+            "title": "Registracija je već prihvaćena!",
+            "text": "Klikom na Prijava se možete prijaviti u svoj profil i urediti podatke."
+        },
+        "declined": {
+            "title": "Registracija odbijena!",
+            "text": "Niste prihvatili registraciju na RIMAP platformu, ukoliko se predomislite slobodno nas kontaktirajte."
+        },
+        "already-declined": {
+            "title": "Registracija je već odbijena!",
+            "text": "Niste prihvatili registraciju na RIMAP platformu, ukoliko se predomislite slobodno nas kontaktirajte."
+        },
+        "status": {
+            "default": "Status",
+            "label": "Status:",
+            "pending": "Na čekanju",
+            "accepted": "Prihvaćeno",
+            "declined": "Odbijeno",
+            "notified": "Poslano"
+        },
+        "send-email-notifications": "Slanje email obavijesti",
+        "emails-send-successfully": "Email obavijesti su uspješno poslane.",
+        "error-sending-emails": "Greška prilikom slanja email obavijesti."
+    },
     "newsletter-type": {
         "platform-news": "Vijesti sa platforme",
         "matchmaking": "Personalizirani newsletter (matchmaking)",
@@ -775,7 +912,12 @@
         "please-choose-your-image": "Ovdje možete odabrati novu profilnu sliku.",
         "choose-button": "Odaberi datoteku",
         "upload-button": "Pokreni prijenos datoteke",
-        "cancel-button": "Ukloni odabranu datoteku"
+        "cancel-button": "Ukloni odabranu datoteku",
+        "download-document": "Preuzmi dokument",
+        "uploaded-at": "Vrijeme prijenosa datoteke",
+        "document-name": "Naziv dokumenta",
+        "successfully-deleted": "Uspješno izbrisan dokument",
+        "error-deleting": "Greška prilikom brisanja dokumenta"
     },
     "address": {
         "label": "Adresa:"
@@ -785,11 +927,11 @@
         "default": "Vanjska poveznica",
         "label": "Vanjska poveznica:"
     },
-
     "keyword-search": {
         "results": "Rezultati pretrage"
     },
     "send-email": "Pošalji email",
+    "send-notifications": "Pošalji obavijesti",
     "rimap": "Regional innovation matchmaking platform",
     "rimap-description": "Regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva s ciljem razvoja inovacijskog ekosustava u regiji. Pozivamo Vas da se registrirate, unesete Vaše razvojne prijedloge/potrebe za ljudskim resursima/kompetencije/istraživačku opremu te pretražite profile ostalih korisnika i kontaktirate ih o mogućoj suradnji klikom na \"Kontaktiraj\".",
     "about-us-description": "RIMAP je regionalna digitalna inovacijska platforma za prijenos znanja između akademske zajednice i gospodarstva u Primorsko-goranskoj županiji i šire s ciljem razvoja inovacijskog ekosustava u regiji.\n\nPlatforma omogućuje umrežavanje gospodarskih subjekata, poduzetnika, istraživača, znanstvenika, javnog i nevladinog sektora te ostalih zainteresiranih sudionika s ciljem transfera znanja temeljenog na rezultatima istraživanja i razvojnih djelatnosti. Platforma potiče višesmjernu interakciju i proaktivno umrežavanje za povezivanje razvojnih projekata i potreba gospodarskog i javnog sektora s istraživačkim i inovacijskim rješenjima, dostignućima, kompetencijama i potencijalima znanstvenog sektora.\n\n Platforma omogućuje mapiranje potreba gospodarstva i javnog sektora na polju razvoja i implementacije naprednih digitalnih tehnologija s potencijalom stvaranja proizvoda i usluga više dodane vrijednosti kroz multidisciplinaran pristup objedinjujući resurse, infrastrukturu, znanja, kompentencije, te dostupnost ljudskog kapitala u regiji.",
@@ -808,6 +950,9 @@
     },
     "entity-selector": {
         "select-entities": "Odabir entiteta za slanje newslettera"
+    },
+    "documents": {
+        "default": "Dokumenti"
     },
     "edih-adria-description": "EDIH Adria konzorcij (Projekt je sufinanciran od strane Europske unije prema Ugovoru o dodjeli bespovratnih sredstava br. 101083838 i Nacionalnom planu oporavka i otpornosti Republike Hrvatske 2021.-2026.)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
 }

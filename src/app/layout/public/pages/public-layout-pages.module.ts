@@ -24,20 +24,25 @@ import {TagModule} from 'primeng/tag';
 import {ChipsModule} from 'primeng/chips';
 import {DividerModule} from 'primeng/divider';
 import {TabViewModule} from 'primeng/tabview';
-import {PublicCompanyResearchProblemsComponent} from './public-company-research-problems/public-company-research-problems.component';
+import {
+    PublicCompanyResearchProblemsComponent
+} from './public-company-research-problems/public-company-research-problems.component';
 import {PublicEquipmentComponent} from './public-equipment/public-equipment.component';
 import {PublicSpecificKnowledgeComponent} from './public-specific-knowledge/public-specific-knowledge.component';
 import {PublicJobOffersComponent} from './public-job-offers/public-job-offers.component';
 import {PublicMostPopularComponent} from './public-most-popular/public-most-popular.component';
 import {ActivitiesPagesModule} from "../../../activities/pages/activities-pages.module";
 import {ActivitiesComponentsModule} from "../../../activities/components/activities-components.module";
-import { PublicOrganizationResearchProblemsComponent } from './public-organization-research-problems/public-organization-research-problems.component';
-import { PublicProductsComponent } from './public-products/public-products.component';
-import { KeywordResultsComponent } from './keyword-results/keyword-results.component';
+import {
+    PublicOrganizationResearchProblemsComponent
+} from './public-organization-research-problems/public-organization-research-problems.component';
+import {PublicProductsComponent} from './public-products/public-products.component';
+import {KeywordResultsComponent} from './keyword-results/keyword-results.component';
 import {MailConfirmedComponent} from "./mail-confirmed/mail-confirmed.component";
-import { MailAlreadyConfirmedComponent } from './mail-already-confirmed/mail-already-confirmed.component';
-import { UnsubscribedComponent } from './unsubscribed/unsubscribed.component';
+import {MailAlreadyConfirmedComponent} from './mail-already-confirmed/mail-already-confirmed.component';
+import {UnsubscribedComponent} from './unsubscribed/unsubscribed.component';
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {OnboardingProcessComponent} from './onboarding-process/onboarding-process.component';
 
 @NgModule({
     declarations: [
@@ -61,7 +66,8 @@ import {NotFoundComponent} from "./not-found/not-found.component";
         MailConfirmedComponent,
         MailAlreadyConfirmedComponent,
         UnsubscribedComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        OnboardingProcessComponent
     ],
     imports: [
         CommonModule,
@@ -96,7 +102,8 @@ import {NotFoundComponent} from "./not-found/not-found.component";
         EntityDetailsComponent,
         PublicCompanyResearchProblemsComponent,
         PublicProductsComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        OnboardingProcessComponent
     ]
 })
 export class PublicLayoutPagesModule {

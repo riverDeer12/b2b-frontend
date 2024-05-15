@@ -2,7 +2,6 @@ import {Component, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormType} from '../../../shared/enums/form-type';
 import {EquipmentService} from '../../core/services/equipment.service';
-import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {Equipment} from '../../core/models/equipment';
@@ -11,6 +10,7 @@ import {SharedService} from '../../../shared/services/shared.service';
 import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 /**
  * Component responsible for
@@ -46,6 +46,10 @@ export class EquipmentFormComponent {
 
     form!: FormGroup;
 
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
+
     public get type(): typeof EntityType {
         return EntityType;
     }
@@ -57,7 +61,6 @@ export class EquipmentFormComponent {
     constructor(
         public validationService: ValidationService,
         private fb: FormBuilder,
-        private router: Router,
         private sharedService: SharedService,
         private notificationService: NotificationService,
         private equipmentService: EquipmentService) {
@@ -129,7 +132,7 @@ export class EquipmentFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
@@ -159,7 +162,7 @@ export class EquipmentFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })
@@ -171,7 +174,8 @@ export class EquipmentFormComponent {
      * updated selected equipment.
      */
     private editEquipment(): void {
-        this.equipmentService.editEquipment(this.scientistId, this.equipment.id, this.form.value).subscribe(() => {
+        this.equipmentService.editEquipment(this.scientistId, this.equipment.id, this.form.value)
+            .subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,
                         'equipment.successfully-updated');
@@ -185,7 +189,7 @@ export class EquipmentFormComponent {
             () => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })

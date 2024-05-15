@@ -6,6 +6,8 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Product} from '../../../products/core/models/product';
+import {EntityDocument} from "../../../custom-controls/core/model/entity-document";
+import {AuthService} from "../../../auth/core/services/auth.service";
 
 @Component({
     selector: 'company-form',
@@ -19,22 +21,36 @@ export class CompanyFormComponent {
     @Input() jobOffers!: JobOffer[];
     @Input() products!: Product[];
     @Input() categories!: Category[];
+    @Input() documents!: EntityDocument[];
 
     @Input() returnUrl!: string;
 
+    constructor(private authService: AuthService) {
+    }
+
+    public get type(): typeof FormType {
+        return FormType;
+    }
+
     entityType: EntityType = EntityType.Company;
 
+
+    /**
+     * Check if user has access to documents.
+     */
+    documentsAccess = () => this.authService.isSuperAdminLogged();
+
     ngOnInit() {
-        this.researchProblems = this.researchProblems.map((x: ResearchProblem) =>
+        this.researchProblems = this.researchProblems?.map((x: ResearchProblem) =>
             Object.assign(new ResearchProblem(), x)
         );
-        this.jobOffers = this.jobOffers.map((x: JobOffer) =>
+        this.jobOffers = this.jobOffers?.map((x: JobOffer) =>
             Object.assign(new JobOffer(), x)
         );
-        this.products = this.products.map((x: Product) =>
+        this.products = this.products?.map((x: Product) =>
             Object.assign(new Product(), x)
         );
-        this.categories = this.categories.map((x: Category) =>
+        this.categories = this.categories?.map((x: Category) =>
             Object.assign(new Category(), x)
         );
     }

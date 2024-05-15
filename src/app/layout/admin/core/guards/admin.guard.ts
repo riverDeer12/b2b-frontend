@@ -18,7 +18,8 @@ export class AdminGuard implements CanActivate {
         const localStorageValue = localStorage.getItem('token');
 
         if (localStorageValue === null || localStorageValue === undefined) {
-            this.router.navigateByUrl('/auth/admin-login').then()
+            this.router.navigateByUrl('/login').then()
+            return false;
         }
 
         const tokenStorageValue = localStorage.getItem('token');
@@ -27,7 +28,12 @@ export class AdminGuard implements CanActivate {
 
         if (decodedToken.exp < now) {
             this.router.navigateByUrl('/login').then();
-            localStorage.clear();
+            localStorage.removeItem('token');
+            return false;
+        }
+
+        if (decodedToken.role !== 'SuperAdmin') {
+            this.router.navigateByUrl('/auth/forbidden').then();
             return false;
         }
 

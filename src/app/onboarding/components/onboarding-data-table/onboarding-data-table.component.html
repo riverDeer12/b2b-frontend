@@ -1,0 +1,90 @@
+<div class="mt-4">
+    <h4>{{'onboardings.view-of-imported-data' | translate }}</h4>
+</div>
+
+<p-table #onboardingDataTable [rowHover]="true"
+         [showLoader]="true"
+         [value]="data"
+         dataKey="id"
+         [rows]="5" [showCurrentPageReport]="true"
+         [rowsPerPageOptions]="[5, 10, 20]"
+         [paginator]="true"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'results' | translate }} {{'from' | translate }}
+         {totalRecords} {{'results' | translate }}"
+         [tableStyle]="{'min-width':'75rem'}"
+         responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%"></th>
+            <th pSortableColumn="data.abbreviatedName">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'onboardings.abbreviated-name.default' | translate }}
+                    <p-sortIcon field="data.abbreviatedName"></p-sortIcon>
+                    <p-columnFilter type="text" field="data.abbreviatedName" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="data.location">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'onboardings.location.default' | translate }}
+                    <p-sortIcon field="data.location"></p-sortIcon>
+                    <p-columnFilter type="text" field="data.location" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="data.address">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'onboardings.address.default' | translate }}
+                    <p-sortIcon field="data.address"></p-sortIcon>
+                    <p-columnFilter type="text" field="data.address" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="onboardingBatchType">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'onboardings.batch-type.default' | translate }}
+                    <p-sortIcon field="onboardingBatchType"></p-sortIcon>
+                    <p-columnFilter type="text" field="onboardingBatchType" display="menu"
+                                    class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="status">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'onboardings.status.default' | translate }}
+                    <p-sortIcon field="status"></p-sortIcon>
+                    <p-columnFilter type="text" field="status" display="menu"
+                                    class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-onboarding>
+        <tr>
+            <td class="d-flex">
+                <button type="button" class="p-button m-1" pButton pRipple
+                        (click)="goToInfoPage(onboarding.onboardingBatchId, onboarding.id)"
+                        icon="pi pi-info"></button>
+            </td>
+            <td>
+                {{onboarding.data.abbreviatedName}}
+            </td>
+            <td>
+                {{onboarding.data.location}}
+            </td>
+            <td>
+                {{onboarding.data.address}}
+            </td>
+            <td>
+                {{ 'onboardings.' + onboarding.onboardingBatchType | translate }}
+            </td>
+            <td>
+                {{ 'onboardings.status.' + onboarding.status?.toString().toLowerCase() | translate }}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{'onboardings.no-onboardings-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+

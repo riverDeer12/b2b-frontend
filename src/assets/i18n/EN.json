@@ -99,8 +99,10 @@
     "english": "ENG",
     "translate": {
         "translate-to-english": "Translate to English",
+        "translate-to-croatian": "Translate to Croatian",
         "successfully-translated": "Successfully translated! Please, do one more check before saving.",
-        "translate-error": "Error during translation. Please, translate by hand or try again."
+        "translate-error": "Error during translation. Please, translate by hand or try again.",
+        "required-fields": "Translation is not possible. Required fields are not empty."
     },
     "home": "Home",
     "clear": "Clear",
@@ -404,6 +406,13 @@
         "new-category": "New category",
         "entity-categories": "Entity Categories",
         "select-entity-newsletter-categories": "Entity categories for newsletters"
+    },
+    "special-categories": {
+        "default": "Special categories",
+        "create": "Create special category",
+        "edit": "Edit special category",
+        "assigned-entities": "Assigned entities",
+        "special-category-entities": "Special entity categories"
     },
     "job-offers": {
         "default": "Human resource needs",
@@ -750,6 +759,133 @@
             "confirm-delete-message": "By confirming this message newsletter will be deleted."
         }
     },
+    "onboardings": {
+        "default": "Import Data",
+        "view-of-imported-data": "View of imported data",
+        "batch-type": {
+            "default": "Data Source"
+        },
+        "full-name": {
+            "default": "Full name",
+            "label": "Full name: "
+        },
+        "abbreviated-name": {
+            "default": "Abbreviated name",
+            "label": "Abbreviated name: "
+        },
+        "authorized-representatives": {
+            "default": "Authorized representatives",
+            "label": "Authorized representatives: "
+        },
+        "county": {
+            "default": "County",
+            "label": "County: "
+        },
+        "company-size": {
+            "default": "Company size",
+            "label": "Company size: "
+        },
+        "court-registration-number": {
+            "default": "Court Registration Number",
+            "label": "Court Registration Number: "
+        },
+        "email": {
+            "default": "Email",
+            "label": "Email: "
+        },
+        "fax": {
+            "default": "Fax",
+            "label": "Fax: "
+        },
+        "managers-or-liquidators": {
+            "default": "Managers/Liquidators",
+            "label": "Managers/Liquidators: "
+        },
+        "nkd-code": {
+            "default": "NKD code (2007)",
+            "label": "NKD code (2007): "
+        },
+        "nkd-name": {
+            "default": "NKD name (2007)",
+            "label": "NKD name (2007): "
+        },
+        "number-of-employee-hours": {
+            "default": "Number of employee hours",
+            "label": "Number of employee hours: "
+        },
+        "number-of-employees": {
+            "default": "Number of employees",
+            "label": "Number of employees: "
+        },
+        "personal-identification-number": {
+            "default": "Personal Identification Number",
+            "label": "Personal Identification Number: "
+        },
+        "postal-code": {
+            "default": "Postal code",
+            "label": "Postal code: "
+        },
+        "registration-number": {
+            "default": "Registration number",
+            "label": "Registration number: "
+        },
+        "mobile": {
+            "default": "Mobile phone",
+            "label": "Mobile phone: "
+        },
+        "telephone": {
+            "default": "Telephone",
+            "label": "Telephone: "
+        },
+        "website": {
+            "default": "Website",
+            "label": "Website: "
+        },
+        "location": {
+            "default": "Location",
+            "label": "Location: "
+        },
+        "address": {
+            "default": "Address",
+            "label": "Address: "
+        },
+        "court-register-email": {
+            "default": "Court register email",
+            "label": "Court register email: "
+        },
+        "data-view": {
+            "default": "Data View",
+            "label": "Data View For:"
+        },
+        "HgkCompanies": "HGK Companies",
+        "accepted": {
+            "title": "Registration Accepted!",
+            "text": "Thank you for accepting the registration, welcome to the RIMAP platform."
+        },
+        "already-accepted": {
+            "title": "Registration Already Accepted!",
+            "text": "Click on Login to access your profile and edit your information."
+        },
+        "declined": {
+            "title": "Registration Declined!",
+            "text": "You have not accepted the registration on the RIMAP platform. If you change your mind, feel free to contact us."
+        },
+        "already-declined": {
+            "title": "Registration Already Declined!",
+            "text": "You have not accepted the registration on the RIMAP platform. If you change your mind, feel free to contact us."
+        },
+        "status": {
+            "default": "Status",
+            "label": "Status:",
+            "pending": "Pending",
+            "accepted": "Accepted",
+            "declined": "Declined",
+            "notified": "Notified"
+        },
+        "send-email-notifications": "Send email notifications",
+        "emails-send-successfully": "Email notifications were sent successfully.",
+        "error-sending-emails": "Error sending email notifications."
+    },
     "newsletter-type": {
         "platform-news": "Platform News",
         "matchmaking": "Personalized Newsletter (Matchmaking)",
@@ -772,7 +908,12 @@
         "please-choose-your-image": "You can choose a new profile picture here.",
         "choose-button": "Choose file",
         "upload-button": "Start file upload",
-        "cancel-button": "Remove selected file"
+        "cancel-button": "Remove selected file",
+        "download-document": "Download document",
+        "uploaded-at": "Document uploaded at",
+        "document-name": "Document name",
+        "successfully-deleted": "Successfully deleted document",
+        "error-deleting": "Error deleting document"
     },
     "address": {
         "label": "Address:"
@@ -786,6 +927,7 @@
         "results": "Search Results"
     },
     "send-email": "Send Email",
+    "send-notifications": "Send Notifications",
     "rimap": "Regional innovation matchmaking platform",
     "rimap-description": "Regional digital innovation platform for the transfer of knowledge between the academic community and the economy with the aim of developing the innovation ecosystem in the region. We invite you to register, enter your development proposals/needs for human resources/competencies/research equipment and search profiles other users and contact them about possible cooperation by clicking on \"Contact\".",
     "about-us-description": "RIMAP is a regional digital innovation platform for the transfer of knowledge between the academic community and the economy in the Primorje-Gorski Kotar County and beyond with the aim of developing the innovation ecosystem in the region.\n\nThe platform enables the networking of economic entities, entrepreneurs, researchers , scientists, public and non-governmental sector and other interested participants with the aim of knowledge transfer based on the results of research and development activities. The platform encourages multidirectional interaction and proactive networking to connect development projects and needs of the economic and public sector with research and innovation solutions, achievements, competences and potentials of the scientific sector.\n\n The platform enables the mapping of the needs of the economy and the public sector in the field of development and implementation of advanced digital technologies with the potential to create products and services with more added value through a multidisciplinary approach combining resources, infrastructure, knowledge, competences, and the availability of human capital in region.",
@@ -804,6 +946,9 @@
     },
     "entity-selector": {
         "select-entities": "Select entities"
+    },
+    "documents": {
+        "default": "Documents"
     },
     "edih-adria-description": "EDIH Adria consortium (The project is co-financed by the European Union under the Grant Agreement No. 101083838 and the National Recovery and Resilience Plan of the Republic of Croatia 2021-2026)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
 }

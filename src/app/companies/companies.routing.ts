@@ -7,6 +7,7 @@ import {CompanyResearchProblemsResolver} from "../research-problems/core/resolve
 import {CategoriesResolver} from '../categories/core/resolvers/categories.resolver';
 import {CompanyJobOffersResolver} from '../job-offers/core/resolvers/company-job-offers.resolver';
 import {CompanyProductsResolver} from '../products/core/resolvers/company-products.resolver';
+import {CompanyCreateComponent} from "./pages/company-create/company-create.component";
 
 export const CompaniesRoutes: Routes = [
     {
@@ -25,6 +26,13 @@ export const CompaniesRoutes: Routes = [
             jobOffers: CompanyJobOffersResolver,
             researchProblems: CompanyResearchProblemsResolver,
             products: CompanyProductsResolver
+        }
+    },
+    {
+        path: 'create',
+        component: CompanyCreateComponent,
+        resolve: {
+            categories: CategoriesResolver
         }
     }
 ]

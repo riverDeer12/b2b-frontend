@@ -7,13 +7,15 @@
                                       [company]="company"
                                       [returnUrl]="returnUrl"></company-general-form>
             </p-tabPanel>
-            <p-tabPanel header="{{ 'auth.username-password' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel *ngIf="formType === type.Edit"
+                        header="{{ 'auth.username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
                     <auth-change-password [username]="this.company.username"
                                           [entityType]="entityType"></auth-change-password>
                 </div>
             </p-tabPanel>
-            <p-tabPanel header="{{'research-problems.default' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel *ngIf="formType === type.Edit" header="{{'research-problems.default' | translate }}"
+                        class="line-height-3 m-0">
                 <research-problems-data-table
                     [data]="researchProblems"
                     [categories]="categories"
@@ -22,7 +24,9 @@
                     [dialogEdit]="true"
                 ></research-problems-data-table>
             </p-tabPanel>
-            <p-tabPanel header="{{'job-offers.default' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel *ngIf="formType === type.Edit"
+                        header="{{'job-offers.default' | translate }}"
+                        class="line-height-3 m-0">
                 <job-offers-data-table
                     [data]="jobOffers"
                     [categories]="categories"
@@ -30,12 +34,21 @@
                     [dialogEdit]="true"
                 ></job-offers-data-table>
             </p-tabPanel>
-            <p-tabPanel header="{{ 'products.default' | translate }}" class="line-height-3 m-0">
+            <p-tabPanel *ngIf="formType === type.Edit" header="{{ 'products.default' | translate }}"
+                        class="line-height-3 m-0">
                 <products-data-table [data]="products"
                                      [categories]="categories"
                                      [parentEntityType]="entityType"
                                      [parentEntityId]="company.id"
                                      [dialogEdit]="true"></products-data-table>
+            </p-tabPanel>
+            <p-tabPanel *ngIf="formType === type.Edit && documentsAccess()"
+                        header="{{ 'documents.default' | translate }}" class="line-height-3 m-0">
+                <document-uploader
+                    [entityType]="entityType"
+                    [entityId]="company.id"
+                    [documents]="documents"
+                ></document-uploader>
             </p-tabPanel>
         </p-tabView>
     </div>

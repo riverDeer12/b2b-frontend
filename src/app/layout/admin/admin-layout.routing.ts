@@ -5,13 +5,14 @@ import {ScientistsComponent} from '../../scientists/scientists.component';
 import {ActivitiesComponent} from '../../activities/activities.component';
 import {NewsComponent} from '../../news/news.component';
 import {OrganizationsComponent} from '../../organizations/organizations.component';
-import {SubscribersComponent} from '../../subscribers/subscribers.component';
 import {ResearchProblemsComponent} from "../../research-problems/research-problems.component";
 import {SpecificKnowledgeComponent} from "../../specific-knowledge/specific-knowledge.component";
 import {EquipmentComponent} from "../../equipment/equipment.component";
 import {JobOffersComponent} from "../../job-offers/job-offers.component";
 import {ClientsComponent} from "../../clients/clients.component";
 import {NewslettersComponent} from "../../newsletters/newsletters.component";
+import {SpecialCategoriesComponent} from "../../special-categories/special-categories.component";
+import {OnboardingComponent} from "../../onboarding/onboarding.component";
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -45,11 +46,6 @@ export const AdminLayoutRoutes: Routes = [
         loadChildren: () => import('../../organizations/organizations.module').then(m => m.OrganizationsModule)
     },
     {
-        path: 'subscribers',
-        component: SubscribersComponent,
-        loadChildren: () => import('../../subscribers/subscribers.module').then(m => m.SubscribersModule)
-    },
-    {
         path: 'research-problems',
         component: ResearchProblemsComponent,
         loadChildren: () => import('../../research-problems/research-problems.module').then(m => m.ResearchProblemsModule)
@@ -78,5 +74,15 @@ export const AdminLayoutRoutes: Routes = [
         path: 'newsletters',
         component: NewslettersComponent,
         loadChildren: () => import('../../newsletters/newsletters.module').then(m => m.NewslettersModule)
+    },
+    {
+        path: 'special-categories',
+        component: SpecialCategoriesComponent,
+        loadChildren: () => import('../../special-categories/special-categories.module').then(m => m.SpecialCategoriesModule)
+    },
+    {
+        path: 'onboardings',
+        component: OnboardingComponent,
+        loadChildren: () => import('../../onboarding/onboarding.module').then(m => m.OnboardingModule)
     }
 ]

@@ -34,7 +34,7 @@ import {MultiSelectModule} from "primeng/multiselect";
         SendMessageFormComponent,
         LanguageSelectorComponent,
         LoaderComponent,
-        EntitySelectorComponent
+        EntitySelectorComponent,
     ],
     imports: [
         CommonModule,

@@ -9,6 +9,8 @@ import {NotificationType} from '../../../shared/enums/notification-type';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
+import {UploadType} from "../../../custom-controls/core/types/upload-type";
+import {AuthService} from "../../../auth/core/services/auth.service";
 
 @Component({
     selector: 'company-general-form',
@@ -28,12 +30,17 @@ export class CompanyGeneralFormComponent {
 
     entityType = EntityType.Company;
 
+    public get uploadType(): typeof UploadType {
+        return UploadType;
+    }
+
     public get type(): typeof FormType {
         return FormType;
     }
 
     constructor(
         public validationService: ValidationService,
+        private authService: AuthService,
         private fb: FormBuilder,
         private router: Router,
         private notificationService: NotificationService,
@@ -108,7 +115,7 @@ export class CompanyGeneralFormComponent {
             numberOfEmployees: new FormControl(this.company.numberOfEmployees, Validators.required),
             newsletterCategories: new FormControl(this.company.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.company.categories.map(x => x.id), Validators.required),
-            categoryTags: new FormControl(this.company.categoryTags.split(";").slice(0,-1), Validators.required)
+            categoryTags: new FormControl(this.company.categoryTags?.split(";")?.slice(0, -1), Validators.required)
         })
     }
 
@@ -124,14 +131,21 @@ export class CompanyGeneralFormComponent {
             this.form.markAllAsTouched();
             this.notificationService
                 .showNotification(NotificationType.Warning,
-                    'correct-validation-errors');
+                    'correct-validation-errors-with-translations');
             this.isLoading = false;
             return;
         }
 
-        this.formType === FormType.Create ?
-            this.createCompany() :
+        if (this.formType === FormType.Edit) {
             this.editCompany();
+        } else {
+            if (this.authService.isSuperAdminLogged()) {
+                this.createCompany();
+            } else {
+                this.registerCompany();
+            }
+        }
+
     }
 
     /**
@@ -152,7 +166,31 @@ export class CompanyGeneralFormComponent {
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
+
+                this.isLoading = false;
+            })
+    }
+
+    /**
+     * Connecting to category
+     * service and sending form data to
+     * register new category.
+     */
+    private registerCompany(): void {
+        this.companyService.registerCompany(this.form.value).subscribe(() => {
+                this.notificationService
+                    .showNotification(NotificationType.Success,
+                        'companies.successfully-created');
+
+                this.router.navigateByUrl(this.returnUrl).then();
+
+                this.isLoading = false;
+            },
+            (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error,
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })
@@ -176,7 +214,7 @@ export class CompanyGeneralFormComponent {
             (error) => {
                 this.notificationService
                     .showNotification(NotificationType.Error,
-                        'correct-validation-errors');
+                        'correct-validation-errors-with-translations');
 
                 this.isLoading = false;
             })

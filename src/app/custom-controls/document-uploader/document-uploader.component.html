@@ -1,0 +1,55 @@
+<p-fileUpload
+    #uploader
+    [multiple]="false"
+    [maxFileSize]="10485760"
+    [customUpload]="true"
+    (onUpload)="addDocument($event)"
+    (onSend)="addDocument($event)"
+    (onProgress)="addDocument($event)"
+    (uploadHandler)="addDocument($event)"
+    accept="application/pdf"
+    chooseLabel="{{'file-upload.choose-button' | translate}}"
+    uploadLabel="{{'file-upload.upload-button' | translate}}"
+    cancelLabel="{{'file-upload.cancel-button' | translate}}"
+    invalidFileSizeMessageSummary="{{'file-upload.invalid-size.summary' | translate }}"
+    invalidFileSizeMessageDetail="{{'file-upload.invalid-size.detail' | translate }}"
+    invalidFileTypeMessageSummary="{{'file-upload.invalid-type.summary' | translate }}"
+    invalidFileTypeMessageDetail="{{'file-upload.invalid-size.detail' | translate }}"
+    invalidFileLimitMessageDetail="{{'file-upload.invalid-file-limit.summary' | translate }}"
+    invalidFileLimitMessageSummary="{{'file-upload.invalid-file-limit.detail' | translate }}">
+    <ng-template pTemplate="content">
+        <p-table [value]="documents" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>{{'file-upload.document-name' | translate }}</th>
+                    <th>{{'file-upload.uploaded-at' | translate }}</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-document>
+                <tr>
+                    <td>{{ document.name }}</td>
+                    <td>{{ document.uploadedAt | date: 'dd.MM.yyyy HH:mm:ss' }}</td>
+                    <td>
+                        <a
+                            style="text-decoration: none;"
+                            pButton
+                            class="mr-2"
+                            icon="pi pi-download"
+                            href="{{document.path}}"
+                            target="_blank"
+                            download>
+                        </a>
+                        <a
+                            style="text-decoration: none;"
+                            (click)="deleteDocument(document.id)"
+                            pButton
+                            class="mr-2"
+                            icon="pi pi-times">
+                        </a>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </ng-template>
+</p-fileUpload>

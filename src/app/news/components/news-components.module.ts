@@ -15,7 +15,6 @@ import {ValidationService} from '../../shared/services/validation.service';
 import {TabViewModule} from "primeng/tabview";
 import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 
-
 @NgModule({
     declarations: [
         NewsFormComponent,

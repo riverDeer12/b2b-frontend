@@ -7,12 +7,12 @@
                          alt="equipment-image">
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
-                    <file-uploader name="image"
+                    <profile-picture name="image"
                                    [parentForm]="form"
                                    [entityType]="entityType"
                                    [entityId]="equipment.id"
                                    [parentEntityType]="type.Scientist"
-                                   [parentEntityId]="equipment.scientistId"></file-uploader>
+                                   [parentEntityId]="equipment.scientistId"></profile-picture>
                 </div>
                 <p-tabView>
                     <p-tabPanel header="{{ 'croatian' | translate }}" class="line-height-3 m-0">
@@ -88,8 +88,22 @@
                         </categories-selector>
                     </span>
                 </div>
-                <div class="col-6 ml-0 pl-0">
-                    <p-button iconPos="right" class="mt-3" type="submit"
+                <div class="col-12 ml-0 pl-0">
+                    <translate-button
+                        [form]="form"
+                        [formControlNames]="['title', 'description']"
+                        label="translate.translate-to-english"
+                        sourceLanguage="HR"
+                        targetLanguage="EN"
+                    ></translate-button>
+                    <translate-button
+                        [form]="form"
+                        [formControlNames]="['title', 'description']"
+                        label="translate.translate-to-croatian"
+                        sourceLanguage="EN"
+                        targetLanguage="HR"
+                    ></translate-button>
+                    <p-button iconPos="right" type="submit"
                               label="{{ 'save' | translate }}" icon="pi pi-save"
                               [loading]="isLoading"></p-button>
                 </div>
