@@ -950,6 +950,115 @@
     "documents": {
         "default": "Documents"
     },
-    "edih-adria-description": "EDIH Adria consortium (The project is co-financed by the European Union under the Grant Agreement No. 101083838 and the National Recovery and Resilience Plan of the Republic of Croatia 2021-2026)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
+    "edih-adria-description": "EDIH Adria consortium (The project is co-financed by the European Union under the Grant Agreement No. 101083838 and the National Recovery and Resilience Plan of the Republic of Croatia 2021-2026)\n\nTrg braće Mažuranića 10, 51000 Rijeka.",
+    "what-is-rimap": "RIMAP?",
+    "processing-and-protection-of-personal-data": {
+        "default": "Processing And Protection of Personal Data",
+        "introduction": {
+            "title": "Introduction",
+            "content": "The protection of an individual's personal data is regulated by the General Data Protection Regulation (EU, 2016/679) and the Data Protection Act (NN, No. 42/18). RIMAP pays special attention to the protection of personal data and the privacy of its users in accordance with applicable regulations and best European practices. The protection of users' privacy is an important element in the design of each of our services."
+        },
+        "what-is-personal-data": {
+            "title": "What is Personal Data?",
+            "content": "Personal data includes any information relating to an individual whose identity is established or can be established ('data subject'). The individual or data subject, as referred to by the Regulation, is a person who can be identified directly or indirectly, especially with the help of identifiers such as name, identification number, location data, online identifier, etc., or with the help of one or more factors specific to the physical, physiological, genetic, mental, economic, cultural, or social identity of that individual."
+        },
+        "what-does-processing-encompass": {
+            "title": "What does the term 'processing of personal data' encompass?",
+            "content": "Processing is any operation or set of operations performed on personal data or sets of personal data, whether automated or non-automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure, or destruction."
+        },
+        "why-do-we-process-data": {
+            "title": "Why do we process your personal data?",
+            "content": "The prerequisite for any collection of users' personal data is the existence of an appropriate legal basis. We process personal data when necessary for:\n- Providing RIMAP services, primarily matchmaking of researchers, organizations, equipment, ideas, and funding sources.\n- Complying with legal and regulatory obligations.\n- Achieving the goals of RIMAP as a digital innovation platform that enables the networking of economic entities, entrepreneurs, researchers, scientists, the public, and non-governmental sectors, and other interested participants for the purpose of transferring knowledge based on the results of research and development activities.\n- Processing for purposes not covered by the previous points, based on the informed consent of the person whose personal data is collected."
+        },
+        "how-do-we-collect-data": {
+            "title": "How do we collect your personal data?",
+            "content": "Data will be collected directly from users and automatically from publicly available sources (e.g., CRORIS or OpenAIRE, open websites of individuals or organizations) and commercial services (e.g., Digital Chamber, etc.). The updating of data collected automatically is scheduled at least once a year, and more frequently if necessary. The data collected in this way is analyzed using AI modules, and then the metadata is updated for areas of interest and service categories used within the matchmaking process."
+        },
+        "what-data-do-we-process": {
+            "title": "What personal data do we process?",
+            "researchers": {
+                "title": "Researchers",
+                "content": "We process data collected directly from the user (name and surname, personal identification number, etc., necessary for registration) and data that is automatically collected and used for updating metadata in RIMAP (by searching through the researcher's ID number in the CRORIS platform/OpenAIRE), which may include personal data:\n- Data on published works\n- Data on participation in EU or HR projects\n- Data on laboratory equipment\n- Data on patents\n\nAfter metadata updating, the collected data is deleted and not permanently stored on the RIMAP platform. Only links to external sources of information are stored where relevant (example: https://www.croris.hr/osobe/profil/3827)."
+            },
+            "organizations": {
+                "title": "Organizations (Public Administration or Companies)",
+                "content": "We process data on employees (names and surnames of management board members and key experts, email addresses, etc.) collected automatically."
+            }
+        },
+        "fundamental-principles": {
+            "title": "Fundamental principles in personal data protection",
+            "lawfulness": {
+                "title": "Lawfulness, fairness, and transparency",
+                "content": "Your personal data is processed exclusively on legal grounds – based on a legal obligation, your consent, or other legitimate bases. The data relating to you will be collected, used, made available, or otherwise processed transparently, with publicly disclosed deadlines and purposes of data processing, information about the identity of the data controller, information on how you can access your data, and the process for submitting complaints and data update requests. Entered data can always be edited via the web interface application according to user needs."
+            },
+            "purpose-limitation": {
+                "title": "Purpose limitation",
+                "content": "Personal data is collected and processed only for a specific purpose and is not further processed in a manner that is incompatible with the purpose for which it was collected unless otherwise prescribed by law or based on user consent."
+            },
+            "data-minimization": {
+                "title": "Data minimization",
+                "content": "The personal data we collect is adequate, relevant, and limited to the purpose of processing."
+            },
+            "accuracy-and-integrity": {
+                "title": "Accuracy and integrity of data",
+                "content": "It is necessary that the personal data we collect and store be accurate and up-to-date, and we will take every reasonable measure to ensure that personal data that is not accurate, considering the purposes for which it is processed, is erased or corrected without delay."
+            },
+            "storage-limitation": {
+                "title": "Storage limitation",
+                "content": "User data is stored and processed only as long as necessary to perform a specific processing, unless a longer or shorter retention period is provided by applicable regulations, or in other cases explicitly prescribed by law. Regarding automatic data collection, after updating metadata, collected data is deleted and not permanently stored on the RIMAP platform. Only links to external sources of information are stored where relevant (example: https://www.croris.hr/osobe/profil/3827)."
+            }
+        },
+        "integrity-and-confidentiality": {
+            "title": "Integrity and confidentiality",
+            "content": "We will take every reasonable technical and organizational security measure to protect your data from unauthorized or unlawful processing, loss, destruction, or damage. We will oversee access, use, and maintenance of personal data and continuously improve our security measures in line with technological advancements."
+        },
+        "user-consent": {
+            "title": "User consent",
+            "content": "User consent is considered a voluntary, specific, informed, and unambiguous expression of the user's wishes, by which the user, by statement or clear affirmative action, gives consent for the processing of personal data for specific purposes (so-called opt-in). Consent is given electronically through a web form. The user manages their consent according to their needs and interests. For this purpose, the user can give or withdraw consent at any time in a simple manner."
+        },
+        "cookies": {
+            "title": "Cookies",
+            "content": "To provide the necessary functionalities to users of our websites, RIMAP uses cookies and/or other common techniques (hereinafter: cookies) that collect certain user data (e.g., IP address from which the website is accessed, connection time, etc.)."
+        },
+        "where-data-is-processed": {
+            "title": "Where personal data is processed",
+            "content": "We generally process users' personal data in the Republic of Croatia."
+        },
+        "conditions-for-sharing-data": {
+            "title": "Under what conditions personal data is shared with third parties",
+            "content": "We do not share or exchange users' data with any other legal or physical persons (hereinafter: persons) except in the following cases:\n- If there is a legal obligation or explicit authorization based on the law (e.g., based on a court request)\n- If another person is engaged to perform certain tasks as a data processor\n- If data needs to be shared with third parties to provide RIMAP services\n- Based on user consent\n\nIn all the above cases of sharing personal data with third parties, we ensure that users are informed."
+        },
+        "user-rights": {
+            "title": "User rights",
+            "content": "Under the conditions of the General Data Protection Regulation, the user has the right to access their personal data that we collect, the right to deletion (right to be forgotten), the right to restrict processing, the right to object, the right to data portability, and the right to correct personal data if it is incorrect. For any questions related to data processing, the user can contact the RIMAP service contact address: rimap@uniri.hr. For questions related to personal data protection, it is necessary to contact the data protection officer at gdpr@uniri.hr. The user has the right to file a complaint with the supervisory body for data protection in the Republic of Croatia regarding the collection and processing of personal data."
+        }
+    },
+    "methodology-data-collection": {
+        "default": "Methodology for Data Collection for the Purpose of Metadata Improvement within the RIMAP Platform",
+        "introduction": {
+            "title": "Introduction",
+            "content": "The methodology for data collection aims to enhance the quality and comprehensiveness of metadata used within the RIMAP platform. This process ensures that all relevant data is accurately collected, analyzed, and updated to support the platform's objectives effectively."
+        },
+        "data-sources": {
+            "title": "Data Sources",
+            "content": "Data will be collected from various sources, including:"
+        },
+        "data-sources-list": {
+            "user-input": "Direct user input: Data provided directly by users through registration and participation in the RIMAP platform.",
+            "public-sources": "Publicly available sources: Data from open databases, scientific publications, CRORIS, OpenAIRE, and publicly accessible websites of individuals and organizations.",
+            "commercial-services": "Commercial services: Data from commercial sources such as the Digital Chamber and other relevant services."
+        },
+        "data-collection-process": {
+            "title": "Data Collection Process",
+            "initial-collection": {
+                "title": "Initial Data Collection",
+                "content": "Users provide personal and professional information during the registration process. Automated systems extract data from publicly available sources and commercial services."
+            },
+            "verification-validation": {
+                "title": "Data Verification and Validation",
+                "content": "Collected data undergoes a verification process to ensure accuracy and reliability. Cross-referencing with existing records and databases to validate the information."
+            }
+        }
+    }
 }
 

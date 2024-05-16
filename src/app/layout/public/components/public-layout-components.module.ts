@@ -21,6 +21,10 @@ import {InputTextModule} from 'primeng/inputtext';
 import {RouterModule} from '@angular/router';
 import {TagModule} from 'primeng/tag';
 import {CategoriesComponentsModule} from '../../../categories/components/categories-components.module';
+import {
+    ProcessingProtectionPersonalDataComponent
+} from './processing-protection-personal-data/processing-protection-personal-data.component';
+import {MethodologyDataCollectionComponent} from './methodology-data-collection/methodology-data-collection.component';
 
 
 @NgModule({
@@ -32,7 +36,9 @@ import {CategoriesComponentsModule} from '../../../categories/components/categor
         NavbarComponent,
         PublicFooterComponent,
         PublicHeaderComponent,
-        EntityDataViewComponent
+        EntityDataViewComponent,
+        ProcessingProtectionPersonalDataComponent,
+        MethodologyDataCollectionComponent
     ],
     imports: [
         CommonModule,
@@ -58,7 +64,9 @@ import {CategoriesComponentsModule} from '../../../categories/components/categor
         NavbarComponent,
         PublicFooterComponent,
         PublicHeaderComponent,
-        EntityDataViewComponent
+        EntityDataViewComponent,
+        ProcessingProtectionPersonalDataComponent,
+        MethodologyDataCollectionComponent
     ]
 })
 export class PublicLayoutComponentsModule {
