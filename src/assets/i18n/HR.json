@@ -954,5 +954,114 @@
     "documents": {
         "default": "Dokumenti"
     },
-    "edih-adria-description": "EDIH Adria konzorcij (Projekt je sufinanciran od strane Europske unije prema Ugovoru o dodjeli bespovratnih sredstava br. 101083838 i Nacionalnom planu oporavka i otpornosti Republike Hrvatske 2021.-2026.)\n\nTrg braće Mažuranića 10, 51000 Rijeka."
+    "edih-adria-description": "EDIH Adria konzorcij (Projekt je sufinanciran od strane Europske unije prema Ugovoru o dodjeli bespovratnih sredstava br. 101083838 i Nacionalnom planu oporavka i otpornosti Republike Hrvatske 2021.-2026.)\n\nTrg braće Mažuranića 10, 51000 Rijeka.",
+    "what-is-rimap": "RIMAP?",
+    "processing-and-protection-of-personal-data": {
+        "default": "Obrada i zaštita osobnih podataka",
+        "introduction": {
+            "title": "Uvod",
+            "content": "Zaštita osobnih podataka pojedinca uređena je Općom uredbom o zaštiti podataka (EU, 2016/679) i Zakonom o zaštiti podataka (NN, br. 42/18). RIMAP pridaje osobitu pažnju zaštiti osobnih podataka i privatnosti svojih korisnika u skladu s važećim propisima i najboljom europskom praksom. Zaštita privatnosti korisnika važan je element u oblikovanju svake naše usluge."
+        },
+        "what-is-personal-data": {
+            "title": "Što su osobni podaci?",
+            "content": "Osobni podaci uključuju sve informacije koje se odnose na pojedinca čiji je identitet utvrđen ili se može utvrditi ('ispitanik'). Pojedinac ili ispitanik, kako ga naziva Uredba, je osoba koja se može identificirati izravno ili neizravno, osobito uz pomoć identifikatora kao što su ime, identifikacijski broj, podaci o lokaciji, mrežni identifikator itd., ili uz pomoć jednog ili više čimbenika specifičnih za fizički, fiziološki, genetski, mentalni, ekonomski, kulturni ili socijalni identitet tog pojedinca."
+        },
+        "what-does-processing-encompass": {
+            "title": "Što obuhvaća pojam 'obrada osobnih podataka'?",
+            "content": "Obrada je svaka operacija ili skup operacija izvedenih na osobnim podacima ili skupovima osobnih podataka, bilo automatiziranim ili neautomatiziranim sredstvima, kao što su prikupljanje, bilježenje, organizacija, strukturiranje, pohrana, prilagodba ili izmjena, pronalaženje, obavljanje uvida, uporaba, otkrivanje prijenosom, širenjem ili na drugi način, usklađivanje ili kombiniranje, ograničavanje, brisanje ili uništavanje."
+        },
+        "why-do-we-process-data": {
+            "title": "Zašto obrađujemo vaše osobne podatke?",
+            "content": "Preduvjet za svako prikupljanje osobnih podataka korisnika je postojanje odgovarajuće pravne osnove. Osobne podatke obrađujemo kada je to nužno za:\n- Pružanje RIMAP usluga, prvenstveno spajanja istraživača, organizacija, opreme, ideja i izvora financiranja.\n- Poštivanje zakonskih i regulatornih obveza.\n- Ostvarivanje ciljeva RIMAP-a kao digitalne inovacijske platforme koja omogućuje umrežavanje gospodarskih subjekata, poduzetnika, istraživača, znanstvenika, javnog i nevladinog sektora te ostalih zainteresiranih sudionika radi prijenosa znanja temeljenog na rezultatima istraživanja i razvojnih aktivnosti.\n- Obradu u svrhe koje nisu obuhvaćene prethodnim točkama, na temelju informiranog pristanka osobe čiji se osobni podaci prikupljaju."
+        },
+        "how-do-we-collect-data": {
+            "title": "Kako prikupljamo vaše osobne podatke?",
+            "content": "Podaci će se prikupljati izravno od korisnika i automatski iz javno dostupnih izvora (npr. CRORIS ili OpenAIRE, otvorenih web stranica pojedinaca ili organizacija) i komercijalnih usluga (npr. Digitalna komora, itd.). Ažuriranje podataka prikupljenih automatski predviđeno je najmanje jednom godišnje, a po potrebi i češće. Tako prikupljeni podaci analiziraju se pomoću AI modula, a zatim se ažuriraju metapodaci za područja interesa i kategorije usluga korištene unutar matchmaking procesa."
+        },
+        "what-data-do-we-process": {
+            "title": "Koje osobne podatke obrađujemo?",
+            "researchers": {
+                "title": "Istraživači",
+                "content": "Obrađujemo podatke prikupljene izravno od korisnika (ime i prezime, osobni identifikacijski broj, itd., potrebne za registraciju) i podatke koji se automatski prikupljaju i koriste za ažuriranje metapodataka u RIMAP-u (pretragom putem matičnog broja znanstvenika u CRORIS platformi/OpenAIRE), koji mogu uključivati osobne podatke:\n- Podaci o objavljenim radovima\n- Podaci o sudjelovanju u EU ili HR projektima\n- Podaci o laboratorijskoj opremi\n- Podaci o patentima\n\nNakon ažuriranja metapodataka, prikupljeni podaci se brišu i ne pohranjuju trajno na RIMAP platformi. Pohranjuju se samo poveznice na vanjske izvore informacija gdje je to relevantno (primjer: <a href='https://www.croris.hr/osobe/profil/3827'>https://www.croris.hr/osobe/profil/3827</a>)."
+            },
+            "organizations": {
+                "title": "Organizacije (javna uprava ili poduzeća)",
+                "content": "Obrađujemo podatke o zaposlenicima (imena i prezimena članova uprave i ključnih stručnjaka, e-mail adrese, itd.) prikupljene automatski."
+            }
+        },
+        "fundamental-principles": {
+            "title": "Temeljna načela u zaštiti osobnih podataka",
+            "lawfulness": {
+                "title": "Zakonitost, poštenje i transparentnost",
+                "content": "Vaši osobni podaci obrađuju se isključivo na zakonskim osnovama – temeljem zakonske obveze, vašeg pristanka ili drugih legitimnih osnova. Podaci koji se odnose na vas bit će prikupljeni, korišteni, učinjeni dostupnima ili na drugi način obrađeni na transparentan način, s javno objavljenim rokovima i svrhama obrade podataka, informacijama o identitetu voditelja obrade, informacijama o tome kako možete pristupiti svojim podacima i procesom za podnošenje pritužbi i zahtjeva za ažuriranje podataka."
+            },
+            "purpose-limitation": {
+                "title": "Ograničenje svrhe",
+                "content": "Osobni podaci prikupljaju se i obrađuju samo za određenu svrhu i ne obrađuju se dalje na način koji nije u skladu sa svrhom za koju su prikupljeni, osim ako nije drugačije propisano zakonom ili temeljem pristanka korisnika."
+            },
+            "data-minimization": {
+                "title": "Minimizacija podataka",
+                "content": "Osobni podaci koje prikupljamo su primjereni, relevantni i ograničeni na svrhu obrade."
+            },
+            "accuracy-and-integrity": {
+                "title": "Točnost i integritet podataka",
+                "content": "Nužno je da osobni podaci koje prikupljamo i pohranjujemo budu točni i ažurni, te ćemo poduzeti sve razumne mjere kako bismo osigurali da se osobni podaci koji nisu točni, s obzirom na svrhe za koje se obrađuju, izbrišu ili isprave bez odgode."
+            },
+            "storage-limitation": {
+                "title": "Ograničenje pohrane",
+                "content": "Podaci korisnika pohranjuju se i obrađuju samo onoliko dugo koliko je potrebno za izvršenje određene obrade, osim ako važećim propisima nije predviđeno duže ili kraće vrijeme čuvanja, ili u drugim slučajevima izričito propisanim zakonom. U vezi s automatskim prikupljanjem podataka, nakon ažuriranja metapodataka, prikupljeni podaci se brišu i ne pohranjuju trajno na RIMAP platformi. Pohranjuju se samo poveznice na vanjske izvore informacija gdje je to relevantno (primjer: <a href='https://www.croris.hr/osobe/profil/3827'>https://www.croris.hr/osobe/profil/3827</a>)."
+            }
+        },
+        "integrity-and-confidentiality": {
+            "title": "Cjelovitost i povjerljivost",
+            "content": "Poduzet ćemo sve razumne tehničke i organizacijske sigurnosne mjere kako bismo zaštitili vaše podatke od neovlaštene ili nezakonite obrade, gubitka, uništenja ili oštećenja. Vodit ćemo nadzor nad pristupom, korištenjem i održavanjem osobnih podataka i kontinuirano ćemo poboljšavati naše sigurnosne mjere u skladu s tehnološkim napretkom."
+        },
+        "user-consent": {
+            "title": "Pristanak korisnika",
+            "content": "Pristanak korisnika smatra se dobrovoljnim, specifičnim, informiranim i nedvosmislenim izražavanjem želje korisnika, kojim korisnik izjavom ili jasnom potvrdom daje pristanak za obradu osobnih podataka u određene svrhe (tzv. opt-in). Pristanak se daje elektroničkim putem, putem web obrasca. Korisnik upravlja svojim pristankom prema svojim potrebama i interesima. U tu svrhu korisnik može u bilo kojem trenutku na jednostavan način dati ili povući pristanak."
+        },
+        "cookies": {
+            "title": "Kolačići",
+            "content": "Kako bi korisnicima naših web stranica pružio potrebne funkcionalnosti, RIMAP koristi kolačiće i/ili druge uobičajene tehnike (u daljnjem tekstu: kolačići) koje prikupljaju određene podatke korisnika (npr. IP adresa s koje se pristupa web stranici, vrijeme povezivanja, itd.)."
+        },
+        "where-data-is-processed": {
+            "title": "Gdje se obrađuju osobni podaci",
+            "content": "Općenito obrađujemo osobne podatke korisnika u Republici Hrvatskoj."
+        },
+        "conditions-for-sharing-data": {
+            "title": "Pod kojim uvjetima se osobni podaci dijele s trećim stranama",
+            "content": "Ne dijelimo niti razmjenjujemo podatke korisnika s bilo kojom drugom pravnom ili fizičkom osobom (u daljnjem tekstu: osobe) osim u sljedećim slučajevima:\n- Ako postoji zakonska obveza ili izričito ovlaštenje temeljem zakona (npr. na temelju zahtjeva suda)\n- Ako se za obavljanje određenih poslova angažira druga osoba kao izvršitelj obrade\n- Ako je podatke potrebno podijeliti s trećim stranama radi pružanja RIMAP usluga\n- Temeljem pristanka korisnika\n\nU svim gore navedenim slučajevima dijeljenja osobnih podataka s trećim stranama, osiguravamo da korisnici budu informirani."
+        },
+        "user-rights": {
+            "title": "Prava korisnika",
+            "content": "Prema uvjetima Opće uredbe o zaštiti podataka, korisnik ima pravo na pristup svojim osobnim podacima koje prikupljamo, pravo na brisanje (pravo na zaborav), pravo na ograničenje obrade, pravo na prigovor, pravo na prenosivost podataka i pravo na ispravak osobnih podataka ako su netočni. Za sva pitanja vezana uz obradu podataka, korisnik se može obratiti na kontakt adresu usluge RIMAP-a: <a href=\"mailto:rimap@uniri.hr\">rimap@uniri.hr</a>. Za pitanja vezana uz zaštitu osobnih podataka potrebno je obratiti se službeniku za zaštitu podataka na <a href=\"mailto:gdpr@uniri.hr\">gdpr@uniri.hr</a>. Korisnik ima pravo podnijeti pritužbu nadzornom tijelu za zaštitu osobnih podataka u Republici Hrvatskoj u vezi s prikupljanjem i obradom osobnih podataka."
+        }
+    },
+    "methodology-data-collection": {
+        "default": "Metodologija prikupljanja podataka za potrebe poboljšanja metapodataka",
+        "introduction": {
+            "title": "Uvod",
+            "content": "Metodologija prikupljanja podataka ima za cilj poboljšati kvalitetu i sveobuhvatnost metapodataka korištenih unutar RIMAP platforme. Ovaj proces osigurava da svi relevantni podaci budu točno prikupljeni, analizirani i ažurirani kako bi učinkovito podržali ciljeve platforme."
+        },
+        "data-sources": {
+            "title": "Izvori podataka",
+            "content": "Podaci će se prikupljati iz raznih izvora, uključujući:"
+        },
+        "data-sources-list": {
+            "user-input": "Izravni unos korisnika: Podaci koje izravno pružaju korisnici putem registracije i sudjelovanja na RIMAP platformi.",
+            "public-sources": "Javno dostupni izvori: Podaci iz otvorenih baza podataka, znanstvenih publikacija, CRORIS-a, OpenAIRE-a i javno dostupnih web stranica pojedinaca i organizacija.",
+            "commercial-services": "Komercijalne usluge: Podaci iz komercijalnih izvora poput Digitalne komore i drugih relevantnih usluga."
+        },
+        "data-collection-process": {
+            "title": "Proces prikupljanja podataka",
+            "initial-collection": {
+                "title": "Početno prikupljanje podataka",
+                "content": "Korisnici pružaju osobne i profesionalne informacije tijekom procesa registracije. Automatizirani sustavi prikupljaju podatke iz javno dostupnih izvora i komercijalnih usluga."
+            },
+            "verification-validation": {
+                "title": "Provjera i validacija podataka",
+                "content": "Prikupljeni podaci prolaze kroz proces provjere kako bi se osigurala točnost i pouzdanost. Unakrsna provjera s postojećim zapisima i bazama podataka za validaciju informacija."
+            }
+        }
+    }
 }
