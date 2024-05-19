@@ -893,6 +893,9 @@
         "emails-send-successfully": "Email obavijesti su uspješno poslane.",
         "error-sending-emails": "Greška prilikom slanja email obavijesti."
     },
+    "financing-sources": {
+        "default": "Izvori financiranja"
+    },
     "newsletter-type": {
         "platform-news": "Vijesti sa platforme",
         "matchmaking": "Personalizirani newsletter (matchmaking)",

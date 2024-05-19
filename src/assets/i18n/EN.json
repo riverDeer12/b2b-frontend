@@ -886,6 +886,9 @@
         "emails-send-successfully": "Email notifications were sent successfully.",
         "error-sending-emails": "Error sending email notifications."
     },
+    "financing-sources": {
+        "default": "Financing Sources"
+    },
     "newsletter-type": {
         "platform-news": "Platform News",
         "matchmaking": "Personalized Newsletter (Matchmaking)",
