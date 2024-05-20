@@ -12,7 +12,8 @@
             </profile-picture>
         </div>
 
-        <credentials-form [formType]="formType" [entityType]="entityType" [form]="form"></credentials-form>
+        <credentials-form *ngIf="formType === type.Create" [formType]="formType" [entityType]="entityType"
+                          [form]="form"></credentials-form>
 
         <div class="field field col-md-12">
             <span class="p-float-label">
