@@ -7,9 +7,9 @@
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === type.Edit">
                     <profile-picture name="image"
-                                   [parentForm]="form"
-                                   [entityType]="entityType"
-                                   [entityId]="scientist.id">
+                                     [parentForm]="form"
+                                     [entityType]="entityType"
+                                     [entityId]="scientist.id">
                     </profile-picture>
                 </div>
                 <credentials-form *ngIf="formType === type.Create" [entityType]="entityType"
@@ -69,10 +69,6 @@
                                        pInputText type="text" id="functions-hr" formControlName="HR"/>
                                 <label for="functions-hr">{{ 'scientists.functions.default' | translate }}</label>
                             </span>
-                            <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'HR', 'required',
-                                   'functions.translations')"
-                                   id="functions-input-hr">{{ 'scientists.functions.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="projects">
                             <span class="p-float-label" formGroupName="translations">
@@ -82,9 +78,6 @@
                                     pInputText type="text" id="projects-hr" formControlName="HR"/>
                                 <label for="projects-hr">{{ 'scientists.projects.default' | translate }}</label>
                             </span>
-                            <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'HR', 'required', 'projects.translations')"
-                                   id="projects-input-hr">{{ 'scientists.projects.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                     <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
@@ -139,10 +132,6 @@
                                        pInputText type="text" id="functions-en" formControlName="EN"/>
                                 <label for="functions-en">{{ 'scientists.functions.default' | translate }}</label>
                             </span>
-                            <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'EN', 'required',
-                                   'functions.translations')"
-                                   id="functions-input-en">{{ 'scientists.functions.required' | translate }}</small>
                         </div>
                         <div class="field field col-md-12" formGroupName="projects">
                             <span class="p-float-label" formGroupName="translations">
@@ -152,9 +141,6 @@
                                     pInputText type="text" id="projects-en" formControlName="EN"/>
                                 <label for="projects-en">{{ 'scientists.projects.default' | translate }}</label>
                             </span>
-                            <small class="p-error"
-                                   *ngIf="validationService.hasErrors(form, 'EN', 'required', 'projects.translations')"
-                                   id="projects-input-en">{{ 'scientists.projects.required' | translate }}</small>
                         </div>
                     </p-tabPanel>
                 </p-tabView>
@@ -198,9 +184,6 @@
                                pInputText type="text" id="website" formControlName="website"/>
                         <label for="website">{{ 'scientists.website.default' | translate }}</label>
                     </span>
-                    <small class="p-error"
-                           *ngIf="validationService.hasErrors(form, 'website', 'required')"
-                           id="website-input">{{ 'scientists.website.required' | translate }}</small>
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
@@ -258,15 +241,13 @@
                 </div>
                 <div class="col-12 ml-0 p-0">
                     <translate-button [form]="form"
-                                      [formControlNames]="['title','description', 'employmentCollege',
-                                  'projects','functions']"
+                                      [formControlNames]="['title','description', 'employmentCollege']"
                                       label="translate.translate-to-english"
                                       sourceLanguage="HR"
                                       targetLanguage="EN">
                     </translate-button>
                     <translate-button [form]="form"
-                                      [formControlNames]="['title','description', 'employmentCollege',
-                                  'projects','functions']"
+                                      [formControlNames]="['title','description', 'employmentCollege']"
                                       label="translate.translate-to-croatian"
                                       sourceLanguage="EN"
                                       targetLanguage="HR">

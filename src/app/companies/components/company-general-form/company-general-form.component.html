@@ -53,10 +53,6 @@
                             pInputText type="text" id="projects-hr" formControlName="HR"/>
                         <label for="projects-hr">{{ 'companies.projects.default' | translate }}</label>
                     </span>
-                    <small class="p-error"
-                           *ngIf="validationService.hasErrors(form, 'HR', 'required',
-                   'projects.translations')"
-                           id="projects-input-hr">{{ 'companies.projects.required' | translate }}</small>
                 </div>
             </p-tabPanel>
             <p-tabPanel header="{{ 'english' | translate }}" class="line-height-3 m-0">
@@ -84,10 +80,6 @@
                             pInputText type="text" id="projects-en" formControlName="EN"/>
                         <label for="projects-en">{{ 'companies.projects.default' | translate }}</label>
                     </span>
-                    <small class="p-error"
-                           *ngIf="validationService.hasErrors(form, 'EN', 'required',
-                   'projects.translations')"
-                           id="projects-input-en">{{ 'companies.projects.required' | translate }}</small>
                 </div>
             </p-tabPanel>
         </p-tabView>
@@ -131,9 +123,6 @@
                        pInputText type="text" id="website" formControlName="website"/>
                 <label for="website">{{ 'companies.website.default' | translate }}</label>
             </span>
-            <small class="p-error"
-                   *ngIf="validationService.hasErrors(form, 'website', 'required')"
-                   id="website-input">{{ 'companies.website.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">
@@ -192,14 +181,14 @@
         <div class="col-12 ml-0 p-0">
             <translate-button
                 [form]="form"
-                [formControlNames]="['description', 'projects']"
+                [formControlNames]="['description']"
                 label="translate.translate-to-english"
                 sourceLanguage="HR"
                 targetLanguage="EN"
             ></translate-button>
             <translate-button
                 [form]="form"
-                [formControlNames]="['description', 'projects']"
+                [formControlNames]="['description']"
                 label="translate.translate-to-croatian"
                 sourceLanguage="EN"
                 targetLanguage="HR"
