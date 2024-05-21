@@ -13,11 +13,10 @@
                     <h1 class="text-900 font-bold text-4xl lg:text-5xl mb-2">{{ 'onboardings.' + type + '.title' | translate }}</h1>
                     <span class="text-600 mb-5">{{ 'onboardings.' + type + '.text' | translate }}</span>
 
-                    <h4 class="text-900 font-bold text-4xl lg:text-5xl mb-2">
-                        {{'onboardings.complete-by-changing-password' | translate }}
-                    </h4>
-
                     <div *ngIf="type == onboardingType.Accepted">
+                        <h6 class="text-900 font-bold text-4xl lg:text-5xl mb-2">
+                            {{'onboardings.complete-by-changing-password' | translate }}
+                        </h6>
                         <auth-change-password [username]="company.username"
                                               [redirectType]="redirectType.Page"
                                               [entityType]="entityType.Company"

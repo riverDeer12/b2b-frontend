@@ -25,7 +25,7 @@ export class AuthTokenEntityResolver implements Resolve<Company> {
 
         if(!token){
             this.router.navigateByUrl('').then();
-            this.notificationService.showNotification(NotificationType.Success,
+            this.notificationService.showNotification(NotificationType.Error,
                 'onboardings.error-processing-onboarding-item');
         }
 
