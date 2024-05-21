@@ -53,6 +53,8 @@ import {UnsubscribedComponent} from "./pages/unsubscribed/unsubscribed.component
 import {OnboardingProcessComponent} from "./pages/onboarding-process/onboarding-process.component";
 import {OnboardingProcessType} from "./core/types/onboarding-process-type";
 import {OnboardingProcessResolver} from "./core/resolvers/onboarding/onboarding-process.resolver";
+import {CompanyResolver} from "../../companies/core/resolvers/company.resolver";
+import {AuthTokenEntityResolver} from "./core/resolvers/auth/auth-token-entity.resolver";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -104,6 +106,7 @@ export const PublicLayoutRoutes: Routes = [
         component: OnboardingProcessComponent,
         resolve: {
             type: OnboardingProcessResolver,
+            company: AuthTokenEntityResolver
         },
         data: {
             type: OnboardingProcessType.Accepted

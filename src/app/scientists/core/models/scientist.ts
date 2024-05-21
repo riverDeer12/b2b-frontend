@@ -2,13 +2,11 @@ import {Equipment} from 'src/app/equipment/core/models/equipment';
 import {SpecificKnowledge} from '../../../specific-knowledge/core/models/specific-knowledge';
 import {Category} from '../../../categories/core/models/category';
 import {LocalizedProperty, TranslationsObject} from '../../../shared/models/localized-property';
-import {Languages} from '../../../shared/constants/languages';
 
 export class Scientist {
     id!: string;
     isActive!: boolean;
     image!: string;
-    username!: string;
     password!: string;
     title!: LocalizedProperty;
     firstname!: string;
@@ -56,5 +54,9 @@ export class Scientist {
 
     get fullName(): string {
         return this.firstname + ' ' + this.lastname;
+    }
+
+    get username(): string{
+        return this.email;
     }
 }

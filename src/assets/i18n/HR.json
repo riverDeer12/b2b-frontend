@@ -891,7 +891,9 @@
         },
         "send-email-notifications": "Slanje email obavijesti",
         "emails-send-successfully": "Email obavijesti su uspješno poslane.",
-        "error-sending-emails": "Greška prilikom slanja email obavijesti."
+        "error-sending-emails": "Greška prilikom slanja email obavijesti.",
+        "error-processing-onboarding-item": "Pogreška prilikom potvrde entiteta.",
+        "complete-by-changing-password": "Kako bi završili registraciju potrebno je postaviti lozinku"
     },
     "newsletter-type": {
         "platform-news": "Vijesti sa platforme",
