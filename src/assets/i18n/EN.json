@@ -884,7 +884,9 @@
         },
         "send-email-notifications": "Send email notifications",
         "emails-send-successfully": "Email notifications were sent successfully.",
-        "error-sending-emails": "Error sending email notifications."
+        "error-sending-emails": "Error sending email notifications.",
+        "error-processing-onboarding-item": "Error in processing onboarding entity.",
+        "complete-by-changing-password": "Complete your registration by setting your password"
     },
     "newsletter-type": {
         "platform-news": "Platform News",

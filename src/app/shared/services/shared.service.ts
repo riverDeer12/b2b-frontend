@@ -5,7 +5,6 @@ import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import {Category} from '../../categories/core/models/category';
 
 /**
  * Helper service for most common actions
@@ -63,6 +62,10 @@ export class SharedService {
      * @param dialogId id of dialog that needs to be closed.
      */
     redirectUserAfterSubmit(redirectType: RedirectType, returnUrl?: string, dialogId?: string): void {
+        if (redirectType == RedirectType.NoRedirect) {
+            return;
+        }
+
         if (redirectType == RedirectType.Page) {
             this.router.navigateByUrl(returnUrl as string).then();
             return;
