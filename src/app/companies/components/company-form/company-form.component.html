@@ -11,7 +11,8 @@
                         header="{{ 'auth.username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
                     <auth-change-password [username]="this.company.username"
-                                          [entityType]="entityType"></auth-change-password>
+                                          [entityType]="entityType"
+                                          [redirectType]="redirectType.NoRedirect"></auth-change-password>
                 </div>
             </p-tabPanel>
             <p-tabPanel *ngIf="formType === type.Edit" header="{{'research-problems.default' | translate }}"

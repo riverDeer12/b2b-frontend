@@ -10,7 +10,8 @@
             <p-tabPanel header="{{ 'auth.username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
                     <auth-change-password [username]="this.scientist.username"
-                                          [entityType]="entityType"></auth-change-password>
+                                          [entityType]="entityType"
+                                          [redirectType]="redirectType.NoRedirect"></auth-change-password>
                 </div>
             </p-tabPanel>
             <p-tabPanel header="{{'equipment.default' | translate }}" class="line-height-3 m-0">
