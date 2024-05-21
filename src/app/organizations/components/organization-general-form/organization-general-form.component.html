@@ -96,9 +96,6 @@
                        pInputText type="text" id="website" formControlName="website"/>
                 <label for="website">{{ 'organizations.website.default' | translate }}</label>
             </span>
-            <small class="p-error"
-                   *ngIf="validationService.hasErrors(form, 'website', 'required')"
-                   id="website-input">{{ 'organizations.website.required' | translate }}</small>
         </div>
         <div class="field field col-md-12">
             <span class="p-float-label">

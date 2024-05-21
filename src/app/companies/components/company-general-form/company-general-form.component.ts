@@ -74,14 +74,14 @@ export class CompanyGeneralFormComponent {
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl('', Validators.required),
-                    EN: new FormControl('', Validators.required)
+                    HR: new FormControl(''),
+                    EN: new FormControl('')
                 })
             }),
             address: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
             taxCode: new FormControl('', Validators.required),
-            website: new FormControl('', Validators.required),
+            website: new FormControl(''),
             numberOfEmployees: new FormControl('', Validators.required),
             newsletterCategories: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
@@ -104,14 +104,14 @@ export class CompanyGeneralFormComponent {
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl(this.company.projects.translations.HR, Validators.required),
-                    EN: new FormControl(this.company.projects.translations.EN, Validators.required)
+                    HR: new FormControl(this.company.projects.translations.HR),
+                    EN: new FormControl(this.company.projects.translations.EN)
                 })
             }),
             address: new FormControl(this.company.address, Validators.required),
             email: new FormControl(this.company.email, Validators.required),
             taxCode: new FormControl(this.company.taxCode, Validators.required),
-            website: new FormControl(this.company.website, Validators.required),
+            website: new FormControl(this.company.website),
             numberOfEmployees: new FormControl(this.company.numberOfEmployees, Validators.required),
             newsletterCategories: new FormControl(this.company.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.company.categories.map(x => x.id), Validators.required),
