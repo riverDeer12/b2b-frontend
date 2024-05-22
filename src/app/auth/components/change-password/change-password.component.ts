@@ -1,12 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {EntityType} from '../../core/enums/entity-type';
-import {environment} from '../../../../environments/environment';
 import {NotificationType} from '../../../shared/enums/notification-type';
 import {NotificationService} from '../../../shared/services/notification.service';
-import {AuthService} from '../../core/services/auth.service';
-import {SharedService} from "../../../shared/services/shared.service";
 import {RedirectType} from "../../../shared/enums/redirect-type";
+import {CompanyService} from "../../../companies/core/services/company.service";
+import {SharedService} from "../../../shared/services/shared.service";
+import {ScientistService} from "../../../scientists/core/services/scientist.service";
+import {OrganizationService} from "../../../organizations/core/services/organization.service";
 
 @Component({
     selector: 'auth-change-password',
@@ -14,7 +15,7 @@ import {RedirectType} from "../../../shared/enums/redirect-type";
     styleUrls: ['./change-password.component.scss']
 })
 export class ChangePasswordComponent {
-    @Input() username!: string;
+    @Input() entity!: any;
     @Input() entityType!: EntityType;
     @Input() redirectType!: RedirectType;
     @Input() returnUrl!: string;
@@ -22,14 +23,14 @@ export class ChangePasswordComponent {
 
     form!: FormGroup;
 
-    changePasswordEndpoint!: string;
-
     isLoading!: boolean;
 
     constructor(private fb: FormBuilder,
+                private companyService: CompanyService,
+                private scientistService: ScientistService,
+                private organizationService: OrganizationService,
                 private sharedService: SharedService,
-                private notificationService: NotificationService,
-                private authService: AuthService) {
+                private notificationService: NotificationService) {
     }
 
     ngOnInit(): void {
@@ -38,13 +39,10 @@ export class ChangePasswordComponent {
 
     private setFormGroup(): void {
         this.form = this.fb.group({
-            username: new FormControl({value: this.username, disabled: true}, Validators.required),
+            username: new FormControl({value: this.entity.username, disabled: true}, Validators.required),
             password: new FormControl('', Validators.required),
             confirmPassword: new FormControl('', Validators.required)
         })
-
-        this.changePasswordEndpoint = environment.apiUrl + '/auth/' + this.entityType.toString()
-            + '/resetPassword';
     }
 
     submit(): void {
@@ -52,34 +50,64 @@ export class ChangePasswordComponent {
         this.isLoading = true;
 
         if (this.form.invalid) {
-
             this.form.markAllAsTouched();
-
             this.notificationService
                 .showNotification(NotificationType.Warning,
                     'correct-validation-errors');
-
             this.isLoading = false;
-
             return;
         }
 
-        this.authService.resetPassword(this.username as string, this.changePasswordEndpoint)
-            .subscribe((response: Object) => {
-                    this.notificationService
-                        .showNotification(NotificationType.Success,
-                            'password-changed-successfully');
+        this.makeChangePasswordCall();
+    }
 
-                    this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+    private makeChangePasswordCall() {
 
-                    this.isLoading = false;
-                },
-                (error: Object) => {
-                    this.notificationService
-                        .showNotification(NotificationType.Error,
-                            'error-changing-password');
+        this.entity.username = this.form.get('username')?.value;
+        this.entity.password = this.form.get('password')?.value;
+        this.entity.confirmPassword = this.form.get('confirmPassword')?.value;
 
-                    this.isLoading = false;
-                });
+        console.log(this.entity);
+
+        if(this.entityType == EntityType.Company){
+            this.companyService.editCompany(this.entity.id, this.entity).subscribe((response) => {
+                this.notificationService
+                    .showNotification(NotificationType.Success, "password-changed-successfully");
+
+                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl);
+
+                this.isLoading = false;
+            }, () => {
+                this.notificationService
+                    .showNotification(NotificationType.Error, "error-changing-password");
+                this.isLoading = false;
+            })
+        } else if (this.entityType === EntityType.Scientist){
+            this.scientistService.editScientist(this.entity.id, this.entity).subscribe((response) => {
+                this.notificationService
+                    .showNotification(NotificationType.Success, "password-changed-successfully");
+
+                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl);
+
+                this.isLoading = false;
+            }, () => {
+                this.notificationService
+                    .showNotification(NotificationType.Error, "error-changing-password");
+                this.isLoading = false;
+            })
+        } else if (this.entityType === EntityType.PublicOrganization){
+            this.organizationService.editOrganization(this.entity.id, this.entity).subscribe((response) => {
+                this.notificationService
+                    .showNotification(NotificationType.Success, "password-changed-successfully");
+
+                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl);
+
+                this.isLoading = false;
+            }, (error) => {
+                this.notificationService
+                    .showNotification(NotificationType.Error, "error-changing-password");
+                this.isLoading = false;
+            })
+        }
     }
 }
