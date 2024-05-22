@@ -77,6 +77,8 @@ export class OnboardingProcessComponent {
             } else {
                 const onboardingEntityToken = jwtDecode(this.token as string) as AuthToken;
 
+                console.log(onboardingEntityToken);
+
                 this.companyService.getCompany(onboardingEntityToken.nameid)
                     .subscribe((response) => {
                         this.company = Object.assign(new Company(), response)
