@@ -26,6 +26,8 @@ export class OnboardingProcessComponent {
 
     returnUrl = "my-profile";
 
+    isCompanyProcessing!: boolean;
+
     public get onboardingType(): typeof OnboardingProcessType {
         return OnboardingProcessType;
     }
@@ -42,6 +44,7 @@ export class OnboardingProcessComponent {
                 private router: Router,
                 private notificationService: NotificationService,
                 private companyService: CompanyService) {
+        this.isCompanyProcessing = true;
     }
 
     ngOnInit(): void {
@@ -77,6 +80,7 @@ export class OnboardingProcessComponent {
                 this.companyService.getCompany(onboardingEntityToken.nameid)
                     .subscribe((response) => {
                         this.company = Object.assign(new Company(), response)
+                        this.isCompanyProcessing = false;
                     });
             }
         });
