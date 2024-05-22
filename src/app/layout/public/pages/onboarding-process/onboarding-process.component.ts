@@ -19,8 +19,6 @@ export class OnboardingProcessComponent {
     type!: OnboardingProcessType;
     iconType!: string;
 
-    isLoading = false;
-
     company!: Company;
 
     returnUrl = "my-profile";
@@ -60,31 +58,33 @@ export class OnboardingProcessComponent {
                 case OnboardingProcessType.Accepted:
                 case OnboardingProcessType.AlreadyAccepted:
                     this.iconType = 'check';
+                    this.getOnboardingEntity();
                     return;
                 case OnboardingProcessType.Declined:
                 case OnboardingProcessType.AlreadyDeclined:
                     this.iconType = 'times';
                     return;
             }
+        });
+    }
 
-            this.activatedRoute.queryParams.subscribe(params => {
-                this.token = params['token'];
+    private getOnboardingEntity() {
+        this.activatedRoute.queryParams.subscribe(params => {
+            this.token = params['token'];
 
-                if (!this.token) {
-                    this.router.navigateByUrl('').then();
-                }
+            if (!this.token) {
+                this.router.navigateByUrl('').then();
+            }
 
-                const token = jwtDecode(this.token as string) as AuthToken;
+            const token = jwtDecode(this.token as string) as AuthToken;
 
-                this.companyService.getCompany(token.nameid).subscribe((response => {
-                    this.company = Object.assign(new Company(), response);
-                    this.isCompanyProcessing = false;
-                }), () => {
-                    this.notificationService.showNotification(NotificationType.Error,
-                        "onboardings.error-processing-onboarding-item");
-                    this.isCompanyProcessing = false;
-                })
-            });
+            this.companyService.getCompany(token.nameid).subscribe((response => {
+                this.company = Object.assign(new Company(), response);
+                this.isCompanyProcessing = false;
+            }), () => {
+                this.notificationService.showNotification(NotificationType.Error,
+                    "onboardings.error-processing-onboarding-item");
+            })
         });
     }
 }

@@ -6,6 +6,7 @@ export class Organization {
     id!: string;
     isActive!: boolean;
     image!: string;
+    username!: string;
     password!: string;
     name!: string;
     description!: LocalizedProperty;
@@ -27,9 +28,5 @@ export class Organization {
     get imageUrl(): string {
         return this.image ??
             'assets/layout/images/image-default.png'
-    }
-
-    get username(): string{
-        return this.email;
     }
 }

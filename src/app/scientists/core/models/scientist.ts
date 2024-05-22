@@ -8,6 +8,7 @@ export class Scientist {
     isActive!: boolean;
     image!: string;
     password!: string;
+    username!: string;
     title!: LocalizedProperty;
     firstname!: string;
     lastname!: string;
@@ -54,9 +55,5 @@ export class Scientist {
 
     get fullName(): string {
         return this.firstname + ' ' + this.lastname;
-    }
-
-    get username(): string{
-        return this.email;
     }
 }

@@ -9,6 +9,7 @@ export class Company {
     id!: string;
     isActive!: boolean;
     image!: string;
+    username!: string;
     password!: string;
     name!: string;
     description!: LocalizedProperty;
@@ -36,9 +37,5 @@ export class Company {
 
     get localizedDescription(): string {
         return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];
-    }
-
-    get username(): string{
-        return this.email;
     }
 }
