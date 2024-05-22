@@ -25,8 +25,6 @@ export class OnboardingProcessComponent {
 
     isCompanyProcessing!: boolean;
 
-    token!: string;
-
     public get onboardingType(): typeof OnboardingProcessType {
         return OnboardingProcessType;
     }
@@ -76,9 +74,11 @@ export class OnboardingProcessComponent {
                 this.router.navigateByUrl('').then();
             }
 
-            localStorage.setItem('token', this.token)
+            console.log(token);
 
-            const authToken = jwtDecode(this.token as string) as AuthToken;
+            localStorage.setItem('token', token)
+
+            const authToken = jwtDecode(token as string) as AuthToken;
 
             this.companyService.getCompany(authToken.nameid).subscribe((response => {
                 this.company = Object.assign(new Company(), response);
