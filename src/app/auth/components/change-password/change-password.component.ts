@@ -19,7 +19,6 @@ export class ChangePasswordComponent {
     @Input() redirectType!: RedirectType;
     @Input() returnUrl!: string;
     @Input() dialogId!: string;
-    @Input() token!: string;
 
     form!: FormGroup;
 
@@ -70,10 +69,6 @@ export class ChangePasswordComponent {
                     this.notificationService
                         .showNotification(NotificationType.Success,
                             'password-changed-successfully');
-
-                    if (this.token) {
-                        localStorage.setItem('token', this.token);
-                    }
 
                     this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 

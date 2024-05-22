@@ -70,15 +70,17 @@ export class OnboardingProcessComponent {
 
     private getOnboardingEntity() {
         this.activatedRoute.queryParams.subscribe(params => {
-            this.token = params['token'];
+            const token = params['token'];
 
-            if (!this.token) {
+            if (!token) {
                 this.router.navigateByUrl('').then();
             }
 
-            const token = jwtDecode(this.token as string) as AuthToken;
+            localStorage.setItem('token', this.token)
 
-            this.companyService.getCompany(token.nameid).subscribe((response => {
+            const authToken = jwtDecode(this.token as string) as AuthToken;
+
+            this.companyService.getCompany(authToken.nameid).subscribe((response => {
                 this.company = Object.assign(new Company(), response);
                 this.isCompanyProcessing = false;
             }), () => {
