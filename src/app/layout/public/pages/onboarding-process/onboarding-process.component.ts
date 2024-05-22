@@ -18,7 +18,6 @@ import {CompanyService} from "../../../../companies/core/services/company.servic
 export class OnboardingProcessComponent {
     type!: OnboardingProcessType;
     iconType!: string;
-    token!: string;
 
     isLoading = false;
 
@@ -27,6 +26,8 @@ export class OnboardingProcessComponent {
     returnUrl = "my-profile";
 
     isCompanyProcessing!: boolean;
+
+    token!: string;
 
     public get onboardingType(): typeof OnboardingProcessType {
         return OnboardingProcessType;
@@ -44,15 +45,11 @@ export class OnboardingProcessComponent {
                 private router: Router,
                 private notificationService: NotificationService,
                 private companyService: CompanyService) {
-        this.isCompanyProcessing = true;
     }
 
     ngOnInit(): void {
+        this.isCompanyProcessing = true;
         this.listenToResolver();
-
-        if (this.type === this.onboardingType.Accepted) {
-            this.token = this.activatedRoute.snapshot.queryParams['token'];
-        }
     }
 
     listenToResolver(): void {
@@ -70,21 +67,24 @@ export class OnboardingProcessComponent {
                     return;
             }
 
-            if (!this.token) {
-                this.router.navigateByUrl('').then();
-                this.notificationService.showNotification(NotificationType.Error,
-                    'onboardings.error-processing-onboarding-item');
-            } else {
-                const onboardingEntityToken = jwtDecode(this.token as string) as AuthToken;
+            this.activatedRoute.queryParams.subscribe(params => {
+                this.token = params['token'];
 
-                console.log(onboardingEntityToken);
+                if (!this.token) {
+                    this.router.navigateByUrl('').then();
+                }
 
-                this.companyService.getCompany(onboardingEntityToken.nameid)
-                    .subscribe((response) => {
-                        this.company = Object.assign(new Company(), response)
-                        this.isCompanyProcessing = false;
-                    });
-            }
+                const token = jwtDecode(this.token as string) as AuthToken;
+
+                this.companyService.getCompany(token.nameid).subscribe((response => {
+                    this.company = Object.assign(new Company(), response);
+                    this.isCompanyProcessing = false;
+                }), () => {
+                    this.notificationService.showNotification(NotificationType.Error,
+                        "onboardings.error-processing-onboarding-item");
+                    this.isCompanyProcessing = false;
+                })
+            });
         });
     }
 }
