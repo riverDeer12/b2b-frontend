@@ -16,6 +16,22 @@
             </a>
             <span class="ml-1" *ngIf="!website">{{'no-data' | translate }}</span>
         </p>
+        <p *ngIf="entityType === type.Scientist">
+            <i class="pi pi-link label-icon"></i>
+            <label class="ml-1">{{'scientists.croris-link.label' | translate}}</label>
+            <a *ngIf="croRisLink" href="{{croRisLink}}" target="_blank">
+                {{shortExternalLink(croRisLink) ? shortExternalLink(croRisLink) : 'no-data' | translate }}
+            </a>
+            <span class="ml-1" *ngIf="!croRisLink">{{'no-data' | translate }}</span>
+        </p>
+        <p *ngIf="entityType === type.Scientist">
+            <i class="pi pi-link label-icon"></i>
+            <label class="ml-1">{{'scientists.crosbi-link.label' | translate}}</label>
+            <a *ngIf="crosbiLink" href="{{crosbiLink}}" target="_blank">
+                {{shortExternalLink(crosbiLink) ? shortExternalLink(crosbiLink) : 'no-data' | translate }}
+            </a>
+            <span class="ml-1" *ngIf="!crosbiLink">{{'no-data' | translate }}</span>
+        </p>
         <p style="height: 40px;">
             <i class="pi pi-tags label-icon"></i>
             <label class="ml-1">{{'categories.label' | translate}}</label>

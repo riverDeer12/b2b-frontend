@@ -314,6 +314,16 @@
             "default": "Link to Google Scholar",
             "required": "A link to Google Scholar is required."
         },
+        "croris-link": {
+            "default": "CroRis link",
+            "label": "CroRis link:",
+            "required": "A link to CroRis is required."
+        },
+        "crosbi-link": {
+            "default": "CrosBi link",
+            "label": "CrosBi link:",
+            "required": "A link to CrosBi is required."
+        },
         "employment-college": {
             "default": "Employment",
             "required": "Employment is mandatory information."
