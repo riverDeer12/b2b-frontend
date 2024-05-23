@@ -19,6 +19,8 @@ export class Scientist {
     functions!: LocalizedProperty;
     projects!: LocalizedProperty;
     googleScholarLink!: string;
+    croRisLink!: string;
+    crosbiLink!: string;
     categoryTags!: string;
     numberOfViews!: number;
     createdAt!: Date;

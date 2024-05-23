@@ -63,17 +63,15 @@
                         </div>
                         <div class="field field col-md-12" formGroupName="functions">
                             <span class="p-float-label" formGroupName="translations">
-                                <input class="{{validationService.getInputClass(form, 'HR', 'required',
-                                'functions.translations')}}"
-                                       aria-describedby="functions-input-hr"
-                                       pInputText type="text" id="functions-hr" formControlName="HR"/>
+                                <input
+                                    aria-describedby="functions-input-hr"
+                                    pInputText type="text" id="functions-hr" formControlName="HR"/>
                                 <label for="functions-hr">{{ 'scientists.functions.default' | translate }}</label>
                             </span>
                         </div>
                         <div class="field field col-md-12" formGroupName="projects">
                             <span class="p-float-label" formGroupName="translations">
                                 <input
-                                    class="{{validationService.getInputClass(form, 'HR', 'required', 'projects.translations')}}"
                                     aria-describedby="projects-input-hr"
                                     pInputText type="text" id="projects-hr" formControlName="HR"/>
                                 <label for="projects-hr">{{ 'scientists.projects.default' | translate }}</label>
@@ -126,17 +124,16 @@
                         </div>
                         <div class="field field col-md-12" formGroupName="functions">
                             <span class="p-float-label" formGroupName="translations">
-                                <input class="{{validationService.getInputClass(form, 'EN', 'required',
-                                'functions.translations')}}"
-                                       aria-describedby="functions-input-en"
-                                       pInputText type="text" id="functions-en" formControlName="EN"/>
+                                <input
+                                    aria-describedby="functions-input-en"
+                                    pInputText type="text" id="functions-en" formControlName="EN"/>
                                 <label for="functions-en">{{ 'scientists.functions.default' | translate }}</label>
                             </span>
                         </div>
                         <div class="field field col-md-12" formGroupName="projects">
                             <span class="p-float-label" formGroupName="translations">
                                 <input
-                                    class="{{validationService.getInputClass(form, 'EN', 'required', 'projects.translations')}}"
+
                                     aria-describedby="projects-input-en"
                                     pInputText type="text" id="projects-en" formControlName="EN"/>
                                 <label for="projects-en">{{ 'scientists.projects.default' | translate }}</label>
@@ -179,9 +176,9 @@
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
-                        <input class="{{validationService.getInputClass(form, 'website', 'required')}}"
-                               aria-describedby="website-input"
-                               pInputText type="text" id="website" formControlName="website"/>
+                        <input
+                            aria-describedby="website-input"
+                            pInputText type="text" id="website" formControlName="website"/>
                         <label for="website">{{ 'scientists.website.default' | translate }}</label>
                     </span>
                 </div>
@@ -196,6 +193,25 @@
                     <small class="p-error"
                            *ngIf="validationService.hasErrors(form, 'googleScholarLink', 'required')"
                            id="googleScholarLink-input">{{ 'scientists.google-scholar-Link.required' | translate }}</small>
+                </div>
+
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input
+                            aria-describedby="croRisLink-input"
+                            pInputText type="text" id="croRisLink" formControlName="croRisLink"/>
+                        <label
+                            for="croRisLink">{{ 'scientists.croris-link.default' | translate }}</label>
+                    </span>
+                </div>
+                <div class="field field col-md-12">
+                    <span class="p-float-label">
+                        <input
+                            aria-describedby="crosbiLink-input"
+                            pInputText type="text" id="crosbiLink" formControlName="crosbiLink"/>
+                        <label
+                            for="crosbiLink">{{ 'scientists.crosbi-link.default' | translate }}</label>
+                    </span>
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">

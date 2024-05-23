@@ -317,6 +317,16 @@
             "default": "Poveznica na Google Scholar",
             "required": "Poveznica na Google Scholar je obavezan podatak."
         },
+        "croris-link": {
+            "default": "CroRis poveznica",
+            "label": "CroRis poveznica:",
+            "required": "Poveznica na CroRis je obavezan podatak."
+        },
+        "crosbi-link": {
+            "default": "CrosBi poveznica",
+            "label": "CrosBi poveznica:",
+            "required": "Poveznica na CrosBi je obavezan podatak."
+        },
         "employment-college": {
             "default": "Zaposlenje",
             "required": "Zaposlenje je obavezan podatak."
