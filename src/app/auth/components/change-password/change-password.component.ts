@@ -66,8 +66,8 @@ export class ChangePasswordComponent {
         this.entity.username = this.form.get('username')?.value;
         this.entity.password = this.form.get('password')?.value;
         this.entity.confirmPassword = this.form.get('confirmPassword')?.value;
-
-        console.log(this.entity);
+        this.entity.categories = this.entity.categories.map((x: { id: any; }) => x.id)
+        this.entity.newsletterCategories = this.entity.newsletterCategories.map((x: { id: any; }) => x.id)
 
         if(this.entityType == EntityType.Company){
             this.companyService.editCompany(this.entity.id, this.entity).subscribe((response) => {
