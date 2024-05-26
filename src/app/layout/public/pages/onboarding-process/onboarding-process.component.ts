@@ -74,8 +74,6 @@ export class OnboardingProcessComponent {
                 this.router.navigateByUrl('').then();
             }
 
-            console.log(token);
-
             localStorage.setItem('token', token)
 
             const authToken = jwtDecode(token as string) as AuthToken;

@@ -10,7 +10,7 @@
             <p-tabPanel *ngIf="formType === type.Edit"
                         header="{{ 'auth.username-password' | translate }}" class="line-height-3 m-0">
                 <div class="p-fluid">
-                    <auth-change-password [username]="this.company.username"
+                    <auth-change-password [entity]="this.company"
                                           [entityType]="entityType"
                                           [redirectType]="redirectType.NoRedirect"></auth-change-password>
                 </div>
