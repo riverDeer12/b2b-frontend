@@ -11,6 +11,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
 import {UploadType} from "../../../custom-controls/core/types/upload-type";
 import {AuthService} from "../../../auth/core/services/auth.service";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'company-general-form',
@@ -43,6 +44,7 @@ export class CompanyGeneralFormComponent {
         private authService: AuthService,
         private fb: FormBuilder,
         private router: Router,
+        private sharedService: SharedService,
         private notificationService: NotificationService,
         private companyService: CompanyService) {
     }
@@ -87,6 +89,8 @@ export class CompanyGeneralFormComponent {
             categories: new FormControl('', Validators.required),
             categoryTags: new FormControl('', Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**
@@ -117,6 +121,8 @@ export class CompanyGeneralFormComponent {
             categories: new FormControl(this.company.categories.map(x => x.id), Validators.required),
             categoryTags: new FormControl(this.company.categoryTags?.split(";")?.slice(0, -1), Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**

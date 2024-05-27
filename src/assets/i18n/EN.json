@@ -1071,6 +1071,10 @@
                 "content": "Collected data undergoes a verification process to ensure accuracy and reliability. Cross-referencing with existing records and databases to validate the information."
             }
         }
+    },
+    "pending-changes": {
+        "title": "Unsaved Changes",
+        "description": "You have unsaved changes on the form. Are you sure you want to leave the form?"
     }
 }
 

@@ -8,6 +8,7 @@ import {CategoriesResolver} from '../categories/core/resolvers/categories.resolv
 import {CompanyJobOffersResolver} from '../job-offers/core/resolvers/company-job-offers.resolver';
 import {CompanyProductsResolver} from '../products/core/resolvers/company-products.resolver';
 import {CompanyCreateComponent} from "./pages/company-create/company-create.component";
+import {PendingChangesGuard} from "../shared/guards/pending-changes.guard";
 
 export const CompaniesRoutes: Routes = [
     {
@@ -20,6 +21,7 @@ export const CompaniesRoutes: Routes = [
     {
         path: 'edit/:id',
         component: CompanyEditComponent,
+        canDeactivate: [PendingChangesGuard],
         resolve: {
             company: CompanyResolver,
             categories: CategoriesResolver,
@@ -31,6 +33,7 @@ export const CompaniesRoutes: Routes = [
     {
         path: 'create',
         component: CompanyCreateComponent,
+        canDeactivate: [PendingChangesGuard],
         resolve: {
             categories: CategoriesResolver
         }

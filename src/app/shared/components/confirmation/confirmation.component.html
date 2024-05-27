@@ -1,0 +1,23 @@
+<div
+    *ngIf='!loadingDescription'
+    class='font-weight-bold pb-4 flex align-items-center'
+>
+    <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+    <span class="text-lg">{{ description | translate }}</span>
+</div>
+
+<p-footer style="float: right;">
+    <p-button
+        (click)='reject()'
+        icon='pi pi-times'
+        styleClass="mr-3 p-button-outlined"
+        iconPos='left'
+        label="{{'no' | translate }}"
+    ></p-button>
+    <p-button
+        (click)='confirm()'
+        icon='pi pi-check'
+        iconPos='left'
+        label="{{'yes' | translate }}"
+    ></p-button>
+</p-footer>

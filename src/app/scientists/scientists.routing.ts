@@ -6,6 +6,7 @@ import {ScientistsResolver} from './core/resolvers/scientists.resolver';
 import {ScientistSpecificKnowledgeResolver} from "../specific-knowledge/core/resolvers/scientist-specific-knowledge.resolver";
 import {ScientistEquipmentResolver} from "../equipment/core/resolvers/scientist-equipment.resolver";
 import {CategoriesResolver} from "../categories/core/resolvers/categories.resolver";
+import {PendingChangesGuard} from "../shared/guards/pending-changes.guard";
 
 export const ScientistsRoutes: Routes = [
     {
@@ -18,6 +19,7 @@ export const ScientistsRoutes: Routes = [
     {
         path: 'edit/:id',
         component: ScientistEditComponent,
+        canDeactivate: [PendingChangesGuard],
         resolve: {
             scientist: ScientistResolver,
             specificKnowledge: ScientistSpecificKnowledgeResolver,
