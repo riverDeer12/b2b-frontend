@@ -704,6 +704,7 @@
             "required": "Naziv klijenta je obavezan podatak.",
             "not-unique": "Naziv klijenta već postoji."
         },
+        "edit": "Uređivanje klijenta",
         "created-at": "Datum kreiranja",
         "api-key": "Tajni ključ klijenta",
         "api-key-copied": "Tajni ključ klijenta je kopiran.",
@@ -715,7 +716,10 @@
         "successfully-updated": "Klijent je uspješno ažuriran.",
         "confirm-delete-action": "Jeste li sigurni?",
         "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabranog klijenta.",
-        "successfully-deleted": "Klijent je uspješno izbrisan."
+        "successfully-deleted": "Klijent je uspješno izbrisan.",
+        "can-fetch-entities": "Dohvaćanje podataka svih entiteta",
+        "can-create-and-update-news": "Uređivanje i objava novosti",
+        "can-update-category-tags": "Uređivanje ključnih riječi"
     },
     "newsletters": {
         "default": "Newsletteri",

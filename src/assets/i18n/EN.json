@@ -697,6 +697,7 @@
             "required": "Client name is required.",
             "not-unique": "Client name is not unique."
         },
+        "edit": "Edit Client",
         "created-at": "Created At",
         "api-key": "Secret Key",
         "api-key-copied": "Secret Key Copied.",
@@ -708,7 +709,10 @@
         "successfully-updated": "Client is successfully updated.",
         "confirm-delete-action": "Are you sure?",
         "confirm-delete-message": "Confirming the action will delete the selected client.",
-        "successfully-deleted": "Client is deleted successfully."
+        "successfully-deleted": "Client is deleted successfully.",
+        "can-fetch-entities": "Fetching data of all entities",
+        "can-create-and-update-news": "Editing and publishing news",
+        "can-update-category-tags": "Editing category tags"
     },
     "newsletters": {
         "default": "Newsletters",
