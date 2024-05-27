@@ -1075,5 +1075,9 @@
                 "content": "Prikupljeni podaci prolaze kroz proces provjere kako bi se osigurala točnost i pouzdanost. Unakrsna provjera s postojećim zapisima i bazama podataka za validaciju informacija."
             }
         }
+    },
+    "pending-changes": {
+        "title": "Nespremljene promjene",
+        "description": "Imate nespremljene promjene na formi. Jeste li sigurni da želite napustiti formu?"
     }
 }

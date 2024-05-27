@@ -7,34 +7,39 @@ import {Category} from '../../../categories/core/models/category';
 import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Product} from "../../../products/core/models/product";
 import {EntityDocument} from "../../../custom-controls/core/model/entity-document";
+import {PendingChangesComponent} from "../../../shared/guards/pending-changes.guard";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'company-edit',
     templateUrl: './company-edit.component.html',
     styleUrls: ['./company-edit.component.scss']
 })
-export class CompanyEditComponent {
+export class CompanyEditComponent implements PendingChangesComponent{
     returnUrl = '/admin/companies';
-
     formType = FormType.Edit;
-
     company!: Company;
-
     researchProblems!: ResearchProblem[];
-
     jobOffers!: JobOffer[];
-
     categories!: Category[];
-
     products!: Product[];
-
     documents!: EntityDocument[];
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    pendingChanges!: boolean;
+
+    constructor(private activatedRoute: ActivatedRoute,
+                private sharedService: SharedService) {
         this.listenToResolver();
     }
 
     ngOnInit(): void {
+        this.listenToPendingChanges();
+    }
+
+    private listenToPendingChanges(): void {
+        this.sharedService.getPendingChangesStatus().subscribe((pendingChanges: boolean) => {
+            this.pendingChanges = pendingChanges;
+        });
     }
 
     private listenToResolver() {

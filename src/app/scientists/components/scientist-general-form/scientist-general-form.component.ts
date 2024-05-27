@@ -10,6 +10,7 @@ import {Category} from "../../../categories/core/models/category";
 import {ValidationService} from "../../../shared/services/validation.service";
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {UploadType} from "../../../custom-controls/core/types/upload-type";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'scientist-general-form',
@@ -40,6 +41,7 @@ export class ScientistGeneralFormComponent {
         public validationService: ValidationService,
         private fb: FormBuilder,
         private router: Router,
+        private sharedService: SharedService,
         private notificationService: NotificationService,
         private scientistService: ScientistService) {
     }
@@ -103,6 +105,8 @@ export class ScientistGeneralFormComponent {
             categories: new FormControl('', Validators.required),
             categoryTags: new FormControl('', Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**
@@ -152,6 +156,8 @@ export class ScientistGeneralFormComponent {
             categories: new FormControl(this.scientist.categories.map(x => x.id), Validators.required),
             categoryTags: new FormControl(this.scientist.categoryTags.split(";").slice(0,-1), Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**

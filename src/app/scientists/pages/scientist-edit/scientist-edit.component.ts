@@ -6,13 +6,15 @@ import {ActivatedRoute} from '@angular/router';
 import {Scientist} from '../../core/models/scientist';
 import {SpecificKnowledge} from "../../../specific-knowledge/core/models/specific-knowledge";
 import {Equipment} from "../../../equipment/core/models/equipment";
+import {PendingChangesComponent} from "../../../shared/guards/pending-changes.guard";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'scientist-edit',
     templateUrl: './scientist-edit.component.html',
     styleUrls: ['./scientist-edit.component.scss']
 })
-export class ScientistEditComponent {
+export class ScientistEditComponent implements PendingChangesComponent {
     returnUrl = '/admin/scientists';
     formType = FormType.Edit;
 
@@ -21,11 +23,22 @@ export class ScientistEditComponent {
     specificKnowledge!: SpecificKnowledge[];
     equipment!: Equipment[];
 
-    constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
+    pendingChanges!: boolean;
+
+    constructor(private translateService: TranslateService,
+                private sharedService: SharedService,
+                private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
     }
 
     ngOnInit(): void {
+        this.listenToPendingChanges();
+    }
+
+    private listenToPendingChanges(): void {
+        this.sharedService.getPendingChangesStatus().subscribe((pendingChanges: boolean) => {
+            this.pendingChanges = pendingChanges;
+        });
     }
 
     private listenToResolver() {
