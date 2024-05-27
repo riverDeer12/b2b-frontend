@@ -1,20 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FinancingSourcesDetailsComponent} from './financing-sources-details/financing-sources-details.component';
 import {
     FinancingSourcesDataTableComponent
 } from './financing-sources-data-table/financing-sources-data-table.component';
+import {FinancingSourceDetailsComponent} from "./financing-source-details/financing-source-details.component";
 
 @NgModule({
     declarations: [
-        FinancingSourcesDetailsComponent,
+        FinancingSourceDetailsComponent,
         FinancingSourcesDataTableComponent
     ],
     imports: [
         CommonModule
     ],
     exports: [
-        FinancingSourcesDetailsComponent,
+        FinancingSourceDetailsComponent,
         FinancingSourcesDataTableComponent
     ]
 })

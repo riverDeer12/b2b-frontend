@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {FinancingSource} from "../../core/models/financing-source";
 
 @Component({
   selector: 'financing-sources-data-table',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./financing-sources-data-table.component.scss']
 })
 export class FinancingSourcesDataTableComponent {
-
+    @Input() financingSources!: FinancingSource[];
 }
