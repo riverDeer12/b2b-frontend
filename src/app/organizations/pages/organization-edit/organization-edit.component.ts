@@ -5,28 +5,37 @@ import {ActivatedRoute} from '@angular/router';
 import {Organization} from '../../core/models/organization';
 import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
 import {Category} from '../../../categories/core/models/category';
+import {PendingChangesComponent} from "../../../shared/guards/pending-changes.guard";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'organization-edit',
     templateUrl: './organization-edit.component.html',
     styleUrls: ['./organization-edit.component.scss']
 })
-export class OrganizationEditComponent {
+export class OrganizationEditComponent implements PendingChangesComponent {
     returnUrl = '/admin/organizations';
-
     formType = FormType.Edit;
-
     organization!: Organization;
-
     researchProblems!: ResearchProblem[];
-
     categories!: Category[];
 
-    constructor(private translateService: TranslateService, private activatedRoute: ActivatedRoute) {
+    pendingChanges!: boolean;
+
+    constructor(private translateService: TranslateService,
+                private sharedService: SharedService,
+                private activatedRoute: ActivatedRoute) {
         this.listenToResolver();
     }
 
     ngOnInit(): void {
+        this.listenToPendingChanges();
+    }
+
+    private listenToPendingChanges(): void {
+        this.sharedService.getPendingChangesStatus().subscribe((pendingChanges: boolean) => {
+            this.pendingChanges = pendingChanges;
+        });
     }
 
     private listenToResolver() {

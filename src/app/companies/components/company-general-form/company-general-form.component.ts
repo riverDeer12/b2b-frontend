@@ -11,6 +11,7 @@ import {EntityType} from '../../../auth/core/enums/entity-type';
 import {Category} from '../../../categories/core/models/category';
 import {UploadType} from "../../../custom-controls/core/types/upload-type";
 import {AuthService} from "../../../auth/core/services/auth.service";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'company-general-form',
@@ -43,6 +44,7 @@ export class CompanyGeneralFormComponent {
         private authService: AuthService,
         private fb: FormBuilder,
         private router: Router,
+        private sharedService: SharedService,
         private notificationService: NotificationService,
         private companyService: CompanyService) {
     }
@@ -74,19 +76,21 @@ export class CompanyGeneralFormComponent {
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl('', Validators.required),
-                    EN: new FormControl('', Validators.required)
+                    HR: new FormControl(''),
+                    EN: new FormControl('')
                 })
             }),
             address: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
             taxCode: new FormControl('', Validators.required),
-            website: new FormControl('', Validators.required),
+            website: new FormControl(''),
             numberOfEmployees: new FormControl('', Validators.required),
             newsletterCategories: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
             categoryTags: new FormControl('', Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**
@@ -104,19 +108,21 @@ export class CompanyGeneralFormComponent {
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl(this.company.projects.translations.HR, Validators.required),
-                    EN: new FormControl(this.company.projects.translations.EN, Validators.required)
+                    HR: new FormControl(this.company.projects.translations.HR),
+                    EN: new FormControl(this.company.projects.translations.EN)
                 })
             }),
             address: new FormControl(this.company.address, Validators.required),
             email: new FormControl(this.company.email, Validators.required),
             taxCode: new FormControl(this.company.taxCode, Validators.required),
-            website: new FormControl(this.company.website, Validators.required),
+            website: new FormControl(this.company.website),
             numberOfEmployees: new FormControl(this.company.numberOfEmployees, Validators.required),
             newsletterCategories: new FormControl(this.company.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.company.categories.map(x => x.id), Validators.required),
             categoryTags: new FormControl(this.company.categoryTags?.split(";")?.slice(0, -1), Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**

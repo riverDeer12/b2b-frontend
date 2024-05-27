@@ -7,6 +7,7 @@ import {
     OrganizationResearchProblemsResolver
 } from "../research-problems/core/resolvers/organization-research-problems.resolver";
 import {CategoriesResolver} from '../categories/core/resolvers/categories.resolver';
+import {PendingChangesGuard} from "../shared/guards/pending-changes.guard";
 
 export const OrganizationsRoutes: Routes = [
     {
@@ -19,6 +20,7 @@ export const OrganizationsRoutes: Routes = [
     {
         path: 'edit/:id',
         component: OrganizationEditComponent,
+        canDeactivate: [PendingChangesGuard],
         resolve: {
             organization: OrganizationResolver,
             categories: CategoriesResolver,

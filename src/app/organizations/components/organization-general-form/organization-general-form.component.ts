@@ -10,6 +10,7 @@ import {Category} from '../../../categories/core/models/category';
 import {ValidationService} from "../../../shared/services/validation.service";
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {UploadType} from "../../../custom-controls/core/types/upload-type";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'organization-general-form',
@@ -40,6 +41,7 @@ export class OrganizationGeneralFormComponent {
         public validationService: ValidationService,
         private fb: FormBuilder,
         private router: Router,
+        private sharedService: SharedService,
         private organizationService: OrganizationService,
         private notificationService: NotificationService) {
     }
@@ -70,11 +72,13 @@ export class OrganizationGeneralFormComponent {
             }),
             address: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
-            website: new FormControl('', Validators.required),
+            website: new FormControl(''),
             newsletterCategories: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
             categoryTags: new FormControl('', Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**
@@ -92,11 +96,13 @@ export class OrganizationGeneralFormComponent {
             }),
             address: new FormControl(this.organization.address, Validators.required),
             email: new FormControl(this.organization.email, Validators.required),
-            website: new FormControl(this.organization.website, Validators.required),
+            website: new FormControl(this.organization.website),
             newsletterCategories: new FormControl(this.organization.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.organization.categories.map(x => x.id), Validators.required),
             categoryTags: new FormControl(this.organization.categoryTags.split(";").slice(0,-1), Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**

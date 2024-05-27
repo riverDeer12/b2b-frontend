@@ -1,4 +1,5 @@
 export enum RedirectType {
     Page,
-    CloseDialog
+    CloseDialog,
+    NoRedirect
 }

@@ -10,6 +10,7 @@ import {Category} from "../../../categories/core/models/category";
 import {ValidationService} from "../../../shared/services/validation.service";
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {UploadType} from "../../../custom-controls/core/types/upload-type";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'scientist-general-form',
@@ -40,6 +41,7 @@ export class ScientistGeneralFormComponent {
         public validationService: ValidationService,
         private fb: FormBuilder,
         private router: Router,
+        private sharedService: SharedService,
         private notificationService: NotificationService,
         private scientistService: ScientistService) {
     }
@@ -82,25 +84,29 @@ export class ScientistGeneralFormComponent {
             }),
             functions: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl('', Validators.required),
-                    EN: new FormControl('', Validators.required)
+                    HR: new FormControl(''),
+                    EN: new FormControl('')
                 })
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl('', Validators.required),
-                    EN: new FormControl('', Validators.required)
+                    HR: new FormControl(''),
+                    EN: new FormControl('')
                 })
             }),
             firstname: new FormControl('', Validators.required),
             lastname: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
-            website: new FormControl('', Validators.required),
+            website: new FormControl(''),
             googleScholarLink: new FormControl('', Validators.required),
+            croRisLink: new FormControl(''),
+            crosbiLink: new FormControl(''),
             newsletterCategories: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
             categoryTags: new FormControl('', Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**
@@ -129,25 +135,29 @@ export class ScientistGeneralFormComponent {
             }),
             functions: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl(this.scientist.functions.translations.HR, Validators.required),
-                    EN: new FormControl(this.scientist.functions.translations.EN, Validators.required)
+                    HR: new FormControl(this.scientist.functions.translations.HR),
+                    EN: new FormControl(this.scientist.functions.translations.EN)
                 })
             }),
             projects: this.fb.group({
                 translations: this.fb.group({
-                    HR: new FormControl(this.scientist.projects.translations.HR, Validators.required),
-                    EN: new FormControl(this.scientist.projects.translations.EN, Validators.required)
+                    HR: new FormControl(this.scientist.projects.translations.HR),
+                    EN: new FormControl(this.scientist.projects.translations.EN)
                 })
             }),
             firstname: new FormControl(this.scientist.firstname, Validators.required),
             lastname: new FormControl(this.scientist.lastname, Validators.required),
             email: new FormControl(this.scientist.email, Validators.required),
-            website: new FormControl(this.scientist.website, Validators.required),
+            website: new FormControl(this.scientist.website),
             googleScholarLink: new FormControl(this.scientist.googleScholarLink, Validators.required),
+            croRisLink: new FormControl(this.scientist.croRisLink, Validators.required),
+            crosbiLink: new FormControl(this.scientist.crosbiLink, Validators.required),
             newsletterCategories: new FormControl(this.scientist.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.scientist.categories.map(x => x.id), Validators.required),
             categoryTags: new FormControl(this.scientist.categoryTags.split(";").slice(0,-1), Validators.required)
         })
+
+        this.sharedService.broadcastFormChanges(this.form);
     }
 
     /**

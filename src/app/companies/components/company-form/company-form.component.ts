@@ -8,6 +8,7 @@ import {JobOffer} from '../../../job-offers/core/models/job-offer';
 import {Product} from '../../../products/core/models/product';
 import {EntityDocument} from "../../../custom-controls/core/model/entity-document";
 import {AuthService} from "../../../auth/core/services/auth.service";
+import {RedirectType} from "../../../shared/enums/redirect-type";
 
 @Component({
     selector: 'company-form',
@@ -31,6 +32,11 @@ export class CompanyFormComponent {
     public get type(): typeof FormType {
         return FormType;
     }
+
+    public get redirectType(): typeof RedirectType {
+        return RedirectType;
+    }
+
 
     entityType: EntityType = EntityType.Company;
 

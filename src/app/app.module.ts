@@ -11,6 +11,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {DefaultInterceptor} from './shared/interceptors/default.interceptor';
+import {DialogService} from "primeng/dynamicdialog";
 
 /**
  * Translations loader.
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     providers: [
         MessageService,
+        DialogService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: DefaultInterceptor,

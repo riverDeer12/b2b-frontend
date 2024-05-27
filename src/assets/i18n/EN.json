@@ -314,6 +314,16 @@
             "default": "Link to Google Scholar",
             "required": "A link to Google Scholar is required."
         },
+        "croris-link": {
+            "default": "CroRis link",
+            "label": "CroRis link:",
+            "required": "A link to CroRis is required."
+        },
+        "crosbi-link": {
+            "default": "CrosBi link",
+            "label": "CrosBi link:",
+            "required": "A link to CrosBi is required."
+        },
         "employment-college": {
             "default": "Employment",
             "required": "Employment is mandatory information."
@@ -884,7 +894,9 @@
         },
         "send-email-notifications": "Send email notifications",
         "emails-send-successfully": "Email notifications were sent successfully.",
-        "error-sending-emails": "Error sending email notifications."
+        "error-sending-emails": "Error sending email notifications.",
+        "error-processing-onboarding-item": "Error in processing onboarding entity.",
+        "complete-by-changing-password": "Complete your registration by setting your password"
     },
     "newsletter-type": {
         "platform-news": "Platform News",
@@ -1059,6 +1071,10 @@
                 "content": "Collected data undergoes a verification process to ensure accuracy and reliability. Cross-referencing with existing records and databases to validate the information."
             }
         }
+    },
+    "pending-changes": {
+        "title": "Unsaved Changes",
+        "description": "You have unsaved changes on the form. Are you sure you want to leave the form?"
     }
 }
 
