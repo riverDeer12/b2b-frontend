@@ -894,7 +894,76 @@
         "error-sending-emails": "Greška prilikom slanja email obavijesti."
     },
     "financing-sources": {
-        "default": "Izvori financiranja"
+        "default": "Izvori financiranja",
+        "view-of-data": "Pregled podataka",
+        "no-financing-sources-data": "Nema podataka o izvorima financiranja.",
+        "title": {
+            "default": "Naziv poziva",
+            "label": "Naziv poziva:",
+            "required": "Naziv poziva je obvezan podatak."
+        },
+        "geographic-coverage": {
+            "default": "Zemljopisno područje",
+            "label": "Zemljopisno područje:",
+            "required": "Zemljopisno područje je obvezan podatak."
+        },
+        "priority": {
+            "default": "Prioritet",
+            "label": "Prioritet:",
+            "required": "Prioritet je obvezan podatak."
+        },
+        "specific-objective": {
+            "default": "Specifični cilj",
+            "label": "Specifični cilj:",
+            "required": "Specifični cilj je obvezan podatak."
+        },
+        "objectives": {
+            "default": "Ciljevi poziva",
+            "label": "Ciljevi poziva:",
+            "required": "Ciljevi poziva su obvezan podatak."
+        },
+        "type": {
+            "default": "Vrsta poziva",
+            "label": "Vrsta poziva:",
+            "required": "Vrsta poziva je obvezan podatak."
+        },
+        "eligible-activities-description": {
+            "default": "Kratki opis prihvatljivih aktivnosti",
+            "label": "Kratki opis prihvatljivih aktivnosti:",
+            "required": "Kratki opis prihvatljivih aktivnosti je obvezan podatak."
+        },
+        "eligible-applicants-type": {
+            "default": "Vrsta prihvatljivih podnositelja",
+            "label": "Vrsta prihvatljivih podnositelja:",
+            "required": "Vrsta prihvatljivih podnositelja je obvezan podatak."
+        },
+        "total-grant-amount": {
+            "default": "Ukupni iznos bespovratnih sredstava",
+            "label": "Ukupni iznos bespovratnih sredstava:",
+            "required": "Ukupni iznos bespovratnih sredstava je obvezan podatak."
+        },
+        "support-intensity": {
+            "default": "Indikativni intenzitet potpore",
+            "label": "Indikativni intenzitet potpore:",
+            "required": "Indikativni intenzitet potpore je obvezan podatak."
+        },
+        "start-date": {
+            "default": "Indikativni datum početka poziva",
+            "label": "Indikativni datum početka poziva:",
+            "required": "Indikativni datum početka poziva je obvezan podatak."
+        },
+        "end-date": {
+            "default": "Indikativni datum završetka poziva",
+            "label": "Indikativni datum završetka poziva:",
+            "required": "Indikativni datum završetka poziva je obvezan podatak."
+        },
+        "is-currently-active": {
+            "default": "Aktivnost",
+            "label": "Aktivnost:",
+            "required": "Aktivnost je obvezan podatak."
+        },
+        "active": "Aktivan",
+        "not-active": "Neaktivan"
     },
     "newsletter-type": {
         "platform-news": "Vijesti sa platforme",

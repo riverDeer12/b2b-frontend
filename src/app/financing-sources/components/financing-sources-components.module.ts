@@ -4,6 +4,11 @@ import {
     FinancingSourcesDataTableComponent
 } from './financing-sources-data-table/financing-sources-data-table.component';
 import {FinancingSourceDetailsComponent} from "./financing-source-details/financing-source-details.component";
+import {TableModule} from "primeng/table";
+import {InputTextModule} from "primeng/inputtext";
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
     declarations: [
@@ -11,7 +16,12 @@ import {FinancingSourceDetailsComponent} from "./financing-source-details/financ
         FinancingSourcesDataTableComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        TableModule,
+        InputTextModule,
+        ButtonModule,
+        RippleModule,
+        TranslateModule
     ],
     exports: [
         FinancingSourceDetailsComponent,

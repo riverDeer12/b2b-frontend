@@ -887,7 +887,76 @@
         "error-sending-emails": "Error sending email notifications."
     },
     "financing-sources": {
-        "default": "Financing Sources"
+        "default": "Financing Sources",
+        "view-of-data": "Data Overview",
+        "no-financing-sources-data": "No financing sources data available.",
+        "title": {
+            "default": "Call Title",
+            "label": "Call Title:",
+            "required": "Call Title is a required field."
+        },
+        "geographic-coverage": {
+            "default": "Geographic Coverage",
+            "label": "Geographic Coverage:",
+            "required": "Geographic Coverage is a required field."
+        },
+        "priority": {
+            "default": "Priority",
+            "label": "Priority:",
+            "required": "Priority is a required field."
+        },
+        "specific-objective": {
+            "default": "Specific Objective",
+            "label": "Specific Objective:",
+            "required": "Specific Objective is a required field."
+        },
+        "objectives": {
+            "default": "Call Objectives",
+            "label": "Call Objectives:",
+            "required": "Call Objectives are required fields."
+        },
+        "type": {
+            "default": "Call Type",
+            "label": "Call Type:",
+            "required": "Call Type is a required field."
+        },
+        "eligible-activities-description": {
+            "default": "Brief Description of Eligible Activities",
+            "label": "Brief Description of Eligible Activities:",
+            "required": "Brief Description of Eligible Activities is a required field."
+        },
+        "eligible-applicants-type": {
+            "default": "Type of Eligible Applicants",
+            "label": "Type of Eligible Applicants:",
+            "required": "Type of Eligible Applicants is a required field."
+        },
+        "total-grant-amount": {
+            "default": "Total Grant Amount",
+            "label": "Total Grant Amount:",
+            "required": "Total Grant Amount is a required field."
+        },
+        "support-intensity": {
+            "default": "Indicative Support Intensity",
+            "label": "Indicative Support Intensity:",
+            "required": "Indicative Support Intensity is a required field."
+        },
+        "start-date": {
+            "default": "Indicative Start Date of the Call",
+            "label": "Indicative Start Date of the Call:",
+            "required": "Indicative Start Date of the Call is a required field."
+        },
+        "end-date": {
+            "default": "Indicative End Date of the Call",
+            "label": "Indicative End Date of the Call:",
+            "required": "Indicative End Date of the Call is a required field."
+        },
+        "is-currently-active": {
+            "default": "Activity",
+            "label": "Activity:",
+            "required": "Activity is a required field."
+        },
+        "active": "Active",
+        "not-active": "Not Active"
     },
     "newsletter-type": {
         "platform-news": "Platform News",
