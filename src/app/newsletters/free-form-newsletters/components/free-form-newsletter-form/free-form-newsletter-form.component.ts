@@ -48,7 +48,6 @@ export class FreeFormNewsletterFormComponent {
     constructor(public validationService: ValidationService,
                 private fb: FormBuilder,
                 private router: Router,
-                private languageService: LanguageService,
                 private notificationService: NotificationService,
                 private newsletterService: FreeFormNewsletterService) {
     }
@@ -80,12 +79,12 @@ export class FreeFormNewsletterFormComponent {
             sendToAllCompanies: new FormControl(false),
             sendToAllScientists: new FormControl(false),
             sendToAllPublicOrganizations: new FormControl(false),
-            companies: new FormControl('',),
-            organizations: new FormControl('',),
-            scientists: new FormControl('',),
-            recipients: new FormControl(''),
-            includeCategoryIds: new FormControl(''),
-            includeUserTags: new FormControl('')
+            companies: new FormControl([],),
+            organizations: new FormControl([],),
+            scientists: new FormControl([],),
+            recipients: new FormControl([]),
+            includeCategoryIds: new FormControl([]),
+            includeUserTags: new FormControl([])
         })
     }
 
