@@ -1,11 +1,7 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {FinancingSource} from "../../core/models/financing-source";
-import {ConfirmationService} from "primeng/api";
-import {SharedService} from "../../../shared/services/shared.service";
-import {NotificationService} from "../../../shared/services/notification.service";
 import {Router} from "@angular/router";
 import {Table} from "primeng/table";
-import {FinancingSourceService} from "../../core/services/financing-source.service";
 
 @Component({
     selector: 'financing-sources-data-table',
@@ -17,11 +13,7 @@ export class FinancingSourcesDataTableComponent implements OnInit {
 
     @ViewChild('filter') filter!: ElementRef;
 
-    constructor(private confirmationService: ConfirmationService,
-                private financingSourceService: FinancingSourceService,
-                private sharedService: SharedService,
-                private notificationService: NotificationService,
-                private router: Router) {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
