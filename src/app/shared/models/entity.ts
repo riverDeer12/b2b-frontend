@@ -63,6 +63,8 @@ export class Entity {
         switch (type) {
             case EntityType.News:
                 return entity.content.translations[localStorage.getItem('language') as keyof TranslationsObject];
+            case EntityType.FinancingSource:
+                return entity.specificObjective;
             default:
                 return entity.localizedDescription;
         }
@@ -92,6 +94,8 @@ export class Entity {
                 return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             case EntityType.Product:
                 return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
+            case EntityType.FinancingSource:
+                return entity.title;
             default:
                 return '';
         }

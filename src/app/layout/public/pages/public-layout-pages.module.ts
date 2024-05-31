@@ -43,6 +43,7 @@ import {MailAlreadyConfirmedComponent} from './mail-already-confirmed/mail-alrea
 import {UnsubscribedComponent} from './unsubscribed/unsubscribed.component';
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {OnboardingProcessComponent} from './onboarding-process/onboarding-process.component';
+import { PublicFinancingSourcesComponent } from './public-financing-sources/public-financing-sources.component';
 
 @NgModule({
     declarations: [
@@ -67,7 +68,8 @@ import {OnboardingProcessComponent} from './onboarding-process/onboarding-proces
         MailAlreadyConfirmedComponent,
         UnsubscribedComponent,
         NotFoundComponent,
-        OnboardingProcessComponent
+        OnboardingProcessComponent,
+        PublicFinancingSourcesComponent
     ],
     imports: [
         CommonModule,

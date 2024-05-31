@@ -53,6 +53,8 @@ import {UnsubscribedComponent} from "./pages/unsubscribed/unsubscribed.component
 import {OnboardingProcessComponent} from "./pages/onboarding-process/onboarding-process.component";
 import {OnboardingProcessType} from "./core/types/onboarding-process-type";
 import {OnboardingProcessResolver} from "./core/resolvers/onboarding/onboarding-process.resolver";
+import {PublicFinancingSourcesComponent} from "./pages/public-financing-sources/public-financing-sources.component";
+import {PublicFinancingSourcesResolver} from "./core/resolvers/financing-sources/public-financing-sources.resolver";
 
 export const PublicLayoutRoutes: Routes = [
     {
@@ -250,6 +252,13 @@ export const PublicLayoutRoutes: Routes = [
         component: PublicMostPopularComponent,
         resolve: {
             mostPopular: MostPopularResolver
+        }
+    },
+    {
+        path: 'financing-sources',
+        component: PublicFinancingSourcesComponent,
+        resolve: {
+            financingSources: PublicFinancingSourcesResolver
         }
     },
     {
