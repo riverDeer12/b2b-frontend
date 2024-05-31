@@ -1,7 +1,6 @@
-<!-- financing-source.component.html -->
+
 <div class="financing-source-container">
     <h4>{{ 'financing-sources.view-of-data' | translate }}</h4>
-
     <div>
         <div class="field">
             <label>{{ 'financing-sources.title.label' | translate }}</label>
@@ -37,19 +36,19 @@
         </div>
         <div class="field">
             <label>{{ 'financing-sources.total-grant-amount.label' | translate }}</label>
-            <p>{{ financingSource.totalGrantAmount | currency }}</p>
+            <p>{{ financingSource.totalGrantAmount | currency :'EUR' }}</p>
         </div>
         <div class="field">
             <label>{{ 'financing-sources.support-intensity.label' | translate }}</label>
-            <p>{{ financingSource.supportIntensity }}%</p>
+            <p>{{ financingSource.supportIntensity | percent }}</p>
         </div>
         <div class="field">
             <label>{{ 'financing-sources.start-date.label' | translate }}</label>
-            <p>{{ financingSource.startDate | date }}</p>
+            <p>{{ financingSource.startDate | date: 'dd.MM.yyyy.' }}</p>
         </div>
         <div class="field">
             <label>{{ 'financing-sources.end-date.label' | translate }}</label>
-            <p>{{ financingSource.endDate | date }}</p>
+            <p>{{ financingSource.endDate | date: 'dd.MM.yyyy.' }}</p>
         </div>
     </div>
 </div>
