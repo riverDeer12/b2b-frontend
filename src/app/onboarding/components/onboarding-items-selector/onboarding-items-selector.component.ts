@@ -58,4 +58,17 @@ export class OnboardingItemsSelectorComponent {
                 this.isLoading = false;
             })
     }
+
+    /**
+     * Get content for email preview
+     * so user can preview whole free
+     * form newsletter before sending.
+     */
+    showPreview(): void {
+        this.onboardingService.getEmailPreviewContent()
+            .subscribe((response: any) => {
+                window.open(URL.createObjectURL(new Blob([response["emailBodyHtml"]],
+                    {type: 'text/html'})));
+            })
+    }
 }
