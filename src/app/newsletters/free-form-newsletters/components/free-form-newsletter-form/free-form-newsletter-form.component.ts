@@ -34,10 +34,6 @@ export class FreeFormNewsletterFormComponent {
 
     editorModules = DEFAULT_EDITOR_CONFIG;
 
-    isPreviewVisible!: boolean;
-
-    emailPreviewContent: any;
-
     public get recipientType(): typeof RecipientType {
         return RecipientType;
     }
@@ -169,10 +165,8 @@ export class FreeFormNewsletterFormComponent {
 
         this.newsletterService.getEmailPreviewContent(requestData)
             .subscribe((response: any) => {
-                this.emailPreviewContent = response["emailBodyHtml"];
                 window.open(URL.createObjectURL(new Blob([response["emailBodyHtml"]],
                     {type: 'text/html'})));
-                this.isPreviewVisible = true;
             })
     }
 }
