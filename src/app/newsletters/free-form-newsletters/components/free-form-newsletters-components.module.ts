@@ -24,6 +24,7 @@ import {CategoriesComponentsModule} from "../../../categories/components/categor
 import {
     SpecialCategoriesComponentsModule
 } from "../../../special-categories/components/special-categories-components.module";
+import {DialogModule} from "primeng/dialog";
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {
         SharedModule,
         MultiSelectModule,
         CategoriesComponentsModule,
-        SpecialCategoriesComponentsModule
+        SpecialCategoriesComponentsModule,
+        DialogModule
     ],
     providers: [
         ConfirmationService,
