@@ -25,8 +25,6 @@ export class EntityDetailsComponent implements OnInit {
 
     entityItem!: any;
 
-    simpleEntity!: boolean;
-
     entityCategories!: Category[];
 
     researchProblems!: ResearchProblem[];
