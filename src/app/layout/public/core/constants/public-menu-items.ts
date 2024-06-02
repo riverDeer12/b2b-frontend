@@ -97,6 +97,12 @@ export const PublicMenuItems: MenuItem[] = [
         ]
     },
     {
+        label: 'financing-sources.default',
+        routerLink: '/financing-sources',
+        routerLinkActiveOptions: {exact: true},
+        expanded: false
+    },
+    {
         label: 'activities.default',
         routerLink: '/most-popular',
         routerLinkActiveOptions: {exact: true},

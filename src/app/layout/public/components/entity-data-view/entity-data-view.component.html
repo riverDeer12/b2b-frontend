@@ -7,7 +7,7 @@
                 <label>{{ 'keyword' | translate }}</label>
             </span>
         </div>
-        <div class="flex mt-3">
+        <div class="flex mt-3" *ngIf="entityHasCategories()">
             <span class="p-input-icon-left w-full">
                 <categories-selector
                     controlName="filterCategories"

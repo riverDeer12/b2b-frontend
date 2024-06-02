@@ -3,7 +3,7 @@
         <p-card styleClass="my-4" [header]="entity.getTitle(entityItem, currentEntityType)">
             <ng-template pTemplate="header">
                 <img alt="Card"
-                     [src]="entityItem.image ?? 'assets/layout/images/image-default.png'"/>
+                     [src]="getImageSource()"/>
             </ng-template>
             <ng-template pTemplate="content">
                 <p *ngIf="currentEntityType === entityType.News">
@@ -56,7 +56,7 @@
                         </p-tag>
                     </p>
                 </div>
-                <p *ngIf="currentEntityType !== entityType.News">
+                <p *ngIf="entityHasCategories()">
                     <i class="pi pi-tags label-icon"></i>
                     <label class="mx-1">{{'categories.label' | translate }}</label>
                     <p-tag *ngFor="let category of entityCategories">
@@ -64,12 +64,17 @@
                     </p-tag>
                 </p>
                 <p>
-                    <i *ngIf="currentEntityType !== entityType.News" class="pi pi-info-circle label-icon"></i>
-                    <label *ngIf="currentEntityType !== entityType.News"
+                    <i *ngIf="entityHasDescription()" class="pi pi-info-circle label-icon"></i>
+                    <label *ngIf="entityHasDescription()"
                            class="mx-1">{{'description.label' | translate }}</label>
                     <span
+                        *ngIf="currentEntityType !== entityType.FinancingSource"
                         [innerHTML]="entity.getDescription(entityItem, currentEntityType) ?
                         entity.getDescription(entityItem, currentEntityType)  : 'no-data' | translate"></span>
+
+                    <financing-source-details
+                        *ngIf="currentEntityType === entityType.FinancingSource"
+                        [financingSource]="entityItem "></financing-source-details>
                 </p>
                 <div class="text-center mt-5" *ngIf="hasResearchProblems">
                     <h3>{{'research-problems.default' | translate}}</h3>

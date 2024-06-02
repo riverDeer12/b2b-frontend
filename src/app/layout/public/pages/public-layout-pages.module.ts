@@ -43,7 +43,10 @@ import {MailAlreadyConfirmedComponent} from './mail-already-confirmed/mail-alrea
 import {UnsubscribedComponent} from './unsubscribed/unsubscribed.component';
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {OnboardingProcessComponent} from './onboarding-process/onboarding-process.component';
-import {AuthComponentsModule} from "../../../auth/components/auth-components.module";
+import { PublicFinancingSourcesComponent } from './public-financing-sources/public-financing-sources.component';
+import {
+    FinancingSourcesComponentsModule
+} from "../../../financing-sources/components/financing-sources-components.module";
 
 @NgModule({
     declarations: [
@@ -68,7 +71,8 @@ import {AuthComponentsModule} from "../../../auth/components/auth-components.mod
         MailAlreadyConfirmedComponent,
         UnsubscribedComponent,
         NotFoundComponent,
-        OnboardingProcessComponent
+        OnboardingProcessComponent,
+        PublicFinancingSourcesComponent
     ],
     imports: [
         CommonModule,
@@ -90,7 +94,7 @@ import {AuthComponentsModule} from "../../../auth/components/auth-components.mod
         TabViewModule,
         ActivitiesPagesModule,
         ActivitiesComponentsModule,
-        AuthComponentsModule
+        FinancingSourcesComponentsModule
     ],
     exports: [
         AboutUsComponent,

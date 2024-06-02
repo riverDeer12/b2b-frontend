@@ -45,4 +45,18 @@ export class SimpleEntityCardComponent {
             this.router.navigateByUrl(this.parentEntityType + '/details/' + this.parentEntityId).then() :
             this.router.navigateByUrl(this.entityType + '/details/' + this.entityId).then();
     }
+
+    getImageSource(): string {
+
+        if(this.imageLink){
+            return this.imageLink;
+        }
+
+        switch (this.entityType){
+            case EntityType.FinancingSource:
+                return 'assets/layout/images/financing_sources_default.jpeg';
+            default:
+                return 'assets/layout/images/image-default.png';
+        }
+    }
 }

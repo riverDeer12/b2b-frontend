@@ -1,0 +1,81 @@
+<div class="mt-4">
+    <h4>{{'financing-sources.view-of-data' | translate }}</h4>
+</div>
+
+<p-table #financingSourcesTable [rowHover]="true"
+         [showLoader]="true"
+         [value]="data"
+         dataKey="id"
+         [rows]="5" [showCurrentPageReport]="true"
+         [rowsPerPageOptions]="[5, 10, 20]"
+         [paginator]="true"
+         currentPageReportTemplate="{first} {{'to' | translate }} {last}
+         {{'results' | translate }} {{'from' | translate }}
+         {totalRecords} {{'results' | translate }}"
+         [tableStyle]="{'min-width':'75rem'}"
+         responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:10%"></th>
+            <th pSortableColumn="title">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'financing-sources.title.default' | translate }}
+                    <p-sortIcon field="title"></p-sortIcon>
+                    <p-columnFilter type="text" field="title" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="geographicCoverage">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'financing-sources.geographic-coverage.default' | translate }}
+                    <p-sortIcon field="geographicCoverage"></p-sortIcon>
+                    <p-columnFilter type="text" field="geographicCoverage" display="menu"
+                                    class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="type">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'financing-sources.type.default' | translate }}
+                    <p-sortIcon field="type"></p-sortIcon>
+                    <p-columnFilter type="text" field="type" display="menu"
+                                    class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            <th pSortableColumn="isCurrentlyActive">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'financing-sources.is-currently-active.default' | translate }}
+                    <p-sortIcon field="isCurrentlyActive"></p-sortIcon>
+                    <p-columnFilter type="text" field="isCurrentlyActive" display="menu"
+                                    class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-financingSource>
+        <tr>
+            <td class="d-flex">
+                <button type="button" class="p-button m-1" pButton pRipple
+                        (click)="goToInfoPage(financingSource.id)"
+                        icon="pi pi-info"></button>
+            </td>
+            <td>
+                {{financingSource.title}}
+            </td>
+            <td>
+                {{financingSource.geographicCoverage}}
+            </td>
+            <td>
+                {{financingSource.type}}
+            </td>
+            <td>
+                {{'financing-sources.' + getActivityText(financingSource) | translate }}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="5">{{'financing-sources.no-financing-sources-found' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+

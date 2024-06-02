@@ -4,6 +4,7 @@ import {Organization} from '../../organizations/core/models/organization';
 import {Company} from 'src/app/companies/core/models/company';
 import {News} from 'src/app/news/core/models/news';
 import {TranslationsObject} from './localized-property';
+import {FinancingSource} from "../../financing-sources/core/models/financing-source";
 
 export class Entity {
     title!: string;
@@ -17,6 +18,7 @@ export class Entity {
             case EntityType.Equipment:
             case EntityType.SpecificKnowledge:
             case EntityType.Product:
+            case EntityType.FinancingSource:
                 return true;
             default:
                 return false;
@@ -48,6 +50,10 @@ export class Entity {
                 let news = new News();
                 news = Object.assign(new News(), response['entity']);
                 return news;
+            case EntityType.FinancingSource:
+                let financingSource = new FinancingSource();
+                financingSource = Object.assign(new FinancingSource(), response['entity']);
+                return financingSource;
             default:
                 return {};
         }
@@ -63,6 +69,8 @@ export class Entity {
         switch (type) {
             case EntityType.News:
                 return entity.content.translations[localStorage.getItem('language') as keyof TranslationsObject];
+            case EntityType.FinancingSource:
+                return entity.eligibleActivitiesDescription;
             default:
                 return entity.localizedDescription;
         }
@@ -92,6 +100,8 @@ export class Entity {
                 return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
             case EntityType.Product:
                 return entity.title.translations[localStorage.getItem('language') as keyof TranslationsObject];
+            case EntityType.FinancingSource:
+                return entity.title;
             default:
                 return '';
         }
