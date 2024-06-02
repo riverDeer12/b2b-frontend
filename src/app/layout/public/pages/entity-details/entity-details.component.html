@@ -3,7 +3,7 @@
         <p-card styleClass="my-4" [header]="entity.getTitle(entityItem, currentEntityType)">
             <ng-template pTemplate="header">
                 <img alt="Card"
-                     [src]="entityItem.image ?? 'assets/layout/images/image-default.png'"/>
+                     [src]="getImageSource()"/>
             </ng-template>
             <ng-template pTemplate="content">
                 <p *ngIf="currentEntityType === entityType.News">
@@ -40,7 +40,7 @@
                         </p-tag>
                     </p>
                 </div>
-                <p *ngIf="currentEntityType !== entityType.News">
+                <p *ngIf="entityHasCategories()">
                     <i class="pi pi-tags label-icon"></i>
                     <label class="mx-1">{{'categories.label' | translate }}</label>
                     <p-tag *ngFor="let category of entityCategories">

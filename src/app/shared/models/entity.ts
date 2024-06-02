@@ -17,6 +17,7 @@ export class Entity {
             case EntityType.Equipment:
             case EntityType.SpecificKnowledge:
             case EntityType.Product:
+            case EntityType.FinancingSource:
                 return true;
             default:
                 return false;
@@ -64,7 +65,7 @@ export class Entity {
             case EntityType.News:
                 return entity.content.translations[localStorage.getItem('language') as keyof TranslationsObject];
             case EntityType.FinancingSource:
-                return entity.specificObjective;
+                return entity.eligibleActivitiesDescription;
             default:
                 return entity.localizedDescription;
         }

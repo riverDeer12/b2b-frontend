@@ -4,7 +4,6 @@ import {Category} from '../../../../categories/core/models/category';
 import {Entity} from '../../../../shared/models/entity';
 import {SharedService} from '../../../../shared/services/shared.service';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {Product} from "../../../../products/core/models/product";
 
 @Component({
     selector: 'entity-data-view',
@@ -31,6 +30,10 @@ export class EntityDataViewComponent {
 
     public get entity(): typeof Entity {
         return Entity;
+    }
+
+    public get type(): typeof EntityType {
+        return EntityType;
     }
 
     constructor(private sharedService: SharedService, private fb: FormBuilder) {
@@ -140,5 +143,14 @@ export class EntityDataViewComponent {
      */
     onFilter(eventTarget: any) {
         this.filterEntities(eventTarget.value);
+    }
+
+    entityHasCategories(): boolean {
+        switch (this.entityType) {
+            case EntityType.FinancingSource:
+                return false;
+            default:
+                return true;
+        }
     }
 }
