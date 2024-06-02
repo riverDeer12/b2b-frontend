@@ -47,6 +47,7 @@ import { PublicFinancingSourcesComponent } from './public-financing-sources/publ
 import {
     FinancingSourcesComponentsModule
 } from "../../../financing-sources/components/financing-sources-components.module";
+import {AuthComponentsModule} from "../../../auth/components/auth-components.module";
 
 @NgModule({
     declarations: [
@@ -94,7 +95,8 @@ import {
         TabViewModule,
         ActivitiesPagesModule,
         ActivitiesComponentsModule,
-        FinancingSourcesComponentsModule
+        FinancingSourcesComponentsModule,
+        AuthComponentsModule
     ],
     exports: [
         AboutUsComponent,
