@@ -3,7 +3,6 @@ import {FormType} from "../../../../shared/enums/form-type";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ValidationService} from "../../../../shared/services/validation.service";
 import {Router} from "@angular/router";
-import {LanguageService} from "../../../../shared/services/language.service";
 import {NotificationService} from "../../../../shared/services/notification.service";
 import {NotificationType} from "../../../../shared/enums/notification-type";
 import {FreeFormNewsletter, Recipient, RecipientType} from "../../core/models/free-form-newsletter";
@@ -29,13 +28,15 @@ export class FreeFormNewsletterFormComponent {
 
     isLoading: boolean = false;
 
-    translateLoading: boolean = false;
-
     form!: FormGroup;
 
     finalRecipients = [];
 
     editorModules = DEFAULT_EDITOR_CONFIG;
+
+    isPreviewVisible!: boolean;
+
+    emailPreviewContent: any;
 
     public get recipientType(): typeof RecipientType {
         return RecipientType;
@@ -151,5 +152,27 @@ export class FreeFormNewsletterFormComponent {
 
     triggerEntitySelector(recipientType: string) {
         this.form.controls[recipientType].setValue([]);
+    }
+
+    /**
+     * Get content for email preview
+     * so user can preview whole free
+     * form newsletter before sending.
+     */
+    showPreview(): void {
+
+        const requestData = {
+            title: this.form.controls['title'].value,
+            content: this.form.controls['content'].value,
+            language: 0
+        };
+
+        this.newsletterService.getEmailPreviewContent(requestData)
+            .subscribe((response: any) => {
+                this.emailPreviewContent = response["emailBodyHtml"];
+                window.open(URL.createObjectURL(new Blob([response["emailBodyHtml"]],
+                    {type: 'text/html'})));
+                this.isPreviewVisible = true;
+            })
     }
 }

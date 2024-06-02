@@ -770,7 +770,8 @@
             "create": "Create new free form newsletter",
             "successfully-created": "Newsletter successfully created.",
             "error-creating": "Error creating newsletter.",
-            "confirm-delete-message": "By confirming this message newsletter will be deleted."
+            "confirm-delete-message": "By confirming this message newsletter will be deleted.",
+            "email-preview-header": "Newsletter's preview"
         }
     },
     "onboardings": {

@@ -777,7 +777,8 @@
             "create": "Kreiraj novi free form newsletter",
             "successfully-created": "Uspješno kreiran i poslan free form newsletter.",
             "error-creating": "Greška prilikom slanja free form newslettera.",
-            "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter."
+            "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabrani free form newsletter.",
+            "email-preview-header": "Predpregled newslettera"
         }
     },
     "onboardings": {
