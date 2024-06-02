@@ -4,6 +4,7 @@ import {Organization} from '../../organizations/core/models/organization';
 import {Company} from 'src/app/companies/core/models/company';
 import {News} from 'src/app/news/core/models/news';
 import {TranslationsObject} from './localized-property';
+import {FinancingSource} from "../../financing-sources/core/models/financing-source";
 
 export class Entity {
     title!: string;
@@ -49,6 +50,10 @@ export class Entity {
                 let news = new News();
                 news = Object.assign(new News(), response['entity']);
                 return news;
+            case EntityType.FinancingSource:
+                let financingSource = new FinancingSource();
+                financingSource = Object.assign(new FinancingSource(), response['entity']);
+                return financingSource;
             default:
                 return {};
         }

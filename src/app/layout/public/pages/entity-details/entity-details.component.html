@@ -48,12 +48,17 @@
                     </p-tag>
                 </p>
                 <p>
-                    <i *ngIf="currentEntityType !== entityType.News" class="pi pi-info-circle label-icon"></i>
-                    <label *ngIf="currentEntityType !== entityType.News"
+                    <i *ngIf="entityHasDescription()" class="pi pi-info-circle label-icon"></i>
+                    <label *ngIf="entityHasDescription()"
                            class="mx-1">{{'description.label' | translate }}</label>
                     <span
+                        *ngIf="currentEntityType !== entityType.FinancingSource"
                         [innerHTML]="entity.getDescription(entityItem, currentEntityType) ?
                         entity.getDescription(entityItem, currentEntityType)  : 'no-data' | translate"></span>
+
+                    <financing-source-details
+                        *ngIf="currentEntityType === entityType.FinancingSource"
+                        [financingSource]="entityItem "></financing-source-details>
                 </p>
                 <div class="text-center mt-5" *ngIf="hasResearchProblems">
                     <h3>{{'research-problems.default' | translate}}</h3>

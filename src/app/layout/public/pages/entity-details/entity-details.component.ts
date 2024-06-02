@@ -196,4 +196,14 @@ export class EntityDetailsComponent implements OnInit {
                 return true;
         }
     }
+
+    entityHasDescription() {
+        switch (this.currentEntityType) {
+            case EntityType.News:
+            case EntityType.FinancingSource:
+                return false;
+            default:
+                return true;
+        }
+    }
 }
