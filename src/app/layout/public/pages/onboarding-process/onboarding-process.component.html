@@ -12,10 +12,17 @@
                     </div>
                     <h1 class="text-900 font-bold text-4xl lg:text-5xl mb-2">{{ 'onboardings.' + type + '.title' | translate }}</h1>
                     <span class="text-600 mb-5">{{ 'onboardings.' + type + '.text' | translate }}</span>
-                    <p-button *ngIf="type == onboardingType.Accepted" (onClick)="loginUser()"
-                              styleClass="w-full" icon="pi pi-sign-in" iconPos="right" type="submit"
-                              label="{{'auth.login' | translate }}"
-                              [loading]="isLoading"></p-button>
+
+                    <div *ngIf="type == onboardingType.Accepted && !isCompanyProcessing">
+                        <h4>
+                            {{'onboardings.complete-by-changing-password' | translate }}
+                        </h4>
+                        <auth-change-password
+                            [entity]="company"
+                            [redirectType]="redirectType.Page"
+                            [entityType]="entityType.Company"
+                            [returnUrl]="returnUrl"></auth-change-password>
+                    </div>
                 </div>
             </div>
         </div>

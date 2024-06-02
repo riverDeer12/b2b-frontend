@@ -26,6 +26,8 @@ import {ProductsComponentsModule} from "../products/components/products-componen
 import {ClientsComponentsModule} from "../clients/components/clients-components.module";
 import {EntitySelectorComponent} from './components/entity-selector/entity-selector.component';
 import {MultiSelectModule} from "primeng/multiselect";
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import {InputTextareaModule} from "primeng/inputtextarea";
 
 @NgModule({
     declarations: [
@@ -35,6 +37,7 @@ import {MultiSelectModule} from "primeng/multiselect";
         LanguageSelectorComponent,
         LoaderComponent,
         EntitySelectorComponent,
+        ConfirmationComponent,
     ],
     imports: [
         CommonModule,
@@ -56,7 +59,8 @@ import {MultiSelectModule} from "primeng/multiselect";
         ProgressSpinnerModule,
         ProductsComponentsModule,
         ClientsComponentsModule,
-        MultiSelectModule
+        MultiSelectModule,
+        InputTextareaModule
     ],
     exports: [
         ActivityComponent,

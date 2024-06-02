@@ -317,6 +317,16 @@
             "default": "Poveznica na Google Scholar",
             "required": "Poveznica na Google Scholar je obavezan podatak."
         },
+        "croris-link": {
+            "default": "CroRis poveznica",
+            "label": "CroRis poveznica:",
+            "required": "Poveznica na CroRis je obavezan podatak."
+        },
+        "crosbi-link": {
+            "default": "CrosBi poveznica",
+            "label": "CrosBi poveznica:",
+            "required": "Poveznica na CrosBi je obavezan podatak."
+        },
         "employment-college": {
             "default": "Zaposlenje",
             "required": "Zaposlenje je obavezan podatak."
@@ -694,6 +704,7 @@
             "required": "Naziv klijenta je obavezan podatak.",
             "not-unique": "Naziv klijenta već postoji."
         },
+        "edit": "Uređivanje klijenta",
         "created-at": "Datum kreiranja",
         "api-key": "Tajni ključ klijenta",
         "api-key-copied": "Tajni ključ klijenta je kopiran.",
@@ -705,7 +716,10 @@
         "successfully-updated": "Klijent je uspješno ažuriran.",
         "confirm-delete-action": "Jeste li sigurni?",
         "confirm-delete-message": "Potvrdom akcije ćete izbrisati odabranog klijenta.",
-        "successfully-deleted": "Klijent je uspješno izbrisan."
+        "successfully-deleted": "Klijent je uspješno izbrisan.",
+        "can-fetch-entities": "Dohvaćanje podataka svih entiteta",
+        "can-create-and-update-news": "Uređivanje i objava novosti",
+        "can-update-category-tags": "Uređivanje ključnih riječi"
     },
     "newsletters": {
         "default": "Newsletteri",
@@ -891,7 +905,9 @@
         },
         "send-email-notifications": "Slanje email obavijesti",
         "emails-send-successfully": "Email obavijesti su uspješno poslane.",
-        "error-sending-emails": "Greška prilikom slanja email obavijesti."
+        "error-sending-emails": "Greška prilikom slanja email obavijesti.",
+        "error-processing-onboarding-item": "Pogreška prilikom potvrde entiteta.",
+        "complete-by-changing-password": "Kako bi završili registraciju potrebno je postaviti lozinku"
     },
     "financing-sources": {
         "default": "Izvori financiranja",
@@ -1135,5 +1151,9 @@
                 "content": "Prikupljeni podaci prolaze kroz proces provjere kako bi se osigurala točnost i pouzdanost. Unakrsna provjera s postojećim zapisima i bazama podataka za validaciju informacija."
             }
         }
+    },
+    "pending-changes": {
+        "title": "Nespremljene promjene",
+        "description": "Imate nespremljene promjene na formi. Jeste li sigurni da želite napustiti formu?"
     }
 }

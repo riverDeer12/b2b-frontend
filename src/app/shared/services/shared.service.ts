@@ -5,7 +5,7 @@ import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import {Category} from '../../categories/core/models/category';
+import { FormGroup } from '@angular/forms';
 
 /**
  * Helper service for most common actions
@@ -16,10 +16,32 @@ import {Category} from '../../categories/core/models/category';
 })
 export class SharedService {
 
+    /**
+     * Broadcast form changes
+     * to trigger service.
+     *
+     * @param formToCheck form group
+     * that is broadcasting.
+     * @param isFormSubmitted if true than
+     * pending changes should be ignored.
+     */
+    broadcastFormChanges(formToCheck: FormGroup, isFormSubmitted?: boolean): void {
+        formToCheck.valueChanges.subscribe((_) => {
+            if (isFormSubmitted) {
+                this.setPendingChangesStatus(false);
+                return;
+            }
+
+            this.setPendingChangesStatus(formToCheck.dirty);
+        });
+    }
+
+
     parentEntityType: Subject<EntityType> = new Subject<EntityType>();
     dialogCloseStatus: Subject<string> = new Subject<string>();
     filterDataChange: Subject<string> = new Subject<string>();
     categoriesChanged: Subject<string[]> = new Subject<string[]>();
+    formPendingChanges = new Subject<boolean>();
 
     constructor(private router: Router, private http: HttpClient) {
     }
@@ -63,6 +85,10 @@ export class SharedService {
      * @param dialogId id of dialog that needs to be closed.
      */
     redirectUserAfterSubmit(redirectType: RedirectType, returnUrl?: string, dialogId?: string): void {
+        if (redirectType == RedirectType.NoRedirect) {
+            return;
+        }
+
         if (redirectType == RedirectType.Page) {
             this.router.navigateByUrl(returnUrl as string).then();
             return;
@@ -127,5 +153,24 @@ export class SharedService {
             return this.http.post(environment.apiUrl + '/' + parentEntityPrefix + '/'
                 + type + '/' + id + '/flip-active', {});
         }
+    }
+
+    /**
+     * Method that sets
+     * and triggers new
+     * form status.
+     * @param pendingChanges true if
+     * there are pending changes on form group.
+     */
+    setPendingChangesStatus(pendingChanges: boolean) {
+        this.formPendingChanges.next(pendingChanges);
+    }
+
+    /**
+     * Method that listens on
+     * party create form pending changes.
+     */
+    getPendingChangesStatus(): Subject<boolean> {
+        return this.formPendingChanges;
     }
 }

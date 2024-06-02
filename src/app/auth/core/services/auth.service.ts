@@ -188,4 +188,9 @@ export class AuthService {
 
         return decodedToken.isEditor == "true";
     }
+
+    loggedEntityId(token: string): string {
+        const decodedToken = jwtDecode(token) as AuthToken;
+        return decodedToken.nameid;
+    }
 }

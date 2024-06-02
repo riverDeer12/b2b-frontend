@@ -5,4 +5,7 @@ export class Client {
     numberOfUsages!: number;
     createdAt!: Date;
     isActive!: boolean;
+    canFetchEntities!: boolean;
+    canCreateAndUpdateNews!: boolean;
+    canUpdateCategoryTags!: boolean;
 }

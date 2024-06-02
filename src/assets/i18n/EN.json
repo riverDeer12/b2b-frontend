@@ -314,6 +314,16 @@
             "default": "Link to Google Scholar",
             "required": "A link to Google Scholar is required."
         },
+        "croris-link": {
+            "default": "CroRis link",
+            "label": "CroRis link:",
+            "required": "A link to CroRis is required."
+        },
+        "crosbi-link": {
+            "default": "CrosBi link",
+            "label": "CrosBi link:",
+            "required": "A link to CrosBi is required."
+        },
         "employment-college": {
             "default": "Employment",
             "required": "Employment is mandatory information."
@@ -687,6 +697,7 @@
             "required": "Client name is required.",
             "not-unique": "Client name is not unique."
         },
+        "edit": "Edit Client",
         "created-at": "Created At",
         "api-key": "Secret Key",
         "api-key-copied": "Secret Key Copied.",
@@ -698,7 +709,10 @@
         "successfully-updated": "Client is successfully updated.",
         "confirm-delete-action": "Are you sure?",
         "confirm-delete-message": "Confirming the action will delete the selected client.",
-        "successfully-deleted": "Client is deleted successfully."
+        "successfully-deleted": "Client is deleted successfully.",
+        "can-fetch-entities": "Fetching data of all entities",
+        "can-create-and-update-news": "Editing and publishing news",
+        "can-update-category-tags": "Editing category tags"
     },
     "newsletters": {
         "default": "Newsletters",
@@ -884,7 +898,9 @@
         },
         "send-email-notifications": "Send email notifications",
         "emails-send-successfully": "Email notifications were sent successfully.",
-        "error-sending-emails": "Error sending email notifications."
+        "error-sending-emails": "Error sending email notifications.",
+        "error-processing-onboarding-item": "Error in processing onboarding entity.",
+        "complete-by-changing-password": "Complete your registration by setting your password"
     },
     "financing-sources": {
         "default": "Financing Sources",
@@ -1131,6 +1147,10 @@
                 "content": "Collected data undergoes a verification process to ensure accuracy and reliability. Cross-referencing with existing records and databases to validate the information."
             }
         }
+    },
+    "pending-changes": {
+        "title": "Unsaved Changes",
+        "description": "You have unsaved changes on the form. Are you sure you want to leave the form?"
     }
 }
 

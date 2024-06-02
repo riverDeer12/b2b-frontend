@@ -18,6 +18,8 @@ export class EntityCardComponent {
     @Input() entityType!: EntityType;
     @Input() address!: string;
     @Input() website!: string;
+    @Input() croRisLink!: string;
+    @Input() crosbiLink!: string;
     @Input() externalLink!: string;
 
     categories!: any[];
@@ -37,12 +39,12 @@ export class EntityCardComponent {
             Object.assign(new Product(), x));
     }
 
-    get shortExternalLink(): string {
-        if (this.externalLink.length < 20) {
+    shortExternalLink(externalLink: string): string {
+        if (externalLink?.length < 20) {
             return this.externalLink;
         }
 
-        return this.externalLink.slice(0, 20) + '...';
+        return externalLink.slice(0, 20) + '...';
     }
 
     get shortWebsite(): string {

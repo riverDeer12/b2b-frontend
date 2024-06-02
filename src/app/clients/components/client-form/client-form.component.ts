@@ -54,7 +54,10 @@ export class ClientFormComponent {
     private initCreateForm(): void {
         this.form = this.fb.group({
             isActive: new FormControl(true),
-            name: new FormControl('', Validators.required)
+            name: new FormControl('', Validators.required),
+            canFetchEntities: new FormControl(true),
+            canCreateAndUpdateNews: new FormControl(false),
+            canUpdateCategoryTags: new FormControl(false)
         })
     }
 
@@ -65,7 +68,10 @@ export class ClientFormComponent {
     private initEditForm(): void {
         this.form = this.fb.group({
             isActive: new FormControl(this.client.isActive),
-            name: new FormControl(this.client.name, Validators.required)
+            name: new FormControl(this.client.name, Validators.required),
+            canFetchEntities: new FormControl(this.client.canFetchEntities),
+            canCreateAndUpdateNews: new FormControl(this.client.canCreateAndUpdateNews),
+            canUpdateCategoryTags: new FormControl(this.client.canUpdateCategoryTags)
         })
     }
 

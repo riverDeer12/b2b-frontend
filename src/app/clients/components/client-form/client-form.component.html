@@ -3,7 +3,8 @@
         <div class="col-12">
             <div class="p-fluid">
                 <div class="field field col-md-12">
-                    <p-checkbox formControlName="isActive" [binary]="true" label="{{'activity' | translate}}"></p-checkbox>
+                    <p-checkbox formControlName="isActive" [binary]="true"
+                                label="{{'activity' | translate}}"></p-checkbox>
                 </div>
                 <div class="field field col-md-12">
                     <span class="p-float-label">
@@ -17,6 +18,18 @@
                     <small class="p-error"
                            *ngIf="validationService.hasErrors(form, 'name', 'required')"
                            id="name-input-hr">{{ 'clients.name.required' | translate }}</small>
+                </div>
+                <div class="field field col-md-12">
+                    <p-checkbox formControlName="canFetchEntities" [binary]="true"
+                                label="{{'clients.can-fetch-entities' | translate}}"></p-checkbox>
+                </div>
+                <div class="field field col-md-12">
+                    <p-checkbox formControlName="canCreateAndUpdateNews" [binary]="true"
+                                label="{{'clients.can-create-and-update-news' | translate}}"></p-checkbox>
+                </div>
+                <div class="field field col-md-12">
+                    <p-checkbox formControlName="canUpdateCategoryTags" [binary]="true"
+                                label="{{'clients.can-update-category-tags' | translate}}"></p-checkbox>
                 </div>
                 <div class="col-6 ml-0 pl-0">
                     <p-button iconPos="right" class="mt-3" type="submit"
