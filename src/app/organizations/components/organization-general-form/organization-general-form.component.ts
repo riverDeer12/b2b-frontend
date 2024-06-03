@@ -167,6 +167,8 @@ export class OrganizationGeneralFormComponent {
 
             this.router.navigateByUrl(this.returnUrl).then();
 
+            this.sharedService.setPendingChangesStatus(false);
+
             this.isLoading = false;
 
         }, () => {

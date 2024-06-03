@@ -222,6 +222,8 @@ export class ScientistGeneralFormComponent {
 
                 this.router.navigateByUrl(this.returnUrl).then();
 
+                this.sharedService.setPendingChangesStatus(false);
+
                 this.isLoading = false;
             },
             (error) => {
