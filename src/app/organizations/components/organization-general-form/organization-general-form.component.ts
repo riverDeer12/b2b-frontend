@@ -75,7 +75,8 @@ export class OrganizationGeneralFormComponent {
             website: new FormControl(''),
             newsletterCategories: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
-            categoryTags: new FormControl('', Validators.required)
+            categoryTags: new FormControl('', Validators.required),
+            automaticProfileUpdateConsent: new FormControl('')
         })
 
         this.sharedService.broadcastFormChanges(this.form);
@@ -99,7 +100,8 @@ export class OrganizationGeneralFormComponent {
             website: new FormControl(this.organization.website),
             newsletterCategories: new FormControl(this.organization.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.organization.categories.map(x => x.id), Validators.required),
-            categoryTags: new FormControl(this.organization.categoryTags.split(";").slice(0,-1), Validators.required)
+            categoryTags: new FormControl(this.organization.categoryTags.split(";").slice(0,-1), Validators.required),
+            automaticProfileUpdateConsent: new FormControl(this.organization.automaticProfileUpdateConsent)
         })
 
         this.sharedService.broadcastFormChanges(this.form);

@@ -1,7 +1,7 @@
 <form [formGroup]="form" (submit)="submit()">
     <div class="p-fluid">
         <div class="field field col-md-12 text-center" *ngIf="formType === type.Edit">
-            <img class="profile-picture" [src]="company.imageUrl" height="250" width="250">
+            <img class="profile-picture" [src]="company.imageUrl" height="250" width="250" alt="image">
         </div>
         <div class="field field col-md-12" *ngIf="formType === type.Edit">
             <profile-picture
@@ -119,8 +119,8 @@
         <div class="field field col-md-12">
             <span class="p-float-label">
                 <input
-                       aria-describedby="website-input"
-                       pInputText type="text" id="website" formControlName="website"/>
+                    aria-describedby="website-input"
+                    pInputText type="text" id="website" formControlName="website"/>
                 <label for="website">{{ 'companies.website.default' | translate }}</label>
             </span>
         </div>
@@ -177,6 +177,10 @@
             <small class="p-error"
                    *ngIf="validationService.hasErrors(form, 'categoryTags', 'required')"
                    id="tags-input">{{ 'categories.tags.required' | translate }}</small>
+        </div>
+        <div class="field field col-md-12">
+            <p-checkbox formControlName="automaticProfileUpdateConsent" [binary]="true"
+                        label="{{'profile-update-consent.default' | translate}}"></p-checkbox>
         </div>
         <div class="col-12 ml-0 p-0">
             <translate-button
