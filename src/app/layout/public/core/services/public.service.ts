@@ -11,6 +11,7 @@ import {Organization} from "../../../../organizations/core/models/organization";
 import {SpecificKnowledge} from '../../../../specific-knowledge/core/models/specific-knowledge';
 import {Product} from '../../../../products/core/models/product';
 import {EntityType} from "../../../../auth/core/enums/entity-type";
+import {FinancingSource} from "../../../../financing-sources/core/models/financing-source";
 
 @Injectable({
     providedIn: 'root'
@@ -73,4 +74,7 @@ export class PublicService {
             this.http.post(this.publicUrl + entityType.toString() + '/keywords', {
                 keywords: keywords
             });
+
+    getFinancingSources = () =>
+        this.http.get<FinancingSource[]>(this.publicUrl + 'financing-sources');
 }

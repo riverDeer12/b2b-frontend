@@ -26,7 +26,8 @@ export class FreeFormNewsletterService {
      *
      * @param id free form newsletter entity identifier.
      */
-    getFreeFormNewsletter = (id: string) => this.http.get<NewsletterAdditionalContent>(this.freeFormNewslettersUrl + id);
+    getFreeFormNewsletter = (id: string) =>
+        this.http.get<NewsletterAdditionalContent>(this.freeFormNewslettersUrl + id);
 
     /**
      * Sending form data to create
@@ -34,7 +35,8 @@ export class FreeFormNewsletterService {
      *
      * @param postData data for creating new free form newsletter entity.
      */
-    createFreeFormNewsletter = (postData: NewsletterAdditionalContent) => this.http.post(this.freeFormNewslettersUrl, postData);
+    createFreeFormNewsletter = (postData: NewsletterAdditionalContent) =>
+        this.http.post(this.freeFormNewslettersUrl, postData);
 
     /**
      * Sending form data to update
@@ -52,4 +54,8 @@ export class FreeFormNewsletterService {
      * @param id free form newsletter entity identifier.
      */
     deleteFreeFormNewsletter = (id: string) => this.http.delete(this.freeFormNewslettersUrl + id);
+
+
+    getEmailPreviewContent = (formData: any) =>
+        this.http.post(this.freeFormNewslettersUrl + 'preview', formData)
 }

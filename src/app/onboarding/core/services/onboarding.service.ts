@@ -23,4 +23,6 @@ export class OnboardingService {
 
     sendEmails = (batchId: string, postData: any) =>
         this.http.post(this.endpointUrl + batchId + '/notify', postData)
+
+    getEmailPreviewContent = () => this.http.get(this.endpointUrl + 'email-preview')
 }

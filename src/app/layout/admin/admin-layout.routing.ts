@@ -13,6 +13,7 @@ import {ClientsComponent} from "../../clients/clients.component";
 import {NewslettersComponent} from "../../newsletters/newsletters.component";
 import {SpecialCategoriesComponent} from "../../special-categories/special-categories.component";
 import {OnboardingComponent} from "../../onboarding/onboarding.component";
+import {FinancingSourcesComponent} from "../../financing-sources/financing-sources.component";
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -84,5 +85,10 @@ export const AdminLayoutRoutes: Routes = [
         path: 'onboardings',
         component: OnboardingComponent,
         loadChildren: () => import('../../onboarding/onboarding.module').then(m => m.OnboardingModule)
+    },
+    {
+        path: 'financing-sources',
+        component: FinancingSourcesComponent,
+        loadChildren: () => import('../../financing-sources/financing-sources.module').then(m => m.FinancingSourcesModule)
     }
 ]

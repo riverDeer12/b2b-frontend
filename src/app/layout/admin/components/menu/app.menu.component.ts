@@ -106,6 +106,12 @@ export class AppMenuComponent implements OnInit {
                         visible: !this.authService.isEditorLogged(),
                         routerLink: ['/admin/onboardings']
                     },
+                    {
+                        label: 'financing-sources.default',
+                        icon: 'pi pi-fw pi-euro',
+                        visible: !this.authService.isEditorLogged(),
+                        routerLink: ['/admin/financing-sources']
+                    },
                 ]
             }
         ];

@@ -17,10 +17,17 @@
       </p-multiSelect>
       <label>{{label | translate}}</label>
     </span>
+    <p-button (click)="showPreview()"
+              icon="pi pi-eye"
+              iconPos="right"
+              styleClass="mt-3 mr-3"
+              label="{{ 'newsletters.free-form-newsletters.email-preview-header' | translate }}"/>
     <p-button type="submit"
               iconPos="right"
-              [style]="{'font-size':'20px', 'margin-top':'10px'}"
+              [style]="{'margin-top':'10px'}"
               [loading]="isLoading"
               label="{{ 'send-notifications' | translate }}" icon="pi pi-send"
               class="submit-button"></p-button>
 </form>
+
+

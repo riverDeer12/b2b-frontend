@@ -6,7 +6,6 @@ import {Category} from '../../../../categories/core/models/category';
 import {ResearchProblem} from '../../../../research-problems/core/models/research-problem';
 import {Equipment} from '../../../../equipment/core/models/equipment';
 import {SpecificKnowledge} from '../../../../specific-knowledge/core/models/specific-knowledge';
-import {CommunicationService} from '../../../../shared/services/communication.service';
 import {DialogFormComponent} from '../../../../shared/components/dialog-form/dialog-form.component';
 import {FormType} from '../../../../shared/enums/form-type';
 import {DialogContentTypes} from '../../../../shared/constants/dialog-content-types';
@@ -25,8 +24,6 @@ export class EntityDetailsComponent implements OnInit {
     currentEntityType!: EntityType;
 
     entityItem!: any;
-
-    simpleEntity!: boolean;
 
     entityCategories!: Category[];
 
@@ -74,13 +71,18 @@ export class EntityDetailsComponent implements OnInit {
     }
 
     public get showContactButton(): boolean {
-        return this.currentEntityType !== this.entityType.News;
+        switch (this.currentEntityType) {
+            case EntityType.News:
+            case EntityType.FinancingSource:
+                return false;
+            default:
+                return true;
+        }
     }
 
     constructor(private activatedRoute: ActivatedRoute,
                 private authService: AuthService,
                 private notificationService: NotificationService,
-                private communicationService: CommunicationService,
                 private dialogService: DialogService) {
     }
 
@@ -117,7 +119,7 @@ export class EntityDetailsComponent implements OnInit {
             this.initSpecificKnowledge();
         }
 
-        if(this.currentEntityType === EntityType.Company){
+        if (this.currentEntityType === EntityType.Company) {
             this.initProducts();
         }
     }
@@ -167,5 +169,39 @@ export class EntityDetailsComponent implements OnInit {
                 parentEntityId: this.entityItem.id
             }
         })
+    }
+
+    getImageSource(): string {
+
+        if (this.entityItem.image) {
+            return this.entityItem.image;
+        }
+
+        switch (this.currentEntityType) {
+            case EntityType.FinancingSource:
+                return 'assets/layout/images/financing_sources_default.jpeg';
+            default:
+                return 'assets/layout/images/image-default.png';
+        }
+    }
+
+    entityHasCategories(): boolean {
+        switch (this.currentEntityType) {
+            case EntityType.FinancingSource:
+            case EntityType.News:
+                return false;
+            default:
+                return true;
+        }
+    }
+
+    entityHasDescription() {
+        switch (this.currentEntityType) {
+            case EntityType.News:
+            case EntityType.FinancingSource:
+                return false;
+            default:
+                return true;
+        }
     }
 }

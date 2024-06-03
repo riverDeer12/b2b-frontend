@@ -8,11 +8,11 @@
                 </div>
                 <div class="field field col-md-12" *ngIf="formType === formActionType.Edit">
                     <profile-picture name="image"
-                                   [parentForm]="form"
-                                   [entityType]="entityType"
-                                   [entityId]="product.id"
-                                   [parentEntityType]="parentEntityType"
-                                   [parentEntityId]="parentEntityId">
+                                     [parentForm]="form"
+                                     [entityType]="entityType"
+                                     [entityId]="product.id"
+                                     [parentEntityType]="parentEntityType"
+                                     [parentEntityId]="parentEntityId">
                     </profile-picture>
                 </div>
                 <p-tabView>
@@ -104,7 +104,7 @@
                                       label="translate.translate-to-english"
                                       sourceLanguage="HR"
                                       targetLanguage="EN"
-                                      ></translate-button>
+                    ></translate-button>
                     <translate-button [form]="form"
                                       [formControlNames]="['title','description']"
                                       label="translate.translate-to-croatian"

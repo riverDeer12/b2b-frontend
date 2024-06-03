@@ -1,0 +1,52 @@
+<div class="financing-source-container">
+    <div>
+        <div class="field">
+            <label>{{ 'financing-sources.title.label' | translate }}</label>
+            <p>{{ financingSource.title }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.geographic-coverage.label' | translate }}</label>
+            <p>{{ financingSource.geographicCoverage }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.priority.label' | translate }}</label>
+            <p>{{ financingSource.priority }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.specific-objective.label' | translate }}</label>
+            <p>{{ financingSource.specificObjective }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.objectives.label' | translate }}</label>
+            <p>{{ financingSource.objectives }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.type.label' | translate }}</label>
+            <p>{{ financingSource.type }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.eligible-activities-description.label' | translate }}</label>
+            <p>{{ financingSource.eligibleActivitiesDescription }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.eligible-applicants-type.label' | translate }}</label>
+            <p>{{ financingSource.eligibleApplicantsType }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.total-grant-amount.label' | translate }}</label>
+            <p>{{ financingSource.totalGrantAmount | currency :'EUR' }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.support-intensity.label' | translate }}</label>
+            <p>{{ financingSource.supportIntensity | percent }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.start-date.label' | translate }}</label>
+            <p>{{ financingSource.startDate | date: 'dd.MM.yyyy.' }}</p>
+        </div>
+        <div class="field">
+            <label>{{ 'financing-sources.end-date.label' | translate }}</label>
+            <p>{{ financingSource.endDate | date: 'dd.MM.yyyy.' }}</p>
+        </div>
+    </div>
+</div>
