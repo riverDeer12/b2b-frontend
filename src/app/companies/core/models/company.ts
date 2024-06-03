@@ -29,6 +29,7 @@ export class Company {
     jobOffers!: JobOffer[];
     products!: Product[];
     documents!: EntityDocument[];
+    automaticProfileUpdateConsent!: boolean;
 
     get imageUrl(): string {
         return this.image ??

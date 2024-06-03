@@ -20,6 +20,7 @@ export class Organization {
     categories!: Category[];
     newsletterCategories!: Category[];
     researchProblems!: ResearchProblem[];
+    automaticProfileUpdateConsent!: boolean;
 
     get localizedDescription(): string {
         return this.description.translations[localStorage.getItem('language') as keyof TranslationsObject];

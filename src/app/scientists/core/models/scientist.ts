@@ -29,6 +29,7 @@ export class Scientist {
     newsletterCategories!: Category[];
     equipment!: Equipment[];
     specificKnowledge!: SpecificKnowledge[];
+    automaticProfileUpdateConsent!: boolean;
 
     get imageUrl(): string {
         return this.image ??

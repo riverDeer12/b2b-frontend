@@ -148,6 +148,9 @@
     "dashboard": {
         "default": "Statistika"
     },
+    "profile-update-consent": {
+        "default": "Privola za automatsko ažuriranje podataka"
+    },
     "auth": {
         "username": {
             "default": "Korisničko ime",

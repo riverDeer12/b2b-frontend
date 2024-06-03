@@ -21,6 +21,7 @@ import {SpecificKnowledgeComponentsModule} from "../../specific-knowledge/compon
 import {CategoriesComponentsModule} from "../../categories/components/categories-components.module";
 import {ChipsModule} from 'primeng/chips';
 import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
+import {CheckboxModule} from "primeng/checkbox";
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import {CustomControlsModule} from '../../custom-controls/custom-controls.module
         SpecificKnowledgeComponentsModule,
         CategoriesComponentsModule,
         ChipsModule,
-        CustomControlsModule
+        CustomControlsModule,
+        CheckboxModule
     ],
     providers:[
         ConfirmationService
