@@ -21,6 +21,7 @@ import {FileUploadModule} from 'primeng/fileupload';
 import {SharedModule} from '../../shared/shared.module';
 import {CustomControlsModule} from '../../custom-controls/custom-controls.module';
 import {ProductsComponentsModule} from '../../products/components/products-components.module';
+import {CheckboxModule} from "primeng/checkbox";
 
 @NgModule({
     declarations: [
@@ -47,7 +48,8 @@ import {ProductsComponentsModule} from '../../products/components/products-compo
         FileUploadModule,
         SharedModule,
         CustomControlsModule,
-        ProductsComponentsModule
+        ProductsComponentsModule,
+        CheckboxModule
     ],
     exports: [
         CompaniesDataTableComponent,

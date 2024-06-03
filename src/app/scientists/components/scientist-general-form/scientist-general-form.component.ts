@@ -103,7 +103,8 @@ export class ScientistGeneralFormComponent {
             crosbiLink: new FormControl(''),
             newsletterCategories: new FormControl('', Validators.required),
             categories: new FormControl('', Validators.required),
-            categoryTags: new FormControl('', Validators.required)
+            categoryTags: new FormControl('', Validators.required),
+            automaticProfileUpdateConsent: new FormControl('')
         })
 
         this.sharedService.broadcastFormChanges(this.form);
@@ -154,7 +155,8 @@ export class ScientistGeneralFormComponent {
             crosbiLink: new FormControl(this.scientist.crosbiLink, Validators.required),
             newsletterCategories: new FormControl(this.scientist.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.scientist.categories.map(x => x.id), Validators.required),
-            categoryTags: new FormControl(this.scientist.categoryTags.split(";").slice(0,-1), Validators.required)
+            categoryTags: new FormControl(this.scientist.categoryTags.split(";").slice(0,-1), Validators.required),
+            automaticProfileUpdateConsent: new FormControl(this.scientist.automaticProfileUpdateConsent)
         })
 
         this.sharedService.broadcastFormChanges(this.form);
@@ -219,6 +221,8 @@ export class ScientistGeneralFormComponent {
                         'scientists.successfully-updated');
 
                 this.router.navigateByUrl(this.returnUrl).then();
+
+                this.sharedService.setPendingChangesStatus(false);
 
                 this.isLoading = false;
             },

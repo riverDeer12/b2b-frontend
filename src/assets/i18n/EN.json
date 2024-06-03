@@ -147,6 +147,9 @@
     "dashboard": {
         "default": "Statistics"
     },
+    "profile-update-consent": {
+        "default": "Automatic profile update consent"
+    },
     "auth": {
         "username": {
             "default": "Username",
