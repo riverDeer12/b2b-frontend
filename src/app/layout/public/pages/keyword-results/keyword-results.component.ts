@@ -12,6 +12,7 @@ import {JobOffer} from "../../../../job-offers/core/models/job-offer";
 import {Company} from "../../../../companies/core/models/company";
 import {NotificationType} from "../../../../shared/enums/notification-type";
 import {NotificationService} from "../../../../shared/services/notification.service";
+import {FinancingSource} from "../../../../financing-sources/core/models/financing-source";
 
 @Component({
     selector: 'keyword-results',
@@ -47,6 +48,9 @@ export class KeywordResultsComponent {
     areOrganizationResearchProblemsLoading: boolean = true;
     organizationResearchProblems: ResearchProblem[] = [];
 
+    areFinancingSourcesLoading: boolean = true;
+    financingSources: FinancingSource[] = [];
+
     keywords!: string[];
 
     keywordPhrase!: string;
@@ -76,6 +80,7 @@ export class KeywordResultsComponent {
         this.loadProducts();
         this.loadOrganizations();
         this.loadOrganizationResearchProblems();
+        this.loadFinancingSources();
     }
 
     sendKeywordPhrase(): void{
@@ -185,6 +190,17 @@ export class KeywordResultsComponent {
                 );
 
                 this.areOrganizationResearchProblemsLoading = false;
+            });
+    }
+
+    private loadFinancingSources(): void {
+        this.publicService.sendKeywordPhrase(this.keywords, EntityType.FinancingSource)
+            .subscribe((response: any) => {
+                this.financingSources = response.map((x: FinancingSource) =>
+                    Object.assign(new FinancingSource(), x)
+                );
+
+                this.areFinancingSourcesLoading = false;
             });
     }
 }

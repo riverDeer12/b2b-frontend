@@ -64,6 +64,9 @@ export class PublicService {
     getProducts = () =>
         this.http.get<Product[]>(this.publicUrl + 'companies/products');
 
+    getFinancingSources = () =>
+        this.http.get<FinancingSource[]>(this.publicUrl + 'financing-sources');
+
     sendKeywordPhrase = (keywords: string[],
                          entityType: EntityType,
                          parentEntityType?: EntityType) =>
@@ -74,7 +77,4 @@ export class PublicService {
             this.http.post(this.publicUrl + entityType.toString() + '/keywords', {
                 keywords: keywords
             });
-
-    getFinancingSources = () =>
-        this.http.get<FinancingSource[]>(this.publicUrl + 'financing-sources');
 }

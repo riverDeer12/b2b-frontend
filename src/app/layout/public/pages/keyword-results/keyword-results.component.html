@@ -157,6 +157,21 @@
     </div>
 </div>
 
+<div class="justify-content-center grid my-3 mx-2">
+    <div class="lg:col-10 md:col-10 col-12">
+        <h4>{{'financing-sources.default' | translate }}</h4>
+        <div *ngIf="!financingSources.length">{{'no-data' | translate }}</div>
+        <div *ngIf="financingSources.length">
+            <div *ngIf="!areFinancingSourcesLoading">
+                <span class="mr-3" *ngFor="let financingSource of financingSources">
+                <a
+                    [href]="'financing-sources/details/' + financingSource.id">{{ financingSource.title }}</a>
+                            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
