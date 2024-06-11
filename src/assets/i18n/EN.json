@@ -323,9 +323,9 @@
             "required": "A link to CroRis is required."
         },
         "crosbi-link": {
-            "default": "CrosBi link",
-            "label": "CrosBi link:",
-            "required": "A link to CrosBi is required."
+            "default": "OpenAIRE link",
+            "label": "OpenAIRE link:",
+            "required": "A link to OpenAIRE is required."
         },
         "employment-college": {
             "default": "Employment",

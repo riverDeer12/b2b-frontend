@@ -326,9 +326,9 @@
             "required": "Poveznica na CroRis je obavezan podatak."
         },
         "crosbi-link": {
-            "default": "CrosBi poveznica",
-            "label": "CrosBi poveznica:",
-            "required": "Poveznica na CrosBi je obavezan podatak."
+            "default": "OpenAIRE poveznica",
+            "label": "OpenAIRE poveznica:",
+            "required": "Poveznica na OpenAIRE je obavezan podatak."
         },
         "employment-college": {
             "default": "Zaposlenje",
