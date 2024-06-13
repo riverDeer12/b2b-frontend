@@ -9,7 +9,8 @@ import {NewsletterAdditionalContentService} from '../../core/services/newsletter
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {LanguageService} from "../../../shared/services/language.service";
-import {DEFAULT_EDITOR_CONFIG} from "../../../shared/constants/editor-config";
+import {EditorConfig} from "../../../shared/constants/editor-config";
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'newsletter-additional-content-form',
@@ -29,7 +30,7 @@ export class NewsletterAdditionalContentFormComponent {
 
     form!: FormGroup;
 
-    editorModules = DEFAULT_EDITOR_CONFIG;
+    editorModules = EditorConfig.getNewsletterEditorConfig(this.sharedService);
 
     public get formActionType(): typeof FormType {
         return FormType;
@@ -44,6 +45,7 @@ export class NewsletterAdditionalContentFormComponent {
     constructor(public validationService: ValidationService,
                 private fb: FormBuilder,
                 private router: Router,
+                private sharedService: SharedService,
                 private languageService: LanguageService,
                 private notificationService: NotificationService,
                 private newsletterService: NewsletterAdditionalContentService) {

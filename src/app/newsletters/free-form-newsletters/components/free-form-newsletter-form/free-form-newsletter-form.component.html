@@ -19,13 +19,7 @@
                         </div>
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
-                                <p-editor [modules]="editorModules"
-                                          placeholder="{{ 'news.content.default' | translate }}"
-                                          class="{{validationService.getInputClass(form, 'HR',
-                                           'required',
-                            'content.translations')}}"
-                                          id="content-hr" aria-describedby="content-input" formControlName="HR">
-                                </p-editor>
+                                <div #hrEditor></div>
                             </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'HR', 'required',
@@ -49,14 +43,7 @@
                         </div>
                         <div class="field field col-md-12" formGroupName="content">
                             <span formGroupName="translations">
-                                    <p-editor [modules]="editorModules"
-                                              placeholder="{{ 'news.content.default' | translate }}"
-                                              class="{{validationService.getInputClass(form, 'EN',
-                                               'required',
-                                'content.translations')}}"
-                                              id="content-en" aria-describedby="content-input"
-                                              formControlName="EN">
-                                    </p-editor>
+                                <div #enEditor></div>
                             </span>
                             <small class="p-error"
                                    *ngIf="validationService.hasErrors(form, 'EN', 'required',

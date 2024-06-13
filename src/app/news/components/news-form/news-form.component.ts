@@ -9,7 +9,7 @@ import {NewsService} from '../../core/services/news.service';
 import {ValidationService} from '../../../shared/services/validation.service';
 import {EntityType} from '../../../auth/core/enums/entity-type';
 import {LanguageService} from "../../../shared/services/language.service";
-import {DEFAULT_EDITOR_CONFIG} from "../../../shared/constants/editor-config";
+import {EditorConfig} from "../../../shared/constants/editor-config";
 import {UploadType} from "../../../custom-controls/core/types/upload-type";
 
 @Component({
@@ -30,7 +30,7 @@ export class NewsFormComponent {
 
     form!: FormGroup;
 
-    editorModules = DEFAULT_EDITOR_CONFIG;
+    editorModules = EditorConfig.defaultEditorConfig;
 
     public get uploadType(): typeof UploadType {
         return UploadType;

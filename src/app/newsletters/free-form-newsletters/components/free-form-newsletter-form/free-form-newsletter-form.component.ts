@@ -1,16 +1,20 @@
-import {Component, Input} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {FormType} from "../../../../shared/enums/form-type";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ValidationService} from "../../../../shared/services/validation.service";
 import {Router} from "@angular/router";
 import {NotificationService} from "../../../../shared/services/notification.service";
 import {NotificationType} from "../../../../shared/enums/notification-type";
-import {FreeFormNewsletter, Recipient, RecipientType} from "../../core/models/free-form-newsletter";
+import {FreeFormNewsletter, Recipient} from "../../core/models/free-form-newsletter";
 import {FreeFormNewsletterService} from "../../core/services/free-form-newsletter.service";
-import {DEFAULT_EDITOR_CONFIG} from "../../../../shared/constants/editor-config";
 import {Category} from "../../../../categories/core/models/category";
 import {SpecialCategory} from "../../../../special-categories/core/models/special-category";
 import {environment} from "../../../../../environments/environment";
+import Quill from "quill";
+import ImageUploader from "quill-image-uploader";
+import {EditorConfig} from "../../../../shared/constants/editor-config";
+import {SharedService} from "../../../../shared/services/shared.service";
+Quill.register('modules/imageUploader', ImageUploader);
 
 @Component({
     selector: 'free-form-newsletter-form',
@@ -26,23 +30,21 @@ export class FreeFormNewsletterFormComponent {
     @Input() categories!: Category[];
     @Input() specialCategories!: SpecialCategory[];
 
+    @ViewChild("hrEditor") hrEditor!: ElementRef;
+    @ViewChild("enEditor") enEditor!: ElementRef;
+
     isLoading: boolean = false;
 
     form!: FormGroup;
 
     finalRecipients = [];
 
-    editorModules = DEFAULT_EDITOR_CONFIG;
-
-    public get recipientType(): typeof RecipientType {
-        return RecipientType;
-    }
-
     public get formActionType(): typeof FormType {
         return FormType;
     }
 
     constructor(public validationService: ValidationService,
+                private sharedService: SharedService,
                 private fb: FormBuilder,
                 private router: Router,
                 private notificationService: NotificationService,
@@ -53,6 +55,11 @@ export class FreeFormNewsletterFormComponent {
         this.initCreateForm();
     }
 
+    ngAfterViewInit() {
+        const editorConfig = EditorConfig.getNewsletterEditorConfig(this.sharedService);
+        const hrQuill = new Quill(this.hrEditor.nativeElement, editorConfig);
+        const enQuill = new Quill(this.enEditor.nativeElement, editorConfig);
+    }
 
     /**
      * Initializes form if
@@ -106,7 +113,16 @@ export class FreeFormNewsletterFormComponent {
 
         this.prepareRecipients();
 
+        this.prepareContent();
+
         this.createNewsletter();
+    }
+
+    private prepareContent(): void {
+        const formGroup = this.form.controls['content'] as FormGroup;
+        const translationFormGroup = formGroup.controls['translations'] as FormGroup;
+        translationFormGroup.controls['HR'].setValue(this.hrEditor.nativeElement.innerHTML);
+        translationFormGroup.controls['EN'].setValue(this.enEditor.nativeElement.innerHTML);
     }
 
     private prepareRecipients(): void {
@@ -146,7 +162,7 @@ export class FreeFormNewsletterFormComponent {
             })
     }
 
-    triggerEntitySelector(recipientType: string) {
+    triggerEntitySelector(recipientType: string): void {
         this.form.controls[recipientType].setValue([]);
     }
 
@@ -156,6 +172,8 @@ export class FreeFormNewsletterFormComponent {
      * form newsletter before sending.
      */
     showPreview(): void {
+
+        this.prepareContent();
 
         const requestData = {
             title: this.form.controls['title'].value,
@@ -169,4 +187,7 @@ export class FreeFormNewsletterFormComponent {
                     {type: 'text/html'})));
             })
     }
+
+
+
 }
