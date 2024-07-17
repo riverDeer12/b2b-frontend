@@ -12,6 +12,7 @@ import {FormType} from '../../../shared/enums/form-type';
 import {DialogContentTypes} from '../../../shared/constants/dialog-content-types';
 import {DialogService} from 'primeng/dynamicdialog';
 import {ValidationService} from '../../../shared/services/validation.service';
+import {SharedService} from "../../../shared/services/shared.service";
 
 @Component({
     selector: 'auth-login-user',
@@ -39,6 +40,7 @@ export class LoginUserComponent {
     constructor(public layoutService: LayoutService,
                 public validationService: ValidationService,
                 private fb: FormBuilder,
+                private sharedService: SharedService,
                 private dialogService: DialogService,
                 private authService: AuthService,
                 private notificationService: NotificationService,

@@ -6,6 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Scientist} from '../../../../scientists/core/models/scientist';
 import {Company} from 'src/app/companies/core/models/company';
 import {Organization} from 'src/app/organizations/core/models/organization';
+import {SharedService} from "../../../../shared/services/shared.service";
 
 @Component({
     selector: 'my-profile',
@@ -53,5 +54,4 @@ export class MyProfileComponent {
             }
         });
     }
-
 }

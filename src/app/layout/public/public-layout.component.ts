@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {LayoutService} from '../admin/core/services/app.layout.service';
 import {Router} from '@angular/router';
 import {MenuItem} from 'primeng/api';
@@ -12,6 +12,7 @@ import {Languages} from '../../shared/constants/languages';
     styleUrls: ['./public-layout.component.css']
 })
 export class PublicLayoutComponent {
+
     title!: string;
 
     menuItems!: MenuItem[];
@@ -30,7 +31,6 @@ export class PublicLayoutComponent {
     }
 
     ngOnInit(): void {
-
     }
 
     initMenuItems(): void {

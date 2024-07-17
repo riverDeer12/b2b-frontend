@@ -87,7 +87,7 @@ export const PublicLayoutRoutes: Routes = [
         component: NotFoundComponent
     },
     {
-        path: 'login',
+        path: 'user-login',
         component: LoginUserComponent
     },
     {
