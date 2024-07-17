@@ -99,6 +99,7 @@ export class CompanyGeneralFormComponent {
      * edit form action is triggered.
      */
     private initEditForm(): void {
+
         this.form = this.fb.group({
             name: new FormControl(this.company.name, Validators.required),
             description: this.fb.group({
@@ -210,6 +211,7 @@ export class CompanyGeneralFormComponent {
      * updated selected category.
      */
     private editCompany(): void {
+
         this.companyService.editCompany(this.company.id, this.form.value).subscribe(() => {
                 this.notificationService
                     .showNotification(NotificationType.Success,

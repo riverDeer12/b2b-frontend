@@ -68,44 +68,45 @@ export class ChangePasswordComponent {
         this.entity.confirmPassword = this.form.get('confirmPassword')?.value;
         this.entity.categories = this.entity.categories.map((x: { id: any; }) => x.id)
         this.entity.newsletterCategories = this.entity.newsletterCategories.map((x: { id: any; }) => x.id)
+        this.entity.categoryTags = this.entity.categoryTags.split(";").slice(0,-1);
 
         if(this.entityType == EntityType.Company){
             this.companyService.editCompany(this.entity.id, this.entity).subscribe((response) => {
                 this.notificationService
-                    .showNotification(NotificationType.Success, "password-changed-successfully");
+                    .showNotification(NotificationType.Success, "auth.password-changed-successfully");
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl);
 
                 this.isLoading = false;
             }, () => {
                 this.notificationService
-                    .showNotification(NotificationType.Error, "error-changing-password");
+                    .showNotification(NotificationType.Error, "auth.error-changing-password");
                 this.isLoading = false;
             })
         } else if (this.entityType === EntityType.Scientist){
             this.scientistService.editScientist(this.entity.id, this.entity).subscribe((response) => {
                 this.notificationService
-                    .showNotification(NotificationType.Success, "password-changed-successfully");
+                    .showNotification(NotificationType.Success, "auth.password-changed-successfully");
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl);
 
                 this.isLoading = false;
             }, () => {
                 this.notificationService
-                    .showNotification(NotificationType.Error, "error-changing-password");
+                    .showNotification(NotificationType.Error, "auth.error-changing-password");
                 this.isLoading = false;
             })
         } else if (this.entityType === EntityType.PublicOrganization){
             this.organizationService.editOrganization(this.entity.id, this.entity).subscribe((response) => {
                 this.notificationService
-                    .showNotification(NotificationType.Success, "password-changed-successfully");
+                    .showNotification(NotificationType.Success, "auth.password-changed-successfully");
 
                 this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl);
 
                 this.isLoading = false;
             }, (error) => {
                 this.notificationService
-                    .showNotification(NotificationType.Error, "error-changing-password");
+                    .showNotification(NotificationType.Error, "auth.error-changing-password");
                 this.isLoading = false;
             })
         }

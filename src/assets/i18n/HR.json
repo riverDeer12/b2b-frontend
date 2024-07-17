@@ -176,6 +176,8 @@
             "default": "Zaboravljena lozinka",
             "description": "Molimo da u donje polje upišite točan naziv\nsvoje email adrese koju koristite za prijavu u sustav\nKako bismo Vam mogli poslati poveznicu za prijavu.\n\nPreporuka: Nakon prijave u sustav putem\npoveznice promijenite svoju lozinku."
         },
+        "password-changed-successfully": "Uspješno izmjenjena lozinka.",
+        "error-changing-password": "Greška prilikom izmjene lozinke.",
         "registration": "Registracija",
         "username-password": "Korisničko ime i lozinka",
         "welcome-to-dashboard": "Uspješna prijava u RIMAP administraciju.",
