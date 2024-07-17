@@ -175,6 +175,8 @@
             "default": "Forgot Password",
             "description": "Please enter the correct name in the field below\nyour email address that you use to log in to the system\nSo that we can send you a login link.\n\nRecommendation: After logging into the system via\nlink change your password."
         },
+        "password-changed-successfully": "Password changed successfully.",
+        "error-changing-password": "Error changing password.",
         "registration": "Registration",
         "username-password": "Username and password",
         "welcome-to-dashboard": "Successful login to RIMAP administration.",

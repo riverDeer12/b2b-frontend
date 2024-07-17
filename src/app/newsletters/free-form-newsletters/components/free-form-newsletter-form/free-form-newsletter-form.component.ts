@@ -156,7 +156,6 @@ export class FreeFormNewsletterFormComponent {
      * form newsletter before sending.
      */
     showPreview(): void {
-
         const requestData = {
             title: this.form.controls['title'].value,
             content: this.form.controls['content'].value,

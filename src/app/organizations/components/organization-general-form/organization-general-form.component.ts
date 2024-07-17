@@ -101,7 +101,7 @@ export class OrganizationGeneralFormComponent {
             newsletterCategories: new FormControl(this.organization.newsletterCategories.map(x => x.id), Validators.required),
             categories: new FormControl(this.organization.categories.map(x => x.id), Validators.required),
             categoryTags: new FormControl(this.organization.categoryTags.split(";").slice(0,-1), Validators.required),
-            automaticProfileUpdateConsent: new FormControl(this.organization.automaticProfileUpdateConsent)
+            automaticProfileUpdateConsent: new FormControl(this.organization.automaticProfileUpdateConsent ?? false)
         })
 
         this.sharedService.broadcastFormChanges(this.form);

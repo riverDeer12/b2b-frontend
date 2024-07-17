@@ -37,9 +37,7 @@ export class CompanyFormComponent {
         return RedirectType;
     }
 
-
     entityType: EntityType = EntityType.Company;
-
 
     /**
      * Check if user has access to documents.
