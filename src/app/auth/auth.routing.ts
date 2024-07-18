@@ -13,11 +13,6 @@ export const AuthRoutes: Routes = [
         canActivate: [DefaultGuard]
     },
     {
-        path: 'user-login',
-        component: LoginUserComponent,
-        canActivate: [DefaultGuard]
-    },
-    {
         path: 'not-found',
         component: NotFoundComponent
     },

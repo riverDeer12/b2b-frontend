@@ -110,7 +110,7 @@ export const PublicMenuItems: MenuItem[] = [
     },
     {
         label: 'auth.login',
-        routerLink: '/login',
+        routerLink: '/user-login',
         routerLinkActiveOptions: {exact: true},
         expanded: false,
         visible: !userLogged()
