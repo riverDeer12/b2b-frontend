@@ -129,6 +129,7 @@
     "read-more": "Read more",
     "pages": "page",
     "contact": "Contact",
+    "support": "Support",
     "name": {
         "default": "Name",
         "required": "Category name is mandatory information."
@@ -1030,7 +1031,8 @@
     "all-rights-reserved": "All rights reserved | RIMAP",
     "powered-by": "Regional innovation matchmaking platform powered by",
     "and": "and",
-    "rimap-email": "rimap@uniri.hr",
+    "rimap-email": "damir.medved@uniri.hr",
+    "support-email": "info@rdd.software",
     "useful-links": "Useful links",
     "entities-view": "View",
     "about-us": "About us",
@@ -1124,7 +1126,7 @@
         },
         "user-rights": {
             "title": "User rights",
-            "content": "Under the conditions of the General Data Protection Regulation, the user has the right to access their personal data that we collect, the right to deletion (right to be forgotten), the right to restrict processing, the right to object, the right to data portability, and the right to correct personal data if it is incorrect. For any questions related to data processing, the user can contact the RIMAP service contact address: rimap@uniri.hr. For questions related to personal data protection, it is necessary to contact the data protection officer at gdpr@uniri.hr. The user has the right to file a complaint with the supervisory body for data protection in the Republic of Croatia regarding the collection and processing of personal data."
+            "content": "Under the conditions of the General Data Protection Regulation, the user has the right to access their personal data that we collect, the right to deletion (right to be forgotten), the right to restrict processing, the right to object, the right to data portability, and the right to correct personal data if it is incorrect. For any questions related to data processing, the user can contact the RIMAP service contact address: damir.medved@uniri.hr. For questions related to personal data protection, it is necessary to contact the data protection officer at gdpr@uniri.hr. The user has the right to file a complaint with the supervisory body for data protection in the Republic of Croatia regarding the collection and processing of personal data."
         }
     },
     "methodology-data-collection": {
