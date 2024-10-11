@@ -129,6 +129,7 @@
     "read-more": "Pročitaj više",
     "pages": "stranica",
     "contact": "Kontakt",
+    "support": "Podrška",
     "name": {
         "default": "Naziv",
         "required": "Naziv kategorije je obavezan podatak."
@@ -1034,7 +1035,8 @@
     "all-rights-reserved": "Sva prava pridržana | RIMAP",
     "powered-by": "Regional innovation matchmaking platform powered by",
     "and": "and",
-    "rimap-email": "rimap@uniri.hr",
+    "rimap-email": "damir.medved@uniri.hr",
+    "support-email": "info@rdd.software",
     "useful-links": "Korisne poveznice",
     "entities-view": "Pregled",
     "about-us": "O nama",
@@ -1128,7 +1130,7 @@
         },
         "user-rights": {
             "title": "Prava korisnika",
-            "content": "Prema uvjetima Opće uredbe o zaštiti podataka, korisnik ima pravo na pristup svojim osobnim podacima koje prikupljamo, pravo na brisanje (pravo na zaborav), pravo na ograničenje obrade, pravo na prigovor, pravo na prenosivost podataka i pravo na ispravak osobnih podataka ako su netočni. Za sva pitanja vezana uz obradu podataka, korisnik se može obratiti na kontakt adresu usluge RIMAP-a: <a href=\"mailto:rimap@uniri.hr\">rimap@uniri.hr</a>. Za pitanja vezana uz zaštitu osobnih podataka potrebno je obratiti se službeniku za zaštitu podataka na <a href=\"mailto:gdpr@uniri.hr\">gdpr@uniri.hr</a>. Korisnik ima pravo podnijeti pritužbu nadzornom tijelu za zaštitu osobnih podataka u Republici Hrvatskoj u vezi s prikupljanjem i obradom osobnih podataka."
+            "content": "Prema uvjetima Opće uredbe o zaštiti podataka, korisnik ima pravo na pristup svojim osobnim podacima koje prikupljamo, pravo na brisanje (pravo na zaborav), pravo na ograničenje obrade, pravo na prigovor, pravo na prenosivost podataka i pravo na ispravak osobnih podataka ako su netočni. Za sva pitanja vezana uz obradu podataka, korisnik se može obratiti na kontakt adresu usluge RIMAP-a: <a href=\"mailto:damir.medved@uniri.hr\">damir.medved@uniri.hr</a>. Za pitanja vezana uz zaštitu osobnih podataka potrebno je obratiti se službeniku za zaštitu podataka na <a href=\"mailto:gdpr@uniri.hr\">gdpr@uniri.hr</a>. Korisnik ima pravo podnijeti pritužbu nadzornom tijelu za zaštitu osobnih podataka u Republici Hrvatskoj u vezi s prikupljanjem i obradom osobnih podataka."
         }
     },
     "methodology-data-collection": {
