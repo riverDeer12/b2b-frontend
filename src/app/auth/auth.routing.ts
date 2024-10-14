@@ -1,6 +1,5 @@
 import {Routes} from '@angular/router';
 import {LoginAdminComponent} from './pages/login-admin/login-admin.component';
-import {LoginUserComponent} from './pages/login-user/login-user.component';
 import {ForbiddenComponent} from './pages/forbidden/forbidden.component';
 import {ErrorComponent} from './pages/error/error.component';
 import {DefaultGuard} from '../shared/guards/default.guard';
