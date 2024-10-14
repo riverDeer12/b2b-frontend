@@ -4,6 +4,9 @@ import {AuthToken} from '../../../../../auth/core/models/auth-token';
 import jwtDecode from 'jwt-decode';
 import {Observable} from 'rxjs';
 import {PublicService} from '../../services/public.service';
+import {ScientistService} from "../../../../../scientists/core/services/scientist.service";
+import {OrganizationService} from "../../../../../organizations/core/services/organization.service";
+import {CompanyService} from "../../../../../companies/core/services/company.service";
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +15,11 @@ export class MyProfileResolver implements Resolve<any> {
 
     private entityId!: string;
 
-    constructor(private publicService: PublicService, private router: Router) {
+    constructor(private publicService: PublicService,
+                private router: Router,
+                private organizationService: OrganizationService,
+                private companyService: CompanyService,
+                private scientistService: ScientistService) {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
@@ -38,11 +45,11 @@ export class MyProfileResolver implements Resolve<any> {
     private getEntity(role: string): Observable<any> {
         switch (role) {
             case 'PublicOrganization':
-                return this.publicService.getOrganization(this.entityId);
+                return this.organizationService.getOrganization(this.entityId);
             case 'Company':
-                return this.publicService.getCompany(this.entityId);
+                return this.companyService.getCompany(this.entityId);
             case 'Scientist':
-                return this.publicService.getScientist(this.entityId);
+                return this.scientistService.getScientist(this.entityId);
             default:
                 return new Observable<any>();
         }

@@ -5,6 +5,8 @@ import {FormType} from "../../../shared/enums/form-type";
 import {ResearchProblem} from "../../../research-problems/core/models/research-problem";
 import {Category} from '../../../categories/core/models/category';
 import {RedirectType} from "../../../shared/enums/redirect-type";
+import {Equipment} from "../../../equipment/core/models/equipment";
+import {ResearchProblemService} from "../../../research-problems/core/services/research-problem.service";
 
 @Component({
     selector: 'organization-form',
@@ -28,6 +30,8 @@ export class OrganizationFormComponent {
 
 
     ngOnInit(){
-
+        this.researchProblems = this.researchProblems.map((x: ResearchProblem) =>
+            Object.assign(new ResearchProblem(), x)
+        );
     }
 }
