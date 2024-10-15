@@ -134,7 +134,7 @@ export class EntityDataViewComponent {
         }
 
         this.filteredEntities = this.entities
-            .filter(x => x[this.filterField].toLocaleLowerCase().includes(this.filterValue));
+            .filter(x => x[this.filterField].toLocaleLowerCase().includes(this.filterValue.toLocaleLowerCase()));
     }
 
     /**
