@@ -193,4 +193,12 @@ export class AuthService {
         const decodedToken = jwtDecode(token) as AuthToken;
         return decodedToken.nameid;
     }
+
+    getLoggedUserUsername() {
+        const tokenStorageValue = localStorage.getItem('token');
+
+        const decodedToken = jwtDecode(tokenStorageValue as string) as AuthToken;
+
+        return decodedToken.nameid;
+    }
 }

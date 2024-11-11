@@ -200,6 +200,9 @@
         "login-type-required": "Za obnovu lozinke potrebno je odabrati način prijave.",
         "choose-registration-type": "Odaberite vrstu registracije",
         "my-profile": "Moj profil",
+        "logged-in-as": {
+            "label": "Prijavljeni ste kao:"
+        },
         "mail-confirmed": {
             "title": "Uspješno potvrđena email adresa!",
             "description": "Hvala Vam na registraciji! Vaš email je uspješno potvrđen."
