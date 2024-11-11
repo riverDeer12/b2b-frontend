@@ -13,6 +13,8 @@
                     <language-selector></language-selector>
                     <p-button *ngIf="!authService.userLogged()"
                               [routerLink]="'user-login'">{{'auth.login' | translate}}</p-button>
+                    <p-button *ngIf="!authService.userLogged()"
+                              [routerLink]="'registration'">{{'auth.registration' | translate}}</p-button>
                 </div>
             </ng-template>
         </p-menubar>
