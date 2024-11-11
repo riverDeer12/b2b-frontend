@@ -101,6 +101,7 @@
 
 .pi {
     font-size: 1rem;
+    margin-right: 1rem;
 }
 
 .p-link {
@@ -5182,10 +5183,9 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-toolbar {
-    background: #ffffff;
+    background: #fafafa;
     border: 1px solid #e0e0e0;
     padding: 1rem;
-    border-radius: 4px;
     gap: 0.5rem;
 }
 
