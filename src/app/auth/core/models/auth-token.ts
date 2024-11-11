@@ -1,5 +1,6 @@
 export class AuthToken {
     nameid!: string;
+    name!: string;
     role!: string;
     nbf!: number;
     exp!: number;

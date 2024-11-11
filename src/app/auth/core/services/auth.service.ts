@@ -199,6 +199,6 @@ export class AuthService {
 
         const decodedToken = jwtDecode(tokenStorageValue as string) as AuthToken;
 
-        return decodedToken.nameid;
+        return decodedToken.name;
     }
 }
