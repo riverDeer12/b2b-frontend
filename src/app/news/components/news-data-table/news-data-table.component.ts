@@ -78,7 +78,7 @@ export class NewsDataTableComponent {
         this.confirmationService.confirm({
             key: 'confirmDeleteDialog',
             accept: () => {
-                this.newsService.deleteNews(newsId).subscribe((response: Object) => {
+                this.newsService.deleteNews(newsId).subscribe((response) => {
                         this.notificationService
                             .showNotification(NotificationType.Success, 'successfully-deleted');
                         this.data = this.data.filter((x => x.id !== newsId));

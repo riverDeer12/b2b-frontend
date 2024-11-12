@@ -146,6 +146,7 @@
     "results": "rezultata",
     "correct-validation-errors": "Molimo ispravite pogreške i pokušajte ponovno.",
     "correct-validation-errors-with-translations": "Molimo ispravite pogreške i pokušajte ponovno. Provjerite jesu li sva polja ispunjena i prevedena na sve dostupne jezike platforme.",
+    "error-deleting": "Greška prilikom brisanja.",
     "dashboard": {
         "default": "Statistika"
     },
@@ -1015,7 +1016,19 @@
         "uploaded-at": "Vrijeme prijenosa datoteke",
         "document-name": "Naziv dokumenta",
         "successfully-deleted": "Uspješno izbrisan dokument",
-        "error-deleting": "Greška prilikom brisanja dokumenta"
+        "error-deleting": "Greška prilikom brisanja dokumenta",
+        "invalid-size": {
+            "summary": "Datoteka je prevelika.",
+            "detail": "Molimo odaberite manju datoteku."
+        },
+        "invalid-type": {
+            "summary": "Datoteka je krivog formata.",
+            "detail": "Molimo odaberite datoteku drugog formata."
+        },
+        "invalid-file-limit": {
+            "summary": "Pređena je dopuštena količina datoteka.",
+            "detail": "Molimo odaberite manji broj datoteka."
+        }
     },
     "address": {
         "label": "Adresa:"
