@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {EntityType} from '../../auth/core/enums/entity-type';
 import {RedirectType} from '../enums/redirect-type';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import { FormGroup } from '@angular/forms';
+import {FormGroup} from '@angular/forms';
 
 /**
  * Helper service for most common actions
@@ -15,6 +15,18 @@ import { FormGroup } from '@angular/forms';
     providedIn: 'root'
 })
 export class SharedService {
+
+
+    parentEntityType: Subject<EntityType> = new Subject<EntityType>();
+    dialogCloseStatus: Subject<string> = new Subject<string>();
+    filterDataChange: Subject<string> = new Subject<string>();
+    categoriesChanged: Subject<string[]> = new Subject<string[]>();
+    formPendingChanges = new Subject<boolean>();
+    profilePictureUrl = new Subject<string>();
+
+    constructor(private router: Router, private http: HttpClient) {
+    }
+
     /**
      * Broadcast form changes
      * to trigger service.
@@ -33,16 +45,6 @@ export class SharedService {
 
             this.setPendingChangesStatus(formToCheck.dirty);
         });
-    }
-
-
-    parentEntityType: Subject<EntityType> = new Subject<EntityType>();
-    dialogCloseStatus: Subject<string> = new Subject<string>();
-    filterDataChange: Subject<string> = new Subject<string>();
-    categoriesChanged: Subject<string[]> = new Subject<string[]>();
-    formPendingChanges = new Subject<boolean>();
-
-    constructor(private router: Router, private http: HttpClient) {
     }
 
     /**
@@ -172,4 +174,14 @@ export class SharedService {
     getPendingChangesStatus(): Subject<boolean> {
         return this.formPendingChanges;
     }
+
+    setChangedProfilePicture(imageUrl: string): void {
+        this.profilePictureUrl.next(imageUrl);
+    }
+
+    getChangedProfilePicture(): Subject<string> {
+        return this.profilePictureUrl;
+    }
+
+    loadEntityForProfilePicture = (entityUrl: string) => this.http.get<object>(entityUrl);
 }

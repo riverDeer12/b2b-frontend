@@ -47,6 +47,9 @@ export class ProductFormComponent {
         private sharedService: SharedService,
         private notificationService: NotificationService,
         private productService: ProductService) {
+        this.sharedService.getChangedProfilePicture().subscribe((response) => {
+            this.product.image = response;
+        })
     }
 
     ngOnInit() {

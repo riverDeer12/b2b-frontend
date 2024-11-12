@@ -5,6 +5,7 @@ import {NotificationService} from '../../shared/services/notification.service';
 import {FormGroup} from '@angular/forms';
 import {environment} from '../../../environments/environment';
 import {NotificationType} from '../../shared/enums/notification-type';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
     selector: 'profile-picture',
@@ -19,7 +20,9 @@ export class ProfilePictureComponent {
     @Input() parentEntityId!: string;
     @Input() name!: string;
 
-    constructor(private sharedService: SharedService, private notificationService: NotificationService) {
+    constructor(private sharedService: SharedService,
+                private http: HttpClient,
+                private notificationService: NotificationService) {
     }
 
     get uploadImageUrl(): string {
@@ -35,11 +38,20 @@ export class ProfilePictureComponent {
     }
 
     profilePictureChange(): void {
-        window.location.reload();
+        this.loadNewProfilePicture();
     }
 
     onError(): void {
         this.notificationService
             .showNotification(NotificationType.Error, 'file-upload.error');
+    }
+
+    private loadNewProfilePicture() {
+        let entityUrl: string = this.uploadImageUrl.replace("/images", "");
+
+        this.sharedService.loadEntityForProfilePicture(entityUrl)
+            .subscribe((response: any) => {
+                this.sharedService.setChangedProfilePicture(response.image);
+            })
     }
 }

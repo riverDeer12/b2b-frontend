@@ -53,7 +53,7 @@ export class ResearchProblemFormComponent {
         return UploadType;
     }
 
-    public get formActionType(): typeof FormType{
+    public get formActionType(): typeof FormType {
         return FormType;
     }
 
@@ -64,6 +64,9 @@ export class ResearchProblemFormComponent {
         private sharedService: SharedService,
         private notificationService: NotificationService,
         private researchProblemService: ResearchProblemService) {
+        this.sharedService.getChangedProfilePicture().subscribe((response) => {
+            this.researchProblem.image = response;
+        })
     }
 
     ngOnInit() {
