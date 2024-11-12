@@ -145,6 +145,7 @@
     "no-error-details": "An error occurred, no additional details!",
     "results": "resultata",
     "correct-validation-errors": "Please correct the errors and try again.",
+    "error-deleting": "Deletion error.",
     "dashboard": {
         "default": "Statistics"
     },
@@ -1011,7 +1012,19 @@
         "uploaded-at": "Document uploaded at",
         "document-name": "Document name",
         "successfully-deleted": "Successfully deleted document",
-        "error-deleting": "Error deleting document"
+        "error-deleting": "Error deleting document",
+        "invalid-size": {
+            "summary": "File is too big.",
+            "detail": "Please, select smaller file."
+        },
+        "invalid-type": {
+            "summary": "Wrong file type.",
+            "detail": "Please, select correct file type."
+        },
+        "invalid-file-limit": {
+            "summary": "You exceeded file limit.",
+            "detail": "Please, select less files."
+        }
     },
     "address": {
         "label": "Address:"

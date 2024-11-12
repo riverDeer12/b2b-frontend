@@ -67,6 +67,9 @@ export class SpecificKnowledgeFormComponent {
         private sharedService: SharedService,
         private notificationService: NotificationService,
         private specificKnowledgeService: SpecificKnowledgeService) {
+        this.sharedService.getChangedProfilePicture().subscribe((response) => {
+            this.specificKnowledge.image = response;
+        })
     }
 
     ngOnInit() {

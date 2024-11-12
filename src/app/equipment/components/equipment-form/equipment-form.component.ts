@@ -64,6 +64,9 @@ export class EquipmentFormComponent {
         private sharedService: SharedService,
         private notificationService: NotificationService,
         private equipmentService: EquipmentService) {
+        this.sharedService.getChangedProfilePicture().subscribe((response) => {
+            this.equipment.image = response;
+        })
     }
 
     ngOnInit() {
@@ -176,22 +179,22 @@ export class EquipmentFormComponent {
     private editEquipment(): void {
         this.equipmentService.editEquipment(this.scientistId, this.equipment.id, this.form.value)
             .subscribe(() => {
-                this.notificationService
-                    .showNotification(NotificationType.Success,
-                        'equipment.successfully-updated');
+                    this.notificationService
+                        .showNotification(NotificationType.Success,
+                            'equipment.successfully-updated');
 
-                this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
+                    this.sharedService.redirectUserAfterSubmit(this.redirectType, this.returnUrl, this.dialogId);
 
-                this.equipmentService.pingEquipment(this.form.value as Equipment);
+                    this.equipmentService.pingEquipment(this.form.value as Equipment);
 
-                this.isLoading = false;
-            },
-            () => {
-                this.notificationService
-                    .showNotification(NotificationType.Error,
-                        'correct-validation-errors-with-translations');
+                    this.isLoading = false;
+                },
+                () => {
+                    this.notificationService
+                        .showNotification(NotificationType.Error,
+                            'correct-validation-errors-with-translations');
 
-                this.isLoading = false;
-            })
+                    this.isLoading = false;
+                })
     }
 }

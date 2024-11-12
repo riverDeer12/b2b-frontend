@@ -64,6 +64,9 @@ export class JobOffersFormComponent {
         private sharedService: SharedService,
         private notificationService: NotificationService,
         private jobOfferService: JobOfferService) {
+        this.sharedService.getChangedProfilePicture().subscribe((response) => {
+            this.jobOffer.image = response;
+        })
     }
 
     ngOnInit() {
