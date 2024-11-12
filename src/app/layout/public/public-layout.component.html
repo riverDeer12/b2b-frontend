@@ -10,16 +10,16 @@
             </ng-template>
             <ng-template pTemplate="end">
                 <div class="flex align-items-center">
-                    <p-button *ngIf="!authService.userLogged()"
-                              [routerLink]="'user-login'">{{'auth.login' | translate}}</p-button>
-                    <p-button *ngIf="!authService.userLogged()"
-                              [routerLink]="'registration'">{{'auth.registration' | translate}}</p-button>
                     <language-selector></language-selector>
                 </div>
             </ng-template>
         </p-menubar>
-        <p-toolbar styleClass="justify-content-end pb-3" *ngIf="authService.userLogged()">
-            <div class="flex gap-1 text-white">
+        <p-toolbar styleClass="justify-content-end pb-3" >
+            <p-button *ngIf="!authService.userLogged()"
+                      [routerLink]="'user-login'">{{'auth.login' | translate}}</p-button>
+            <p-button *ngIf="!authService.userLogged()"
+                      [routerLink]="'registration'">{{'auth.registration' | translate}}</p-button>
+            <div class="flex gap-1 text-white" *ngIf="authService.userLogged()">
                 <div class="flex-2">
                     <button class="text-white" disabled pButton
                             icon="pi pi-user">{{authService.getLoggedUserUsername()}}</button>
