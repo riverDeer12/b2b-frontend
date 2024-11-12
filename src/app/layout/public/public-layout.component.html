@@ -10,11 +10,11 @@
             </ng-template>
             <ng-template pTemplate="end">
                 <div class="flex align-items-center">
-                    <language-selector></language-selector>
                     <p-button *ngIf="!authService.userLogged()"
                               [routerLink]="'user-login'">{{'auth.login' | translate}}</p-button>
                     <p-button *ngIf="!authService.userLogged()"
                               [routerLink]="'registration'">{{'auth.registration' | translate}}</p-button>
+                    <language-selector></language-selector>
                 </div>
             </ng-template>
         </p-menubar>
